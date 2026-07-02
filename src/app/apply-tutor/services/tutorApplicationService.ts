@@ -28,7 +28,7 @@ export const getBoards = async () => {
     `${API_BASE_URL}api/get-boards`,
   );
 
-  return response.data.data;
+  return Array.isArray(response.data?.data) ? response.data.data : [];
 };
 
 export const getClasses = async () => {
@@ -37,7 +37,7 @@ export const getClasses = async () => {
     `${API_BASE_URL}api/get-categories`,
   );
 
-  return response.data.data;
+  return Array.isArray(response.data?.data) ? response.data.data : [];
 };
 
 export const getSubjects = async (class_id: number, board_id: number) => {
@@ -45,5 +45,5 @@ export const getSubjects = async (class_id: number, board_id: number) => {
     `${API_BASE_URL}api/get-subject?category_id=${class_id}&board_id=${board_id}`
   );
 
-  return response.data.data;
+  return Array.isArray(response.data?.data) ? response.data.data : [];
 };
