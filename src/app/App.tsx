@@ -34,6 +34,10 @@ import HowITWork from "./about-program/how-it-work/page";
 import ContactUs from "./about-program/contact-us/page";
 import StudyMaterialsPage from "./resources/study-material/StudyMaterialsPage";
 import AboutTutoo from "./about-program/about-tutoo/page";
+import CareersPage from "./careers/page";
+import TeamPage from "./team/page";
+import PrivacyPolicyPage from "./legal/privacy-policy/page";
+import TermsOfServicePage from "./legal/terms-of-service/page";
 
 function HomePage() {
   return (
@@ -220,8 +224,41 @@ export default function App() {
           </>
         } />
 
+        <Route path="/careers" element={
+          <>
+            <TopInfoBar />
+            <Navbar />
+            <CareersPage />
+            <Footer />
+          </>
+        } />
 
+        <Route path="/team" element={
+          <>
+            <TopInfoBar />
+            <Navbar />
+            <TeamPage />
+            <Footer />
+          </>
+        } />
 
+        <Route path="/privacy-policy" element={
+          <>
+            <TopInfoBar />
+            <Navbar />
+            <PrivacyPolicyPage />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/terms-of-service" element={
+          <>
+            <TopInfoBar />
+            <Navbar />
+            <TermsOfServicePage />
+            <Footer />
+          </>
+        } />
 
       </Routes>
 

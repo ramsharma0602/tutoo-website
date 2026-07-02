@@ -16,7 +16,8 @@ import {
     Quote,
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
-import { BLOG_POSTS, BlogSection } from "./data/BlogPostData";
+import { BLOG_POSTS } from "./data/BlogPostData";
+import type { BlogSection } from "./data/BlogPostData";
 
 
 /* ─────────────────────────────────────────────

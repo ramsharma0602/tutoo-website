@@ -1,14 +1,24 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const footerLinks = {
-    Company: ['About Us', 'Our Story', 'Team', 'Careers', 'Blog'],
+    Company: ['About Us', 'Team', 'Careers', 'Blog'],
     // Parents: ['How It Works', 'Pricing', 'Success Stories', 'Parent Dashboard', 'FAQ', 'Contact Support'],
     // Tutors: ['Become a Tutor', 'Tutor Requirements', 'Tutor Training', 'Benefits', 'Tutor Dashboard', 'Resources'],
     // Programs: ['Home Tuition', 'Online Learning', 'JEE/NEET', 'Olympiads', 'Coding & AI', 'All Programs'],
-    Resources: ['Blog', 'Help Center', 'Learning Tips', 'Study Material', 'Parent Guide', 'Webinars'],
-    Legal: ['Privacy Policy', 'Terms of Service', 'Refund Policy', 'Cookie Policy', 'Data Security', 'Compliance']
+    Legal: ['Privacy Policy', 'Terms of Service']
+  };
+
+  // Maps footer link labels to real in-app routes. Links not listed here
+  // stay as plain "#" placeholders until those pages exist.
+  const linkRoutes: Record<string, string> = {
+    Blog: '/blogs',
+    Careers: '/careers',
+    Team: '/team',
+    'Privacy Policy': '/privacy-policy',
+    'Terms of Service': '/terms-of-service',
   };
 
   const socialLinks = [
@@ -76,16 +86,28 @@ export function Footer() {
                 {category}
               </h3>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const route = linkRoutes[link];
+                  return (
+                    <li key={link}>
+                      {route ? (
+                        <Link
+                          to={route}
+                          className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                        >
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

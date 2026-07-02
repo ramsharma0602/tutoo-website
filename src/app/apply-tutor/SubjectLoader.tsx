@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useFormikContext } from "formik";
 
 import { getSubjects } from "./services/tutorApplicationService";
-import { Subject } from "./TutorApplicationForm";
+import type { Subject } from "./TutorApplicationForm";
 
 interface Option {
     id: number;
