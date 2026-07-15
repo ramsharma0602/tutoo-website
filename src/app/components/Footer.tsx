@@ -36,27 +36,12 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-7 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="relative w-10 h-10">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#16C47F" />
-                      <stop offset="100%" stopColor="#2563EB" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M8 32V16C8 11.5817 11.5817 8 16 8H24C28.4183 8 32 11.5817 32 16V24C32 28.4183 28.4183 32 24 32H16"
-                    stroke="url(#footerLogoGradient)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="24" cy="16" r="2" fill="url(#footerLogoGradient)" />
-                </svg>
-              </div>
-              <span className="text-xl font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
-                Tutoo
-              </span>
+            <div className="flex items-center mb-6">
+              <img
+                src="/tutoo_assets/png/logo_full.png"
+                alt="Tutoo"
+                className="h-11 w-auto object-contain"
+              />
             </div>
 
             <p className="text-gray-400 mb-6 leading-relaxed">

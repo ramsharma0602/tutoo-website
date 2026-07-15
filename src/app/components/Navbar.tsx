@@ -356,9 +356,9 @@ export function Navbar() {
             <div className="relative">
 
               <img
-                src="/images/web-icon.png"
+                src="/tutoo_assets/png/logo_icon.png"
                 alt="Tutoo Logo"
-                className="h-20 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
 

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Formik } from 'formik';
 
@@ -16,8 +16,10 @@ import {
 
 import { assessmentValidation } from './validation/assessmentValidation';
 
-import { submitAssessment } from './services/assessmentApi';
+import { submitAssessment, getBoards, getClasses } from './services/assessmentApi';
 import { Button } from '../components/ui/button';
+import SubjectFetcher from './SubjectFetcher';
+import type { AssessmentSubject } from './SubjectFetcher';
 
 interface BookAssessmentFormProps {
 
@@ -38,33 +40,15 @@ interface BookAssessmentFormProps {
     ) => void;
 }
 
-const subjects = [
-    'Mathematics',
-    'Science',
-    'English',
-    'Physics',
-    'Chemistry',
-    'Biology',
-    'Coding',
-    'Olympiad',
-    'JEE',
-    'NEET',
-];
+interface Board {
+    id: number;
+    name: string;
+}
 
-const classes = [
-    '1st',
-    '2nd',
-    '3rd',
-    '4th',
-    '5th',
-    '6th',
-    '7th',
-    '8th',
-    '9th',
-    '10th',
-    '11th',
-    '12th',
-];
+interface ClassOption {
+    id: number;
+    name: string;
+}
 
 export default function BookAssessmentForm({
 
@@ -78,6 +62,46 @@ export default function BookAssessmentForm({
     const [loading, setLoading] =
         useState(false);
 
+    const [boards, setBoards] = useState<Board[]>([]);
+    const [classes, setClasses] = useState<ClassOption[]>([]);
+    const [subjects, setSubjects] = useState<AssessmentSubject[]>([]);
+
+    const [loadingBoards, setLoadingBoards] = useState(false);
+    const [loadingClasses, setLoadingClasses] = useState(false);
+    const [loadingSubjects, setLoadingSubjects] = useState(false);
+
+    useEffect(() => {
+        const fetchBoards = async () => {
+            try {
+                setLoadingBoards(true);
+                const response = await getBoards();
+                setBoards(response);
+            } catch (error) {
+                console.error('Failed to load boards:', error);
+            } finally {
+                setLoadingBoards(false);
+            }
+        };
+
+        fetchBoards();
+    }, []);
+
+    useEffect(() => {
+        const fetchClasses = async () => {
+            try {
+                setLoadingClasses(true);
+                const response = await getClasses();
+                setClasses(response);
+            } catch (error) {
+                console.error('Failed to load classes:', error);
+            } finally {
+                setLoadingClasses(false);
+            }
+        };
+
+        fetchClasses();
+    }, []);
+
     return (
 
         <Formik
@@ -88,9 +112,12 @@ export default function BookAssessmentForm({
                 mobile: '',
                 email: '',
                 board: '',
+                boardId: '',
                 class_name: '',
+                classId: '',
                 school_name: '',
-                subjects: [],
+                subjects: [] as string[],
+                subject_ids: [] as number[],
             }}
 
             validationSchema={
@@ -104,8 +131,17 @@ export default function BookAssessmentForm({
 
                     setLoading(true);
 
+                    // boardId/classId only exist to drive the dropdowns — the
+                    // backend still expects board/class_name as plain name
+                    // strings (tracked separately), plus the real FK ids
+                    // (board_id, category_id, subject_ids) so it can store
+                    // them directly on student_profiles.
+                    const { boardId, classId, ...rest } = values;
+
                     const payload = {
-                        ...values,
+                        ...rest,
+                        board_id: boardId ? Number(boardId) : null,
+                        category_id: classId ? Number(classId) : null,
                     };
                     await submitAssessment(payload);
 
@@ -156,6 +192,7 @@ export default function BookAssessmentForm({
                 handleBlur,
                 handleSubmit,
                 setFieldValue,
+                setFieldTouched,
 
             }) => (
 
@@ -387,10 +424,27 @@ export default function BookAssessmentForm({
 
                                 {/* Select */}
                                 <select
-                                    name="board"
-                                    value={values.board}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
+                                    name="boardId"
+                                    value={values.boardId}
+                                    onChange={(e) => {
+                                        const selectedId = e.target.value;
+                                        const selectedBoard = boards.find(
+                                            (b) => String(b.id) === selectedId
+                                        );
+
+                                        setFieldValue('boardId', selectedId);
+                                        setFieldValue('board', selectedBoard?.name || '');
+
+                                        // Board changed — class + subjects no longer apply
+                                        setFieldValue('classId', '');
+                                        setFieldValue('class_name', '');
+                                        setFieldValue('subjects', []);
+                                        setFieldValue('subject_ids', []);
+                                    }}
+                                    onBlur={() => {
+                                        setFieldTouched('boardId', true);
+                                        setFieldTouched('board', true);
+                                    }}
 
                                     className={`
                                         w-full
@@ -431,28 +485,14 @@ export default function BookAssessmentForm({
                                 >
 
                                     <option value="">
-                                        Select Board
+                                        {loadingBoards ? 'Loading boards...' : 'Select Board'}
                                     </option>
 
-                                    <option value="CBSE">
-                                        CBSE
-                                    </option>
-
-                                    <option value="ICSE">
-                                        ICSE
-                                    </option>
-
-                                    <option value="State Board">
-                                        State Board
-                                    </option>
-
-                                    <option value="IB">
-                                        IB
-                                    </option>
-
-                                    <option value="IGCSE">
-                                        IGCSE
-                                    </option>
+                                    {boards.map((board) => (
+                                        <option key={board.id} value={board.id}>
+                                            {board.name}
+                                        </option>
+                                    ))}
 
                                 </select>
 
@@ -503,10 +543,25 @@ export default function BookAssessmentForm({
 
                             {/* Select */}
                             <select
-                                name="class_name"
-                                value={values.class_name}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
+                                name="classId"
+                                value={values.classId}
+                                onChange={(e) => {
+                                    const selectedId = e.target.value;
+                                    const selectedClass = classes.find(
+                                        (c) => String(c.id) === selectedId
+                                    );
+
+                                    setFieldValue('classId', selectedId);
+                                    setFieldValue('class_name', selectedClass?.name || '');
+
+                                    // Class changed — subjects no longer apply
+                                    setFieldValue('subjects', []);
+                                    setFieldValue('subject_ids', []);
+                                }}
+                                onBlur={() => {
+                                    setFieldTouched('classId', true);
+                                    setFieldTouched('class_name', true);
+                                }}
                                 className={`
                                     w-full
                                     h-14
@@ -543,11 +598,13 @@ export default function BookAssessmentForm({
                                     }
                                 `}
                             >
-                                <option value="">Select Class</option>
+                                <option value="">
+                                    {loadingClasses ? 'Loading classes...' : 'Select Class'}
+                                </option>
 
-                                {classes.map((className) => (
-                                    <option key={className} value={className}>
-                                        Class {className}
+                                {classes.map((cls) => (
+                                    <option key={cls.id} value={cls.id}>
+                                        {cls.name}
                                     </option>
                                 ))}
                             </select>
@@ -627,6 +684,12 @@ export default function BookAssessmentForm({
                         </div>
                     </div>
 
+                    {/* Fetches subjects mapped to the selected board + class combo */}
+                    <SubjectFetcher
+                        setSubjects={setSubjects}
+                        setLoadingSubjects={setLoadingSubjects}
+                    />
+
                     {/* Subjects */}
                     <div>
 
@@ -639,24 +702,49 @@ export default function BookAssessmentForm({
                             </span>
                         </div>
 
+                        {(!values.boardId || !values.classId) && (
+                            <p className="text-sm text-[#94A3B8] mb-2">
+                                Select a board and class first to see available subjects.
+                            </p>
+                        )}
+
+                        {values.boardId && values.classId && loadingSubjects && (
+                            <p className="text-sm text-[#94A3B8] mb-2">
+                                Loading subjects...
+                            </p>
+                        )}
+
+                        {values.boardId && values.classId && !loadingSubjects && subjects.length === 0 && (
+                            <p className="text-sm text-[#94A3B8] mb-2">
+                                No subjects found for this board and class.
+                            </p>
+                        )}
+
                         <div className="flex flex-wrap gap-3">
 
                             {subjects.map((subject) => (
 
                                 <button
-                                    key={subject}
+                                    key={subject.id}
                                     type="button"
 
                                     onClick={() => {
 
                                         if (
-                                            values.subjects.includes(subject)
+                                            values.subjects.includes(subject.name)
                                         ) {
 
                                             setFieldValue(
                                                 'subjects',
                                                 values.subjects.filter(
-                                                    (s) => s !== subject
+                                                    (s) => s !== subject.name
+                                                )
+                                            );
+
+                                            setFieldValue(
+                                                'subject_ids',
+                                                values.subject_ids.filter(
+                                                    (id) => id !== subject.id
                                                 )
                                             );
 
@@ -666,7 +754,15 @@ export default function BookAssessmentForm({
                                                 'subjects',
                                                 [
                                                     ...values.subjects,
-                                                    subject,
+                                                    subject.name,
+                                                ]
+                                            );
+
+                                            setFieldValue(
+                                                'subject_ids',
+                                                [
+                                                    ...values.subject_ids,
+                                                    subject.id,
                                                 ]
                                             );
                                         }
@@ -682,7 +778,7 @@ export default function BookAssessmentForm({
                   transition-all
                   duration-300
 
-                  ${values.subjects.includes(subject)
+                  ${values.subjects.includes(subject.name)
 
                                             ? `
                     bg-gradient-to-r
@@ -702,7 +798,7 @@ export default function BookAssessmentForm({
                                         }
                   `}
                                 >
-                                    {subject}
+                                    {subject.name}
                                 </button>
                             ))}
                         </div>

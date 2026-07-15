@@ -20,3 +20,30 @@ export const submitAssessment = async (data: any) => {
 
     return response.data;
 };
+
+export const getBoards = async () => {
+
+    const response = await axios.get(
+        `${API_BASE_URL}api/get-boards`,
+    );
+
+    return Array.isArray(response.data?.data) ? response.data.data : [];
+};
+
+export const getClasses = async () => {
+
+    const response = await axios.get(
+        `${API_BASE_URL}api/get-categories`,
+    );
+
+    return Array.isArray(response.data?.data) ? response.data.data : [];
+};
+
+export const getSubjects = async (class_id: number, board_id: number) => {
+
+    const response = await axios.get(
+        `${API_BASE_URL}api/get-subject?category_id=${class_id}&board_id=${board_id}`
+    );
+
+    return Array.isArray(response.data?.data) ? response.data.data : [];
+};
