@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import TutorApplicationForm from "./TutorApplicationForm";
 import StatusModal from "../components/common/StatusModal";
+import { CityAvailabilitySection } from "../components/CityAvailabilitySection";
 import { useState } from "react";
 
 export function ApplyTutorSection() {
@@ -94,6 +95,8 @@ export function ApplyTutorSection() {
   ];
 
   return (
+    <>
+    <CityAvailabilitySection variant="compact" />
     <section className="relative overflow-hidden bg-[#F8FAFC] py-28">
 
       {/* Background */}
@@ -119,7 +122,7 @@ export function ApplyTutorSection() {
               <Sparkles className="w-4 h-4 text-[#16C47F]" />
 
               <span className="text-sm font-semibold text-[#16C47F]">
-                🚀 JOIN UBERTUTOR AS A TUTOR
+                🚀 JOIN TUTOO AS A TUTOR
               </span>
             </div>
 
@@ -139,7 +142,7 @@ export function ApplyTutorSection() {
 
             {/* Description */}
             <p className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl">
-              Join UberTutor’s growing network of verified tutors and connect
+              Join Tutoo’s growing network of verified tutors and connect
               with students across India. Whether you prefer home tuition,
               online teaching, or both — we help you grow professionally and
               financially.
@@ -416,5 +419,6 @@ export function ApplyTutorSection() {
 
       </div>
     </section >
+    </>
   );
 }

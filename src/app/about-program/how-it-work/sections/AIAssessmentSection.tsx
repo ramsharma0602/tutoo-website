@@ -497,7 +497,7 @@ export function AIAssessmentSection() {
             {/* Body */}
             <div className="space-y-4 mb-9">
               {[
-                "Before assigning a tutor, UberTutor evaluates each student's current academic level, learning patterns, and knowledge gaps.",
+                "Before assigning a tutor, Tutoo evaluates each student's current academic level, learning patterns, and knowledge gaps.",
                 "This allows us to create a personalized learning roadmap and match students with tutors who can deliver the greatest academic impact.",
               ].map((para, i) => (
                 <motion.p

@@ -167,6 +167,8 @@ export function Testimonials() {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-14 h-14 rounded-2xl object-cover shadow-md"
                       />
 

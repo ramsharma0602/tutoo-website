@@ -676,6 +676,7 @@ export function BlogListingSections() {
 
                             <button
                                 onClick={prevSlide}
+                                aria-label="Previous articles"
                                 className="
                         w-12
                         h-12
@@ -699,6 +700,7 @@ export function BlogListingSections() {
 
                             <button
                                 onClick={nextSlide}
+                                aria-label="Next articles"
                                 className="
                         w-12
                         h-12
@@ -1061,7 +1063,7 @@ export function BlogListingSections() {
                                 style={{ color: chip.color, background: chip.bg, borderColor: chip.border }}>
                                 {chip.label}
                             </span>
-                        ))}
+))}
                     </motion.div>
                 </div>
             </section>

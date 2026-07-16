@@ -365,7 +365,7 @@ export function Step02Assessment() {
 
             <div className="flex flex-col gap-4 mb-9">
               {[
-                "Before assigning a tutor, UberTutor evaluates each student's current academic level, learning patterns, and knowledge gaps.",
+                "Before assigning a tutor, Tutoo evaluates each student's current academic level, learning patterns, and knowledge gaps.",
                 "This allows us to create a personalised learning roadmap and match students with tutors who can deliver the greatest impact.",
               ].map((para, i) => (
                 <motion.p key={i}

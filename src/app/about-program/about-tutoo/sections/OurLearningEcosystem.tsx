@@ -138,7 +138,7 @@ function Particles() {
 }
 
 // ─────────────────────────────────────────────
-// CENTER UBERTUTOR NODE
+// CENTER TUTOO NODE
 // ─────────────────────────────────────────────
 function CenterNode() {
     return (
@@ -181,7 +181,7 @@ function CenterNode() {
                 }}
             >
                 <Globe className="w-6 h-6 text-white mb-0.5" />
-                <p className="text-[8px] font-black text-white tracking-widest">UBERTUTOR</p>
+                <p className="text-[8px] font-black text-white tracking-widest">TUTOO</p>
             </motion.div>
         </div>
     );
@@ -502,7 +502,7 @@ export function LearningEcosystemSection() {
                         <StageCard key={stage.step} stage={stage} isLast={i === STAGES.length - 1} />
                     ))}
 
-                    {/* Center UberTutor node — between stages 3 and 4 */}
+                    {/* Center Tutoo node — between stages 3 and 4 */}
                     {/* <div className="absolute left-1/2 top-290 -translate-x-1/2 -translate-y-1/2 z-20 hidden lg:block">
                         <CenterNode />
                     </div> */}

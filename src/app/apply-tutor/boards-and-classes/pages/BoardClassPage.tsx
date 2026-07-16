@@ -37,8 +37,11 @@ import {
   LEARNING_OUTCOMES,
   HOW_IT_WORKS,
   WHY_FEATURES,
+  slugToPath,
   type BoardClassEntry,
 } from "../data/boardClassData";
+import PageSchema from "../../../../seo/PageSchema";
+import { getFAQSchema, getCourseSchema } from "../../../../seo/schema";
 
 // ─── Build slug from URL params ───────────────────────────────────────────────
 //  Route params:  { board: "cbse", category: "secondary", className: "class-9" }
@@ -142,6 +145,15 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen">
+
+      {faq.length > 0 && <PageSchema jsonLd={getFAQSchema(faq)} />}
+      <PageSchema
+        jsonLd={getCourseSchema({
+          name: `${board} ${classLabel} Home & Online Tuition`,
+          description: metaDescription,
+          path: slugToPath(slug),
+        })}
+      />
 
       {/* ══════════════════════════════════════════════
           SECTION 1 — HERO
@@ -340,7 +352,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════
-          SECTION 3 — WHY UBERTUTOR
+          SECTION 3 — WHY TUTOO
       ══════════════════════════════════════════════ */}
       <section className="py-20 relative overflow-hidden" style={{ background: "#0B1220" }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -358,7 +370,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-7"
               style={{ background: "rgba(22,196,127,0.1)", borderColor: "rgba(22,196,127,0.25)" }}>
               <Star className="w-4 h-4 text-[#16C47F]" />
-              <span className="text-sm font-semibold text-[#16C47F]">Why UberTutor</span>
+              <span className="text-sm font-semibold text-[#16C47F]">Why Tutoo</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
               The Smarter Way to{" "}
@@ -406,7 +418,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
               <span className="bg-gradient-to-r from-[#7C3AED] to-[#2563EB] bg-clip-text text-transparent">Achieve</span>
             </h2>
             <p className="text-lg text-[#64748B] max-w-xl mx-auto">
-              Measurable outcomes for every {board} {classLabel} student on UberTutor.
+              Measurable outcomes for every {board} {classLabel} student on Tutoo.
             </p>
           </motion.div>
 
@@ -523,7 +535,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
             </h2>
             <div className="flex flex-col gap-5 text-[#334155] text-base leading-8">
               <p>{board} {classLabel} is an important stage in a student's academic journey. Our expert tutors help students build strong conceptual understanding, improve confidence, and achieve better academic results through personalised learning designed specifically for the {board} curriculum.</p>
-              <p>UberTutor provides both home tuition and online tuition for {board} {classLabel} students. Our experienced tutors follow the latest {board} curriculum and modern teaching methodologies to make learning engaging, effective, and measurable.</p>
+              <p>Tutoo provides both home tuition and online tuition for {board} {classLabel} students. Our experienced tutors follow the latest {board} curriculum and modern teaching methodologies to make learning engaging, effective, and measurable.</p>
               <p>Whether your child requires support in {subjects.slice(0, 3).map(s => s.label).join(", ")}, or overall academic development, our tutors create customised learning plans based on each student's individual needs and learning pace.</p>
             </div>
             <div className="flex flex-wrap gap-2 mt-8">

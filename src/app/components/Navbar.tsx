@@ -366,10 +366,10 @@ export function Navbar() {
             <div className="flex flex-col leading-none">
 
               <span
-                className="text-2xl font-black tracking-tight text-[#0B1220]"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="text-xl font-black tracking-tight text-[#0B1220]"
+                // style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Tutoo
+                Tutoo Learning
               </span>
 
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#64748B] font-semibold mt-1">
@@ -575,6 +575,8 @@ export function Navbar() {
             onClick={() =>
               setIsMobileMenuOpen(!isMobileMenuOpen)
             }
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             className="
               lg:hidden
               w-12

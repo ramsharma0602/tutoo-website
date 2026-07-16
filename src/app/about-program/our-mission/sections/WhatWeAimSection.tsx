@@ -220,7 +220,7 @@ function EcosystemOrbit() {
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
       >
         <span className="text-2xl">✦</span>
-        <span className="text-[9px] font-black text-white tracking-widest uppercase mt-0.5">UberTutor</span>
+        <span className="text-[9px] font-black text-white tracking-widest uppercase mt-0.5">Tutoo</span>
       </motion.div>
 
       {/* Orbital nodes */}
@@ -382,7 +382,7 @@ export function WhatWeAimSection() {
 
             <div className="text-center mt-6">
               <p className="text-sm text-[#64748B] font-medium max-w-sm mx-auto">
-                UberTutor operates as the intelligent centre — connecting every stakeholder in one trusted platform.
+                Tutoo operates as the intelligent centre — connecting every stakeholder in one trusted platform.
               </p>
             </div>
           </motion.div>
@@ -430,7 +430,7 @@ export function WhatWeAimSection() {
                 <span className="text-white text-xs font-bold">UT</span>
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-[#0F172A]">UberTutor</p>
+                <p className="text-sm font-bold text-[#0F172A]">Tutoo</p>
                 <p className="text-xs text-[#94A3B8]">Vision & Mission</p>
               </div>
             </div>

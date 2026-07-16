@@ -191,7 +191,7 @@ function EcosystemHub() {
           }}
         >
           <Globe className="w-7 h-7 text-white" />
-          <p className="text-[8px] font-black text-white tracking-widest mt-0.5">UBERTUTOR</p>
+          <p className="text-[8px] font-black text-white tracking-widest mt-0.5">TUTOO</p>
         </motion.div>
 
         {/* Orbit nodes */}
@@ -492,7 +492,7 @@ export function MeetOurCommunitySection() {
             transition={{ delay: 0.18 }}
             className="text-lg leading-8 text-[#64748B]"
           >
-            UberTutor brings together students, parents, and tutors through a connected learning
+            Tutoo brings together students, parents, and tutors through a connected learning
             ecosystem built on trust, technology, and measurable outcomes.
           </motion.p>
         </div>

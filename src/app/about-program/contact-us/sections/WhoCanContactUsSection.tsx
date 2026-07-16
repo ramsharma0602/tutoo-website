@@ -80,7 +80,7 @@ const audiences = [
       "Schools",
 
     heading:
-      "Partner with UberTutor",
+      "Partner with Tutoo",
 
     description:
       "Interested in student support programs, learning partnerships, academic workshops, or institutional collaboration?",

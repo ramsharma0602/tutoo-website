@@ -237,7 +237,7 @@ export function HowItWorksHero() {
               style={{ background: "rgba(22,196,127,0.08)", borderColor: "rgba(22,196,127,0.3)", backdropFilter: "blur(12px)", boxShadow: "0 0 24px rgba(22,196,127,0.1)" }}
             >
               <Zap className="w-4 h-4 text-[#16C47F]" />
-              <span className="text-sm font-bold tracking-widest text-[#059669] uppercase">How UberTutor Works</span>
+              <span className="text-sm font-bold tracking-widest text-[#059669] uppercase">How Tutoo Works</span>
               <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
             </motion.div>
 

@@ -5,12 +5,14 @@ import { TrainingDevelopmentSection } from "./for-tutors/TrainingDevelopmentSect
 import { TutorFinalCTA } from "./for-tutors/TutorCTA";
 import { TutorsFAQ } from "./for-tutors/TutorsFAQ";
 import { TutorsTestimonials } from "./for-tutors/TutorsTestimonials";
-import { WhyBecomeTutooSection } from "./for-tutors/WhyBecomeTutooSection"; 
+import { WhyBecomeTutooSection } from "./for-tutors/WhyBecomeTutooSection";
+import { CityAvailabilitySection } from "./CityAvailabilitySection";
 
 export default function ForTutorsPage() {
     return (
         <div className="for-tutors-page">
             <ForTutorsHeroSection />
+            <CityAvailabilitySection variant="compact" />
             <WhyBecomeTutooSection />
             <ApplyAsTutorSection />
             <TrainingDevelopmentSection />

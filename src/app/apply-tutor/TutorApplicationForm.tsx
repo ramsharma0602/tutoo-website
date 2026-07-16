@@ -213,7 +213,7 @@ export default function TutorApplicationForm({
                         );
 
                         setModalMessage(
-                            'Thank you for applying as a tutor with UberTutor. Our recruitment team will review your application and contact you shortly regarding the next steps in your onboarding process.'
+                            'Thank you for applying as a tutor with Tutoo. Our recruitment team will review your application and contact you shortly regarding the next steps in your onboarding process.'
                         );
 
                         setModalOpen(true);

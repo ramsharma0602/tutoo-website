@@ -61,8 +61,8 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "January 15, 2026",
         readTime: "6 Min Read",
         author: "Dr. Ananya Verma",
-        authorRole: "Learning Science Expert · UberTutor",
-        authorBio: "Educational experts at UberTutor create research-backed learning resources for students, parents, and tutors across India.",
+        authorRole: "Learning Science Expert · Tutoo",
+        authorBio: "Educational experts at Tutoo create research-backed learning resources for students, parents, and tutors across India.",
         heroGrad: "from-[#2563EB] to-[#7C3AED]",
         image: "https://www.intervaledu.com/media/blog/How_to_Focus_on_Studies_Proven_Techniques_to_Improve_Concentration__Productivity_in_2025.webp",
         sections: [
@@ -115,7 +115,7 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "February 3, 2026",
         readTime: "6 Min Read",
         author: "Meera Iyer",
-        authorRole: "Child Psychologist · UberTutor",
+        authorRole: "Child Psychologist · Tutoo",
         authorBio: "Meera Iyer is a practising child psychologist with 12 years of experience helping families navigate academic pressure and learning challenges.",
         heroGrad: "from-[#16C47F] to-[#2563EB]",
         image: "https://www.chirec.ac.in/wp-content/uploads/sites/27/2026/03/How-to-handle-academic-address.jpg",
@@ -150,7 +150,7 @@ export const BLOG_POSTS: BlogPost[] = [
             { type: "paragraph", text: "Children who grow up in emotionally supportive homes where mistakes are treated as learning opportunities develop significantly higher resilience and academic persistence. Your goal isn't to eliminate all pressure — it's to ensure your child knows they're supported unconditionally through all of it." },
         ],
         related: [
-            { id: "improve-concentration-while-studying", description: "Learn how to improve your focus and concentration while studying.", author: "Dr. Ananya Verma", category: "Study Tips", categoryColor: "#2563EB", categoryBg: "rgba(37,99,235,0.1)", title: "How to Improve Concentration While Studying", readTime: "6 min", grad: "from-[#2563EB] to-[#7C3AED]", role: "Learning Science Expert · UberTutor", image: "https://www.intervaledu.com/media/blog/How_to_Focus_on_Studies_Proven_Techniques_to_Improve_Concentration__Productivity_in_2025.webp", authorImage: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/yt-story_647_090517015649.jpg?VersionId=wIQL131pthcasFzFyaoG5zYUwtLu961c", },
+            { id: "improve-concentration-while-studying", description: "Learn how to improve your focus and concentration while studying.", author: "Dr. Ananya Verma", category: "Study Tips", categoryColor: "#2563EB", categoryBg: "rgba(37,99,235,0.1)", title: "How to Improve Concentration While Studying", readTime: "6 min", grad: "from-[#2563EB] to-[#7C3AED]", role: "Learning Science Expert · Tutoo", image: "https://www.intervaledu.com/media/blog/How_to_Focus_on_Studies_Proven_Techniques_to_Improve_Concentration__Productivity_in_2025.webp", authorImage: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/yt-story_647_090517015649.jpg?VersionId=wIQL131pthcasFzFyaoG5zYUwtLu961c", },
             { id: "time-management-students", description: "Maximize your productivity with these effective time management strategies.", author: "Aryan Kapoor", category: "Productivity", categoryColor: "#7C3AED", categoryBg: "rgba(124,58,237,0.1)", title: "5 Effective Time Management Tips for Students", readTime: "4 min", grad: "from-[#7C3AED] to-[#2563EB]", role: "EdTech Researcher", image: "https://chrysalishigh.com/wp-content/uploads/2023/12/Quick-tips-for-Time-Management.jpg", authorImage: "https://img.magnific.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?semt=ais_hybrid&w=740&q=80", },
             { id: "best-study-techniques", description: "Discover the most effective study techniques for faster learning.", author: "Priya Sharma", category: "Study Tips", categoryColor: "#2563EB", categoryBg: "rgba(37,99,235,0.1)", title: "Best Study Techniques for Faster Learning", readTime: "5 min", grad: "from-[#2563EB] to-[#16C47F]", role: "Senior Educator", image: "https://studycornerbd.com/wp-content/uploads/2026/05/Best-Study-Techniques-That-Boost-Memory-Fast--1024x538.webp", authorImage: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/yt-story_647_090517015649.jpg?VersionId=wIQL131pthcasFzFyaoG5zYUwtLu961c", },
         ],

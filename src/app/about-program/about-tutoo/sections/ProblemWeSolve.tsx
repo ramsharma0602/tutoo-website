@@ -163,7 +163,7 @@ export default function ProblemWeSolve() {
               text-transparent
               "
             >
-              UberTutor
+              Tutoo
             </span>{" "}
             Was Created
           </h2>
@@ -175,7 +175,7 @@ export default function ProblemWeSolve() {
             <br />
             <br />
 
-            UberTutor was built to bring all three together through
+            Tutoo was built to bring all three together through
             technology, trust, and measurable learning outcomes.
           </p>
         </motion.div>

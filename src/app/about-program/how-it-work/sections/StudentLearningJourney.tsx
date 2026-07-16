@@ -250,7 +250,7 @@ export function StudentLearningJourney() {
           </h2>
 
           <p className="text-lg leading-8 text-[#64748B]">
-            From your first assessment to measurable academic improvement, UberTutor manages every stage of the learning journey through technology, expert tutors, and continuous progress tracking.
+            From your first assessment to measurable academic improvement, Tutoo manages every stage of the learning journey through technology, expert tutors, and continuous progress tracking.
           </p>
         </motion.div>
 
@@ -389,7 +389,7 @@ export function StudentLearningJourney() {
                 </span>
               </h3>
               <p className="text-[#94A3B8] text-lg max-w-xl mx-auto">
-                Every step of UberTutor's journey leads here — measurable, confident, lifelong achievement.
+                Every step of Tutoo's journey leads here — measurable, confident, lifelong achievement.
               </p>
             </div>
 

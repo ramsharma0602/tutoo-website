@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Brain, Shield, LayoutDashboard, Radio, FileBarChart, Target, LineChart, TrendingUp } from 'lucide-react';
 
-export function WhyUberTutor() {
+export function WhyTutoo() {
   const features = [
     {
       icon: Brain,

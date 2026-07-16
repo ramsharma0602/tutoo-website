@@ -77,7 +77,7 @@ const JOURNEY_STEPS = [
     step: "04",
     icon: Rocket,
     emoji: "🚀",
-    title: "UberTutor",
+    title: "Tutoo",
     desc: "A complete learning ecosystem combining technology, verified tutors, progress tracking, assessments, and personalized learning journeys — built for every student.",
     from: "#16C47F",
     to: "#2563EB",
@@ -193,7 +193,7 @@ function EcosystemDiagram() {
         style={{ animation: "centerPulse 3s ease-in-out infinite" }}
       >
         <Rocket className="w-7 h-7 text-white" />
-        <p className="text-[9px] font-black text-white mt-1 tracking-wider">UBERTUTOR</p>
+        <p className="text-[9px] font-black text-white mt-1 tracking-wider">TUTOO</p>
       </motion.div>
 
       {/* Orbit nodes */}
@@ -334,7 +334,7 @@ export function WhyWeStartedSection() {
           >
             Millions of students need personalized academic support, while thousands
             of talented tutors struggle to connect with the right learners.
-            UberTutor was built to bridge that gap.
+            Tutoo was built to bridge that gap.
           </motion.p>
         </div>
 
@@ -507,10 +507,10 @@ export function WhyWeStartedSection() {
                   className="text-2xl lg:text-3xl font-black leading-tight text-[#0F172A] mb-5"
                   style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
                 >
-                  "We didn't build UberTutor to help parents find tutors.
+                  "We didn't build Tutoo to help parents find tutors.
                 </p>
                 <p className="text-2xl lg:text-3xl font-black leading-tight bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent mb-8">
-                  We built UberTutor to ensure every student has access to the right learning support, at the right time, in the right way."
+                  We built Tutoo to ensure every student has access to the right learning support, at the right time, in the right way."
                 </p>
 
                 <div className="flex items-center gap-4 pt-7 border-t border-[rgba(15,23,42,0.07)]">
@@ -518,7 +518,7 @@ export function WhyWeStartedSection() {
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-[#0F172A]">The UberTutor Team</p>
+                    <p className="font-bold text-[#0F172A]">The Tutoo Team</p>
                     <p className="text-sm text-[#64748B]">Founded with purpose</p>
                   </div>
                   <div className="ml-auto flex gap-1.5">

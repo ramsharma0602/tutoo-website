@@ -18,6 +18,7 @@ import {
 import BookAssessmentForm from './BookAssessmentForm';
 import { useRef, useState } from 'react';
 import StatusModal from '../components/common/StatusModal';
+import { CityAvailabilitySection } from '../components/CityAvailabilitySection';
 
 export default function BookAssessmentPage() {
 
@@ -95,6 +96,8 @@ export default function BookAssessmentPage() {
   );
 
   return (
+    <>
+    <CityAvailabilitySection variant="compact" />
     <section className="relative min-h-screen overflow-hidden bg-[#F8FAFC] py-24">
 
       {/* Background Glow */}
@@ -277,6 +280,7 @@ export default function BookAssessmentPage() {
 
       </div>
     </section >
+    </>
   );
 }
 

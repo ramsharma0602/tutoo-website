@@ -152,7 +152,7 @@ export default function BookAssessmentForm({
                     );
 
                     setModalMessage(
-                        'Thank you for booking a free assessment with UberTutor. Our academic advisors will connect with you within 24 hours.'
+                        'Thank you for booking a free assessment with Tutoo. Our academic advisors will connect with you within 24 hours.'
                     );
 
                     setModalOpen(true);

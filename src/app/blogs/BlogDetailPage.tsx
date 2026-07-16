@@ -18,6 +18,8 @@ import {
 import { useParams, useNavigate } from "react-router-dom";
 import { BLOG_POSTS } from "./data/BlogPostData";
 import type { BlogSection } from "./data/BlogPostData";
+import PageSchema from "../../seo/PageSchema";
+import { getArticleSchema } from "../../seo/schema";
 
 
 /* ─────────────────────────────────────────────
@@ -119,12 +121,14 @@ export function BlogDetailPage({
 
     const navigate = useNavigate();
 
-    /* ACTIVE BLOG */
+    /* ACTIVE BLOG — no silent fallback to BLOG_POSTS[0]; an unknown slug
+       should show a real "not found" state, not someone else's article
+       (duplicate/misleading content otherwise). */
     const [activePost, setActivePost] =
         useState(
             BLOG_POSTS.find(
                 (item) => item.id === slug
-            ) || BLOG_POSTS[0]
+            ) ?? null
         );
 
     /* UPDATE BLOG WHEN ROUTE CHANGES */
@@ -133,12 +137,9 @@ export function BlogDetailPage({
         const foundPost =
             BLOG_POSTS.find(
                 (item) => item.id === slug
-            );
+            ) ?? null;
 
-        if (foundPost) {
-
-            setActivePost(foundPost);
-        }
+        setActivePost(foundPost);
 
         /* SCROLL TOP */
         window.scrollTo({
@@ -150,6 +151,23 @@ export function BlogDetailPage({
 
     /* CURRENT BLOG */
     const post = activePost;
+
+    if (!post) {
+        return (
+            <div className="min-h-screen mt-20 flex flex-col items-center justify-center gap-4 bg-[#F8FAFC] px-6 text-center">
+                <h1 className="text-3xl font-bold text-[#0F172A]">Article not found</h1>
+                <p className="text-[#64748B] max-w-md">
+                    The article you're looking for doesn't exist or may have been moved.
+                </p>
+                <button
+                    onClick={() => navigate("/blogs")}
+                    className="mt-2 px-6 py-3 rounded-full bg-[#16C47F] text-white font-semibold hover:bg-[#12A76B] transition-colors"
+                >
+                    Back to Blog
+                </button>
+            </div>
+        );
+    }
 
     /* ARTICLE REF */
     const articleRef =
@@ -197,8 +215,25 @@ export function BlogDetailPage({
             });
         }
     };
+    const publishedIso = new Date(post.date).toString() !== "Invalid Date"
+        ? new Date(post.date).toISOString()
+        : undefined;
+
     return (
         <div className="relative bg-[#F8FAFC] min-h-screen mt-20" ref={articleRef}>
+
+            {publishedIso && (
+                <PageSchema
+                    jsonLd={getArticleSchema({
+                        title: post.title,
+                        description: post.description,
+                        path: `/blog/${post.id}`,
+                        image: post.image,
+                        author: post.author,
+                        publishedTime: publishedIso,
+                    })}
+                />
+            )}
 
             {/* ── Reading progress bar ── */}
             <motion.div
@@ -454,6 +489,8 @@ export function BlogDetailPage({
                                 <img
                                     src={rel.image}
                                     alt={rel.title}
+                                    loading="lazy"
+                                    decoding="async"
 
                                     className="
                         absolute
@@ -712,7 +749,7 @@ export function BlogDetailPage({
                                 </span>
                             ))}
                         </div>
-                    </motion.div>
+                   </motion.div>
                 </div>
             </section>
 

@@ -66,7 +66,7 @@ const sub = (label: string, key: keyof typeof SUB) => ({ label, ...SUB[key] });
 const commonFAQs = (board: string, cls: string): FAQ[] => [
   {
     question: `Do you provide home tutors for ${board} ${cls} students?`,
-    answer: `Yes. UberTutor offers verified home tutors for ${board} ${cls} across all major cities and towns in India. We match your child with tutors based on location, schedule, and learning needs.`,
+    answer: `Yes. Tutoo offers verified home tutors for ${board} ${cls} across all major cities and towns in India. We match your child with tutors based on location, schedule, and learning needs.`,
   },
   {
     question: `Can tutors help with ${board} ${cls} exam preparation?`,
@@ -91,35 +91,35 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
   "cbse-board-class-1": {
     board: "CBSE", classLabel: "Class 1", classNum: 1, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("EVS", "EVS"), sub("Hindi", "Hindi"), sub("General Knowledge", "GK")],
-    metaTitle: "CBSE Class 1 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 1 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 1 home tutors and online tuition with personalised learning support for young learners.",
     faq: [{ question: "What subjects are covered in CBSE Class 1 tuition?", answer: "Our tutors cover Mathematics, English, EVS, Hindi, and General Knowledge — building a strong early foundation." }, ...commonFAQs("CBSE", "Class 1")],
   },
   "cbse-board-class-2": {
     board: "CBSE", classLabel: "Class 2", classNum: 2, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("EVS", "EVS"), sub("Hindi", "Hindi"), sub("General Knowledge", "GK")],
-    metaTitle: "CBSE Class 2 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 2 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Find experienced CBSE Class 2 tutors for personalised home and online tuition.",
     faq: commonFAQs("CBSE", "Class 2"),
   },
   "cbse-board-class-3": {
     board: "CBSE", classLabel: "Class 3", classNum: 3, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("EVS", "EVS"), sub("Hindi", "Hindi"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 3 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 3 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Top CBSE Class 3 tutors for concept-based personalised learning support.",
     faq: commonFAQs("CBSE", "Class 3"),
   },
   "cbse-board-class-4": {
     board: "CBSE", classLabel: "Class 4", classNum: 4, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("EVS", "EVS"), sub("Hindi", "Hindi"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 4 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 4 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 4 home & online tuition with activity-based learning.",
     faq: commonFAQs("CBSE", "Class 4"),
   },
   "cbse-board-class-5": {
     board: "CBSE", classLabel: "Class 5", classNum: 5, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("Science", "Science"), sub("Hindi", "Hindi"), sub("Social Studies", "SocialScience")],
-    metaTitle: "CBSE Class 5 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 5 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Verified CBSE Class 5 tutors for strong subject foundations before middle school.",
     faq: commonFAQs("CBSE", "Class 5"),
   },
@@ -128,35 +128,35 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
   "cbse-board-class-6": {
     board: "CBSE", classLabel: "Class 6", classNum: 6, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Science", "Science"), sub("English", "English"), sub("Hindi", "Hindi"), sub("Social Science", "SocialScience"), sub("Sanskrit", "Sanskrit")],
-    metaTitle: "CBSE Class 6 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 6 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 6 tutors covering Maths, Science, English, Hindi, and Social Science.",
     faq: [{ question: "Is CBSE Class 6 a critical year for students?", answer: "Yes — Class 6 marks the transition to middle school where conceptual difficulty increases significantly. Early tuition support builds the confidence needed for higher classes." }, ...commonFAQs("CBSE", "Class 6")],
   },
   "cbse-board-class-7": {
     board: "CBSE", classLabel: "Class 7", classNum: 7, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Science", "Science"), sub("English", "English"), sub("Hindi", "Hindi"), sub("Social Science", "SocialScience"), sub("Sanskrit", "Sanskrit")],
-    metaTitle: "CBSE Class 7 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 7 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Personalised CBSE Class 7 tuition for Maths, Science, Social Science, and languages.",
     faq: commonFAQs("CBSE", "Class 7"),
   },
   "cbse-board-class-8": {
     board: "CBSE", classLabel: "Class 8", classNum: 8, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Science", "Science"), sub("English", "English"), sub("Hindi", "Hindi"), sub("Social Science", "SocialScience"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 8 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 8 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 8 home and online tutors for board exam foundation preparation.",
     faq: commonFAQs("CBSE", "Class 8"),
   },
   "cbse-board-class-9": {
     board: "CBSE", classLabel: "Class 9", classNum: 9, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Science", "Science"), sub("English", "English"), sub("Hindi", "Hindi"), sub("Social Science", "SocialScience"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 9 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 9 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Top CBSE Class 9 tutors for Maths, Science, English, and Social Science — board exam preparation starts here.",
     faq: [{ question: "Why is CBSE Class 9 important for board exam preparation?", answer: "Class 9 introduces the full CBSE board curriculum. Strong performance in Class 9 directly impacts Class 10 boards, making early concept clarity essential." }, ...commonFAQs("CBSE", "Class 9")],
   },
   "cbse-board-class-10": {
     board: "CBSE", classLabel: "Class 10", classNum: 10, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Science", "Science"), sub("English", "English"), sub("Hindi", "Hindi"), sub("Social Science", "SocialScience"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 10 Board Exam Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 10 Board Exam Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 10 board exam tutors for Maths, Science, English, and Social Science with full exam preparation support.",
     faq: [{ question: "Do tutors provide CBSE Class 10 board exam revision support?", answer: "Yes. Our Class 10 tutors specialise in board exam patterns, provide past paper practice, chapter-wise revision, and mock test evaluation." }, ...commonFAQs("CBSE", "Class 10")],
   },
@@ -165,28 +165,28 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
   "cbse-board-class-11-science": {
     board: "CBSE", classLabel: "Class 11 Science", classNum: 11, category: "senior",
     subjects: [sub("Physics", "Physics"), sub("Chemistry", "Chemistry"), sub("Biology / Maths", "Biology"), sub("English", "English"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 11 Science Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 11 Science Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 11 Science tutors for Physics, Chemistry, Biology, and Maths with JEE/NEET foundation support.",
     faq: [{ question: "Do your tutors prepare students for JEE/NEET along with Class 11?", answer: "Yes — many of our Class 11 Science tutors are trained to align board preparation with JEE/NEET foundation requirements." }, ...commonFAQs("CBSE", "Class 11 Science")],
   },
   "cbse-board-class-11-commerce": {
     board: "CBSE", classLabel: "Class 11 Commerce", classNum: 11, category: "senior",
     subjects: [sub("Accountancy", "Accounts"), sub("Business Studies", "BusinessStudies"), sub("Economics", "Economics"), sub("Mathematics", "Maths"), sub("English", "English")],
-    metaTitle: "CBSE Class 11 Commerce Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 11 Commerce Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Top CBSE Class 11 Commerce tutors for Accounts, Business Studies, Economics, and Maths.",
     faq: commonFAQs("CBSE", "Class 11 Commerce"),
   },
   "cbse-board-class-12-science": {
     board: "CBSE", classLabel: "Class 12 Science", classNum: 12, category: "senior",
     subjects: [sub("Physics", "Physics"), sub("Chemistry", "Chemistry"), sub("Biology / Maths", "Biology"), sub("English", "English"), sub("Computer Science", "Computer")],
-    metaTitle: "CBSE Class 12 Science Board Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 12 Science Board Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert CBSE Class 12 Science board tutors for Physics, Chemistry, Biology, Maths — highest board scores guaranteed.",
     faq: [{ question: "Can your tutors help with CBSE Class 12 Science board exam preparation?", answer: "Yes. Our Class 12 Science tutors focus on CBSE board patterns, NCERT mastery, and provide full chapter-wise question bank practice." }, ...commonFAQs("CBSE", "Class 12 Science")],
   },
   "cbse-board-class-12-commerce": {
     board: "CBSE", classLabel: "Class 12 Commerce", classNum: 12, category: "senior",
     subjects: [sub("Accountancy", "Accounts"), sub("Business Studies", "BusinessStudies"), sub("Economics", "Economics"), sub("Mathematics", "Maths2"), sub("English", "English")],
-    metaTitle: "CBSE Class 12 Commerce Board Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "CBSE Class 12 Commerce Board Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Top CBSE Class 12 Commerce tutors for Accounts, Business Studies, Economics, and Maths.",
     faq: commonFAQs("CBSE", "Class 12 Commerce"),
   },
@@ -207,7 +207,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "CBSE Class 11 Arts Tuition | Home & Online Tutors | UberTutor",
+      "CBSE Class 11 Arts Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert CBSE Class 11 Arts tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English. Personalized home and online tuition for academic excellence.",
@@ -218,7 +218,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
           "Do you provide tutors for all CBSE Class 11 Arts subjects?",
 
         answer:
-          "Yes. UberTutor provides expert tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English.",
+          "Yes. Tutoo provides expert tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English.",
       },
 
       {
@@ -249,7 +249,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "CBSE Class 12 Arts Board Tuition | Home & Online Tutors | UberTutor",
+      "CBSE Class 12 Arts Board Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert CBSE Class 12 Arts board exam tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English. Score higher with personalized board exam preparation.",
@@ -279,7 +279,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
   "icse-board-class-1": {
     board: "ICSE", classLabel: "Class 1", classNum: 1, category: "primary",
     subjects: [sub("Mathematics", "Maths"), sub("English", "English"), sub("Environmental Studies", "EVS"), sub("Hindi", "Hindi"), sub("General Knowledge", "GK")],
-    metaTitle: "ICSE Class 1 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 1 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert ICSE Class 1 home tutors and online tuition — activity-based learning for young students.",
     faq: commonFAQs("ICSE", "Class 1"),
   },
@@ -297,7 +297,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("General Knowledge", "GK"),
     ],
 
-    metaTitle: "ICSE Class 2 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 2 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 2 home tutors and online tuition classes for Mathematics, English, EVS, Hindi, and General Knowledge.",
@@ -318,7 +318,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("General Knowledge", "GK"),
     ],
 
-    metaTitle: "ICSE Class 3 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 3 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 3 tuition with personalized home and online tutoring for strong academic foundations.",
@@ -339,7 +339,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("General Knowledge", "GK"),
     ],
 
-    metaTitle: "ICSE Class 4 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 4 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "ICSE Class 4 home tuition and online tutoring by experienced teachers for better academic performance.",
@@ -360,7 +360,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("General Knowledge", "GK"),
     ],
 
-    metaTitle: "ICSE Class 5 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 5 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 5 tutors providing home and online tuition for comprehensive subject support.",
@@ -384,7 +384,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("Computer Science", "Computer"),
     ],
 
-    metaTitle: "ICSE Class 6 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 6 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 6 tutors for Mathematics, Science, History, Geography, English, and Computer Science.",
@@ -408,7 +408,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("Computer Science", "Computer"),
     ],
 
-    metaTitle: "ICSE Class 7 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 7 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Personalized ICSE Class 7 home tuition and online tutoring for better concept clarity and exam readiness.",
@@ -432,7 +432,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       sub("Computer Science", "Computer"),
     ],
 
-    metaTitle: "ICSE Class 8 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 8 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 8 tutors for Mathematics, Science, History, Geography, English, and Computer Science.",
@@ -442,14 +442,14 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
   "icse-board-class-9": {
     board: "ICSE", classLabel: "Class 9", classNum: 9, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Physics", "Physics"), sub("Chemistry", "Chemistry"), sub("Biology", "Biology"), sub("English", "English"), sub("History & Civics", "History"), sub("Geography", "Geography")],
-    metaTitle: "ICSE Class 9 Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 9 Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Top ICSE Class 9 tutors for Maths, Science, English, History, and Geography.",
     faq: [{ question: "How is ICSE Class 9 different from CBSE?", answer: "ICSE has a broader curriculum with greater depth in English, History, and Geography. Our tutors are specifically trained in ICSE question patterns and marking schemes." }, ...commonFAQs("ICSE", "Class 9")],
   },
   "icse-board-class-10": {
     board: "ICSE", classLabel: "Class 10", classNum: 10, category: "secondary",
     subjects: [sub("Mathematics", "Maths"), sub("Physics", "Physics"), sub("Chemistry", "Chemistry"), sub("Biology", "Biology"), sub("English", "English"), sub("History & Civics", "History"), sub("Geography", "Geography")],
-    metaTitle: "ICSE Class 10 Board Tuition | Home & Online Tutors | UberTutor",
+    metaTitle: "ICSE Class 10 Board Tuition | Home & Online Tutors | Tutoo",
     metaDescription: "Expert ICSE Class 10 board tutors for Maths, Science, English, History, and Geography.",
     faq: commonFAQs("ICSE", "Class 10"),
   },
@@ -471,7 +471,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 11 Science Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 11 Science Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 11 Science tutors for Physics, Chemistry, Mathematics, Biology, Computer Science, and English.",
@@ -495,7 +495,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 12 Science Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 12 Science Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 12 Science tutors for board exam preparation in Physics, Chemistry, Mathematics, Biology, and Computer Science.",
@@ -528,7 +528,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 11 Commerce Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 11 Commerce Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 11 Commerce tutors for Accountancy, Economics, Commerce, Mathematics, and English.",
@@ -551,7 +551,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 12 Commerce Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 12 Commerce Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 12 Commerce tutors for board exam preparation in Accountancy, Economics, Commerce, Mathematics, and English.",
@@ -585,7 +585,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 11 Arts Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 11 Arts Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 11 Arts tutors for History, Political Science, Geography, Psychology, Sociology, and English.",
@@ -609,7 +609,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "ICSE Class 12 Arts Tuition | Home & Online Tutors | UberTutor",
+      "ICSE Class 12 Arts Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert ICSE Class 12 Arts tutors for History, Political Science, Geography, Psychology, Sociology, and English board exam preparation.",
@@ -643,7 +643,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 1 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 1 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 1 home tutors and online tuition for Mathematics, English, Marathi, EVS, and General Knowledge.",
@@ -665,7 +665,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 2 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 2 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 2 tuition classes with experienced home and online tutors.",
@@ -687,7 +687,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 3 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 3 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 3 home tuition and online tutoring for Mathematics, English, Marathi, EVS, and General Knowledge. Personalized learning support from experienced tutors.",
@@ -709,7 +709,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 4 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 4 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Professional SSC Class 4 tutors for home and online tuition. Improve Mathematics, English, Marathi, EVS, and overall academic performance.",
@@ -731,7 +731,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 5 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 5 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 5 tuition classes with qualified home tutors and online tutors for Mathematics, English, Marathi, EVS, and General Knowledge.",
@@ -755,7 +755,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 6 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 6 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Best SSC Class 6 tutors for Mathematics, Science, Social Science, English, Marathi, Hindi, and Computer Science. Home and online tuition available.",
@@ -779,7 +779,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 7 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 7 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Experienced SSC Class 7 home tutors and online tutors for Mathematics, Science, Social Science, English, Marathi, Hindi, and Computer Science.",
@@ -803,7 +803,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 8 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 8 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 8 tuition for Mathematics, Science, Social Science, English, Marathi, Hindi, and Computer Science with personalized learning plans.",
@@ -829,7 +829,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 9 Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 9 Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 9 tutors for Mathematics, Science, History, Geography, Economics, English, Marathi, and IT.",
@@ -855,7 +855,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 10 Board Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 10 Board Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 10 board exam tutors for Mathematics, Science, English, Marathi, History, Geography, Economics, and IT.",
@@ -890,7 +890,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 11 Science Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 11 Science Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 11 Science tutors for Physics, Chemistry, Mathematics, Biology, Computer Science, and English. Personalized home and online tuition.",
@@ -913,7 +913,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 12 Science Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 12 Science Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 12 Science board exam tutors for Physics, Chemistry, Mathematics, Biology, and Computer Science.",
@@ -935,7 +935,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 11 Commerce Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 11 Commerce Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 11 Commerce tutors for Accountancy, Economics, Business Studies, Mathematics, and English.",
@@ -957,7 +957,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 12 Commerce Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 12 Commerce Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 12 Commerce board exam tutors for Accountancy, Economics, Business Studies, Mathematics, and English.",
@@ -981,7 +981,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 11 Arts Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 11 Arts Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 11 Arts tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English.",
@@ -1005,7 +1005,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "SSC Class 12 Arts Tuition | Home & Online Tutors | UberTutor",
+      "SSC Class 12 Arts Tuition | Home & Online Tutors | Tutoo",
 
     metaDescription:
       "Expert SSC Class 12 Arts board exam tutors for History, Political Science, Geography, Psychology, Sociology, Economics, and English.",
@@ -1027,7 +1027,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "JEE Coaching & Home Tutors | Online JEE Preparation | UberTutor",
+      "JEE Coaching & Home Tutors | Online JEE Preparation | Tutoo",
 
     metaDescription:
       "Expert JEE tutors for Physics, Chemistry, and Mathematics. Personalized home tuition and online coaching for JEE Main and JEE Advanced preparation.",
@@ -1059,7 +1059,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "NEET Coaching & Home Tutors | Online NEET Preparation | UberTutor",
+      "NEET Coaching & Home Tutors | Online NEET Preparation | Tutoo",
 
     metaDescription:
       "Expert NEET tutors for Physics, Chemistry, and Biology. Personalized home tuition and online coaching for medical entrance exam preparation.",
@@ -1092,7 +1092,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
     ],
 
     metaTitle:
-      "CET Coaching & Home Tutors | Online CET Preparation | UberTutor",
+      "CET Coaching & Home Tutors | Online CET Preparation | Tutoo",
 
     metaDescription:
       "Expert CET tutors for Physics, Chemistry, Mathematics, and Biology. Personalized home tuition and online coaching for state-level CET exams.",
@@ -1106,7 +1106,7 @@ export const BOARD_CLASS_DATA: Record<string, BoardClassEntry> = {
       {
         question: "Are online CET classes available?",
         answer:
-          "Yes, UberTutor offers both home tuition and live online CET coaching.",
+          "Yes, Tutoo offers both home tuition and live online CET coaching.",
       },
       ...commonFAQs("Competitive Exams", "CET Preparation"),
     ],
@@ -1178,7 +1178,7 @@ export const HOW_IT_WORKS = [
   { num: "06", title: "Track Progress", desc: "Access real-time reports, attendance logs, and tutor feedback on your dashboard.", color: "#2563EB", glow: "rgba(37,99,235,0.3)" },
 ];
 
-// ── Why UberTutor (shared) ───────────────────────────────────────────────────
+// ── Why Tutoo (shared) ───────────────────────────────────────────────────
 export const WHY_FEATURES = [
   { icon: "✅", title: "Verified Tutors", desc: "Every tutor passes background checks, document verification, and expert interviews.", grad: "from-[#16C47F] to-[#2563EB]" },
   { icon: "🎯", title: "Personalised Learning", desc: "Custom study plans tailored to your child's pace, goals, and learning style.", grad: "from-[#2563EB] to-[#7C3AED]" },

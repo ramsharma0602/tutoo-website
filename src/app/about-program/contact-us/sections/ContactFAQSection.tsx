@@ -23,7 +23,7 @@ export default function ContactFAQSection() {
     {
       question: "Do you offer online tuition?",
       answer:
-        "Yes. UberTutor provides both online and home tuition options across multiple boards, subjects, and academic levels.",
+        "Yes. Tutoo provides both online and home tuition options across multiple boards, subjects, and academic levels.",
     },
     {
       question: "How can I apply as a tutor?",

@@ -338,7 +338,7 @@ export function WhyParentsTrustSection() {
             transition={{ duration: 0.65, delay: 0.18 }}
             className="text-lg leading-8 text-[#64748B]"
           >
-            Parents choose UberTutor because we combine expert educators, technology-driven
+            Parents choose Tutoo because we combine expert educators, technology-driven
             learning, progress visibility, and student-focused support to create better
             educational outcomes every single day.
           </motion.p>
@@ -517,7 +517,7 @@ export function WhyParentsTrustSection() {
                 >
                   Ready to experience the{" "}
                   <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
-                    UberTutor difference?
+                    Tutoo difference?
                   </span>
                 </h3>
                 <p className="text-white/50 text-base leading-7 max-w-lg">

@@ -421,7 +421,7 @@ export function Step03TutorMatch() {
             <div className="flex flex-col gap-4 mb-9">
               {[
                 "Our intelligent tutor matching system automatically recommends the most suitable tutors based on the student's academic needs, learning goals, preferences, and location.",
-                "Instead of manually comparing dozens of tutor profiles, UberTutor analyses multiple factors to ensure the best possible learning experience.",
+                "Instead of manually comparing dozens of tutor profiles, Tutoo analyses multiple factors to ensure the best possible learning experience.",
               ].map((para, i) => (
                 <motion.p key={i}
                   initial={{ opacity: 0, y: 10 }}

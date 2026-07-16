@@ -186,7 +186,7 @@ export function OurMissionSection() {
             className="max-w-3xl mx-auto mb-14"
           >
             <p className="text-xl leading-9 text-[#334155] mb-5">
-              At UberTutor, we believe that every student deserves personalised learning support, expert guidance, and the opportunity to achieve their full academic potential.
+              At Tutoo, we believe that every student deserves personalised learning support, expert guidance, and the opportunity to achieve their full academic potential.
             </p>
             <p className="text-lg leading-8 text-[#64748B]">
               Our mission is to bridge the gap between students and quality education through technology, verified educators, and personalised learning experiences that create measurable outcomes.
@@ -292,7 +292,7 @@ export function OurMissionSection() {
                 <span className="text-white text-xs font-bold">UT</span>
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-[#0F172A]">UberTutor Team</p>
+                <p className="text-sm font-bold text-[#0F172A]">Tutoo Team</p>
                 <p className="text-xs text-[#94A3B8]">Education for Every Student</p>
               </div>
             </div>
@@ -309,7 +309,7 @@ export function OurMissionSection() {
             className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-black text-[#0B1220] tracking-tight mb-4"
               style={{ fontFamily: "var(--font-heading)" }}>
-              The UberTutor{" "}
+              The Tutoo{" "}
               <span className="bg-gradient-to-r from-[#2563EB] to-[#16C47F] bg-clip-text text-transparent">
                 Learning Journey
               </span>
@@ -325,7 +325,7 @@ export function OurMissionSection() {
 
             {[
               { emoji: "🎓", step: "01", title: "Student", subtitle: "Needs Support", desc: "A student struggling with concepts, exams, or confidence reaches out for help.", color: "#2563EB", bg: "rgba(37,99,235,0.07)", border: "rgba(37,99,235,0.15)" },
-              { emoji: "✦",  step: "02", title: "UberTutor", subtitle: "AI Matching", desc: "Our platform matches the student with a verified, compatible, expert tutor within 24 hours.", color: "#16C47F", bg: "rgba(22,196,127,0.07)", border: "rgba(22,196,127,0.15)" },
+              { emoji: "✦",  step: "02", title: "Tutoo", subtitle: "AI Matching", desc: "Our platform matches the student with a verified, compatible, expert tutor within 24 hours.", color: "#16C47F", bg: "rgba(22,196,127,0.07)", border: "rgba(22,196,127,0.15)" },
               { emoji: "🏆", step: "03", title: "Success", subtitle: "Measurable Growth", desc: "The student achieves higher scores, stronger confidence, and a lifelong love for learning.", color: "#7C3AED", bg: "rgba(124,58,237,0.07)", border: "rgba(124,58,237,0.15)" },
             ].map((item, i) => (
               <motion.div key={item.step}
@@ -430,7 +430,7 @@ export function OurMissionSection() {
               <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">Mission</span>
             </h2>
             <p className="text-lg text-[#64748B] leading-8 mb-10 max-w-xl mx-auto">
-              Whether you're a parent seeking the best for your child, a student ready to grow, or a tutor wanting to make an impact — UberTutor is built for you.
+              Whether you're a parent seeking the best for your child, a student ready to grow, or a tutor wanting to make an impact — Tutoo is built for you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button className="group h-14 px-9 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-bold shadow-xl shadow-[#16C47F]/20 hover:scale-[1.02] hover:shadow-[#2563EB]/30 transition-all duration-300 flex items-center gap-2">

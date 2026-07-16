@@ -321,7 +321,7 @@ export function GetInTouchSection() {
                         <Phone className="absolute left-3.5 w-4 h-4 text-[#94A3B8]" />
                         <input
                           type="tel"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 8446146039"
                           value={form.phone}
                           required
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}

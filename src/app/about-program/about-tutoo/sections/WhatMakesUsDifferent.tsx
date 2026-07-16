@@ -185,7 +185,7 @@ export default function WhatMakesUsDifferent() {
             mx-auto
             "
           >
-            UberTutor combines technology, verified educators,
+            Tutoo combines technology, verified educators,
             personalized learning strategies, and continuous
             progress monitoring to create a smarter and more
             effective learning experience.
@@ -372,7 +372,7 @@ export default function WhatMakesUsDifferent() {
             leading-8
             "
           >
-            UberTutor is not just about finding a tutor.
+            Tutoo is not just about finding a tutor.
             We bring together assessments, verified educators,
             technology-driven learning, performance monitoring,
             and parent transparency to create meaningful

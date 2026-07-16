@@ -192,7 +192,7 @@ export default function WhoWeAreSection() {
               "
             >
               <p>
-                UberTutor is a modern learning platform
+                Tutoo is a modern learning platform
                 designed to bridge the gap between students
                 seeking academic support and qualified
                 educators passionate about teaching.
@@ -289,7 +289,7 @@ export default function WhoWeAreSection() {
             >
               <img
                 src="https://s3.amazonaws.com/m.definedlearning.com/marketing-site/images/blog/Screen%20Shot%202022-01-12%20at%2011.51.44%20AM.png"
-                alt="UberTutor Learning Ecosystem"
+                alt="Tutoo Learning Ecosystem"
                 className="
                 w-full
                 h-[700px]

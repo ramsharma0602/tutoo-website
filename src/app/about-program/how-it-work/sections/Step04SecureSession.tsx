@@ -22,7 +22,7 @@ const verificationFlow = [
     {
         emoji: "👨‍🏫", step: "01",
         title: "Tutor Starts Session",
-        desc: "Tutor reaches location and initiates the session through the UberTutor app.",
+        desc: "Tutor reaches location and initiates the session through the Tutoo app.",
         color: "#2563EB", glow: "rgba(37,99,235,0.3)", border: "rgba(37,99,235,0.3)", bg: "rgba(37,99,235,0.07)",
     },
     {
@@ -407,7 +407,7 @@ export function Step04SecureSession() {
 
                         <div className="flex flex-col gap-4 mb-9">
                             {[
-                                "UberTutor's secure session verification system ensures that the correct tutor, correct student, and correct session are authenticated before learning begins.",
+                                "Tutoo's secure session verification system ensures that the correct tutor, correct student, and correct session are authenticated before learning begins.",
                                 "Every session is verified, recorded, and tracked for complete transparency and accountability.",
                             ].map((para, i) => (
                                 <motion.p key={i}

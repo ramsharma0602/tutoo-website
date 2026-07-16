@@ -23,6 +23,7 @@ import {SafetyVerificationSection } from "./for-parents/SafetyVerificationSectio
 import { ParentsTestimonials } from "./for-parents/ParentsTestimonials";
 import { ParentsFAQ } from "./for-parents/ParentsFAQ";
 import { ParentResourcesSection } from "./for-parents/ParentResourcesSection";
+import { CityAvailabilitySection } from "./CityAvailabilitySection";
 export default function ForParentsPage() {
 
     const features = [
@@ -267,6 +268,7 @@ export default function ForParentsPage() {
                 </div>
             </section>
 
+            <CityAvailabilitySection variant="compact" />
 
             {/* WHY PARENTS CHOOSE */}
             <section className="relative z-10 py-28">

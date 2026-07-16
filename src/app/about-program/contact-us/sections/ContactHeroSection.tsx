@@ -110,7 +110,7 @@ function ContactVisual() {
       <div className="relative rounded-[36px] overflow-hidden shadow-[0_28px_90px_rgba(15,23,42,0.13)] border border-white/60">
         <img
           src="https://img.magnific.com/free-photo/multiethnic-customer-support-team-work_482257-121935.jpg?semt=ais_hybrid&w=740&q=80"
-          alt="UberTutor support team"
+          alt="Tutoo support team"
           className="w-full h-[540px] object-cover object-top"
         />
         {/* Gradient overlays */}
@@ -259,7 +259,7 @@ export function ContactHeroSection() {
                 className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
               >
-                Contact UberTutor
+                Contact Tutoo
               </span>
               <Sparkles className="w-4 h-4 text-[#16C47F]" />
             </motion.div>
@@ -417,7 +417,7 @@ export function ContactHeroSection() {
             {
               icon: Phone,
               title: "Call Us",
-              line1: "+91 98765 43210",
+              line1: "+91 8446146039",
               line2: "Mon – Sat, 8am – 8pm",
               from: "#16C47F",
               to: "#2563EB",

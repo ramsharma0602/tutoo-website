@@ -4,6 +4,8 @@ import {
   HelpCircle, Plus, Minus, Users, ShieldCheck, TrendingUp,
   MessageCircle, ArrowRight, Sparkles
 } from 'lucide-react';
+import PageSchema from '../../seo/PageSchema';
+import { getFAQSchema } from '../../seo/schema';
 
 const faqs = [
   {
@@ -59,6 +61,7 @@ export function FAQ() {
 
   return (
     <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
+      <PageSchema jsonLd={getFAQSchema(faqs)} />
       {/* Ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#16C47F]/7 to-transparent rounded-full blur-3xl" />
@@ -128,7 +131,6 @@ export function FAQ() {
             </div>
           </motion.div>
 
-          {/* RIGHT — accordion */}
           {/* RIGHT — accordion */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
@@ -205,7 +207,6 @@ export function FAQ() {
               );
             })}
           </motion.div>
-          
         </div>
       </div>
     </section>

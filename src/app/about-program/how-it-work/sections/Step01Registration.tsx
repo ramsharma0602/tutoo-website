@@ -72,7 +72,7 @@ function IllustrationPanel() {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-black text-[#0B1220]">UberTutor</span>
+              <span className="text-sm font-black text-[#0B1220]">Tutoo</span>
             </div>
             <span className="text-xs font-bold px-3 py-1.5 rounded-full text-[#16C47F]"
               style={{ background: "rgba(22,196,127,0.09)", border: "1px solid rgba(22,196,127,0.22)" }}>
@@ -243,7 +243,7 @@ export function Step01Registration() {
             {/* Description */}
             <div className="flex flex-col gap-4 mb-9">
               {[
-                "Parents provide basic academic details to help UberTutor understand the student's learning needs, academic goals, preferred subjects, and educational requirements.",
+                "Parents provide basic academic details to help Tutoo understand the student's learning needs, academic goals, preferred subjects, and educational requirements.",
                 "This information helps us create a personalised learning experience and match students with the most suitable verified tutors.",
               ].map((para, i) => (
                 <motion.p key={i}

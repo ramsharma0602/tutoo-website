@@ -359,7 +359,7 @@ export function CoreValuesV2Section() {
             transition={{ duration: 0.65, delay: 0.18 }}
             className="text-lg lg:text-xl leading-9 text-[#64748B]"
           >
-            At UberTutor, our values shape every learning experience, every parent interaction,
+            At Tutoo, our values shape every learning experience, every parent interaction,
             and every decision we make as we help students achieve their academic goals.
           </motion.p>
         </div>
@@ -439,7 +439,7 @@ export function CoreValuesV2Section() {
                 </div>
                 <div className="text-left">
                   <p className="text-sm font-bold text-[#0F172A]">Students · Tutors · Parents</p>
-                  <p className="text-xs text-[#64748B]">The UberTutor community</p>
+                  <p className="text-xs text-[#64748B]">The Tutoo community</p>
                 </div>
                 <div className="ml-6 flex gap-1.5">
                   {["#16C47F", "#2563EB", "#7C3AED", "#F59E0B"].map((c) => (

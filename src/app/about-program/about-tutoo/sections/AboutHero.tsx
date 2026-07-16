@@ -122,7 +122,7 @@ export default function AboutHero() {
               🎓
 
               <span className="font-semibold text-[#16C47F]">
-                ABOUT UBERTUTOR
+                ABOUT TUTOO
               </span>
             </motion.div>
 
@@ -177,7 +177,7 @@ export default function AboutHero() {
               text-[#64748B]
               "
             >
-              UberTutor connects students with
+              Tutoo connects students with
               expert tutors through personalized
               home and online tuition programs
               supported by technology,
@@ -295,7 +295,7 @@ export default function AboutHero() {
             >
               <img
                 src="https://www.americanboard.org/blog/wp-content/uploads/2020/04/shutterstock_671773849-scaled.jpg"
-                alt="UberTutor Learning"
+                alt="Tutoo Learning"
                 className="
                 w-full
                 h-[620px]
