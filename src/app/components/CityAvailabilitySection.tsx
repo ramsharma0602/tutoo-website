@@ -231,7 +231,7 @@ function CityAvailabilityFull() {
 
 function CityAvailabilityCompact() {
     return (
-        <section className="relative py-6 bg-[#F8FAFC]">
+        <section className="relative py-6 bg-[#F8FAFC] mt-19">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
