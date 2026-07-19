@@ -18,6 +18,7 @@ import { assessmentValidation } from './validation/assessmentValidation';
 
 import { submitAssessment, getBoards, getClasses } from './services/assessmentApi';
 import { Button } from '../components/ui/button';
+import SearchableSelect from '../components/ui/searchable-select';
 import SubjectFetcher from './SubjectFetcher';
 import type { AssessmentSubject } from './SubjectFetcher';
 
@@ -417,109 +418,33 @@ export default function BookAssessmentForm({
                         {/* ---------------------------------------------------------------- */}
                         <div>
 
-                            <div className="relative">
+                            <SearchableSelect
+                                options={boards.map((b) => ({
+                                    label: b.name,
+                                    value: String(b.id),
+                                }))}
+                                value={values.boardId}
+                                onChange={(selectedId, option) => {
+                                    setFieldValue('boardId', selectedId);
+                                    setFieldValue('board', option.label);
 
-                                {/* Icon */}
-                                <School className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B] z-10" />
-
-                                {/* Select */}
-                                <select
-                                    name="boardId"
-                                    value={values.boardId}
-                                    onChange={(e) => {
-                                        const selectedId = e.target.value;
-                                        const selectedBoard = boards.find(
-                                            (b) => String(b.id) === selectedId
-                                        );
-
-                                        setFieldValue('boardId', selectedId);
-                                        setFieldValue('board', selectedBoard?.name || '');
-
-                                        // Board changed — class + subjects no longer apply
-                                        setFieldValue('classId', '');
-                                        setFieldValue('class_name', '');
-                                        setFieldValue('subjects', []);
-                                        setFieldValue('subject_ids', []);
-                                    }}
-                                    onBlur={() => {
-                                        setFieldTouched('boardId', true);
-                                        setFieldTouched('board', true);
-                                    }}
-
-                                    className={`
-                                        w-full
-                                        h-14
-                                        rounded-2xl
-                                        border
-                                        bg-white/80
-                                        backdrop-blur-xl
-                                        pl-12
-                                        pr-12
-                                        text-sm
-                                        font-medium
-                                        text-[#0F172A]
-                                        outline-none
-                                        appearance-none
-                                        transition-all
-                                        duration-300
-                                        shadow-sm
-
-                                    ${errors.board && touched.board
-
-                                                                        ? `
-                                        border-red-400
-                                        bg-red-50/40
-                                        focus:ring-4
-                                        focus:ring-red-100
-                                        `
-
-                                                                        : `
-                                        border-[#E2E8F0]
-                                        hover:border-[#2563EB]/30
-                                        focus:border-[#2563EB]
-                                        focus:ring-4
-                                        focus:ring-[#2563EB]/10
-                                        `
-                                                                    }
-                                    `}
-                                >
-
-                                    <option value="">
-                                        {loadingBoards ? 'Loading boards...' : 'Select Board'}
-                                    </option>
-
-                                    {boards.map((board) => (
-                                        <option key={board.id} value={board.id}>
-                                            {board.name}
-                                        </option>
-                                    ))}
-
-                                </select>
-
-                                {/* Arrow */}
-                                <svg
-                                    className="
-                                    absolute
-                                    right-4
-                                    top-1/2
-                                    -translate-y-1/2
-                                    w-5
-                                    h-5
-                                    text-[#64748B]
-                                    pointer-events-none
-                                    "
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                    />
-                                </svg>
-                            </div>
+                                    // Board changed — class + subjects no longer apply
+                                    setFieldValue('classId', '');
+                                    setFieldValue('class_name', '');
+                                    setFieldValue('subjects', []);
+                                    setFieldValue('subject_ids', []);
+                                }}
+                                onBlur={() => {
+                                    setFieldTouched('boardId', true);
+                                    setFieldTouched('board', true);
+                                }}
+                                placeholder="Select Board"
+                                searchPlaceholder="Search boards..."
+                                loading={loadingBoards}
+                                loadingText="Loading boards..."
+                                error={Boolean(errors.board && touched.board)}
+                                icon={<School className="w-5 h-5" />}
+                            />
 
                             {/* Error */}
                             {errors.board &&
@@ -536,23 +461,15 @@ export default function BookAssessmentForm({
                         {/* ---------------------------------------------------------------- */}
                         <div>
 
-                            <div className="relative">
-
-                                {/* Icon */}
-                                <GraduationCap className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B] z-10" />
-
-                            {/* Select */}
-                            <select
-                                name="classId"
+                            <SearchableSelect
+                                options={classes.map((c) => ({
+                                    label: c.name,
+                                    value: String(c.id),
+                                }))}
                                 value={values.classId}
-                                onChange={(e) => {
-                                    const selectedId = e.target.value;
-                                    const selectedClass = classes.find(
-                                        (c) => String(c.id) === selectedId
-                                    );
-
+                                onChange={(selectedId, option) => {
                                     setFieldValue('classId', selectedId);
-                                    setFieldValue('class_name', selectedClass?.name || '');
+                                    setFieldValue('class_name', option.label);
 
                                     // Class changed — subjects no longer apply
                                     setFieldValue('subjects', []);
@@ -562,77 +479,13 @@ export default function BookAssessmentForm({
                                     setFieldTouched('classId', true);
                                     setFieldTouched('class_name', true);
                                 }}
-                                className={`
-                                    w-full
-                                    h-14
-                                    rounded-2xl
-                                    border
-                                    bg-white/80
-                                    backdrop-blur-xl
-                                    pl-12
-                                    pr-12
-                                    text-sm
-                                    font-medium
-                                    text-[#0F172A]
-                                    outline-none
-                                    appearance-none
-                                    transition-all
-                                    duration-300
-                                    shadow-sm
-
-                                    ${
-                                        errors.class_name && touched.class_name
-                                            ? `
-                                                border-red-400
-                                                bg-red-50/40
-                                                focus:ring-4
-                                                focus:ring-red-100
-                                            `
-                                            : `
-                                                border-[#E2E8F0]
-                                                hover:border-[#2563EB]/30
-                                                focus:border-[#2563EB]
-                                                focus:ring-4
-                                                focus:ring-[#2563EB]/10
-                                            `
-                                    }
-                                `}
-                            >
-                                <option value="">
-                                    {loadingClasses ? 'Loading classes...' : 'Select Class'}
-                                </option>
-
-                                {classes.map((cls) => (
-                                    <option key={cls.id} value={cls.id}>
-                                        {cls.name}
-                                    </option>
-                                ))}
-                            </select>
-
-                                {/* Arrow */}
-                                <svg
-                                    className="
-        absolute
-        right-4
-        top-1/2
-        -translate-y-1/2
-        w-5
-        h-5
-        text-[#64748B]
-        pointer-events-none
-        "
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                    />
-                                </svg>
-                            </div>
+                                placeholder="Select Class"
+                                searchPlaceholder="Search classes..."
+                                loading={loadingClasses}
+                                loadingText="Loading classes..."
+                                error={Boolean(errors.class_name && touched.class_name)}
+                                icon={<GraduationCap className="w-5 h-5" />}
+                            />
 
                             {/* Error */}
                             {errors.class_name &&

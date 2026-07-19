@@ -223,8 +223,8 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                                             <div className="p-8 grid sm:grid-cols-3 gap-6">
                                                 {(
                                                     [
-                                                        { icon: Mail, label: "Email", value: "privacy@tutoolearning.com", href: "mailto:privacy@tutoolearning.com" },
-                                                        { icon: Phone, label: "Phone", value: "+91 123 456 7890", href: "tel:+911234567890" },
+                                                        { icon: Mail, label: "Email", value: "info@tutoolearning.com", href: "mailto:info@tutoolearning.com" },
+                                                        { icon: Phone, label: "Phone", value: "+91 8446146039", href: "tel:+918446146039" },
                                                         { icon: MapPin, label: "Address", value: "Bangalore, Karnataka, India", href: null },
                                                     ] as const
                                                 ).map((item) => {

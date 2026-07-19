@@ -57,8 +57,8 @@ export const seoConfig = {
    * "+91 123 456 7890" reads like a placeholder pattern.
    */
   business: {
-    email: "hello@tutoolearning.com",
-    phone: "+91 123 456 7890", // TODO: confirm this is the real business number
+    email: "info@tutoolearning.com",
+    phone: "+91 8446146039",
     whatsapp: "", // TODO: add if available
     // No fixed storefront address provided — modelled as a service-area
     // business (serviceArea in schema) rather than a fake street address.

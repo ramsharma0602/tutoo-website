@@ -128,7 +128,7 @@ const CULTURE_CHIPS = [
   { label: "Always Learning", color: "#16C47F" },
 ];
 
-const CAREERS_EMAIL = "careers@tutoolearning.com";
+const CAREERS_EMAIL = "info@tutoolearning.com";
 
 /* ─────────────────────────────────────────────
    HERO

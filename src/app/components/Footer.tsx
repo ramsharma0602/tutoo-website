@@ -36,26 +36,44 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-7 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
+            {/* Same logo + name lockup as the header (Navbar), with colors
+                adapted for the dark footer background */}
+            <Link
+              to="/"
+              className="inline-flex items-center gap-3 mb-6 select-none"
+              aria-label="Tutoo Learning — Home"
+            >
+              {/* Logo Image */}
               <img
-                src="/tutoo_assets/png/logo_full.png"
-                alt="Tutoo"
-                className="h-11 w-auto object-contain"
+                src="/tutoo_assets/png/logo_icon.png"
+                alt="Tutoo Logo"
+                className="h-14 w-auto object-contain"
               />
-            </div>
+
+              {/* Brand Name */}
+              <span className="flex flex-col leading-none">
+                <span className="text-xl font-black tracking-tight text-white">
+                  Tutoo Learning
+                </span>
+
+                <span className="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold mt-1">
+                  Smart Learning Platform
+                </span>
+              </span>
+            </Link>
 
             <p className="text-gray-400 mb-6 leading-relaxed">
               India's First AI-Powered Learning Operating System. Transforming education through technology, verified tutors, and measurable outcomes.
             </p>
 
             <div className="space-y-3">
-              <a href="mailto:hello@Tutoo.com" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
+              <a href="mailto:info@tutoolearning.com" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>hello@Tutoo.com</span>
+                <span>info@tutoolearning.com</span>
               </a>
-              <a href="tel:+911234567890" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
+              <a href="tel:+918446146039" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
                 <Phone className="w-5 h-5" />
-                <span>+91 123 456 7890</span>
+                <span>+91 8446146039</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />

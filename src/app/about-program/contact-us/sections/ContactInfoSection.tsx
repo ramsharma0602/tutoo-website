@@ -42,7 +42,7 @@ const CONTACT_CARDS = [
     glow: "rgba(22,196,127,0.22)",
     bg: "rgba(22,196,127,0.06)",
     chipColor: "#16C47F",
-    action: "tel:+ 8446146039",
+    action: "tel:+918446146039",
     cta: "Call Now",
     delay: 0.08,
     extraLine: null,
@@ -99,7 +99,7 @@ const CONTACT_CARDS = [
     glow: "rgba(22,196,127,0.22)",
     bg: "rgba(22,196,127,0.06)",
     chipColor: "#16C47F",
-    action: "https://wa.me/919876543210",
+    action: "https://wa.me/918446146039",
     cta: "Chat on WhatsApp",
     delay: 0.32,
     extraLine: null,
@@ -418,7 +418,7 @@ export function ContactInfoSection() {
 
             {/* CTA */}
             <motion.a
-              href="tel:+919876543210"
+              href="tel:+918446146039"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="flex-shrink-0 h-12 px-8 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]

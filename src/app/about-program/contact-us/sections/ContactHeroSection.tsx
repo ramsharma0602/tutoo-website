@@ -426,7 +426,7 @@ export function ContactHeroSection() {
             {
               icon: Mail,
               title: "Email Us",
-              line1: "hello@ubertutor.in",
+              line1: "info@tutoolearning.com",
               line2: "Response within 4 hours",
               from: "#2563EB",
               to: "#7C3AED",

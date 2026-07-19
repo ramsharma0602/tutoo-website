@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 
 import { Button } from '../components/ui/button';
+import SearchableSelect from '../components/ui/searchable-select';
 
 import { tutorApplicationValidation } from './validation/tutorApplicationValidation'
 
@@ -111,32 +112,21 @@ export default function TutorApplicationForm({
         fetchClasses();
     }, []);
 
-    const selectClass = `
-        relative
-        h-16
-        w-full
-        appearance-none
-        rounded-2xl
-        bg-white/90
-        backdrop-blur-xl
-        border
-        px-5
-        pr-14
-        outline-none
-        text-[#0F172A]
-        font-medium
-        shadow-[0_8px_30px_rgba(15,23,42,0.05)]
-        transition-all
-        duration-300
-        border-[#E2E8F0]
-        focus:border-[#2563EB]
-        focus:ring-4
-        focus:ring-blue-100
-        hover:border-[#CBD5E1]
-        disabled:bg-slate-100
-        disabled:text-slate-400
-        disabled:cursor-not-allowed
-        `;
+    const qualificationOptions = [
+        'Graduate',
+        'Post Graduate',
+        'B.Ed',
+        'M.Ed',
+        'PhD',
+    ].map((q) => ({ label: q, value: q }));
+
+    const experienceOptions = [
+        'Fresher',
+        '1–2 Years',
+        '3–5 Years',
+        '5–10 Years',
+        '10+ Years',
+    ].map((e) => ({ label: e, value: e }));
 
     return (
 
@@ -363,79 +353,23 @@ export default function TutorApplicationForm({
                                         {/* Glow Effect */}
                                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#16C47F]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
-                                        <select
-                                            name="qualification"
+                                        <SearchableSelect
+                                            options={qualificationOptions}
                                             value={values.qualification}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            className={`
-                                            relative
-                                            h-16
-                                            w-full
-                                            appearance-none
-                                            rounded-2xl
-                                            bg-white/90
-                                            backdrop-blur-xl
-                                            border
-                                            px-5
-                                            pr-14
-                                            outline-none
-                                            text-[#0F172A]
-                                            font-medium
-                                            shadow-[0_8px_30px_rgba(15,23,42,0.05)]
-                                            transition-all
-                                            duration-300
-                                            ${errors.qualification &&
-                                                    touched.qualification
-                                                    ? 'border-red-400 focus:ring-4 focus:ring-red-100'
-                                                    : 'border-[#E2E8F0] focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100 hover:border-[#CBD5E1]'
-                                                }
-                                            `}
-                                        >
-
-                                            <option value="">
-                                                Select Qualification
-                                            </option>
-
-                                            <option value="Graduate">
-                                                Graduate
-                                            </option>
-
-                                            <option value="Post Graduate">
-                                                Post Graduate
-                                            </option>
-
-                                            <option value="B.Ed">
-                                                B.Ed
-                                            </option>
-
-                                            <option value="M.Ed">
-                                                M.Ed
-                                            </option>
-
-                                            <option value="PhD">
-                                                PhD
-                                            </option>
-                                        </select>
-
-                                        {/* Custom Arrow */}
-                                        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-
-                                            <svg
-                                                className="w-5 h-5 text-[#64748B]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </div>
+                                            onChange={(v) =>
+                                                setFieldValue('qualification', v)
+                                            }
+                                            onBlur={() =>
+                                                setFieldTouched('qualification', true)
+                                            }
+                                            placeholder="Select Qualification"
+                                            searchPlaceholder="Search qualifications..."
+                                            error={Boolean(
+                                                errors.qualification &&
+                                                touched.qualification
+                                            )}
+                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                        />
                                     </div>
 
                                     {errors.qualification &&
@@ -459,79 +393,23 @@ export default function TutorApplicationForm({
                                         {/* Glow Effect */}
                                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
-                                        <select
-                                            name="experience"
+                                        <SearchableSelect
+                                            options={experienceOptions}
                                             value={values.experience}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            className={`
-                                            relative
-                                            h-16
-                                            w-full
-                                            appearance-none
-                                            rounded-2xl
-                                            bg-white/90
-                                            backdrop-blur-xl
-                                            border
-                                            px-5
-                                            pr-14
-                                            outline-none
-                                            text-[#0F172A]
-                                            font-medium
-                                            shadow-[0_8px_30px_rgba(15,23,42,0.05)]
-                                            transition-all
-                                            duration-300
-                                            ${errors.experience &&
-                                                    touched.experience
-                                                    ? 'border-red-400 focus:ring-4 focus:ring-red-100'
-                                                    : 'border-[#E2E8F0] focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100 hover:border-[#CBD5E1]'
-                                                }
-                                        `}
-                                        >
-
-                                            <option value="">
-                                                Select Experience
-                                            </option>
-
-                                            <option value="Fresher">
-                                                Fresher
-                                            </option>
-
-                                            <option value="1–2 Years">
-                                                1–2 Years
-                                            </option>
-
-                                            <option value="3–5 Years">
-                                                3–5 Years
-                                            </option>
-
-                                            <option value="5–10 Years">
-                                                5–10 Years
-                                            </option>
-
-                                            <option value="10+ Years">
-                                                10+ Years
-                                            </option>
-                                        </select>
-
-                                        {/* Custom Arrow */}
-                                        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-
-                                            <svg
-                                                className="w-5 h-5 text-[#64748B]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </div>
+                                            onChange={(v) =>
+                                                setFieldValue('experience', v)
+                                            }
+                                            onBlur={() =>
+                                                setFieldTouched('experience', true)
+                                            }
+                                            placeholder="Select Experience"
+                                            searchPlaceholder="Search experience..."
+                                            error={Boolean(
+                                                errors.experience &&
+                                                touched.experience
+                                            )}
+                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                        />
                                     </div>
 
                                     {errors.experience &&
@@ -560,43 +438,30 @@ export default function TutorApplicationForm({
 
                                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#16C47F]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
-                                        <select
+                                        <SearchableSelect
                                             id="boardId"
+                                            options={boards.map((b) => ({
+                                                label: b.name,
+                                                value: String(b.id),
+                                            }))}
                                             value={values.boardId}
-                                            onChange={(e) => {
-                                                setFieldValue("boardId", e.target.value);
-                                                setFieldValue("classId", "");
-                                                setFieldValue("subjectId", "");
+                                            onChange={(v) => {
+                                                setFieldValue('boardId', v);
+                                                setFieldValue('classId', '');
+                                                setFieldValue('subjectId', '');
                                             }}
-                                            className={`${selectClass} ${touched.boardId && errors.boardId
-                                                ? "border-red-400 focus:ring-red-100"
-                                                : ""
-                                                }`}
-                                        >
-                                            <option value="">Select Board</option>
-
-                                            {boards.map((board) => (
-                                                <option key={board.id} value={board.id}>
-                                                    {board.name}
-                                                </option>
-                                            ))}
-                                        </select>
-
-                                        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <svg
-                                                className="w-5 h-5 text-[#64748B]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </div>
+                                            onBlur={() =>
+                                                setFieldTouched('boardId', true)
+                                            }
+                                            placeholder="Select Board"
+                                            searchPlaceholder="Search boards..."
+                                            loading={loadingBoards}
+                                            loadingText="Loading boards..."
+                                            error={Boolean(
+                                                touched.boardId && errors.boardId
+                                            )}
+                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                        />
                                     </div>
 
                                     {touched.boardId && errors.boardId && (
@@ -619,42 +484,29 @@ export default function TutorApplicationForm({
 
                                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
-                                        <select
+                                        <SearchableSelect
                                             id="classId"
+                                            options={classes.map((c) => ({
+                                                label: c.name,
+                                                value: String(c.id),
+                                            }))}
                                             value={values.classId}
-                                            onChange={(e) => {
-                                                setFieldValue("classId", e.target.value);
-                                                setFieldValue("subjectId", "");
+                                            onChange={(v) => {
+                                                setFieldValue('classId', v);
+                                                setFieldValue('subjectId', '');
                                             }}
-                                            className={`${selectClass} ${touched.classId && errors.classId
-                                                ? "border-red-400 focus:ring-red-100"
-                                                : ""
-                                                }`}
-                                        >
-                                            <option value="">Select Class</option>
-
-                                            {classes.map((cls) => (
-                                                <option key={cls.id} value={cls.id}>
-                                                    {cls.name}
-                                                </option>
-                                            ))}
-                                        </select>
-
-                                        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <svg
-                                                className="w-5 h-5 text-[#64748B]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </div>
+                                            onBlur={() =>
+                                                setFieldTouched('classId', true)
+                                            }
+                                            placeholder="Select Class"
+                                            searchPlaceholder="Search classes..."
+                                            loading={loadingClasses}
+                                            loadingText="Loading classes..."
+                                            error={Boolean(
+                                                touched.classId && errors.classId
+                                            )}
+                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                        />
                                     </div>
 
                                     {touched.classId && errors.classId && (
@@ -678,54 +530,39 @@ export default function TutorApplicationForm({
 
                                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7C3AED]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
-                                        <select
+                                        <SearchableSelect
                                             id="subjectId"
+                                            options={subjects.map((s) => ({
+                                                label: s.name,
+                                                value: String(s.id),
+                                            }))}
                                             value={values.subjectId}
-                                            onChange={(e) =>
-                                                setFieldValue("subjectId", e.target.value)
+                                            onChange={(v) =>
+                                                setFieldValue('subjectId', v)
                                             }
+                                            onBlur={() =>
+                                                setFieldTouched('subjectId', true)
+                                            }
+                                            placeholder={
+                                                !values.boardId
+                                                    ? 'Select Board First'
+                                                    : !values.classId
+                                                        ? 'Select Class First'
+                                                        : 'Select Subject'
+                                            }
+                                            searchPlaceholder="Search subjects..."
                                             disabled={
                                                 !values.boardId ||
                                                 !values.classId ||
                                                 loadingSubjects
                                             }
-                                            className={`${selectClass} ${touched.subjectId && errors.subjectId
-                                                ? "border-red-400 focus:ring-red-100"
-                                                : ""
-                                                }`}
-                                        >
-                                            <option value="">
-                                                {loadingSubjects
-                                                    ? "Loading subjects..."
-                                                    : !values.boardId
-                                                        ? "Select Board First"
-                                                        : !values.classId
-                                                            ? "Select Class First"
-                                                            : "Select Subject"}
-                                            </option>
-
-                                            {subjects.map((subject) => (
-                                                <option key={subject.id} value={subject.id}>
-                                                    {subject.name}
-                                                </option>
-                                            ))}
-                                        </select>
-
-                                        <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <svg
-                                                className="w-5 h-5 text-[#64748B]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </div>
+                                            loading={loadingSubjects}
+                                            loadingText="Loading subjects..."
+                                            error={Boolean(
+                                                touched.subjectId && errors.subjectId
+                                            )}
+                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                        />
                                     </div>
 
                                     {touched.subjectId && errors.subjectId && (

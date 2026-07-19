@@ -107,7 +107,7 @@ export default function TopInfoBar() {
 
           {/* Phone */}
           <a
-            href="tel:+ 8446146039"
+            href="tel:+918446146039"
             className="group flex items-center gap-2"
           >
             <div className="w-7 h-7 rounded-full bg-white/10 border border-white/10 flex items-center justify-center">
@@ -115,7 +115,7 @@ export default function TopInfoBar() {
             </div>
 
             <span>
-              +91  8446146039
+              +91 8446146039
             </span>
           </a>
 
@@ -144,7 +144,7 @@ export default function TopInfoBar() {
     "
         >
           <a
-            href="tel:+ 91 8446146039"
+            href="tel:+918446146039"
             className="
         flex
         items-center
@@ -160,7 +160,7 @@ export default function TopInfoBar() {
             <Phone className="w-3 h-3 text-white" />
 
             <span className="text-[11px] text-white font-medium">
-               +91  8446146039
+               +91 8446146039
             </span>
           </a>
 
