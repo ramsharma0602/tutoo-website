@@ -19,18 +19,18 @@ import {
    DATA
 ───────────────────────────────────────────── */
 const infoCards = [
-  { icon: User,      emoji: "👤", title: "Student Name",      desc: "Create a personalised student profile.",                    color: "#2563EB", bg: "rgba(37,99,235,0.08)",  border: "rgba(37,99,235,0.2)",  grad: "from-[#2563EB] to-[#7C3AED]" },
-  { icon: School,    emoji: "🏫", title: "Class / Grade",     desc: "Understand the correct academic level.",                   color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#2563EB]" },
-  { icon: Layers,    emoji: "📖", title: "Board",             desc: "CBSE · ICSE · SSC · State · IB · IGCSE",                   color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.2)", grad: "from-[#7C3AED] to-[#2563EB]" },
-  { icon: BookOpen,  emoji: "📚", title: "Subjects Required", desc: "Identify every learning need across subjects.",             color: "#2563EB", bg: "rgba(37,99,235,0.08)",  border: "rgba(37,99,235,0.2)",  grad: "from-[#2563EB] to-[#16C47F]" },
+  { icon: User,      emoji: "👤", title: "Student Name",      desc: "Create a personalised student profile.",                    color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)",  grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { icon: School,    emoji: "🏫", title: "Class / Grade",     desc: "Understand the correct academic level.",                   color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#EA580C] to-[#C2410C]" },
+  { icon: Layers,    emoji: "📖", title: "Board",             desc: "CBSE · ICSE · SSC · State · IB · IGCSE",                   color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { icon: BookOpen,  emoji: "📚", title: "Subjects Required", desc: "Identify every learning need across subjects.",             color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)",  grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { icon: MapPin,    emoji: "📍", title: "Location",          desc: "Find nearby home tutors or online session options.",        color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)", grad: "from-[#F59E0B] to-[#EF4444]" },
-  { icon: Target,    emoji: "🎯", title: "Learning Goals",    desc: "Define academic objectives, targets, and expectations.",    color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#7C3AED]" },
+  { icon: Target,    emoji: "🎯", title: "Learning Goals",    desc: "Define academic objectives, targets, and expectations.",    color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 ];
 
 const floatingCards = [
-  { emoji: "🎓", title: "Student Profile",   sub: "Created Successfully", color: "#16C47F", border: "rgba(22,196,127,0.25)", pos: "-top-5 -right-4",    delay: 0.3  },
-  { emoji: "📚", title: "Subjects Selected", sub: "Mathematics, Science",  color: "#2563EB", border: "rgba(37,99,235,0.25)",  pos: "top-1/3 -left-8",   delay: 0.55 },
-  { emoji: "🎯", title: "Learning Goals",    sub: "3 Goals Added",         color: "#7C3AED", border: "rgba(124,58,237,0.25)", pos: "bottom-28 -right-6", delay: 0.8  },
+  { emoji: "🎓", title: "Student Profile",   sub: "Created Successfully", color: "#7B2FF7", border: "rgba(248,120,8,0.25)", pos: "-top-5 -right-4",    delay: 0.3  },
+  { emoji: "📚", title: "Subjects Selected", sub: "Mathematics, Science",  color: "#7B2FF7", border: "rgba(123,47,247,0.25)",  pos: "top-1/3 -left-8",   delay: 0.55 },
+  { emoji: "🎯", title: "Learning Goals",    sub: "3 Goals Added",         color: "#7B2FF7", border: "rgba(123,47,247,0.25)", pos: "bottom-28 -right-6", delay: 0.8  },
   { emoji: "📍", title: "Location Verified", sub: "Ready for Matching",    color: "#F59E0B", border: "rgba(245,158,11,0.25)", pos: "-bottom-4 left-6",   delay: 1.05 },
 ];
 
@@ -51,7 +51,7 @@ function IllustrationPanel() {
 
       {/* Outer glow */}
       <div className="absolute inset-6 rounded-[40px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, rgba(22,196,127,0.12), rgba(37,99,235,0.08), transparent 70%)", filter: "blur(40px)" }} />
+        style={{ background: "radial-gradient(ellipse, rgba(248,120,8,0.12), rgba(123,47,247,0.08), transparent 70%)", filter: "blur(40px)" }} />
 
       {/* Main visual card — premium registration UI mockup */}
       <motion.div
@@ -60,29 +60,29 @@ function IllustrationPanel() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         viewport={{ once: true }}
         className="relative rounded-[28px] border overflow-hidden"
-        style={{ background: "#fff", borderColor: "rgba(15,23,42,0.08)", boxShadow: "0 24px 80px rgba(15,23,42,0.11)" }}
+        style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 24px 80px rgba(30,27,58,0.11)" }}
       >
         {/* Stripe */}
-        <div className="h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+        <div className="h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
         <div className="p-6">
           {/* App header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-black text-[#0B1220]">Tutoo</span>
+              <span className="text-sm font-black text-[#0A1028]">Tutoo</span>
             </div>
-            <span className="text-xs font-bold px-3 py-1.5 rounded-full text-[#16C47F]"
-              style={{ background: "rgba(22,196,127,0.09)", border: "1px solid rgba(22,196,127,0.22)" }}>
+            <span className="text-xs font-bold px-3 py-1.5 rounded-full text-[#7B2FF7]"
+              style={{ background: "rgba(248,120,8,0.09)", border: "1px solid rgba(248,120,8,0.22)" }}>
               Step 1 of 5
             </span>
           </div>
 
           {/* Form heading */}
           <p className="text-xs font-black uppercase tracking-widest text-[#94A3B8] mb-1">Student Registration</p>
-          <h4 className="text-lg font-black text-[#0B1220] mb-5" style={{ fontFamily: "var(--font-heading)" }}>
+          <h4 className="text-lg font-black text-[#0A1028] mb-5" style={{ fontFamily: "var(--font-heading)" }}>
             Tell us about your child
           </h4>
 
@@ -104,17 +104,17 @@ function IllustrationPanel() {
                 viewport={{ once: true }}
                 className="flex items-center gap-3 rounded-xl border px-4 py-3"
                 style={{
-                  background: field.done ? "rgba(22,196,127,0.04)" : "#F8FAFC",
-                  borderColor: field.done ? "rgba(22,196,127,0.2)" : "rgba(15,23,42,0.08)",
+                  background: field.done ? "rgba(248,120,8,0.04)" : "#FAFAFC",
+                  borderColor: field.done ? "rgba(248,120,8,0.2)" : "rgba(30,27,58,0.08)",
                 }}
               >
                 <span className="text-base shrink-0">{field.icon}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider leading-none mb-0.5">{field.label}</p>
-                  <p className="text-xs font-bold text-[#0F172A] truncate">{field.val}</p>
+                  <p className="text-xs font-bold text-[#1E1B3A] truncate">{field.val}</p>
                 </div>
                 {field.done
-                  ? <CheckCircle2 className="w-4 h-4 text-[#16C47F] shrink-0" />
+                  ? <CheckCircle2 className="w-4 h-4 text-[#7B2FF7] shrink-0" />
                   : <div className="w-4 h-4 rounded-full border-2 border-[#CBD5E1] shrink-0" />
                 }
               </motion.div>
@@ -125,7 +125,7 @@ function IllustrationPanel() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full h-12 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white text-sm font-bold shadow-lg shadow-[#16C47F]/20 flex items-center justify-center gap-2"
+            className="w-full h-12 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white text-sm font-bold shadow-lg shadow-[#EA580C]/20 flex items-center justify-center gap-2"
           >
             Complete Registration
             <ArrowRight className="w-4 h-4" />
@@ -155,7 +155,7 @@ function IllustrationPanel() {
             {card.emoji}
           </div>
           <div>
-            <p className="text-xs font-bold text-[#0F172A] leading-none mb-0.5">{card.title}</p>
+            <p className="text-xs font-bold text-[#1E1B3A] leading-none mb-0.5">{card.title}</p>
             <p className="text-[10px] font-semibold" style={{ color: card.color }}>{card.sub}</p>
           </div>
         </motion.div>
@@ -177,13 +177,13 @@ export function Step01Registration() {
       {/* ── BG ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -left-20 w-[600px] h-[500px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(ellipse, rgba(22,196,127,0.1), transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(248,120,8,0.1), transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute top-1/2 -right-24 w-[500px] h-[400px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(37,99,235,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-1/3 w-[400px] h-[300px] rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.02) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(30,27,58,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.02) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }} />
       </div>
@@ -215,23 +215,23 @@ export function Step01Registration() {
           >
             {/* Step badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-7"
-              style={{ background: "rgba(22,196,127,0.08)", borderColor: "rgba(22,196,127,0.28)", backdropFilter: "blur(10px)" }}>
-              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center text-white text-[9px] font-black shadow-sm">1</div>
+              style={{ background: "rgba(248,120,8,0.08)", borderColor: "rgba(248,120,8,0.28)", backdropFilter: "blur(10px)" }}>
+              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[9px] font-black shadow-sm">1</div>
               <span className="text-xs font-black tracking-widest text-[#059669] uppercase">Step 01</span>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
             </div>
 
             {/* Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0B1220] mb-6"
+            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}>
               Parent{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="text-[#6D28D9]">
                   Registers Student
                 </span>
                 <motion.span
                   className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                  style={{ background: "linear-gradient(90deg, #16C47F, #2563EB)" }}
+                  style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7)" }}
                   initial={{ scaleX: 0, originX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -251,7 +251,7 @@ export function Step01Registration() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-lg leading-8 text-[#64748B]">
+                  className="text-lg leading-8 text-[#6E6A85]">
                   {para}
                 </motion.p>
               ))}
@@ -259,8 +259,8 @@ export function Step01Registration() {
 
             {/* Info collected heading */}
             <div className="flex items-center gap-3 mb-5">
-              <p className="text-sm font-black uppercase tracking-widest text-[#0F172A]">Information We Collect</p>
-              <div className="flex-1 h-px bg-gradient-to-r from-[rgba(37,99,235,0.2)] to-transparent" />
+              <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A]">Information We Collect</p>
+              <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
             </div>
 
             {/* Info cards grid */}
@@ -282,8 +282,8 @@ export function Step01Registration() {
                   <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-xl mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                     {card.emoji}
                   </div>
-                  <p className="relative z-10 text-xs font-black text-[#0B1220] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                  <p className="relative z-10 text-[10px] leading-relaxed text-[#64748B]">{card.desc}</p>
+                  <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
+                  <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
 
                   {/* Bottom accent line */}
                   <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -299,12 +299,12 @@ export function Step01Registration() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               className="flex items-center gap-4 rounded-2xl border px-5 py-4 mb-8"
-              style={{ background: "rgba(22,196,127,0.06)", borderColor: "rgba(22,196,127,0.2)", backdropFilter: "blur(10px)" }}
+              style={{ background: "rgba(248,120,8,0.06)", borderColor: "rgba(248,120,8,0.2)", backdropFilter: "blur(10px)" }}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md shrink-0">
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
-              <p className="text-sm font-semibold text-[#0F172A] leading-snug">
+              <p className="text-sm font-semibold text-[#1E1B3A] leading-snug">
                 Your information is secure and used only to create the best learning experience for your child.
               </p>
             </motion.div>
@@ -323,22 +323,22 @@ export function Step01Registration() {
                     <div className="flex flex-col items-center gap-1">
                       <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm transition-all duration-300 ${s.active ? "scale-110" : ""}`}
                         style={s.active
-                          ? { background: "linear-gradient(135deg, #16C47F, #2563EB)", color: "#fff", boxShadow: "0 0 12px rgba(22,196,127,0.4)" }
-                          : { background: "rgba(15,23,42,0.06)", color: "#94A3B8" }}>
+                          ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(248,120,8,0.4)" }
+                          : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>
                         {s.active ? <CheckCircle2 className="w-3.5 h-3.5" /> : i + 1}
                       </div>
                     </div>
                     {/* Connector */}
                     {i < progressSteps.length - 1 && (
                       <div className="w-10 h-[2px] mx-1 rounded-full"
-                        style={{ background: i === 0 ? "linear-gradient(90deg, #16C47F, rgba(15,23,42,0.1))" : "rgba(15,23,42,0.08)" }} />
+                        style={{ background: i === 0 ? "linear-gradient(90deg, #7B2FF7, rgba(30,27,58,0.1))" : "rgba(30,27,58,0.08)" }} />
                     )}
                   </div>
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[#16C47F] animate-pulse" />
-                <p className="text-xs font-bold text-[#16C47F]">Registration Completed · Step 1 of 5</p>
+                <div className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
+                <p className="text-xs font-bold text-[#7B2FF7]">Registration Completed · Step 1 of 5</p>
               </div>
             </motion.div>
 

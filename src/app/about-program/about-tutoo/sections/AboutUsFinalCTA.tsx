@@ -43,7 +43,7 @@ const floatingCards = [
 
 export default function AboutUsFinalCTA() {
   return (
-    <section className="relative overflow-hidden py-32 bg-gradient-to-b from-[#0B1220] via-[#111827] to-[#0F172A]">
+    <section className="relative overflow-hidden py-32 bg-gradient-to-b from-[#0A1028] via-[#111827] to-[#1E1B3A]">
 
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -51,21 +51,21 @@ export default function AboutUsFinalCTA() {
         <div
           className="absolute -top-20 left-0 w-[500px] h-[500px] rounded-full blur-[140px]"
           style={{
-            background: "rgba(22,196,127,0.14)",
+            background: "rgba(248,120,8,0.14)",
           }}
         />
 
         <div
           className="absolute top-10 right-0 w-[600px] h-[600px] rounded-full blur-[180px]"
           style={{
-            background: "rgba(37,99,235,0.14)",
+            background: "rgba(123,47,247,0.14)",
           }}
         />
 
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full blur-[160px]"
           style={{
-            background: "rgba(124,58,237,0.10)",
+            background: "rgba(123,47,247,0.10)",
           }}
         />
 
@@ -124,8 +124,8 @@ export default function AboutUsFinalCTA() {
                   items-center
                   justify-center
                   bg-gradient-to-br
-                  from-[#16C47F]
-                  to-[#2563EB]
+                  from-[#7B2FF7]
+                  to-[#7B2FF7]
                 "
                 >
                   <Icon size={18} className="text-white" />
@@ -160,7 +160,7 @@ export default function AboutUsFinalCTA() {
           "
           style={{
             background: "rgba(255,255,255,0.08)",
-            borderColor: "rgba(22,196,127,0.20)",
+            borderColor: "rgba(248,120,8,0.20)",
           }}
         >
           🚀 START YOUR LEARNING JOURNEY
@@ -189,9 +189,9 @@ export default function AboutUsFinalCTA() {
           <span
             className="
               bg-gradient-to-r
-              from-[#16C47F]
+              from-[#7B2FF7]
               via-[#22D3EE]
-              to-[#2563EB]
+              to-[#7B2FF7]
               bg-clip-text
               text-transparent
             "
@@ -247,7 +247,7 @@ export default function AboutUsFinalCTA() {
             >
               <CheckCircle2
                 size={16}
-                className="text-[#16C47F]"
+                className="text-[#7B2FF7]"
               />
 
               <span className="text-sm text-white">
@@ -276,9 +276,9 @@ export default function AboutUsFinalCTA() {
               font-bold
               text-lg
               bg-gradient-to-r
-              from-[#16C47F]
-              to-[#2563EB]
-              shadow-[0_20px_60px_rgba(37,99,235,0.35)]
+              from-[#7B2FF7]
+              to-[#7B2FF7]
+              shadow-[0_20px_60px_rgba(123,47,247,0.35)]
               transition-all
               duration-500
               hover:scale-[1.04]

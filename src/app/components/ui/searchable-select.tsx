@@ -244,13 +244,13 @@ export default function SearchableSelect({
                     `,
                     error
                         ? 'border-red-400 bg-red-50/40 focus:ring-4 focus:ring-red-100'
-                        : 'border-[#E2E8F0] hover:border-[#2563EB]/30 focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10',
+                        : 'border-[#E6E3F0] hover:border-[#7B2FF7]/30 focus:border-[#7B2FF7] focus:ring-4 focus:ring-[#7B2FF7]/10',
                     className
                 )}
             >
 
                 {icon && (
-                    <span className="shrink-0 text-[#64748B]">
+                    <span className="shrink-0 text-[#6E6A85]">
                         {icon}
                     </span>
                 )}
@@ -258,18 +258,18 @@ export default function SearchableSelect({
                 <span
                     className={cn(
                         'flex-1 truncate',
-                        selected ? 'text-[#0F172A]' : 'text-[#94A3B8]'
+                        selected ? 'text-[#1E1B3A]' : 'text-[#94A3B8]'
                     )}
                 >
                     {loading ? loadingText : selected?.label || placeholder}
                 </span>
 
                 {loading ? (
-                    <Loader2 className="h-5 w-5 shrink-0 animate-spin text-[#64748B]" />
+                    <Loader2 className="h-5 w-5 shrink-0 animate-spin text-[#6E6A85]" />
                 ) : (
                     <ChevronDown
                         className={cn(
-                            'h-5 w-5 shrink-0 text-[#64748B] transition-transform duration-300',
+                            'h-5 w-5 shrink-0 text-[#6E6A85] transition-transform duration-300',
                             open && 'rotate-180'
                         )}
                     />
@@ -288,9 +288,9 @@ export default function SearchableSelect({
                     overflow-hidden
                     rounded-2xl
                     border
-                    border-[#E2E8F0]
+                    border-[#E6E3F0]
                     bg-white
-                    shadow-[0_20px_60px_rgba(15,23,42,0.15)]
+                    shadow-[0_20px_60px_rgba(30,27,58,0.15)]
                     animate-in
                     fade-in-0
                     zoom-in-95
@@ -300,7 +300,7 @@ export default function SearchableSelect({
                 >
 
                     {/* Search */}
-                    <div className="relative border-b border-[#F1F5F9] p-2">
+                    <div className="relative border-b border-[#F6F3FC] p-2">
 
                         <Search className="pointer-events-none absolute left-5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94A3B8]" />
 
@@ -323,17 +323,17 @@ export default function SearchableSelect({
                             h-10
                             w-full
                             rounded-xl
-                            bg-[#F8FAFC]
+                            bg-[#FAFAFC]
                             pl-10
                             pr-4
                             text-sm
-                            text-[#0F172A]
+                            text-[#1E1B3A]
                             placeholder:text-[#94A3B8]
                             outline-none
                             transition-all
                             focus:bg-white
                             focus:ring-2
-                            focus:ring-[#2563EB]/20
+                            focus:ring-[#7B2FF7]/20
                             "
                         />
                     </div>
@@ -390,9 +390,9 @@ export default function SearchableSelect({
                                         duration-150
                                         `,
                                         isSelected
-                                            ? 'bg-gradient-to-r from-[#16C47F]/10 to-[#2563EB]/10 text-[#2563EB]'
+                                            ? 'bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 text-[#7B2FF7]'
                                             : isHighlighted
-                                                ? 'bg-[#F1F5F9] text-[#0F172A]'
+                                                ? 'bg-[#F6F3FC] text-[#1E1B3A]'
                                                 : 'text-[#334155]'
                                     )}
                                 >
@@ -402,7 +402,7 @@ export default function SearchableSelect({
                                     </span>
 
                                     {isSelected && (
-                                        <Check className="h-4 w-4 shrink-0 text-[#16C47F]" />
+                                        <Check className="h-4 w-4 shrink-0 text-[#7B2FF7]" />
                                     )}
                                 </li>
                             );

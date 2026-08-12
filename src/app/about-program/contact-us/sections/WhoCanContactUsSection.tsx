@@ -19,9 +19,9 @@ const audiences = [
       "https://homeshiksha.com/wp-content/uploads/2026/01/Home-Tutor.webp",
 
     gradient:
-      "from-[#16C47F] via-[#16C47F]/50 to-transparent",
+      "from-[#7B2FF7] via-[#7B2FF7]/50 to-transparent",
 
-    color: "#16C47F",
+    color: "#7B2FF7",
   },
 
   {
@@ -43,10 +43,10 @@ const audiences = [
       "https://simplitrain.com/wp-content/uploads/2024/09/Personalized-Learning-1024x614.png",
 
     gradient:
-      "from-[#2563EB] via-[#2563EB]/50 to-transparent",
+      "from-[#7B2FF7] via-[#7B2FF7]/50 to-transparent",
 
     color:
-      "#2563EB",
+      "#7B2FF7",
   },
 
   {
@@ -69,10 +69,10 @@ const audiences = [
       "https://mentorclap.com/landing-img.webp",
 
     gradient:
-      "from-[#7C3AED] via-[#7C3AED]/50 to-transparent",
+      "from-[#7B2FF7] via-[#7B2FF7]/50 to-transparent",
 
     color:
-      "#7C3AED",
+      "#7B2FF7",
   },
 
   {
@@ -95,7 +95,7 @@ const audiences = [
       "https://img.magnific.com/free-photo/business-people-shaking-hands-greeting_53876-101876.jpg?semt=ais_hybrid&w=740&q=80",
 
     gradient:
-      "from-[#F59E0B] via-[#16C47F]/40 to-transparent",
+      "from-[#F59E0B] via-[#7B2FF7]/40 to-transparent",
 
     color:
       "#F59E0B",
@@ -118,9 +118,9 @@ export default function WhoCanContactUsSection() {
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute top-0 left-20 w-[420px] h-[420px] bg-[#16C47F]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-20 w-[420px] h-[420px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-        <div className="absolute bottom-0 right-20 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-20 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
       </div>
 
@@ -142,7 +142,7 @@ export default function WhoCanContactUsSection() {
             py-2.5
             rounded-full
             border
-            border-[#16C47F]/20
+            border-[#7B2FF7]/20
             bg-white/80
             backdrop-blur-xl
             shadow-lg
@@ -150,7 +150,7 @@ export default function WhoCanContactUsSection() {
           >
             💬
 
-            <span className="text-sm font-semibold text-[#16C47F]">
+            <span className="text-sm font-semibold text-[#7B2FF7]">
               WHO CAN CONTACT US
             </span>
           </div>
@@ -168,19 +168,19 @@ export default function WhoCanContactUsSection() {
             text-5xl
             lg:text-6xl
             font-black
-            text-[#0B1220]
+            text-[#0A1028]
             "
             style={{
               fontFamily: "var(--font-heading)",
             }}
           >
             We're Here for{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
               Everyone
             </span>
           </h2>
 
-          <p className="mt-6 text-lg text-[#64748B] leading-9">
+          <p className="mt-6 text-lg text-[#6E6A85] leading-9">
             Whether you're looking for academic support,
             career opportunities, educational partnerships,
             or personalized learning guidance, our team is
@@ -201,11 +201,11 @@ export default function WhoCanContactUsSection() {
               rounded-full
               bg-white/70
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               backdrop-blur-xl
               shadow-sm
               text-sm
-              text-[#64748B]
+              text-[#6E6A85]
               "
             >
               {chip}
@@ -244,7 +244,7 @@ export default function WhoCanContactUsSection() {
               rounded-[32px]
               min-h-[420px]
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               shadow-xl
               "
             >

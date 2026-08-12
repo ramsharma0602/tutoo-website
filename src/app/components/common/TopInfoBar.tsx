@@ -45,14 +45,14 @@ export default function TopInfoBar() {
       "
       style={{
         background:
-          "linear-gradient(90deg, #16C47F 0%, #2563EB 55%, #0B1220 100%)",
+          "linear-gradient(90deg, #7B2FF7 0%, #7B2FF7 55%, #0A1028 100%)",
       }}
     >
 
       {/* Glow Orbs */}
       <div className="absolute -top-20 left-10 w-40 h-40 rounded-full bg-white/10 blur-3xl" />
 
-      <div className="absolute -right-10 top-0 w-40 h-40 rounded-full bg-[#7C3AED]/20 blur-3xl" />
+      <div className="absolute -right-10 top-0 w-40 h-40 rounded-full bg-[#7B2FF7]/20 blur-3xl" />
 
       {/* Grid Texture */}
       <div
@@ -211,7 +211,7 @@ export default function TopInfoBar() {
         border-white/15
       "
           >
-            <div className="w-2 h-2 rounded-full bg-[#16C47F] animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
 
             <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
 
@@ -238,8 +238,8 @@ export default function TopInfoBar() {
       "
           >
             <div className="relative">
-              <div className="absolute w-2 h-2 rounded-full bg-[#16C47F] animate-ping" />
-              <div className="relative w-2 h-2 rounded-full bg-[#16C47F]" />
+              <div className="absolute w-2 h-2 rounded-full bg-[#7B2FF7] animate-ping" />
+              <div className="relative w-2 h-2 rounded-full bg-[#7B2FF7]" />
             </div>
 
             <span className="text-[12px] font-medium text-white/90">

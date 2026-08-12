@@ -26,11 +26,11 @@ import {
 // ─────────────────────────────────────────────
 
 const QUICK_CHIPS = [
-  { icon: Phone, label: "Fast Response", color: "#16C47F" },
-  { icon: GraduationCap, label: "Academic Support", color: "#2563EB" },
-  { icon: Users, label: "Tutor Assistance", color: "#7C3AED" },
+  { icon: Phone, label: "Fast Response", color: "#7B2FF7" },
+  { icon: GraduationCap, label: "Academic Support", color: "#7B2FF7" },
+  { icon: Users, label: "Tutor Assistance", color: "#7B2FF7" },
   { icon: Building2, label: "School Partnerships", color: "#F59E0B" },
-  { icon: Shield, label: "Trusted Guidance", color: "#16C47F" },
+  { icon: Shield, label: "Trusted Guidance", color: "#7B2FF7" },
 ];
 
 const FLOAT_WIDGETS = [
@@ -38,8 +38,8 @@ const FLOAT_WIDGETS = [
     icon: MessageCircle,
     title: "Live Support",
     sub: "Online Now",
-    dot: "#16C47F",
-    grad: "from-[#16C47F] to-[#2563EB]",
+    dot: "#7B2FF7",
+    grad: "from-[#EA580C] to-[#C2410C]",
     pos: "top-6 -left-8",
     delay: 0.35,
     floatAmt: -7,
@@ -48,8 +48,8 @@ const FLOAT_WIDGETS = [
     icon: BookOpen,
     title: "Academic Guidance",
     sub: "Available Today",
-    dot: "#2563EB",
-    grad: "from-[#2563EB] to-[#7C3AED]",
+    dot: "#7B2FF7",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
     pos: "top-1/4 -right-8",
     delay: 0.5,
     floatAmt: 6,
@@ -58,8 +58,8 @@ const FLOAT_WIDGETS = [
     icon: GraduationCap,
     title: "Free Assessment",
     sub: "Book Today",
-    dot: "#7C3AED",
-    grad: "from-[#7C3AED] to-[#16C47F]",
+    dot: "#7B2FF7",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
     pos: "top-1/3 -left-6",
     delay: 0.65,
     floatAmt: -5,
@@ -69,7 +69,7 @@ const FLOAT_WIDGETS = [
     title: "Tutor Assistance",
     sub: "24-Hour Response",
     dot: "#F59E0B",
-    grad: "from-[#F59E0B] to-[#16C47F]",
+    grad: "from-[#F59E0B] to-[#7B2FF7]",
     pos: "bottom-32 -right-6",
     delay: 0.8,
     floatAmt: 7,
@@ -78,8 +78,8 @@ const FLOAT_WIDGETS = [
     icon: Star,
     title: "Parent Satisfaction",
     sub: "4.8 / 5 Rating ⭐",
-    dot: "#16C47F",
-    grad: "from-[#16C47F] to-[#2563EB]",
+    dot: "#7B2FF7",
+    grad: "from-[#EA580C] to-[#C2410C]",
     pos: "bottom-32 -left-6",
     delay: 0.95,
     floatAmt: -6,
@@ -87,16 +87,16 @@ const FLOAT_WIDGETS = [
 ];
 
 const STATS = [
-  { val: "5,000+", label: "Students Supported", icon: GraduationCap, grad: "from-[#16C47F] to-[#2563EB]" },
-  { val: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#2563EB] to-[#7C3AED]" },
-  { val: "50+", label: "Cities Covered", icon: MapPin, grad: "from-[#7C3AED] to-[#F59E0B]" },
-  { val: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#16C47F]" },
+  { val: "5,000+", label: "Students Supported", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
+  { val: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { val: "50+", label: "Cities Covered", icon: MapPin, grad: "from-[#7B2FF7] to-[#F59E0B]" },
+  { val: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
 ];
 
 const AUDIENCE_CARDS = [
-  { icon: Heart, label: "Parents", desc: "Questions about tuition, safety, and pricing", color: "#16C47F" },
-  { icon: GraduationCap, label: "Students", desc: "Guidance on learning plans and assessments", color: "#2563EB" },
-  { icon: Users, label: "Tutors", desc: "Join our network and grow your career", color: "#7C3AED" },
+  { icon: Heart, label: "Parents", desc: "Questions about tuition, safety, and pricing", color: "#7B2FF7" },
+  { icon: GraduationCap, label: "Students", desc: "Guidance on learning plans and assessments", color: "#7B2FF7" },
+  { icon: Users, label: "Tutors", desc: "Join our network and grow your career", color: "#7B2FF7" },
   { icon: Building2, label: "Schools", desc: "Partnership and institutional programs", color: "#F59E0B" },
 ];
 
@@ -107,20 +107,20 @@ function ContactVisual() {
   return (
     <div className="relative w-full select-none">
       {/* Main image */}
-      <div className="relative rounded-[36px] overflow-hidden shadow-[0_28px_90px_rgba(15,23,42,0.13)] border border-white/60">
+      <div className="relative rounded-[36px] overflow-hidden shadow-[0_28px_90px_rgba(30,27,58,0.13)] border border-white/60">
         <img
           src="https://img.magnific.com/free-photo/multiethnic-customer-support-team-work_482257-121935.jpg?semt=ais_hybrid&w=740&q=80"
           alt="Tutoo support team"
           className="w-full h-[540px] object-cover object-top"
         />
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/55 via-[#0B1220]/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#16C47F]/12 via-transparent to-[#2563EB]/12" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/55 via-[#0A1028]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7B2FF7]/12 via-transparent to-[#7B2FF7]/12" />
 
         {/* HUD corner brackets */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
-          <path d="M24,24 L52,24 M24,24 L24,52" stroke="#16C47F" strokeWidth="2" fill="none" strokeLinecap="round" />
-          <path d="M-24+100%,24 L-52+100%,24 M-24+100%,24 L-24+100%,52" stroke="#2563EB" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M24,24 L52,24 M24,24 L24,52" stroke="#7B2FF7" strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M-24+100%,24 L-52+100%,24 M-24+100%,24 L-24+100%,52" stroke="#7B2FF7" strokeWidth="2" fill="none" strokeLinecap="round" />
         </svg>
 
         {/* Bottom label */}
@@ -129,7 +129,7 @@ function ContactVisual() {
             <motion.div
               animate={{ scale: [1, 1.4, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-2.5 h-2.5 rounded-full bg-[#16C47F]"
+              className="w-2.5 h-2.5 rounded-full bg-[#7B2FF7]"
             />
             <span className="text-white/70 text-xs font-bold tracking-wide uppercase">Support Available Now</span>
           </div>
@@ -138,7 +138,7 @@ function ContactVisual() {
             style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
           >
             We're here for{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="text-[#6D28D9]">
               every question.
             </span>
           </p>
@@ -146,8 +146,8 @@ function ContactVisual() {
       </div>
 
       {/* Glow halos */}
-      <div className="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-[#16C47F]/18 rounded-full blur-3xl" />
-      <div className="absolute -z-10 -bottom-10 -left-10 w-60 h-60 bg-[#2563EB]/15 rounded-full blur-3xl" />
+      <div className="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-[#7B2FF7]/18 rounded-full blur-3xl" />
+      <div className="absolute -z-10 -bottom-10 -left-10 w-60 h-60 bg-[#7B2FF7]/15 rounded-full blur-3xl" />
 
       {/* Floating widgets */}
       {FLOAT_WIDGETS.map((w, i) => {
@@ -164,14 +164,14 @@ function ContactVisual() {
                         bg-white/90 backdrop-blur-xl rounded-2xl
                         border border-white shadow-2xl px-4 py-3 min-w-[172px]
                         transition-transform duration-300`}
-            style={{ animationDuration: `${3.4 + i * 0.45}s`, zIndex: 20, boxShadow: `0 6px 28px rgba(15,23,42,0.10)` }}
+            style={{ animationDuration: `${3.4 + i * 0.45}s`, zIndex: 20, boxShadow: `0 6px 28px rgba(30,27,58,0.10)` }}
             whileHover={{ scale: 1.07 }}
           >
             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${w.grad} flex items-center justify-center shadow-md flex-shrink-0`}>
               <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-              <p className="text-xs font-black text-[#0F172A] leading-tight">{w.title}</p>
+              <p className="text-xs font-black text-[#1E1B3A] leading-tight">{w.title}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <motion.div
                   animate={{ scale: [1, 1.5, 1] }}
@@ -179,7 +179,7 @@ function ContactVisual() {
                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                   style={{ background: w.dot }}
                 />
-                <p className="text-[11px] text-[#64748B] font-semibold">{w.sub}</p>
+                <p className="text-[11px] text-[#6E6A85] font-semibold">{w.sub}</p>
               </div>
             </div>
           </motion.div>
@@ -202,7 +202,7 @@ export function ContactHeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-28 bg-[#F8FAFC]"
+      className="relative overflow-hidden py-28 bg-[#FAFAFC]"
       style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── Background ── */}
@@ -212,21 +212,21 @@ export function ContactHeroSection() {
           animate={{ opacity: [0.2, 0.32, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}>
           <div className="w-full h-full rounded-full"
-            style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, rgba(22,196,127,0.07) 50%, transparent 72%)", filter: "blur(60px)" }} />
+            style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.1) 0%, rgba(248,120,8,0.07) 50%, transparent 72%)", filter: "blur(60px)" }} />
         </motion.div>
         <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.13), transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.13), transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute bottom-0 -left-24 w-[450px] h-[380px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(22,196,127,0.13), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(248,120,8,0.13), transparent 70%)", filter: "blur(60px)" }} />
         {/* Grid */}
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.025) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(30,27,58,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.025) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }} />
         {/* Particles */}
         {[...Array(14)].map((_, i) => (
           <motion.div key={i} className="absolute rounded-full"
-            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#16C47F" : i % 3 === 1 ? "#2563EB" : "#7C3AED", left: `${(i * 15 + 5) % 96}%`, top: `${(i * 11 + 4) % 80}%`, opacity: 0.35 }}
+            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#7B2FF7" : i % 3 === 1 ? "#7B2FF7" : "#7B2FF7", left: `${(i * 15 + 5) % 96}%`, top: `${(i * 11 + 4) % 80}%`, opacity: 0.35 }}
             animate={{ y: [0, -16, 0], opacity: [0.2, 0.6, 0.2] }}
             transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }} />
         ))}
@@ -251,28 +251,28 @@ export function ContactHeroSection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full mb-8
                          bg-white/80 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_28px_rgba(248,120,8,0.18)]"
             >
-              <Phone className="w-4 h-4 text-[#16C47F]" />
+              <Phone className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
               >
                 Contact Tutoo
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
 
             {/* Heading */}
             <h1
-              className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0B1220] mb-6"
+              className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
               style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
             >
               Let's Start the{" "}
               <span
-                className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                           drop-shadow-[0_0_36px_rgba(22,196,127,0.28)]"
+                className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                           drop-shadow-[0_0_36px_rgba(248,120,8,0.28)]"
               >
                 Conversation
               </span>
@@ -290,7 +290,7 @@ export function ContactHeroSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 + i * 0.1 }}
-                  className="text-lg leading-8 text-[#64748B]"
+                  className="text-lg leading-8 text-[#6E6A85]"
                 >
                   {p}
                 </motion.p>
@@ -302,8 +302,8 @@ export function ContactHeroSection() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="group h-14 px-9 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
-                           text-white font-bold shadow-xl shadow-[#16C47F]/22
+                className="group h-14 px-9 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
+                           text-white font-bold shadow-xl shadow-[#EA580C]/22
                            flex items-center gap-2.5 transition-all duration-300"
               >
                 <GraduationCap className="w-5 h-5" />
@@ -312,12 +312,12 @@ export function ContactHeroSection() {
               </motion.button>
 
               <motion.button
-                whileHover={{ scale: 1.04, backgroundColor: "rgba(37,99,235,0.07)" }}
+                whileHover={{ scale: 1.04, backgroundColor: "rgba(123,47,247,0.07)" }}
                 whileTap={{ scale: 0.97 }}
                 className="group h-14 px-9 rounded-2xl
                            bg-white/70 backdrop-blur-xl
-                           border border-[#2563EB]/25
-                           text-[#2563EB] font-bold
+                           border border-[#7B2FF7]/25
+                           text-[#7B2FF7] font-bold
                            flex items-center gap-2.5 transition-all duration-300
                            shadow-lg hover:shadow-xl"
               >
@@ -340,9 +340,9 @@ export function ContactHeroSection() {
                     whileHover={{ scale: 1.07, y: -2 }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full
                                bg-white/80 backdrop-blur-xl
-                               border border-[rgba(15,23,42,0.08)]
+                               border border-[rgba(30,27,58,0.08)]
                                shadow-sm hover:shadow-md
-                               text-xs font-bold text-[#0F172A]
+                               text-xs font-bold text-[#1E1B3A]
                                transition-all duration-300 cursor-default"
                   >
                     <Icon className="w-3.5 h-3.5" style={{ color: chip.color }} />
@@ -353,7 +353,7 @@ export function ContactHeroSection() {
             </div>
 
             {/* Audience cards */}
-            <p className="text-xs font-black tracking-widest uppercase text-[#64748B] mb-4">
+            <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-4">
               Who Can Reach Out
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -369,7 +369,7 @@ export function ContactHeroSection() {
                     whileHover={{ y: -4, scale: 1.02 }}
                     className="group flex items-start gap-3 p-4 rounded-2xl
                                bg-white/70 backdrop-blur-xl
-                               border border-[rgba(15,23,42,0.07)]
+                               border border-[rgba(30,27,58,0.07)]
                                shadow-sm hover:shadow-lg
                                transition-all duration-300 cursor-default relative overflow-hidden"
                   >
@@ -382,11 +382,11 @@ export function ContactHeroSection() {
                       <Icon className="w-4.5 h-4.5" style={{ color: card.color }} />
                     </div>
                     <div>
-                      <p className="text-sm font-black text-[#0F172A] leading-tight mb-0.5"
+                      <p className="text-sm font-black text-[#1E1B3A] leading-tight mb-0.5"
                         style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                         {card.label}
                       </p>
-                      <p className="text-[11px] leading-5 text-[#64748B]">{card.desc}</p>
+                      <p className="text-[11px] leading-5 text-[#6E6A85]">{card.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -419,8 +419,8 @@ export function ContactHeroSection() {
               title: "Call Us",
               line1: "+91 8446146039",
               line2: "Mon – Sat, 8am – 8pm",
-              from: "#16C47F",
-              to: "#2563EB",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.1,
             },
             {
@@ -428,8 +428,8 @@ export function ContactHeroSection() {
               title: "Email Us",
               line1: "info@tutoolearning.com",
               line2: "Response within 4 hours",
-              from: "#2563EB",
-              to: "#7C3AED",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.18,
             },
             {
@@ -437,8 +437,8 @@ export function ContactHeroSection() {
               title: "Response Time",
               line1: "Under 4 Hours",
               line2: "All queries answered same day",
-              from: "#7C3AED",
-              to: "#16C47F",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.26,
             },
           ].map((item) => {
@@ -453,7 +453,7 @@ export function ContactHeroSection() {
                 whileHover={{ y: -6, scale: 1.02 }}
                 className="group relative rounded-3xl overflow-hidden
                            bg-white/80 backdrop-blur-xl
-                           border border-[rgba(15,23,42,0.07)]
+                           border border-[rgba(30,27,58,0.07)]
                            shadow-lg hover:shadow-2xl
                            transition-all duration-400 p-6 flex items-start gap-4"
               >
@@ -469,12 +469,12 @@ export function ContactHeroSection() {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="relative z-10">
-                  <p className="text-[11px] font-black tracking-widest uppercase text-[#64748B] mb-1">{item.title}</p>
-                  <p className="text-base font-black text-[#0F172A] mb-0.5"
+                  <p className="text-[11px] font-black tracking-widest uppercase text-[#6E6A85] mb-1">{item.title}</p>
+                  <p className="text-base font-black text-[#1E1B3A] mb-0.5"
                     style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                     {item.line1}
                   </p>
-                  <p className="text-xs text-[#64748B] font-semibold">{item.line2}</p>
+                  <p className="text-xs text-[#6E6A85] font-semibold">{item.line2}</p>
                 </div>
               </motion.div>
             );
@@ -489,14 +489,14 @@ export function ContactHeroSection() {
           transition={{ duration: 0.7 }}
           className="rounded-3xl overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #0B1220 0%, #111827 55%, #0B1220 100%)",
-            boxShadow: "0 24px 80px rgba(11,18,32,0.28)",
+            background: "linear-gradient(135deg, #0A1028 0%, #111827 55%, #0A1028 100%)",
+            boxShadow: "0 24px 80px rgba(10,16,40,0.28)",
           }}
         >
           {/* Inner glows */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-72 h-36 bg-[#16C47F]/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-64 h-28 bg-[#2563EB]/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 left-1/4 w-72 h-36 bg-[#7B2FF7]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-64 h-28 bg-[#7B2FF7]/10 rounded-full blur-3xl" />
           </div>
 
           <div className="relative grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.06]">

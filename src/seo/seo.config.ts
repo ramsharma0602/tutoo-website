@@ -42,7 +42,7 @@ export const seoConfig = {
   logoIcon: "/tutoo_assets/png/logo_icon.png",
   favicon: "/tutoo_assets/png/app_icon_dark.png",
   defaultOgImage: "/tutoo_assets/png/logo_light_1.png",
-  themeColor: "#16C47F",
+  themeColor: "#7B2FF7",
 
   /* ── Locale ── */
   locale: "en_IN",

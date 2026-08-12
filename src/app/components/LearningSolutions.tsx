@@ -7,21 +7,21 @@ export function LearningSolutions() {
       icon: Home,
       title: 'Home Tuition',
       description: 'Verified tutors at your doorstep with real-time tracking',
-      gradient: 'from-emerald-500 to-teal-600',
+      gradient: 'from-violet-500 to-violet-600',
       size: 'lg:col-span-2'
     },
     {
       icon: Monitor,
       title: 'Online Learning',
       description: 'Live interactive sessions with AI-powered feedback',
-      gradient: 'from-blue-500 to-indigo-600',
+      gradient: 'from-violet-500 to-violet-600',
       size: 'lg:col-span-1'
     },
     {
       icon: Trophy,
       title: 'Competitive Exams',
       description: 'JEE, NEET, Olympiad preparation with expert mentors',
-      gradient: 'from-purple-500 to-pink-600',
+      gradient: 'from-violet-500 to-violet-600',
       size: 'lg:col-span-1'
     },
     {
@@ -35,14 +35,14 @@ export function LearningSolutions() {
       icon: Code,
       title: 'Coding & AI',
       description: 'Future-ready tech skills for young innovators',
-      gradient: 'from-cyan-500 to-blue-600',
+      gradient: 'from-violet-500 to-violet-600',
       size: 'lg:col-span-1'
     },
     {
       icon: Award,
       title: 'Olympiad Preparation',
       description: 'National and international competition training',
-      gradient: 'from-violet-500 to-purple-600',
+      gradient: 'from-violet-500 to-violet-600',
       size: 'lg:col-span-1'
     }
   ];
@@ -57,12 +57,12 @@ export function LearningSolutions() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Complete Learning Solutions
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             From academics to skill development, we cover every aspect of your child's learning journey
           </p>
         </motion.div>
@@ -86,10 +86,10 @@ export function LearningSolutions() {
                   <solution.icon className="w-7 h-7 text-white" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#0B1220] mb-3">{solution.title}</h3>
-                <p className="text-[#64748B]">{solution.description}</p>
+                <h3 className="text-2xl font-bold text-[#0A1028] mb-3">{solution.title}</h3>
+                <p className="text-[#6E6A85]">{solution.description}</p>
 
-                <div className="mt-6 flex items-center text-sm font-semibold text-[#0F172A] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-6 flex items-center text-sm font-semibold text-[#1E1B3A] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more
                   <svg
                     className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"

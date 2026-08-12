@@ -66,16 +66,16 @@ export default function ForParentsPage() {
     ];
 
     return (
-        <div className="relative overflow-hidden bg-[#F8FAFC]">
+        <div className="relative overflow-hidden bg-[#FAFAFC]">
 
             {/* Background Glow */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 rounded-full blur-3xl" />
+                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-                <div className="absolute right-0 top-1/3 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-3xl" />
+                <div className="absolute right-0 top-1/3 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7C3AED]/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7B2FF7]/5 rounded-full blur-3xl" />
             </div>
 
             {/* HERO */}
@@ -91,21 +91,21 @@ export default function ForParentsPage() {
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-white shadow-sm mb-8">
 
-                                <Sparkles className="w-4 h-4 text-[#16C47F]" />
+                                <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
-                                <span className="text-sm font-semibold text-[#16C47F]">
+                                <span className="text-sm font-semibold text-[#7B2FF7]">
                                     For Parents
                                 </span>
                             </div>
 
                             {/* Heading */}
                             <h1
-                                className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0B1220]"
+                                className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0A1028]"
                                 style={{ fontFamily: "var(--font-heading)" }}
                             >
                                 Helping Parents Find the{" "}
 
-                                <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                                     Perfect Tutor
                                 </span>{" "}
 
@@ -113,7 +113,7 @@ export default function ForParentsPage() {
                             </h1>
 
                             {/* Subheading */}
-                            <p className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl">
+                            <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
                                 Personalized home and online tuition with verified tutors,
                                 real-time progress tracking, and complete transparency.
                             </p>
@@ -133,9 +133,9 @@ export default function ForParentsPage() {
                                         key={item}
                                         className="flex items-center gap-3"
                                     >
-                                        <CheckCircle2 className="w-5 h-5 text-[#16C47F]" />
+                                        <CheckCircle2 className="w-5 h-5 text-[#7B2FF7]" />
 
-                                        <span className="text-sm font-medium text-[#0F172A]">
+                                        <span className="text-sm font-medium text-[#1E1B3A]">
                                             {item}
                                         </span>
                                     </div>
@@ -145,14 +145,14 @@ export default function ForParentsPage() {
                             {/* CTA */}
                             <div className="flex flex-wrap gap-4 mt-10">
 
-                                <button className="h-14 px-8 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold shadow-xl shadow-[#16C47F]/20 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2">
+                                <button className="h-14 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold shadow-xl shadow-[#EA580C]/20 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2">
 
                                     Find a Tutor
 
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
 
-                                <button className="h-14 px-8 rounded-2xl bg-white border border-[rgba(15,23,42,0.08)] text-[#0F172A] font-semibold hover:shadow-lg transition-all duration-300">
+                                <button className="h-14 px-8 rounded-2xl bg-white border border-[rgba(30,27,58,0.08)] text-[#1E1B3A] font-semibold hover:shadow-lg transition-all duration-300">
                                     Book Free Demo
                                 </button>
                             </div>
@@ -168,7 +168,7 @@ export default function ForParentsPage() {
 
                                     <div
                                         key={item}
-                                        className="px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white shadow-md text-sm font-semibold text-[#0F172A]"
+                                        className="px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white shadow-md text-sm font-semibold text-[#1E1B3A]"
                                     >
                                         {item}
                                     </div>
@@ -189,7 +189,7 @@ export default function ForParentsPage() {
                                 />
 
                                 {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/60 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/60 via-transparent to-transparent" />
                             </div>
 
                             {/* Floating Card */}
@@ -197,16 +197,16 @@ export default function ForParentsPage() {
 
                                 <div className="flex items-center gap-3">
 
-                                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center">
                                         <ShieldCheck className="w-6 h-6 text-white" />
                                     </div>
 
                                     <div>
-                                        <p className="text-sm font-bold text-[#0F172A]">
+                                        <p className="text-sm font-bold text-[#1E1B3A]">
                                             Verified Tutors
                                         </p>
 
-                                        <p className="text-xs text-[#64748B]">
+                                        <p className="text-xs text-[#6E6A85]">
                                             Trusted & Background Checked
                                         </p>
                                     </div>
@@ -219,16 +219,16 @@ export default function ForParentsPage() {
                                 <div className="flex items-center justify-between mb-5">
 
                                     <div>
-                                        <p className="text-sm font-bold text-[#0F172A]">
+                                        <p className="text-sm font-bold text-[#1E1B3A]">
                                             Weekly Progress
                                         </p>
 
-                                        <p className="text-xs text-[#64748B]">
+                                        <p className="text-xs text-[#6E6A85]">
                                             AI Learning Insights
                                         </p>
                                     </div>
 
-                                    <BarChart3 className="w-5 h-5 text-[#2563EB]" />
+                                    <BarChart3 className="w-5 h-5 text-[#7B2FF7]" />
                                 </div>
 
                                 <div className="space-y-4">
@@ -243,11 +243,11 @@ export default function ForParentsPage() {
 
                                             <div className="flex justify-between mb-2">
 
-                                                <span className="text-sm font-medium text-[#0F172A]">
+                                                <span className="text-sm font-medium text-[#1E1B3A]">
                                                     {item.subject}
                                                 </span>
 
-                                                <span className="text-sm font-bold text-[#2563EB]">
+                                                <span className="text-sm font-bold text-[#7B2FF7]">
                                                     {item.value}
                                                 </span>
                                             </div>
@@ -255,7 +255,7 @@ export default function ForParentsPage() {
                                             <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
 
                                                 <div
-                                                    className="h-full rounded-full bg-gradient-to-r from-[#16C47F] to-[#2563EB]"
+                                                    className="h-full rounded-full bg-gradient-to-r from-[#EA580C] to-[#C2410C]"
                                                     style={{ width: item.value }}
                                                 />
                                             </div>
@@ -278,13 +278,13 @@ export default function ForParentsPage() {
                     <div className="text-center max-w-3xl mx-auto">
 
                         <h2
-                            className="text-4xl lg:text-6xl font-black text-[#0B1220]"
+                            className="text-4xl lg:text-6xl font-black text-[#0A1028]"
                             style={{ fontFamily: "var(--font-heading)" }}
                         >
                             Everything Parents Need in One Learning Platform
                         </h2>
 
-                        <p className="mt-6 text-lg leading-8 text-[#64748B]">
+                        <p className="mt-6 text-lg leading-8 text-[#6E6A85]">
                             From verified tutors to real-time progress tracking —
                             Tutoo combines technology, safety, and personalized
                             learning into one intelligent ecosystem.
@@ -305,16 +305,16 @@ export default function ForParentsPage() {
                                 className="group rounded-[32px] bg-white/70 backdrop-blur-xl border border-white shadow-xl p-8 hover:-translate-y-2 transition-all duration-300"
                             >
 
-                                <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg">
+                                <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg">
 
                                     <feature.icon className="w-7 h-7 text-white" />
                                 </div>
 
-                                <h3 className="mt-8 text-2xl font-bold text-[#0F172A]">
+                                <h3 className="mt-8 text-2xl font-bold text-[#1E1B3A]">
                                     {feature.title}
                                 </h3>
 
-                                <p className="mt-4 text-[#64748B] leading-7">
+                                <p className="mt-4 text-[#6E6A85] leading-7">
                                     {feature.description}
                                 </p>
                             </motion.div>

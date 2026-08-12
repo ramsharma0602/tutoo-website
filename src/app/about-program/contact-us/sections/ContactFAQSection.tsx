@@ -46,16 +46,16 @@ export default function ContactFAQSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-28">
+    <section className="relative overflow-hidden bg-[#FAFAFC] py-28">
 
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#16C47F]/10 blur-[140px]" />
+        <div className="absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#7B2FF7]/10 blur-[140px]" />
 
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[160px]" />
+        <div className="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-[#7B2FF7]/10 blur-[160px]" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-[#7C3AED]/10 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-[#7B2FF7]/10 blur-[120px]" />
 
       </div>
 
@@ -79,13 +79,13 @@ export default function ContactFAQSection() {
             bg-white/80
             backdrop-blur-xl
             border
-            border-[#16C47F]/20
+            border-[#7B2FF7]/20
             shadow-lg
             "
           >
             ❓
 
-            <span className="font-semibold text-[#16C47F]">
+            <span className="font-semibold text-[#7B2FF7]">
               HELP CENTER
             </span>
           </div>
@@ -96,19 +96,19 @@ export default function ContactFAQSection() {
             text-5xl
             lg:text-6xl
             font-black
-            text-[#0B1220]
+            text-[#0A1028]
             "
             style={{
               fontFamily: "var(--font-heading)",
             }}
           >
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
 
-          <p className="mt-6 text-lg leading-9 text-[#64748B] max-w-3xl mx-auto">
+          <p className="mt-6 text-lg leading-9 text-[#6E6A85] max-w-3xl mx-auto">
             Find answers to the most common questions about assessments,
             tutors, classes, applications, pricing, and learning support.
           </p>
@@ -136,8 +136,8 @@ export default function ContactFAQSection() {
 
                   ${
                     isOpen
-                      ? "border-[#2563EB]/20 shadow-xl shadow-[#2563EB]/10"
-                      : "border-[rgba(15,23,42,0.08)]"
+                      ? "border-[#7B2FF7]/20 shadow-xl shadow-[#7B2FF7]/10"
+                      : "border-[rgba(30,27,58,0.08)]"
                   }
                   `}
                   style={{
@@ -160,7 +160,7 @@ export default function ContactFAQSection() {
                     text-left
                     "
                   >
-                    <h3 className="text-lg font-bold text-[#0F172A] pr-5">
+                    <h3 className="text-lg font-bold text-[#1E1B3A] pr-5">
                       {faq.question}
                     </h3>
 
@@ -179,8 +179,8 @@ export default function ContactFAQSection() {
                       text-white
                       font-bold
                       bg-gradient-to-r
-                      from-[#16C47F]
-                      to-[#2563EB]
+                      from-[#7B2FF7]
+                      to-[#7B2FF7]
                       shadow-lg
                       "
                     >
@@ -207,7 +207,7 @@ export default function ContactFAQSection() {
                           duration: 0.3,
                         }}
                       >
-                        <div className="px-7 pb-7 text-[#64748B] leading-8">
+                        <div className="px-7 pb-7 text-[#6E6A85] leading-8">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -232,7 +232,7 @@ export default function ContactFAQSection() {
             shadow-2xl
             "
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
             <div className="relative z-10 p-8 text-white">
 
@@ -266,7 +266,7 @@ export default function ContactFAQSection() {
                   h-14
                   rounded-2xl
                   bg-white
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                   font-bold
                   flex
                   items-center
@@ -335,10 +335,10 @@ export default function ContactFAQSection() {
               bg-white/80
               backdrop-blur-xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               text-sm
               font-medium
-              text-[#64748B]
+              text-[#6E6A85]
               shadow-sm
               "
             >

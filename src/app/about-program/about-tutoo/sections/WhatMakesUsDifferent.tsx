@@ -14,48 +14,48 @@ const features = [
   {
     icon: BrainCircuit,
     title: "AI Learning Assessment",
-    color: "#16C47F",
-    bg: "rgba(22,196,127,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(248,120,8,0.08)",
     description:
       "Understand a student's strengths, weaknesses, learning style, and academic needs before assigning a tutor.",
   },
   {
     icon: UsersRound,
     title: "Smart Tutor Matching",
-    color: "#2563EB",
-    bg: "rgba(37,99,235,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
     description:
       "Match students with tutors based on expertise, learning goals, teaching style, and subject compatibility.",
   },
   {
     icon: ShieldCheck,
     title: "Secure Session Verification",
-    color: "#7C3AED",
-    bg: "rgba(124,58,237,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
     description:
       "Every learning session is protected through verification mechanisms that ensure safety and accountability.",
   },
   {
     icon: MapPinned,
     title: "Live Session Tracking",
-    color: "#16C47F",
-    bg: "rgba(22,196,127,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(248,120,8,0.08)",
     description:
       "Parents receive visibility into scheduled sessions, attendance, and learning activity for complete transparency.",
   },
   {
     icon: TrendingUp,
     title: "Progress Monitoring",
-    color: "#2563EB",
-    bg: "rgba(37,99,235,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
     description:
       "Track academic growth through continuous evaluation, performance insights, and measurable milestones.",
   },
   {
     icon: FileBarChart,
     title: "Monthly Performance Reports",
-    color: "#7C3AED",
-    bg: "rgba(124,58,237,0.08)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
     description:
       "Receive structured reports highlighting achievements, improvement areas, and recommended next steps.",
   },
@@ -63,7 +63,7 @@ const features = [
 
 export default function WhatMakesUsDifferent() {
   return (
-    <section className="relative overflow-hidden py-28 bg-[#F8FAFC]">
+    <section className="relative overflow-hidden py-28 bg-[#FAFAFC]">
 
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,7 +79,7 @@ export default function WhatMakesUsDifferent() {
           blur-[140px]
           "
           style={{
-            background: "rgba(22,196,127,0.10)",
+            background: "rgba(248,120,8,0.10)",
           }}
         />
 
@@ -94,7 +94,7 @@ export default function WhatMakesUsDifferent() {
           blur-[160px]
           "
           style={{
-            background: "rgba(37,99,235,0.10)",
+            background: "rgba(123,47,247,0.10)",
           }}
         />
 
@@ -110,7 +110,7 @@ export default function WhatMakesUsDifferent() {
           blur-[120px]
           "
           style={{
-            background: "rgba(124,58,237,0.08)",
+            background: "rgba(123,47,247,0.08)",
           }}
         />
       </div>
@@ -136,12 +136,12 @@ export default function WhatMakesUsDifferent() {
             border
             text-sm
             font-semibold
-            text-[#16C47F]
+            text-[#7B2FF7]
             mb-8
             "
             style={{
               background: "rgba(255,255,255,0.75)",
-              borderColor: "rgba(22,196,127,0.18)",
+              borderColor: "rgba(248,120,8,0.18)",
               backdropFilter: "blur(16px)",
             }}
           >
@@ -155,7 +155,7 @@ export default function WhatMakesUsDifferent() {
             lg:text-6xl
             font-black
             leading-tight
-            text-[#0F172A]
+            text-[#1E1B3A]
             "
             style={{
               fontFamily: "var(--font-heading)",
@@ -164,9 +164,9 @@ export default function WhatMakesUsDifferent() {
             <span
               className="
               bg-gradient-to-r
-              from-[#16C47F]
+              from-[#7B2FF7]
               via-[#22D3EE]
-              to-[#2563EB]
+              to-[#7B2FF7]
               bg-clip-text
               text-transparent
               "
@@ -180,7 +180,7 @@ export default function WhatMakesUsDifferent() {
             mt-8
             text-lg
             leading-8
-            text-[#64748B]
+            text-[#6E6A85]
             max-w-3xl
             mx-auto
             "
@@ -231,9 +231,9 @@ export default function WhatMakesUsDifferent() {
                 duration-500
                 "
                 style={{
-                  borderColor: "rgba(15,23,42,0.06)",
+                  borderColor: "rgba(30,27,58,0.06)",
                   boxShadow:
-                    "0 12px 40px rgba(15,23,42,0.06)",
+                    "0 12px 40px rgba(30,27,58,0.06)",
                 }}
               >
 
@@ -289,7 +289,7 @@ export default function WhatMakesUsDifferent() {
                   className="
                   text-xl
                   font-bold
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                   mb-4
                   "
                 >
@@ -299,7 +299,7 @@ export default function WhatMakesUsDifferent() {
                 {/* Description */}
                 <p
                   className="
-                  text-[#64748B]
+                  text-[#6E6A85]
                   leading-8
                   text-sm
                   "
@@ -347,9 +347,9 @@ export default function WhatMakesUsDifferent() {
           backdrop-blur-xl
           "
           style={{
-            borderColor: "rgba(15,23,42,0.06)",
+            borderColor: "rgba(30,27,58,0.06)",
             boxShadow:
-              "0 20px 60px rgba(15,23,42,0.05)",
+              "0 20px 60px rgba(30,27,58,0.05)",
           }}
         >
           <h3
@@ -357,7 +357,7 @@ export default function WhatMakesUsDifferent() {
             text-2xl
             lg:text-3xl
             font-black
-            text-[#0F172A]
+            text-[#1E1B3A]
             "
           >
             A Complete Learning Ecosystem
@@ -368,7 +368,7 @@ export default function WhatMakesUsDifferent() {
             mt-4
             max-w-3xl
             mx-auto
-            text-[#64748B]
+            text-[#6E6A85]
             leading-8
             "
           >

@@ -49,21 +49,21 @@ const faqs = [
 ];
 
 const trustChips = [
-  { icon: Users, label: '12,000+ Active Students', color: '#16C47F' },
-  { icon: ShieldCheck, label: '3,400+ Verified Tutors', color: '#2563EB' },
-  { icon: TrendingUp, label: '94% Improvement Rate', color: '#7C3AED' },
+  { icon: Users, label: '12,000+ Active Students', color: '#7B2FF7' },
+  { icon: ShieldCheck, label: '3,400+ Verified Tutors', color: '#7B2FF7' },
+  { icon: TrendingUp, label: '94% Improvement Rate', color: '#7B2FF7' },
 ];
 
 export function ParentsFAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#FAFAFC] relative overflow-hidden">
       {/* Ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#16C47F]/7 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/3 right-0 w-[420px] h-[420px] bg-gradient-to-bl from-[#2563EB]/7 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-[360px] h-[360px] bg-[#7C3AED]/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#7B2FF7]/7 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-0 w-[420px] h-[420px] bg-gradient-to-bl from-[#7B2FF7]/7 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 w-[360px] h-[360px] bg-[#7B2FF7]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -78,27 +78,27 @@ export function ParentsFAQ() {
             className="lg:sticky lg:top-24"
           >
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#16C47F]/25 text-[#16C47F] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm shadow-[#16C47F]/10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#7B2FF7]/25 text-[#7B2FF7] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm shadow-[#EA580C]/10">
               <HelpCircle className="w-3.5 h-3.5" />
               FAQs
             </span>
 
             {/* Heading */}
             <h2
-              className="text-4xl lg:text-5xl font-bold text-[#0F172A] mb-5 leading-tight"
+              className="text-4xl lg:text-5xl font-bold text-[#1E1B3A] mb-5 leading-tight"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Everything parents and tutors{' '}
               <span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#7C3AED]"
-                style={{ filter: 'drop-shadow(0 0 20px rgba(37,99,235,0.18))' }}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]"
+                style={{ filter: 'drop-shadow(0 0 20px rgba(123,47,247,0.18))' }}
               >
                 need to know.
               </span>
             </h2>
 
             {/* Subheading */}
-            <p className="text-[#64748B] text-base leading-relaxed mb-8 max-w-sm">
+            <p className="text-[#6E6A85] text-base leading-relaxed mb-8 max-w-sm">
               From tutor verification and AI assessments to live session tracking and progress reports — here are answers to the most common questions about Tutoo.
             </p>
 
@@ -116,14 +116,14 @@ export function ParentsFAQ() {
                   >
                     <chip.icon className="w-3.5 h-3.5" style={{ color: chip.color }} />
                   </div>
-                  <span className="text-sm font-semibold text-[#0F172A]">{chip.label}</span>
+                  <span className="text-sm font-semibold text-[#1E1B3A]">{chip.label}</span>
                 </div>
               ))}
             </div>
 
             {/* Decorative floating sparkle */}
-            <div className="mt-10 hidden lg:flex items-center gap-2 text-xs text-[#64748B]">
-              <Sparkles className="w-3.5 h-3.5 text-[#16C47F]" />
+            <div className="mt-10 hidden lg:flex items-center gap-2 text-xs text-[#6E6A85]">
+              <Sparkles className="w-3.5 h-3.5 text-[#7B2FF7]" />
               <span>AI-powered answers coming soon</span>
             </div>
           </motion.div>
@@ -144,14 +144,14 @@ export function ParentsFAQ() {
                 <div
                   key={i}
                   className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${isOpen
-                      ? 'border-transparent shadow-xl shadow-emerald-100'
+                      ? 'border-transparent shadow-xl shadow-orange-100'
                       : 'border-slate-200 shadow-sm'
                     }`}
                   style={
                     isOpen
                       ? {
                         background:
-                          'linear-gradient(white, white) padding-box, linear-gradient(135deg,#16C47F,#2563EB) border-box',
+                          'linear-gradient(white, white) padding-box, linear-gradient(135deg,#7B2FF7,#7B2FF7) border-box',
                         border: '1.5px solid transparent',
                       }
                       : {}
@@ -168,7 +168,7 @@ export function ParentsFAQ() {
 
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 flex-shrink-0 ${isOpen
-                          ? 'bg-gradient-to-r from-[#16C47F] to-[#2563EB]'
+                          ? 'bg-gradient-to-r from-[#EA580C] to-[#C2410C]'
                           : 'bg-slate-100'
                         }`}
                     >

@@ -6,10 +6,10 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-violet-50 to-violet-50 opacity-60" />
 
       {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a08_1px,transparent_1px),linear-gradient(to_bottom,#0f172a08_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E1B3A08_1px,transparent_1px),linear-gradient(to_bottom,#1E1B3A08_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -23,26 +23,26 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-violet-100 rounded-full mb-6"
             >
-              <Sparkles className="w-4 h-4 text-emerald-600" />
-              <span className="text-sm font-medium text-[#0F172A]">
+              <Sparkles className="w-4 h-4 text-violet-600" />
+              <span className="text-sm font-medium text-[#1E1B3A]">
                 India's First Learning Operating System
               </span>
             </motion.div>
 
             <h1
-              className="text-5xl lg:text-7xl font-bold text-[#0B1220] mb-6 leading-tight"
+              className="text-5xl lg:text-7xl font-bold text-[#0A1028] mb-6 leading-tight"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               We don't just find tutors.
               <br />
-              <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="text-[#6D28D9]">
                 We guarantee learning outcomes.
               </span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-[#64748B] mb-8 leading-relaxed">
+            <p className="text-lg lg:text-xl text-[#6E6A85] mb-8 leading-relaxed">
               AI-powered assessments, verified tutors, real-time parent monitoring, and measurable
               student growth — all within one intelligent learning platform.
             </p>
@@ -51,10 +51,10 @@ export function Hero() {
               <button 
               type="button"
               onClick={() => navigate('/book-free-assessment')}
-              className="px-8 py-4 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 text-lg">
+              className="px-8 py-4 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
                 Book Free Assessment
               </button>
-              <button className="px-8 py-4 bg-white border-2 border-[#0B1220] text-[#0B1220] rounded-full font-semibold hover:bg-[#0B1220] hover:text-white transition-all duration-300 text-lg">
+              <button className="px-8 py-4 bg-white border-2 border-[#0A1028] text-[#0A1028] rounded-full font-semibold hover:bg-[#0A1028] hover:text-white transition-all duration-300 text-lg">
                 Explore Platform
               </button>
             </div>
@@ -62,10 +62,10 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Users, label: '12,000+ Students', color: 'text-emerald-600' },
-                { icon: Award, label: '3,400+ Verified Tutors', color: 'text-blue-600' },
-                { icon: TrendingUp, label: '94% Improvement', color: 'text-purple-600' },
-                { icon: Sparkles, label: '98% Satisfaction', color: 'text-emerald-600' }
+                { icon: Users, label: '12,000+ Students', color: 'text-violet-600' },
+                { icon: Award, label: '3,400+ Verified Tutors', color: 'text-violet-600' },
+                { icon: TrendingUp, label: '94% Improvement', color: 'text-violet-600' },
+                { icon: Sparkles, label: '98% Satisfaction', color: 'text-violet-600' }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -75,7 +75,7 @@ export function Hero() {
                   className="flex flex-col items-start gap-2"
                 >
                   <item.icon className={`w-5 h-5 ${item.color}`} />
-                  <span className="text-sm font-semibold text-[#0F172A]">{item.label}</span>
+                  <span className="text-sm font-semibold text-[#1E1B3A]">{item.label}</span>
                 </motion.div>
               ))}
             </div>
@@ -108,16 +108,16 @@ function DashboardPreview() {
       >
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-lg font-bold text-[#0B1220]">Student Analytics</h3>
-            <p className="text-sm text-[#64748B]">Last 30 days performance</p>
+            <h3 className="text-lg font-bold text-[#0A1028]">Student Analytics</h3>
+            <p className="text-sm text-[#6E6A85]">Last 30 days performance</p>
           </div>
-          <div className="px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full">
-            <span className="text-sm font-semibold text-emerald-700">+24% Growth</span>
+          <div className="px-4 py-2 bg-gradient-to-r from-violet-100 to-violet-100 rounded-full">
+            <span className="text-sm font-semibold text-violet-700">+24% Growth</span>
           </div>
         </div>
 
         {/* Progress Chart */}
-        <div className="h-48 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-4 mb-4">
+        <div className="h-48 bg-gradient-to-br from-violet-50 to-violet-50 rounded-2xl p-4 mb-4">
           <div className="h-full flex items-end justify-between gap-2">
             {[45, 62, 55, 78, 85, 92, 88].map((height, i) => (
               <motion.div
@@ -125,7 +125,7 @@ function DashboardPreview() {
                 initial={{ height: 0 }}
                 animate={{ height: `${height}%` }}
                 transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
-                className="flex-1 bg-gradient-to-t from-[#16C47F] to-[#2563EB] rounded-lg"
+                className="flex-1 bg-gradient-to-t from-[#6038F8] to-[#8F21F8] rounded-lg"
               />
             ))}
           </div>
@@ -145,8 +145,8 @@ function DashboardPreview() {
               transition={{ delay: 1 + i * 0.1 }}
               className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-4 border border-gray-100"
             >
-              <div className={`text-2xl font-bold text-${stat.color}-600`}>{stat.value}</div>
-              <div className="text-xs text-[#64748B] mt-1">{stat.label}</div>
+              <div className={`text-2xl font-bold text-[#6D28D9]`}>{stat.value}</div>
+              <div className="text-xs text-[#6E6A85] mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -160,12 +160,12 @@ function DashboardPreview() {
         className="absolute -left-4 top-12 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-white/30 w-48"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
           <div>
-            <div className="text-xs text-[#64748B]">AI Insights</div>
-            <div className="text-sm font-bold text-[#0B1220]">Strong Progress</div>
+            <div className="text-xs text-[#6E6A85]">AI Insights</div>
+            <div className="text-sm font-bold text-[#0A1028]">Strong Progress</div>
           </div>
         </div>
       </motion.div>
@@ -177,18 +177,18 @@ function DashboardPreview() {
         className="absolute -right-4 bottom-12 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-white/30 w-48"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center">
             <TrendingUp className="w-5 h-5 text-white" />
           </div>
           <div>
-            <div className="text-xs text-[#64748B]">Weekly Growth</div>
-            <div className="text-sm font-bold text-[#0B1220]">+18 Points</div>
+            <div className="text-xs text-[#6E6A85]">Weekly Growth</div>
+            <div className="text-sm font-bold text-[#0A1028]">+18 Points</div>
           </div>
         </div>
       </motion.div>
 
       {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 blur-3xl -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-violet-500/20 blur-3xl -z-10" />
     </div>
   );
 }

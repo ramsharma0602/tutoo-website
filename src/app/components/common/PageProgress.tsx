@@ -31,10 +31,10 @@ export default function PageProgress() {
       h-[4px]
       origin-left
       bg-gradient-to-r
-      from-[#16C47F]
-      via-[#2563EB]
-      to-[#7C3AED]
-      shadow-[0_0_20px_rgba(37,99,235,0.45)]
+      from-[#7B2FF7]
+      via-[#7B2FF7]
+      to-[#7B2FF7]
+      shadow-[0_0_20px_rgba(123,47,247,0.45)]
       "
     />
   );

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export function FinalCTA() {
   const navigate = useNavigate();
   return (
-    <section className="py-20 lg:py-32 bg-[#0B1220] text-white relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#0A1028] text-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
 
@@ -19,7 +19,7 @@ export function FinalCTA() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/30 rounded-full blur-3xl"
+        className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -32,7 +32,7 @@ export function FinalCTA() {
           ease: "easeInOut",
           delay: 1
         }}
-        className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
+        className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -45,7 +45,7 @@ export function FinalCTA() {
           ease: "easeInOut",
           delay: 2
         }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
       />
 
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
@@ -55,7 +55,7 @@ export function FinalCTA() {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full mb-8 border border-white/20"
         >
-          <Sparkles className="w-4 h-4 text-emerald-400" />
+          <Sparkles className="w-4 h-4 text-violet-400" />
           <span className="text-sm font-medium">Limited Time Offer</span>
         </motion.div>
 
@@ -68,7 +68,7 @@ export function FinalCTA() {
         >
           Start Your Child's
           <br />
-          <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-violet-400 via-violet-400 to-violet-400 bg-clip-text text-transparent">
             Intelligent Learning Journey
           </span>
           <br />
@@ -95,7 +95,7 @@ export function FinalCTA() {
           <button
             type="button"
             onClick={() => navigate('/book-free-assessment')}
-            className="group flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 text-lg">
+            className="group flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 text-lg">
             <Calendar className="w-5 h-5" />
             Book Free Assessment
             <svg
@@ -136,7 +136,7 @@ export function FinalCTA() {
               transition={{ delay: 0.7 + i * 0.1 }}
               className="flex items-center gap-2"
             >
-              <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full" />
+              <div className="w-2 h-2 bg-gradient-to-r from-violet-400 to-violet-400 rounded-full" />
               <span>{item}</span>
             </motion.div>
           ))}
@@ -152,7 +152,7 @@ export function FinalCTA() {
         >
           <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 w-64">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -173,7 +173,7 @@ export function FinalCTA() {
         >
           <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 w-64">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center">
                 <Phone className="w-5 h-5 text-white" />
               </div>
               <div>

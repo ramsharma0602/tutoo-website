@@ -32,12 +32,12 @@ const COMMUNITY = [
     title: "Students",
     subtitle: "Learn with Confidence",
     desc: "Personalized academic support, expert guidance, structured learning plans, and continuous progress tracking designed to help every student unlock their full academic potential.",
-    from: "#16C47F",
-    to: "#2563EB",
-    light: "rgba(22,196,127,0.08)",
-    glow: "rgba(22,196,127,0.30)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(248,120,8,0.08)",
+    glow: "rgba(248,120,8,0.30)",
     hoverChip: "📚 Personalized Learning",
-    chipColor: "#16C47F",
+    chipColor: "#7B2FF7",
     stats: [
       { val: "5,000+", label: "Students" },
       { val: "95%",    label: "Satisfaction" },
@@ -53,12 +53,12 @@ const COMMUNITY = [
     title: "Parents",
     subtitle: "Stay Informed",
     desc: "Complete visibility into attendance, performance, learning progress, and tutor interactions through a transparent and deeply supportive educational experience.",
-    from: "#2563EB",
-    to: "#7C3AED",
-    light: "rgba(37,99,235,0.08)",
-    glow: "rgba(37,99,235,0.30)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.08)",
+    glow: "rgba(123,47,247,0.30)",
     hoverChip: "📈 Progress Visibility",
-    chipColor: "#2563EB",
+    chipColor: "#7B2FF7",
     stats: [
       { val: "4.8★",  label: "Parent Rating" },
       { val: "100%",  label: "Transparency" },
@@ -74,12 +74,12 @@ const COMMUNITY = [
     title: "Tutors",
     subtitle: "Grow Your Career",
     desc: "Access quality teaching opportunities, professional development resources, flexible scheduling, and a growing network of students seeking excellent academic guidance.",
-    from: "#7C3AED",
-    to: "#16C47F",
-    light: "rgba(124,58,237,0.08)",
-    glow: "rgba(124,58,237,0.30)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.08)",
+    glow: "rgba(123,47,247,0.30)",
     hoverChip: "🚀 Teaching Opportunities",
-    chipColor: "#7C3AED",
+    chipColor: "#7B2FF7",
     stats: [
       { val: "1,200+", label: "Tutors" },
       { val: "50+",    label: "Cities" },
@@ -91,12 +91,12 @@ const COMMUNITY = [
 ];
 
 const MICRO_CHIPS = [
-  { text: "Personalized Learning", color: "#16C47F" },
-  { text: "Trusted Platform",      color: "#2563EB" },
-  { text: "Verified Tutors",       color: "#7C3AED" },
+  { text: "Personalized Learning", color: "#7B2FF7" },
+  { text: "Trusted Platform",      color: "#7B2FF7" },
+  { text: "Verified Tutors",       color: "#7B2FF7" },
   { text: "Parent Transparency",   color: "#F59E0B" },
-  { text: "Student Success",       color: "#16C47F" },
-  { text: "Career Growth",         color: "#2563EB" },
+  { text: "Student Success",       color: "#7B2FF7" },
+  { text: "Career Growth",         color: "#7B2FF7" },
 ];
 
 // ─────────────────────────────────────────────
@@ -105,9 +105,9 @@ const MICRO_CHIPS = [
 
 function EcosystemHub() {
   const nodes = [
-    { label: "Students", emoji: "🎓", angle: -90, color: "#16C47F", r: 120 },
-    { label: "Parents",  emoji: "👨‍👩‍👧", angle:  30, color: "#2563EB", r: 120 },
-    { label: "Tutors",   emoji: "👨‍🏫", angle: 150, color: "#7C3AED", r: 120 },
+    { label: "Students", emoji: "🎓", angle: -90, color: "#7B2FF7", r: 120 },
+    { label: "Parents",  emoji: "👨‍👩‍👧", angle:  30, color: "#7B2FF7", r: 120 },
+    { label: "Tutors",   emoji: "👨‍🏫", angle: 150, color: "#7B2FF7", r: 120 },
   ];
 
   return (
@@ -119,18 +119,18 @@ function EcosystemHub() {
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           className="absolute w-[320px] h-[320px] rounded-full"
-          style={{ border: "1.5px dashed rgba(22,196,127,0.2)" }}
+          style={{ border: "1.5px dashed rgba(248,120,8,0.2)" }}
         />
         {/* Middle ring */}
         <div className="absolute w-[240px] h-[240px] rounded-full"
-          style={{ border: "1px solid rgba(37,99,235,0.12)" }} />
+          style={{ border: "1px solid rgba(123,47,247,0.12)" }} />
 
         {/* SVG connector lines */}
         <svg className="absolute w-[320px] h-[320px]" viewBox="0 0 320 320">
           <defs>
             {nodes.map((n, i) => (
               <linearGradient key={i} id={`hubGrad${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#16C47F" stopOpacity="0.6" />
+                <stop offset="0%" stopColor="#7B2FF7" stopOpacity="0.6" />
                 <stop offset="100%" stopColor={n.color} stopOpacity="0.5" />
               </linearGradient>
             ))}
@@ -184,9 +184,9 @@ function EcosystemHub() {
           viewport={{ once: true }}
           transition={{ type: "spring", bounce: 0.45, delay: 0.2 }}
           className="relative z-10 w-[88px] h-[88px] rounded-2xl flex flex-col items-center justify-center
-                     shadow-[0_0_48px_rgba(22,196,127,0.55)]"
+                     shadow-[0_0_48px_rgba(248,120,8,0.55)]"
           style={{
-            background: "linear-gradient(135deg, #16C47F, #2563EB, #7C3AED)",
+            background: "linear-gradient(135deg, #7B2FF7, #7B2FF7, #7B2FF7)",
             animation: "communityPulse 3s ease-in-out infinite",
           }}
         >
@@ -245,9 +245,9 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
       transition={{ duration: 0.65, delay: member.delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -14, scale: 1.025 }}
       className="group relative rounded-[28px] bg-white overflow-hidden flex flex-col
-                 border border-[rgba(15,23,42,0.07)]
-                 shadow-[0_6px_32px_rgba(15,23,42,0.08)]
-                 hover:shadow-[0_28px_72px_rgba(15,23,42,0.14)]
+                 border border-[rgba(30,27,58,0.07)]
+                 shadow-[0_6px_32px_rgba(30,27,58,0.08)]
+                 hover:shadow-[0_28px_72px_rgba(30,27,58,0.14)]
                  transition-all duration-500 cursor-default"
     >
       {/* Top gradient stripe */}
@@ -262,7 +262,7 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/70 via-[#0B1220]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/70 via-[#0A1028]/20 to-transparent" />
         <div className="absolute inset-0"
           style={{ background: `linear-gradient(135deg, ${member.from}20, transparent 60%)` }} />
 
@@ -319,7 +319,7 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
 
         <div className="relative z-10 flex flex-col flex-1">
           {/* Description */}
-          <p className="text-sm leading-7 text-[#64748B] mb-6 flex-1">{member.desc}</p>
+          <p className="text-sm leading-7 text-[#6E6A85] mb-6 flex-1">{member.desc}</p>
 
           {/* Stats row */}
           <div className="grid grid-cols-2 gap-3 mb-6">
@@ -335,7 +335,7 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
                   }}>
                   {s.val}
                 </p>
-                <p className="text-[10px] font-bold text-[#64748B]">{s.label}</p>
+                <p className="text-[10px] font-bold text-[#6E6A85]">{s.label}</p>
               </div>
             ))}
           </div>
@@ -352,13 +352,13 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
                 className="flex items-center gap-2.5"
               >
                 <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: member.from }} />
-                <span className="text-sm font-semibold text-[#0F172A]">{f}</span>
+                <span className="text-sm font-semibold text-[#1E1B3A]">{f}</span>
               </motion.div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="pt-5 border-t border-[rgba(15,23,42,0.07)]">
+          <div className="pt-5 border-t border-[rgba(30,27,58,0.07)]">
             <motion.a
               href="#"
               className="group/cta flex items-center gap-2 text-sm font-black transition-all duration-300"
@@ -403,7 +403,7 @@ export function MeetOurCommunitySection() {
         <div className="absolute inset-0 flex items-center justify-center select-none">
           <p className="text-[180px] lg:text-[260px] font-black text-center leading-none whitespace-nowrap"
             style={{
-              background: "linear-gradient(135deg, rgba(22,196,127,0.03), rgba(37,99,235,0.03))",
+              background: "linear-gradient(135deg, rgba(248,120,8,0.03), rgba(123,47,247,0.03))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
@@ -415,20 +415,20 @@ export function MeetOurCommunitySection() {
 
         <motion.div
           className="absolute -top-56 -left-56 w-[720px] h-[720px] rounded-full blur-[130px] opacity-[0.10]"
-          style={{  y: bgY, background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+          style={{  y: bgY, background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute -bottom-44 -right-44 w-[660px] h-[660px] rounded-full blur-[120px] opacity-[0.08]"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[480px] h-[480px] rounded-full blur-[90px] opacity-[0.06]"
-          style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
 
         {/* Floating particles */}
         {[
-          { x: 6,  y: 12, c: "#16C47F", s: 5, d: 0    },
-          { x: 92, y: 18, c: "#2563EB", s: 7, d: 0.6  },
-          { x: 14, y: 65, c: "#7C3AED", s: 4, d: 1.2  },
-          { x: 86, y: 70, c: "#16C47F", s: 6, d: 0.4  },
-          { x: 50, y: 4,  c: "#2563EB", s: 5, d: 0.9  },
-          { x: 78, y: 90, c: "#7C3AED", s: 4, d: 1.5  },
+          { x: 6,  y: 12, c: "#7B2FF7", s: 5, d: 0    },
+          { x: 92, y: 18, c: "#7B2FF7", s: 7, d: 0.6  },
+          { x: 14, y: 65, c: "#7B2FF7", s: 4, d: 1.2  },
+          { x: 86, y: 70, c: "#7B2FF7", s: 6, d: 0.4  },
+          { x: 50, y: 4,  c: "#7B2FF7", s: 5, d: 0.9  },
+          { x: 78, y: 90, c: "#7B2FF7", s: 4, d: 1.5  },
         ].map((d, i) => (
           <motion.div key={i}
             animate={{ y: [0, -12, 0], opacity: [0.35, 0.8, 0.35] }}
@@ -440,7 +440,7 @@ export function MeetOurCommunitySection() {
 
         {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.025]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -458,15 +458,15 @@ export function MeetOurCommunitySection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full
                          bg-white/90 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_28px_rgba(248,120,8,0.18)]"
             >
-              <Star className="w-4 h-4 text-[#16C47F]" />
-              <span className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+              <Star className="w-4 h-4 text-[#7B2FF7]" />
+              <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
                 Our Community
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -475,12 +475,12 @@ export function MeetOurCommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0B1220] mb-6"
+            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
             style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
           >
             One Platform.{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                             drop-shadow-[0_0_36px_rgba(22,196,127,0.22)]">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                             drop-shadow-[0_0_36px_rgba(248,120,8,0.22)]">
               Three Success Stories.
             </span>
           </motion.h2>
@@ -490,7 +490,7 @@ export function MeetOurCommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.18 }}
-            className="text-lg leading-8 text-[#64748B]"
+            className="text-lg leading-8 text-[#6E6A85]"
           >
             Tutoo brings together students, parents, and tutors through a connected learning
             ecosystem built on trust, technology, and measurable outcomes.
@@ -524,8 +524,8 @@ export function MeetOurCommunitySection() {
               transition={{ delay: 0.1 + i * 0.07 }}
               whileHover={{ scale: 1.08, y: -3 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white
-                         border border-[rgba(15,23,42,0.08)] shadow-sm hover:shadow-md
-                         text-xs font-bold text-[#0F172A] transition-all duration-300 cursor-default"
+                         border border-[rgba(30,27,58,0.08)] shadow-sm hover:shadow-md
+                         text-xs font-bold text-[#1E1B3A] transition-all duration-300 cursor-default"
             >
               <CheckCircle2 className="w-3.5 h-3.5" style={{ color: chip.color }} />
               {chip.text}
@@ -545,8 +545,8 @@ export function MeetOurCommunitySection() {
 
       <style>{`
         @keyframes communityPulse {
-          0%,100% { box-shadow: 0 0 0 0 rgba(22,196,127,0.3), 0 0 48px rgba(22,196,127,0.55); }
-          50%      { box-shadow: 0 0 0 18px rgba(22,196,127,0), 0 0 48px rgba(22,196,127,0.55); }
+          0%,100% { box-shadow: 0 0 0 0 rgba(248,120,8,0.3), 0 0 48px rgba(248,120,8,0.55); }
+          50%      { box-shadow: 0 0 0 18px rgba(248,120,8,0), 0 0 48px rgba(248,120,8,0.55); }
         }
       `}</style>
     </section>

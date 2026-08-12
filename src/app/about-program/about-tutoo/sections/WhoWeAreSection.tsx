@@ -16,21 +16,21 @@ const features = [
     title: "Personalized Learning",
     description:
       "Customized learning experiences designed around individual student needs.",
-    color: "#16C47F",
+    color: "#7B2FF7",
   },
   {
     icon: Users,
     title: "Expert Tutors",
     description:
       "Carefully verified and qualified educators committed to student success.",
-    color: "#2563EB",
+    color: "#7B2FF7",
   },
   {
     icon: TrendingUp,
     title: "Progress Tracking",
     description:
       "Real-time academic monitoring, reporting and measurable growth.",
-    color: "#7C3AED",
+    color: "#7B2FF7",
   },
   {
     icon: Laptop,
@@ -75,7 +75,7 @@ export default function WhoWeAreSection() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#16C47F]/10
+          bg-[#7B2FF7]/10
           blur-[120px]
           "
         />
@@ -88,7 +88,7 @@ export default function WhoWeAreSection() {
           w-[600px]
           h-[600px]
           rounded-full
-          bg-[#2563EB]/10
+          bg-[#7B2FF7]/10
           blur-[150px]
           "
         />
@@ -102,7 +102,7 @@ export default function WhoWeAreSection() {
           w-[400px]
           h-[400px]
           rounded-full
-          bg-[#7C3AED]/8
+          bg-[#7B2FF7]/8
           blur-[120px]
           "
         />
@@ -131,13 +131,13 @@ export default function WhoWeAreSection() {
               bg-white/80
               backdrop-blur-xl
               border
-              border-[#16C47F]/20
+              border-[#7B2FF7]/20
               shadow-lg
               "
             >
               🏢
 
-              <span className="font-semibold text-[#16C47F] text-sm">
+              <span className="font-semibold text-[#7B2FF7] text-sm">
                 WHO WE ARE
               </span>
             </motion.div>
@@ -154,7 +154,7 @@ export default function WhoWeAreSection() {
               lg:text-6xl
               font-black
               leading-[1.1]
-              text-[#0B1220]
+              text-[#0A1028]
               "
               style={{
                 fontFamily: "var(--font-heading)",
@@ -165,8 +165,8 @@ export default function WhoWeAreSection() {
               <span
                 className="
                 bg-gradient-to-r
-                from-[#16C47F]
-                to-[#2563EB]
+                from-[#7B2FF7]
+                to-[#7B2FF7]
                 bg-clip-text
                 text-transparent
                 "
@@ -186,7 +186,7 @@ export default function WhoWeAreSection() {
               className="
               mt-8
               space-y-6
-              text-[#64748B]
+              text-[#6E6A85]
               text-lg
               leading-9
               "
@@ -230,7 +230,7 @@ export default function WhoWeAreSection() {
                   bg-white/80
                   backdrop-blur-xl
                   border
-                  border-[rgba(15,23,42,0.08)]
+                  border-[rgba(30,27,58,0.08)]
                   shadow-lg
                   hover:shadow-2xl
                   transition-all
@@ -259,11 +259,11 @@ export default function WhoWeAreSection() {
                     />
                   </div>
 
-                  <h4 className="font-bold text-[#0F172A] text-lg mb-3">
+                  <h4 className="font-bold text-[#1E1B3A] text-lg mb-3">
                     {item.title}
                   </h4>
 
-                  <p className="text-sm leading-7 text-[#64748B]">
+                  <p className="text-sm leading-7 text-[#6E6A85]">
                     {item.description}
                   </p>
                 </motion.div>
@@ -282,7 +282,7 @@ export default function WhoWeAreSection() {
               overflow-hidden
               rounded-[36px]
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               shadow-2xl
               "
@@ -317,12 +317,12 @@ export default function WhoWeAreSection() {
               "
             >
               <div className="flex gap-3">
-                <BookOpen className="text-[#16C47F]" />
+                <BookOpen className="text-[#7B2FF7]" />
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Learning Plan
                   </p>
-                  <p className="text-sm text-[#64748B]">
+                  <p className="text-sm text-[#6E6A85]">
                     Active
                   </p>
                 </div>
@@ -348,12 +348,12 @@ export default function WhoWeAreSection() {
               "
             >
               <div className="flex gap-3">
-                <Users className="text-[#2563EB]" />
+                <Users className="text-[#7B2FF7]" />
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Tutor Assigned
                   </p>
-                  <p className="text-sm text-[#64748B]">
+                  <p className="text-sm text-[#6E6A85]">
                     Verified Educator
                   </p>
                 </div>
@@ -379,12 +379,12 @@ export default function WhoWeAreSection() {
               "
             >
               <div className="flex gap-3">
-                <TrendingUp className="text-[#16C47F]" />
+                <TrendingUp className="text-[#7B2FF7]" />
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Weekly Progress
                   </p>
-                  <p className="text-[#16C47F] font-semibold">
+                  <p className="text-[#7B2FF7] font-semibold">
                     +24%
                   </p>
                 </div>
@@ -412,7 +412,7 @@ export default function WhoWeAreSection() {
               <div className="flex gap-3">
                 <Star className="text-[#F59E0B]" />
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Satisfaction
                   </p>
                   <p className="text-[#F59E0B] font-semibold">
@@ -442,12 +442,12 @@ export default function WhoWeAreSection() {
               "
             >
               <div className="flex gap-3">
-                <Target className="text-[#7C3AED]" />
+                <Target className="text-[#7B2FF7]" />
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Academic Goals
                   </p>
-                  <p className="text-[#7C3AED] font-semibold">
+                  <p className="text-[#7B2FF7] font-semibold">
                     On Track
                   </p>
                 </div>

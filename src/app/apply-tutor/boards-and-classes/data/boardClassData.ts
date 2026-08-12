@@ -21,43 +21,43 @@ export interface BoardClassEntry {
 
 // ── Subject icon/color palette helper ────────────────────────────────────────
 const SUB = {
-  Maths: { icon: "📐", color: "#2563EB", bg: "rgba(37,99,235,0.09)" },
-  English: { icon: "📖", color: "#16C47F", bg: "rgba(22,196,127,0.09)" },
-  Science: { icon: "🔬", color: "#7C3AED", bg: "rgba(124,58,237,0.09)" },
+  Maths: { icon: "📐", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
+  English: { icon: "📖", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)" },
+  Science: { icon: "🔬", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
   Hindi: { icon: "🇮🇳", color: "#F59E0B", bg: "rgba(245,158,11,0.09)" },
-  EVS: { icon: "🌿", color: "#16C47F", bg: "rgba(22,196,127,0.09)" },
-  GK: { icon: "🌍", color: "#2563EB", bg: "rgba(37,99,235,0.09)" },
+  EVS: { icon: "🌿", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)" },
+  GK: { icon: "🌍", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
   SocialScience: { icon: "🏛️", color: "#F59E0B", bg: "rgba(245,158,11,0.09)" },
-  Sanskrit: { icon: "📜", color: "#7C3AED", bg: "rgba(124,58,237,0.09)" },
-  Computer: { icon: "💻", color: "#2563EB", bg: "rgba(37,99,235,0.09)" },
-  Physics: { icon: "⚛️", color: "#7C3AED", bg: "rgba(124,58,237,0.09)" },
+  Sanskrit: { icon: "📜", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
+  Computer: { icon: "💻", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
+  Physics: { icon: "⚛️", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
   Chemistry: { icon: "🧪", color: "#EF4444", bg: "rgba(239,68,68,0.09)" },
-  Biology: { icon: "🧬", color: "#16C47F", bg: "rgba(22,196,127,0.09)" },
+  Biology: { icon: "🧬", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)" },
   Accounts: { icon: "📊", color: "#F59E0B", bg: "rgba(245,158,11,0.09)" },
-  BusinessStudies: { icon: "💼", color: "#2563EB", bg: "rgba(37,99,235,0.09)" },
-  Economics: { icon: "📈", color: "#16C47F", bg: "rgba(22,196,127,0.09)" },
-  Maths2: { icon: "∑", color: "#2563EB", bg: "rgba(37,99,235,0.09)" },
+  BusinessStudies: { icon: "💼", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
+  Economics: { icon: "📈", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)" },
+  Maths2: { icon: "∑", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
   History: { icon: "🏺", color: "#F59E0B", bg: "rgba(245,158,11,0.09)" },
-  Geography: { icon: "🗺️", color: "#16C47F", bg: "rgba(22,196,127,0.09)" },
-  Civics: { icon: "⚖️", color: "#7C3AED", bg: "rgba(124,58,237,0.09)" },
+  Geography: { icon: "🗺️", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)" },
+  Civics: { icon: "⚖️", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)" },
 
   /* NEW ARTS SUBJECTS */
   PoliticalScience: {
     icon: "🏛️",
-    color: "#2563EB",
-    bg: "rgba(37,99,235,0.09)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.09)",
   },
 
   Psychology: {
     icon: "🧠",
-    color: "#7C3AED",
-    bg: "rgba(124,58,237,0.09)",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.09)",
   },
 
   Sociology: {
     icon: "👥",
-    color: "#16C47F",
-    bg: "rgba(22,196,127,0.09)",
+    color: "#7B2FF7",
+    bg: "rgba(248,120,8,0.09)",
   },
 };
 const sub = (label: string, key: keyof typeof SUB) => ({ label, ...SUB[key] });
@@ -1170,22 +1170,22 @@ export const LEARNING_OUTCOMES: Record<Category, { icon: string; text: string }[
 
 // ── Process steps (shared) ───────────────────────────────────────────────────
 export const HOW_IT_WORKS = [
-  { num: "01", title: "Submit Requirement", desc: "Tell us your child's board, class, subjects, and preferred schedule.", color: "#2563EB", glow: "rgba(37,99,235,0.3)" },
-  { num: "02", title: "Get Tutor Recommendations", desc: "We match your child with verified, experience-tested tutors within 24 hours.", color: "#16C47F", glow: "rgba(22,196,127,0.3)" },
-  { num: "03", title: "Attend Free Demo", desc: "Your child attends a free demo session with the recommended tutor.", color: "#7C3AED", glow: "rgba(124,58,237,0.3)" },
+  { num: "01", title: "Submit Requirement", desc: "Tell us your child's board, class, subjects, and preferred schedule.", color: "#7B2FF7", glow: "rgba(123,47,247,0.3)" },
+  { num: "02", title: "Get Tutor Recommendations", desc: "We match your child with verified, experience-tested tutors within 24 hours.", color: "#7B2FF7", glow: "rgba(248,120,8,0.3)" },
+  { num: "03", title: "Attend Free Demo", desc: "Your child attends a free demo session with the recommended tutor.", color: "#7B2FF7", glow: "rgba(123,47,247,0.3)" },
   { num: "04", title: "Choose Your Tutor", desc: "Approve the tutor you are comfortable with — or we find a new match.", color: "#F59E0B", glow: "rgba(245,158,11,0.3)" },
-  { num: "05", title: "Start Learning", desc: "Regular sessions begin with a personalised study plan and progress tracking.", color: "#16C47F", glow: "rgba(22,196,127,0.3)" },
-  { num: "06", title: "Track Progress", desc: "Access real-time reports, attendance logs, and tutor feedback on your dashboard.", color: "#2563EB", glow: "rgba(37,99,235,0.3)" },
+  { num: "05", title: "Start Learning", desc: "Regular sessions begin with a personalised study plan and progress tracking.", color: "#7B2FF7", glow: "rgba(248,120,8,0.3)" },
+  { num: "06", title: "Track Progress", desc: "Access real-time reports, attendance logs, and tutor feedback on your dashboard.", color: "#7B2FF7", glow: "rgba(123,47,247,0.3)" },
 ];
 
 // ── Why Tutoo (shared) ───────────────────────────────────────────────────
 export const WHY_FEATURES = [
-  { icon: "✅", title: "Verified Tutors", desc: "Every tutor passes background checks, document verification, and expert interviews.", grad: "from-[#16C47F] to-[#2563EB]" },
-  { icon: "🎯", title: "Personalised Learning", desc: "Custom study plans tailored to your child's pace, goals, and learning style.", grad: "from-[#2563EB] to-[#7C3AED]" },
-  { icon: "🏠", title: "Home & Online Classes", desc: "Flexible learning modes — at your home or via live video sessions.", grad: "from-[#7C3AED] to-[#2563EB]" },
+  { icon: "✅", title: "Verified Tutors", desc: "Every tutor passes background checks, document verification, and expert interviews.", grad: "from-[#EA580C] to-[#C2410C]" },
+  { icon: "🎯", title: "Personalised Learning", desc: "Custom study plans tailored to your child's pace, goals, and learning style.", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { icon: "🏠", title: "Home & Online Classes", desc: "Flexible learning modes — at your home or via live video sessions.", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { icon: "📊", title: "Progress Tracking", desc: "Real-time dashboards show homework, attendance, and academic improvement.", grad: "from-[#F59E0B] to-[#EF4444]" },
-  { icon: "⏰", title: "Flexible Timings", desc: "Morning, evening, or weekend sessions — fully around your schedule.", grad: "from-[#16C47F] to-[#7C3AED]" },
-  { icon: "🎁", title: "Free Demo Session", desc: "Try before you commit — every student gets a free first session.", grad: "from-[#2563EB] to-[#16C47F]" },
+  { icon: "⏰", title: "Flexible Timings", desc: "Morning, evening, or weekend sessions — fully around your schedule.", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { icon: "🎁", title: "Free Demo Session", desc: "Try before you commit — every student gets a free first session.", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────

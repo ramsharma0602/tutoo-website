@@ -33,7 +33,7 @@ const featuredResources = [
       "Complete board preparation package with sample papers, revision notes, chapter-wise questions and important concepts.",
 
     gradient:
-      "from-[#2563EB] to-[#16C47F]",
+      "from-[#7B2FF7] to-[#7B2FF7]",
   },
 
   {
@@ -61,7 +61,7 @@ const featuredResources = [
       "Comprehensive Physics, Chemistry and Biology notes created by expert educators.",
 
     gradient:
-      "from-[#7C3AED] to-[#2563EB]",
+      "from-[#7B2FF7] to-[#7B2FF7]",
   },
 
   {
@@ -117,7 +117,7 @@ const featuredResources = [
       "Printable worksheets designed to improve conceptual understanding and problem solving.",
 
     gradient:
-      "from-[#16C47F] to-[#2563EB]",
+      "from-[#EA580C] to-[#C2410C]",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function FeaturedDownloads() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#16C47F]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -149,7 +149,7 @@ export default function FeaturedDownloads() {
           w-[600px]
           h-[600px]
           rounded-full
-          bg-[#2563EB]/10
+          bg-[#7B2FF7]/10
           blur-[160px]
           "
         />
@@ -175,13 +175,13 @@ export default function FeaturedDownloads() {
             rounded-full
             bg-white
             border
-            border-[#16C47F]/20
+            border-[#7B2FF7]/20
             shadow-lg
             "
           >
             ⭐
 
-            <span className="font-semibold text-[#16C47F]">
+            <span className="font-semibold text-[#7B2FF7]">
               FEATURED DOWNLOADS
             </span>
           </div>
@@ -192,7 +192,7 @@ export default function FeaturedDownloads() {
             text-4xl
             lg:text-6xl
             font-black
-            text-[#0B1220]
+            text-[#0A1028]
             "
             style={{
               fontFamily:
@@ -200,12 +200,12 @@ export default function FeaturedDownloads() {
             }}
           >
             Recommended{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="text-[#6D28D9]">
               Learning Resources
             </span>
           </h2>
 
-          <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-[#64748B]">
+          <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-[#6E6A85]">
             Discover the most downloaded
             study kits, worksheets,
             revision notes and exam packs
@@ -240,7 +240,7 @@ export default function FeaturedDownloads() {
                 overflow-hidden
                 bg-white
                 border
-                border-[rgba(15,23,42,0.08)]
+                border-[rgba(30,27,58,0.08)]
                 shadow-xl
                 "
               >
@@ -281,7 +281,7 @@ export default function FeaturedDownloads() {
                       py-2
                       rounded-full
                       bg-white
-                      text-[#2563EB]
+                      text-[#7B2FF7]
                       text-xs
                       font-bold
                       shadow-lg
@@ -348,8 +348,8 @@ export default function FeaturedDownloads() {
                       px-4
                       py-2
                       rounded-full
-                      bg-[#2563EB]/10
-                      text-[#2563EB]
+                      bg-[#7B2FF7]/10
+                      text-[#7B2FF7]
                       text-sm
                       font-semibold
                       "
@@ -362,8 +362,8 @@ export default function FeaturedDownloads() {
                       px-4
                       py-2
                       rounded-full
-                      bg-[#16C47F]/10
-                      text-[#16C47F]
+                      bg-[#7B2FF7]/10
+                      text-[#7B2FF7]
                       text-sm
                       font-semibold
                       "
@@ -395,14 +395,14 @@ export default function FeaturedDownloads() {
                       h-14
                       rounded-2xl
                       border
-                      border-[rgba(15,23,42,0.08)]
+                      border-[rgba(30,27,58,0.08)]
                       flex
                       items-center
                       justify-center
                       gap-2
                       font-semibold
-                      text-[#64748B]
-                      hover:bg-[#F8FAFC]
+                      text-[#6E6A85]
+                      hover:bg-[#FAFAFC]
                       "
                     >
                       <Eye className="w-4 h-4" />
@@ -440,7 +440,7 @@ export default function FeaturedDownloads() {
                     items-center
                     gap-2
                     font-semibold
-                    text-[#2563EB]
+                    text-[#7B2FF7]
                     "
                   >
                     View Resource Details

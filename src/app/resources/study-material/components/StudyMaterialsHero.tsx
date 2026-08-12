@@ -18,16 +18,16 @@ export default function StudyMaterialsHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-24">
+    <section className="relative overflow-hidden bg-[#FAFAFC] py-24">
 
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
 
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 rounded-full blur-[140px]" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-[140px]" />
 
-        <div className="absolute right-0 top-20 w-[600px] h-[600px] bg-[#2563EB]/10 rounded-full blur-[160px]" />
+        <div className="absolute right-0 top-20 w-[600px] h-[600px] bg-[#7B2FF7]/10 rounded-full blur-[160px]" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-[120px]" />
 
       </div>
 
@@ -49,13 +49,13 @@ export default function StudyMaterialsHero() {
               bg-white/80
               backdrop-blur-xl
               border
-              border-[#16C47F]/20
+              border-[#7B2FF7]/20
               shadow-lg
               "
             >
               📚
 
-              <span className="font-semibold text-[#16C47F]">
+              <span className="font-semibold text-[#7B2FF7]">
                 STUDY MATERIAL LIBRARY
               </span>
             </div>
@@ -66,7 +66,7 @@ export default function StudyMaterialsHero() {
               text-5xl
               lg:text-7xl
               font-black
-              text-[#0B1220]
+              text-[#0A1028]
               leading-tight
               "
               style={{
@@ -75,12 +75,12 @@ export default function StudyMaterialsHero() {
               }}
             >
               Study Smarter with{" "}
-              <span className="bg-gradient-to-r from-[#16C47F] via-[#22D3EE] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
                 Quality Learning Resources
               </span>
             </h1>
 
-            <p className="mt-8 text-lg leading-9 text-[#64748B] max-w-2xl">
+            <p className="mt-8 text-lg leading-9 text-[#6E6A85] max-w-2xl">
               Access curated study materials,
               practice worksheets,
               revision notes,
@@ -102,7 +102,7 @@ export default function StudyMaterialsHero() {
               h-16
               "
             >
-              <Search className="w-5 h-5 text-[#64748B]" />
+              <Search className="w-5 h-5 text-[#6E6A85]" />
 
               <input
                 placeholder="Search Study Materials..."
@@ -119,9 +119,9 @@ export default function StudyMaterialsHero() {
                 px-3
                 py-1.5
                 rounded-lg
-                bg-[#F8FAFC]
+                bg-[#FAFAFC]
                 text-sm
-                text-[#64748B]
+                text-[#6E6A85]
                 "
               >
                 ⌘ K
@@ -140,11 +140,11 @@ export default function StudyMaterialsHero() {
                   rounded-full
                   bg-white
                   border
-                  border-[rgba(15,23,42,0.08)]
+                  border-[rgba(30,27,58,0.08)]
                   text-sm
                   font-medium
-                  text-[#64748B]
-                  hover:border-[#2563EB]
+                  text-[#6E6A85]
+                  hover:border-[#7B2FF7]
                   "
                 >
                   {tag}
@@ -188,13 +188,13 @@ export default function StudyMaterialsHero() {
                 shadow-lg
                 "
               >
-                <FileText className="w-6 h-6 text-[#2563EB]" />
+                <FileText className="w-6 h-6 text-[#7B2FF7]" />
 
                 <h4 className="font-bold mt-2">
                   10,000+
                 </h4>
 
-                <p className="text-xs text-[#64748B]">
+                <p className="text-xs text-[#6E6A85]">
                   Resources
                 </p>
               </div>
@@ -210,13 +210,13 @@ export default function StudyMaterialsHero() {
                 shadow-lg
                 "
               >
-                <BookOpen className="w-6 h-6 text-[#16C47F]" />
+                <BookOpen className="w-6 h-6 text-[#7B2FF7]" />
 
                 <h4 className="font-bold mt-2">
                   500+
                 </h4>
 
-                <p className="text-xs text-[#64748B]">
+                <p className="text-xs text-[#6E6A85]">
                   Worksheets
                 </p>
               </div>
@@ -232,13 +232,13 @@ export default function StudyMaterialsHero() {
                 shadow-lg
                 "
               >
-                <BarChart3 className="w-6 h-6 text-[#7C3AED]" />
+                <BarChart3 className="w-6 h-6 text-[#7B2FF7]" />
 
                 <h4 className="font-bold mt-2">
                   Most Downloaded
                 </h4>
 
-                <p className="text-xs text-[#64748B]">
+                <p className="text-xs text-[#6E6A85]">
                   Trending Resources
                 </p>
               </div>

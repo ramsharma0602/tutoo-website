@@ -98,16 +98,16 @@ export default function BookAssessmentPage() {
   return (
     <>
     <CityAvailabilitySection variant="compact" />
-    <section className="relative min-h-screen overflow-hidden bg-[#F8FAFC] py-24">
+    <section className="relative min-h-screen overflow-hidden bg-[#FAFAFC] py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 blur-3xl rounded-full" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 blur-3xl rounded-full" />
 
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 blur-3xl rounded-full" />
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7C3AED]/5 blur-3xl rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B2FF7]/5 blur-3xl rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -121,11 +121,11 @@ export default function BookAssessmentPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#16C47F]/20 shadow-sm mb-8"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#7B2FF7]/20 shadow-sm mb-8"
             >
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
-              <span className="text-sm font-semibold text-[#16C47F]">
+              <span className="text-sm font-semibold text-[#7B2FF7]">
                 Free AI-Powered Assessment
               </span>
             </motion.div>
@@ -135,12 +135,12 @@ export default function BookAssessmentPage() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0B1220]"
+              className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0A1028]"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Discover your child’s real{' '}
 
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 learning potential.
               </span>
             </motion.h1>
@@ -150,7 +150,7 @@ export default function BookAssessmentPage() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl"
+              className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl"
             >
               Get a personalized academic assessment, AI learning analysis,
               and expert tutor recommendations designed specifically for your
@@ -171,16 +171,16 @@ export default function BookAssessmentPage() {
                 >
                   <div className="flex items-start gap-5">
 
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg">
                       <card.icon className="w-6 h-6 text-white" />
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-bold text-[#0F172A]">
+                      <h3 className="text-lg font-bold text-[#1E1B3A]">
                         {card.title}
                       </h3>
 
-                      <p className="mt-2 text-sm leading-7 text-[#64748B]">
+                      <p className="mt-2 text-sm leading-7 text-[#6E6A85]">
                         {card.description}
                       </p>
                     </div>
@@ -196,7 +196,7 @@ export default function BookAssessmentPage() {
 
                 <div
                   key={stat}
-                  className="px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white shadow-md text-sm font-semibold text-[#0F172A]"
+                  className="px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white shadow-md text-sm font-semibold text-[#1E1B3A]"
                 >
                   {stat}
                 </div>
@@ -214,28 +214,28 @@ export default function BookAssessmentPage() {
             bg-white/75
             backdrop-blur-2xl
             border
-            border-[#E2E8F0]
-            shadow-[0_20px_80px_rgba(15,23,42,0.08)]
+            border-[#E6E3F0]
+            shadow-[0_20px_80px_rgba(30,27,58,0.08)]
             p-8 lg:p-10"
           >
 
             {/* Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#16C47F]/5 via-[#2563EB]/5 to-[#7C3AED]/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#7B2FF7]/5 via-[#7B2FF7]/5 to-[#7B2FF7]/5" />
 
             <div className="relative z-10">
 
               {/* Header */}
               <div>
 
-                <p className="text-sm font-semibold text-[#16C47F]">
+                <p className="text-sm font-semibold text-[#7B2FF7]">
                   Start Your Assessment
                 </p>
 
-                <h3 className="mt-3 text-4xl font-black text-[#0F172A]">
+                <h3 className="mt-3 text-4xl font-black text-[#1E1B3A]">
                   Book Free Assessment
                 </h3>
 
-                <p className="mt-4 text-[#64748B] leading-7">
+                <p className="mt-4 text-[#6E6A85] leading-7">
                   Complete the form below and our academic advisors will
                   connect with you shortly to understand your child's
                   learning goals and recommend the perfect tutor.
@@ -262,7 +262,7 @@ export default function BookAssessmentPage() {
                 -translate-x-1/2
                 w-[600px]
                 h-[600px]
-                bg-[#7C3AED]/10
+                bg-[#7B2FF7]/10
                 rounded-full
                 blur-3xl
                 pointer-events-none

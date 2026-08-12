@@ -27,16 +27,16 @@ export function ForTutorsHeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] pt-36 pb-24">
+    <section className="relative overflow-hidden bg-[#FAFAFC] pt-36 pb-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7C3AED]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7B2FF7]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -54,23 +54,23 @@ export function ForTutorsHeroSection() {
           >
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#16C47F]/20 shadow-sm mb-8">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#7B2FF7]/20 shadow-sm mb-8">
 
-              <GraduationCap className="w-4 h-4 text-[#16C47F]" />
+              <GraduationCap className="w-4 h-4 text-[#7B2FF7]" />
 
-              <span className="text-sm font-semibold text-[#16C47F]">
+              <span className="text-sm font-semibold text-[#7B2FF7]">
                 For Tutors
               </span>
             </div>
 
             {/* Heading */}
             <h1
-              className="text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#0B1220]"
+              className="text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#0A1028]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Teach.{" "}
 
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#7C3AED] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#8F21F8] to-[#7B2FF7] bg-clip-text text-transparent">
                 Inspire.
               </span>{" "}
 
@@ -78,12 +78,12 @@ export function ForTutorsHeroSection() {
             </h1>
 
             {/* Subheading */}
-            <p className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl">
+            <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
               Join Tutoo and connect with students across India through a
               modern AI-powered learning platform designed for passionate educators.
             </p>
 
-            <p className="mt-4 text-[15px] leading-8 text-[#64748B] font-medium">
+            <p className="mt-4 text-[15px] leading-8 text-[#6E6A85] font-medium">
               Teach Online or Offline • Flexible Schedule • Attractive Earnings • Dedicated Support
             </p>
 
@@ -101,12 +101,12 @@ export function ForTutorsHeroSection() {
                   className="group flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white shadow-sm hover:shadow-lg transition-all duration-300"
                 >
 
-                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
 
                     <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
 
-                  <span className="text-sm font-semibold text-[#0F172A]">
+                  <span className="text-sm font-semibold text-[#1E1B3A]">
                     {badge}
                   </span>
                 </motion.div>
@@ -126,12 +126,12 @@ export function ForTutorsHeroSection() {
                   px-8
                   rounded-2xl
                   bg-gradient-to-r
-                  from-[#16C47F]
-                  to-[#2563EB]
+                  from-[#7B2FF7]
+                  to-[#7B2FF7]
                   text-white
                   font-semibold
-                  shadow-[0_10px_40px_rgba(37,99,235,0.25)]
-                  hover:shadow-[0_20px_60px_rgba(37,99,235,0.35)]
+                  shadow-[0_10px_40px_rgba(123,47,247,0.25)]
+                  hover:shadow-[0_20px_60px_rgba(123,47,247,0.35)]
                   hover:scale-[1.02]
                   active:scale-[0.98]
                   transition-all
@@ -148,9 +148,9 @@ export function ForTutorsHeroSection() {
               </button>
 
               {/* Secondary */}
-              <button className="h-14 px-7 rounded-2xl bg-white/70 backdrop-blur-xl border border-[rgba(15,23,42,0.08)] shadow-sm hover:shadow-lg transition-all duration-300 font-semibold text-[#0F172A] flex items-center gap-3">
+              <button className="h-14 px-7 rounded-2xl bg-white/70 backdrop-blur-xl border border-[rgba(30,27,58,0.08)] shadow-sm hover:shadow-lg transition-all duration-300 font-semibold text-[#1E1B3A] flex items-center gap-3">
 
-                <PlayCircle className="w-5 h-5 text-[#2563EB]" />
+                <PlayCircle className="w-5 h-5 text-[#7B2FF7]" />
 
                 View Earnings
               </button>
@@ -169,7 +169,7 @@ export function ForTutorsHeroSection() {
           >
 
             {/* Main Image */}
-            <div className="relative rounded-[40px] overflow-hidden border border-white/50 shadow-[0_20px_80px_rgba(15,23,42,0.12)]">
+            <div className="relative rounded-[40px] overflow-hidden border border-white/50 shadow-[0_20px_80px_rgba(30,27,58,0.12)]">
 
               <img
                 src="https://gjhometuition.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-17-2025-03_27_53-PM.png"
@@ -178,11 +178,11 @@ export function ForTutorsHeroSection() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/40 via-transparent to-transparent" />
             </div>
 
             {/* Glow */}
-            <div className="absolute -z-10 -top-10 -right-10 w-72 h-72 bg-[#2563EB]/20 rounded-full blur-3xl" />
+            <div className="absolute -z-10 -top-10 -right-10 w-72 h-72 bg-[#7B2FF7]/20 rounded-full blur-3xl" />
 
             {/* Earnings Card */}
             {/* <motion.div
@@ -190,7 +190,7 @@ export function ForTutorsHeroSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               viewport={{ once: true }}
-              className="absolute -left-10 top-10 rounded-[28px] bg-gradient-to-br from-[#16C47F] to-[#2563EB] p-6 text-white shadow-[0_20px_60px_rgba(37,99,235,0.25)] w-64"
+              className="absolute -left-10 top-10 rounded-[28px] bg-gradient-to-br from-[#EA580C] to-[#C2410C] p-6 text-white shadow-[0_20px_60px_rgba(123,47,247,0.25)] w-64"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl flex items-center justify-center mb-6">
@@ -222,17 +222,17 @@ export function ForTutorsHeroSection() {
 
               <div className="flex items-center gap-4">
 
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shadow-lg">
 
                   <Users className="w-7 h-7 text-white" />
                 </div>
 
                 <div>
-                  <p className="text-sm text-[#64748B]">
+                  <p className="text-sm text-[#6E6A85]">
                     Active Tutors
                   </p>
 
-                  <h3 className="text-4xl font-black text-[#0F172A] mt-1">
+                  <h3 className="text-4xl font-black text-[#1E1B3A] mt-1">
                     1200+
                   </h3>
                 </div>
@@ -250,17 +250,17 @@ export function ForTutorsHeroSection() {
 
               <div className="relative">
 
-                <div className="w-3 h-3 rounded-full bg-[#16C47F]" />
+                <div className="w-3 h-3 rounded-full bg-[#7B2FF7]" />
 
-                <div className="absolute inset-0 rounded-full bg-[#16C47F] animate-ping" />
+                <div className="absolute inset-0 rounded-full bg-[#7B2FF7] animate-ping" />
               </div>
 
               <div>
-                <p className="text-sm font-bold text-[#0F172A]">
+                <p className="text-sm font-bold text-[#1E1B3A]">
                   Live Session Active
                 </p>
 
-                <p className="text-xs text-[#64748B] mt-1">
+                <p className="text-xs text-[#6E6A85] mt-1">
                   24 students attending now
                 </p>
               </div>
@@ -272,20 +272,20 @@ export function ForTutorsHeroSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.65 }}
               viewport={{ once: true }}
-              className="absolute bottom-8 right-12 rounded-2xl bg-white/80 backdrop-blur-xl border border-[#16C47F]/20 shadow-xl px-5 py-4 flex items-center gap-3"
+              className="absolute bottom-8 right-12 rounded-2xl bg-white/80 backdrop-blur-xl border border-[#7B2FF7]/20 shadow-xl px-5 py-4 flex items-center gap-3"
             >
 
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg">
 
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
 
               <div>
-                <p className="text-sm font-bold text-[#0F172A]">
+                <p className="text-sm font-bold text-[#1E1B3A]">
                   Verified Tutor ✓
                 </p>
 
-                <p className="text-xs text-[#64748B] mt-1">
+                <p className="text-xs text-[#6E6A85] mt-1">
                   Trusted educator network
                 </p>
               </div>
@@ -294,14 +294,14 @@ export function ForTutorsHeroSection() {
             {/* AI Recommendation */}
             <div className="absolute top-28 right-12 px-5 py-3 rounded-2xl bg-white/80 backdrop-blur-xl border border-white shadow-xl flex items-center gap-3">
 
-              <Sparkles className="w-5 h-5 text-[#2563EB]" />
+              <Sparkles className="w-5 h-5 text-[#7B2FF7]" />
 
               <div>
-                <p className="text-xs font-bold text-[#0F172A]">
+                <p className="text-xs font-bold text-[#1E1B3A]">
                   AI Match Score
                 </p>
 
-                <p className="text-[11px] text-[#64748B]">
+                <p className="text-[11px] text-[#6E6A85]">
                   98% Student Compatibility
                 </p>
               </div>

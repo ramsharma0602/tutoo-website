@@ -301,7 +301,7 @@ export default function TutorApplicationForm({
                 ${errors[field.name as keyof typeof errors] &&
                                                 touched[field.name as keyof typeof touched]
                                                 ? 'border-red-400 focus-within:ring-red-100'
-                                                : 'border-[#E2E8F0] focus-within:border-[#2563EB] focus-within:ring-blue-100'
+                                                : 'border-[#E6E3F0] focus-within:border-[#7B2FF7] focus-within:ring-violet-100'
                                             }
                 `}
                                     >
@@ -322,7 +322,7 @@ export default function TutorApplicationForm({
                   w-full
                   bg-transparent
                   outline-none
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                   placeholder:text-[#94A3B8]
                   "
                                         />
@@ -344,14 +344,14 @@ export default function TutorApplicationForm({
                                 {/* Qualification */}
                                 <div className="space-y-2">
 
-                                    <label className="text-sm font-semibold text-[#0F172A] px-1">
+                                    <label className="text-sm font-semibold text-[#1E1B3A] px-1">
                                         Highest Qualification
                                     </label>
 
                                     <div className="relative group">
 
                                         {/* Glow Effect */}
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#16C47F]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
                                         <SearchableSelect
                                             options={qualificationOptions}
@@ -368,7 +368,7 @@ export default function TutorApplicationForm({
                                                 errors.qualification &&
                                                 touched.qualification
                                             )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
                                         />
                                     </div>
 
@@ -384,14 +384,14 @@ export default function TutorApplicationForm({
                                 {/* Experience */}
                                 <div className="space-y-2">
 
-                                    <label className="text-sm font-semibold text-[#0F172A] px-1">
+                                    <label className="text-sm font-semibold text-[#1E1B3A] px-1">
                                         Teaching Experience
                                     </label>
 
                                     <div className="relative group">
 
                                         {/* Glow Effect */}
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
                                         <SearchableSelect
                                             options={experienceOptions}
@@ -408,7 +408,7 @@ export default function TutorApplicationForm({
                                                 errors.experience &&
                                                 touched.experience
                                             )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
                                         />
                                     </div>
 
@@ -429,14 +429,14 @@ export default function TutorApplicationForm({
                                 <div className="space-y-2">
                                     <label
                                         htmlFor="boardId"
-                                        className="text-sm font-semibold text-[#0F172A] px-1"
+                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
                                     >
                                         Board
                                     </label>
 
                                     <div className="relative group">
 
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#16C47F]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
                                         <SearchableSelect
                                             id="boardId"
@@ -460,7 +460,7 @@ export default function TutorApplicationForm({
                                             error={Boolean(
                                                 touched.boardId && errors.boardId
                                             )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
                                         />
                                     </div>
 
@@ -475,14 +475,14 @@ export default function TutorApplicationForm({
                                 <div className="space-y-2">
                                     <label
                                         htmlFor="classId"
-                                        className="text-sm font-semibold text-[#0F172A] px-1"
+                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
                                     >
                                         Class
                                     </label>
 
                                     <div className="relative group">
 
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
                                         <SearchableSelect
                                             id="classId"
@@ -505,7 +505,7 @@ export default function TutorApplicationForm({
                                             error={Boolean(
                                                 touched.classId && errors.classId
                                             )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
                                         />
                                     </div>
 
@@ -521,14 +521,14 @@ export default function TutorApplicationForm({
                                 <div className="space-y-2">
                                     <label
                                         htmlFor="subjectId"
-                                        className="text-sm font-semibold text-[#0F172A] px-1"
+                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
                                     >
                                         Subject
                                     </label>
 
                                     <div className="relative group">
 
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7C3AED]/10 to-[#2563EB]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
 
                                         <SearchableSelect
                                             id="subjectId"
@@ -561,7 +561,7 @@ export default function TutorApplicationForm({
                                             error={Boolean(
                                                 touched.subjectId && errors.subjectId
                                             )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(15,23,42,0.05)]"
+                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
                                         />
                                     </div>
 
@@ -577,7 +577,7 @@ export default function TutorApplicationForm({
                             {/* Teaching Mode */}
                             <div>
 
-                                <p className="text-sm font-semibold text-[#0F172A] mb-4">
+                                <p className="text-sm font-semibold text-[#1E1B3A] mb-4">
                                     Teaching Mode
                                 </p>
 
@@ -604,8 +604,8 @@ export default function TutorApplicationForm({
                                             justify-center
                                             gap-2
                                             ${values.teachingMode === mode
-                                                    ? 'bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white border-transparent shadow-lg'
-                                                    : 'bg-white border-[#E2E8F0] text-[#0F172A] hover:border-[#2563EB] hover:bg-blue-50'
+                                                    ? 'bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white border-transparent shadow-lg'
+                                                    : 'bg-white border-[#E6E3F0] text-[#1E1B3A] hover:border-[#7B2FF7] hover:bg-violet-50'
                                                 }
                                             `}
                                         >
@@ -645,7 +645,7 @@ export default function TutorApplicationForm({
 
                                     ${errors.resume && touched.resume
                                             ? 'border-red-300 bg-red-50/60'
-                                            : 'border-[#CBD5E1] bg-white/70 hover:border-[#2563EB]/40'
+                                            : 'border-[#CBD5E1] bg-white/70 hover:border-[#7B2FF7]/40'
                                         }
                                     `}
                                 >
@@ -705,7 +705,7 @@ export default function TutorApplicationForm({
 
       ${errors.resume && touched.resume
                                                 ? 'bg-gradient-to-br from-red-500 to-rose-500'
-                                                : 'bg-gradient-to-br from-[#16C47F] to-[#2563EB]'
+                                                : 'bg-gradient-to-br from-[#EA580C] to-[#C2410C]'
                                             }
       `}
                                     >
@@ -714,23 +714,23 @@ export default function TutorApplicationForm({
                                     </div>
 
                                     {/* Title */}
-                                    <h4 className="mt-5 text-lg font-bold text-[#0F172A]">
+                                    <h4 className="mt-5 text-lg font-bold text-[#1E1B3A]">
                                         Upload Resume
                                     </h4>
 
                                     {/* Subtext */}
-                                    <p className="mt-2 text-sm text-[#64748B]">
+                                    <p className="mt-2 text-sm text-[#6E6A85]">
                                         PDF, DOC, DOCX • Max 5MB
                                     </p>
 
                                     {/* Success */}
                                     {values.resume && !errors.resume && (
 
-                                        <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-2">
+                                        <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-violet-50 border border-violet-200 px-4 py-2">
 
-                                            <div className="w-2 h-2 rounded-full bg-[#16C47F]" />
+                                            <div className="w-2 h-2 rounded-full bg-[#7B2FF7]" />
 
-                                            <p className="text-sm font-semibold text-[#16C47F]">
+                                            <p className="text-sm font-semibold text-[#7B2FF7]">
                                                 {(values.resume as File).name}
                                             </p>
                                         </div>
@@ -761,11 +761,11 @@ export default function TutorApplicationForm({
                         h-16
                         rounded-2xl
                         bg-gradient-to-r
-                        from-[#16C47F]
-                        to-[#2563EB]
+                        from-[#7B2FF7]
+                        to-[#7B2FF7]
                         text-white
                         font-semibold
-                        shadow-[0_15px_50px_rgba(37,99,235,0.25)]
+                        shadow-[0_15px_50px_rgba(123,47,247,0.25)]
                         hover:scale-[1.01]
                         transition-all
                         duration-300
@@ -785,9 +785,9 @@ export default function TutorApplicationForm({
                             </Button>
 
                             {/* Security */}
-                            <div className="rounded-2xl bg-white/70 border border-[#E2E8F0] px-5 py-4 text-sm text-[#64748B] flex items-center gap-3">
+                            <div className="rounded-2xl bg-white/70 border border-[#E6E3F0] px-5 py-4 text-sm text-[#6E6A85] flex items-center gap-3">
 
-                                <ShieldCheck className="w-5 h-5 text-[#16C47F]" />
+                                <ShieldCheck className="w-5 h-5 text-[#7B2FF7]" />
 
                                 Your information is secure and only used for tutor onboarding.
                             </div>

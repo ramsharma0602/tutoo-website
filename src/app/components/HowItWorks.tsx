@@ -64,19 +64,19 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             How It Works
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             A seamless, technology-driven process designed for measurable learning outcomes
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#16C47F] via-[#2563EB] to-[#7C3AED] hidden lg:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] hidden lg:block" />
 
           <div className="space-y-12">
             {steps.map((step, index) => (
@@ -90,11 +90,11 @@ export function HowItWorks() {
               >
                 {/* Step Number Circle */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className={`w-16 h-16 bg-gradient-to-br from-${step.color}-400 to-${step.color}-600 rounded-full flex items-center justify-center shadow-lg shadow-${step.color}-500/30`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br from-[#7B2FF7] to-[#5B21B6] rounded-full flex items-center justify-center shadow-lg`}>
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-100">
-                    <span className="text-xs font-bold text-[#0B1220]">{step.number}</span>
+                    <span className="text-xs font-bold text-[#0A1028]">{step.number}</span>
                   </div>
                 </div>
 
@@ -103,8 +103,8 @@ export function HowItWorks() {
                   whileHover={{ y: -4 }}
                   className="flex-1 bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-2xl font-bold text-[#0B1220] mb-3">{step.title}</h3>
-                  <p className="text-[#64748B] text-lg">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-[#0A1028] mb-3">{step.title}</h3>
+                  <p className="text-[#6E6A85] text-lg">{step.description}</p>
                 </motion.div>
               </motion.div>
             ))}
@@ -117,7 +117,7 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <button className="px-10 py-5 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 text-lg">
+          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
             Start Your Journey Today
           </button>
         </motion.div>

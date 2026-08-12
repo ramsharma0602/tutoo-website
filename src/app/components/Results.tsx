@@ -8,21 +8,21 @@ export function Results() {
       value: '94%',
       label: 'Grade Improvement',
       description: 'Students see measurable progress',
-      gradient: 'from-emerald-500 to-teal-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Star,
       value: '98%',
       label: 'Parent Satisfaction',
       description: 'Trust and confidence rating',
-      gradient: 'from-blue-500 to-indigo-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Users,
       value: '12,000+',
       label: 'Active Students',
       description: 'Learning across India',
-      gradient: 'from-purple-500 to-pink-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Award,
@@ -34,11 +34,11 @@ export function Results() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-[#0B1220] text-white relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#0A1028] text-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -53,7 +53,7 @@ export function Results() {
           >
             Results That Speak
             <br />
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 to-violet-400 bg-clip-text text-transparent">
               For Themselves
             </span>
           </h2>
@@ -139,7 +139,7 @@ export function Results() {
                         whileInView={{ width: `${item.value}%` }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
-                        className="h-full bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full"
+                        className="h-full bg-gradient-to-r from-violet-400 to-violet-500 rounded-full"
                       />
                     </div>
                   </div>
@@ -150,8 +150,8 @@ export function Results() {
             <div className="relative h-[340px] rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 via-white/[0.03] to-transparent backdrop-blur-xl p-8 overflow-hidden">
 
               {/* Glow Background */}
-              <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full" />
-              <div className="absolute bottom-0 right-0 w-72 h-72 bg-emerald-500/10 blur-3xl rounded-full" />
+              <div className="absolute top-0 left-0 w-72 h-72 bg-violet-500/10 blur-3xl rounded-full" />
+              <div className="absolute bottom-0 right-0 w-72 h-72 bg-violet-500/10 blur-3xl rounded-full" />
 
               {/* Grid Lines */}
               <div className="absolute inset-0 flex flex-col justify-between px-8 py-8 pointer-events-none">
@@ -208,7 +208,7 @@ export function Results() {
                       style={{
                         maxWidth: '44px',
                         background:
-                          'linear-gradient(to top, #10B981 0%, #06B6D4 50%, #3B82F6 100%)',
+                          'linear-gradient(to top, #6038F8 0%, #7B2FF7 50%, #8F21F8 100%)',
                       }}
                     >
                       {/* Shine */}

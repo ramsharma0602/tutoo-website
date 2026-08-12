@@ -29,10 +29,10 @@ const TRUST_CARDS = [
     icon: ShieldCheck,
     title: "Verified Tutors",
     desc: "Every tutor undergoes a detailed background screening, credential verification, and quality assessment before joining the platform.",
-    from: "#16C47F",
-    to: "#2563EB",
-    light: "rgba(22,196,127,0.07)",
-    glow: "rgba(22,196,127,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(248,120,8,0.07)",
+    glow: "rgba(248,120,8,0.28)",
     chip: "100% Verified",
     chipIcon: ShieldCheck,
     stat: { val: "1,200+", label: "Tutors" },
@@ -44,10 +44,10 @@ const TRUST_CARDS = [
     icon: Target,
     title: "Personalized Learning Plans",
     desc: "Every student receives a customized learning roadmap designed around individual strengths, academic gaps, and personal goals.",
-    from: "#2563EB",
-    to: "#7C3AED",
-    light: "rgba(37,99,235,0.07)",
-    glow: "rgba(37,99,235,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.07)",
+    glow: "rgba(123,47,247,0.28)",
     chip: "AI-Powered",
     chipIcon: Zap,
     stat: { val: "5,000+", label: "Plans Created" },
@@ -59,10 +59,10 @@ const TRUST_CARDS = [
     icon: BarChart3,
     title: "Regular Progress Reports",
     desc: "Parents receive structured updates, academic insights, and measurable learning outcomes — no guesswork, full visibility.",
-    from: "#7C3AED",
-    to: "#2563EB",
-    light: "rgba(124,58,237,0.07)",
-    glow: "rgba(124,58,237,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.07)",
+    glow: "rgba(123,47,247,0.28)",
     chip: "Real-Time",
     chipIcon: TrendingUp,
     stat: { val: "Weekly", label: "Reports" },
@@ -74,10 +74,10 @@ const TRUST_CARDS = [
     icon: Home,
     title: "Home & Online Options",
     desc: "Flexible home and online learning experiences designed around student convenience, lifestyle, and individual learning preferences.",
-    from: "#16C47F",
-    to: "#2563EB",
-    light: "rgba(22,196,127,0.07)",
-    glow: "rgba(22,196,127,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(248,120,8,0.07)",
+    glow: "rgba(248,120,8,0.28)",
     chip: "Hybrid Learning",
     chipIcon: Home,
     stat: { val: "2-in-1", label: "Modes" },
@@ -89,10 +89,10 @@ const TRUST_CARDS = [
     icon: Lock,
     title: "Secure Attendance Verification",
     desc: "Session attendance and learning activity are continuously monitored to ensure transparency, safety, and full accountability.",
-    from: "#2563EB",
-    to: "#7C3AED",
-    light: "rgba(37,99,235,0.07)",
-    glow: "rgba(37,99,235,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.07)",
+    glow: "rgba(123,47,247,0.28)",
     chip: "Always Safe",
     chipIcon: Lock,
     stat: { val: "100%", label: "Tracked" },
@@ -104,10 +104,10 @@ const TRUST_CARDS = [
     icon: Headphones,
     title: "Dedicated Support Team",
     desc: "A dedicated team is always available to assist students, parents, and tutors at every stage of the learning journey.",
-    from: "#7C3AED",
-    to: "#16C47F",
-    light: "rgba(124,58,237,0.07)",
-    glow: "rgba(124,58,237,0.28)",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.07)",
+    glow: "rgba(123,47,247,0.28)",
     chip: "Always Available",
     chipIcon: Heart,
     stat: { val: "4hr", label: "Response" },
@@ -117,12 +117,12 @@ const TRUST_CARDS = [
 ];
 
 const TRUST_CHIPS = [
-  { text: "Verified Educators",    color: "#16C47F" },
-  { text: "Parent Visibility",     color: "#2563EB" },
-  { text: "Progress Tracking",     color: "#7C3AED" },
+  { text: "Verified Educators",    color: "#7B2FF7" },
+  { text: "Parent Visibility",     color: "#7B2FF7" },
+  { text: "Progress Tracking",     color: "#7B2FF7" },
   { text: "Personalized Learning", color: "#F59E0B" },
-  { text: "Secure Sessions",       color: "#16C47F" },
-  { text: "Dedicated Support",     color: "#2563EB" },
+  { text: "Secure Sessions",       color: "#7B2FF7" },
+  { text: "Dedicated Support",     color: "#7B2FF7" },
 ];
 
 // ─────────────────────────────────────────────
@@ -141,9 +141,9 @@ function TrustCard({ card }: { card: typeof TRUST_CARDS[0] }) {
       transition={{ duration: 0.62, delay: card.delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -12, scale: 1.025 }}
       className="group relative rounded-[28px] bg-white overflow-hidden flex flex-col
-                 border border-[rgba(15,23,42,0.07)]
-                 shadow-[0_4px_24px_rgba(15,23,42,0.07)]
-                 hover:shadow-[0_24px_64px_rgba(15,23,42,0.12)]
+                 border border-[rgba(30,27,58,0.07)]
+                 shadow-[0_4px_24px_rgba(30,27,58,0.07)]
+                 hover:shadow-[0_24px_64px_rgba(30,27,58,0.12)]
                  transition-all duration-500 cursor-default p-7"
     >
       {/* Gradient top border */}
@@ -205,20 +205,20 @@ function TrustCard({ card }: { card: typeof TRUST_CARDS[0] }) {
             >
               {card.stat.val}
             </span>
-            <span className="text-[10px] font-bold text-[#64748B]">{card.stat.label}</span>
+            <span className="text-[10px] font-bold text-[#6E6A85]">{card.stat.label}</span>
           </div>
         </div>
 
         {/* Title */}
         <h3
-          className="text-[19px] font-black text-[#0F172A] mb-3 leading-tight"
+          className="text-[19px] font-black text-[#1E1B3A] mb-3 leading-tight"
           style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}
         >
           {card.emoji} {card.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm leading-7 text-[#64748B] flex-1 mb-6">{card.desc}</p>
+        <p className="text-sm leading-7 text-[#6E6A85] flex-1 mb-6">{card.desc}</p>
 
         {/* Chip */}
         <motion.div
@@ -261,7 +261,7 @@ export function WhyParentsTrustSection() {
           <p
             className="text-[140px] lg:text-[200px] font-black text-center leading-none whitespace-nowrap"
             style={{
-              background: "linear-gradient(135deg, rgba(22,196,127,0.032), rgba(37,99,235,0.032))",
+              background: "linear-gradient(135deg, rgba(248,120,8,0.032), rgba(123,47,247,0.032))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
@@ -273,13 +273,13 @@ export function WhyParentsTrustSection() {
         </div>
 
         <div className="absolute -top-56 -left-56 w-[700px] h-[700px] rounded-full blur-[130px] opacity-[0.10]"
-          style={{ background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute -bottom-44 -right-44 w-[640px] h-[640px] rounded-full blur-[120px] opacity-[0.08]"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute top-1/2 right-0 w-[440px] h-[440px] rounded-full blur-[90px] opacity-[0.06]"
-          style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute inset-0 opacity-[0.025]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -299,17 +299,17 @@ export function WhyParentsTrustSection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full
                          bg-white/90 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_28px_rgba(248,120,8,0.18)]"
             >
-              <Shield className="w-4 h-4 text-[#16C47F]" />
+              <Shield className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}
               >
                 Trust & Transparency
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -319,11 +319,11 @@ export function WhyParentsTrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0B1220] mb-6"
+            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
             style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
           >
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                             drop-shadow-[0_0_36px_rgba(22,196,127,0.22)]">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                             drop-shadow-[0_0_36px_rgba(248,120,8,0.22)]">
               Trusted by Parents,
             </span>{" "}
             <br className="hidden lg:block" />
@@ -336,7 +336,7 @@ export function WhyParentsTrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.18 }}
-            className="text-lg leading-8 text-[#64748B]"
+            className="text-lg leading-8 text-[#6E6A85]"
           >
             Parents choose Tutoo because we combine expert educators, technology-driven
             learning, progress visibility, and student-focused support to create better
@@ -364,8 +364,8 @@ export function WhyParentsTrustSection() {
                 </motion.div>
               ))}
             </div>
-            <span className="text-sm font-black text-[#0F172A]">4.8 / 5</span>
-            <span className="text-sm text-[#64748B]">· 5,000+ parents satisfied</span>
+            <span className="text-sm font-black text-[#1E1B3A]">4.8 / 5</span>
+            <span className="text-sm text-[#6E6A85]">· 5,000+ parents satisfied</span>
           </motion.div>
         </div>
 
@@ -386,41 +386,41 @@ export function WhyParentsTrustSection() {
           className="rounded-[36px] relative overflow-hidden py-14 px-10 lg:px-20 text-center mb-12"
           style={{
             background: "linear-gradient(145deg, #F0FDF4 0%, #EFF6FF 40%, #FAF5FF 80%, #FFF7ED 100%)",
-            border: "1.5px solid rgba(22,196,127,0.18)",
-            boxShadow: "0 24px 80px rgba(22,196,127,0.09), 0 0 0 1px rgba(37,99,235,0.05)",
+            border: "1.5px solid rgba(248,120,8,0.18)",
+            boxShadow: "0 24px 80px rgba(248,120,8,0.09), 0 0 0 1px rgba(123,47,247,0.05)",
           }}
         >
           {/* Ambient glows inside */}
-          <div className="absolute top-0 left-0 w-72 h-40 bg-[#16C47F]/08 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-60 h-36 bg-[#2563EB]/07 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-0 right-0 w-48 h-32 bg-[#7C3AED]/05 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-0 w-72 h-40 bg-[#7B2FF7]/08 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-60 h-36 bg-[#7B2FF7]/07 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-32 bg-[#7B2FF7]/05 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB]
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C]
                             flex items-center justify-center shadow-xl mb-8">
               <Quote className="w-8 h-8 text-white" />
             </div>
 
             <p
-              className="text-2xl lg:text-3xl font-black text-[#0F172A] leading-tight mb-4"
+              className="text-2xl lg:text-3xl font-black text-[#1E1B3A] leading-tight mb-4"
               style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
             >
               "Education works best when parents stay
             </p>
             <p
               className="text-2xl lg:text-3xl font-black leading-tight mb-10
-                         bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent"
+                         bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent"
               style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
             >
               informed, students stay motivated, and tutors stay supported."
             </p>
 
             {/* 3 supporting pillars */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-[rgba(15,23,42,0.08)]">
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-[rgba(30,27,58,0.08)]">
               {[
-                { icon: Heart,        text: "Parents Informed",    c: "#16C47F" },
-                { icon: Zap,          text: "Students Motivated",  c: "#2563EB" },
-                { icon: TrendingUp,   text: "Tutors Supported",    c: "#7C3AED" },
+                { icon: Heart,        text: "Parents Informed",    c: "#7B2FF7" },
+                { icon: Zap,          text: "Students Motivated",  c: "#7B2FF7" },
+                { icon: TrendingUp,   text: "Tutors Supported",    c: "#7B2FF7" },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -436,7 +436,7 @@ export function WhyParentsTrustSection() {
                       style={{ background: `${item.c}15` }}>
                       <Icon className="w-5 h-5" style={{ color: item.c }} />
                     </div>
-                    <span className="text-xs font-black text-[#0F172A]">{item.text}</span>
+                    <span className="text-xs font-black text-[#1E1B3A]">{item.text}</span>
                   </motion.div>
                 );
               })}
@@ -461,9 +461,9 @@ export function WhyParentsTrustSection() {
               transition={{ delay: 0.2 + i * 0.07 }}
               whileHover={{ scale: 1.08, y: -3 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
-                         bg-white border border-[rgba(15,23,42,0.08)]
+                         bg-white border border-[rgba(30,27,58,0.08)]
                          shadow-sm hover:shadow-lg
-                         text-sm font-bold text-[#0F172A]
+                         text-sm font-bold text-[#1E1B3A]
                          transition-all duration-300 cursor-default"
             >
               <CheckCircle2 className="w-4 h-4" style={{ color: chip.color }} />
@@ -480,14 +480,14 @@ export function WhyParentsTrustSection() {
           transition={{ duration: 0.7 }}
           className="rounded-[36px] relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #0B1220 0%, #111827 55%, #0B1220 100%)",
-            boxShadow: "0 32px 100px rgba(11,18,32,0.28)",
+            background: "linear-gradient(135deg, #0A1028 0%, #111827 55%, #0A1028 100%)",
+            boxShadow: "0 32px 100px rgba(10,16,40,0.28)",
           }}
         >
           {/* Inner glows */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-96 h-64 bg-[#16C47F]/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-80 h-60 bg-[#7C3AED]/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 left-0 w-96 h-64 bg-[#7B2FF7]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-80 h-60 bg-[#7B2FF7]/10 rounded-full blur-3xl" />
           </div>
 
           {/* Star field */}
@@ -507,7 +507,7 @@ export function WhyParentsTrustSection() {
                 <motion.p
                   animate={{ scale: [1, 1.02, 1] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="text-[#16C47F] text-xs font-black tracking-widest uppercase mb-4"
+                  className="text-[#7B2FF7] text-xs font-black tracking-widest uppercase mb-4"
                 >
                   ✦ Join 5,000+ Families ✦
                 </motion.p>
@@ -516,7 +516,7 @@ export function WhyParentsTrustSection() {
                   style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
                 >
                   Ready to experience the{" "}
-                  <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                  <span className="text-[#6D28D9]">
                     Tutoo difference?
                   </span>
                 </h3>
@@ -529,8 +529,8 @@ export function WhyParentsTrustSection() {
               <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
                 <motion.button
                   whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                  className="h-14 px-9 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
-                             text-white font-bold shadow-[0_8px_32px_rgba(22,196,127,0.35)]
+                  className="h-14 px-9 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
+                             text-white font-bold shadow-[0_8px_32px_rgba(248,120,8,0.35)]
                              flex items-center gap-2 justify-center transition-all duration-300"
                 >
                   <ShieldCheck className="w-5 h-5" />

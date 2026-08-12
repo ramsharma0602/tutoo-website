@@ -3,15 +3,15 @@ import { Calculator, Atom, BookOpen, Code, Cpu, Trophy, FlaskConical, Microscope
 
 export function SubjectsPrograms() {
   const subjects = [
-    { icon: Calculator, name: 'Mathematics', gradient: 'from-blue-500 to-indigo-600' },
-    { icon: Atom, name: 'Science', gradient: 'from-purple-500 to-pink-600' },
-    { icon: BookOpen, name: 'English', gradient: 'from-emerald-500 to-teal-600' },
-    { icon: Code, name: 'Coding', gradient: 'from-cyan-500 to-blue-600' },
-    { icon: Cpu, name: 'AI & Robotics', gradient: 'from-violet-500 to-purple-600' },
+    { icon: Calculator, name: 'Mathematics', gradient: 'from-violet-500 to-violet-600' },
+    { icon: Atom, name: 'Science', gradient: 'from-violet-500 to-violet-600' },
+    { icon: BookOpen, name: 'English', gradient: 'from-violet-500 to-violet-600' },
+    { icon: Code, name: 'Coding', gradient: 'from-violet-500 to-violet-600' },
+    { icon: Cpu, name: 'AI & Robotics', gradient: 'from-violet-500 to-violet-600' },
     { icon: Trophy, name: 'Olympiads', gradient: 'from-orange-500 to-red-600' },
-    { icon: FlaskConical, name: 'JEE', gradient: 'from-blue-600 to-indigo-700' },
-    { icon: Microscope, name: 'NEET', gradient: 'from-pink-500 to-rose-600' },
-    { icon: MessageSquare, name: 'Spoken English', gradient: 'from-teal-500 to-emerald-600' },
+    { icon: FlaskConical, name: 'JEE', gradient: 'from-violet-600 to-violet-700' },
+    { icon: Microscope, name: 'NEET', gradient: 'from-violet-500 to-rose-600' },
+    { icon: MessageSquare, name: 'Spoken English', gradient: 'from-violet-500 to-violet-600' },
     { icon: User, name: 'Personality Dev', gradient: 'from-amber-500 to-orange-600' }
   ];
 
@@ -25,12 +25,12 @@ export function SubjectsPrograms() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Subjects & Programs
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             Comprehensive coverage across academic subjects and skill development programs
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export function SubjectsPrograms() {
                   <subject.icon className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-sm font-bold text-[#0B1220]">{subject.name}</h3>
+                <h3 className="text-sm font-bold text-[#0A1028]">{subject.name}</h3>
               </div>
 
               {/* Glow Effect */}
@@ -68,10 +68,10 @@ export function SubjectsPrograms() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12"
+          className="mt-20 bg-gradient-to-br from-violet-50 via-violet-50 to-violet-50 rounded-3xl p-8 lg:p-12"
         >
           <h3
-            className="text-3xl lg:text-4xl font-bold text-[#0B1220] mb-8 text-center"
+            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-8 text-center"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             All Boards & Classes Covered
@@ -94,7 +94,7 @@ export function SubjectsPrograms() {
                 className={`bg-white rounded-2xl p-6 border-2 border-${board.color}-200 hover:border-${board.color}-300 transition-all duration-300`}
               >
                 <div className={`text-2xl font-bold text-${board.color}-600 mb-2`}>{board.title}</div>
-                <div className="text-[#64748B]">{board.description}</div>
+                <div className="text-[#6E6A85]">{board.description}</div>
               </motion.div>
             ))}
           </div>
@@ -107,7 +107,7 @@ export function SubjectsPrograms() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <button className="px-10 py-5 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 text-lg">
+          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
             Find Your Perfect Program
           </button>
         </motion.div>

@@ -84,7 +84,7 @@ export default function StatusModal({
             border-white/20
             bg-white/80
             backdrop-blur-2xl
-            shadow-[0_30px_80px_rgba(15,23,42,0.25)]
+            shadow-[0_30px_80px_rgba(30,27,58,0.25)]
             "
                     >
 
@@ -96,7 +96,7 @@ export default function StatusModal({
               opacity-20
 
               ${type === 'success'
-                                    ? 'bg-gradient-to-br from-[#16C47F] via-[#2563EB] to-[#7C3AED]'
+                                    ? 'bg-gradient-to-br from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]'
                                     : 'bg-gradient-to-br from-red-500 via-rose-500 to-orange-400'
                                 }
               `}
@@ -120,8 +120,8 @@ export default function StatusModal({
                                 flex
                                 items-center
                                 justify-center
-                                text-[#64748B]
-                                hover:text-[#0F172A]
+                                text-[#6E6A85]
+                                hover:text-[#1E1B3A]
                                 hover:bg-white
                                 transition-all
                                 duration-300
@@ -146,7 +146,7 @@ export default function StatusModal({
                 shadow-2xl
 
                 ${type === 'success'
-                                        ? 'bg-gradient-to-br from-[#16C47F] to-[#2563EB]'
+                                        ? 'bg-gradient-to-br from-[#EA580C] to-[#C2410C]'
                                         : 'bg-gradient-to-br from-red-500 to-rose-500'
                                     }
                 `}
@@ -168,7 +168,7 @@ export default function StatusModal({
                 mt-8
                 text-3xl
                 font-black
-                text-[#0F172A]
+                text-[#1E1B3A]
                 "
                                 style={{
                                     fontFamily: 'var(--font-heading)',
@@ -183,7 +183,7 @@ export default function StatusModal({
                 mt-4
                 text-[15px]
                 leading-7
-                text-[#64748B]
+                text-[#6E6A85]
                 "
                             >
                                 {message}
@@ -204,7 +204,7 @@ export default function StatusModal({
                 shadow-lg
 
                 ${type === 'success'
-                                        ? 'bg-gradient-to-r from-[#16C47F] to-[#2563EB]'
+                                        ? 'bg-gradient-to-r from-[#EA580C] to-[#C2410C]'
                                         : 'bg-gradient-to-r from-red-500 to-rose-500'
                                     }
                 `}

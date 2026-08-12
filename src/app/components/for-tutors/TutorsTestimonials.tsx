@@ -19,8 +19,8 @@ const testimonials = [
     text:
       "Tutoo transformed my daughter’s academic performance. The AI-powered insights helped us identify weak areas early.",
     improvement: '+21% Grade Improvement',
-    gradient: 'from-emerald-500 to-green-400',
-    badge: 'bg-emerald-50 text-emerald-700',
+    gradient: 'from-violet-500 to-green-400',
+    badge: 'bg-violet-50 text-violet-700',
   },
   {
     name: 'Rajesh Kumar',
@@ -32,8 +32,8 @@ const testimonials = [
     text:
       'The real-time monitoring and analytics gave us complete peace of mind. My son secured AIR 247 in JEE Advanced.',
     improvement: 'JEE AIR 247',
-    gradient: 'from-blue-500 to-cyan-400',
-    badge: 'bg-blue-50 text-blue-700',
+    gradient: 'from-violet-500 to-violet-400',
+    badge: 'bg-violet-50 text-violet-700',
   },
   {
     name: 'Anjali Desai',
@@ -45,8 +45,8 @@ const testimonials = [
     text:
       'The dashboard is incredibly intuitive. We can track every session and communicate directly with tutors.',
     improvement: '98% Attendance',
-    gradient: 'from-purple-500 to-fuchsia-400',
-    badge: 'bg-purple-50 text-purple-700',
+    gradient: 'from-violet-500 to-fuchsia-400',
+    badge: 'bg-violet-50 text-violet-700',
   },
   {
     name: 'Vikram Singh',
@@ -65,11 +65,11 @@ const testimonials = [
 
 export function TutorsTestimonials() {
   return (
-    <section className="py-24 lg:py-32 bg-[#F8FAFC] overflow-hidden relative">
+    <section className="py-24 lg:py-32 bg-[#FAFAFC] overflow-hidden relative">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/5 blur-3xl rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-3xl rounded-full" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-violet-500/5 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-violet-500/5 blur-3xl rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -80,20 +80,20 @@ export function TutorsTestimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-emerald-100 shadow-sm mb-6">
-            <Award className="w-4 h-4 text-emerald-600" />
-            <span className="text-sm font-semibold text-emerald-700">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-violet-100 shadow-sm mb-6">
+            <Award className="w-4 h-4 text-violet-600" />
+            <span className="text-sm font-semibold text-violet-700">
               Trusted by Families
             </span>
           </div>
 
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-6 leading-tight"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-6 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Parents Who Saw 
             <br />
-            <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="text-[#6D28D9]">
               The Difference
             </span>
           </h2>
@@ -171,7 +171,7 @@ export function TutorsTestimonials() {
                       />
 
                       <div>
-                        <h4 className="font-bold text-[#0B1220]">
+                        <h4 className="font-bold text-[#0A1028]">
                           {testimonial.name}
                         </h4>
                         <p className="text-sm text-slate-500">
@@ -189,8 +189,8 @@ export function TutorsTestimonials() {
           </div>
 
           {/* Fade Edges */}
-          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#FAFAFC] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#FAFAFC] to-transparent z-10 pointer-events-none" />
         </div>
 
         {/* Bottom CTA */}
@@ -200,7 +200,7 @@ export function TutorsTestimonials() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <button className="px-10 py-5 rounded-full bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold text-lg shadow-xl shadow-emerald-500/20 hover:scale-105 transition-all duration-300">
+          <button className="px-10 py-5 rounded-full bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold text-lg shadow-xl shadow-orange-500/20 hover:scale-105 transition-all duration-300">
             Watch Video Testimonials
           </button>
         </motion.div> */}

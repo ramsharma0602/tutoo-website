@@ -25,11 +25,11 @@ const visionCards = [
     Icon: BookOpen,
     title: "Personalised Learning",
     desc: "Every student learns differently. We create customised experiences that adapt to individual strengths, learning styles, and academic goals — making education truly personal.",
-    grad: "from-[#16C47F] to-[#2563EB]",
-    color: "#16C47F",
-    glow: "rgba(22,196,127,0.18)",
-    border: "rgba(22,196,127,0.2)",
-    bg: "rgba(22,196,127,0.06)",
+    grad: "from-[#EA580C] to-[#C2410C]",
+    color: "#7B2FF7",
+    glow: "rgba(248,120,8,0.18)",
+    border: "rgba(248,120,8,0.2)",
+    bg: "rgba(248,120,8,0.06)",
     size: "lg", // spans 2 cols
     accent: [
       { label: "Adaptive Plan",    icon: "✦" },
@@ -42,11 +42,11 @@ const visionCards = [
     Icon: GraduationCap,
     title: "Academic Excellence",
     desc: "Helping students achieve stronger conceptual understanding, improved confidence, and better academic performance through structured, expert guidance.",
-    grad: "from-[#2563EB] to-[#7C3AED]",
-    color: "#2563EB",
-    glow: "rgba(37,99,235,0.18)",
-    border: "rgba(37,99,235,0.2)",
-    bg: "rgba(37,99,235,0.06)",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
+    color: "#7B2FF7",
+    glow: "rgba(123,47,247,0.18)",
+    border: "rgba(123,47,247,0.2)",
+    bg: "rgba(123,47,247,0.06)",
     size: "sm",
     accent: [],
   },
@@ -55,11 +55,11 @@ const visionCards = [
     Icon: Globe,
     title: "Accessible Education",
     desc: "Making quality education available to students everywhere through technology-enabled learning and rigorously verified educators.",
-    grad: "from-[#7C3AED] to-[#16C47F]",
-    color: "#7C3AED",
-    glow: "rgba(124,58,237,0.18)",
-    border: "rgba(124,58,237,0.2)",
-    bg: "rgba(124,58,237,0.06)",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
+    color: "#7B2FF7",
+    glow: "rgba(123,47,247,0.18)",
+    border: "rgba(123,47,247,0.2)",
+    bg: "rgba(123,47,247,0.06)",
     size: "sm",
     accent: [],
   },
@@ -68,7 +68,7 @@ const visionCards = [
     Icon: Handshake,
     title: "Trusted Learning Community",
     desc: "Building meaningful relationships between students, parents, and tutors through full transparency, verified safety, and outcomes you can measure and trust.",
-    grad: "from-[#F59E0B] to-[#16C47F]",
+    grad: "from-[#F59E0B] to-[#7B2FF7]",
     color: "#F59E0B",
     glow: "rgba(245,158,11,0.18)",
     border: "rgba(245,158,11,0.2)",
@@ -83,18 +83,18 @@ const visionCards = [
 ];
 
 const ecosystemNodes = [
-  { icon: "🎓", label: "Students",         color: "#2563EB", delay: 0,   angle: 0   },
-  { icon: "👨‍🏫", label: "Tutors",           color: "#16C47F", delay: 0.1, angle: 60  },
-  { icon: "👨‍👩‍👧", label: "Parents",          color: "#7C3AED", delay: 0.2, angle: 120 },
+  { icon: "🎓", label: "Students",         color: "#7B2FF7", delay: 0,   angle: 0   },
+  { icon: "👨‍🏫", label: "Tutors",           color: "#7B2FF7", delay: 0.1, angle: 60  },
+  { icon: "👨‍👩‍👧", label: "Parents",          color: "#7B2FF7", delay: 0.2, angle: 120 },
   { icon: "📈", label: "Progress",          color: "#F59E0B", delay: 0.3, angle: 180 },
-  { icon: "🧠", label: "AI Support",        color: "#2563EB", delay: 0.4, angle: 240 },
-  { icon: "🛡️", label: "Trust & Safety",    color: "#16C47F", delay: 0.5, angle: 300 },
+  { icon: "🧠", label: "AI Support",        color: "#7B2FF7", delay: 0.4, angle: 240 },
+  { icon: "🛡️", label: "Trust & Safety",    color: "#7B2FF7", delay: 0.5, angle: 300 },
 ];
 
 const floatingStats = [
-  { value: "5,000+", label: "Students",     color: "#2563EB", bg: "rgba(37,99,235,0.09)",  border: "rgba(37,99,235,0.2)"  },
-  { value: "1,200+", label: "Verified Tutors", color: "#16C47F", bg: "rgba(22,196,127,0.09)", border: "rgba(22,196,127,0.2)" },
-  { value: "50+",    label: "Cities",       color: "#7C3AED", bg: "rgba(124,58,237,0.09)", border: "rgba(124,58,237,0.2)" },
+  { value: "5,000+", label: "Students",     color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",  border: "rgba(123,47,247,0.2)"  },
+  { value: "1,200+", label: "Verified Tutors", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)" },
+  { value: "50+",    label: "Cities",       color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)" },
   { value: "4.8★",   label: "Satisfaction", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)"  },
 ];
 
@@ -142,10 +142,10 @@ function VisionCard({ card, index }: { card: typeof visionCards[0]; index: numbe
           </div>
         </div>
 
-        <h3 className="text-xl font-black text-[#0B1220] mb-3 tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
+        <h3 className="text-xl font-black text-[#0A1028] mb-3 tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
           {card.title}
         </h3>
-        <p className="text-sm leading-7 text-[#64748B] mb-5">{card.desc}</p>
+        <p className="text-sm leading-7 text-[#6E6A85] mb-5">{card.desc}</p>
 
         {/* Accent chips — only on large cards */}
         {isLarge && card.accent.length > 0 && (
@@ -169,7 +169,7 @@ function VisionCard({ card, index }: { card: typeof visionCards[0]; index: numbe
                 transition={{ delay: 0.5 + i * 0.07, duration: 0.4 }}
                 viewport={{ once: true }}
                 className="flex-1 rounded-t-sm origin-bottom"
-                style={{ height: `${h}%`, background: `linear-gradient(to top, #2563EB, #7C3AED)`, opacity: 0.7 + i * 0.04 }}
+                style={{ height: `${h}%`, background: `linear-gradient(to top, #7B2FF7, #7B2FF7)`, opacity: 0.7 + i * 0.04 }}
               />
             ))}
           </div>
@@ -180,7 +180,7 @@ function VisionCard({ card, index }: { card: typeof visionCards[0]; index: numbe
           <div className="mt-3 flex flex-wrap gap-1.5">
             {["Mumbai", "Delhi", "Pune", "Chennai", "Bengaluru", "Hyderabad"].map((city) => (
               <span key={city} className="text-[10px] font-semibold px-2 py-1 rounded-full"
-                style={{ color: "#7C3AED", background: "rgba(124,58,237,0.08)", border: "1px solid rgba(124,58,237,0.15)" }}>
+                style={{ color: "#7B2FF7", background: "rgba(123,47,247,0.08)", border: "1px solid rgba(123,47,247,0.15)" }}>
                 {city}
               </span>
             ))}
@@ -205,7 +205,7 @@ function EcosystemOrbit() {
       {[1, 2].map((r) => (
         <motion.div key={r}
           className="absolute inset-0 rounded-full border"
-          style={{ margin: `${r * 28}px`, borderColor: r === 1 ? "rgba(37,99,235,0.1)" : "rgba(22,196,127,0.08)" }}
+          style={{ margin: `${r * 28}px`, borderColor: r === 1 ? "rgba(123,47,247,0.1)" : "rgba(248,120,8,0.08)" }}
           animate={{ rotate: r === 1 ? 360 : -360 }}
           transition={{ duration: 28 + r * 10, repeat: Infinity, ease: "linear" }}
         />
@@ -214,7 +214,7 @@ function EcosystemOrbit() {
       {/* Centre node */}
       <motion.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-2xl flex flex-col items-center justify-center shadow-xl z-10"
-        style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)", boxShadow: "0 8px 32px rgba(37,99,235,0.35)" }}
+        style={{ background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", boxShadow: "0 8px 32px rgba(123,47,247,0.35)" }}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={inView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -279,19 +279,19 @@ export function WhatWeAimSection() {
       {/* ── BG ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 right-0 w-[600px] h-[500px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.1), transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute bottom-0 -left-20 w-[500px] h-[400px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(22,196,127,0.12), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(248,120,8,0.12), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full opacity-10"
-          style={{ background: "radial-gradient(ellipse, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(80px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(80px)" }} />
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.022) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(30,27,58,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.022) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }} />
         {/* Floating particles */}
         {[...Array(12)].map((_, i) => (
           <motion.div key={i} className="absolute rounded-full"
-            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#16C47F" : i % 3 === 1 ? "#2563EB" : "#7C3AED", left: `${(i * 17 + 4) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.3 }}
+            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#7B2FF7" : i % 3 === 1 ? "#7B2FF7" : "#7B2FF7", left: `${(i * 17 + 4) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.3 }}
             animate={{ y: [0, -16, 0], opacity: [0.2, 0.55, 0.2] }}
             transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.42, ease: "easeInOut" }}
           />
@@ -307,21 +307,21 @@ export function WhatWeAimSection() {
           {/* Badge */}
           <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border mb-8"
-            style={{ background: "rgba(22,196,127,0.08)", borderColor: "rgba(22,196,127,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 24px rgba(22,196,127,0.1)" }}>
+            style={{ background: "rgba(248,120,8,0.08)", borderColor: "rgba(248,120,8,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 24px rgba(248,120,8,0.1)" }}>
             <span className="text-sm">🚀</span>
             <span className="text-sm font-bold tracking-widest text-[#059669] uppercase">Our Vision</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
           </motion.div>
 
-          <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0B1220] mb-7"
+          <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-7"
             style={{ fontFamily: "var(--font-heading)" }}>
             Building the{" "}
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 Future of Personalised
               </span>
               <motion.span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                style={{ background: "linear-gradient(90deg, #16C47F, #2563EB, #7C3AED)" }}
+                style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7, #7B2FF7)" }}
                 initial={{ scaleX: 0, originX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -331,7 +331,7 @@ export function WhatWeAimSection() {
             {" "}Education
           </h2>
 
-          <p className="text-lg leading-8 text-[#64748B]">
+          <p className="text-lg leading-8 text-[#6E6A85]">
             Our vision is to create a learning ecosystem where every student receives the right guidance, every tutor reaches the right learners, and every parent gains complete confidence in their child's educational journey.
           </p>
         </motion.div>
@@ -370,9 +370,9 @@ export function WhatWeAimSection() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
             className="relative rounded-[32px] border overflow-hidden py-14"
-            style={{ background: "linear-gradient(135deg, rgba(248,250,252,0.95), rgba(255,255,255,0.95))", borderColor: "rgba(15,23,42,0.07)", boxShadow: "0 8px 48px rgba(15,23,42,0.07)" }}
+            style={{ background: "linear-gradient(135deg, rgba(248,250,252,0.95), rgba(255,255,255,0.95))", borderColor: "rgba(30,27,58,0.07)", boxShadow: "0 8px 48px rgba(30,27,58,0.07)" }}
           >
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
             <div className="text-center mb-6">
               <p className="text-xs font-black uppercase tracking-widest text-[#94A3B8]">The Learning Ecosystem</p>
@@ -381,7 +381,7 @@ export function WhatWeAimSection() {
             <EcosystemOrbit />
 
             <div className="text-center mt-6">
-              <p className="text-sm text-[#64748B] font-medium max-w-sm mx-auto">
+              <p className="text-sm text-[#6E6A85] font-medium max-w-sm mx-auto">
                 Tutoo operates as the intelligent centre — connecting every stakeholder in one trusted platform.
               </p>
             </div>
@@ -395,42 +395,42 @@ export function WhatWeAimSection() {
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
           className="relative rounded-[32px] border overflow-hidden p-10 lg:p-16 text-center max-w-4xl mx-auto"
-          style={{ background: "rgba(255,255,255,0.92)", borderColor: "rgba(15,23,42,0.07)", backdropFilter: "blur(20px)", boxShadow: "0 16px 60px rgba(15,23,42,0.08)" }}
+          style={{ background: "rgba(255,255,255,0.92)", borderColor: "rgba(30,27,58,0.07)", backdropFilter: "blur(20px)", boxShadow: "0 16px 60px rgba(30,27,58,0.08)" }}
         >
           {/* Top stripe */}
-          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
           {/* Corner glows */}
           <div className="absolute -top-10 -left-10 w-44 h-44 rounded-full opacity-30"
-            style={{ background: "radial-gradient(circle, rgba(22,196,127,0.28), transparent 70%)", filter: "blur(28px)" }} />
+            style={{ background: "radial-gradient(circle, rgba(248,120,8,0.28), transparent 70%)", filter: "blur(28px)" }} />
           <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full opacity-20"
-            style={{ background: "radial-gradient(circle, rgba(37,99,235,0.28), transparent 70%)", filter: "blur(28px)" }} />
+            style={{ background: "radial-gradient(circle, rgba(123,47,247,0.28), transparent 70%)", filter: "blur(28px)" }} />
 
           <div className="relative z-10">
             {/* Quote icon */}
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center mx-auto mb-8 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center mx-auto mb-8 shadow-lg">
               <Quote className="w-7 h-7 text-white" />
             </div>
 
-            <blockquote className="text-2xl lg:text-3xl font-bold text-[#0B1220] leading-[1.55] mb-6"
+            <blockquote className="text-2xl lg:text-3xl font-bold text-[#0A1028] leading-[1.55] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}>
               "Our goal is not just to connect tutors with students.
               <br className="hidden lg:block" />
               Our goal is to create a learning ecosystem where{" "}
-              <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="text-[#6D28D9]">
                 every student can achieve their full potential.
               </span>"
             </blockquote>
 
             {/* Divider */}
-            <div className="w-16 h-0.5 rounded-full mx-auto mb-6 bg-gradient-to-r from-[#16C47F] to-[#2563EB]" />
+            <div className="w-16 h-0.5 rounded-full mx-auto mb-6 bg-gradient-to-r from-[#EA580C] to-[#C2410C]" />
 
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shadow-md">
                 <span className="text-white text-xs font-bold">UT</span>
               </div>
               <div className="text-left">
-                <p className="text-sm font-bold text-[#0F172A]">Tutoo</p>
+                <p className="text-sm font-bold text-[#1E1B3A]">Tutoo</p>
                 <p className="text-xs text-[#94A3B8]">Vision & Mission</p>
               </div>
             </div>
@@ -438,9 +438,9 @@ export function WhatWeAimSection() {
             {/* Bottom value chips */}
             <div className="flex flex-wrap justify-center gap-2.5 mt-8">
               {[
-                { icon: TrendingUp, label: "Measurable Outcomes", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)" },
-                { icon: ShieldCheck, label: "Verified & Safe",     color: "#2563EB", bg: "rgba(37,99,235,0.08)",  border: "rgba(37,99,235,0.2)"  },
-                { icon: Brain,      label: "AI-Powered Learning",  color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.2)" },
+                { icon: TrendingUp, label: "Measurable Outcomes", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)" },
+                { icon: ShieldCheck, label: "Verified & Safe",     color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)"  },
+                { icon: Brain,      label: "AI-Powered Learning",  color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
                 { icon: Users,      label: "Community Driven",     color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)"  },
               ].map((chip) => (
                 <span key={chip.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold border"

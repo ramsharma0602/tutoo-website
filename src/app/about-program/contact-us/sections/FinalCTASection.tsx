@@ -43,17 +43,17 @@ export default function FinalCTASection() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-32 bg-[#0B1220]">
+    <section className="relative overflow-hidden py-32 bg-[#0A1028]">
 
       {/* Background Layers */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
         {/* Mesh Glow */}
-        <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-[#16C47F]/10 rounded-full blur-[180px]" />
+        <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-[#7B2FF7]/10 rounded-full blur-[180px]" />
 
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2563EB]/10 rounded-full blur-[180px]" />
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#7B2FF7]/10 rounded-full blur-[180px]" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#7C3AED]/10 rounded-full blur-[160px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#7B2FF7]/10 rounded-full blur-[160px]" />
 
         {/* Grid */}
         <div
@@ -218,7 +218,7 @@ export default function FinalCTASection() {
             bg-white/10
             backdrop-blur-xl
             border
-            border-[#16C47F]/30
+            border-[#7B2FF7]/30
             "
           >
             🚀
@@ -243,7 +243,7 @@ export default function FinalCTASection() {
             }}
           >
             Ready to Find the{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#22D3EE] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
               Right Tutor
             </span>
             ?
@@ -301,12 +301,12 @@ export default function FinalCTASection() {
               px-10
               rounded-full
               bg-gradient-to-r
-              from-[#16C47F]
-              to-[#2563EB]
+              from-[#7B2FF7]
+              to-[#7B2FF7]
               text-white
               font-bold
               text-lg
-              shadow-[0_0_50px_rgba(37,99,235,0.35)]
+              shadow-[0_0_50px_rgba(123,47,247,0.35)]
               "
             >
               <span className="relative z-10 flex items-center gap-3">
@@ -367,7 +367,7 @@ export default function FinalCTASection() {
                 p-5
                 "
               >
-                <item.icon className="w-7 h-7 text-[#16C47F]" />
+                <item.icon className="w-7 h-7 text-[#7B2FF7]" />
 
                 <h4 className="mt-3 text-white text-2xl font-black">
                   {item.value}

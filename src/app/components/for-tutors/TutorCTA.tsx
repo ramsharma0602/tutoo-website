@@ -13,7 +13,7 @@ import {
 
 export function TutorFinalCTA() {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32 bg-[#0B1220]">
+    <section className="relative overflow-hidden py-24 lg:py-32 bg-[#0A1028]">
 
       {/* ------------------------------------------------------------------ */}
       {/* PREMIUM BACKGROUND                                                 */}
@@ -23,7 +23,7 @@ export function TutorFinalCTA() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
 
       {/* Gradient Mesh */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(22,196,127,0.18),transparent_30%),radial-gradient(circle_at_center,rgba(124,58,237,0.12),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(123,47,247,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(248,120,8,0.18),transparent_30%),radial-gradient(circle_at_center,rgba(123,47,247,0.12),transparent_40%)]" />
 
       {/* Glow Orbs */}
       <motion.div
@@ -36,7 +36,7 @@ export function TutorFinalCTA() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/20 rounded-full blur-3xl"
+        className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/20 rounded-full blur-3xl"
       />
 
       <motion.div
@@ -49,7 +49,7 @@ export function TutorFinalCTA() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#16C47F]/20 rounded-full blur-3xl"
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/20 rounded-full blur-3xl"
       />
 
       {/* ------------------------------------------------------------------ */}
@@ -72,7 +72,7 @@ export function TutorFinalCTA() {
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(255,255,255,0.06)] mb-10"
         >
 
-          <Sparkles className="w-4 h-4 text-[#16C47F]" />
+          <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
           <span className="text-sm font-semibold text-white">
             Join The Tutor Network
@@ -97,7 +97,7 @@ export function TutorFinalCTA() {
         >
           Ready to Start Your{" "}
 
-          <span className="bg-gradient-to-r from-[#16C47F] via-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22C55E] to-[#7B2FF7] bg-clip-text text-transparent">
             Teaching Journey?
           </span>
         </motion.h2>
@@ -185,7 +185,7 @@ export function TutorFinalCTA() {
                 "
               >
 
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg">
 
                   <Icon className="w-5 h-5 text-white" />
                 </div>
@@ -219,7 +219,7 @@ export function TutorFinalCTA() {
         >
 
           {/* Primary */}
-          <button className="group h-16 px-10 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold shadow-[0_15px_50px_rgba(37,99,235,0.35)] hover:scale-[1.03] transition-all duration-300 flex items-center gap-3">
+          <button className="group h-16 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold shadow-[0_15px_50px_rgba(123,47,247,0.35)] hover:scale-[1.03] transition-all duration-300 flex items-center gap-3">
 
             <GraduationCap className="w-5 h-5" />
 

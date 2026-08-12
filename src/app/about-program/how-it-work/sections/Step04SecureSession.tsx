@@ -23,48 +23,48 @@ const verificationFlow = [
         emoji: "👨‍🏫", step: "01",
         title: "Tutor Starts Session",
         desc: "Tutor reaches location and initiates the session through the Tutoo app.",
-        color: "#2563EB", glow: "rgba(37,99,235,0.3)", border: "rgba(37,99,235,0.3)", bg: "rgba(37,99,235,0.07)",
+        color: "#7B2FF7", glow: "rgba(123,47,247,0.3)", border: "rgba(123,47,247,0.3)", bg: "rgba(123,47,247,0.07)",
     },
     {
         emoji: "🔐", step: "02",
         title: "System Generates 6-Digit Code",
         desc: "A unique one-time verification code is instantly generated for this session.",
-        color: "#7C3AED", glow: "rgba(124,58,237,0.3)", border: "rgba(124,58,237,0.3)", bg: "rgba(124,58,237,0.07)",
+        color: "#7B2FF7", glow: "rgba(123,47,247,0.3)", border: "rgba(123,47,247,0.3)", bg: "rgba(123,47,247,0.07)",
     },
     {
         emoji: "📲", step: "03",
         title: "Parent Verifies Code",
         desc: "Parent receives the code via SMS and enters it to authenticate the session.",
-        color: "#16C47F", glow: "rgba(22,196,127,0.3)", border: "rgba(22,196,127,0.3)", bg: "rgba(22,196,127,0.07)",
+        color: "#7B2FF7", glow: "rgba(248,120,8,0.3)", border: "rgba(248,120,8,0.3)", bg: "rgba(248,120,8,0.07)",
     },
     {
         emoji: "✅", step: "04",
         title: "Session Activated",
         desc: "Learning session is officially unlocked and begins with full transparency.",
-        color: "#16C47F", glow: "rgba(22,196,127,0.35)", border: "rgba(22,196,127,0.35)", bg: "rgba(22,196,127,0.07)",
+        color: "#7B2FF7", glow: "rgba(248,120,8,0.35)", border: "rgba(248,120,8,0.35)", bg: "rgba(248,120,8,0.07)",
     },
     {
         emoji: "📋", step: "05",
         title: "Attendance Recorded",
         desc: "Session attendance is automatically logged and visible in the parent dashboard.",
-        color: "#2563EB", glow: "rgba(37,99,235,0.28)", border: "rgba(37,99,235,0.28)", bg: "rgba(37,99,235,0.07)",
+        color: "#7B2FF7", glow: "rgba(123,47,247,0.28)", border: "rgba(123,47,247,0.28)", bg: "rgba(123,47,247,0.07)",
     },
 ];
 
 const benefitCards = [
-    { emoji: "✅", icon: CheckCircle2, title: "Right Tutor", desc: "Ensures only the assigned verified tutor is present for each session.", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#2563EB]" },
-    { emoji: "🎓", icon: Users, title: "Right Student", desc: "Confirms the correct learner is in the session before it begins.", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)", grad: "from-[#2563EB] to-[#7C3AED]" },
-    { emoji: "📋", icon: ClipboardList, title: "Verified Attendance", desc: "Automatically records session attendance — no manual logs needed.", color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.2)", grad: "from-[#7C3AED] to-[#2563EB]" },
+    { emoji: "✅", icon: CheckCircle2, title: "Right Tutor", desc: "Ensures only the assigned verified tutor is present for each session.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#EA580C] to-[#C2410C]" },
+    { emoji: "🎓", icon: Users, title: "Right Student", desc: "Confirms the correct learner is in the session before it begins.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+    { emoji: "📋", icon: ClipboardList, title: "Verified Attendance", desc: "Automatically records session attendance — no manual logs needed.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
     { emoji: "👨‍👩‍👧", icon: Eye, title: "Session Transparency", desc: "Parents stay informed and in control with real-time session visibility.", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)", grad: "from-[#F59E0B] to-[#EF4444]" },
-    { emoji: "📍", icon: MapPin, title: "Location Verification", desc: "Confirms tutor arrival and session location for complete accountability.", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#7C3AED]" },
-    { emoji: "🔒", icon: Lock, title: "Enhanced Security", desc: "Creates a tamper-proof record of every session start, end, and attendance.", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)", grad: "from-[#2563EB] to-[#16C47F]" },
+    { emoji: "📍", icon: MapPin, title: "Location Verification", desc: "Confirms tutor arrival and session location for complete accountability.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+    { emoji: "🔒", icon: Lock, title: "Enhanced Security", desc: "Creates a tamper-proof record of every session start, end, and attendance.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 ];
 
 const floatingWidgets = [
-    { emoji: "🛡️", label: "Identity Verified", color: "#16C47F", border: "rgba(22,196,127,0.28)", delay: 0.3 },
-    { emoji: "📍", label: "Location Confirmed", color: "#2563EB", border: "rgba(37,99,235,0.28)", delay: 0.65 },
-    { emoji: "⏱️", label: "Session Started", color: "#7C3AED", border: "rgba(124,58,237,0.28)", delay: 1.0 },
-    { emoji: "✅", label: "Attendance Logged", color: "#16C47F", border: "rgba(22,196,127,0.28)", delay: 1.35 },
+    { emoji: "🛡️", label: "Identity Verified", color: "#7B2FF7", border: "rgba(248,120,8,0.28)", delay: 0.3 },
+    { emoji: "📍", label: "Location Confirmed", color: "#7B2FF7", border: "rgba(123,47,247,0.28)", delay: 0.65 },
+    { emoji: "⏱️", label: "Session Started", color: "#7B2FF7", border: "rgba(123,47,247,0.28)", delay: 1.0 },
+    { emoji: "✅", label: "Attendance Logged", color: "#7B2FF7", border: "rgba(248,120,8,0.28)", delay: 1.35 },
 ];
 
 const progressSteps = [
@@ -99,16 +99,16 @@ function OTPDisplay({ visible }: { visible: boolean }) {
                     transition={{ delay: i * 0.09, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                     className="relative w-12 h-14 rounded-xl flex items-center justify-center text-2xl font-black"
                     style={{
-                        background: "linear-gradient(135deg, rgba(37,99,235,0.08), rgba(22,196,127,0.08))",
-                        border: "1.5px solid rgba(37,99,235,0.25)",
-                        color: "#0B1220",
-                        boxShadow: "0 4px 16px rgba(37,99,235,0.12)",
+                        background: "linear-gradient(135deg, rgba(123,47,247,0.08), rgba(248,120,8,0.08))",
+                        border: "1.5px solid rgba(123,47,247,0.25)",
+                        color: "#0A1028",
+                        boxShadow: "0 4px 16px rgba(123,47,247,0.12)",
                     }}
                 >
                     {digit}
                     {/* Bottom glow accent */}
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-[2px] rounded-full"
-                        style={{ background: "linear-gradient(90deg, #2563EB, #16C47F)" }} />
+                        style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7)" }} />
                 </motion.div>
             ))}
         </div>
@@ -132,25 +132,25 @@ function SecurityFlowVisual() {
                 transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
                 className="relative rounded-[28px] border overflow-hidden"
-                style={{ background: "#fff", borderColor: "rgba(15,23,42,0.08)", boxShadow: "0 16px 56px rgba(15,23,42,0.10)" }}
+                style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 16px 56px rgba(30,27,58,0.10)" }}
             >
-                <div className="h-[3px] bg-gradient-to-r from-[#2563EB] via-[#16C47F] to-[#7C3AED]" />
+                <div className="h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
                 <div className="p-6">
 
                     {/* Card header */}
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center shadow-lg">
+                            <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shadow-lg">
                                 <Lock className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                                <p className="text-sm font-black text-[#0B1220]">Session Verification</p>
+                                <p className="text-sm font-black text-[#0A1028]">Session Verification</p>
                                 <p className="text-xs text-[#94A3B8]">One-Time Code · Expires in 5:00</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#16C47F]"
-                            style={{ background: "rgba(22,196,127,0.09)", border: "1px solid rgba(22,196,127,0.22)" }}>
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+                        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#7B2FF7]"
+                            style={{ background: "rgba(248,120,8,0.09)", border: "1px solid rgba(248,120,8,0.22)" }}>
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
                             Live
                         </div>
                     </div>
@@ -158,9 +158,9 @@ function SecurityFlowVisual() {
                     {/* Session meta */}
                     <div className="grid grid-cols-2 gap-3 mb-6">
                         {[
-                            { label: "Student", val: "Arjun Rao", icon: "🎓", color: "#2563EB", bg: "rgba(37,99,235,0.07)" },
-                            { label: "Tutor", val: "Rahul Kumar", icon: "👨‍🏫", color: "#16C47F", bg: "rgba(22,196,127,0.07)" },
-                            { label: "Subject", val: "Mathematics", icon: "📚", color: "#7C3AED", bg: "rgba(124,58,237,0.07)" },
+                            { label: "Student", val: "Arjun Rao", icon: "🎓", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)" },
+                            { label: "Tutor", val: "Rahul Kumar", icon: "👨‍🏫", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)" },
+                            { label: "Subject", val: "Mathematics", icon: "📚", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)" },
                             { label: "Location", val: "Mumbai, Home", icon: "📍", color: "#F59E0B", bg: "rgba(245,158,11,0.07)" },
                         ].map((item) => (
                             <div key={item.label} className="rounded-xl p-3 flex items-center gap-2.5"
@@ -168,7 +168,7 @@ function SecurityFlowVisual() {
                                 <span className="text-base">{item.icon}</span>
                                 <div>
                                     <p className="text-[9px] font-semibold text-[#94A3B8] uppercase tracking-wider">{item.label}</p>
-                                    <p className="text-xs font-bold text-[#0F172A]">{item.val}</p>
+                                    <p className="text-xs font-bold text-[#1E1B3A]">{item.val}</p>
                                 </div>
                             </div>
                         ))}
@@ -179,20 +179,20 @@ function SecurityFlowVisual() {
                         <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-1">
                             Generated Verification Code
                         </p>
-                        <p className="text-xs text-[#64748B]">Share this code with your parent to begin the session</p>
+                        <p className="text-xs text-[#6E6A85]">Share this code with your parent to begin the session</p>
                     </div>
 
                     {/* OTP digits */}
                     <div className="relative rounded-2xl border p-5 mb-5"
-                        style={{ background: "rgba(248,250,252,0.9)", borderColor: "rgba(37,99,235,0.15)" }}>
+                        style={{ background: "rgba(248,250,252,0.9)", borderColor: "rgba(123,47,247,0.15)" }}>
                         {/* Glow behind OTP */}
                         <div className="absolute inset-0 rounded-2xl pointer-events-none"
-                            style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.06), transparent 70%)" }} />
+                            style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(123,47,247,0.06), transparent 70%)" }} />
                         <OTPDisplay visible={vis} />
 
                         {/* Pulse ring around OTP box */}
                         <motion.div className="absolute inset-0 rounded-2xl border pointer-events-none"
-                            style={{ borderColor: "rgba(22,196,127,0.3)" }}
+                            style={{ borderColor: "rgba(248,120,8,0.3)" }}
                             animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.01, 1] }}
                             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                         />
@@ -201,19 +201,19 @@ function SecurityFlowVisual() {
                     {/* Verification steps micro timeline */}
                     <div className="flex flex-col gap-2">
                         {[
-                            { icon: "👨‍🏫", label: "Tutor present at location", done: true, color: "#2563EB" },
-                            { icon: "🔐", label: "Code generated successfully", done: true, color: "#7C3AED" },
-                            { icon: "📲", label: "Awaiting parent verification", done: false, color: "#16C47F" },
+                            { icon: "👨‍🏫", label: "Tutor present at location", done: true, color: "#7B2FF7" },
+                            { icon: "🔐", label: "Code generated successfully", done: true, color: "#7B2FF7" },
+                            { icon: "📲", label: "Awaiting parent verification", done: false, color: "#7B2FF7" },
                         ].map((step, i) => (
                             <motion.div key={i}
                                 initial={{ opacity: 0, x: -8 }}
                                 animate={vis ? { opacity: 1, x: 0 } : {}}
                                 transition={{ delay: 0.6 + i * 0.12 }}
                                 className="flex items-center gap-3 px-3 py-2.5 rounded-xl"
-                                style={{ background: step.done ? `${step.color}08` : "rgba(15,23,42,0.03)", border: `1px solid ${step.color}18` }}
+                                style={{ background: step.done ? `${step.color}08` : "rgba(30,27,58,0.03)", border: `1px solid ${step.color}18` }}
                             >
                                 <span className="text-sm">{step.icon}</span>
-                                <span className="text-xs font-medium text-[#0F172A] flex-1">{step.label}</span>
+                                <span className="text-xs font-medium text-[#1E1B3A] flex-1">{step.label}</span>
                                 {step.done
                                     ? <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: step.color }} />
                                     : <motion.div className="w-4 h-4 rounded-full border-2 shrink-0"
@@ -234,17 +234,17 @@ function SecurityFlowVisual() {
                 transition={{ delay: 0.2, duration: 0.55 }}
                 viewport={{ once: true }}
                 className="relative rounded-2xl border overflow-hidden"
-                style={{ background: "#fff", borderColor: "rgba(15,23,42,0.08)", boxShadow: "0 4px 20px rgba(15,23,42,0.06)" }}
+                style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 4px 20px rgba(30,27,58,0.06)" }}
             >
-                <div className="h-[2px] bg-gradient-to-r from-[#2563EB] to-[#16C47F]" />
+                <div className="h-[2px] bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]" />
                 <div className="p-5">
                     <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-4">Verification Flow</p>
                     <div className="relative">
                         {/* Vertical connector */}
                         <div className="absolute left-[22px] top-5 bottom-5 w-[2px]"
-                            style={{ background: "rgba(15,23,42,0.06)" }}>
+                            style={{ background: "rgba(30,27,58,0.06)" }}>
                             <motion.div className="w-full origin-top rounded-full"
-                                style={{ background: "linear-gradient(to bottom, #2563EB, #7C3AED, #16C47F)" }}
+                                style={{ background: "linear-gradient(to bottom, #7B2FF7, #7B2FF7, #7B2FF7)" }}
                                 initial={{ scaleY: 0 }}
                                 animate={vis ? { scaleY: 1 } : {}}
                                 transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.4 }} />
@@ -265,20 +265,20 @@ function SecurityFlowVisual() {
                                             transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.3 }}
                                         />
                                         <div className="w-11 h-11 rounded-full flex items-center justify-center text-base shadow-md"
-                                            style={{ background: `linear-gradient(135deg, ${step.color}, #2563EB)`, boxShadow: `0 4px 14px ${step.glow}` }}>
+                                            style={{ background: `linear-gradient(135deg, ${step.color}, #7B2FF7)`, boxShadow: `0 4px 14px ${step.glow}` }}>
                                             {step.emoji}
                                         </div>
                                     </div>
                                     {/* Content */}
                                     <div className="flex-1 pt-1.5">
-                                        <p className="text-xs font-black text-[#0B1220] mb-0.5" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</p>
-                                        <p className="text-[10px] leading-relaxed text-[#64748B]">{step.desc}</p>
+                                        <p className="text-xs font-black text-[#0A1028] mb-0.5" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</p>
+                                        <p className="text-[10px] leading-relaxed text-[#6E6A85]">{step.desc}</p>
                                     </div>
                                     {/* Done badge */}
                                     {i < 2 && (
                                         <div className="shrink-0 pt-1.5">
-                                            <span className="text-[9px] font-bold px-2 py-1 rounded-full text-[#16C47F]"
-                                                style={{ background: "rgba(22,196,127,0.1)", border: "1px solid rgba(22,196,127,0.2)" }}>Done</span>
+                                            <span className="text-[9px] font-bold px-2 py-1 rounded-full text-[#7B2FF7]"
+                                                style={{ background: "rgba(248,120,8,0.1)", border: "1px solid rgba(248,120,8,0.2)" }}>Done</span>
                                         </div>
                                     )}
                                 </motion.div>
@@ -323,18 +323,18 @@ export function Step04SecureSession() {
             {/* ── BG ── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute -top-32 -left-20 w-[600px] h-[500px] rounded-full opacity-20"
-                    style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.1), transparent 70%)", filter: "blur(70px)" }} />
+                    style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(70px)" }} />
                 <div className="absolute top-1/2 -right-20 w-[500px] h-[400px] rounded-full opacity-15"
-                    style={{ background: "radial-gradient(circle, rgba(22,196,127,0.1), transparent 70%)", filter: "blur(60px)" }} />
+                    style={{ background: "radial-gradient(circle, rgba(248,120,8,0.1), transparent 70%)", filter: "blur(60px)" }} />
                 <div className="absolute bottom-0 left-1/3 w-[400px] h-[300px] rounded-full opacity-10"
-                    style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+                    style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
                 <div className="absolute inset-0" style={{
-                    backgroundImage: "linear-gradient(rgba(15,23,42,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.02) 1px, transparent 1px)",
+                    backgroundImage: "linear-gradient(rgba(30,27,58,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.02) 1px, transparent 1px)",
                     backgroundSize: "72px 72px",
                 }} />
                 {[...Array(10)].map((_, i) => (
                     <motion.div key={i} className="absolute rounded-full"
-                        style={{ width: 2, height: 2, background: i % 3 === 0 ? "#2563EB" : i % 3 === 1 ? "#16C47F" : "#7C3AED", left: `${(i * 17 + 5) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.28 }}
+                        style={{ width: 2, height: 2, background: i % 3 === 0 ? "#7B2FF7" : i % 3 === 1 ? "#7B2FF7" : "#7B2FF7", left: `${(i * 17 + 5) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.28 }}
                         animate={{ y: [0, -14, 0], opacity: [0.18, 0.5, 0.18] }}
                         transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.45, ease: "easeInOut" }} />
                 ))}
@@ -370,10 +370,10 @@ export function Step04SecureSession() {
 
                             {/* Step badge */}
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-5"
-                                style={{ background: "rgba(37,99,235,0.08)", borderColor: "rgba(37,99,235,0.28)", backdropFilter: "blur(10px)" }}>
-                                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center text-white text-[9px] font-black shadow-sm">4</div>
-                                <span className="text-xs font-black tracking-widest text-[#2563EB] uppercase">Step 04</span>
-                                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+                                style={{ background: "rgba(123,47,247,0.08)", borderColor: "rgba(123,47,247,0.28)", backdropFilter: "blur(10px)" }}>
+                                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-[9px] font-black shadow-sm">4</div>
+                                <span className="text-xs font-black tracking-widest text-[#7B2FF7] uppercase">Step 04</span>
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
                             </div>
 
                             {/* USP highlight badge */}
@@ -381,23 +381,23 @@ export function Step04SecureSession() {
                                 animate={{ y: [0, -3, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl border mb-7"
-                                style={{ background: "linear-gradient(135deg, rgba(37,99,235,0.09), rgba(22,196,127,0.07))", borderColor: "rgba(37,99,235,0.28)", boxShadow: "0 0 20px rgba(37,99,235,0.1)" }}
+                                style={{ background: "linear-gradient(135deg, rgba(123,47,247,0.09), rgba(248,120,8,0.07))", borderColor: "rgba(123,47,247,0.28)", boxShadow: "0 0 20px rgba(123,47,247,0.1)" }}
                             >
-                                <Lock className="w-4 h-4 text-[#2563EB]" />
-                                <span className="text-sm font-bold text-[#2563EB]">Industry-Leading Session Security</span>
+                                <Lock className="w-4 h-4 text-[#7B2FF7]" />
+                                <span className="text-sm font-bold text-[#7B2FF7]">Industry-Leading Session Security</span>
                             </motion.div>
                         </div>
                         {/* Heading */}
-                        <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0B1220] mb-6"
+                        <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
                             style={{ fontFamily: "var(--font-heading)" }}>
                             Every Session
                             <br />
                             <span className="relative inline-block">
-                                <span className="bg-gradient-to-r from-[#2563EB] to-[#16C47F] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                                     Starts With Trust
                                 </span>
                                 <motion.span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                                    style={{ background: "linear-gradient(90deg, #2563EB, #16C47F)" }}
+                                    style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7)" }}
                                     initial={{ scaleX: 0, originX: 0 }}
                                     whileInView={{ scaleX: 1 }}
                                     transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -415,7 +415,7 @@ export function Step04SecureSession() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 + i * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="text-lg leading-8 text-[#64748B]">{para}</motion.p>
+                                    className="text-lg leading-8 text-[#6E6A85]">{para}</motion.p>
                             ))}
                         </div>
 
@@ -426,13 +426,13 @@ export function Step04SecureSession() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.25 }}
                             className="relative rounded-2xl border overflow-hidden mb-8 px-6 py-5"
-                            style={{ background: "linear-gradient(135deg, #0B1220, #111827)", borderColor: "rgba(37,99,235,0.3)" }}
+                            style={{ background: "linear-gradient(135deg, #0A1028, #111827)", borderColor: "rgba(123,47,247,0.3)" }}
                         >
-                            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] to-[#16C47F]" />
+                            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]" />
                             <div className="absolute inset-0 pointer-events-none"
-                                style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(37,99,235,0.15), transparent 65%)" }} />
+                                style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(123,47,247,0.15), transparent 65%)" }} />
                             <div className="relative z-10 flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center shadow-lg shrink-0">
+                                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shadow-lg shrink-0">
                                     <Sparkles className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
@@ -446,8 +446,8 @@ export function Step04SecureSession() {
 
                         {/* Benefits grid */}
                         <div className="flex items-center gap-3 mb-5">
-                            <p className="text-sm font-black uppercase tracking-widest text-[#0F172A] whitespace-nowrap">Verification Benefits</p>
-                            <div className="flex-1 h-px bg-gradient-to-r from-[rgba(37,99,235,0.2)] to-transparent" />
+                            <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Verification Benefits</p>
+                            <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
                         </div>
 
                         <div ref={gridRef} className="grid grid-cols-2 gap-3 mb-8">
@@ -466,8 +466,8 @@ export function Step04SecureSession() {
                                     <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-lg mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                                         {card.emoji}
                                     </div>
-                                    <p className="relative z-10 text-xs font-black text-[#0B1220] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                                    <p className="relative z-10 text-[10px] leading-relaxed text-[#64748B]">{card.desc}</p>
+                                    <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
+                                    <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
                                     <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                         style={{ background: `linear-gradient(90deg, ${card.color}, transparent)` }} />
                                 </motion.div>
@@ -481,12 +481,12 @@ export function Step04SecureSession() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.5 }}
                             className="flex items-center gap-4 rounded-2xl border px-5 py-4 mb-8"
-                            style={{ background: "rgba(37,99,235,0.05)", borderColor: "rgba(37,99,235,0.18)", backdropFilter: "blur(10px)" }}
+                            style={{ background: "rgba(123,47,247,0.05)", borderColor: "rgba(123,47,247,0.18)", backdropFilter: "blur(10px)" }}
                         >
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#16C47F] flex items-center justify-center shadow-md shrink-0">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shadow-md shrink-0">
                                 <ShieldCheck className="w-5 h-5 text-white" />
                             </div>
-                            <p className="text-sm font-semibold text-[#0F172A] leading-snug">
+                            <p className="text-sm font-semibold text-[#1E1B3A] leading-snug">
                                 Every session is authenticated before it begins, creating a safer and more transparent learning environment.
                             </p>
                         </motion.div>
@@ -498,20 +498,20 @@ export function Step04SecureSession() {
                                     <div key={s.label} className="flex items-center">
                                         <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm ${s.done ? "scale-110" : ""}`}
                                             style={s.done
-                                                ? { background: "linear-gradient(135deg, #2563EB, #16C47F)", color: "#fff", boxShadow: "0 0 12px rgba(37,99,235,0.4)" }
-                                                : { background: "rgba(15,23,42,0.06)", color: "#94A3B8" }}>
+                                                ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(123,47,247,0.4)" }
+                                                : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>
                                             {s.done ? <CheckCircle2 className="w-3.5 h-3.5" /> : i + 1}
                                         </div>
                                         {i < progressSteps.length - 1 && (
                                             <div className="w-10 h-[2px] mx-1 rounded-full"
-                                                style={{ background: i < 3 ? "linear-gradient(90deg, #2563EB, #16C47F)" : "rgba(15,23,42,0.08)" }} />
+                                                style={{ background: i < 3 ? "linear-gradient(90deg, #7B2FF7, #7B2FF7)" : "rgba(30,27,58,0.08)" }} />
                                         )}
                                     </div>
                                 ))}
                             </div>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-                                <p className="text-xs font-bold text-[#2563EB]">Session Verification Completed · Step 4 of 5</p>
+                                <div className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
+                                <p className="text-xs font-bold text-[#7B2FF7]">Session Verification Completed · Step 4 of 5</p>
                             </div>
                         </motion.div>
 

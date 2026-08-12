@@ -30,7 +30,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0B1220] text-white pt-20 pb-10">
+    <footer className="bg-[#0A1028] text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-7 gap-12 mb-16">
@@ -67,11 +67,11 @@ export function Footer() {
             </p>
 
             <div className="space-y-3">
-              <a href="mailto:info@tutoolearning.com" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
+              <a href="mailto:info@tutoolearning.com" className="flex items-center gap-3 text-gray-400 hover:text-violet-400 transition-colors">
                 <Mail className="w-5 h-5" />
                 <span>info@tutoolearning.com</span>
               </a>
-              <a href="tel:+918446146039" className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition-colors">
+              <a href="tel:+918446146039" className="flex items-center gap-3 text-gray-400 hover:text-violet-400 transition-colors">
                 <Phone className="w-5 h-5" />
                 <span>+91 8446146039</span>
               </a>
@@ -96,14 +96,14 @@ export function Footer() {
                       {route ? (
                         <Link
                           to={route}
-                          className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                          className="text-gray-400 hover:text-violet-400 transition-colors text-sm"
                         >
                           {link}
                         </Link>
                       ) : (
                         <a
                           href="#"
-                          className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                          className="text-gray-400 hover:text-violet-400 transition-colors text-sm"
                         >
                           {link}
                         </a>
@@ -132,7 +132,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   whileHover={{ y: -4, scale: 1.1 }}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-emerald-500 hover:to-blue-600 transition-all duration-300 border border-white/10 hover:border-transparent"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-violet-500 hover:to-violet-600 transition-all duration-300 border border-white/10 hover:border-transparent"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -143,11 +143,11 @@ export function Footer() {
             {/* Certifications/Badges */}
             <div className="flex items-center gap-4 text-xs text-gray-500">
               <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full" />
+                <div className="w-2 h-2 bg-violet-400 rounded-full" />
                 <span>ISO Certified</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
-                <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                <div className="w-2 h-2 bg-violet-400 rounded-full" />
                 <span>Data Secure</span>
               </div>
             </div>

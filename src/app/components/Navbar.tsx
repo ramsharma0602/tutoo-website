@@ -327,7 +327,7 @@ export function Navbar() {
           backdrop-blur-2xl
           border-b
           border-black/5
-          shadow-[0_10px_40px_rgba(15,23,42,0.06)]
+          shadow-[0_10px_40px_rgba(30,27,58,0.06)]
           `
           : `
           top-11
@@ -366,13 +366,13 @@ export function Navbar() {
             <div className="flex flex-col leading-none">
 
               <span
-                className="text-xl font-black tracking-tight text-[#0B1220]"
+                className="text-xl font-black tracking-tight text-[#0A1028]"
                 // style={{ fontFamily: 'var(--font-heading)' }}
               >
                 Tutoo Learning
               </span>
 
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#64748B] font-semibold mt-1">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#6E6A85] font-semibold mt-1">
                 Smart Learning Platform
               </span>
             </div>
@@ -392,7 +392,7 @@ export function Navbar() {
                 {/* Main Menu Item */}
                 <a
                   href={item.href || '#'}
-                  className="flex items-center gap-1 text-[15px] font-semibold text-[#0F172A] hover:text-[#2563EB] transition-colors duration-200 py-8"
+                  className="flex items-center gap-1 text-[15px] font-semibold text-[#1E1B3A] hover:text-[#7B2FF7] transition-colors duration-200 py-8"
                 >
                   {item.title}
 
@@ -564,7 +564,7 @@ export function Navbar() {
           <div className="hidden lg:block ml-auto">
             <button
               onClick={() => navigate('/book-free-assessment')}
-              className="px-6 py-3 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 font-medium">
+              className="px-6 py-3 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 font-medium">
               Book Free Assessment
             </button>
           </div>
@@ -591,9 +591,9 @@ export function Navbar() {
             "
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-[#0F172A]" />
+              <X className="w-6 h-6 text-[#1E1B3A]" />
             ) : (
-              <Menu className="w-6 h-6 text-[#0F172A]" />
+              <Menu className="w-6 h-6 text-[#1E1B3A]" />
             )}
           </button>
         </div>
@@ -642,7 +642,7 @@ export function Navbar() {
                 py-4
                 text-[15px]
                 font-semibold
-                text-[#0F172A]
+                text-[#1E1B3A]
               "
                   >
                     {item.title}
@@ -669,7 +669,7 @@ export function Navbar() {
                   py-4
                   text-[15px]
                   font-semibold
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                 "
                     >
                       {item.title}
@@ -736,7 +736,7 @@ export function Navbar() {
                   py-4
                   text-[15px]
                   font-semibold
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                 "
                     >
                       {item.title}
@@ -917,8 +917,8 @@ export function Navbar() {
           text-white
           font-semibold
           bg-gradient-to-r
-          from-[#16C47F]
-          to-[#2563EB]
+          from-[#7B2FF7]
+          to-[#7B2FF7]
         "
             >
               Book Free Assessment

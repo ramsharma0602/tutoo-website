@@ -38,7 +38,7 @@ export default function AboutHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] pt-32 pb-24">
+    <section className="relative overflow-hidden bg-[#FAFAFC] pt-32 pb-24">
 
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -51,7 +51,7 @@ export default function AboutHero() {
           w-[600px]
           h-[600px]
           rounded-full
-          bg-[#16C47F]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -64,7 +64,7 @@ export default function AboutHero() {
           w-[700px]
           h-[700px]
           rounded-full
-          bg-[#2563EB]/10
+          bg-[#7B2FF7]/10
           blur-[180px]
           "
         />
@@ -78,7 +78,7 @@ export default function AboutHero() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#7C3AED]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -88,7 +88,7 @@ export default function AboutHero() {
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(15,23,42,1) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,1) 1px, transparent 1px)",
+              "linear-gradient(rgba(30,27,58,1) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         />
@@ -115,13 +115,13 @@ export default function AboutHero() {
               bg-white/75
               backdrop-blur-xl
               border
-              border-[#16C47F]/20
+              border-[#7B2FF7]/20
               shadow-lg
               "
             >
               🎓
 
-              <span className="font-semibold text-[#16C47F]">
+              <span className="font-semibold text-[#7B2FF7]">
                 ABOUT TUTOO
               </span>
             </motion.div>
@@ -138,7 +138,7 @@ export default function AboutHero() {
               font-black
               leading-[1.05]
               tracking-tight
-              text-[#0B1220]
+              text-[#0A1028]
               "
               style={{
                 fontFamily:
@@ -147,19 +147,19 @@ export default function AboutHero() {
             >
               Helping Every Student{" "}
 
-              <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="text-[#6D28D9]">
                 Learn Better
               </span>
 
               ,{" "}
 
-              <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 Grow Faster
               </span>
 
               , and{" "}
 
-              <span className="bg-gradient-to-r from-[#16C47F] via-[#22D3EE] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
                 Succeed Confidently
               </span>
             </motion.h1>
@@ -174,7 +174,7 @@ export default function AboutHero() {
               max-w-2xl
               text-lg
               leading-9
-              text-[#64748B]
+              text-[#6E6A85]
               "
             >
               Tutoo connects students with
@@ -202,12 +202,12 @@ export default function AboutHero() {
                 px-8
                 rounded-full
                 bg-gradient-to-r
-                from-[#16C47F]
-                to-[#2563EB]
+                from-[#7B2FF7]
+                to-[#7B2FF7]
                 text-white
                 font-bold
                 shadow-xl
-                shadow-[#2563EB]/20
+                shadow-[#7B2FF7]/20
                 hover:scale-[1.03]
                 transition-all
                 duration-300
@@ -236,10 +236,10 @@ export default function AboutHero() {
                 bg-white/70
                 backdrop-blur-xl
                 border
-                border-[rgba(15,23,42,0.08)]
+                border-[rgba(30,27,58,0.08)]
                 font-bold
-                text-[#0F172A]
-                hover:border-[#2563EB]
+                text-[#1E1B3A]
+                hover:border-[#7B2FF7]
                 transition-all
                 "
               >
@@ -261,15 +261,15 @@ export default function AboutHero() {
                   bg-white/80
                   backdrop-blur-xl
                   border
-                  border-[rgba(15,23,42,0.08)]
+                  border-[rgba(30,27,58,0.08)]
                   flex
                   items-center
                   gap-2
                   "
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#16C47F]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#7B2FF7]" />
 
-                  <span className="text-sm font-medium text-[#64748B]">
+                  <span className="text-sm font-medium text-[#6E6A85]">
                     {item}
                   </span>
                 </div>
@@ -289,7 +289,7 @@ export default function AboutHero() {
               rounded-[40px]
               bg-white
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               shadow-2xl
               "
             >
@@ -325,14 +325,14 @@ export default function AboutHero() {
             >
               <div className="flex gap-3">
 
-                <TrendingUp className="text-[#16C47F]" />
+                <TrendingUp className="text-[#7B2FF7]" />
 
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Student Progress
                   </p>
 
-                  <p className="text-[#16C47F] font-semibold">
+                  <p className="text-[#7B2FF7] font-semibold">
                     +28% Improvement
                   </p>
                 </div>
@@ -359,14 +359,14 @@ export default function AboutHero() {
             >
               <div className="flex gap-3">
 
-                <UserCheck className="text-[#2563EB]" />
+                <UserCheck className="text-[#7B2FF7]" />
 
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Verified Tutor
                   </p>
 
-                  <p className="text-[#64748B]">
+                  <p className="text-[#6E6A85]">
                     Background Checked
                   </p>
                 </div>
@@ -393,14 +393,14 @@ export default function AboutHero() {
             >
               <div className="flex gap-3">
 
-                <Target className="text-[#7C3AED]" />
+                <Target className="text-[#7B2FF7]" />
 
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Learning Plan
                   </p>
 
-                  <p className="text-[#16C47F]">
+                  <p className="text-[#7B2FF7]">
                     Active
                   </p>
                 </div>
@@ -430,7 +430,7 @@ export default function AboutHero() {
                 <Star className="text-[#F59E0B]" />
 
                 <div>
-                  <p className="font-bold text-[#0F172A]">
+                  <p className="font-bold text-[#1E1B3A]">
                     Parent Satisfaction
                   </p>
 

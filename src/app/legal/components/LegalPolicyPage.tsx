@@ -37,7 +37,7 @@ function RenderBlock({ block, index }: { block: LegalBlock; index: number }) {
                 <ul className="mb-6 flex flex-col gap-3">
                     {block.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                                 <CheckCircle2 className="w-3 h-3 text-white" />
                             </div>
                             <span className="text-base leading-relaxed text-[#334155]">{item}</span>
@@ -50,7 +50,7 @@ function RenderBlock({ block, index }: { block: LegalBlock; index: number }) {
                 <div className="mb-6 flex flex-col gap-4">
                     {block.items.map((item, i) => (
                         <div key={i} className="flex gap-4">
-                            <div className="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center text-white text-xs font-black shadow-md">
+                            <div className="shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-xs font-black shadow-md">
                                 {i + 1}
                             </div>
                             <p className="text-base leading-relaxed text-[#334155] pt-0.5">{item}</p>
@@ -63,14 +63,14 @@ function RenderBlock({ block, index }: { block: LegalBlock; index: number }) {
                 <div
                     className="my-6 rounded-2xl p-5 flex gap-3.5"
                     style={{
-                        background: "rgba(37,99,235,0.06)",
-                        border: "1px solid rgba(37,99,235,0.18)",
+                        background: "rgba(123,47,247,0.06)",
+                        border: "1px solid rgba(123,47,247,0.18)",
                     }}
                 >
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center shrink-0 shadow-md">
+                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center shrink-0 shadow-md">
                         <Info className="w-4 h-4 text-white" />
                     </div>
-                    <p className="text-sm leading-relaxed text-[#0F172A] font-medium">{block.text}</p>
+                    <p className="text-sm leading-relaxed text-[#1E1B3A] font-medium">{block.text}</p>
                 </div>
             )}
         </motion.div>
@@ -85,21 +85,21 @@ function RenderBlock({ block, index }: { block: LegalBlock; index: number }) {
 ───────────────────────────────────────────── */
 export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
     return (
-        <div className="min-h-screen bg-[#F8FAFC] overflow-x-hidden">
+        <div className="min-h-screen bg-[#FAFAFC] overflow-x-hidden">
             {/* ── HERO ── */}
-            <section className="relative overflow-hidden py-24 bg-[#F8FAFC]">
+            <section className="relative overflow-hidden py-24 bg-[#FAFAFC]">
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
                         className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[560px] rounded-full opacity-25"
                         style={{
                             background:
-                                "radial-gradient(ellipse, rgba(37,99,235,0.10) 0%, rgba(22,196,127,0.07) 50%, transparent 72%)",
+                                "radial-gradient(ellipse, rgba(123,47,247,0.10) 0%, rgba(248,120,8,0.07) 50%, transparent 72%)",
                             filter: "blur(60px)",
                         }}
                     />
                     <div
                         className="absolute top-10 -right-32 w-[420px] h-[420px] rounded-full opacity-20"
-                        style={{ background: "radial-gradient(circle, rgba(124,58,237,0.13), transparent 70%)", filter: "blur(70px)" }}
+                        style={{ background: "radial-gradient(circle, rgba(123,47,247,0.13), transparent 70%)", filter: "blur(70px)" }}
                     />
                 </div>
 
@@ -109,17 +109,17 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full mb-8 mx-auto
-                                   bg-white/80 backdrop-blur-xl border border-[#16C47F]/30
-                                   shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                                   bg-white/80 backdrop-blur-xl border border-[#7B2FF7]/30
+                                   shadow-[0_0_28px_rgba(248,120,8,0.18)]"
                     >
-                        <Shield className="w-4 h-4 text-[#16C47F]" />
+                        <Shield className="w-4 h-4 text-[#7B2FF7]" />
                         <span
-                            className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                            className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                             style={{ fontFamily: "var(--font-heading)" }}
                         >
                             {policy.badgeLabel}
                         </span>
-                        <Sparkles className="w-4 h-4 text-[#16C47F]" />
+                        <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
                     </motion.div>
 
                     <motion.h1
@@ -127,11 +127,11 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.08 }}
-                        className="text-4xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0F172A] mb-6"
+                        className="text-4xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#1E1B3A] mb-6"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
                         {policy.title.split(policy.highlight)[0]}
-                        <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                             {policy.highlight}
                         </span>
                         {policy.title.split(policy.highlight)[1]}
@@ -142,7 +142,7 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.16 }}
-                        className="text-lg leading-8 text-[#64748B] max-w-2xl mx-auto mb-8"
+                        className="text-lg leading-8 text-[#6E6A85] max-w-2xl mx-auto mb-8"
                     >
                         {policy.intro}
                     </motion.p>
@@ -152,9 +152,9 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.22 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E2E8F0] shadow-sm text-sm font-semibold text-[#64748B]"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E6E3F0] shadow-sm text-sm font-semibold text-[#6E6A85]"
                     >
-                        <Calendar className="w-4 h-4 text-[#2563EB]" />
+                        <Calendar className="w-4 h-4 text-[#7B2FF7]" />
                         Last updated: {policy.lastUpdated}
                     </motion.div>
                 </div>
@@ -171,12 +171,12 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                                     <List className="w-3.5 h-3.5" />
                                     On This Page
                                 </p>
-                                <nav className="flex flex-col gap-1 border-l-2 border-[#E2E8F0] pl-4">
+                                <nav className="flex flex-col gap-1 border-l-2 border-[#E6E3F0] pl-4">
                                     {policy.sections.map((s) => (
                                         <a
                                             key={s.id}
                                             href={`#${s.id}`}
-                                            className="text-sm text-[#64748B] hover:text-[#16C47F] py-1.5 transition-colors duration-200 leading-snug"
+                                            className="text-sm text-[#6E6A85] hover:text-[#7B2FF7] py-1.5 transition-colors duration-200 leading-snug"
                                         >
                                             {s.title}
                                         </a>
@@ -195,10 +195,10 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5 }}
-                                    className="scroll-mt-28 pb-10 mb-10 border-b border-[#F1F5F9] last:border-0"
+                                    className="scroll-mt-28 pb-10 mb-10 border-b border-[#F6F3FC] last:border-0"
                                 >
                                     <h2
-                                        className="text-2xl font-black text-[#0B1220] mb-5 tracking-tight"
+                                        className="text-2xl font-black text-[#0A1028] mb-5 tracking-tight"
                                         style={{ fontFamily: "var(--font-heading)" }}
                                     >
                                         {section.title}
@@ -216,8 +216,8 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                                             viewport={{ once: true }}
                                             className="mt-6 rounded-3xl overflow-hidden"
                                             style={{
-                                                background: "linear-gradient(135deg, #0B1220 0%, #111827 55%, #0B1220 100%)",
-                                                boxShadow: "0 20px 60px rgba(11,18,32,0.24)",
+                                                background: "linear-gradient(135deg, #0A1028 0%, #111827 55%, #0A1028 100%)",
+                                                boxShadow: "0 20px 60px rgba(10,16,40,0.24)",
                                             }}
                                         >
                                             <div className="p-8 grid sm:grid-cols-3 gap-6">
@@ -232,7 +232,7 @@ export default function LegalPolicyPage({ policy }: { policy: LegalPolicy }) {
                                                     const inner = (
                                                         <>
                                                             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-colors duration-300">
-                                                                <Icon className="w-4.5 h-4.5 text-[#16C47F]" />
+                                                                <Icon className="w-4.5 h-4.5 text-[#7B2FF7]" />
                                                             </div>
                                                             <div>
                                                                 <p className="text-[11px] font-black uppercase tracking-widest text-white/40 mb-0.5">

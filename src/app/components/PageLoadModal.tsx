@@ -46,7 +46,7 @@ export function PageLoadModal() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[999] flex items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(11,18,32,0.72)', backdropFilter: 'blur(8px)' }}
+          style={{ backgroundColor: 'rgba(10,16,40,0.72)', backdropFilter: 'blur(8px)' }}
           onClick={(e) => e.target === e.currentTarget && setOpen(false)}
         >
           <motion.div
@@ -59,9 +59,9 @@ export function PageLoadModal() {
             style={{ maxHeight: '90vh' }}
           >
             {/* Glow border */}
-            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#16C47F]/50 via-[#2563EB]/30 to-[#7C3AED]/40 blur-sm pointer-events-none" />
+            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#7B2FF7]/50 via-[#7B2FF7]/30 to-[#7B2FF7]/40 blur-sm pointer-events-none" />
 
-            <div className="relative flex flex-col lg:flex-row bg-[#0B1220] rounded-3xl overflow-auto" style={{ maxHeight: '90vh' }}>
+            <div className="relative flex flex-col lg:flex-row bg-[#0A1028] rounded-3xl overflow-auto" style={{ maxHeight: '90vh' }}>
               {/* Close button */}
               <button
                 onClick={() => setOpen(false)}
@@ -77,7 +77,7 @@ export function PageLoadModal() {
               <div className="flex-1 p-8 lg:p-10 overflow-y-auto">
                 {!submitted ? (
                   <>
-                    {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#16C47F]/20 to-[#2563EB]/20 border border-[#16C47F]/30 text-[#16C47F] text-xs font-bold uppercase tracking-widest mb-5">
+                    {/* <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#7B2FF7]/20 to-[#7B2FF7]/20 border border-[#7B2FF7]/30 text-[#7B2FF7] text-xs font-bold uppercase tracking-widest mb-5">
                       Limited Free Assessment
                     </span> */}
 
@@ -86,7 +86,7 @@ export function PageLoadModal() {
                       style={{ fontFamily: 'var(--font-heading)' }}
                     >
                       Discover your child's real{' '}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#16C47F] to-[#2563EB]">
+                      <span className="text-[#6D28D9]">
                         learning potential.
                       </span>
                     </h2>
@@ -99,8 +99,8 @@ export function PageLoadModal() {
                     <ul className="space-y-2 mb-7">
                       {features.map((f) => (
                         <li key={f} className="flex items-center gap-2.5 text-sm text-white/70">
-                          <span className="w-4 h-4 rounded-full bg-gradient-to-br from-[#16C47F]/30 to-[#2563EB]/30 border border-[#16C47F]/40 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-2.5 h-2.5 text-[#16C47F]" />
+                          <span className="w-4 h-4 rounded-full bg-gradient-to-br from-[#7B2FF7]/30 to-[#7B2FF7]/30 border border-[#7B2FF7]/40 flex items-center justify-center flex-shrink-0">
+                            <Check className="w-2.5 h-2.5 text-[#7B2FF7]" />
                           </span>
                           {f}
                         </li>
@@ -114,7 +114,7 @@ export function PageLoadModal() {
                       <Button
                         type="submit"
                         onClick={() => navigate('/book-free-assessment')}
-                        className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-bold text-sm shadow-lg shadow-[#16C47F]/25 hover:shadow-[#16C47F]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-1"
+                        className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold text-sm shadow-lg shadow-[#EA580C]/25 hover:shadow-[#EA580C]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-1"
                       >
                         Book Free Assessment
                       </Button>
@@ -151,8 +151,8 @@ export function PageLoadModal() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center justify-center h-full text-center py-12"
                   >
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#16C47F]/30 to-[#2563EB]/30 border border-[#16C47F]/40 flex items-center justify-center mb-5">
-                      <Check className="w-8 h-8 text-[#16C47F]" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7B2FF7]/30 to-[#7B2FF7]/30 border border-[#7B2FF7]/40 flex items-center justify-center mb-5">
+                      <Check className="w-8 h-8 text-[#7B2FF7]" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                       You're on the list!
@@ -162,7 +162,7 @@ export function PageLoadModal() {
                     </p>
                     <button
                       onClick={() => setOpen(false)}
-                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold text-sm hover:scale-105 transition-transform"
+                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold text-sm hover:scale-105 transition-transform"
                     >
                       Explore Platform
                     </button>

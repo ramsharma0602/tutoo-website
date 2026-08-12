@@ -42,7 +42,7 @@ export default function StudyMaterialsCTA() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-28 bg-[#0B1220]">
+    <section className="relative overflow-hidden py-28 bg-[#0A1028]">
 
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -55,7 +55,7 @@ export default function StudyMaterialsCTA() {
           w-[600px]
           h-[600px]
           rounded-full
-          bg-[#16C47F]/15
+          bg-[#7B2FF7]/15
           blur-[140px]
           "
         />
@@ -68,7 +68,7 @@ export default function StudyMaterialsCTA() {
           w-[700px]
           h-[700px]
           rounded-full
-          bg-[#2563EB]/15
+          bg-[#7B2FF7]/15
           blur-[160px]
           "
         />
@@ -82,7 +82,7 @@ export default function StudyMaterialsCTA() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#7C3AED]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -249,7 +249,7 @@ export default function StudyMaterialsCTA() {
             backdrop-blur-xl
             "
           >
-            <Sparkles className="w-4 h-4 text-[#16C47F]" />
+            <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
             <span className="text-white font-semibold">
               START YOUR LEARNING JOURNEY
@@ -272,7 +272,7 @@ export default function StudyMaterialsCTA() {
             }}
           >
             Ready to Find the{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#22D3EE] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
               Right Tutor?
             </span>
           </h2>
@@ -304,7 +304,7 @@ export default function StudyMaterialsCTA() {
                 backdrop-blur-xl
                 "
               >
-                <CheckCircle2 className="w-4 h-4 text-[#16C47F]" />
+                <CheckCircle2 className="w-4 h-4 text-[#7B2FF7]" />
 
                 <span className="text-white text-sm font-medium">
                   {item}
@@ -323,12 +323,12 @@ export default function StudyMaterialsCTA() {
               px-10
               rounded-full
               bg-gradient-to-r
-              from-[#16C47F]
-              to-[#2563EB]
+              from-[#7B2FF7]
+              to-[#7B2FF7]
               text-white
               font-bold
               text-base
-              shadow-[0_15px_40px_rgba(37,99,235,0.35)]
+              shadow-[0_15px_40px_rgba(123,47,247,0.35)]
               hover:scale-[1.03]
               transition-all
               duration-300
@@ -410,7 +410,7 @@ export default function StudyMaterialsCTA() {
                 text-center
                 "
               >
-                <Icon className="w-6 h-6 text-[#16C47F] mx-auto mb-3" />
+                <Icon className="w-6 h-6 text-[#7B2FF7] mx-auto mb-3" />
 
                 <div className="text-2xl font-black text-white">
                   {item.value}

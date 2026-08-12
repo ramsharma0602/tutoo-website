@@ -63,14 +63,14 @@ const JOURNEY_STEPS = [
     emoji: "🎯",
     title: "The Solution",
     desc: "Build a platform where students, parents, and tutors connect seamlessly through verified learning experiences, progress tracking, and measurable academic outcomes.",
-    from: "#2563EB",
-    to: "#7C3AED",
-    bg: "from-blue-500/10 to-purple-500/10",
-    border: "border-blue-200/60",
-    glow: "shadow-blue-500/15",
-    iconBg: "from-[#2563EB] to-[#7C3AED]",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    bg: "from-violet-500/10 to-violet-500/10",
+    border: "border-violet-200/60",
+    glow: "shadow-violet-500/15",
+    iconBg: "from-[#7B2FF7] to-[#7B2FF7]",
     tag: "Blueprint",
-    tagColor: "text-blue-600 bg-blue-50 border-blue-100",
+    tagColor: "text-violet-600 bg-violet-50 border-violet-100",
     delay: 0.3,
   },
   {
@@ -79,31 +79,31 @@ const JOURNEY_STEPS = [
     emoji: "🚀",
     title: "Tutoo",
     desc: "A complete learning ecosystem combining technology, verified tutors, progress tracking, assessments, and personalized learning journeys — built for every student.",
-    from: "#16C47F",
-    to: "#2563EB",
-    bg: "from-emerald-500/10 to-blue-500/10",
-    border: "border-emerald-200/60",
-    glow: "shadow-emerald-500/15",
-    iconBg: "from-[#16C47F] to-[#2563EB]",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    bg: "from-violet-500/10 to-violet-500/10",
+    border: "border-violet-200/60",
+    glow: "shadow-orange-500/15",
+    iconBg: "from-[#EA580C] to-[#C2410C]",
     tag: "Today",
-    tagColor: "text-emerald-600 bg-emerald-50 border-emerald-100",
+    tagColor: "text-violet-600 bg-violet-50 border-violet-100",
     delay: 0.4,
   },
 ];
 
 const ECOSYSTEM_NODES = [
-  { label: "Students", emoji: "🎓", angle: -90, color: "#16C47F", r: 130 },
-  { label: "Parents", emoji: "👨‍👩‍👧", angle: -18, color: "#2563EB", r: 130 },
-  { label: "Progress", emoji: "📈", angle: 54, color: "#7C3AED", r: 130 },
+  { label: "Students", emoji: "🎓", angle: -90, color: "#7B2FF7", r: 130 },
+  { label: "Parents", emoji: "👨‍👩‍👧", angle: -18, color: "#7B2FF7", r: 130 },
+  { label: "Progress", emoji: "📈", angle: 54, color: "#7B2FF7", r: 130 },
   { label: "AI Support", emoji: "🧠", angle: 126, color: "#F59E0B", r: 130 },
   { label: "Safety", emoji: "🛡️", angle: 198, color: "#EF4444", r: 130 },
 ];
 
 const STATS = [
-  { value: "5,000+", label: "Students Learning", icon: GraduationCap, grad: "from-[#16C47F] to-[#2563EB]" },
-  { value: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#2563EB] to-[#7C3AED]" },
-  { value: "50,000+", label: "Sessions Delivered", icon: BookOpen, grad: "from-[#7C3AED] to-[#F59E0B]" },
-  { value: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#16C47F]" },
+  { value: "5,000+", label: "Students Learning", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
+  { value: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { value: "50,000+", label: "Sessions Delivered", icon: BookOpen, grad: "from-[#7B2FF7] to-[#F59E0B]" },
+  { value: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
 ];
 
 // ─────────────────────────────────────────────
@@ -153,9 +153,9 @@ function EcosystemDiagram() {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute w-[300px] h-[300px] rounded-full border border-dashed border-[#16C47F]/20"
+        className="absolute w-[300px] h-[300px] rounded-full border border-dashed border-[#7B2FF7]/20"
       />
-      <div className="absolute w-[240px] h-[240px] rounded-full border border-[#2563EB]/10" />
+      <div className="absolute w-[240px] h-[240px] rounded-full border border-[#7B2FF7]/10" />
 
       {/* Radial lines */}
       <svg className="absolute w-[300px] h-[300px]" viewBox="0 0 300 300">
@@ -187,9 +187,9 @@ function EcosystemDiagram() {
         viewport={{ once: true }}
         transition={{ type: "spring", bounce: 0.4, delay: 0.2 }}
         className="relative z-10 w-[88px] h-[88px] rounded-2xl
-                   bg-gradient-to-br from-[#16C47F] via-[#2563EB] to-[#7C3AED]
+                   bg-gradient-to-br from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]
                    flex flex-col items-center justify-center
-                   shadow-[0_8px_32px_rgba(22,196,127,0.45)]"
+                   shadow-[0_8px_32px_rgba(248,120,8,0.45)]"
         style={{ animation: "centerPulse 3s ease-in-out infinite" }}
       >
         <Rocket className="w-7 h-7 text-white" />
@@ -244,22 +244,22 @@ export function WhyWeStartedSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-32 bg-[#F8FAFC]"
+      className="relative overflow-hidden py-32 bg-[#FAFAFC]"
       style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large mesh blobs */}
         <motion.div className="absolute -top-40 -left-40 w-[650px] h-[650px] rounded-full blur-3xl opacity-20"
-          style={{ y: bgY, background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+          style={{ y: bgY, background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] rounded-full blur-3xl opacity-15"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-3xl opacity-10"
-          style={{ background: "radial-gradient(ellipse, #7C3AED, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, #7B2FF7, transparent 70%)" }} />
 
         {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
 
         {/* Journey path hint */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]">
@@ -267,8 +267,8 @@ export function WhyWeStartedSection() {
             <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#EF4444" />
               <stop offset="33%" stopColor="#F59E0B" />
-              <stop offset="66%" stopColor="#2563EB" />
-              <stop offset="100%" stopColor="#16C47F" />
+              <stop offset="66%" stopColor="#7B2FF7" />
+              <stop offset="100%" stopColor="#7B2FF7" />
             </linearGradient>
           </defs>
           <path d="M0,200 Q400,50 800,200 Q1200,350 1600,200" stroke="url(#pathGrad)" strokeWidth="2" fill="none" />
@@ -294,15 +294,15 @@ export function WhyWeStartedSection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full
                          bg-white/80 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_24px_rgba(22,196,127,0.2)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_24px_rgba(248,120,8,0.2)]"
             >
-              <Rocket className="w-4 h-4 text-[#16C47F]" />
-              <span className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+              <Rocket className="w-4 h-4 text-[#7B2FF7]" />
+              <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                 Why We Started
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -312,14 +312,14 @@ export function WhyWeStartedSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl lg:text-6xl font-black leading-[1.06] tracking-tight text-[#0B1220] mb-7"
+            className="text-5xl lg:text-6xl font-black leading-[1.06] tracking-tight text-[#0A1028] mb-7"
             style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
           >
             From Educational Challenges
             <br />
             to{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                             drop-shadow-[0_0_32px_rgba(22,196,127,0.3)]">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                             drop-shadow-[0_0_32px_rgba(248,120,8,0.3)]">
               Meaningful Solutions
             </span>
           </motion.h2>
@@ -330,7 +330,7 @@ export function WhyWeStartedSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.2 }}
-            className="text-lg lg:text-xl leading-9 text-[#64748B]"
+            className="text-lg lg:text-xl leading-9 text-[#6E6A85]"
           >
             Millions of students need personalized academic support, while thousands
             of talented tutors struggle to connect with the right learners.
@@ -388,12 +388,12 @@ export function WhyWeStartedSection() {
                   {/* Content */}
                   <div className="relative z-10">
                     <h3
-                      className="text-xl font-black text-[#0F172A] mb-3"
+                      className="text-xl font-black text-[#1E1B3A] mb-3"
                       style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
                     >
                       {step.emoji} {step.title}
                     </h3>
-                    <p className="text-sm leading-7 text-[#64748B]">{step.desc}</p>
+                    <p className="text-sm leading-7 text-[#6E6A85]">{step.desc}</p>
                   </div>
 
                   {/* Bottom animated bar */}
@@ -434,22 +434,22 @@ export function WhyWeStartedSection() {
             transition={{ duration: 0.75 }}
             className="relative"
           >
-            <div className="rounded-3xl bg-white/70 backdrop-blur-xl border border-[rgba(15,23,42,0.07)]
-                            shadow-[0_16px_64px_rgba(15,23,42,0.08)] p-8 overflow-hidden relative">
+            <div className="rounded-3xl bg-white/70 backdrop-blur-xl border border-[rgba(30,27,58,0.07)]
+                            shadow-[0_16px_64px_rgba(30,27,58,0.08)] p-8 overflow-hidden relative">
               {/* Glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#16C47F]/08 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-56 h-56 bg-[#2563EB]/08 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#7B2FF7]/08 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-56 h-56 bg-[#7B2FF7]/08 rounded-full blur-3xl" />
 
               <div className="relative z-10">
-                <p className="text-center text-xs font-black tracking-widest uppercase text-[#64748B] mb-2">
+                <p className="text-center text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-2">
                   The Learning Ecosystem
                 </p>
                 <h3
-                  className="text-center text-2xl font-black text-[#0F172A] mb-6"
+                  className="text-center text-2xl font-black text-[#1E1B3A] mb-6"
                   style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
                 >
                   Everyone{" "}
-                  <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                  <span className="text-[#6D28D9]">
                     Connected
                   </span>
                 </h3>
@@ -466,12 +466,12 @@ export function WhyWeStartedSection() {
               animate={{ y: [0, -5, 0] }}
               className="absolute -bottom-5 -right-5 bg-white/90 backdrop-blur-xl rounded-2xl border border-white shadow-2xl px-5 py-4 flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
                 <ShieldCheck className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="text-xs font-bold text-[#0F172A]">Fully Verified</p>
-                <p className="text-[11px] text-[#64748B]">Every tutor, every session</p>
+                <p className="text-xs font-bold text-[#1E1B3A]">Fully Verified</p>
+                <p className="text-[11px] text-[#6E6A85]">Every tutor, every session</p>
               </div>
             </motion.div>
           </motion.div>
@@ -488,41 +488,41 @@ export function WhyWeStartedSection() {
               transition={{ duration: 0.3 }}
               className="rounded-3xl p-9 relative overflow-hidden"
               style={{
-                background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #16C47F, #2563EB, #7C3AED) border-box",
+                background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #7B2FF7, #7B2FF7, #7B2FF7) border-box",
                 border: "1.5px solid transparent",
-                boxShadow: "0 20px 64px rgba(22,196,127,0.12)",
+                boxShadow: "0 20px 64px rgba(248,120,8,0.12)",
               }}
             >
               {/* BG glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#16C47F]/08 rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#7C3AED]/06 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#7B2FF7]/08 rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#7B2FF7]/06 rounded-full blur-2xl" />
 
               <div className="relative z-10">
                 {/* Quote icon */}
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg mb-8">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg mb-8">
                   <Quote className="w-7 h-7 text-white" />
                 </div>
 
                 <p
-                  className="text-2xl lg:text-3xl font-black leading-tight text-[#0F172A] mb-5"
+                  className="text-2xl lg:text-3xl font-black leading-tight text-[#1E1B3A] mb-5"
                   style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
                 >
                   "We didn't build Tutoo to help parents find tutors.
                 </p>
-                <p className="text-2xl lg:text-3xl font-black leading-tight bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent mb-8">
+                <p className="text-2xl lg:text-3xl font-black leading-tight bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent mb-8">
                   We built Tutoo to ensure every student has access to the right learning support, at the right time, in the right way."
                 </p>
 
-                <div className="flex items-center gap-4 pt-7 border-t border-[rgba(15,23,42,0.07)]">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
+                <div className="flex items-center gap-4 pt-7 border-t border-[rgba(30,27,58,0.07)]">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-[#0F172A]">The Tutoo Team</p>
-                    <p className="text-sm text-[#64748B]">Founded with purpose</p>
+                    <p className="font-bold text-[#1E1B3A]">The Tutoo Team</p>
+                    <p className="text-sm text-[#6E6A85]">Founded with purpose</p>
                   </div>
                   <div className="ml-auto flex gap-1.5">
-                    {["#16C47F", "#2563EB", "#7C3AED"].map((c) => (
+                    {["#7B2FF7", "#7B2FF7", "#7B2FF7"].map((c) => (
                       <div key={c} className="w-2.5 h-2.5 rounded-full" style={{ background: c }} />
                     ))}
                   </div>
@@ -545,12 +545,12 @@ export function WhyWeStartedSection() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   whileHover={{ x: 4 }}
                   className="flex items-center gap-3 px-5 py-3.5 rounded-2xl
-                             bg-white/60 backdrop-blur-xl border border-[rgba(15,23,42,0.07)]
+                             bg-white/60 backdrop-blur-xl border border-[rgba(30,27,58,0.07)]
                              shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <span className="text-xl">{item.icon}</span>
-                  <p className="text-sm font-semibold text-[#0F172A]">{item.text}</p>
-                  <ArrowRight className="w-4 h-4 text-[#16C47F] ml-auto" />
+                  <p className="text-sm font-semibold text-[#1E1B3A]">{item.text}</p>
+                  <ArrowRight className="w-4 h-4 text-[#7B2FF7] ml-auto" />
                 </motion.div>
               ))}
             </div>
@@ -561,8 +561,8 @@ export function WhyWeStartedSection() {
 
       <style>{`
         @keyframes centerPulse {
-          0%, 100% { box-shadow: 0 8px 32px rgba(22,196,127,0.45), 0 0 0 0px rgba(22,196,127,0.2); }
-          50% { box-shadow: 0 8px 32px rgba(22,196,127,0.45), 0 0 0 14px rgba(22,196,127,0); }
+          0%, 100% { box-shadow: 0 8px 32px rgba(248,120,8,0.45), 0 0 0 0px rgba(248,120,8,0.2); }
+          50% { box-shadow: 0 8px 32px rgba(248,120,8,0.45), 0 0 0 14px rgba(248,120,8,0); }
         }
       `}</style>
     </section>

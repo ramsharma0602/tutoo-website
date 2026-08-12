@@ -22,49 +22,49 @@ const highlights = [
     emoji: "🎓",
     title: "Personalised Learning",
     desc: "Every student receives a customised learning experience designed around their pace, board, and goals.",
-    color: "#2563EB",
-    bg: "rgba(37,99,235,0.08)",
-    border: "rgba(37,99,235,0.18)",
-    grad: "from-[#2563EB] to-[#7C3AED]",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
+    border: "rgba(123,47,247,0.18)",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
   },
   {
     icon: Users,
     emoji: "👨‍🏫",
     title: "Verified Educators",
     desc: "Learn from background-checked, interview-passed, and experienced tutors you can trust completely.",
-    color: "#16C47F",
-    bg: "rgba(22,196,127,0.08)",
-    border: "rgba(22,196,127,0.18)",
-    grad: "from-[#16C47F] to-[#2563EB]",
+    color: "#7B2FF7",
+    bg: "rgba(248,120,8,0.08)",
+    border: "rgba(248,120,8,0.18)",
+    grad: "from-[#EA580C] to-[#C2410C]",
   },
   {
     icon: TrendingUp,
     emoji: "📈",
     title: "Measurable Growth",
     desc: "Track academic progress through real-time reports, homework logs, and AI-powered learning analytics.",
-    color: "#7C3AED",
-    bg: "rgba(124,58,237,0.08)",
-    border: "rgba(124,58,237,0.18)",
-    grad: "from-[#7C3AED] to-[#2563EB]",
+    color: "#7B2FF7",
+    bg: "rgba(123,47,247,0.08)",
+    border: "rgba(123,47,247,0.18)",
+    grad: "from-[#7B2FF7] to-[#7B2FF7]",
   },
 ];
 
 const floatingWidgets = [
-  { icon: "📚", label: "Learning Plan Active", color: "#2563EB", bg: "rgba(37,99,235,0.09)", border: "rgba(37,99,235,0.2)", delay: 0 },
-  { icon: "👨‍🏫", label: "Verified Tutor Assigned", color: "#16C47F", bg: "rgba(22,196,127,0.09)", border: "rgba(22,196,127,0.2)", delay: 0.9 },
-  { icon: "📈", label: "Progress +24%", color: "#7C3AED", bg: "rgba(124,58,237,0.09)", border: "rgba(124,58,237,0.2)", delay: 1.8 },
+  { icon: "📚", label: "Learning Plan Active", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", delay: 0 },
+  { icon: "👨‍🏫", label: "Verified Tutor Assigned", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", delay: 0.9 },
+  { icon: "📈", label: "Progress +24%", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", delay: 1.8 },
   { icon: "⭐", label: "Assessment Completed", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)", delay: 0.5 },
-  { icon: "🎯", label: "Learning Goals Achieved", color: "#16C47F", bg: "rgba(22,196,127,0.09)", border: "rgba(22,196,127,0.2)", delay: 1.3 },
+  { icon: "🎯", label: "Learning Goals Achieved", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", delay: 1.3 },
 ];
 
 const ecosystemNodes = [
-  { label: "Student", icon: "🎓", color: "#2563EB", bg: "rgba(37,99,235,0.09)", border: "rgba(37,99,235,0.2)", x: "50%", y: "44%", size: "lg" },
-  { label: "Tutor", icon: "👨‍🏫", color: "#16C47F", bg: "rgba(22,196,127,0.09)", border: "rgba(22,196,127,0.2)", x: "50%", y: "6%", size: "md" },
-  { label: "Parent", icon: "👨‍👩‍👧", color: "#7C3AED", bg: "rgba(124,58,237,0.09)", border: "rgba(124,58,237,0.2)", x: "10%", y: "32%", size: "md" },
-  { label: "Dashboard", icon: "📊", color: "#2563EB", bg: "rgba(37,99,235,0.09)", border: "rgba(37,99,235,0.2)", x: "82%", y: "28%", size: "md" },
+  { label: "Student", icon: "🎓", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "50%", y: "44%", size: "lg" },
+  { label: "Tutor", icon: "👨‍🏫", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", x: "50%", y: "6%", size: "md" },
+  { label: "Parent", icon: "👨‍👩‍👧", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "10%", y: "32%", size: "md" },
+  { label: "Dashboard", icon: "📊", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "82%", y: "28%", size: "md" },
   { label: "Academic Growth", icon: "📈", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)", x: "18%", y: "72%", size: "sm" },
-  { label: "AI Insights", icon: "✦", color: "#7C3AED", bg: "rgba(124,58,237,0.09)", border: "rgba(124,58,237,0.2)", x: "80%", y: "68%", size: "sm" },
-  { label: "Progress Report", icon: "📋", color: "#16C47F", bg: "rgba(22,196,127,0.09)", border: "rgba(22,196,127,0.2)", x: "50%", y: "84%", size: "sm" },
+  { label: "AI Insights", icon: "✦", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "80%", y: "68%", size: "sm" },
+  { label: "Progress Report", icon: "📋", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", x: "50%", y: "84%", size: "sm" },
 ];
 
 const connectorLines = [
@@ -86,13 +86,13 @@ export function MissionStatementSection() {
       {/* ── BG atmosphere ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -left-20 w-[600px] h-[500px] rounded-full opacity-25"
-          style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.09), transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.09), transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute top-1/3 -right-20 w-[500px] h-[400px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(22,196,127,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(248,120,8,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 left-1/3 w-[400px] h-[300px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.022) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(30,27,58,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.022) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }} />
       </div>
@@ -114,26 +114,26 @@ export function MissionStatementSection() {
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border mb-9"
-              style={{ background: "rgba(22,196,127,0.08)", borderColor: "rgba(22,196,127,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 20px rgba(22,196,127,0.1)" }}
+              style={{ background: "rgba(248,120,8,0.08)", borderColor: "rgba(248,120,8,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 20px rgba(248,120,8,0.1)" }}
             >
               <span className="text-sm">🌍</span>
               <span className="text-sm font-bold tracking-widest text-[#059669] uppercase">Our Purpose</span>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
             </motion.div>
 
             {/* Heading */}
             <h2
-              className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0B1220] mb-8"
+              className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-8"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Our{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="text-[#6D28D9]">
                   Mission
                 </span>
                 <motion.span
                   className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                  style={{ background: "linear-gradient(90deg, #16C47F, #2563EB)" }}
+                  style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7)" }}
                   initial={{ scaleX: 0, originX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -173,16 +173,16 @@ export function MissionStatementSection() {
                   viewport={{ once: true }}
                   whileHover={{ x: 4, boxShadow: `0 8px 28px ${h.color}18` }}
                   className="group flex items-start gap-5 rounded-2xl border p-5 transition-all duration-300 cursor-default"
-                  style={{ background: "rgba(255,255,255,0.85)", borderColor: "rgba(15,23,42,0.07)", backdropFilter: "blur(10px)", boxShadow: "0 2px 12px rgba(15,23,42,0.04)" }}
+                  style={{ background: "rgba(255,255,255,0.85)", borderColor: "rgba(30,27,58,0.07)", backdropFilter: "blur(10px)", boxShadow: "0 2px 12px rgba(30,27,58,0.04)" }}
                 >
                   <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${h.grad} flex items-center justify-center text-xl shrink-0 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                     {h.emoji}
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-[#0B1220] mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>
+                    <h4 className="text-base font-bold text-[#0A1028] mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>
                       {h.title}
                     </h4>
-                    <p className="text-sm leading-relaxed text-[#64748B]">{h.desc}</p>
+                    <p className="text-sm leading-relaxed text-[#6E6A85]">{h.desc}</p>
                   </div>
                   {/* Hover indicator */}
                   <div className="ml-auto shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pt-1">
@@ -204,9 +204,9 @@ export function MissionStatementSection() {
             "
             style={{
               background: "rgba(248,250,252,0.95)",
-              borderColor: "rgba(15,23,42,0.07)",
+              borderColor: "rgba(30,27,58,0.07)",
               backdropFilter: "blur(20px)",
-              boxShadow: "0 24px 80px rgba(15,23,42,0.09)",
+              boxShadow: "0 24px 80px rgba(30,27,58,0.09)",
               aspectRatio: "1 / 1.05",
             }}
           >
@@ -230,12 +230,12 @@ export function MissionStatementSection() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, rgba(11,18,32,0.15), rgba(11,18,32,0.55))",
+                  "linear-gradient(to bottom, rgba(10,16,40,0.15), rgba(10,16,40,0.55))",
               }}
             />
 
             {/* Gradient Border Top */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
             {/* Center Title */}
             <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">

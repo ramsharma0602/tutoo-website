@@ -28,19 +28,19 @@ export function PartnerSchools() {
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-violet-100 rounded-full mb-6"
           >
-            <GraduationCap className="w-4 h-4 text-emerald-600" />
-            <span className="text-sm font-medium text-[#0B1220]">Trusted By Leading Institutions</span>
+            <GraduationCap className="w-4 h-4 text-violet-600" />
+            <span className="text-sm font-medium text-[#0A1028]">Trusted By Leading Institutions</span>
           </motion.div>
 
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Partner Schools
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             Collaborating with India's top educational institutions to enhance learning outcomes
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export function PartnerSchools() {
                 <stat.icon className="w-7 h-7 text-white" />
               </div>
               <div className={`text-3xl font-bold text-${stat.color}-600 mb-2`}>{stat.value}</div>
-              <div className="text-sm text-[#64748B]">{stat.label}</div>
+              <div className="text-sm text-[#6E6A85]">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -74,7 +74,7 @@ export function PartnerSchools() {
           className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100"
         >
           <h3
-            className="text-2xl lg:text-3xl font-bold text-[#0B1220] mb-8 text-center"
+            className="text-2xl lg:text-3xl font-bold text-[#0A1028] mb-8 text-center"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Partnering With Top Schools Across India
@@ -91,7 +91,7 @@ export function PartnerSchools() {
                 whileHover={{ scale: 1.05, y: -4 }}
                 className="flex items-center justify-center h-24 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100 hover:border-gray-200 transition-all duration-300 px-6"
               >
-                <span className="text-lg font-semibold text-[#0B1220] text-center">{school}</span>
+                <span className="text-lg font-semibold text-[#0A1028] text-center">{school}</span>
               </motion.div>
             ))}
           </div>
@@ -102,18 +102,18 @@ export function PartnerSchools() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-emerald-50 via-blue-50 to-purple-50 rounded-3xl p-12 text-center"
+          className="mt-16 bg-gradient-to-r from-violet-50 via-violet-50 to-violet-50 rounded-3xl p-12 text-center"
         >
           <h3
-            className="text-3xl font-bold text-[#0B1220] mb-4"
+            className="text-3xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Partner With Tutoo
           </h3>
-          <p className="text-lg text-[#64748B] mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] mb-8 max-w-2xl mx-auto">
             Join leading schools in providing world-class learning experiences to your students
           </p>
-          <button className="px-10 py-5 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 text-lg">
+          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
             Become A Partner School
           </button>
         </motion.div>

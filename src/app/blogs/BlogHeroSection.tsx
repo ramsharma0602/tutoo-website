@@ -18,59 +18,59 @@ import {
 ───────────────────────────────────────────── */
 
 const categories = [
-    { label: "Study Tips", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)" },
-    { label: "Exam Preparation", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.22)" },
-    { label: "Parenting Guides", color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.22)" },
-    { label: "Online Learning", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)" },
+    { label: "Study Tips", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
+    { label: "Exam Preparation", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.22)" },
+    { label: "Parenting Guides", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.22)" },
+    { label: "Online Learning", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
     { label: "Career Advice", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.22)" },
-    { label: "Teaching Resources", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.22)" },
-    { label: "Productivity", color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.22)" },
-    { label: "AI Learning", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)" },
+    { label: "Teaching Resources", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.22)" },
+    { label: "Productivity", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.22)" },
+    { label: "AI Learning", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
 ];
 
 const floatingStats = [
-    { icon: BookOpen, label: "500+ Articles", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)" },
-    { icon: TrendingUp, label: "Trending This Week", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)" },
-    { icon: Sparkles, label: "AI Learning Insights", color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.2)" },
+    { icon: BookOpen, label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)" },
+    { icon: TrendingUp, label: "Trending This Week", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
+    { icon: Sparkles, label: "AI Learning Insights", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
     { icon: Zap, label: "New Articles Added", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)" },
 ];
 
 const featuredArticles = [
     {
         category: "Exam Preparation",
-        categoryColor: "#2563EB",
-        categoryBg: "rgba(37,99,235,0.1)",
+        categoryColor: "#7B2FF7",
+        categoryBg: "rgba(123,47,247,0.1)",
         title: "10 Proven Study Strategies to Ace Your Board Exams in 2025",
         desc: "Master time management, smart revision techniques, and AI-powered learning tools to maximise your exam performance.",
         readTime: "6 min read",
         author: "Priya Sharma",
         authorRole: "Senior Educator",
-        gradient: "from-[#2563EB] to-[#7C3AED]",
-        bg: "from-[rgba(37,99,235,0.06)] to-[rgba(124,58,237,0.06)]",
+        gradient: "from-[#7B2FF7] to-[#7B2FF7]",
+        bg: "from-[rgba(123,47,247,0.06)] to-[rgba(123,47,247,0.06)]",
     },
     {
         category: "Parenting Guides",
-        categoryColor: "#16C47F",
-        categoryBg: "rgba(22,196,127,0.1)",
+        categoryColor: "#7B2FF7",
+        categoryBg: "rgba(248,120,8,0.1)",
         title: "How to Monitor Your Child's Learning Progress Without Stress",
         desc: "Practical strategies for parents to stay involved in their child's education using modern digital tools.",
         readTime: "5 min read",
         author: "Meera Iyer",
         authorRole: "Child Psychologist",
-        gradient: "from-[#16C47F] to-[#2563EB]",
-        bg: "from-[rgba(22,196,127,0.06)] to-[rgba(37,99,235,0.06)]",
+        gradient: "from-[#EA580C] to-[#C2410C]",
+        bg: "from-[rgba(248,120,8,0.06)] to-[rgba(123,47,247,0.06)]",
     },
     {
         category: "AI Learning",
-        categoryColor: "#7C3AED",
-        categoryBg: "rgba(124,58,237,0.1)",
+        categoryColor: "#7B2FF7",
+        categoryBg: "rgba(123,47,247,0.1)",
         title: "The Future of Personalised Education: AI Tutors & Smart Learning",
         desc: "How artificial intelligence is transforming the way students learn and tutors teach in the modern classroom.",
         readTime: "8 min read",
         author: "Aryan Kapoor",
         authorRole: "EdTech Researcher",
-        gradient: "from-[#7C3AED] to-[#2563EB]",
-        bg: "from-[rgba(124,58,237,0.06)] to-[rgba(37,99,235,0.06)]",
+        gradient: "from-[#7B2FF7] to-[#7B2FF7]",
+        bg: "from-[rgba(123,47,247,0.06)] to-[rgba(123,47,247,0.06)]",
     },
 ];
 
@@ -83,20 +83,20 @@ export function BlogHeroSection() {
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
     return (
-        <section className="relative overflow-hidden bg-[#F8FAFC] pt-24 pb-0">
+        <section className="relative overflow-hidden bg-[#FAFAFC] pt-24 pb-0">
 
             {/* ── Background atmosphere ── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Mesh orbs */}
                 <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-40"
-                    style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%)", filter: "blur(60px)" }} />
+                    style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.1) 0%, transparent 70%)", filter: "blur(60px)" }} />
                 <div className="absolute top-10 -left-40 w-[500px] h-[500px] rounded-full opacity-30"
-                    style={{ background: "radial-gradient(circle, rgba(22,196,127,0.12), transparent 70%)", filter: "blur(70px)" }} />
+                    style={{ background: "radial-gradient(circle, rgba(248,120,8,0.12), transparent 70%)", filter: "blur(70px)" }} />
                 <div className="absolute top-0 -right-40 w-[450px] h-[450px] rounded-full opacity-25"
-                    style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+                    style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
                 {/* Grid texture */}
                 <div className="absolute inset-0" style={{
-                    backgroundImage: "linear-gradient(rgba(15,23,42,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.025) 1px, transparent 1px)",
+                    backgroundImage: "linear-gradient(rgba(30,27,58,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.025) 1px, transparent 1px)",
                     backgroundSize: "72px 72px",
                 }} />
                 {/* Floating particles */}
@@ -104,7 +104,7 @@ export function BlogHeroSection() {
                     <motion.div key={i} className="absolute rounded-full"
                         style={{
                             width: i % 2 === 0 ? 3 : 2, height: i % 2 === 0 ? 3 : 2,
-                            background: i % 3 === 0 ? "#16C47F" : i % 3 === 1 ? "#2563EB" : "#7C3AED",
+                            background: i % 3 === 0 ? "#7B2FF7" : i % 3 === 1 ? "#7B2FF7" : "#7B2FF7",
                             left: `${(i * 14 + 6) % 96}%`, top: `${(i * 11 + 4) % 80}%`, opacity: 0.35,
                         }}
                         animate={{ y: [0, -16, 0], opacity: [0.25, 0.6, 0.25] }}
@@ -123,10 +123,10 @@ export function BlogHeroSection() {
                     className="flex justify-center mb-8"
                 >
                     <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
-                        style={{ background: "rgba(22,196,127,0.07)", borderColor: "rgba(22,196,127,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 20px rgba(22,196,127,0.1)" }}>
+                        style={{ background: "rgba(248,120,8,0.07)", borderColor: "rgba(248,120,8,0.28)", backdropFilter: "blur(12px)", boxShadow: "0 0 20px rgba(248,120,8,0.1)" }}>
                         <span className="text-sm">📚</span>
                         <span className="text-sm font-bold tracking-widest text-[#059669] uppercase">Tutoo Blog</span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
                     </div>
                 </motion.div>
 
@@ -135,24 +135,24 @@ export function BlogHeroSection() {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.1 }}
-                    className="text-5xl lg:text-7xl font-black leading-[1.06] tracking-tight text-[#0B1220] mb-7"
+                    className="text-5xl lg:text-7xl font-black leading-[1.06] tracking-tight text-[#0A1028] mb-7"
                     style={{ fontFamily: "var(--font-heading)" }}
                 >
                     Learning Resources for{" "}
                     <span className="relative inline-block">
-                        <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                             Students, Parents
                         </span>
                         <motion.span
                             className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                            style={{ background: "linear-gradient(90deg, #16C47F, #2563EB, #7C3AED)" }}
+                            style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7, #7B2FF7)" }}
                             initial={{ scaleX: 0 }}
                             animate={{ scaleX: 1 }}
                             transition={{ duration: 0.9, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         />
                     </span>
                     {" "}
-                    <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                         &amp; Tutors
                     </span>
                 </motion.h1>
@@ -162,7 +162,7 @@ export function BlogHeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-xl leading-9 text-[#64748B] max-w-3xl mx-auto mb-10"
+                    className="text-xl leading-9 text-[#6E6A85] max-w-3xl mx-auto mb-10"
                 >
                     Study tips, exam strategies, parenting guides, career advice, teaching resources,
                     and AI-powered learning insights designed to help every learner grow smarter.
@@ -200,11 +200,11 @@ export function BlogHeroSection() {
                         className="relative flex items-center rounded-2xl transition-all duration-300"
                         style={{
                             background: "rgba(255,255,255,0.85)",
-                            border: focused ? "1.5px solid rgba(37,99,235,0.5)" : "1.5px solid rgba(15,23,42,0.1)",
+                            border: focused ? "1.5px solid rgba(123,47,247,0.5)" : "1.5px solid rgba(30,27,58,0.1)",
                             backdropFilter: "blur(20px)",
                             boxShadow: focused
-                                ? "0 0 0 4px rgba(37,99,235,0.08), 0 8px 40px rgba(37,99,235,0.12)"
-                                : "0 4px 24px rgba(15,23,42,0.08)",
+                                ? "0 0 0 4px rgba(123,47,247,0.08), 0 8px 40px rgba(123,47,247,0.12)"
+                                : "0 4px 24px rgba(30,27,58,0.08)",
                         }}
                     >
                         {/* Search icon */}
@@ -220,14 +220,14 @@ export function BlogHeroSection() {
                             onFocus={() => setFocused(true)}
                             onBlur={() => setFocused(false)}
                             placeholder="Search articles, topics, study tips, exams, parenting guides..."
-                            className="flex-1 h-16 bg-transparent outline-none text-[#0F172A] placeholder-[#94A3B8] text-base font-medium pr-4"
+                            className="flex-1 h-16 bg-transparent outline-none text-[#1E1B3A] placeholder-[#94A3B8] text-base font-medium pr-4"
                             style={{ fontFamily: "var(--font-body, Inter, system-ui)" }}
                         />
 
                         {/* AI badge inside field */}
                         <div className="hidden sm:flex items-center gap-1.5 pr-3">
-                            <div className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-[#7C3AED]"
-                                style={{ background: "rgba(124,58,237,0.08)", border: "1px solid rgba(124,58,237,0.18)" }}>
+                            <div className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-[#7B2FF7]"
+                                style={{ background: "rgba(123,47,247,0.08)", border: "1px solid rgba(123,47,247,0.18)" }}>
                                 <Sparkles className="w-3 h-3" />
                                 AI Search
                             </div>
@@ -235,7 +235,7 @@ export function BlogHeroSection() {
 
                         {/* Search button */}
                         <div className="pr-2">
-                            <button className="group h-12 px-6 rounded-xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white text-sm font-bold shadow-lg shadow-[#16C47F]/20 hover:scale-[1.03] hover:shadow-[#2563EB]/30 transition-all duration-300 flex items-center gap-2">
+                            <button className="group h-12 px-6 rounded-xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white text-sm font-bold shadow-lg shadow-[#EA580C]/20 hover:scale-[1.03] hover:shadow-[#7B2FF7]/30 transition-all duration-300 flex items-center gap-2">
                                 Search
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
                             </button>
@@ -280,7 +280,7 @@ export function BlogHeroSection() {
             </div>
 
             {/* Bottom fade into page body */}
-            <div className="pointer-events-none h-16 mt-0 bg-gradient-to-b from-transparent to-[#F8FAFC]" />
+            <div className="pointer-events-none h-16 mt-0 bg-gradient-to-b from-transparent to-[#FAFAFC]" />
         </section>
     );
 }

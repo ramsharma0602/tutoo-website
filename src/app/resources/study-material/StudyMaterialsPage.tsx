@@ -7,7 +7,7 @@ import StudyMaterialsCTA from "./components/StudyMaterialsCTA";
 
 export default function StudyMaterialsPage() {
   return (
-    <main className="bg-[#F8FAFC] overflow-hidden">
+    <main className="bg-[#FAFAFC] overflow-hidden">
 
       <StudyMaterialsHero />
 

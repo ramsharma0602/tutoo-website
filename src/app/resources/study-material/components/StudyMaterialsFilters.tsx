@@ -78,10 +78,10 @@ export default function StudyMaterialsFilters() {
           className="
           rounded-[32px]
           border
-          border-[rgba(15,23,42,0.08)]
+          border-[rgba(30,27,58,0.08)]
           bg-white/75
           backdrop-blur-2xl
-          shadow-[0_20px_60px_rgba(15,23,42,0.08)]
+          shadow-[0_20px_60px_rgba(30,27,58,0.08)]
           p-6
           "
         >
@@ -97,8 +97,8 @@ export default function StudyMaterialsFilters() {
                 h-11
                 rounded-2xl
                 bg-gradient-to-r
-                from-[#16C47F]
-                to-[#2563EB]
+                from-[#7B2FF7]
+                to-[#7B2FF7]
                 flex
                 items-center
                 justify-center
@@ -110,11 +110,11 @@ export default function StudyMaterialsFilters() {
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F172A]">
+                <h3 className="font-bold text-[#1E1B3A]">
                   Smart Search & Filters
                 </h3>
 
-                <p className="text-sm text-[#64748B]">
+                <p className="text-sm text-[#6E6A85]">
                   Quickly find study materials
                 </p>
               </div>
@@ -129,8 +129,8 @@ export default function StudyMaterialsFilters() {
                   px-4
                   py-2
                   rounded-full
-                  bg-[#2563EB]/10
-                  text-[#2563EB]
+                  bg-[#7B2FF7]/10
+                  text-[#7B2FF7]
                   text-sm
                   font-semibold
                   "
@@ -149,9 +149,9 @@ export default function StudyMaterialsFilters() {
                 py-2
                 rounded-full
                 border
-                border-[rgba(15,23,42,0.08)]
-                text-[#64748B]
-                hover:bg-[#F8FAFC]
+                border-[rgba(30,27,58,0.08)]
+                text-[#6E6A85]
+                hover:bg-[#FAFAFC]
                 transition-all
                 "
               >
@@ -179,13 +179,13 @@ export default function StudyMaterialsFilters() {
               h-14
               rounded-2xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               px-4
               font-medium
-              text-[#0F172A]
+              text-[#1E1B3A]
               outline-none
-              focus:border-[#2563EB]
+              focus:border-[#7B2FF7]
               "
             >
               <option value="">
@@ -215,7 +215,7 @@ export default function StudyMaterialsFilters() {
               h-14
               rounded-2xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               px-4
               font-medium
@@ -248,7 +248,7 @@ export default function StudyMaterialsFilters() {
               h-14
               rounded-2xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               px-4
               font-medium
@@ -282,7 +282,7 @@ export default function StudyMaterialsFilters() {
               h-14
               rounded-2xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               px-4
               font-medium
@@ -308,7 +308,7 @@ export default function StudyMaterialsFilters() {
               h-14
               rounded-2xl
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               bg-white
               px-4
               flex
@@ -316,7 +316,7 @@ export default function StudyMaterialsFilters() {
               gap-3
               "
             >
-              <Search className="w-5 h-5 text-[#64748B]" />
+              <Search className="w-5 h-5 text-[#6E6A85]" />
 
               <input
                 value={filters.search}
@@ -355,14 +355,14 @@ export default function StudyMaterialsFilters() {
                 px-4
                 py-2
                 rounded-full
-                bg-[#F8FAFC]
+                bg-[#FAFAFC]
                 border
-                border-[rgba(15,23,42,0.08)]
+                border-[rgba(30,27,58,0.08)]
                 text-sm
                 font-medium
-                text-[#64748B]
-                hover:border-[#2563EB]
-                hover:text-[#2563EB]
+                text-[#6E6A85]
+                hover:border-[#7B2FF7]
+                hover:text-[#7B2FF7]
                 transition-all
                 "
               >

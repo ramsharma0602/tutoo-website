@@ -158,7 +158,7 @@ const resources = [
 
 export default function ResourceLibrary() {
   return (
-    <section className="relative py-24 bg-[#F8FAFC] overflow-hidden">
+    <section className="relative py-24 bg-[#FAFAFC] overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -171,7 +171,7 @@ export default function ResourceLibrary() {
           w-[450px]
           h-[450px]
           rounded-full
-          bg-[#16C47F]/10
+          bg-[#7B2FF7]/10
           blur-[120px]
           "
         />
@@ -184,7 +184,7 @@ export default function ResourceLibrary() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#2563EB]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -205,13 +205,13 @@ export default function ResourceLibrary() {
             rounded-full
             bg-white/80
             border
-            border-[#2563EB]/15
+            border-[#7B2FF7]/15
             shadow-lg
             "
           >
             📄
 
-            <span className="font-semibold text-[#2563EB]">
+            <span className="font-semibold text-[#7B2FF7]">
               RESOURCE LIBRARY
             </span>
           </div>
@@ -222,7 +222,7 @@ export default function ResourceLibrary() {
             text-4xl
             lg:text-6xl
             font-black
-            text-[#0B1220]
+            text-[#0A1028]
             "
             style={{
               fontFamily:
@@ -230,12 +230,12 @@ export default function ResourceLibrary() {
             }}
           >
             Available Study{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="text-[#6D28D9]">
               Resources
             </span>
           </h2>
 
-          <p className="max-w-3xl mx-auto mt-6 text-lg text-[#64748B] leading-8">
+          <p className="max-w-3xl mx-auto mt-6 text-lg text-[#6E6A85] leading-8">
             Explore notes, worksheets,
             question banks, sample papers,
             and practice tests curated by
@@ -273,7 +273,7 @@ export default function ResourceLibrary() {
               overflow-hidden
               bg-white
               border
-              border-[rgba(15,23,42,0.08)]
+              border-[rgba(30,27,58,0.08)]
               shadow-sm
               hover:shadow-2xl
               transition-all
@@ -310,7 +310,7 @@ export default function ResourceLibrary() {
                     bg-white
                     text-xs
                     font-bold
-                    text-[#2563EB]
+                    text-[#7B2FF7]
                     shadow-lg
                     "
                   >
@@ -350,15 +350,15 @@ export default function ResourceLibrary() {
 
                 <div className="flex flex-wrap gap-2 mb-4">
 
-                  <span className="px-3 py-1 rounded-full bg-[#2563EB]/10 text-[#2563EB] text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#7B2FF7]/10 text-[#7B2FF7] text-xs font-semibold">
                     {resource.board}
                   </span>
 
-                  <span className="px-3 py-1 rounded-full bg-[#16C47F]/10 text-[#16C47F] text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#7B2FF7]/10 text-[#7B2FF7] text-xs font-semibold">
                     {resource.className}
                   </span>
 
-                  <span className="px-3 py-1 rounded-full bg-[#7C3AED]/10 text-[#7C3AED] text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-[#7B2FF7]/10 text-[#7B2FF7] text-xs font-semibold">
                     {resource.type}
                   </span>
 
@@ -368,7 +368,7 @@ export default function ResourceLibrary() {
                   className="
                   text-xl
                   font-bold
-                  text-[#0F172A]
+                  text-[#1E1B3A]
                   leading-snug
                   mb-4
                   line-clamp-2
@@ -378,7 +378,7 @@ export default function ResourceLibrary() {
                 </h3>
 
                 {/* Meta */}
-                <div className="space-y-2 text-sm text-[#64748B] mb-6">
+                <div className="space-y-2 text-sm text-[#6E6A85] mb-6">
 
                   <div>
                     Subject: {resource.subject}
@@ -403,14 +403,14 @@ export default function ResourceLibrary() {
                     h-12
                     rounded-2xl
                     border
-                    border-[rgba(15,23,42,0.08)]
+                    border-[rgba(30,27,58,0.08)]
                     flex
                     items-center
                     justify-center
                     gap-2
                     font-semibold
-                    text-[#64748B]
-                    hover:bg-[#F8FAFC]
+                    text-[#6E6A85]
+                    hover:bg-[#FAFAFC]
                     "
                   >
                     <Eye className="w-4 h-4" />
@@ -423,8 +423,8 @@ export default function ResourceLibrary() {
                     h-12
                     rounded-2xl
                     bg-gradient-to-r
-                    from-[#16C47F]
-                    to-[#2563EB]
+                    from-[#7B2FF7]
+                    to-[#7B2FF7]
                     text-white
                     font-semibold
                     flex
@@ -446,7 +446,7 @@ export default function ResourceLibrary() {
                   flex
                   items-center
                   gap-2
-                  text-[#2563EB]
+                  text-[#7B2FF7]
                   font-semibold
                   "
                 >
@@ -481,8 +481,8 @@ export default function ResourceLibrary() {
                 font-bold
                 ${
                   page === 1
-                    ? "bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white"
-                    : "bg-white border border-[rgba(15,23,42,0.08)] text-[#64748B]"
+                    ? "bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white"
+                    : "bg-white border border-[rgba(30,27,58,0.08)] text-[#6E6A85]"
                 }
               `}
             >

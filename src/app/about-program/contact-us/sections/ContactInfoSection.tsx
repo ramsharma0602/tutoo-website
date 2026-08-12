@@ -37,11 +37,11 @@ const CONTACT_CARDS = [
     sub: "Mon – Sat · 8:00 AM – 8:00 PM",
     tag: "Fastest response",
     tagIcon: Zap,
-    from: "#16C47F",
-    to: "#2563EB",
-    glow: "rgba(22,196,127,0.22)",
-    bg: "rgba(22,196,127,0.06)",
-    chipColor: "#16C47F",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    glow: "rgba(248,120,8,0.22)",
+    bg: "rgba(248,120,8,0.06)",
+    chipColor: "#7B2FF7",
     action: "tel:+918446146039",
     cta: "Call Now",
     delay: 0.08,
@@ -56,11 +56,11 @@ const CONTACT_CARDS = [
     sub: "Response within 24 hours",
     tag: "Always monitored",
     tagIcon: CheckCircle2,
-    from: "#2563EB",
-    to: "#7C3AED",
-    glow: "rgba(37,99,235,0.22)",
-    bg: "rgba(37,99,235,0.06)",
-    chipColor: "#2563EB",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    glow: "rgba(123,47,247,0.22)",
+    bg: "rgba(123,47,247,0.06)",
+    chipColor: "#7B2FF7",
     action: "mailto:info@tutoolearning.com",
     cta: "Send Email",
     delay: 0.16,
@@ -75,11 +75,11 @@ const CONTACT_CARDS = [
     sub: "Serving Students Across India",
     tag: "Pan-India reach",
     tagIcon: CheckCircle2,
-    from: "#7C3AED",
-    to: "#2563EB",
-    glow: "rgba(124,58,237,0.22)",
-    bg: "rgba(124,58,237,0.06)",
-    chipColor: "#7C3AED",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    glow: "rgba(123,47,247,0.22)",
+    bg: "rgba(123,47,247,0.06)",
+    chipColor: "#7B2FF7",
     action: "https://maps.google.com/?q=Pune+Maharashtra",
     cta: "Get Directions",
     delay: 0.24,
@@ -94,11 +94,11 @@ const CONTACT_CARDS = [
     sub: "Quick Assistance Available",
     tag: "Instant replies",
     tagIcon: Zap,
-    from: "#16C47F",
-    to: "#2563EB",
-    glow: "rgba(22,196,127,0.22)",
-    bg: "rgba(22,196,127,0.06)",
-    chipColor: "#16C47F",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    glow: "rgba(248,120,8,0.22)",
+    bg: "rgba(248,120,8,0.06)",
+    chipColor: "#7B2FF7",
     action: "https://wa.me/918446146039",
     cta: "Chat on WhatsApp",
     delay: 0.32,
@@ -121,9 +121,9 @@ function ContactCard({ card }: { card: typeof CONTACT_CARDS[0] }) {
       transition={{ duration: 0.6, delay: card.delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -10, scale: 1.02 }}
       className="group relative rounded-3xl bg-white overflow-hidden
-                 border border-[rgba(15,23,42,0.07)]
-                 shadow-[0_4px_24px_rgba(15,23,42,0.07)]
-                 hover:shadow-[0_24px_64px_rgba(15,23,42,0.12)]
+                 border border-[rgba(30,27,58,0.07)]
+                 shadow-[0_4px_24px_rgba(30,27,58,0.07)]
+                 hover:shadow-[0_24px_64px_rgba(30,27,58,0.12)]
                  transition-all duration-500 cursor-default
                  flex flex-col p-8"
     >
@@ -186,14 +186,14 @@ function ContactCard({ card }: { card: typeof CONTACT_CARDS[0] }) {
 
         {/* Main info */}
         <p
-          className="text-xl font-black text-[#0F172A] mb-2 leading-tight break-all"
+          className="text-xl font-black text-[#1E1B3A] mb-2 leading-tight break-all"
           style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
         >
           {card.main}
         </p>
 
         {/* Sub line */}
-        <p className="text-sm text-[#64748B] leading-6 mb-1">{card.sub}</p>
+        <p className="text-sm text-[#6E6A85] leading-6 mb-1">{card.sub}</p>
 
         {/* Extra line */}
         {card.extraLine && (
@@ -245,36 +245,36 @@ function ContactCard({ card }: { card: typeof CONTACT_CARDS[0] }) {
 export function ContactInfoSection() {
   return (
     <section
-      className="relative overflow-hidden py-28 bg-[#F8FAFC]"
+      className="relative overflow-hidden py-28 bg-[#FAFAFC]"
       style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute -top-48 -left-48 w-[640px] h-[640px] rounded-full blur-[120px] opacity-[0.11]"
-          style={{ background: "radial-gradient(circle, #16C47F, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
         <div
           className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full blur-[110px] opacity-[0.09]"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[320px] rounded-full blur-[90px] opacity-[0.05]"
-          style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
 
         {/* Subtle dot grid */}
         <div
           className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "28px 28px" }}
         />
 
         {/* Very subtle diagonal lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.035]" preserveAspectRatio="none">
           <defs>
             <linearGradient id="bgLine" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#16C47F" />
-              <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+              <stop offset="0%" stopColor="#7B2FF7" />
+              <stop offset="100%" stopColor="#7B2FF7" stopOpacity="0" />
             </linearGradient>
           </defs>
           <line x1="0" y1="0" x2="100%" y2="100%" stroke="url(#bgLine)" strokeWidth="1" />
@@ -300,17 +300,17 @@ export function ContactInfoSection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full
                          bg-white/80 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_24px_rgba(22,196,127,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_24px_rgba(248,120,8,0.18)]"
             >
-              <Phone className="w-4 h-4 text-[#16C47F]" />
+              <Phone className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
               >
                 Contact Information
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -320,13 +320,13 @@ export function ContactInfoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[58px] font-black leading-[1.06] tracking-tight text-[#0B1220] mb-6"
+            className="text-5xl lg:text-[58px] font-black leading-[1.06] tracking-tight text-[#0A1028] mb-6"
             style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
           >
             Multiple Ways to{" "}
             <span
-              className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                         drop-shadow-[0_0_36px_rgba(22,196,127,0.22)]"
+              className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                         drop-shadow-[0_0_36px_rgba(248,120,8,0.22)]"
             >
               Reach Us
             </span>
@@ -338,7 +338,7 @@ export function ContactInfoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.18 }}
-            className="text-lg leading-8 text-[#64748B]"
+            className="text-lg leading-8 text-[#6E6A85]"
           >
             Choose the most convenient way to connect with our team. We're here to support
             students, parents, tutors, and institutions every step of the way.
@@ -361,31 +361,31 @@ export function ContactInfoSection() {
           className="rounded-3xl relative overflow-hidden"
           style={{
             background:
-              "linear-gradient(white, white) padding-box, linear-gradient(135deg, #16C47F44, #2563EB44, #7C3AED44) border-box",
+              "linear-gradient(white, white) padding-box, linear-gradient(135deg, #7B2FF744, #7B2FF744, #7B2FF744) border-box",
             border: "1.5px solid transparent",
-            boxShadow: "0 12px 48px rgba(22,196,127,0.08), 0 4px 16px rgba(37,99,235,0.06)",
+            boxShadow: "0 12px 48px rgba(248,120,8,0.08), 0 4px 16px rgba(123,47,247,0.06)",
           }}
         >
-          <div className="absolute top-0 right-0 w-64 h-32 bg-[#16C47F]/05 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-56 h-28 bg-[#2563EB]/05 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-32 bg-[#7B2FF7]/05 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-56 h-28 bg-[#7B2FF7]/05 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 px-10 py-8">
             {/* Left */}
             <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-lg flex-shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-lg flex-shrink-0">
                 <Clock className="w-7 h-7 text-white" />
               </div>
               <div>
                 <p
-                  className="text-xl font-black text-[#0F172A] mb-1"
+                  className="text-xl font-black text-[#1E1B3A] mb-1"
                   style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
                 >
                   We Respond Within{" "}
-                  <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                  <span className="text-[#6D28D9]">
                     4 Hours
                   </span>
                 </p>
-                <p className="text-sm text-[#64748B]">
+                <p className="text-sm text-[#6E6A85]">
                   Monday to Saturday · 8:00 AM to 8:00 PM IST
                 </p>
               </div>
@@ -394,9 +394,9 @@ export function ContactInfoSection() {
             {/* Chips */}
             <div className="flex flex-wrap gap-3">
               {[
-                { text: "Students",    c: "#16C47F" },
-                { text: "Parents",     c: "#2563EB" },
-                { text: "Tutors",      c: "#7C3AED" },
+                { text: "Students",    c: "#7B2FF7" },
+                { text: "Parents",     c: "#7B2FF7" },
+                { text: "Tutors",      c: "#7B2FF7" },
                 { text: "Institutions", c: "#F59E0B" },
               ].map((chip) => (
                 <motion.span
@@ -421,8 +421,8 @@ export function ContactInfoSection() {
               href="tel:+918446146039"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="flex-shrink-0 h-12 px-8 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
-                         text-white font-bold shadow-lg shadow-[#16C47F]/20
+              className="flex-shrink-0 h-12 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
+                         text-white font-bold shadow-lg shadow-[#EA580C]/20
                          flex items-center gap-2 transition-all duration-300 text-sm"
             >
               <Phone className="w-4 h-4" />

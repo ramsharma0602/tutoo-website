@@ -40,7 +40,7 @@ export function ParentResourcesSection() {
 
             readTime: "5 min read",
 
-            gradient: "from-[#16C47F] to-[#22C55E]",
+            gradient: "from-[#7B2FF7] to-[#22C55E]",
         },
 
         {
@@ -53,7 +53,7 @@ export function ParentResourcesSection() {
 
             readTime: "4 min read",
 
-            gradient: "from-[#2563EB] to-[#3B82F6]",
+            gradient: "from-[#7B2FF7] to-[#8F21F8]",
         },
 
         {
@@ -66,7 +66,7 @@ export function ParentResourcesSection() {
 
             readTime: "6 min read",
 
-            gradient: "from-[#7C3AED] to-[#8B5CF6]",
+            gradient: "from-[#7B2FF7] to-[#8B5CF6]",
         },
 
         {
@@ -89,9 +89,9 @@ export function ParentResourcesSection() {
             {/* Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/5 rounded-full blur-3xl" />
+                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/5 rounded-full blur-3xl" />
 
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/5 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -103,29 +103,29 @@ export function ParentResourcesSection() {
                     <div className="max-w-3xl">
 
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#16C47F]/20 shadow-sm mb-8">
+                        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/70 backdrop-blur-xl border border-[#7B2FF7]/20 shadow-sm mb-8">
 
-                            <BookOpen className="w-4 h-4 text-[#16C47F]" />
+                            <BookOpen className="w-4 h-4 text-[#7B2FF7]" />
 
-                            <span className="text-sm font-semibold text-[#16C47F]">
+                            <span className="text-sm font-semibold text-[#7B2FF7]">
                                 Parent Resources
                             </span>
                         </div>
 
                         {/* Heading */}
                         <h2
-                            className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0B1220]"
+                            className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0A1028]"
                             style={{ fontFamily: "var(--font-heading)" }}
                         >
                             Helpful Resources For{" "}
 
-                            <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                                 Modern Parents
                             </span>
                         </h2>
 
                         {/* Subheading */}
-                        <p className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl">
+                        <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
                             Expert tips, learning strategies, study techniques, and
                             educational insights to help parents support their child’s
                             academic growth.
@@ -168,7 +168,7 @@ export function ParentResourcesSection() {
                                 bg-white/80
                                 backdrop-blur-xl
                                 border
-                                border-[rgba(15,23,42,0.06)]
+                                border-[rgba(30,27,58,0.06)]
                                 shadow-lg
                                 flex
                                 items-center
@@ -179,7 +179,7 @@ export function ParentResourcesSection() {
                                 duration-300
                             "
                             >
-                                <ChevronLeft className="w-5 h-5 text-[#0F172A]" />
+                                <ChevronLeft className="w-5 h-5 text-[#1E1B3A]" />
                             </button>
 
                             <button
@@ -191,8 +191,8 @@ export function ParentResourcesSection() {
                                 md:h-14
                                 rounded-full
                                 bg-gradient-to-r
-                                from-[#16C47F]
-                                to-[#2563EB]
+                                from-[#7B2FF7]
+                                to-[#7B2FF7]
                                 shadow-xl
                                 flex
                                 items-center
@@ -229,7 +229,7 @@ export function ParentResourcesSection() {
                             transition={{
                                 duration: 0.3,
                             }}
-                            className="group relative min-w-[380px] max-w-[380px] rounded-[36px] bg-white border border-[rgba(15,23,42,0.06)] shadow-[0_20px_60px_rgba(15,23,42,0.08)] overflow-hidden"
+                            className="group relative min-w-[380px] max-w-[380px] rounded-[36px] bg-white border border-[rgba(30,27,58,0.06)] shadow-[0_20px_60px_rgba(30,27,58,0.08)] overflow-hidden"
                         >
 
                             {/* Glow */}
@@ -245,7 +245,7 @@ export function ParentResourcesSection() {
                                 />
 
                                 {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/60 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/60 via-transparent to-transparent" />
 
                                 {/* Category */}
                                 <div className="absolute top-5 left-5">
@@ -254,7 +254,7 @@ export function ParentResourcesSection() {
 
                                         <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${blog.gradient}`} />
 
-                                        <span className="text-xs font-bold text-[#0F172A]">
+                                        <span className="text-xs font-bold text-[#1E1B3A]">
                                             {blog.category}
                                         </span>
                                     </div>
@@ -265,7 +265,7 @@ export function ParentResourcesSection() {
                             <div className="p-7">
 
                                 {/* Read Time */}
-                                <div className="flex items-center gap-2 text-sm text-[#64748B] mb-5">
+                                <div className="flex items-center gap-2 text-sm text-[#6E6A85] mb-5">
 
                                     <Clock3 className="w-4 h-4" />
 
@@ -273,19 +273,19 @@ export function ParentResourcesSection() {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-2xl font-black text-[#0F172A] leading-tight">
+                                <h3 className="text-2xl font-black text-[#1E1B3A] leading-tight">
 
                                     {blog.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="mt-5 text-[#64748B] leading-8 text-[15px]">
+                                <p className="mt-5 text-[#6E6A85] leading-8 text-[15px]">
 
                                     {blog.description}
                                 </p>
 
                                 {/* CTA */}
-                                <button className="group/btn mt-8 flex items-center gap-2 text-sm font-bold text-[#2563EB] hover:text-[#16C47F] transition-colors duration-300">
+                                <button className="group/btn mt-8 flex items-center gap-2 text-sm font-bold text-[#7B2FF7] hover:text-[#7B2FF7] transition-colors duration-300">
 
                                     Read Article
 
@@ -313,9 +313,9 @@ export function ParentResourcesSection() {
                         py-4
                         bg-white
                         border
-                        border-[rgba(15,23,42,0.08)]
-                        shadow-[0_10px_40px_rgba(15,23,42,0.08)]
-                        hover:shadow-[0_20px_60px_rgba(37,99,235,0.18)]
+                        border-[rgba(30,27,58,0.08)]
+                        shadow-[0_10px_40px_rgba(30,27,58,0.08)]
+                        hover:shadow-[0_20px_60px_rgba(123,47,247,0.18)]
                         transition-all
                         duration-500
                         hover:-translate-y-1
@@ -332,9 +332,9 @@ export function ParentResourcesSection() {
                                 transition-opacity
                                 duration-500
                                 bg-gradient-to-r
-                                from-[#16C47F]/10
-                                via-[#2563EB]/10
-                                to-[#7C3AED]/10
+                                from-[#7B2FF7]/10
+                                via-[#7B2FF7]/10
+                                to-[#7B2FF7]/10
                                 "
                         />
 
@@ -343,11 +343,11 @@ export function ParentResourcesSection() {
                             className="
                             relative
                             z-10
-                            text-[#0F172A]
+                            text-[#1E1B3A]
                             font-bold
                             text-[15px]
                             tracking-tight
-                            group-hover:text-[#2563EB]
+                            group-hover:text-[#7B2FF7]
                             transition-colors
                             duration-300
                             "
@@ -364,8 +364,8 @@ export function ParentResourcesSection() {
                             h-10
                             rounded-full
                             bg-gradient-to-r
-                            from-[#16C47F]
-                            to-[#2563EB]
+                            from-[#7B2FF7]
+                            to-[#7B2FF7]
                             flex
                             items-center
                             justify-center

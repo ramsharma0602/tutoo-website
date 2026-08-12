@@ -209,7 +209,7 @@ export default function BookAssessmentForm({
 
                             <div className="relative">
 
-                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B]" />
+                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6E6A85]" />
 
                                 <input
                                     type="text"
@@ -223,20 +223,20 @@ export default function BookAssessmentForm({
                                     h-14
                                     rounded-2xl
                                     border
-                                    border-[rgba(15,23,42,0.08)]
+                                    border-[rgba(30,27,58,0.08)]
                                     bg-white/80
                                     pl-12
                                     pr-4
                                     text-sm
                                     outline-none
-                                    focus:border-[#2563EB]
+                                    focus:border-[#7B2FF7]
                                     focus:ring-4
-                                    focus:ring-[#2563EB]/10
+                                    focus:ring-[#7B2FF7]/10
                                     transition-all
                                 ${errors.first_name &&
                                             touched.first_name
                                             ? 'border-red-400 focus-within:ring-red-100'
-                                            : 'border-[#E2E8F0] focus-within:border-[#2563EB] focus-within:ring-blue-100'
+                                            : 'border-[#E6E3F0] focus-within:border-[#7B2FF7] focus-within:ring-violet-100'
                                         }
                             `}
                                 />
@@ -256,7 +256,7 @@ export default function BookAssessmentForm({
 
                             <div className="relative">
 
-                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B]" />
+                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6E6A85]" />
 
                                 <input
                                     type="text"
@@ -270,20 +270,20 @@ export default function BookAssessmentForm({
                                     h-14
                                     rounded-2xl
                                     border
-                                    border-[rgba(15,23,42,0.08)]
+                                    border-[rgba(30,27,58,0.08)]
                                     bg-white/80
                                     pl-12
                                     pr-4
                                     text-sm
                                     outline-none
-                                    focus:border-[#2563EB]
+                                    focus:border-[#7B2FF7]
                                     focus:ring-4
-                                    focus:ring-[#2563EB]/10
+                                    focus:ring-[#7B2FF7]/10
                                     transition-all
                                 ${errors.last_name &&
                                             touched.last_name
                                             ? 'border-red-400 focus-within:ring-red-100'
-                                            : 'border-[#E2E8F0] focus-within:border-[#2563EB] focus-within:ring-blue-100'
+                                            : 'border-[#E6E3F0] focus-within:border-[#7B2FF7] focus-within:ring-violet-100'
                                         }
                             `}
                                 />
@@ -303,7 +303,7 @@ export default function BookAssessmentForm({
 
                         <div className="relative">
 
-                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B]" />
+                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6E6A85]" />
 
                             <input
                                 type="text"
@@ -333,7 +333,7 @@ export default function BookAssessmentForm({
                                 maxLength={10}
 
                                 className={`
-                                    w-full h-14 rounded-2xl border border-[rgba(15,23,42,0.08)] bg-white/80 pl-12 pr-4 text-sm outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-[#2563EB]/10 transition-al
+                                    w-full h-14 rounded-2xl border border-[rgba(30,27,58,0.08)] bg-white/80 pl-12 pr-4 text-sm outline-none focus:border-[#7B2FF7] focus:ring-4 focus:ring-[#7B2FF7]/10 transition-al
                                         ${errors.mobile &&
                                         touched.mobile
 
@@ -345,11 +345,11 @@ export default function BookAssessmentForm({
           `
 
                                         : `
-          border-[#E2E8F0]
-          hover:border-[#2563EB]/30
-          focus:border-[#2563EB]
+          border-[#E6E3F0]
+          hover:border-[#7B2FF7]/30
+          focus:border-[#7B2FF7]
           focus:ring-4
-          focus:ring-[#2563EB]/10
+          focus:ring-[#7B2FF7]/10
           `
                                     }
       `}
@@ -367,7 +367,7 @@ export default function BookAssessmentForm({
 
                         <div className="relative">
 
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B]" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6E6A85]" />
 
                             <input
                                 type="email"
@@ -381,20 +381,20 @@ export default function BookAssessmentForm({
                                 h-14
                                 rounded-2xl
                                 border
-                                border-[rgba(15,23,42,0.08)]
+                                border-[rgba(30,27,58,0.08)]
                                 bg-white/80
                                 pl-12
                                 pr-4
                                 text-sm
                                 outline-none
-                                focus:border-[#2563EB]
+                                focus:border-[#7B2FF7]
                                 focus:ring-4
-                                focus:ring-[#2563EB]/10
+                                focus:ring-[#7B2FF7]/10
                                 transition-all
                                 ${errors.email &&
                                         touched.email
                                         ? 'border-red-400 focus-within:ring-red-100'
-                                        : 'border-[#E2E8F0] focus-within:border-[#2563EB] focus-within:ring-blue-100'
+                                        : 'border-[#E6E3F0] focus-within:border-[#7B2FF7] focus-within:ring-violet-100'
                                     }
                                 `}
                             />
@@ -503,7 +503,7 @@ export default function BookAssessmentForm({
 
                         <div className="relative">
 
-                            <School className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748B]" />
+                            <School className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6E6A85]" />
 
                             <input
                                 type="text"
@@ -518,19 +518,19 @@ export default function BookAssessmentForm({
                 h-14
                 rounded-2xl
                 border
-                border-[rgba(15,23,42,0.08)]
+                border-[rgba(30,27,58,0.08)]
                 bg-white/80
                 pl-12
                 pr-4
                 text-sm
                 outline-none
-                focus:border-[#2563EB]
+                focus:border-[#7B2FF7]
                 focus:ring-4
-                focus:ring-[#2563EB]/10
+                focus:ring-[#7B2FF7]/10
                 transition-all
                 ${errors.school_name && touched.school_name
                                         ? 'border-red-400 focus-within:ring-red-100'
-                                        : 'border-[#E2E8F0] focus-within:border-[#2563EB] focus-within:ring-blue-100'
+                                        : 'border-[#E6E3F0] focus-within:border-[#7B2FF7] focus-within:ring-violet-100'
                                     }
                 `}
                             />
@@ -548,9 +548,9 @@ export default function BookAssessmentForm({
 
                         <div className="flex items-center gap-2 mb-4">
 
-                            <BookOpen className="w-5 h-5 text-[#64748B]" />
+                            <BookOpen className="w-5 h-5 text-[#6E6A85]" />
 
-                            <span className="text-sm font-semibold text-[#0F172A]">
+                            <span className="text-sm font-semibold text-[#1E1B3A]">
                                 Subject Need Help In
                             </span>
                         </div>
@@ -635,8 +635,8 @@ export default function BookAssessmentForm({
 
                                             ? `
                     bg-gradient-to-r
-                    from-[#16C47F]
-                    to-[#2563EB]
+                    from-[#7B2FF7]
+                    to-[#7B2FF7]
                     text-white
                     border-transparent
                     shadow-lg
@@ -644,9 +644,9 @@ export default function BookAssessmentForm({
 
                                             : `
                     bg-white
-                    border-[rgba(15,23,42,0.08)]
-                    hover:border-[#2563EB]
-                    hover:text-[#2563EB]
+                    border-[rgba(30,27,58,0.08)]
+                    hover:border-[#7B2FF7]
+                    hover:text-[#7B2FF7]
                     `
                                         }
                   `}
@@ -675,12 +675,12 @@ export default function BookAssessmentForm({
             h-14
             rounded-2xl
             bg-gradient-to-r
-            from-[#16C47F]
-            to-[#2563EB]
+            from-[#7B2FF7]
+            to-[#7B2FF7]
             text-white
             font-semibold
             shadow-xl
-            shadow-[#16C47F]/20
+            shadow-[#EA580C]/20
             hover:scale-[1.02]
             transition-all
             duration-300
@@ -724,9 +724,9 @@ export default function BookAssessmentForm({
                 "
                             >
 
-                                <CheckCircle2 className="w-4 h-4 text-[#16C47F]" />
+                                <CheckCircle2 className="w-4 h-4 text-[#7B2FF7]" />
 
-                                <span className="text-xs font-medium text-[#64748B]">
+                                <span className="text-xs font-medium text-[#6E6A85]">
                                     {chip}
                                 </span>
                             </div>

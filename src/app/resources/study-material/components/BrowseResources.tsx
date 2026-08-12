@@ -23,13 +23,13 @@ export default function BrowseResources() {
       name: "CBSE",
       resources: "2,500+",
       icon: "📘",
-      color: "#2563EB",
+      color: "#7B2FF7",
     },
     {
       name: "ICSE",
       resources: "1,800+",
       icon: "🏫",
-      color: "#16C47F",
+      color: "#7B2FF7",
     },
     {
       name: "SSC",
@@ -41,7 +41,7 @@ export default function BrowseResources() {
       name: "HSC",
       resources: "950+",
       icon: "🎓",
-      color: "#7C3AED",
+      color: "#7B2FF7",
     },
   ];
 
@@ -65,29 +65,29 @@ export default function BrowseResources() {
       name: "Mathematics",
       count: "850+",
       icon: Calculator,
-      color: "#2563EB",
-      bg: "rgba(37,99,235,0.08)",
+      color: "#7B2FF7",
+      bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "Science",
       count: "720+",
       icon: Atom,
-      color: "#7C3AED",
-      bg: "rgba(124,58,237,0.08)",
+      color: "#7B2FF7",
+      bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "English",
       count: "640+",
       icon: Languages,
-      color: "#16C47F",
-      bg: "rgba(22,196,127,0.08)",
+      color: "#7B2FF7",
+      bg: "rgba(248,120,8,0.08)",
     },
     {
       name: "Physics",
       count: "510+",
       icon: Atom,
-      color: "#2563EB",
-      bg: "rgba(37,99,235,0.08)",
+      color: "#7B2FF7",
+      bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "Chemistry",
@@ -100,13 +100,13 @@ export default function BrowseResources() {
       name: "Computer Science",
       count: "390+",
       icon: Laptop,
-      color: "#16C47F",
-      bg: "rgba(22,196,127,0.08)",
+      color: "#7B2FF7",
+      bg: "rgba(248,120,8,0.08)",
     },
   ];
 
   return (
-    <section className="relative py-24 bg-[#F8FAFC] overflow-hidden">
+    <section className="relative py-24 bg-[#FAFAFC] overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -119,7 +119,7 @@ export default function BrowseResources() {
           w-[450px]
           h-[450px]
           rounded-full
-          bg-[#16C47F]/10
+          bg-[#7B2FF7]/10
           blur-[120px]
           "
         />
@@ -132,7 +132,7 @@ export default function BrowseResources() {
           w-[500px]
           h-[500px]
           rounded-full
-          bg-[#2563EB]/10
+          bg-[#7B2FF7]/10
           blur-[140px]
           "
         />
@@ -158,13 +158,13 @@ export default function BrowseResources() {
             bg-white/80
             backdrop-blur-xl
             border
-            border-[#16C47F]/20
+            border-[#7B2FF7]/20
             shadow-lg
             "
           >
             📚
 
-            <span className="font-semibold text-[#16C47F]">
+            <span className="font-semibold text-[#7B2FF7]">
               BROWSE RESOURCES
             </span>
           </div>
@@ -175,7 +175,7 @@ export default function BrowseResources() {
             text-4xl
             lg:text-6xl
             font-black
-            text-[#0B1220]
+            text-[#0A1028]
             "
             style={{
               fontFamily:
@@ -183,12 +183,12 @@ export default function BrowseResources() {
             }}
           >
             Explore by{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="text-[#6D28D9]">
               Board, Class & Subject
             </span>
           </h2>
 
-          <p className="max-w-3xl mx-auto mt-6 text-lg text-[#64748B] leading-8">
+          <p className="max-w-3xl mx-auto mt-6 text-lg text-[#6E6A85] leading-8">
             Discover thousands of curated
             learning resources organised by
             academic boards, classes, and
@@ -201,7 +201,7 @@ export default function BrowseResources() {
         ========================== */}
         <div className="mb-20">
 
-          <h3 className="text-xl font-bold text-[#0F172A] mb-8">
+          <h3 className="text-xl font-bold text-[#1E1B3A] mb-8">
             Browse By Board
           </h3>
 
@@ -226,8 +226,8 @@ export default function BrowseResources() {
                   duration-300
                   ${
                     selectedBoard === board.name
-                      ? "bg-white border-[#2563EB]"
-                      : "bg-white/80 border-[rgba(15,23,42,0.08)]"
+                      ? "bg-white border-[#7B2FF7]"
+                      : "bg-white/80 border-[rgba(30,27,58,0.08)]"
                   }
                 `}
               >
@@ -235,11 +235,11 @@ export default function BrowseResources() {
                   {board.icon}
                 </div>
 
-                <h4 className="font-bold text-lg text-[#0F172A]">
+                <h4 className="font-bold text-lg text-[#1E1B3A]">
                   {board.name}
                 </h4>
 
-                <p className="text-sm text-[#64748B] mt-2">
+                <p className="text-sm text-[#6E6A85] mt-2">
                   {board.resources} Resources
                 </p>
 
@@ -250,7 +250,7 @@ export default function BrowseResources() {
                   bottom-5
                   w-5
                   h-5
-                  text-[#2563EB]
+                  text-[#7B2FF7]
                   "
                 />
               </motion.button>
@@ -263,7 +263,7 @@ export default function BrowseResources() {
         ========================== */}
         <div className="mb-20">
 
-          <h3 className="text-xl font-bold text-[#0F172A] mb-8">
+          <h3 className="text-xl font-bold text-[#1E1B3A] mb-8">
             Browse By Class
           </h3>
 
@@ -284,8 +284,8 @@ export default function BrowseResources() {
                   duration-300
                   ${
                     selectedClass === item
-                      ? "bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white shadow-lg"
-                      : "bg-white border border-[rgba(15,23,42,0.08)] text-[#64748B]"
+                      ? "bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white shadow-lg"
+                      : "bg-white border border-[rgba(30,27,58,0.08)] text-[#6E6A85]"
                   }
                 `}
               >
@@ -300,7 +300,7 @@ export default function BrowseResources() {
         ========================== */}
         <div>
 
-          <h3 className="text-xl font-bold text-[#0F172A] mb-8">
+          <h3 className="text-xl font-bold text-[#1E1B3A] mb-8">
             Browse By Subject
           </h3>
 
@@ -321,7 +321,7 @@ export default function BrowseResources() {
                   rounded-[28px]
                   bg-white
                   border
-                  border-[rgba(15,23,42,0.08)]
+                  border-[rgba(30,27,58,0.08)]
                   shadow-sm
                   hover:shadow-xl
                   transition-all
@@ -353,11 +353,11 @@ export default function BrowseResources() {
                     />
                   </div>
 
-                  <h4 className="font-bold text-lg text-[#0F172A]">
+                  <h4 className="font-bold text-lg text-[#1E1B3A]">
                     {subject.name}
                   </h4>
 
-                  <p className="text-sm text-[#64748B] mt-2">
+                  <p className="text-sm text-[#6E6A85] mt-2">
                     {subject.count} Resources
                   </p>
 
@@ -367,7 +367,7 @@ export default function BrowseResources() {
                     flex
                     items-center
                     gap-2
-                    text-[#2563EB]
+                    text-[#7B2FF7]
                     font-semibold
                     "
                   >

@@ -30,11 +30,11 @@ const VALUES = [
     icon: Shield,
     title: "Integrity",
     desc: "We act with honesty, fairness, and accountability in every interaction with students, parents, and tutors — without compromise.",
-    from: "#16C47F",
-    to: "#2563EB",
-    light: "rgba(22,196,127,0.08)",
-    glow: "rgba(22,196,127,0.28)",
-    chipColor: "#16C47F",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(248,120,8,0.08)",
+    glow: "rgba(248,120,8,0.28)",
+    chipColor: "#7B2FF7",
     chip: "Trust by default",
     number: "01",
     delay: 0.06,
@@ -44,11 +44,11 @@ const VALUES = [
     icon: Eye,
     title: "Transparency",
     desc: "We believe in open communication, clear expectations, and complete visibility throughout every stage of the learning journey.",
-    from: "#2563EB",
-    to: "#7C3AED",
-    light: "rgba(37,99,235,0.08)",
-    glow: "rgba(37,99,235,0.28)",
-    chipColor: "#2563EB",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.08)",
+    glow: "rgba(123,47,247,0.28)",
+    chipColor: "#7B2FF7",
     chip: "Nothing hidden",
     number: "02",
     delay: 0.12,
@@ -59,7 +59,7 @@ const VALUES = [
     title: "Excellence",
     desc: "We continuously strive to deliver the highest quality learning experiences and measurable outcomes families can see and feel.",
     from: "#F59E0B",
-    to: "#16C47F",
+    to: "#7B2FF7",
     light: "rgba(245,158,11,0.08)",
     glow: "rgba(245,158,11,0.28)",
     chipColor: "#F59E0B",
@@ -72,11 +72,11 @@ const VALUES = [
     icon: Lightbulb,
     title: "Innovation",
     desc: "We embrace technology, creativity, and modern teaching methods to continuously improve and personalise every learning experience.",
-    from: "#7C3AED",
-    to: "#2563EB",
-    light: "rgba(124,58,237,0.08)",
-    glow: "rgba(124,58,237,0.28)",
-    chipColor: "#7C3AED",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.08)",
+    glow: "rgba(123,47,247,0.28)",
+    chipColor: "#7B2FF7",
     chip: "Always evolving",
     number: "04",
     delay: 0.24,
@@ -86,11 +86,11 @@ const VALUES = [
     icon: GraduationCap,
     title: "Student First",
     desc: "Every decision begins with one question — how does this improve student learning and success? Students are never secondary.",
-    from: "#16C47F",
-    to: "#7C3AED",
-    light: "rgba(22,196,127,0.08)",
-    glow: "rgba(22,196,127,0.26)",
-    chipColor: "#16C47F",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(248,120,8,0.08)",
+    glow: "rgba(248,120,8,0.26)",
+    chipColor: "#7B2FF7",
     chip: "Learners lead us",
     number: "05",
     delay: 0.30,
@@ -100,11 +100,11 @@ const VALUES = [
     icon: BookOpen,
     title: "Continuous Learning",
     desc: "We believe learning never stops — for students, tutors, parents, or our organisation. Growth is always the destination.",
-    from: "#2563EB",
-    to: "#16C47F",
-    light: "rgba(37,99,235,0.08)",
-    glow: "rgba(37,99,235,0.26)",
-    chipColor: "#2563EB",
+    from: "#7B2FF7",
+    to: "#7B2FF7",
+    light: "rgba(123,47,247,0.08)",
+    glow: "rgba(123,47,247,0.26)",
+    chipColor: "#7B2FF7",
     chip: "Growth never ends",
     number: "06",
     delay: 0.36,
@@ -112,12 +112,12 @@ const VALUES = [
 ];
 
 const TRUST_CHIPS = [
-  { label: "Student-Centric",       color: "#16C47F" },
-  { label: "Verified Educators",    color: "#2563EB" },
-  { label: "Transparent Learning",  color: "#7C3AED" },
+  { label: "Student-Centric",       color: "#7B2FF7" },
+  { label: "Verified Educators",    color: "#7B2FF7" },
+  { label: "Transparent Learning",  color: "#7B2FF7" },
   { label: "Technology Driven",     color: "#F59E0B" },
-  { label: "Continuous Improvement",color: "#16C47F" },
-  { label: "Parent Trusted",        color: "#2563EB" },
+  { label: "Continuous Improvement",color: "#7B2FF7" },
+  { label: "Parent Trusted",        color: "#7B2FF7" },
 ];
 
 // ─────────────────────────────────────────────
@@ -131,7 +131,7 @@ function WatermarkText() {
         className="text-[88px] lg:text-[120px] font-black text-center leading-tight whitespace-nowrap"
         style={{
           background:
-            "linear-gradient(135deg, rgba(22,196,127,0.045), rgba(37,99,235,0.045), rgba(124,58,237,0.045))",
+            "linear-gradient(135deg, rgba(248,120,8,0.045), rgba(123,47,247,0.045), rgba(123,47,247,0.045))",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           fontFamily: "var(--font-heading, 'Clash Display', sans-serif)",
@@ -159,9 +159,9 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
       transition={{ duration: 0.58, delay: v.delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       whileHover={{ y: -12, scale: 1.025 }}
       className="group relative rounded-[28px] overflow-hidden bg-white
-                 border border-[rgba(15,23,42,0.07)]
-                 shadow-[0_4px_24px_rgba(15,23,42,0.07)]
-                 hover:shadow-[0_28px_64px_rgba(15,23,42,0.13)]
+                 border border-[rgba(30,27,58,0.07)]
+                 shadow-[0_4px_24px_rgba(30,27,58,0.07)]
+                 hover:shadow-[0_28px_64px_rgba(30,27,58,0.13)]
                  transition-all duration-500 cursor-default p-8"
     >
       {/* Mesh glow reveal on hover */}
@@ -224,14 +224,14 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
 
         {/* Title */}
         <h3
-          className="text-[22px] font-black text-[#0F172A] mb-3 leading-snug"
+          className="text-[22px] font-black text-[#1E1B3A] mb-3 leading-snug"
           style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
         >
           {v.emoji} {v.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm leading-[1.85] text-[#64748B] flex-1">{v.desc}</p>
+        <p className="text-sm leading-[1.85] text-[#6E6A85] flex-1">{v.desc}</p>
 
         {/* Chip */}
         <motion.div
@@ -281,21 +281,21 @@ export function CoreValuesV2Section() {
         <WatermarkText />
         <motion.div
           className="absolute -top-56 -left-56 w-[750px] h-[750px] rounded-full blur-[140px] opacity-[0.10]"
-          style={{ y: bgY , background: "radial-gradient(circle, #16C47F, transparent 70%)" }}
+          style={{ y: bgY , background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
         <div
           className="absolute -bottom-48 -right-48 w-[700px] h-[700px] rounded-full blur-[130px] opacity-[0.08]"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full blur-[100px] opacity-[0.05]"
-          style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
         />
         {/* Dot grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
-            backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)",
             backgroundSize: "30px 30px",
           }}
         />
@@ -319,17 +319,17 @@ export function CoreValuesV2Section() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full
                          bg-white/90 backdrop-blur-xl
-                         border border-[#16C47F]/30
-                         shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_28px_rgba(248,120,8,0.18)]"
             >
-              <Diamond className="w-4 h-4 text-[#16C47F]" />
+              <Diamond className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
               >
                 Our Core Values
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -339,13 +339,13 @@ export function CoreValuesV2Section() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-[#0B1220] mb-7"
+            className="text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-7"
             style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
           >
             The Values That{" "}
             <span
-              className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                         drop-shadow-[0_0_40px_rgba(22,196,127,0.22)]"
+              className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                         drop-shadow-[0_0_40px_rgba(248,120,8,0.22)]"
             >
               Guide Us
             </span>
@@ -357,7 +357,7 @@ export function CoreValuesV2Section() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.18 }}
-            className="text-lg lg:text-xl leading-9 text-[#64748B]"
+            className="text-lg lg:text-xl leading-9 text-[#6E6A85]"
           >
             At Tutoo, our values shape every learning experience, every parent interaction,
             and every decision we make as we help students achieve their academic goals.
@@ -386,28 +386,28 @@ export function CoreValuesV2Section() {
             className="rounded-[36px] relative overflow-hidden py-14 px-10 lg:px-20 text-center"
             style={{
               background:
-                "linear-gradient(white, white) padding-box, linear-gradient(135deg, #16C47F, #2563EB, #7C3AED) border-box",
+                "linear-gradient(white, white) padding-box, linear-gradient(135deg, #7B2FF7, #7B2FF7, #7B2FF7) border-box",
               border: "1.5px solid transparent",
               boxShadow:
-                "0 24px 80px rgba(22,196,127,0.09), 0 8px 32px rgba(37,99,235,0.07)",
+                "0 24px 80px rgba(248,120,8,0.09), 0 8px 32px rgba(123,47,247,0.07)",
             }}
           >
             {/* Ambient glows */}
-            <div className="absolute top-0 right-0 w-72 h-72 bg-[#16C47F]/06 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#7C3AED]/05 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#7B2FF7]/06 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#7B2FF7]/05 rounded-full blur-3xl" />
 
             <div className="relative z-10 max-w-4xl mx-auto">
               {/* Quote icon */}
               <div
                 className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center shadow-xl mb-9"
-                style={{ background: "linear-gradient(135deg, #16C47F, #2563EB)" }}
+                style={{ background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)" }}
               >
                 <Quote className="w-8 h-8 text-white" />
               </div>
 
               {/* Quote line 1 */}
               <p
-                className="text-3xl lg:text-4xl font-black text-[#0F172A] leading-tight mb-4"
+                className="text-3xl lg:text-4xl font-black text-[#1E1B3A] leading-tight mb-4"
                 style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
               >
                 "Our values are not what we write on a wall.
@@ -416,21 +416,21 @@ export function CoreValuesV2Section() {
               {/* Quote line 2 — gradient */}
               <p
                 className="text-3xl lg:text-4xl font-black leading-tight mb-10
-                           bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent"
+                           bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent"
                 style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
               >
                 They are what students, parents, and tutors experience every day."
               </p>
 
               {/* Author row */}
-              <div className="flex items-center justify-center gap-4 pt-8 border-t border-[rgba(15,23,42,0.07)]">
+              <div className="flex items-center justify-center gap-4 pt-8 border-t border-[rgba(30,27,58,0.07)]">
                 <div className="flex -space-x-2">
-                  {["#16C47F", "#2563EB", "#7C3AED"].map((c, i) => (
+                  {["#7B2FF7", "#7B2FF7", "#7B2FF7"].map((c, i) => (
                     <div
                       key={i}
                       className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-black shadow-md"
                       style={{
-                        background: `linear-gradient(135deg, ${c}, ${["#2563EB", "#7C3AED", "#16C47F"][i]})`,
+                        background: `linear-gradient(135deg, ${c}, ${["#7B2FF7", "#7B2FF7", "#7B2FF7"][i]})`,
                       }}
                     >
                       {["S", "T", "P"][i]}
@@ -438,11 +438,11 @@ export function CoreValuesV2Section() {
                   ))}
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-bold text-[#0F172A]">Students · Tutors · Parents</p>
-                  <p className="text-xs text-[#64748B]">The Tutoo community</p>
+                  <p className="text-sm font-bold text-[#1E1B3A]">Students · Tutors · Parents</p>
+                  <p className="text-xs text-[#6E6A85]">The Tutoo community</p>
                 </div>
                 <div className="ml-6 flex gap-1.5">
-                  {["#16C47F", "#2563EB", "#7C3AED", "#F59E0B"].map((c) => (
+                  {["#7B2FF7", "#7B2FF7", "#7B2FF7", "#F59E0B"].map((c) => (
                     <motion.div
                       key={c}
                       animate={{ scale: [1, 1.5, 1] }}
@@ -478,9 +478,9 @@ export function CoreValuesV2Section() {
               transition={{ delay: 0.2 + i * 0.07 }}
               whileHover={{ scale: 1.08, y: -3 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
-                         bg-white border border-[rgba(15,23,42,0.08)]
+                         bg-white border border-[rgba(30,27,58,0.08)]
                          shadow-sm hover:shadow-lg
-                         text-sm font-bold text-[#0F172A]
+                         text-sm font-bold text-[#1E1B3A]
                          transition-all duration-300 cursor-default"
               style={{
                 boxShadow: `0 0 0 0px ${chip.color}00`,
@@ -499,24 +499,24 @@ export function CoreValuesV2Section() {
               icon: Heart,
               title: "For Parents",
               desc: "Values that guarantee your child is in safe, honest, and transparent hands every session.",
-              from: "#16C47F",
-              to: "#2563EB",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.1,
             },
             {
               icon: GraduationCap,
               title: "For Students",
               desc: "Values that put your growth, confidence, and academic success at the centre of everything.",
-              from: "#2563EB",
-              to: "#7C3AED",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.2,
             },
             {
               icon: TrendingUp,
               title: "For Tutors",
               desc: "Values that respect your expertise, support your growth, and recognise the impact you create.",
-              from: "#7C3AED",
-              to: "#16C47F",
+              from: "#7B2FF7",
+              to: "#7B2FF7",
               delay: 0.3,
             },
           ].map((card) => {
@@ -530,7 +530,7 @@ export function CoreValuesV2Section() {
                 transition={{ duration: 0.55, delay: card.delay }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group relative rounded-3xl overflow-hidden
-                           bg-white border border-[rgba(15,23,42,0.07)]
+                           bg-white border border-[rgba(30,27,58,0.07)]
                            shadow-lg hover:shadow-2xl
                            transition-all duration-400 p-8 cursor-default"
               >
@@ -548,12 +548,12 @@ export function CoreValuesV2Section() {
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   <h3
-                    className="text-xl font-black text-[#0F172A] mb-3"
+                    className="text-xl font-black text-[#1E1B3A] mb-3"
                     style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
                   >
                     {card.title}
                   </h3>
-                  <p className="text-sm leading-7 text-[#64748B] mb-6">{card.desc}</p>
+                  <p className="text-sm leading-7 text-[#6E6A85] mb-6">{card.desc}</p>
                   <div
                     className="flex items-center gap-2 text-sm font-bold"
                     style={{ color: card.from }}
@@ -579,14 +579,14 @@ export function CoreValuesV2Section() {
           transition={{ duration: 0.7 }}
           className="rounded-[36px] relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #0B1220 0%, #111827 55%, #0B1220 100%)",
-            boxShadow: "0 32px 100px rgba(11,18,32,0.28)",
+            background: "linear-gradient(135deg, #0A1028 0%, #111827 55%, #0A1028 100%)",
+            boxShadow: "0 32px 100px rgba(10,16,40,0.28)",
           }}
         >
           {/* Ambient glows */}
-          <div className="absolute top-0 left-0 w-96 h-64 bg-[#16C47F]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-80 h-60 bg-[#7C3AED]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-32 bg-[#2563EB]/06 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-0 w-96 h-64 bg-[#7B2FF7]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-80 h-60 bg-[#7B2FF7]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-32 bg-[#7B2FF7]/06 rounded-full blur-3xl pointer-events-none" />
 
           {/* Twinkling dots */}
           {[...Array(16)].map((_, i) => (
@@ -610,7 +610,7 @@ export function CoreValuesV2Section() {
             <motion.p
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="text-[#16C47F] text-xs font-black tracking-widest uppercase mb-6"
+              className="text-[#7B2FF7] text-xs font-black tracking-widest uppercase mb-6"
             >
               ✦ Values in Action ✦
             </motion.p>
@@ -620,7 +620,7 @@ export function CoreValuesV2Section() {
               style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
             >
               Values you can{" "}
-              <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 feel in every session.
               </span>
             </h3>
@@ -654,9 +654,9 @@ export function CoreValuesV2Section() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
+                className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
                            text-white font-bold
-                           shadow-[0_8px_32px_rgba(22,196,127,0.35)]
+                           shadow-[0_8px_32px_rgba(248,120,8,0.35)]
                            flex items-center gap-2 transition-all duration-300"
               >
                 Find a Tutor

@@ -80,7 +80,7 @@ function ProgressRing({
           </linearGradient>
         </defs>
         {/* Track */}
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(15,23,42,0.07)" strokeWidth={stroke} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(30,27,58,0.07)" strokeWidth={stroke} />
         {/* Progress */}
         <circle
           cx={size / 2} cy={size / 2} r={r}
@@ -94,11 +94,11 @@ function ProgressRing({
           style={{ transition: "stroke-dashoffset 1.2s cubic-bezier(0.34,1.56,0.64,1)" }}
         />
         <text x={size / 2} y={size / 2 + 1} textAnchor="middle" dominantBaseline="middle"
-          fontSize={size * 0.22} fontWeight="800" fill="#0F172A">
+          fontSize={size * 0.22} fontWeight="800" fill="#1E1B3A">
           {pct}%
         </text>
       </svg>
-      <span className="text-[11px] font-bold text-[#64748B] text-center leading-tight">{label}</span>
+      <span className="text-[11px] font-bold text-[#6E6A85] text-center leading-tight">{label}</span>
     </div>
   );
 }
@@ -120,10 +120,10 @@ function ProgressBar({ pct, from, to, label, sublabel, delay = 0 }: {
   return (
     <div ref={ref} className="space-y-1.5">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-bold text-[#0F172A]">{label}</span>
+        <span className="text-xs font-bold text-[#1E1B3A]">{label}</span>
         <span className="text-xs font-black" style={{ color: from }}>{pct}%</span>
       </div>
-      <div className="h-2 rounded-full bg-[rgba(15,23,42,0.07)] overflow-hidden">
+      <div className="h-2 rounded-full bg-[rgba(30,27,58,0.07)] overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-1000 ease-out"
           style={{
@@ -134,7 +134,7 @@ function ProgressBar({ pct, from, to, label, sublabel, delay = 0 }: {
           }}
         />
       </div>
-      <span className="text-[10px] text-[#64748B]">{sublabel}</span>
+      <span className="text-[10px] text-[#6E6A85]">{sublabel}</span>
     </div>
   );
 }
@@ -157,31 +157,31 @@ function AIDashboard() {
         transition={{ duration: 0.6 }}
         className="relative rounded-3xl overflow-hidden"
         style={{
-          background: "linear-gradient(145deg, #0B1220 0%, #111827 60%, #0f1e38 100%)",
-          boxShadow: "0 20px 60px rgba(11,18,32,0.35)",
+          background: "linear-gradient(145deg, #0A1028 0%, #111827 60%, #0f1e38 100%)",
+          boxShadow: "0 20px 60px rgba(10,16,40,0.35)",
         }}
       >
         {/* Ambient glows inside dark card */}
-        <div className="absolute top-0 left-0 w-48 h-48 bg-[#2563EB]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#16C47F]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-0 w-48 h-48 bg-[#7B2FF7]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#7B2FF7]/15 rounded-full blur-3xl pointer-events-none" />
 
         {/* Top gradient stripe */}
-        <div className="h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+        <div className="h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
         <div className="relative z-10 p-6">
           {/* Card header */}
           <div className="flex items-center justify-between mb-5">
             <div>
-              <p className="text-[10px] font-black tracking-widest uppercase text-[#64748B] mb-1">Assessment Result</p>
+              <p className="text-[10px] font-black tracking-widest uppercase text-[#6E6A85] mb-1">Assessment Result</p>
               <p className="text-white font-black text-lg leading-tight"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                 Academic Intelligence Report
               </p>
             </div>
             <div className="flex flex-col items-end gap-1.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#16C47F]/20 border border-[#16C47F]/30 text-[#16C47F] text-[10px] font-black">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#7B2FF7]/20 border border-[#7B2FF7]/30 text-[#7B2FF7] text-[10px] font-black">
                 <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ duration: 2, repeat: Infinity }}
-                  className="w-1.5 h-1.5 rounded-full bg-[#16C47F]" />
+                  className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" />
                 Live Analysis
               </span>
               <span className="text-[10px] text-white/40 font-semibold">Grade 8 · Math Focus</span>
@@ -190,7 +190,7 @@ function AIDashboard() {
 
           {/* Expected vs Current */}
           <div className="space-y-4 mb-6">
-            <ProgressBar pct={100} from="#16C47F" to="#2563EB" label="Expected Level" sublabel="Grade 8 Standard" delay={0} />
+            <ProgressBar pct={100} from="#7B2FF7" to="#7B2FF7" label="Expected Level" sublabel="Grade 8 Standard" delay={0} />
             <ProgressBar pct={60}  from="#F59E0B" to="#EF4444" label="Current Level"  sublabel="Equivalent to Grade 6.2" delay={0.2} />
           </div>
 
@@ -212,16 +212,16 @@ function AIDashboard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="rounded-3xl p-5 bg-white/80 backdrop-blur-xl border border-[rgba(15,23,42,0.07)] shadow-lg"
+        className="rounded-3xl p-5 bg-white/80 backdrop-blur-xl border border-[rgba(30,27,58,0.07)] shadow-lg"
       >
         <div className="flex items-center justify-between mb-4">
-          <p className="text-xs font-black text-[#0F172A] tracking-wide uppercase">Subject Analysis</p>
-          <span className="text-[10px] text-[#64748B] font-semibold">3 subjects scanned</span>
+          <p className="text-xs font-black text-[#1E1B3A] tracking-wide uppercase">Subject Analysis</p>
+          <span className="text-[10px] text-[#6E6A85] font-semibold">3 subjects scanned</span>
         </div>
         <div className="grid grid-cols-3 gap-3">
           <ProgressRing pct={60} from="#F59E0B" to="#EF4444" label="Mathematics" delay={0.1} />
-          <ProgressRing pct={82} from="#16C47F" to="#2563EB" label="Science"     delay={0.2} />
-          <ProgressRing pct={91} from="#2563EB" to="#7C3AED" label="English"     delay={0.3} />
+          <ProgressRing pct={82} from="#7B2FF7" to="#7B2FF7" label="Science"     delay={0.2} />
+          <ProgressRing pct={91} from="#7B2FF7" to="#7B2FF7" label="English"     delay={0.3} />
         </div>
       </motion.div>
 
@@ -233,8 +233,8 @@ function AIDashboard() {
         transition={{ duration: 0.6, delay: 0.25 }}
         className="relative rounded-3xl overflow-hidden p-5"
         style={{
-          background: "linear-gradient(135deg, #16C47F, #2563EB)",
-          boxShadow: "0 8px 32px rgba(22,196,127,0.30)",
+          background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)",
+          boxShadow: "0 8px 32px rgba(248,120,8,0.30)",
         }}
       >
         <div className="absolute inset-0 opacity-20"
@@ -265,34 +265,34 @@ function AIDashboard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.35 }}
-        className="rounded-3xl p-5 bg-white/80 backdrop-blur-xl border border-[rgba(15,23,42,0.07)] shadow-lg
+        className="rounded-3xl p-5 bg-white/80 backdrop-blur-xl border border-[rgba(30,27,58,0.07)] shadow-lg
                    flex items-center gap-4"
         style={{
-          background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #2563EB33, #16C47F33) border-box",
+          background: "linear-gradient(white, white) padding-box, linear-gradient(135deg, #7B2FF733, #7B2FF733) border-box",
           border: "1.5px solid transparent",
         }}
       >
         {/* Donut */}
         <div className="relative flex-shrink-0">
-          <ProgressRing pct={78} size={76} stroke={7} from="#2563EB" to="#16C47F" label="" delay={0.5} />
+          <ProgressRing pct={78} size={76} stroke={7} from="#7B2FF7" to="#7B2FF7" label="" delay={0.5} />
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <Brain className="w-5 h-5 text-[#2563EB] mt-[-18px]" />
+            <Brain className="w-5 h-5 text-[#7B2FF7] mt-[-18px]" />
           </div>
         </div>
         <div>
-          <p className="text-[10px] font-black tracking-widest uppercase text-[#64748B] mb-0.5">Learning Readiness Score</p>
-          <p className="text-2xl font-black text-[#0F172A]"
+          <p className="text-[10px] font-black tracking-widest uppercase text-[#6E6A85] mb-0.5">Learning Readiness Score</p>
+          <p className="text-2xl font-black text-[#1E1B3A]"
             style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}>
             <Counter to={78} suffix="%" />
           </p>
-          <p className="text-[11px] text-[#16C47F] font-bold mt-0.5">Ready for Personalized Learning Plan ✓</p>
+          <p className="text-[11px] text-[#7B2FF7] font-bold mt-0.5">Ready for Personalized Learning Plan ✓</p>
         </div>
       </motion.div>
 
       {/* ── FLOATING AI CHIPS (absolute, outside card stack) ── */}
       {[
-        { icon: Bot,         text: "AI Analysis Complete",        c: "#2563EB", pos: "-top-3 -right-4",   delay: 0.8  },
-        { icon: TrendingUp,  text: "Learning Pattern Identified",  c: "#16C47F", pos: "-bottom-3 -left-4", delay: 1.0  },
+        { icon: Bot,         text: "AI Analysis Complete",        c: "#7B2FF7", pos: "-top-3 -right-4",   delay: 0.8  },
+        { icon: TrendingUp,  text: "Learning Pattern Identified",  c: "#7B2FF7", pos: "-bottom-3 -left-4", delay: 1.0  },
       ].map((chip, i) => {
         const Icon = chip.icon;
         return (
@@ -322,11 +322,11 @@ function AIDashboard() {
 // INSIGHT CARDS
 // ─────────────────────────────────────────────
 const INSIGHTS = [
-  { emoji: "📊", icon: BarChart3,  title: "Current Academic Level", desc: "Understand exactly where the student stands today vs the expected grade standard.", from: "#2563EB", to: "#7C3AED", delay: 0.08 },
-  { emoji: "💪", icon: TrendingUp, title: "Strengths",              desc: "Identify subjects and concepts already mastered — so we build on what works.",         from: "#16C47F", to: "#2563EB", delay: 0.16 },
+  { emoji: "📊", icon: BarChart3,  title: "Current Academic Level", desc: "Understand exactly where the student stands today vs the expected grade standard.", from: "#7B2FF7", to: "#7B2FF7", delay: 0.08 },
+  { emoji: "💪", icon: TrendingUp, title: "Strengths",              desc: "Identify subjects and concepts already mastered — so we build on what works.",         from: "#7B2FF7", to: "#7B2FF7", delay: 0.16 },
   { emoji: "⚠️", icon: AlertTriangle, title: "Weaknesses",          desc: "Pinpoint learning gaps and knowledge holes causing underperformance.",                 from: "#F59E0B", to: "#EF4444", delay: 0.24 },
-  { emoji: "🧠", icon: Brain,       title: "Learning Style",        desc: "Visual, practical, conceptual, or interactive — every student absorbs differently.",    from: "#7C3AED", to: "#2563EB", delay: 0.32 },
-  { emoji: "🎯", icon: Target,      title: "Aptitude Indicators",   desc: "Discover hidden strengths and future potential beyond current academic performance.",   from: "#16C47F", to: "#7C3AED", delay: 0.40 },
+  { emoji: "🧠", icon: Brain,       title: "Learning Style",        desc: "Visual, practical, conceptual, or interactive — every student absorbs differently.",    from: "#7B2FF7", to: "#7B2FF7", delay: 0.32 },
+  { emoji: "🎯", icon: Target,      title: "Aptitude Indicators",   desc: "Discover hidden strengths and future potential beyond current academic performance.",   from: "#7B2FF7", to: "#7B2FF7", delay: 0.40 },
 ];
 
 // ─────────────────────────────────────────────
@@ -348,27 +348,27 @@ function StepIndicator() {
             <div
               className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-black border-2 transition-all duration-300"
               style={{
-                background: s.active ? "linear-gradient(135deg,#2563EB,#16C47F)" : s.done ? "#16C47F" : "transparent",
-                borderColor: s.active ? "#2563EB" : s.done ? "#16C47F" : "rgba(15,23,42,0.18)",
-                color: s.done || s.active ? "#fff" : "#64748B",
-                boxShadow: s.active ? "0 0 12px rgba(37,99,235,0.4)" : "none",
+                background: s.active ? "linear-gradient(135deg,#7B2FF7,#7B2FF7)" : s.done ? "#7B2FF7" : "transparent",
+                borderColor: s.active ? "#7B2FF7" : s.done ? "#7B2FF7" : "rgba(30,27,58,0.18)",
+                color: s.done || s.active ? "#fff" : "#6E6A85",
+                boxShadow: s.active ? "0 0 12px rgba(123,47,247,0.4)" : "none",
               }}
             >
               {s.done && !s.active ? <CheckCircle2 className="w-3.5 h-3.5" /> : i + 1}
             </div>
-            <span className={`text-[9px] font-black tracking-wide ${s.active ? "text-[#2563EB]" : s.done ? "text-[#16C47F]" : "text-[#64748B]"}`}>
+            <span className={`text-[9px] font-black tracking-wide ${s.active ? "text-[#7B2FF7]" : s.done ? "text-[#7B2FF7]" : "text-[#6E6A85]"}`}>
               {s.label.toUpperCase()}
             </span>
           </div>
           {i < steps.length - 1 && (
-            <div className="w-10 h-[2px] mx-1 mb-4 rounded-full overflow-hidden" style={{ background: "rgba(15,23,42,0.10)" }}>
+            <div className="w-10 h-[2px] mx-1 mb-4 rounded-full overflow-hidden" style={{ background: "rgba(30,27,58,0.10)" }}>
               <motion.div
                 initial={{ width: "0%" }}
                 whileInView={{ width: i < 1 ? "100%" : i === 1 ? "100%" : "0%" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 }}
                 className="h-full rounded-full"
-                style={{ background: "linear-gradient(90deg,#16C47F,#2563EB)" }}
+                style={{ background: "linear-gradient(90deg,#7B2FF7,#7B2FF7)" }}
               />
             </div>
           )}
@@ -389,25 +389,25 @@ export function AIAssessmentSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-28 bg-[#F8FAFC]"
+      className="relative overflow-hidden py-28 bg-[#FAFAFC]"
       style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div style={{ y: bgY, background: "radial-gradient(circle, #2563EB, transparent 70%)" }}
+        <motion.div style={{ y: bgY, background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }}
           className="absolute -top-56 -left-56 w-[700px] h-[700px] rounded-full blur-[130px] opacity-[0.13]"
         />
         <div className="absolute -bottom-44 -right-44 w-[640px] h-[640px] rounded-full blur-[120px] opacity-[0.10]"
-          style={{ background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] rounded-full blur-[100px] opacity-[0.06]"
-          style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
 
         {/* Neural network dots */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" preserveAspectRatio="none">
           <defs>
             <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2563EB" />
-              <stop offset="100%" stopColor="#16C47F" stopOpacity="0" />
+              <stop offset="0%" stopColor="#7B2FF7" />
+              <stop offset="100%" stopColor="#7B2FF7" stopOpacity="0" />
             </linearGradient>
           </defs>
           {Array.from({ length: 10 }).map((_, i) => (
@@ -422,7 +422,7 @@ export function AIAssessmentSection() {
 
         {/* Dot grid */}
         <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -465,33 +465,33 @@ export function AIAssessmentSection() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-7
                          bg-white/80 backdrop-blur-xl
-                         border border-[#2563EB]/30
-                         shadow-[0_0_24px_rgba(37,99,235,0.18)]"
+                         border border-[#7B2FF7]/30
+                         shadow-[0_0_24px_rgba(123,47,247,0.18)]"
             >
-              <Brain className="w-4 h-4 text-[#2563EB]" />
-              <span className="text-xs font-black tracking-widest uppercase text-[#2563EB]"
+              <Brain className="w-4 h-4 text-[#7B2FF7]" />
+              <span className="text-xs font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                 AI-Powered Assessment
               </span>
-              <Sparkles className="w-4 h-4 text-[#2563EB]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
 
             {/* Heading */}
             <h2
-              className="text-4xl lg:text-5xl font-black leading-[1.07] tracking-tight text-[#0B1220] mb-3"
+              className="text-4xl lg:text-5xl font-black leading-[1.07] tracking-tight text-[#0A1028] mb-3"
               style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
             >
               Understand Before
               <br />
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#16C47F] to-[#2563EB] bg-clip-text text-transparent
-                               drop-shadow-[0_0_32px_rgba(37,99,235,0.25)]">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                               drop-shadow-[0_0_32px_rgba(123,47,247,0.25)]">
                 We Teach
               </span>
             </h2>
 
-            <p className="text-sm font-black tracking-wide text-[#16C47F] mb-6 uppercase">
+            <p className="text-sm font-black tracking-wide text-[#7B2FF7] mb-6 uppercase">
               AI-Powered{" "}
-              <span className="text-[#2563EB]">Learning Assessment</span>
+              <span className="text-[#7B2FF7]">Learning Assessment</span>
             </p>
 
             {/* Body */}
@@ -506,7 +506,7 @@ export function AIAssessmentSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 + i * 0.1 }}
-                  className="text-base leading-8 text-[#64748B]"
+                  className="text-base leading-8 text-[#6E6A85]"
                 >
                   {para}
                 </motion.p>
@@ -514,7 +514,7 @@ export function AIAssessmentSection() {
             </div>
 
             {/* Insight cards heading */}
-            <p className="text-xs font-black tracking-widest uppercase text-[#64748B] mb-4">
+            <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-4">
               The Assessment Identifies
             </p>
 
@@ -532,7 +532,7 @@ export function AIAssessmentSection() {
                     whileHover={{ x: 4, scale: 1.01 }}
                     className="group flex items-start gap-4 p-4 rounded-2xl
                                bg-white/70 backdrop-blur-xl
-                               border border-[rgba(15,23,42,0.06)]
+                               border border-[rgba(30,27,58,0.06)]
                                shadow-sm hover:shadow-lg
                                transition-all duration-300 cursor-default relative overflow-hidden"
                   >
@@ -543,13 +543,13 @@ export function AIAssessmentSection() {
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div className="relative z-10 flex-1 min-w-0">
-                      <p className="text-sm font-black text-[#0F172A] mb-0.5"
+                      <p className="text-sm font-black text-[#1E1B3A] mb-0.5"
                         style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
                         {ins.emoji} {ins.title}
                       </p>
-                      <p className="text-xs leading-6 text-[#64748B]">{ins.desc}</p>
+                      <p className="text-xs leading-6 text-[#6E6A85]">{ins.desc}</p>
                     </div>
-                    <ChevronRight className="w-4 h-4 flex-shrink-0 text-[#CBD5E1] group-hover:text-[#2563EB] mt-1 transition-colors duration-300 relative z-10" />
+                    <ChevronRight className="w-4 h-4 flex-shrink-0 text-[#CBD5E1] group-hover:text-[#7B2FF7] mt-1 transition-colors duration-300 relative z-10" />
                     <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full rounded-b-2xl transition-all duration-500"
                       style={{ background: `linear-gradient(90deg, ${ins.from}, ${ins.to})` }} />
                   </motion.div>
@@ -565,12 +565,12 @@ export function AIAssessmentSection() {
               transition={{ delay: 0.5 }}
               className="flex items-start gap-3 p-4 rounded-2xl mb-8"
               style={{
-                background: "linear-gradient(135deg, rgba(22,196,127,0.07), rgba(37,99,235,0.07))",
-                border: "1px solid rgba(22,196,127,0.18)",
+                background: "linear-gradient(135deg, rgba(248,120,8,0.07), rgba(123,47,247,0.07))",
+                border: "1px solid rgba(248,120,8,0.18)",
               }}
             >
-              <Shield className="w-5 h-5 text-[#16C47F] flex-shrink-0 mt-0.5" />
-              <p className="text-xs leading-6 text-[#0F172A] font-semibold">
+              <Shield className="w-5 h-5 text-[#7B2FF7] flex-shrink-0 mt-0.5" />
+              <p className="text-xs leading-6 text-[#1E1B3A] font-semibold">
                 Every assessment is designed to help students receive the most effective tutor,
                 learning plan, and academic support — not to label or categorise them.
               </p>
@@ -580,14 +580,14 @@ export function AIAssessmentSection() {
             <div className="flex flex-wrap items-center gap-5">
               <motion.button
                 whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                className="group h-13 px-8 rounded-2xl bg-gradient-to-r from-[#2563EB] to-[#16C47F]
-                           text-white font-bold shadow-xl shadow-[#2563EB]/22
+                className="group h-13 px-8 rounded-2xl bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]
+                           text-white font-bold shadow-xl shadow-[#7B2FF7]/22
                            flex items-center gap-2 transition-all duration-300"
               >
                 Start Free Assessment
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
-              <button className="text-sm text-[#2563EB] font-bold hover:text-[#16C47F] transition-colors duration-300">
+              <button className="text-sm text-[#7B2FF7] font-bold hover:text-[#7B2FF7] transition-colors duration-300">
                 How it works →
               </button>
             </div>
@@ -603,9 +603,9 @@ export function AIAssessmentSection() {
           className="flex flex-wrap justify-center gap-4 mt-20"
         >
           {[
-            { icon: Bot,          text: "AI Analysis Complete",      c: "#2563EB" },
-            { icon: TrendingUp,   text: "Learning Pattern Identified", c: "#16C47F" },
-            { icon: Target,       text: "Tutor Match Ready",          c: "#7C3AED" },
+            { icon: Bot,          text: "AI Analysis Complete",      c: "#7B2FF7" },
+            { icon: TrendingUp,   text: "Learning Pattern Identified", c: "#7B2FF7" },
+            { icon: Target,       text: "Tutor Match Ready",          c: "#7B2FF7" },
             { icon: BookOpen,     text: "Personalized Plan Generated", c: "#F59E0B" },
           ].map((chip, i) => {
             const Icon = chip.icon;
@@ -619,7 +619,7 @@ export function AIAssessmentSection() {
                 whileHover={{ scale: 1.06, y: -3 }}
                 className="flex items-center gap-2.5 px-5 py-3 rounded-2xl
                            bg-white/80 backdrop-blur-xl
-                           border border-[rgba(15,23,42,0.07)]
+                           border border-[rgba(30,27,58,0.07)]
                            shadow-md hover:shadow-lg
                            transition-all duration-300 cursor-default"
               >
@@ -627,7 +627,7 @@ export function AIAssessmentSection() {
                   style={{ background: `${chip.c}12` }}>
                   <Icon className="w-4 h-4" style={{ color: chip.c }} />
                 </div>
-                <span className="text-sm font-bold text-[#0F172A]">{chip.text}</span>
+                <span className="text-sm font-bold text-[#1E1B3A]">{chip.text}</span>
                 <motion.div animate={{ scale: [1, 1.5, 1] }} transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
                   className="w-2 h-2 rounded-full" style={{ background: chip.c }} />
               </motion.div>

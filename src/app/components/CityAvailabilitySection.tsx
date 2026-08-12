@@ -21,24 +21,24 @@ const CITIES = [
         tag: "Locality · Pune West",
         description:
             "Dedicated home-tutor coverage across Kothrud and the surrounding Pune West neighbourhoods.",
-        from: "#16C47F",
-        to: "#2563EB",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
     },
     // {
     //     name: "Pune",
     //     tag: "City-wide",
     //     description:
     //         "Full city-wide home and online tutoring coverage across all of Pune.",
-    //     from: "#2563EB",
-    //     to: "#7C3AED",
+    //     from: "#7B2FF7",
+    //     to: "#7B2FF7",
     // },
     {
         name: "Kolhapur",
         tag: "City-wide",
         description:
             "Verified tutors now available for home and online sessions across Kolhapur.",
-        from: "#7C3AED",
-        to: "#16C47F",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
     },
 ];
 
@@ -54,14 +54,14 @@ const HIGHLIGHTS = [
 
 function CityAvailabilityFull() {
     return (
-        <section className="relative overflow-hidden py-28 bg-[#F8FAFC]">
+        <section className="relative overflow-hidden py-28 bg-[#FAFAFC]">
             {/* Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div
                     className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full opacity-25"
                     style={{
                         background:
-                            "radial-gradient(ellipse, rgba(37,99,235,0.10) 0%, rgba(22,196,127,0.07) 50%, transparent 72%)",
+                            "radial-gradient(ellipse, rgba(123,47,247,0.10) 0%, rgba(248,120,8,0.07) 50%, transparent 72%)",
                         filter: "blur(60px)",
                     }}
                 />
@@ -74,20 +74,20 @@ function CityAvailabilityFull() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full mb-8 mx-auto
-                       bg-white/80 backdrop-blur-xl border border-[#16C47F]/30
-                       shadow-[0_0_28px_rgba(22,196,127,0.18)]"
+                       bg-white/80 backdrop-blur-xl border border-[#7B2FF7]/30
+                       shadow-[0_0_28px_rgba(248,120,8,0.18)]"
                     >
                         <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16C47F] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#16C47F]" />
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7B2FF7] opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#7B2FF7]" />
                         </span>
                         <span
-                            className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                            className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                             style={{ fontFamily: "var(--font-heading)" }}
                         >
                             Now Live
                         </span>
-                        <Sparkles className="w-4 h-4 text-[#16C47F]" />
+                        <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
                     </motion.div>
 
                     <motion.h2
@@ -95,11 +95,11 @@ function CityAvailabilityFull() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.08 }}
-                        className="text-4xl lg:text-6xl font-black leading-[1.05] tracking-tight text-[#0F172A] mb-6"
+                        className="text-4xl lg:text-6xl font-black leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
                         Tutoo Is Live in{" "}
-                        <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                             Your City
                         </span>
                     </motion.h2>
@@ -109,7 +109,7 @@ function CityAvailabilityFull() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.16 }}
-                        className="text-lg leading-8 text-[#64748B]"
+                        className="text-lg leading-8 text-[#6E6A85]"
                     >
                         We're rolling out verified home and online tutoring city by
                         city — starting right where you are.
@@ -127,9 +127,9 @@ function CityAvailabilityFull() {
                             transition={{ delay: i * 0.1 }}
                             whileHover={{ y: -8, scale: 1.02 }}
                             className="group relative rounded-[28px] overflow-hidden bg-white
-                         border border-[#E2E8F0] p-8 w-full sm:w-[340px]
-                         shadow-[0_4px_24px_rgba(15,23,42,0.06)]
-                         hover:shadow-[0_20px_60px_rgba(15,23,42,0.1)]
+                         border border-[#E6E3F0] p-8 w-full sm:w-[340px]
+                         shadow-[0_4px_24px_rgba(30,27,58,0.06)]
+                         hover:shadow-[0_20px_60px_rgba(30,27,58,0.1)]
                          transition-all duration-500"
                         >
                             <div className="flex items-start justify-between mb-6">
@@ -150,7 +150,7 @@ function CityAvailabilityFull() {
                             </div>
 
                             <h3
-                                className="text-2xl font-black text-[#0F172A] mb-1"
+                                className="text-2xl font-black text-[#1E1B3A] mb-1"
                                 style={{ fontFamily: "var(--font-heading)" }}
                             >
                                 {city.name}
@@ -160,7 +160,7 @@ function CityAvailabilityFull() {
                                 {city.tag}
                             </p>
 
-                            <p className="text-sm leading-7 text-[#64748B] mb-6">
+                            <p className="text-sm leading-7 text-[#6E6A85] mb-6">
                                 {city.description}
                             </p>
 
@@ -194,10 +194,10 @@ function CityAvailabilityFull() {
                             const Icon = item.icon;
                             return (
                                 <div key={item.label} className="flex items-center gap-2.5">
-                                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md">
+                                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
                                         <Icon className="w-4.5 h-4.5 text-white" />
                                     </div>
-                                    <span className="text-sm font-bold text-[#0F172A]">
+                                    <span className="text-sm font-bold text-[#1E1B3A]">
                                         {item.label}
                                     </span>
                                 </div>
@@ -208,8 +208,8 @@ function CityAvailabilityFull() {
                     <Link
                         to="/book-free-assessment"
                         className="flex-shrink-0 inline-flex items-center gap-2.5 h-14 px-8 rounded-2xl
-                       bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-bold
-                       shadow-xl shadow-[#16C47F]/20 hover:scale-[1.03] transition-all duration-300"
+                       bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold
+                       shadow-xl shadow-[#EA580C]/20 hover:scale-[1.03] transition-all duration-300"
                     >
                         Book Your Free Assessment
                         <ArrowRight className="w-5 h-5" />
@@ -231,31 +231,31 @@ function CityAvailabilityFull() {
 
 function CityAvailabilityCompact() {
     return (
-        <section className="relative py-6 bg-[#F8FAFC] mt-19">
+        <section className="relative py-6 bg-[#FAFAFC] mt-19">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3
-                     rounded-2xl bg-white/80 backdrop-blur-xl border border-[#E2E8F0]
+                     rounded-2xl bg-white/80 backdrop-blur-xl border border-[#E6E3F0]
                      shadow-sm px-6 py-4"
                 >
                     <div className="flex items-center gap-2.5">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16C47F] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16C47F]" />
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7B2FF7] opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7B2FF7]" />
                         </span>
-                        <span className="text-sm font-black uppercase tracking-wide text-[#16C47F]">
+                        <span className="text-sm font-black uppercase tracking-wide text-[#7B2FF7]">
                             Now Live
                         </span>
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center gap-2">
-                        <MapPin className="w-4 h-4 text-[#64748B]" />
+                        <MapPin className="w-4 h-4 text-[#6E6A85]" />
                         {CITIES.map((city, i) => (
                             <span key={city.name} className="flex items-center">
-                                <span className="text-sm font-bold text-[#0F172A]">
+                                <span className="text-sm font-bold text-[#1E1B3A]">
                                     {city.name}
                                 </span>
                                 {i < CITIES.length - 1 && (
@@ -267,7 +267,7 @@ function CityAvailabilityCompact() {
 
                     <Link
                         to="/book-free-assessment"
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#2563EB] hover:gap-2.5 transition-all duration-300"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#7B2FF7] hover:gap-2.5 transition-all duration-300"
                     >
                         Book a tutor near you
                         <ArrowRight className="w-3.5 h-3.5" />

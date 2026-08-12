@@ -40,7 +40,7 @@ export function ApplyTutorSection() {
         "Choose the subjects and classes you love teaching.",
 
       gradient:
-        "from-[#16C47F] to-[#2563EB]",
+        "from-[#EA580C] to-[#C2410C]",
     },
 
     {
@@ -50,7 +50,7 @@ export function ApplyTutorSection() {
         "Teach part-time or full-time based on your availability.",
 
       gradient:
-        "from-[#2563EB] to-[#7C3AED]",
+        "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -60,7 +60,7 @@ export function ApplyTutorSection() {
         "Offer classes online, at students’ homes, or both.",
 
       gradient:
-        "from-[#7C3AED] to-[#16C47F]",
+        "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -70,7 +70,7 @@ export function ApplyTutorSection() {
         "Earn based on your expertise and teaching hours.",
 
       gradient:
-        "from-[#16C47F] to-[#2563EB]",
+        "from-[#EA580C] to-[#C2410C]",
     },
 
     {
@@ -80,7 +80,7 @@ export function ApplyTutorSection() {
         "Access training programs and teaching resources.",
 
       gradient:
-        "from-[#2563EB] to-[#16C47F]",
+        "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -90,21 +90,21 @@ export function ApplyTutorSection() {
         "Our team helps you manage students and schedules.",
 
       gradient:
-        "from-[#7C3AED] to-[#2563EB]",
+        "from-[#7B2FF7] to-[#7B2FF7]",
     },
   ];
 
   return (
     <>
     <CityAvailabilitySection variant="compact" />
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-28">
+    <section className="relative overflow-hidden bg-[#FAFAFC] py-28">
 
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(22,196,127,0.08),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.08),transparent_30%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(248,120,8,0.08),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(123,47,247,0.08),transparent_30%)]" />
 
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -117,31 +117,31 @@ export function ApplyTutorSection() {
           <div>
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-[#16C47F]/20 backdrop-blur-xl shadow-sm">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-[#7B2FF7]/20 backdrop-blur-xl shadow-sm">
 
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
-              <span className="text-sm font-semibold text-[#16C47F]">
+              <span className="text-sm font-semibold text-[#7B2FF7]">
                 🚀 JOIN TUTOO AS A TUTOR
               </span>
             </div>
 
             {/* Heading */}
             <h2
-              className="mt-8 text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0F172A]"
+              className="mt-8 text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#1E1B3A]"
               style={{
                 fontFamily: "var(--font-heading)",
               }}
             >
               Turn Your Knowledge Into a{" "}
 
-              <span className="bg-gradient-to-r from-[#16C47F] via-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22C55E] to-[#7B2FF7] bg-clip-text text-transparent">
                 Rewarding Teaching Career
               </span>
             </h2>
 
             {/* Description */}
-            <p className="mt-8 text-lg leading-8 text-[#64748B] max-w-2xl">
+            <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
               Join Tutoo’s growing network of verified tutors and connect
               with students across India. Whether you prefer home tuition,
               online teaching, or both — we help you grow professionally and
@@ -172,10 +172,10 @@ export function ApplyTutorSection() {
                     bg-white/80
                     backdrop-blur-xl
                     border
-                    border-[#E2E8F0]
+                    border-[#E6E3F0]
                     p-7
-                    shadow-[0_10px_40px_rgba(15,23,42,0.05)]
-                    hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]
+                    shadow-[0_10px_40px_rgba(30,27,58,0.05)]
+                    hover:shadow-[0_20px_60px_rgba(123,47,247,0.12)]
                     transition-all
                     duration-500
                     "
@@ -203,18 +203,18 @@ export function ApplyTutorSection() {
 
                       <div className="w-full h-full rounded-[23px] bg-white flex items-center justify-center">
 
-                        <Icon className="w-7 h-7 text-[#0F172A]" />
+                        <Icon className="w-7 h-7 text-[#1E1B3A]" />
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="mt-6 relative z-10">
 
-                      <h3 className="text-xl font-black text-[#0F172A]">
+                      <h3 className="text-xl font-black text-[#1E1B3A]">
                         {item.title}
                       </h3>
 
-                      <p className="mt-3 text-[#64748B] leading-7 text-sm">
+                      <p className="mt-3 text-[#6E6A85] leading-7 text-sm">
                         {item.description}
                       </p>
                     </div>
@@ -257,18 +257,18 @@ export function ApplyTutorSection() {
                   rounded-[28px]
                   bg-white/80
                   border
-                  border-[#E2E8F0]
+                  border-[#E6E3F0]
                   backdrop-blur-xl
                   p-6
-                  shadow-[0_10px_30px_rgba(15,23,42,0.05)]
+                  shadow-[0_10px_30px_rgba(30,27,58,0.05)]
                   "
                 >
 
-                  <h4 className="text-3xl font-black text-[#0F172A]">
+                  <h4 className="text-3xl font-black text-[#1E1B3A]">
                     {item.value}
                   </h4>
 
-                  <p className="mt-2 text-sm text-[#64748B]">
+                  <p className="mt-2 text-sm text-[#6E6A85]">
                     {item.label}
                   </p>
                 </div>
@@ -301,14 +301,14 @@ export function ApplyTutorSection() {
                   rounded-2xl
                   bg-white/80
                   border
-                  border-[#E2E8F0]
+                  border-[#E6E3F0]
                   shadow-sm
                   "
                 >
 
-                  <CheckCircle2 className="w-4 h-4 text-[#16C47F]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#7B2FF7]" />
 
-                  <span className="text-sm font-medium text-[#0F172A]">
+                  <span className="text-sm font-medium text-[#1E1B3A]">
                     {item}
                   </span>
                 </div>
@@ -316,11 +316,11 @@ export function ApplyTutorSection() {
             </div>
 
             {/* Trust Strip */}
-            <div className="mt-12 rounded-[28px] bg-white/70 backdrop-blur-xl border border-[#E2E8F0] px-6 py-5 shadow-sm">
+            <div className="mt-12 rounded-[28px] bg-white/70 backdrop-blur-xl border border-[#E6E3F0] px-6 py-5 shadow-sm">
 
-              <p className="text-sm font-medium text-[#64748B] flex flex-wrap items-center gap-3">
+              <p className="text-sm font-medium text-[#6E6A85] flex flex-wrap items-center gap-3">
 
-                <ShieldCheck className="w-5 h-5 text-[#16C47F]" />
+                <ShieldCheck className="w-5 h-5 text-[#7B2FF7]" />
 
                 No registration fees • Transparent process • Verified student leads
               </p>
@@ -348,29 +348,29 @@ export function ApplyTutorSection() {
             bg-white/75
             backdrop-blur-2xl
             border
-            border-[#E2E8F0]
-            shadow-[0_20px_80px_rgba(15,23,42,0.08)]
+            border-[#E6E3F0]
+            shadow-[0_20px_80px_rgba(30,27,58,0.08)]
             p-8 lg:p-10
             "
           >
 
             {/* Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#16C47F]/5 via-[#2563EB]/5 to-[#7C3AED]/5" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#7B2FF7]/5 via-[#7B2FF7]/5 to-[#7B2FF7]/5" />
 
             <div className="relative z-10">
 
               {/* Header */}
               <div>
 
-                <p className="text-sm font-semibold text-[#16C47F]">
+                <p className="text-sm font-semibold text-[#7B2FF7]">
                   Start Your Application
                 </p>
 
-                <h3 className="mt-3 text-4xl font-black text-[#0F172A]">
+                <h3 className="mt-3 text-4xl font-black text-[#1E1B3A]">
                   Apply as Tutor
                 </h3>
 
-                <p className="mt-4 text-[#64748B] leading-7">
+                <p className="mt-4 text-[#6E6A85] leading-7">
                   Complete the form below and our recruitment team will
                   contact you shortly.
                 </p>
@@ -401,7 +401,7 @@ export function ApplyTutorSection() {
           -translate-x-1/2
           w-[600px]
           h-[600px]
-          bg-[#7C3AED]/10
+          bg-[#7B2FF7]/10
           rounded-full
           blur-3xl
           pointer-events-none

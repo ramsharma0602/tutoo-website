@@ -21,48 +21,48 @@ import { useNavigate } from "react-router-dom";
 ───────────────────────────────────────────── */
 
 const categories = [
-    { label: "All", color: "#16C47F", activeGrad: "from-[#16C47F] to-[#2563EB]" },
-    { label: "Study Tips", color: "#2563EB", activeGrad: "from-[#2563EB] to-[#7C3AED]" },
-    { label: "Exam Preparation", color: "#7C3AED", activeGrad: "from-[#7C3AED] to-[#2563EB]" },
-    { label: "Parenting", color: "#16C47F", activeGrad: "from-[#16C47F] to-[#2563EB]" },
+    { label: "All", color: "#7B2FF7", activeGrad: "from-[#EA580C] to-[#C2410C]" },
+    { label: "Study Tips", color: "#7B2FF7", activeGrad: "from-[#7B2FF7] to-[#7B2FF7]" },
+    { label: "Exam Preparation", color: "#7B2FF7", activeGrad: "from-[#7B2FF7] to-[#7B2FF7]" },
+    { label: "Parenting", color: "#7B2FF7", activeGrad: "from-[#EA580C] to-[#C2410C]" },
     { label: "Career Guidance", color: "#F59E0B", activeGrad: "from-[#F59E0B] to-[#EF4444]" },
-    { label: "Tutor Resources", color: "#2563EB", activeGrad: "from-[#2563EB] to-[#16C47F]" },
-    { label: "Online Learning", color: "#7C3AED", activeGrad: "from-[#7C3AED] to-[#EC4899]" },
+    { label: "Tutor Resources", color: "#7B2FF7", activeGrad: "from-[#7B2FF7] to-[#7B2FF7]" },
+    { label: "Online Learning", color: "#7B2FF7", activeGrad: "from-[#7B2FF7] to-[#EC4899]" },
 ];
 
 const blogPosts = [
     {
-        cat: "Study Tips", catColor: "#2563EB",
-        catBg: "rgba(37,99,235,0.09)",
-        catBorder: "rgba(37,99,235,0.2)",
+        cat: "Study Tips", catColor: "#7B2FF7",
+        catBg: "rgba(123,47,247,0.09)",
+        catBorder: "rgba(123,47,247,0.2)",
         title: "Best Study Techniques for Faster Learning",
         desc: "Unlock science-backed methods including spaced repetition, active recall, and the Feynman Technique to absorb complex topics faster.",
         author: "Priya Sharma", role: "Senior Educator", readTime: "5 min",
-        grad: "from-[#2563EB] to-[#7C3AED]",
-        imgBg: "from-[rgba(37,99,235,0.12)] to-[rgba(124,58,237,0.1)]",
+        grad: "from-[#7B2FF7] to-[#7B2FF7]",
+        imgBg: "from-[rgba(123,47,247,0.12)] to-[rgba(123,47,247,0.1)]",
         image: "https://studycornerbd.com/wp-content/uploads/2026/05/Best-Study-Techniques-That-Boost-Memory-Fast--1024x538.webp",
         tag: "Trending",
         authorImage: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201709/yt-story_647_090517015649.jpg?VersionId=wIQL131pthcasFzFyaoG5zYUwtLu961c",
     },
     {
         id: "reduce-academic-stress",
-        cat: "Parenting", catColor: "#16C47F", catBg: "rgba(22,196,127,0.09)", catBorder: "rgba(22,196,127,0.2)",
+        cat: "Parenting", catColor: "#7B2FF7", catBg: "rgba(248,120,8,0.09)", catBorder: "rgba(248,120,8,0.2)",
         title: "How Parents Can Reduce Their Child's Academic Stress",
         desc: "Practical, empathy-driven approaches parents can use to create a healthy learning environment at home without added pressure.",
         author: "Meera Iyer", role: "Child Psychologist", readTime: "6 min",
-        grad: "from-[#16C47F] to-[#2563EB]",
-        imgBg: "from-[rgba(22,196,127,0.12)] to-[rgba(37,99,235,0.1)]",
+        grad: "from-[#EA580C] to-[#C2410C]",
+        imgBg: "from-[rgba(248,120,8,0.12)] to-[rgba(123,47,247,0.1)]",
         image: "https://www.chirec.ac.in/wp-content/uploads/sites/27/2026/03/How-to-handle-academic-address.jpg",
         tag: "Popular",
         authorImage: "https://img.freepik.com/premium-photo/beautiful-indian-teacher-sari-standing-front-blackboard_979520-60712.jpg?semt=ais_hybrid&w=740&q=80",
     },
     {
-        cat: "Online Learning", catColor: "#7C3AED", catBg: "rgba(124,58,237,0.09)", catBorder: "rgba(124,58,237,0.2)",
+        cat: "Online Learning", catColor: "#7B2FF7", catBg: "rgba(123,47,247,0.09)", catBorder: "rgba(123,47,247,0.2)",
         title: "5 Effective Time Management Tips for Students",
         desc: "From time-blocking to the Pomodoro method — master your schedule and boost academic output without burning out.",
         author: "Aryan Kapoor", role: "EdTech Researcher", readTime: "4 min",
-        grad: "from-[#7C3AED] to-[#2563EB]",
-        imgBg: "from-[rgba(124,58,237,0.12)] to-[rgba(37,99,235,0.1)]",
+        grad: "from-[#7B2FF7] to-[#7B2FF7]",
+        imgBg: "from-[rgba(123,47,247,0.12)] to-[rgba(123,47,247,0.1)]",
         image: "https://chrysalishigh.com/wp-content/uploads/2023/12/Quick-tips-for-Time-Management.jpg",
         tag: "New",
         authorImage: "https://img.magnific.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?semt=ais_hybrid&w=740&q=80",
@@ -79,23 +79,23 @@ const blogPosts = [
         authorImage: "https://drsumaorthodontist.com/wp-content/uploads/2023/01/Testimonials-21.png",
     },
     {
-        cat: "Career Guidance", catColor: "#2563EB", catBg: "rgba(37,99,235,0.09)", catBorder: "rgba(37,99,235,0.2)",
+        cat: "Career Guidance", catColor: "#7B2FF7", catBg: "rgba(123,47,247,0.09)", catBorder: "rgba(123,47,247,0.2)",
         title: "Top Career Paths After Class 12 Science in India",
         desc: "Beyond medicine and engineering — discover emerging fields like data science, biotechnology, and design that reward curiosity.",
         author: "Sneha Patel", role: "Career Counsellor", readTime: "7 min",
-        grad: "from-[#2563EB] to-[#16C47F]",
-        imgBg: "from-[rgba(37,99,235,0.12)] to-[rgba(22,196,127,0.1)]",
+        grad: "from-[#7B2FF7] to-[#7B2FF7]",
+        imgBg: "from-[rgba(123,47,247,0.12)] to-[rgba(248,120,8,0.1)]",
         image: "https://deshbhagatuniversity.in/wp-content/uploads/2025/05/best-career-options-after-12th-science.webp",
         tag: "Trending",
         authorImage: "https://st4.depositphotos.com/5653638/41712/i/450/depositphotos_417127190-stock-photo-portrait-indian-lady-teacher-saree.jpg",
     },
     {
-        cat: "Tutor Resources", catColor: "#16C47F", catBg: "rgba(22,196,127,0.09)", catBorder: "rgba(22,196,127,0.2)",
+        cat: "Tutor Resources", catColor: "#7B2FF7", catBg: "rgba(248,120,8,0.09)", catBorder: "rgba(248,120,8,0.2)",
         title: "How to Explain Difficult Concepts Simply and Memorably",
         desc: "Teaching techniques every tutor should know — analogies, visual storytelling, and the chunking method for maximum student retention.",
         author: "Rahul Kumar", role: "Mathematics Tutor", readTime: "5 min",
-        grad: "from-[#16C47F] to-[#7C3AED]",
-        imgBg: "from-[rgba(22,196,127,0.12)] to-[rgba(124,58,237,0.1)]",
+        grad: "from-[#7B2FF7] to-[#7B2FF7]",
+        imgBg: "from-[rgba(248,120,8,0.12)] to-[rgba(123,47,247,0.1)]",
         image: "https://www.nitsotech.com/wp-content/uploads/Tips-For-Simplifying-Complex-Ideas-to-Explain-Non-Experts.jpg",
         tag: "New",
         authorImage: "https://img.magnific.com/premium-photo/full-body-portrait-photo-happy-indian-school-male-teacher-standing-proudly-blurred-background-o_928503-3759.jpg?semt=ais_hybrid&w=740&q=80",
@@ -180,9 +180,9 @@ const featuredBlogs = [
 ];
 
 const tagMap: Record<string, { color: string; bg: string }> = {
-    Trending: { color: "#2563EB", bg: "rgba(37,99,235,0.1)" },
-    Popular: { color: "#16C47F", bg: "rgba(22,196,127,0.1)" },
-    New: { color: "#7C3AED", bg: "rgba(124,58,237,0.1)" },
+    Trending: { color: "#7B2FF7", bg: "rgba(123,47,247,0.1)" },
+    Popular: { color: "#7B2FF7", bg: "rgba(248,120,8,0.1)" },
+    New: { color: "#7B2FF7", bg: "rgba(123,47,247,0.1)" },
     Featured: { color: "#F59E0B", bg: "rgba(245,158,11,0.1)" },
 };
 
@@ -220,7 +220,7 @@ function BlogCard({
 
             whileHover={{
                 y: -4,
-                boxShadow: "0 20px 60px rgba(15,23,42,0.12)",
+                boxShadow: "0 20px 60px rgba(30,27,58,0.12)",
             }}
 
             onClick={() => navigate(`/blog/${post.id}`)}
@@ -235,19 +235,19 @@ function BlogCard({
             cursor-pointer
             transition-all
             duration-300
-            hover:border-[#2563EB]/20
+            hover:border-[#7B2FF7]/20
             "
 
             style={{
                 background: "rgba(255,255,255,0.92)",
-                borderColor: "rgba(15,23,42,0.07)",
+                borderColor: "rgba(30,27,58,0.07)",
                 backdropFilter: "blur(16px)",
-                boxShadow: "0 4px 24px rgba(15,23,42,0.06)",
+                boxShadow: "0 4px 24px rgba(30,27,58,0.06)",
             }}
         >
 
             {/* Thumbnail */}
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#F8FAFC]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#FAFAFC]">
 
                 {/* Blog Image */}
                 <img
@@ -277,8 +277,8 @@ function BlogCard({
           absolute
           inset-0
           bg-gradient-to-t
-          from-[#0B1220]/55
-          via-[#0B1220]/10
+          from-[#0A1028]/55
+          via-[#0A1028]/10
           to-transparent
           "
                 />
@@ -323,7 +323,7 @@ function BlogCard({
                     className="absolute inset-0 opacity-[0.04]"
                     style={{
                         backgroundImage:
-                            "linear-gradient(45deg, #0F172A 1px, transparent 1px), linear-gradient(-45deg, #0F172A 1px, transparent 1px)",
+                            "linear-gradient(45deg, #1E1B3A 1px, transparent 1px), linear-gradient(-45deg, #1E1B3A 1px, transparent 1px)",
                         backgroundSize: "28px 28px",
                     }}
                 />
@@ -406,10 +406,10 @@ function BlogCard({
                     className="
           text-base
           font-bold
-          text-[#0F172A]
+          text-[#1E1B3A]
           leading-snug
           mb-3
-          group-hover:text-[#2563EB]
+          group-hover:text-[#7B2FF7]
           transition-colors
           duration-300
           line-clamp-2
@@ -422,12 +422,12 @@ function BlogCard({
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-[#64748B] mb-5 flex-1 line-clamp-2">
+                <p className="text-sm leading-relaxed text-[#6E6A85] mb-5 flex-1 line-clamp-2">
                     {post.desc}
                 </p>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-[rgba(15,23,42,0.06)]">
+                <div className="flex items-center justify-between pt-4 border-t border-[rgba(30,27,58,0.06)]">
 
                     {/* Author */}
                     <div className="flex items-center gap-2.5">
@@ -467,7 +467,7 @@ function BlogCard({
 
                         <div>
 
-                            <p className="text-xs font-bold text-[#0F172A]">
+                            <p className="text-xs font-bold text-[#1E1B3A]">
                                 {post.author}
                             </p>
 
@@ -494,8 +494,8 @@ function BlogCard({
             gap-1
             text-xs
             font-bold
-            text-[#2563EB]
-            hover:text-[#16C47F]
+            text-[#7B2FF7]
+            hover:text-[#7B2FF7]
             transition-colors
             duration-300
             "
@@ -565,10 +565,10 @@ export function BlogListingSections() {
             {/* ══════════════════════════════════════════════
                 SECTION 2 — CATEGORIES
             ══════════════════════════════════════════════ */}
-            <section className="relative bg-[#F8FAFC] pt-16 pb-4 overflow-hidden">
+            <section className="relative bg-[#FAFAFC] pt-16 pb-4 overflow-hidden">
                 {/* Subtle bg glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[180px] rounded-full opacity-30 pointer-events-none"
-                    style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, transparent 70%)", filter: "blur(40px)" }} />
+                    style={{ background: "radial-gradient(ellipse, rgba(123,47,247,0.07) 0%, transparent 70%)", filter: "blur(40px)" }} />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
                     <motion.div
@@ -579,8 +579,8 @@ export function BlogListingSections() {
                     >
                         {/* Left arrow */}
                         <button onClick={() => scrollCats("left")}
-                            className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center border border-[rgba(15,23,42,0.08)] bg-white shadow-sm hover:shadow-md hover:border-[rgba(37,99,235,0.2)] transition-all duration-250 hidden lg:flex">
-                            <ChevronLeft className="w-4 h-4 text-[#64748B]" />
+                            className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center border border-[rgba(30,27,58,0.08)] bg-white shadow-sm hover:shadow-md hover:border-[rgba(123,47,247,0.2)] transition-all duration-250 hidden lg:flex">
+                            <ChevronLeft className="w-4 h-4 text-[#6E6A85]" />
                         </button>
 
                         {/* Scrollable pills */}
@@ -598,8 +598,8 @@ export function BlogListingSections() {
                                         className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-250 whitespace-nowrap`}
                                         style={
                                             isActive
-                                                ? { background: `linear-gradient(135deg, ${cat.color}, #2563EB)`, color: "#fff", border: "1px solid transparent", boxShadow: `0 4px 20px ${cat.color}40` }
-                                                : { background: "rgba(255,255,255,0.85)", color: "#0F172A", borderColor: "rgba(15,23,42,0.09)", backdropFilter: "blur(8px)", boxShadow: "0 2px 8px rgba(15,23,42,0.05)" }
+                                                ? { background: `linear-gradient(135deg, ${cat.color}, #7B2FF7)`, color: "#fff", border: "1px solid transparent", boxShadow: `0 4px 20px ${cat.color}40` }
+                                                : { background: "rgba(255,255,255,0.85)", color: "#1E1B3A", borderColor: "rgba(30,27,58,0.09)", backdropFilter: "blur(8px)", boxShadow: "0 2px 8px rgba(30,27,58,0.05)" }
                                         }
                                     >
                                         {cat.label}
@@ -610,14 +610,14 @@ export function BlogListingSections() {
 
                         {/* Right arrow */}
                         <button onClick={() => scrollCats("right")}
-                            className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center border border-[rgba(15,23,42,0.08)] bg-white shadow-sm hover:shadow-md hover:border-[rgba(37,99,235,0.2)] transition-all duration-250 hidden lg:flex">
-                            <ChevronRight className="w-4 h-4 text-[#64748B]" />
+                            className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center border border-[rgba(30,27,58,0.08)] bg-white shadow-sm hover:shadow-md hover:border-[rgba(123,47,247,0.2)] transition-all duration-250 hidden lg:flex">
+                            <ChevronRight className="w-4 h-4 text-[#6E6A85]" />
                         </button>
                     </motion.div>
 
                     {/* Active indicator strip */}
                     <motion.div layout className="flex justify-center mt-4">
-                        <div className="h-0.5 rounded-full w-24 bg-gradient-to-r from-[#16C47F] to-[#2563EB] opacity-50" />
+                        <div className="h-0.5 rounded-full w-24 bg-gradient-to-r from-[#EA580C] to-[#C2410C] opacity-50" />
                     </motion.div>
                 </div>
             </section>
@@ -625,7 +625,7 @@ export function BlogListingSections() {
             {/* ══════════════════════════════════════════════
                 SECTION 3 — FEATURED BLOG
             ══════════════════════════════════════════════ */}
-            <section className="relative bg-[#F8FAFC] py-16 overflow-hidden">
+            <section className="relative bg-[#FAFAFC] py-16 overflow-hidden">
 
                 {/* Background */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -634,7 +634,7 @@ export function BlogListingSections() {
                         className="absolute -top-20 right-0 w-[500px] h-[400px] rounded-full opacity-20"
                         style={{
                             background:
-                                "radial-gradient(circle, rgba(22,196,127,0.15), transparent 70%)",
+                                "radial-gradient(circle, rgba(248,120,8,0.15), transparent 70%)",
                             filter: "blur(60px)",
                         }}
                     />
@@ -643,7 +643,7 @@ export function BlogListingSections() {
                         className="absolute bottom-0 left-0 w-[400px] h-[300px] rounded-full opacity-15"
                         style={{
                             background:
-                                "radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%)",
+                                "radial-gradient(circle, rgba(123,47,247,0.12), transparent 70%)",
                             filter: "blur(50px)",
                         }}
                     />
@@ -656,16 +656,16 @@ export function BlogListingSections() {
 
                         <div>
 
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-[#16C47F] bg-[#16C47F]/10 border border-[#16C47F]/20 backdrop-blur-xl">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-[#7B2FF7] bg-[#7B2FF7]/10 border border-[#7B2FF7]/20 backdrop-blur-xl">
                                 Featured Resources
                             </span>
 
                             <h2
-                                className="mt-5 text-4xl lg:text-5xl font-black text-[#0B1220]"
+                                className="mt-5 text-4xl lg:text-5xl font-black text-[#0A1028]"
                                 style={{ fontFamily: "var(--font-heading)" }}
                             >
                                 Featured{" "}
-                                <span className="bg-gradient-to-r from-[#2563EB] to-[#16C47F] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                                     Learning Insights
                                 </span>
                             </h2>
@@ -690,12 +690,12 @@ export function BlogListingSections() {
                         items-center
                         justify-center
                         hover:scale-105
-                        hover:border-[#2563EB]/30
+                        hover:border-[#7B2FF7]/30
                         transition-all
                         duration-300
                         "
                             >
-                                <ArrowLeft className="w-5 h-5 text-[#0F172A]" />
+                                <ArrowLeft className="w-5 h-5 text-[#1E1B3A]" />
                             </button>
 
                             <button
@@ -706,10 +706,10 @@ export function BlogListingSections() {
                         h-12
                         rounded-2xl
                         bg-gradient-to-r
-                        from-[#16C47F]
-                        to-[#2563EB]
+                        from-[#7B2FF7]
+                        to-[#7B2FF7]
                         shadow-xl
-                        shadow-[#2563EB]/20
+                        shadow-[#7B2FF7]/20
                         flex
                         items-center
                         justify-center
@@ -746,7 +746,7 @@ export function BlogListingSections() {
                         border-white
                         bg-white/80
                         backdrop-blur-2xl
-                        shadow-[0_20px_80px_rgba(15,23,42,0.08)]
+                        shadow-[0_20px_80px_rgba(30,27,58,0.08)]
                         "
                         >
 
@@ -773,7 +773,7 @@ export function BlogListingSections() {
                                     />
 
                                     {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/55 via-[#0B1220]/10 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/55 via-[#0A1028]/10 to-transparent" />
 
                                     {/* Featured Badge */}
                                     <div className="absolute bottom-6 left-6">
@@ -788,14 +788,14 @@ export function BlogListingSections() {
                                 rounded-full
                                 text-xs
                                 font-bold
-                                text-[#16C47F]
+                                text-[#7B2FF7]
                                 bg-white/10
                                 backdrop-blur-xl
                                 border
                                 border-white/10
                                 "
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-[#16C47F] animate-pulse" />
+                                            <div className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
 
                                             Featured Article
                                         </span>
@@ -815,10 +815,10 @@ export function BlogListingSections() {
                                 rounded-full
                                 text-xs
                                 font-bold
-                                text-[#2563EB]
-                                bg-[#2563EB]/10
+                                text-[#7B2FF7]
+                                bg-[#7B2FF7]/10
                                 border
-                                border-[#2563EB]/15
+                                border-[#7B2FF7]/15
                                 "
                                         >
                                             {activeBlog.category}
@@ -840,7 +840,7 @@ export function BlogListingSections() {
                             font-black
                             leading-[1.12]
                             tracking-tight
-                            text-[#0B1220]
+                            text-[#0A1028]
                             mb-6
                             "
                                         style={{ fontFamily: "var(--font-heading)" }}
@@ -852,7 +852,7 @@ export function BlogListingSections() {
                                                     {part}
 
                                                     {i !== arr.length - 1 && (
-                                                        <span className="bg-gradient-to-r from-[#2563EB] to-[#16C47F] bg-clip-text text-transparent">
+                                                        <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                                                             {activeBlog.highlight}
                                                         </span>
                                                     )}
@@ -861,7 +861,7 @@ export function BlogListingSections() {
                                     </h2>
 
                                     {/* Description */}
-                                    <p className="text-base leading-8 text-[#64748B] mb-10 max-w-lg">
+                                    <p className="text-base leading-8 text-[#6E6A85] mb-10 max-w-lg">
                                         {activeBlog.description}
                                     </p>
 
@@ -870,7 +870,7 @@ export function BlogListingSections() {
 
                                         <div className="relative">
 
-                                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#2563EB]/40 to-[#7C3AED]/40 blur-xl" />
+                                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#7B2FF7]/40 to-[#7B2FF7]/40 blur-xl" />
 
                                             <img
                                                 src={activeBlog.authorImage}
@@ -896,7 +896,7 @@ export function BlogListingSections() {
                                 w-3.5
                                 h-3.5
                                 rounded-full
-                                bg-[#16C47F]
+                                bg-[#7B2FF7]
                                 border-2
                                 border-white
                                 "
@@ -905,11 +905,11 @@ export function BlogListingSections() {
 
                                         <div>
 
-                                            <p className="text-sm font-bold text-[#0F172A]">
+                                            <p className="text-sm font-bold text-[#1E1B3A]">
                                                 {activeBlog.author}
                                             </p>
 
-                                            <p className="text-xs text-[#64748B] mt-1">
+                                            <p className="text-xs text-[#6E6A85] mt-1">
                                                 {activeBlog.role}
                                             </p>
                                         </div>
@@ -927,13 +927,13 @@ export function BlogListingSections() {
                                             px-7
                                             rounded-2xl
                                             bg-gradient-to-r
-                                            from-[#16C47F]
-                                            to-[#2563EB]
+                                            from-[#7B2FF7]
+                                            to-[#7B2FF7]
                                             text-white
                                             text-sm
                                             font-bold
                                             shadow-xl
-                                            shadow-[#2563EB]/20
+                                            shadow-[#7B2FF7]/20
                                             hover:scale-[1.02]
                                             transition-all
                                             duration-300
@@ -947,9 +947,9 @@ export function BlogListingSections() {
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                                         </button>
 
-                                        <div className="flex items-center gap-2 text-sm font-semibold text-[#64748B]">
+                                        <div className="flex items-center gap-2 text-sm font-semibold text-[#6E6A85]">
 
-                                            <TrendingUp className="w-4 h-4 text-[#16C47F]" />
+                                            <TrendingUp className="w-4 h-4 text-[#7B2FF7]" />
 
                                             <span>{activeBlog.reads}</span>
                                         </div>
@@ -958,7 +958,7 @@ export function BlogListingSections() {
                             </div>
 
                             {/* Top Gradient Line */}
-                            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+                            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
                         </motion.div>
                     </AnimatePresence>
                 </div>
@@ -968,12 +968,12 @@ export function BlogListingSections() {
                 SECTION 4 — BLOG GRID
             ══════════════════════════════════════════════ */}
 
-            <section className="relative bg-[#F8FAFC] py-16 overflow-hidden">
+            <section className="relative bg-[#FAFAFC] py-16 overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                     <div className="absolute top-0 right-0 w-[450px] h-[450px] rounded-full opacity-20"
-                        style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+                        style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
                     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-15"
-                        style={{ background: "radial-gradient(circle, rgba(22,196,127,0.1), transparent 70%)", filter: "blur(60px)" }} />
+                        style={{ background: "radial-gradient(circle, rgba(248,120,8,0.1), transparent 70%)", filter: "blur(60px)" }} />
                 </div>
 
                 <div ref={gridRef} className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -987,20 +987,20 @@ export function BlogListingSections() {
                     >
                         <div>
                             <div className="flex items-center gap-2 mb-1">
-                                <BookOpen className="w-5 h-5 text-[#2563EB]" />
-                                <span className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider">All Articles</span>
+                                <BookOpen className="w-5 h-5 text-[#7B2FF7]" />
+                                <span className="text-sm font-semibold text-[#7B2FF7] uppercase tracking-wider">All Articles</span>
                             </div>
-                            <h2 className="text-3xl font-black text-[#0B1220] tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
+                            <h2 className="text-3xl font-black text-[#0A1028] tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
                                 Explore the{" "}
-                                <span className="bg-gradient-to-r from-[#2563EB] to-[#16C47F] bg-clip-text text-transparent">Knowledge Hub</span>
+                                <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">Knowledge Hub</span>
                             </h2>
                         </div>
 
                         {/* Floating stats */}
                         <div className="hidden lg:flex items-center gap-3">
                             {[
-                                { icon: TrendingUp, label: "Trending", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.18)" },
-                                { icon: Sparkles, label: "500+ Articles", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.18)" },
+                                { icon: TrendingUp, label: "Trending", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.18)" },
+                                { icon: Sparkles, label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.18)" },
                             ].map((chip) => (
                                 <div key={chip.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold border"
                                     style={{ color: chip.color, background: chip.bg, borderColor: chip.border }}>
@@ -1034,14 +1034,14 @@ export function BlogListingSections() {
                             className="flex justify-center mt-14"
                         >
                             <motion.button
-                                whileHover={{ scale: 1.03, boxShadow: "0 8px 28px rgba(37,99,235,0.18)" }}
+                                whileHover={{ scale: 1.03, boxShadow: "0 8px 28px rgba(123,47,247,0.18)" }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => setShowAll(!showAll)}
                                 className="group h-14 px-10 rounded-2xl text-sm font-bold border transition-all duration-300 flex items-center gap-2"
-                                style={{ background: "rgba(255,255,255,0.9)", borderColor: "rgba(15,23,42,0.1)", color: "#0F172A", backdropFilter: "blur(12px)", boxShadow: "0 4px 20px rgba(15,23,42,0.07)" }}
+                                style={{ background: "rgba(255,255,255,0.9)", borderColor: "rgba(30,27,58,0.1)", color: "#1E1B3A", backdropFilter: "blur(12px)", boxShadow: "0 4px 20px rgba(30,27,58,0.07)" }}
                             >
                                 {showAll ? "Show Less" : "Load More Articles"}
-                                <ArrowRight className={`w-4 h-4 text-[#2563EB] transition-transform duration-300 ${showAll ? "rotate-90" : "group-hover:translate-x-0.5"}`} />
+                                <ArrowRight className={`w-4 h-4 text-[#7B2FF7] transition-transform duration-300 ${showAll ? "rotate-90" : "group-hover:translate-x-0.5"}`} />
                             </motion.button>
                         </motion.div>
                     )}
@@ -1054,9 +1054,9 @@ export function BlogListingSections() {
                         className="flex flex-wrap justify-center gap-3 mt-12"
                     >
                         {[
-                            { label: "500+ Articles", color: "#16C47F", bg: "rgba(22,196,127,0.07)", border: "rgba(22,196,127,0.18)" },
-                            { label: "✦ AI Learning Insights", color: "#7C3AED", bg: "rgba(124,58,237,0.07)", border: "rgba(124,58,237,0.18)" },
-                            { label: "↑ Top Study Resources", color: "#2563EB", bg: "rgba(37,99,235,0.07)", border: "rgba(37,99,235,0.18)" },
+                            { label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.18)" },
+                            { label: "✦ AI Learning Insights", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.18)" },
+                            { label: "↑ Top Study Resources", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.18)" },
                             { label: "⚡ New Blogs Added Weekly", color: "#F59E0B", bg: "rgba(245,158,11,0.07)", border: "rgba(245,158,11,0.18)" },
                         ].map((chip) => (
                             <span key={chip.label} className="inline-flex items-center text-[11px] font-semibold px-3.5 py-2 rounded-full border"

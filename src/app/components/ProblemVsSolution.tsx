@@ -30,10 +30,10 @@ const solutions = [
 export function ProblemVsSolution() {
   const navigate = useNavigate();
   return (
-    <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#FAFAFC] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[#16C47F]/5 to-[#2563EB]/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-[#7B2FF7]/5 to-[#7B2FF7]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -49,15 +49,15 @@ export function ProblemVsSolution() {
             The Problem
           </span>
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-5 leading-tight"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Smart Assessments. Expert Tutors.{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-violet-500">
               Better Outcomes.
             </span>
           </h2>
-          <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-3xl mx-auto">
             Most platforms simply help you find a tutor. Tutoo manages your child's complete learning journey through technology, analytics, safety systems, and measurable outcomes.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function ProblemVsSolution() {
             {/* Card */}
             <div className="relative rounded-3xl overflow-hidden border border-red-100 bg-white/80 backdrop-blur-sm shadow-xl shadow-red-500/5">
               {/* Top gradient bar */}
-              <div className="h-1 w-full bg-gradient-to-r from-red-400 to-pink-500" />
+              <div className="h-1 w-full bg-gradient-to-r from-red-400 to-violet-500" />
 
               <div className="p-8">
                 {/* Title */}
@@ -85,7 +85,7 @@ export function ProblemVsSolution() {
                   </div>
                   <div>
                     <p className="text-xs text-red-400 font-semibold uppercase tracking-widest">Old Way</p>
-                    <h3 className="text-xl font-bold text-[#0B1220]">Traditional Tutor Marketplace</h3>
+                    <h3 className="text-xl font-bold text-[#0A1028]">Traditional Tutor Marketplace</h3>
                   </div>
                 </div>
 
@@ -112,7 +112,7 @@ export function ProblemVsSolution() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-start gap-3 text-sm text-[#64748B]"
+                      className="flex items-start gap-3 text-sm text-[#6E6A85]"
                     >
                       <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center">
                         <X className="w-3 h-3 text-red-500" />
@@ -137,20 +137,20 @@ export function ProblemVsSolution() {
             className="relative group"
           >
             {/* Outer glow */}
-            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] opacity-40 blur-sm group-hover:opacity-70 transition-opacity duration-500" />
+            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] opacity-40 blur-sm group-hover:opacity-70 transition-opacity duration-500" />
 
-            <div className="relative rounded-3xl overflow-hidden border border-[#16C47F]/30 bg-[#0B1220] shadow-2xl shadow-[#16C47F]/10">
+            <div className="relative rounded-3xl overflow-hidden border border-[#7B2FF7]/30 bg-[#0A1028] shadow-2xl shadow-[#EA580C]/10">
               {/* Top gradient bar */}
-              <div className="h-1 w-full bg-gradient-to-r from-[#16C47F] to-[#2563EB]" />
+              <div className="h-1 w-full bg-gradient-to-r from-[#EA580C] to-[#C2410C]" />
 
               <div className="p-8">
                 {/* Title */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#16C47F]/20 to-[#2563EB]/20 flex items-center justify-center border border-[#16C47F]/30">
-                    <Zap className="w-5 h-5 text-[#16C47F]" />
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#7B2FF7]/20 to-[#7B2FF7]/20 flex items-center justify-center border border-[#7B2FF7]/30">
+                    <Zap className="w-5 h-5 text-[#7B2FF7]" />
                   </div>
                   <div>
-                    <p className="text-xs text-[#16C47F] font-semibold uppercase tracking-widest">New Way</p>
+                    <p className="text-xs text-[#7B2FF7] font-semibold uppercase tracking-widest">New Way</p>
                     <h3 className="text-xl font-bold text-white">Tutoo Learning OS</h3>
                   </div>
                 </div>
@@ -158,9 +158,9 @@ export function ProblemVsSolution() {
                 {/* Mini dashboard visual */}
                 {/* <div className="mb-6 rounded-2xl bg-white/5 border border-white/10 p-4">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-[#16C47F] font-semibold">Live Dashboard</span>
-                    <span className="flex items-center gap-1.5 text-xs text-emerald-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
+                    <span className="text-xs text-[#7B2FF7] font-semibold">Live Dashboard</span>
+                    <span className="flex items-center gap-1.5 text-xs text-violet-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse inline-block" />
                       Active
                     </span>
                   </div>
@@ -189,8 +189,8 @@ export function ProblemVsSolution() {
                       transition={{ delay: i * 0.05 }}
                       className="flex items-start gap-3 text-sm text-white/75"
                     >
-                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-[#16C47F]/30 to-[#2563EB]/30 border border-[#16C47F]/40 flex items-center justify-center">
-                        <Check className="w-3 h-3 text-[#16C47F]" />
+                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7]/30 to-[#7B2FF7]/30 border border-[#7B2FF7]/40 flex items-center justify-center">
+                        <Check className="w-3 h-3 text-[#7B2FF7]" />
                       </span>
                       {item}
                     </motion.li>
@@ -199,8 +199,8 @@ export function ProblemVsSolution() {
               </div>
 
               {/* Emerald glow */}
-              <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-[#16C47F]/15 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#2563EB]/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-[#7B2FF7]/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#7B2FF7]/15 rounded-full blur-3xl pointer-events-none" />
             </div>
           </motion.div>
         </div>
@@ -213,13 +213,13 @@ export function ProblemVsSolution() {
           transition={{ delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-[#64748B] mb-4 text-sm">
-            Join <span className="font-semibold text-[#0B1220]">12,000+ families</span> already experiencing the Tutoo difference
+          <p className="text-[#6E6A85] mb-4 text-sm">
+            Join <span className="font-semibold text-[#0A1028]">12,000+ families</span> already experiencing the Tutoo difference
           </p>
           <button
             type="button"
             onClick={() => navigate('/book-free-assessment')}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold text-sm shadow-lg shadow-[#16C47F]/25 hover:shadow-[#16C47F]/40 hover:scale-105 transition-all duration-300">
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold text-sm shadow-lg shadow-[#EA580C]/25 hover:shadow-[#EA580C]/40 hover:scale-105 transition-all duration-300">
             <Zap className="w-4 h-4" />
             Book Free Assessment
           </button>

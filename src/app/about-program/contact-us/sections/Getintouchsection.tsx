@@ -45,11 +45,11 @@ const WHO_OPTIONS = [
 ];
 
 const INQUIRY_TYPES = [
-  { value: "find-tutor",   label: "Find a Tutor",     icon: Users,          color: "#16C47F" },
-  { value: "assessment",   label: "Book Assessment",  icon: Calendar,       color: "#2563EB" },
-  { value: "apply-tutor",  label: "Apply as Tutor",   icon: GraduationCap,  color: "#7C3AED" },
+  { value: "find-tutor",   label: "Find a Tutor",     icon: Users,          color: "#7B2FF7" },
+  { value: "assessment",   label: "Book Assessment",  icon: Calendar,       color: "#7B2FF7" },
+  { value: "apply-tutor",  label: "Apply as Tutor",   icon: GraduationCap,  color: "#7B2FF7" },
   { value: "partnership",  label: "Partnership",      icon: Handshake,      color: "#F59E0B" },
-  { value: "general",      label: "General Inquiry",  icon: MessageSquare,  color: "#16C47F" },
+  { value: "general",      label: "General Inquiry",  icon: MessageSquare,  color: "#7B2FF7" },
 ];
 
 // ─────────────────────────────────────────────
@@ -74,7 +74,7 @@ function FormField({
       transition={{ delay, duration: 0.5 }}
       className="flex flex-col gap-2"
     >
-      <label className="text-xs font-black tracking-wide text-[#0F172A] uppercase flex items-center gap-1">
+      <label className="text-xs font-black tracking-wide text-[#1E1B3A] uppercase flex items-center gap-1">
         {label}
         {required && <span className="text-[#EF4444] text-sm leading-none">*</span>}
       </label>
@@ -84,7 +84,7 @@ function FormField({
 }
 
 const inputClass =
-  "w-full h-12 px-4 rounded-2xl bg-white border border-[rgba(15,23,42,0.10)] text-[#0F172A] text-sm font-semibold placeholder:text-[#94A3B8] outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/12 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.10)]";
+  "w-full h-12 px-4 rounded-2xl bg-white border border-[rgba(30,27,58,0.10)] text-[#1E1B3A] text-sm font-semibold placeholder:text-[#94A3B8] outline-none transition-all duration-300 focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/12 focus:shadow-[0_0_0_3px_rgba(123,47,247,0.10)]";
 
 // ─────────────────────────────────────────────
 // MAIN SECTION
@@ -109,11 +109,11 @@ export function GetInTouchSection() {
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-48 -left-48 w-[600px] h-[600px] rounded-full blur-[120px] opacity-[0.09]"
-          style={{ background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full blur-[110px] opacity-[0.08]"
-          style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
         <div className="absolute inset-0 opacity-[0.025]"
-          style={{ backgroundImage: "radial-gradient(circle, #0B1220 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+          style={{ backgroundImage: "radial-gradient(circle, #0A1028 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -130,15 +130,15 @@ export function GetInTouchSection() {
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
-                         bg-white border border-[#16C47F]/30
-                         shadow-[0_0_22px_rgba(22,196,127,0.16)]"
+                         bg-white border border-[#7B2FF7]/30
+                         shadow-[0_0_22px_rgba(248,120,8,0.16)]"
             >
-              <MessageSquare className="w-4 h-4 text-[#16C47F]" />
-              <span className="text-xs font-black tracking-widest uppercase text-[#16C47F]"
+              <MessageSquare className="w-4 h-4 text-[#7B2FF7]" />
+              <span className="text-xs font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
                 Get in Touch
               </span>
-              <Sparkles className="w-4 h-4 text-[#16C47F]" />
+              <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
           </motion.div>
 
@@ -147,12 +147,12 @@ export function GetInTouchSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl lg:text-5xl font-black leading-[1.07] tracking-tight text-[#0B1220] mb-5"
+            className="text-4xl lg:text-5xl font-black leading-[1.07] tracking-tight text-[#0A1028] mb-5"
             style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
           >
             Let's Find the Perfect{" "}
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                             drop-shadow-[0_0_30px_rgba(22,196,127,0.22)]">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                             drop-shadow-[0_0_30px_rgba(248,120,8,0.22)]">
               Solution for You
             </span>
           </motion.h2>
@@ -162,7 +162,7 @@ export function GetInTouchSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base leading-8 text-[#64748B]"
+            className="text-base leading-8 text-[#6E6A85]"
           >
             Fill in the form and our team will get back to you within 4 hours with a personalised recommendation.
           </motion.p>
@@ -180,26 +180,26 @@ export function GetInTouchSection() {
           >
             {/* Heading */}
             <h3
-              className="text-3xl lg:text-4xl font-black text-[#0B1220] mb-3 leading-tight"
+              className="text-3xl lg:text-4xl font-black text-[#0A1028] mb-3 leading-tight"
               style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
             >
               How Can We{" "}
-              <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="text-[#6D28D9]">
                 Help?
               </span>
             </h3>
-            <p className="text-base text-[#64748B] leading-7 mb-9">
+            <p className="text-base text-[#6E6A85] leading-7 mb-9">
               Our dedicated team is ready to support you across every aspect of your educational journey.
             </p>
 
             {/* Assist list */}
             <div className="space-y-3 mb-10">
-              <p className="text-xs font-black tracking-widest uppercase text-[#64748B] mb-4">
+              <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-4">
                 Our team can assist you with:
               </p>
               {ASSISTS.map((item, i) => {
                 const Icon = item.icon;
-                const colors = ["#16C47F","#2563EB","#7C3AED","#F59E0B","#16C47F","#2563EB"];
+                const colors = ["#7B2FF7","#7B2FF7","#7B2FF7","#F59E0B","#7B2FF7","#7B2FF7"];
                 const c = colors[i];
                 return (
                   <motion.div
@@ -210,14 +210,14 @@ export function GetInTouchSection() {
                     transition={{ delay: 0.08 + i * 0.07 }}
                     whileHover={{ x: 5 }}
                     className="group flex items-center gap-4 p-4 rounded-2xl
-                               bg-[#F8FAFC] border border-[rgba(15,23,42,0.06)]
+                               bg-[#FAFAFC] border border-[rgba(30,27,58,0.06)]
                                hover:shadow-md transition-all duration-300 cursor-default"
                   >
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm"
                       style={{ background: `${c}15` }}>
                       <Icon className="w-4 h-4" style={{ color: c }} />
                     </div>
-                    <span className="text-sm font-bold text-[#0F172A]">{item.text}</span>
+                    <span className="text-sm font-bold text-[#1E1B3A]">{item.text}</span>
                     <CheckCircle2 className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ color: c }} />
                   </motion.div>
@@ -228,16 +228,16 @@ export function GetInTouchSection() {
             {/* Trust mini cards */}
             <div className="space-y-3">
               {[
-                { icon: Shield, text: "Your information is 100% secure and private.",          c: "#16C47F" },
-                { icon: Zap,    text: "We respond to every inquiry within 4 working hours.",    c: "#2563EB" },
-                { icon: Star,   text: "Trusted by 5,000+ students and families across India.", c: "#7C3AED" },
+                { icon: Shield, text: "Your information is 100% secure and private.",          c: "#7B2FF7" },
+                { icon: Zap,    text: "We respond to every inquiry within 4 working hours.",    c: "#7B2FF7" },
+                { icon: Star,   text: "Trusted by 5,000+ students and families across India.", c: "#7B2FF7" },
               ].map((t, i) => {
                 const Icon = t.icon;
                 return (
                   <div key={i} className="flex items-start gap-3 p-3.5 rounded-2xl"
                     style={{ background: `${t.c}08`, border: `1px solid ${t.c}20` }}>
                     <Icon className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: t.c }} />
-                    <p className="text-xs leading-6 text-[#64748B] font-semibold">{t.text}</p>
+                    <p className="text-xs leading-6 text-[#6E6A85] font-semibold">{t.text}</p>
                   </div>
                 );
               })}
@@ -259,25 +259,25 @@ export function GetInTouchSection() {
                 transition={{ type: "spring", bounce: 0.4 }}
                 className="rounded-3xl p-12 text-center"
                 style={{
-                  background: "linear-gradient(white,white) padding-box, linear-gradient(135deg,#16C47F,#2563EB,#7C3AED) border-box",
+                  background: "linear-gradient(white,white) padding-box, linear-gradient(135deg,#7B2FF7,#7B2FF7,#7B2FF7) border-box",
                   border: "1.5px solid transparent",
-                  boxShadow: "0 24px 80px rgba(22,196,127,0.12)",
+                  boxShadow: "0 24px 80px rgba(248,120,8,0.12)",
                 }}
               >
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#16C47F] to-[#2563EB]
+                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C]
                                 flex items-center justify-center shadow-xl mb-6">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-3xl font-black text-[#0F172A] mb-3"
+                <h3 className="text-3xl font-black text-[#1E1B3A] mb-3"
                   style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
                   Message Sent! 🎉
                 </h3>
-                <p className="text-[#64748B] leading-7 mb-8">
+                <p className="text-[#6E6A85] leading-7 mb-8">
                   Thanks for reaching out. Our team will get back to you within 4 hours with a personalised response.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name:"",phone:"",email:"",who:"",inquiry:"",message:"" }); }}
-                  className="h-12 px-8 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
+                  className="h-12 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
                              text-white font-bold shadow-lg text-sm transition-all duration-300 hover:scale-105"
                 >
                   Send Another Message
@@ -288,20 +288,20 @@ export function GetInTouchSection() {
               <div
                 className="rounded-3xl overflow-hidden"
                 style={{
-                  background: "linear-gradient(white,white) padding-box, linear-gradient(135deg,#16C47F22,#2563EB22,#7C3AED22) border-box",
+                  background: "linear-gradient(white,white) padding-box, linear-gradient(135deg,#7B2FF722,#7B2FF722,#7B2FF722) border-box",
                   border: "1.5px solid transparent",
-                  boxShadow: "0 16px 64px rgba(15,23,42,0.08)",
+                  boxShadow: "0 16px 64px rgba(30,27,58,0.08)",
                 }}
               >
                 {/* Top gradient stripe */}
-                <div className="h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+                <div className="h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
                 <form onSubmit={handleSubmit} className="p-8 lg:p-10 space-y-6">
 
                   {/* Row 1: Name + Phone */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <FormField label="Full Name" required delay={0.1}>
-                      <div className={`relative flex items-center ${focused === "name" ? "ring-2 ring-[#2563EB]/12 rounded-2xl" : ""}`}>
+                      <div className={`relative flex items-center ${focused === "name" ? "ring-2 ring-[#7B2FF7]/12 rounded-2xl" : ""}`}>
                         <User className="absolute left-3.5 w-4 h-4 text-[#94A3B8]" />
                         <input
                           type="text"
@@ -406,11 +406,11 @@ export function GetInTouchSection() {
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       onFocus={() => setFocused("message")}
                       onBlur={() => setFocused(null)}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[rgba(15,23,42,0.10)]
-                                 text-[#0F172A] text-sm font-semibold placeholder:text-[#94A3B8]
+                      className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[rgba(30,27,58,0.10)]
+                                 text-[#1E1B3A] text-sm font-semibold placeholder:text-[#94A3B8]
                                  outline-none resize-none transition-all duration-300
-                                 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/12
-                                 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.10)]"
+                                 focus:border-[#7B2FF7] focus:ring-2 focus:ring-[#7B2FF7]/12
+                                 focus:shadow-[0_0_0_3px_rgba(123,47,247,0.10)]"
                     />
                   </FormField>
 
@@ -425,8 +425,8 @@ export function GetInTouchSection() {
                       type="submit"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className="group w-full h-14 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
-                                 text-white font-bold text-base shadow-xl shadow-[#16C47F]/22
+                      className="group w-full h-14 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
+                                 text-white font-bold text-base shadow-xl shadow-[#EA580C]/22
                                  flex items-center justify-center gap-3 transition-all duration-300"
                     >
                       <Send className="w-5 h-5" />
@@ -436,7 +436,7 @@ export function GetInTouchSection() {
 
                     <p className="text-center text-xs text-[#94A3B8] mt-4 font-medium">
                       🔒 Your information is secure. We respond within{" "}
-                      <span className="text-[#16C47F] font-bold">4 hours.</span>
+                      <span className="text-[#7B2FF7] font-bold">4 hours.</span>
                     </p>
                   </motion.div>
                 </form>

@@ -12,12 +12,12 @@ export function ParentDashboard() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Parent Dashboard
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             Complete visibility and control over your child's learning journey
           </p>
         </motion.div>
@@ -32,11 +32,11 @@ export function ParentDashboard() {
           >
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h3 className="text-2xl font-bold text-[#0B1220]">Performance Overview</h3>
-                <p className="text-[#64748B]">Last 90 days</p>
+                <h3 className="text-2xl font-bold text-[#0A1028]">Performance Overview</h3>
+                <p className="text-[#6E6A85]">Last 90 days</p>
               </div>
-              <div className="px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full">
-                <span className="text-sm font-semibold text-emerald-700">+32% Overall</span>
+              <div className="px-4 py-2 bg-gradient-to-r from-violet-100 to-violet-100 rounded-full">
+                <span className="text-sm font-semibold text-violet-700">+32% Overall</span>
               </div>
             </div>
 
@@ -63,7 +63,7 @@ export function ParentDashboard() {
                         {bar.height}%
                       </div>
                     </motion.div>
-                    <span className="text-xs text-[#64748B]">{bar.label}</span>
+                    <span className="text-xs text-[#6E6A85]">{bar.label}</span>
                   </div>
                 ))}
               </div>
@@ -86,7 +86,7 @@ export function ParentDashboard() {
                 >
                   <stat.icon className={`w-5 h-5 text-${stat.color}-600 mb-2`} />
                   <div className={`text-2xl font-bold text-${stat.color}-700`}>{stat.value}</div>
-                  <div className="text-xs text-[#64748B]">{stat.label}</div>
+                  <div className="text-xs text-[#6E6A85]">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -105,12 +105,12 @@ export function ParentDashboard() {
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
                   <AlertCircle className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-bold text-[#0B1220]">Weak Topics</h4>
+                <h4 className="font-bold text-[#0A1028]">Weak Topics</h4>
               </div>
               <div className="space-y-3">
                 {['Algebra', 'Physics Mechanics', 'Grammar'].map((topic, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-[#64748B]">{topic}</span>
+                    <span className="text-sm text-[#6E6A85]">{topic}</span>
                     <div className="w-16 h-2 bg-gray-100 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
@@ -130,18 +130,18 @@ export function ParentDashboard() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100"
+              className="bg-gradient-to-br from-violet-50 to-violet-50 rounded-2xl p-6 border border-violet-100"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center">
                   <Lightbulb className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-bold text-[#0B1220]">AI Insights</h4>
+                <h4 className="font-bold text-[#0A1028]">AI Insights</h4>
               </div>
-              <p className="text-sm text-[#64748B] mb-3">
+              <p className="text-sm text-[#6E6A85] mb-3">
                 Student shows strong improvement in Mathematics. Recommend increasing practice sessions.
               </p>
-              <button className="text-sm font-semibold text-blue-600 hover:text-blue-700">
+              <button className="text-sm font-semibold text-violet-600 hover:text-violet-700">
                 View Full Analysis →
               </button>
             </motion.div>
@@ -155,17 +155,17 @@ export function ParentDashboard() {
               className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-violet-400 to-violet-600 rounded-xl flex items-center justify-center">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="font-bold text-[#0B1220]">Next Session</h4>
+                <h4 className="font-bold text-[#0A1028]">Next Session</h4>
               </div>
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-[#0B1220]">Physics - Chapter 5</div>
-                <div className="text-sm text-[#64748B]">Today, 4:00 PM</div>
+                <div className="text-sm font-semibold text-[#0A1028]">Physics - Chapter 5</div>
+                <div className="text-sm text-[#6E6A85]">Today, 4:00 PM</div>
                 <div className="flex items-center gap-2 mt-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full" />
-                  <span className="text-sm text-[#0B1220]">Mr. Rajesh Kumar</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full" />
+                  <span className="text-sm text-[#0A1028]">Mr. Rajesh Kumar</span>
                 </div>
               </div>
             </motion.div>

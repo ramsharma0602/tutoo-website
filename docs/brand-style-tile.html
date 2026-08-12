@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tutoo — Brand Style Tile (for approval)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#EA580C; --orange-hover:#C2410C; --orange-light:#FFF1E7; --orange-dark:#9A3412; --orange-vivid:#F87808;
+    --violet:#7B2FF7; --violet-hover:#6D28D9; --violet-light:#F4EFFE; --violet-dark:#5B21B6;
+    --bg:#FAFAFC; --surface:#FFFFFF; --tint:#F6F3FC;
+    --ink:#1E1B3A; --text2:#4B4763; --muted:#6E6A85; --border:#E6E3F0; --divider:#EFEDF6;
+    --navy:#0A1028;
+    --success:#16A34A; --warning:#B45309; --error:#DC2626;
+    --r-input:12px; --r-card:16px;
+    --sh-card:0 1px 2px rgba(30,27,58,.06); --sh-raise:0 8px 24px rgba(30,27,58,.10);
+    --f-head:'Clash Display', system-ui, sans-serif; --f-body:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--f-body);background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .tile-label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:56px 0 16px;border-top:1px solid var(--divider);padding-top:24px}
+  .tile-label:first-of-type{border-top:none}
+  h2.demo{font-family:var(--f-head);font-weight:600;font-size:30px;line-height:1.2}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-hover);margin-bottom:8px}
+
+  /* intro banner */
+  .banner{background:var(--surface);border-bottom:1px solid var(--border);padding:18px 0}
+  .banner .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .banner p{font-size:13px;color:var(--muted)}
+
+  /* header mock */
+  .hdr{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);box-shadow:var(--sh-card);display:flex;align-items:center;gap:28px;padding:14px 22px;flex-wrap:wrap}
+  .hdr img{height:40px}
+  .hdr nav{display:flex;gap:22px;font-size:15px;font-weight:500;color:var(--ink);flex-wrap:wrap}
+  .hdr nav a{text-decoration:none;color:inherit;padding:6px 0}
+  .hdr nav a.active{color:var(--violet-hover);border-bottom:2px solid var(--violet);}
+  .hdr nav a:hover{color:var(--violet-hover)}
+  .hdr .spacer{flex:1}
+
+  /* buttons */
+  .btn{display:inline-block;border:none;cursor:pointer;font-family:var(--f-body);font-weight:600;font-size:15px;border-radius:var(--r-input);padding:12px 24px;transition:background .15s,border-color .15s;text-decoration:none;text-align:center}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-hover)}
+  .btn-secondary{background:var(--violet);color:#fff}
+  .btn-secondary:hover{background:var(--violet-hover)}
+  .btn-outline{background:var(--surface);color:var(--violet-hover);border:1.5px solid var(--violet)}
+  .btn-outline:hover{background:var(--violet-light)}
+  .btn-ghost{background:none;color:var(--violet-hover);padding:12px 8px}
+  .btn-ghost:hover{text-decoration:underline}
+  .btn-disabled{background:var(--divider);color:var(--muted);cursor:not-allowed}
+  .btn:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+
+  /* hero mock */
+  .hero{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-card);padding:56px 48px;position:relative;overflow:hidden}
+  .hero .blob{position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,#7B2FF714,transparent 65%)}
+  .hero .tassel{position:absolute;right:64px;bottom:48px;width:56px;height:6px;border-radius:3px;background:var(--orange-vivid);opacity:.85;transform:rotate(-8deg)}
+  .hero h1{font-family:var(--f-head);font-weight:600;font-size:44px;line-height:1.12;max-width:640px}
+  .hero h1 .kw{color:var(--violet-hover)}
+  .hero p{font-size:18px;color:var(--text2);max-width:560px;margin:16px 0 28px}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .trust{display:flex;gap:26px;margin-top:30px;font-size:14px;color:var(--text2);flex-wrap:wrap}
+  .trust span::before{content:"✓";color:var(--success);font-weight:700;margin-right:7px}
+
+  /* palette */
+  .pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .sw{border-radius:12px;border:1px solid var(--border);overflow:hidden;background:var(--surface);box-shadow:var(--sh-card)}
+  .sw .chip{height:64px}
+  .sw .m{padding:8px 12px;font-size:12px}
+  .sw .m b{display:block;font-size:12.5px}
+  .sw .m span{color:var(--muted)}
+
+  /* typography */
+  .type-row{display:flex;align-items:baseline;gap:20px;padding:10px 0;border-bottom:1px dashed var(--divider);flex-wrap:wrap}
+  .type-row .tag{font-size:11px;color:var(--muted);width:90px;flex-shrink:0}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:24px;transition:box-shadow .15s}
+  .card:hover{box-shadow:var(--sh-raise)}
+  .card.svc-home{border-top:3px solid var(--orange)}
+  .card.svc-online{border-top:3px solid var(--violet)}
+  .chip-ic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+  .chip-ic.v{background:var(--violet-light);color:var(--violet-hover)}
+  .chip-ic.o{background:var(--orange-light);color:var(--orange-hover)}
+  .card h3{font-size:19px;font-weight:600;margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--text2);margin-bottom:14px}
+  .card a{color:var(--violet-hover);font-weight:600;font-size:14.5px;text-decoration:none}
+  .card a:hover{text-decoration:underline}
+
+  /* chips */
+  .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{padding:9px 18px;border-radius:999px;border:1px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;color:var(--text2);cursor:pointer}
+  .chip.sel{background:var(--violet-light);border-color:var(--violet);color:var(--violet-dark);font-weight:600}
+
+  /* form */
+  .form-demo{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:28px;max-width:520px}
+  .form-demo .steps{display:flex;gap:6px;margin-bottom:20px}
+  .form-demo .steps i{width:22px;height:4px;border-radius:2px;background:var(--divider)}
+  .form-demo .steps i.on{background:var(--violet)}
+  .fld{margin-bottom:16px}
+  .fld label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+  .fld input,.fld select{width:100%;height:48px;border:1px solid var(--border);border-radius:var(--r-input);padding:0 14px;font-size:15px;font-family:var(--f-body);color:var(--ink);background:var(--surface)}
+  .fld input:focus,.fld select:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(123,47,247,.15)}
+  .fld.err input{border-color:var(--error)}
+  .fld.err .msg{color:var(--error);font-size:12.5px;margin-top:5px}
+
+  /* dark cta + footer */
+  .dark-cta{background:var(--navy);border-radius:var(--r-card);padding:48px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .dark-cta::after{content:"";position:absolute;inset:auto -40% -120px -40%;height:180px;background:linear-gradient(90deg,#F8780822,#7B2FF722);filter:blur(40px)}
+  .dark-cta h2{font-family:var(--f-head);font-weight:600;font-size:30px;margin-bottom:8px}
+  .dark-cta p{color:rgba(255,255,255,.8);margin-bottom:24px;font-size:16px}
+  .dark-cta .btn-primary{border:1px solid rgba(255,255,255,.25);position:relative;z-index:1}
+  .foot{background:var(--navy);border-radius:var(--r-card);padding:28px 32px;color:rgba(255,255,255,.8);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px}
+  .foot a{color:rgba(255,255,255,.8);text-decoration:none;margin-left:18px}
+  .foot a:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--orange-vivid)}
+
+  .ratio-note{font-size:12.5px;color:var(--muted);margin-top:10px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.grid-2{grid-template-columns:1fr}.hero{padding:36px 24px}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="wrap">
+    <div><b style="font-family:var(--f-head);font-size:18px">Tutoo — Brand Style Tile</b>
+    <p>Orange + violet system derived from the logo · for approval before implementation · Aug 2026</p></div>
+    <p>60–70% neutral · 15–25% violet · 10–15% orange</p>
+  </div>
+</div>
+
+<div class="wrap" style="padding-bottom:64px">
+
+  <div class="tile-label">1 · Header</div>
+  <div class="hdr">
+    <img src="https://tutoolearning.com/tutoo_assets/png/logo_full.png" alt="Tutoo logo" onerror="this.outerHTML='<b style=\'font-family:var(--f-head);font-size:22px\'>Tut<span style=\'color:var(--violet)\'>oo</span></b>'"/>
+    <nav>
+      <a class="active" href="#">Home Tuition</a>
+      <a href="#">Online Classes</a>
+      <a href="#">Become a Tutor</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="spacer"></div>
+    <a class="btn btn-primary" href="#">Get Free Assessment</a>
+  </div>
+
+  <div class="tile-label">2 · Hero</div>
+  <div class="hero">
+    <div class="blob"></div><div class="tassel"></div>
+    <div class="eyebrow">Home &amp; online tuition · Kothrud · Kolhapur</div>
+    <h1>Find the right tutor for your child's <span class="kw">learning journey</span></h1>
+    <p>Verified tutors at your home or online. Tell us what your child needs — we assess for free and match the right tutor.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#" style="padding:16px 32px">Find a Tutor</a>
+      <a class="btn btn-outline" href="#" style="padding:16px 32px">Explore Online Classes</a>
+    </div>
+    <div class="trust"><span>Verified tutors</span><span>Free assessment</span><span>No obligation</span></div>
+  </div>
+
+  <div class="tile-label">3 · Color palette (measured from logo pixels)</div>
+  <div class="pal">
+    <div class="sw"><div class="chip" style="background:#EA580C"></div><div class="m"><b>Primary Orange</b><span>#EA580C · CTA fill</span></div></div>
+    <div class="sw"><div class="chip" style="background:#C2410C"></div><div class="m"><b>Orange Hover</b><span>#C2410C · 5.18:1 ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F87808"></div><div class="m"><b>Logo Orange</b><span>#F87808 · decorative</span></div></div>
+    <div class="sw"><div class="chip" style="background:#FFF1E7"></div><div class="m"><b>Orange Light</b><span>#FFF1E7 · tints</span></div></div>
+    <div class="sw"><div class="chip" style="background:#7B2FF7"></div><div class="m"><b>Secondary Violet</b><span>#7B2FF7 · 5.85:1 ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:#6D28D9"></div><div class="m"><b>Violet Hover/Text</b><span>#6D28D9 · 7.10:1 ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:linear-gradient(90deg,#6038F8,#8F21F8)"></div><div class="m"><b>Logo-U Gradient</b><span>#6038F8→#8F21F8</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F4EFFE"></div><div class="m"><b>Violet Light</b><span>#F4EFFE · tints</span></div></div>
+    <div class="sw"><div class="chip" style="background:#1E1B3A"></div><div class="m"><b>Text / Ink</b><span>#1E1B3A · 16:1</span></div></div>
+    <div class="sw"><div class="chip" style="background:#6E6A85"></div><div class="m"><b>Muted Text</b><span>#6E6A85</span></div></div>
+    <div class="sw"><div class="chip" style="background:#FAFAFC;border-bottom:1px solid #E6E3F0"></div><div class="m"><b>Background</b><span>#FAFAFC</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F6F3FC"></div><div class="m"><b>Section Tint</b><span>#F6F3FC</span></div></div>
+    <div class="sw"><div class="chip" style="background:#E6E3F0"></div><div class="m"><b>Border</b><span>#E6E3F0</span></div></div>
+    <div class="sw"><div class="chip" style="background:#0A1028"></div><div class="m"><b>Navy (logo dark)</b><span>#0A1028 · footer</span></div></div>
+    <div class="sw"><div class="chip" style="background:#16A34A"></div><div class="m"><b>Success</b><span>#16A34A</span></div></div>
+    <div class="sw"><div class="chip" style="background:#B45309"></div><div class="m"><b>Warning</b><span>#B45309 ≠ CTA orange</span></div></div>
+    <div class="sw"><div class="chip" style="background:#DC2626"></div><div class="m"><b>Error</b><span>#DC2626</span></div></div>
+  </div>
+  <p class="ratio-note">Contrast ratios are computed (WCAG). White on #EA580C = 3.56:1 — passes AA for large/bold button text; small orange text uses #C2410C (5.18:1). Violet passes AA at normal sizes.</p>
+
+  <div class="tile-label">4 · Typography — Clash Display + Inter</div>
+  <div>
+    <div class="type-row"><span class="tag">H1 · 48/600</span><span style="font-family:var(--f-head);font-size:44px;font-weight:600;line-height:1.1">Trusted tutors, <span style="color:var(--violet-hover)">real progress</span></span></div>
+    <div class="type-row"><span class="tag">H2 · 34/600</span><h2 class="demo">How Tutoo works</h2></div>
+    <div class="type-row"><span class="tag">Eyebrow</span><span class="eyebrow" style="margin:0">Why parents choose us</span></div>
+    <div class="type-row"><span class="tag">H3 · 22/600</span><span style="font-size:22px;font-weight:600">A verified tutor at your home</span></div>
+    <div class="type-row"><span class="tag">Body · 16</span><span style="color:var(--text2)">One-to-one attention on your schedule, with progress you can actually see.</span></div>
+    <div class="type-row"><span class="tag">Small · 14</span><span style="font-size:14px;color:var(--muted)">Serving families across Kothrud &amp; Kolhapur.</span></div>
+    <div class="type-row"><span class="tag">Link</span><a href="#" style="color:var(--violet-hover);font-weight:600;text-decoration:none">See how tutor verification works →</a></div>
+  </div>
+
+  <div class="tile-label">5 · Buttons</div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+    <button class="btn btn-primary">Get Free Assessment</button>
+    <button class="btn btn-secondary">Explore Online Classes</button>
+    <button class="btn btn-outline">View All Subjects</button>
+    <button class="btn btn-ghost">Learn more →</button>
+    <button class="btn btn-disabled" disabled>Disabled</button>
+    <button class="btn" style="background:#25D366;color:#fff">WhatsApp Us</button>
+  </div>
+  <p class="ratio-note">Rule: one orange CTA per viewport. Solid fills only — no gradient buttons, no glow shadows, radius 12 px.</p>
+
+  <div class="tile-label">6 · Cards — service, trust &amp; class chips</div>
+  <div class="cards">
+    <div class="card svc-home">
+      <div class="chip-ic o">⌂</div>
+      <h3>Home Tuition</h3>
+      <p>Learn comfortably at home with a verified tutor matched to your requirements.</p>
+      <a href="#">Find a home tutor →</a>
+    </div>
+    <div class="card svc-online">
+      <div class="chip-ic v">🖥</div>
+      <h3>Online Classes</h3>
+      <p>Learn from experienced tutors through convenient one-to-one online classes.</p>
+      <a href="#">Start online →</a>
+    </div>
+    <div class="card">
+      <div class="chip-ic v">✓</div>
+      <h3>Verified Tutors</h3>
+      <p>Every tutor is ID-verified and interviewed before their first class.</p>
+      <a href="#">Our verification process →</a>
+    </div>
+  </div>
+  <div style="margin-top:20px" class="chips">
+    <span class="chip">Class 1–5</span><span class="chip sel">Class 6–8</span><span class="chip">Class 9–10</span><span class="chip">Class 11–12</span><span class="chip">JEE / NEET</span>
+  </div>
+
+  <div class="tile-label">7 · Requirement form (the money component)</div>
+  <div class="grid-2">
+    <div class="form-demo">
+      <div class="steps"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      <div class="fld"><label for="cls">Class</label>
+        <select id="cls"><option>Class 8</option></select></div>
+      <div class="fld"><label for="sub">Subject</label>
+        <select id="sub"><option>Mathematics</option></select></div>
+      <div class="fld"><label>Mode</label>
+        <div class="chips"><span class="chip sel">⌂ Home tuition</span><span class="chip">🖥 Online</span></div></div>
+      <div class="fld err"><label for="area">Area / Pincode</label>
+        <input id="area" value="" placeholder="e.g. Kothrud, 411038"/>
+        <div class="msg">⚠ Please enter your area so we can match nearby tutors.</div></div>
+      <button class="btn btn-primary" style="width:100%">Continue →</button>
+    </div>
+    <div>
+      <p style="color:var(--text2);font-size:15px;max-width:420px">Labels above fields (no placeholder-as-label) · violet focus ring · violet selected chips · error = color + icon + message · <b>the submit button is the only orange element in the form.</b></p>
+      <p style="color:var(--muted);font-size:13.5px;margin-top:12px">Focus a field to see the violet focus state.</p>
+    </div>
+  </div>
+
+  <div class="tile-label">8 · Final CTA &amp; footer — navy from logo_dark (#0A1028)</div>
+  <div class="dark-cta">
+    <h2>Ready to find the right tutor?</h2>
+    <p>Free assessment · No obligation · We'll call you within 24 hours</p>
+    <a class="btn btn-primary" href="#">Get Free Assessment</a>
+  </div>
+  <div class="foot" style="margin-top:16px">
+    <b style="font-family:var(--f-head);font-size:17px;color:#fff">Tut<span style="color:#9B6BFF">oo</span></b>
+    <span>© 2026 Tutoo · Kothrud, Pune &amp; Kolhapur</span>
+    <span><a href="#">Home Tuition</a><a href="#">Online Classes</a><a href="#">Privacy</a></span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -12,8 +12,8 @@ const problems = [
   {
     icon: BookOpen,
     title: "Students Need Personalized Learning",
-    color: "#16C47F",
-    glow: "rgba(22,196,127,0.25)",
+    color: "#7B2FF7",
+    glow: "rgba(248,120,8,0.25)",
     description:
       "Every student learns differently. Traditional classrooms often follow a one-size-fits-all approach, leaving many students struggling to keep up or reach their full potential.",
     points: [
@@ -26,8 +26,8 @@ const problems = [
   {
     icon: Users,
     title: "Parents Need Transparency",
-    color: "#2563EB",
-    glow: "rgba(37,99,235,0.25)",
+    color: "#7B2FF7",
+    glow: "rgba(123,47,247,0.25)",
     description:
       "Parents want visibility into what their child is learning, how they are progressing, and where additional support is needed.",
     points: [
@@ -40,8 +40,8 @@ const problems = [
   {
     icon: GraduationCap,
     title: "Tutors Need Better Opportunities",
-    color: "#7C3AED",
-    glow: "rgba(124,58,237,0.25)",
+    color: "#7B2FF7",
+    glow: "rgba(123,47,247,0.25)",
     description:
       "Talented educators often struggle to connect with students who need their expertise and deserve better tools to teach effectively.",
     points: [
@@ -78,17 +78,17 @@ const stats = [
 
 export default function ProblemWeSolve() {
   return (
-    <section className="relative overflow-hidden py-28 bg-[#0B1220]">
+    <section className="relative overflow-hidden py-28 bg-[#0A1028]">
 
       {/* Background Effects */}
 
       <div className="absolute inset-0 overflow-hidden">
 
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#16C47F]/10 rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#7B2FF7]/10 rounded-full blur-[150px]" />
 
-        <div className="absolute right-0 top-20 w-[700px] h-[700px] bg-[#2563EB]/10 rounded-full blur-[180px]" />
+        <div className="absolute right-0 top-20 w-[700px] h-[700px] bg-[#7B2FF7]/10 rounded-full blur-[180px]" />
 
-        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-[160px]" />
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-[160px]" />
 
         {/* Grid */}
 
@@ -120,12 +120,12 @@ export default function ProblemWeSolve() {
             border
             text-sm
             font-semibold
-            text-[#16C47F]
+            text-[#7B2FF7]
             backdrop-blur-xl
             "
             style={{
               background: "rgba(255,255,255,0.06)",
-              borderColor: "rgba(22,196,127,0.25)",
+              borderColor: "rgba(248,120,8,0.25)",
             }}
           >
             ⚡ THE PROBLEM WE SOLVE
@@ -156,9 +156,9 @@ export default function ProblemWeSolve() {
             <span
               className="
               bg-gradient-to-r
-              from-[#16C47F]
+              from-[#7B2FF7]
               via-[#22D3EE]
-              to-[#2563EB]
+              to-[#7B2FF7]
               bg-clip-text
               text-transparent
               "
@@ -201,9 +201,9 @@ export default function ProblemWeSolve() {
               className="
               h-full
               bg-gradient-to-r
-              from-[#16C47F]
-              via-[#2563EB]
-              to-[#7C3AED]
+              from-[#7B2FF7]
+              via-[#7B2FF7]
+              to-[#7B2FF7]
               opacity-40
               "
             />
@@ -322,14 +322,14 @@ export default function ProblemWeSolve() {
           "
           style={{
             background: "rgba(255,255,255,0.04)",
-            borderColor: "rgba(22,196,127,0.15)",
+            borderColor: "rgba(248,120,8,0.15)",
           }}
         >
           <Quote
             className="
             mx-auto
             mb-6
-            text-[#16C47F]
+            text-[#7B2FF7]
             "
             size={42}
           />

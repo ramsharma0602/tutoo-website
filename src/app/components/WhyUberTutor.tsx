@@ -7,19 +7,19 @@ export function WhyTutoo() {
       icon: Brain,
       title: 'AI Learning Engine',
       description: 'Advanced algorithms adapt to each student\'s unique learning style',
-      gradient: 'from-emerald-500 to-teal-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Shield,
       title: 'Verified Tutors',
       description: 'Rigorous background checks and qualification verification',
-      gradient: 'from-blue-500 to-indigo-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: LayoutDashboard,
       title: 'Parent Dashboard',
       description: 'Complete visibility into your child\'s learning journey',
-      gradient: 'from-purple-500 to-pink-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Radio,
@@ -31,25 +31,25 @@ export function WhyTutoo() {
       icon: FileBarChart,
       title: 'Smart Reports',
       description: 'Actionable insights and detailed performance analytics',
-      gradient: 'from-cyan-500 to-blue-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Target,
       title: 'Personalized Learning',
       description: 'Custom curriculum designed for individual growth',
-      gradient: 'from-violet-500 to-purple-600'
+      gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: LineChart,
       title: 'Learning Analytics',
       description: 'Data-driven approach to optimize learning outcomes',
-      gradient: 'from-pink-500 to-rose-600'
+      gradient: 'from-violet-500 to-rose-600'
     },
     {
       icon: TrendingUp,
       title: 'Growth Monitoring',
       description: 'Continuous assessment and improvement tracking',
-      gradient: 'from-emerald-500 to-green-600'
+      gradient: 'from-violet-500 to-green-600'
     }
   ];
 
@@ -63,12 +63,12 @@ export function WhyTutoo() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0B1220] mb-4"
+            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Why Choose Tutoo
           </h2>
-          <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
             A comprehensive learning ecosystem powered by cutting-edge technology
           </p>
         </motion.div>
@@ -92,8 +92,8 @@ export function WhyTutoo() {
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
 
-                <h3 className="text-lg font-bold text-[#0B1220] mb-2">{feature.title}</h3>
-                <p className="text-sm text-[#64748B]">{feature.description}</p>
+                <h3 className="text-lg font-bold text-[#0A1028] mb-2">{feature.title}</h3>
+                <p className="text-sm text-[#6E6A85]">{feature.description}</p>
               </div>
 
               {/* Corner Accent */}
@@ -107,18 +107,18 @@ export function WhyTutoo() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center bg-gradient-to-r from-emerald-50 via-blue-50 to-purple-50 rounded-3xl p-12"
+          className="mt-16 text-center bg-gradient-to-r from-violet-50 via-violet-50 to-violet-50 rounded-3xl p-12"
         >
           <h3
-            className="text-3xl font-bold text-[#0B1220] mb-4"
+            className="text-3xl font-bold text-[#0A1028] mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Experience the difference technology makes in education
           </h3>
-          <p className="text-lg text-[#64748B] mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-[#6E6A85] mb-8 max-w-2xl mx-auto">
             Join thousands of families who trust Tutoo for measurable learning outcomes
           </p>
-          <button className="px-10 py-5 bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 text-lg">
+          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
             Book Your Free Assessment
           </button>
         </motion.div>

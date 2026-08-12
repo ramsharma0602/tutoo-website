@@ -20,29 +20,29 @@ import {
    DATA
 ───────────────────────────────────────────── */
 const matchFactors = [
-  { emoji: "📚", icon: BookOpen, title: "Subject Expertise", desc: "Tutors specialised in the exact subjects your child needs.", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#2563EB]" },
-  { emoji: "📍", icon: MapPin, title: "Location", desc: "Nearby home tutors or online options matched to your area.", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)", grad: "from-[#2563EB] to-[#7C3AED]" },
-  { emoji: "👨‍🏫", icon: Users, title: "Experience", desc: "Teaching experience, qualifications, and subject mastery verified.", color: "#7C3AED", bg: "rgba(124,58,237,0.08)", border: "rgba(124,58,237,0.2)", grad: "from-[#7C3AED] to-[#2563EB]" },
+  { emoji: "📚", icon: BookOpen, title: "Subject Expertise", desc: "Tutors specialised in the exact subjects your child needs.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#EA580C] to-[#C2410C]" },
+  { emoji: "📍", icon: MapPin, title: "Location", desc: "Nearby home tutors or online options matched to your area.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { emoji: "👨‍🏫", icon: Users, title: "Experience", desc: "Teaching experience, qualifications, and subject mastery verified.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { emoji: "👨‍👩‍👧", icon: Users, title: "Parent Preferences", desc: "Learning style, mode, timing, and parent expectations factored in.", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)", grad: "from-[#F59E0B] to-[#EF4444]" },
-  { emoji: "⭐", icon: Star, title: "Ratings & Reviews", desc: "Tutor performance analytics, parent feedback, and session history.", color: "#16C47F", bg: "rgba(22,196,127,0.08)", border: "rgba(22,196,127,0.2)", grad: "from-[#16C47F] to-[#7C3AED]" },
-  { emoji: "⏰", icon: Clock, title: "Availability", desc: "Session schedules matched to your preferred days and timings.", color: "#2563EB", bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.2)", grad: "from-[#2563EB] to-[#16C47F]" },
+  { emoji: "⭐", icon: Star, title: "Ratings & Reviews", desc: "Tutor performance analytics, parent feedback, and session history.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { emoji: "⏰", icon: Clock, title: "Availability", desc: "Session schedules matched to your preferred days and timings.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 ];
 
 // Canvas: 480 × 390, centre cx=240 cy=195
 // Chips spread evenly — top, top-right, right, bottom-right, bottom-left, left
 const floatingFactors = [
-  { emoji: "📚", label: "Subject Expertise", color: "#16C47F", border: "rgba(22,196,127,0.3)", x: 0, y: -148 }, // top-centre
-  { emoji: "📍", label: "Location Match", color: "#2563EB", border: "rgba(37,99,235,0.3)", x: 168, y: -74 }, // top-right
+  { emoji: "📚", label: "Subject Expertise", color: "#7B2FF7", border: "rgba(248,120,8,0.3)", x: 0, y: -148 }, // top-centre
+  { emoji: "📍", label: "Location Match", color: "#7B2FF7", border: "rgba(123,47,247,0.3)", x: 168, y: -74 }, // top-right
   { emoji: "⭐", label: "Ratings", color: "#F59E0B", border: "rgba(245,158,11,0.3)", x: 168, y: 74 }, // bottom-right
-  { emoji: "👨‍🏫", label: "Experience", color: "#7C3AED", border: "rgba(124,58,237,0.3)", x: 0, y: 148 }, // bottom-centre
-  { emoji: "⏰", label: "Availability", color: "#2563EB", border: "rgba(37,99,235,0.3)", x: -168, y: 74 }, // bottom-left
-  { emoji: "🎯", label: "Preferences", color: "#16C47F", border: "rgba(22,196,127,0.3)", x: -168, y: -74 }, // top-left
+  { emoji: "👨‍🏫", label: "Experience", color: "#7B2FF7", border: "rgba(123,47,247,0.3)", x: 0, y: 148 }, // bottom-centre
+  { emoji: "⏰", label: "Availability", color: "#7B2FF7", border: "rgba(123,47,247,0.3)", x: -168, y: 74 }, // bottom-left
+  { emoji: "🎯", label: "Preferences", color: "#7B2FF7", border: "rgba(248,120,8,0.3)", x: -168, y: -74 }, // top-left
 ];
 
 const tutorAlts = [
-  { initials: "RS", name: "Rahul S.", subject: "Science", score: 94, color: "#16C47F" },
-  { initials: "PK", name: "Priya K.", subject: "English", score: 88, color: "#2563EB" },
-  { initials: "AV", name: "Anand V.", subject: "Maths", score: 91, color: "#7C3AED" },
+  { initials: "RS", name: "Rahul S.", subject: "Science", score: 94, color: "#7B2FF7" },
+  { initials: "PK", name: "Priya K.", subject: "English", score: 88, color: "#7B2FF7" },
+  { initials: "AV", name: "Anand V.", subject: "Maths", score: 91, color: "#7B2FF7" },
 ];
 
 const progressSteps = [
@@ -70,20 +70,20 @@ function MatchingEngine() {
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
         viewport={{ once: true }}
         className="relative rounded-[28px] border overflow-hidden"
-        style={{ background: "#fff", borderColor: "rgba(15,23,42,0.08)", boxShadow: "0 16px 56px rgba(15,23,42,0.10)" }}
+        style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 16px 56px rgba(30,27,58,0.10)" }}
       >
-        <div className="h-[3px] bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+        <div className="h-[3px] bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-[#94A3B8]">AI Matching Engine</p>
-              <h4 className="text-base font-black text-[#0B1220]" style={{ fontFamily: "var(--font-heading)" }}>Smart Tutor Selection</h4>
+              <h4 className="text-base font-black text-[#0A1028]" style={{ fontFamily: "var(--font-heading)" }}>Smart Tutor Selection</h4>
             </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#16C47F]"
-              style={{ background: "rgba(22,196,127,0.09)", border: "1px solid rgba(22,196,127,0.22)" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#7B2FF7]"
+              style={{ background: "rgba(248,120,8,0.09)", border: "1px solid rgba(248,120,8,0.22)" }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
               Matching…
             </div>
           </div>
@@ -98,8 +98,8 @@ function MatchingEngine() {
             >
               <defs>
                 <radialGradient id="orbGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#16C47F" />
-                  <stop offset="100%" stopColor="#2563EB" />
+                  <stop offset="0%" stopColor="#7B2FF7" />
+                  <stop offset="100%" stopColor="#7B2FF7" />
                 </radialGradient>
                 <filter id="orbGlow" x="-60%" y="-60%" width="220%" height="220%">
                   <feGaussianBlur stdDeviation="10" result="blur" />
@@ -112,13 +112,13 @@ function MatchingEngine() {
 
               {/* ── Orbit ring 1 — inner dashed ── */}
               {/* <motion.circle cx={240} cy={210} r={100}
-                fill="none" stroke="rgba(22,196,127,0.13)" strokeWidth="1.5" strokeDasharray="6 4"
+                fill="none" stroke="rgba(248,120,8,0.13)" strokeWidth="1.5" strokeDasharray="6 4"
                 animate={{ rotate: 360 }} style={{ originX: "240px", originY: "210px" }}
                 transition={{ duration: 22, repeat: Infinity, ease: "linear" }} /> */}
 
               {/* ── Orbit ring 2 — outer dashed ── */}
               {/* <motion.circle cx={240} cy={210} r={168}
-                fill="none" stroke="rgba(37,99,235,0.08)" strokeWidth="1.5" strokeDasharray="6 4"
+                fill="none" stroke="rgba(123,47,247,0.08)" strokeWidth="1.5" strokeDasharray="6 4"
                 animate={{ rotate: -360 }} style={{ originX: "240px", originY: "210px" }}
                 transition={{ duration: 34, repeat: Infinity, ease: "linear" }} /> */}
 
@@ -143,13 +143,13 @@ function MatchingEngine() {
               >
                 {/* Outer pulse ring */}
                 <motion.circle cx={240} cy={210} r={70}
-                  fill="rgba(22,196,127,0.07)" stroke="rgba(22,196,127,0.18)" strokeWidth="1"
+                  fill="rgba(248,120,8,0.07)" stroke="rgba(248,120,8,0.18)" strokeWidth="1"
                   animate={{ scale: [1, 1.09, 1], opacity: [0.5, 1, 0.5] }}
                   style={{ originX: "240px", originY: "210px" }}
                   transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }} />
                 {/* Inner pulse ring */}
                 <motion.circle cx={240} cy={210} r={57}
-                  fill="rgba(37,99,235,0.05)" stroke="rgba(37,99,235,0.14)" strokeWidth="1"
+                  fill="rgba(123,47,247,0.05)" stroke="rgba(123,47,247,0.14)" strokeWidth="1"
                   animate={{ scale: [1, 1.07, 1], opacity: [0.4, 0.9, 0.4] }}
                   style={{ originX: "240px", originY: "210px" }}
                   transition={{ duration: 3.2, repeat: Infinity, delay: 0.6, ease: "easeInOut" }} />
@@ -200,7 +200,7 @@ function MatchingEngine() {
           {/* Candidate tutors row */}
           <div className="flex items-center gap-3 mb-4">
             <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8]">Candidates Evaluated</p>
-            <div className="flex-1 h-px bg-gradient-to-r from-[rgba(15,23,42,0.08)] to-transparent" />
+            <div className="flex-1 h-px bg-gradient-to-r from-[rgba(30,27,58,0.08)] to-transparent" />
           </div>
           <div className="grid grid-cols-3 gap-3 mb-4">
             {tutorAlts.map((t, i) => (
@@ -209,13 +209,13 @@ function MatchingEngine() {
                 animate={vis ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.7 + i * 0.09 }}
                 className="rounded-xl border p-3 text-center"
-                style={{ background: "rgba(248,250,252,0.9)", borderColor: "rgba(15,23,42,0.07)" }}>
+                style={{ background: "rgba(248,250,252,0.9)", borderColor: "rgba(30,27,58,0.07)" }}>
                 <div className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-black text-white shadow-md"
-                  style={{ background: `linear-gradient(135deg, ${t.color}, #2563EB)` }}>{t.initials}</div>
-                <p className="text-[10px] font-bold text-[#0F172A]">{t.name}</p>
+                  style={{ background: `linear-gradient(135deg, ${t.color}, #7B2FF7)` }}>{t.initials}</div>
+                <p className="text-[10px] font-bold text-[#1E1B3A]">{t.name}</p>
                 <p className="text-[9px] text-[#94A3B8]">{t.subject}</p>
-                <div className="mt-1.5 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(15,23,42,0.06)" }}>
-                  <motion.div style={{ height: "100%", borderRadius: 999, background: `linear-gradient(90deg, ${t.color}, #2563EB)` }}
+                <div className="mt-1.5 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(30,27,58,0.06)" }}>
+                  <motion.div style={{ height: "100%", borderRadius: 999, background: `linear-gradient(90deg, ${t.color}, #7B2FF7)` }}
                     initial={{ width: 0 }} animate={vis ? { width: `${t.score}%` } : {}}
                     transition={{ duration: 0.9, delay: 0.8 + i * 0.1 }} />
                 </div>
@@ -233,21 +233,21 @@ function MatchingEngine() {
         transition={{ delay: 0.3, duration: 0.55 }}
         viewport={{ once: true }}
         className="rounded-2xl overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0B1220, #111827)", boxShadow: "0 12px 40px rgba(15,23,42,0.2)" }}
+        style={{ background: "linear-gradient(135deg, #0A1028, #111827)", boxShadow: "0 12px 40px rgba(30,27,58,0.2)" }}
       >
-        <div className="h-[2px] bg-gradient-to-r from-[#16C47F] to-[#2563EB]" />
+        <div className="h-[2px] bg-gradient-to-r from-[#EA580C] to-[#C2410C]" />
         <div className="p-5 flex gap-4 items-start">
           <div className="relative shrink-0">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center text-xl font-black text-white shadow-lg">SS</div>
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#16C47F] flex items-center justify-center shadow-md">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-xl font-black text-white shadow-lg">SS</div>
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#7B2FF7] flex items-center justify-center shadow-md">
               <CheckCircle2 className="w-3 h-3 text-white" />
             </div>
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
               <p className="text-sm font-black text-white">Sarah Sharma</p>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-[#16C47F]"
-                style={{ background: "rgba(22,196,127,0.15)", border: "1px solid rgba(22,196,127,0.25)" }}>🏆 Best Match</span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-[#7B2FF7]"
+                style={{ background: "rgba(248,120,8,0.15)", border: "1px solid rgba(248,120,8,0.25)" }}>🏆 Best Match</span>
             </div>
             <p className="text-xs text-[#94A3B8] mb-2">Mathematics Specialist · 8+ Years</p>
             <div className="flex flex-wrap gap-2">
@@ -256,8 +256,8 @@ function MatchingEngine() {
                 { icon: "📅", val: "Mon–Sat" },
                 { icon: "✓", val: "Verified" },
               ].map((tag) => (
-                <span key={tag.val} className="text-[10px] font-semibold px-2.5 py-1 rounded-full text-[#16C47F]"
-                  style={{ background: "rgba(22,196,127,0.1)", border: "1px solid rgba(22,196,127,0.22)" }}>
+                <span key={tag.val} className="text-[10px] font-semibold px-2.5 py-1 rounded-full text-[#7B2FF7]"
+                  style={{ background: "rgba(248,120,8,0.1)", border: "1px solid rgba(248,120,8,0.22)" }}>
                   {tag.icon} {tag.val}
                 </span>
               ))}
@@ -265,7 +265,7 @@ function MatchingEngine() {
           </div>
           <div className="text-right shrink-0">
             <p className="text-2xl font-black text-white">98%</p>
-            <p className="text-[9px] text-[#16C47F] font-bold uppercase tracking-wider">Match Score</p>
+            <p className="text-[9px] text-[#7B2FF7] font-bold uppercase tracking-wider">Match Score</p>
           </div>
         </div>
       </motion.div>
@@ -276,9 +276,9 @@ function MatchingEngine() {
         className="flex flex-wrap gap-2"
       >
         {[
-          { emoji: "🤖", label: "AI Match Complete", color: "#16C47F", border: "rgba(22,196,127,0.25)" },
-          { emoji: "✅", label: "Tutor Verified", color: "#2563EB", border: "rgba(37,99,235,0.25)" },
-          { emoji: "📩", label: "Profile Sent to Parent", color: "#7C3AED", border: "rgba(124,58,237,0.25)" },
+          { emoji: "🤖", label: "AI Match Complete", color: "#7B2FF7", border: "rgba(248,120,8,0.25)" },
+          { emoji: "✅", label: "Tutor Verified", color: "#7B2FF7", border: "rgba(123,47,247,0.25)" },
+          { emoji: "📩", label: "Profile Sent to Parent", color: "#7B2FF7", border: "rgba(123,47,247,0.25)" },
         ].map((chip, i) => (
           <motion.span key={chip.label}
             initial={{ opacity: 0, scale: 0.85 }}
@@ -309,18 +309,18 @@ export function Step03TutorMatch() {
       {/* ── BG ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-32 -right-20 w-[600px] h-[500px] rounded-full opacity-20"
-          style={{ background: "radial-gradient(ellipse, rgba(22,196,127,0.12), transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(248,120,8,0.12), transparent 70%)", filter: "blur(70px)" }} />
         <div className="absolute top-1/3 -left-24 w-[500px] h-[400px] rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(37,99,235,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute bottom-0 right-1/3 w-[400px] h-[300px] rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(circle, rgba(123,47,247,0.1), transparent 70%)", filter: "blur(60px)" }} />
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.02) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(30,27,58,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(30,27,58,0.02) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
         }} />
         {[...Array(10)].map((_, i) => (
           <motion.div key={i} className="absolute rounded-full"
-            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#16C47F" : i % 3 === 1 ? "#2563EB" : "#7C3AED", left: `${(i * 18 + 5) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.3 }}
+            style={{ width: 2, height: 2, background: i % 3 === 0 ? "#7B2FF7" : i % 3 === 1 ? "#7B2FF7" : "#7B2FF7", left: `${(i * 18 + 5) % 96}%`, top: `${(i * 13 + 6) % 88}%`, opacity: 0.3 }}
             animate={{ y: [0, -14, 0], opacity: [0.2, 0.55, 0.2] }}
             transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.45, ease: "easeInOut" }} />
         ))}
@@ -358,12 +358,12 @@ export function Step03TutorMatch() {
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
                 style={{
-                  background: "rgba(22,196,127,0.08)",
-                  borderColor: "rgba(22,196,127,0.28)",
+                  background: "rgba(248,120,8,0.08)",
+                  borderColor: "rgba(248,120,8,0.28)",
                   backdropFilter: "blur(10px)",
                 }}
               >
-                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center text-white text-[9px] font-black shadow-sm">
+                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[9px] font-black shadow-sm">
                   3
                 </div>
 
@@ -371,7 +371,7 @@ export function Step03TutorMatch() {
                   Step 03
                 </span>
 
-                <div className="w-1.5 h-1.5 rounded-full bg-[#16C47F] animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
               </div>
 
               {/* Feature highlight badge */}
@@ -385,12 +385,12 @@ export function Step03TutorMatch() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl border"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(22,196,127,0.1), rgba(37,99,235,0.08))",
-                  borderColor: "rgba(22,196,127,0.28)",
-                  boxShadow: "0 0 20px rgba(22,196,127,0.12)",
+                    "linear-gradient(135deg, rgba(248,120,8,0.1), rgba(123,47,247,0.08))",
+                  borderColor: "rgba(248,120,8,0.28)",
+                  boxShadow: "0 0 20px rgba(248,120,8,0.12)",
                 }}
               >
-                <Zap className="w-4 h-4 text-[#16C47F]" />
+                <Zap className="w-4 h-4 text-[#7B2FF7]" />
 
                 <span className="text-sm font-bold text-[#059669]">
                   No Manual Searching Required
@@ -401,15 +401,15 @@ export function Step03TutorMatch() {
 
 
             {/* Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0B1220] mb-6"
+            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}>
               Finding the{" "}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#16C47F] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="text-[#6D28D9]">
                   Right Tutor
                 </span>
                 <motion.span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-                  style={{ background: "linear-gradient(90deg, #16C47F, #2563EB)" }}
+                  style={{ background: "linear-gradient(90deg, #7B2FF7, #7B2FF7)" }}
                   initial={{ scaleX: 0, originX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -428,14 +428,14 @@ export function Step03TutorMatch() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-lg leading-8 text-[#64748B]">{para}</motion.p>
+                  className="text-lg leading-8 text-[#6E6A85]">{para}</motion.p>
               ))}
             </div>
 
             {/* Matching factors */}
             <div className="flex items-center gap-3 mb-5">
-              <p className="text-sm font-black uppercase tracking-widest text-[#0F172A] whitespace-nowrap">Matching Factors Considered</p>
-              <div className="flex-1 h-px bg-gradient-to-r from-[rgba(22,196,127,0.25)] to-transparent" />
+              <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Matching Factors Considered</p>
+              <div className="flex-1 h-px bg-gradient-to-r from-[rgba(248,120,8,0.25)] to-transparent" />
             </div>
 
             <div ref={gridRef} className="grid grid-cols-2 gap-3 mb-8">
@@ -454,8 +454,8 @@ export function Step03TutorMatch() {
                   <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-lg mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                     {card.emoji}
                   </div>
-                  <p className="relative z-10 text-xs font-black text-[#0B1220] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                  <p className="relative z-10 text-[10px] leading-relaxed text-[#64748B]">{card.desc}</p>
+                  <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
+                  <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
                   <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ background: `linear-gradient(90deg, ${card.color}, transparent)` }} />
                 </motion.div>
@@ -469,12 +469,12 @@ export function Step03TutorMatch() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               className="flex items-center gap-4 rounded-2xl border px-5 py-4 mb-8"
-              style={{ background: "rgba(22,196,127,0.05)", borderColor: "rgba(22,196,127,0.2)", backdropFilter: "blur(10px)" }}
+              style={{ background: "rgba(248,120,8,0.05)", borderColor: "rgba(248,120,8,0.2)", backdropFilter: "blur(10px)" }}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#16C47F] to-[#2563EB] flex items-center justify-center shadow-md shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md shrink-0">
                 <Target className="w-5 h-5 text-white" />
               </div>
-              <p className="text-sm font-semibold text-[#0F172A] leading-snug">
+              <p className="text-sm font-semibold text-[#1E1B3A] leading-snug">
                 Every tutor recommendation is personalised based on learning needs, teaching style compatibility, and academic goals.
               </p>
             </motion.div>
@@ -486,20 +486,20 @@ export function Step03TutorMatch() {
                   <div key={s.label} className="flex items-center">
                     <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm ${s.done ? "scale-110" : ""}`}
                       style={s.done
-                        ? { background: "linear-gradient(135deg, #16C47F, #2563EB)", color: "#fff", boxShadow: "0 0 12px rgba(22,196,127,0.4)" }
-                        : { background: "rgba(15,23,42,0.06)", color: "#94A3B8" }}>
+                        ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(248,120,8,0.4)" }
+                        : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>
                       {s.done ? <CheckCircle2 className="w-3.5 h-3.5" /> : i + 1}
                     </div>
                     {i < progressSteps.length - 1 && (
                       <div className="w-10 h-[2px] mx-1 rounded-full"
-                        style={{ background: i < 2 ? "linear-gradient(90deg, #16C47F, #2563EB)" : "rgba(15,23,42,0.08)" }} />
+                        style={{ background: i < 2 ? "linear-gradient(90deg, #7B2FF7, #7B2FF7)" : "rgba(30,27,58,0.08)" }} />
                     )}
                   </div>
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-[#16C47F] animate-pulse" />
-                <p className="text-xs font-bold text-[#16C47F]">Tutor Match Completed · Step 3 of 5</p>
+                <div className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
+                <p className="text-xs font-bold text-[#7B2FF7]">Tutor Match Completed · Step 3 of 5</p>
               </div>
             </motion.div>
           </motion.div>

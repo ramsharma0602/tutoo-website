@@ -32,7 +32,7 @@ export function ApplyAsTutorSection() {
       description:
         "Complete your tutor application with basic professional and teaching details.",
 
-      gradient: "from-[#16C47F] to-[#2563EB]",
+      gradient: "from-[#EA580C] to-[#C2410C]",
     },
 
     {
@@ -41,7 +41,7 @@ export function ApplyAsTutorSection() {
       description:
         "Upload identity proof, qualifications, certifications, and required documents securely.",
 
-      gradient: "from-[#2563EB] to-[#7C3AED]",
+      gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -50,7 +50,7 @@ export function ApplyAsTutorSection() {
       description:
         "Our team verifies your profile, qualifications, and professional background.",
 
-      gradient: "from-[#16C47F] to-[#22C55E]",
+      gradient: "from-[#7B2FF7] to-[#22C55E]",
     },
 
     {
@@ -59,7 +59,7 @@ export function ApplyAsTutorSection() {
       description:
         "Attend a professional screening and subject expertise assessment.",
 
-      gradient: "from-[#7C3AED] to-[#2563EB]",
+      gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -68,7 +68,7 @@ export function ApplyAsTutorSection() {
       description:
         "Once approved, your profile becomes visible to matched students and parents.",
 
-      gradient: "from-[#16C47F] to-[#7C3AED]",
+      gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },
 
     {
@@ -77,7 +77,7 @@ export function ApplyAsTutorSection() {
       description:
         "Begin teaching online or offline and start earning with Tutoo.",
 
-      gradient: "from-[#2563EB] to-[#16C47F]",
+      gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },
   ];
 
@@ -88,7 +88,7 @@ export function ApplyAsTutorSection() {
       description:
         "Basic identity, contact information, and professional profile setup.",
 
-      gradient: "from-[#16C47F] to-[#22C55E]",
+      gradient: "from-[#7B2FF7] to-[#22C55E]",
     },
 
     {
@@ -97,7 +97,7 @@ export function ApplyAsTutorSection() {
       description:
         "Academic records, certifications, degrees, and subject expertise.",
 
-      gradient: "from-[#2563EB] to-[#3B82F6]",
+      gradient: "from-[#7B2FF7] to-[#8F21F8]",
     },
 
     {
@@ -106,7 +106,7 @@ export function ApplyAsTutorSection() {
       description:
         "Previous teaching background and student handling experience.",
 
-      gradient: "from-[#7C3AED] to-[#8B5CF6]",
+      gradient: "from-[#7B2FF7] to-[#8B5CF6]",
     },
 
     {
@@ -124,7 +124,7 @@ export function ApplyAsTutorSection() {
       description:
         "Choose the student grades and levels you want to teach.",
 
-      gradient: "from-[#16C47F] to-[#2563EB]",
+      gradient: "from-[#EA580C] to-[#C2410C]",
     },
 
     {
@@ -133,21 +133,21 @@ export function ApplyAsTutorSection() {
       description:
         "Teach online, home tuition, or hybrid classes based on your preference.",
 
-      gradient: "from-[#2563EB] to-[#7C3AED]",
+      gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0B1220] py-28">
+    <section className="relative overflow-hidden bg-[#0A1028] py-28">
 
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#16C47F]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7C3AED]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#7B2FF7]/10 rounded-full blur-3xl" />
 
         {/* Grid */}
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:80px_80px]" />
@@ -177,11 +177,11 @@ export function ApplyAsTutorSection() {
                 bg-white/5
                 backdrop-blur-xl
                 border
-                border-[#16C47F]/20
+                border-[#7B2FF7]/20
                 shadow-sm
                 mb-8
-                hover:border-[#16C47F]/40
-                hover:bg-[#16C47F]/10
+                hover:border-[#7B2FF7]/40
+                hover:bg-[#7B2FF7]/10
                 transition-all
                 duration-300
                 group
@@ -189,9 +189,9 @@ export function ApplyAsTutorSection() {
                 "
           >
 
-            <Sparkles className="w-4 h-4 text-[#16C47F] group-hover:rotate-12 transition-transform duration-300" />
+            <Sparkles className="w-4 h-4 text-[#7B2FF7] group-hover:rotate-12 transition-transform duration-300" />
 
-            <span className="text-sm font-semibold text-[#16C47F]">
+            <span className="text-sm font-semibold text-[#7B2FF7]">
               Apply as Tutor
             </span>
           </button>
@@ -203,7 +203,7 @@ export function ApplyAsTutorSection() {
           >
             Getting Started is{" "}
 
-            <span className="bg-gradient-to-r from-[#16C47F] via-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22C55E] to-[#7B2FF7] bg-clip-text text-transparent">
               Simple
             </span>
           </h2>
@@ -225,7 +225,7 @@ export function ApplyAsTutorSection() {
           <div className="relative">
 
             {/* Connector Line */}
-            <div className="absolute left-[39px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#16C47F] via-[#2563EB] to-[#7C3AED]" />
+            <div className="absolute left-[39px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7]" />
 
             {steps.map((step, index) => {
 
@@ -250,16 +250,16 @@ export function ApplyAsTutorSection() {
                 >
 
                   {/* Timeline Dot */}
-                  <div className={`relative z-10 w-20 h-20 rounded-[28px] bg-gradient-to-br ${step.gradient} p-[1px] shadow-[0_10px_40px_rgba(37,99,235,0.25)]`}>
+                  <div className={`relative z-10 w-20 h-20 rounded-[28px] bg-gradient-to-br ${step.gradient} p-[1px] shadow-[0_10px_40px_rgba(123,47,247,0.25)]`}>
 
-                    <div className="w-full h-full rounded-[27px] bg-[#0F172A] flex items-center justify-center backdrop-blur-xl group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-full h-full rounded-[27px] bg-[#1E1B3A] flex items-center justify-center backdrop-blur-xl group-hover:scale-110 transition-transform duration-500">
 
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
 
                   {/* Card */}
-                  <div className="relative flex-1 rounded-[32px] bg-white/5 backdrop-blur-2xl border border-white/10 p-7 overflow-hidden group-hover:border-[#2563EB]/40 transition-all duration-500">
+                  <div className="relative flex-1 rounded-[32px] bg-white/5 backdrop-blur-2xl border border-white/10 p-7 overflow-hidden group-hover:border-[#7B2FF7]/40 transition-all duration-500">
 
                     {/* Glow */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${step.gradient}`} />
@@ -338,7 +338,7 @@ export function ApplyAsTutorSection() {
                       {/* Icon */}
                       <div className={`w-16 h-16 rounded-[24px] bg-gradient-to-br ${card.gradient} p-[1px] shadow-lg`}>
 
-                        <div className="w-full h-full rounded-[23px] bg-[#0F172A] flex items-center justify-center">
+                        <div className="w-full h-full rounded-[23px] bg-[#1E1B3A] flex items-center justify-center">
 
                           <Icon className="w-7 h-7 text-white" />
                         </div>
@@ -374,7 +374,7 @@ export function ApplyAsTutorSection() {
             >
 
               {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#16C47F]/10 via-[#2563EB]/10 to-[#7C3AED]/10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#7B2FF7]/10 via-[#7B2FF7]/10 to-[#7B2FF7]/10" />
 
               <div className="relative z-10">
 
@@ -390,14 +390,14 @@ export function ApplyAsTutorSection() {
                 {/* CTA */}
                 <div className="flex flex-wrap items-center gap-5 mt-10">
 
-                  <button className="group h-14 px-8 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB] text-white font-semibold shadow-[0_10px_40px_rgba(37,99,235,0.25)] hover:scale-[1.02] transition-all duration-300 flex items-center gap-3">
+                  <button className="group h-14 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-semibold shadow-[0_10px_40px_rgba(123,47,247,0.25)] hover:scale-[1.02] transition-all duration-300 flex items-center gap-3">
 
                     Apply Now
 
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
 
-                  <button className="group flex items-center gap-3 text-white hover:text-[#16C47F] transition-colors duration-300 font-semibold text-lg">
+                  <button className="group flex items-center gap-3 text-white hover:text-[#7B2FF7] transition-colors duration-300 font-semibold text-lg">
 
                     Learn More About Teaching
 
@@ -412,7 +412,7 @@ export function ApplyAsTutorSection() {
         {/* Floating Chips */}
         <div className="absolute top-48 right-10 hidden xl:flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
 
-          <ShieldCheck className="w-5 h-5 text-[#16C47F]" />
+          <ShieldCheck className="w-5 h-5 text-[#7B2FF7]" />
 
           <span className="text-sm font-semibold text-white">
             Verified Tutor
@@ -421,7 +421,7 @@ export function ApplyAsTutorSection() {
 
         <div className="absolute bottom-20 left-10 hidden xl:flex items-center gap-3 px-5 py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl">
 
-          <Radio className="w-5 h-5 text-[#2563EB]" />
+          <Radio className="w-5 h-5 text-[#7B2FF7]" />
 
           <span className="text-sm font-semibold text-white">
             Live Sessions

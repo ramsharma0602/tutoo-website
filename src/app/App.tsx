@@ -64,7 +64,7 @@ function RouteFallback() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div
-        className="w-10 h-10 rounded-full border-[3px] border-[#E2E8F0] border-t-[#16C47F] animate-spin"
+        className="w-10 h-10 rounded-full border-[3px] border-[#E6E3F0] border-t-[#7B2FF7] animate-spin"
         role="status"
         aria-label="Loading"
       />
@@ -74,7 +74,7 @@ function RouteFallback() {
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAFAFC] overflow-x-hidden">
 
       <PageSchema jsonLd={getLocalBusinessSchema()} />
       <PageLoadModal />

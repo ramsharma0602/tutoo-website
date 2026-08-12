@@ -28,9 +28,9 @@ const STAGES = [
         emoji: "👤",
         title: "Student Registers",
         desc: "Students or parents share academic requirements, learning goals, and preferred schedule to begin their journey.",
-        from: "#16C47F",
-        to: "#2563EB",
-        glow: "rgba(22,196,127,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(248,120,8,0.40)",
         tag: "Starting Point",
         side: "left",
         delay: 0.1,
@@ -42,9 +42,9 @@ const STAGES = [
         emoji: "🧠",
         title: "AI Assessment",
         desc: "Learning strengths, weaknesses, knowledge gaps, and preferred learning styles are precisely identified.",
-        from: "#2563EB",
-        to: "#7C3AED",
-        glow: "rgba(37,99,235,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(123,47,247,0.40)",
         tag: "Intelligence Layer",
         side: "right",
         delay: 0.2,
@@ -56,9 +56,9 @@ const STAGES = [
         emoji: "👨‍🏫",
         title: "Tutor Matching",
         desc: "The platform intelligently recommends the most suitable verified tutor based on subject, style, and availability.",
-        from: "#7C3AED",
-        to: "#2563EB",
-        glow: "rgba(124,58,237,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(123,47,247,0.40)",
         tag: "Smart Match",
         side: "left",
         delay: 0.3,
@@ -70,9 +70,9 @@ const STAGES = [
         emoji: "📚",
         title: "Learning Sessions",
         desc: "Structured home or online learning sessions begin with personalized lesson plans and interactive content.",
-        from: "#16C47F",
-        to: "#2563EB",
-        glow: "rgba(22,196,127,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(248,120,8,0.40)",
         tag: "Active Learning",
         side: "right",
         delay: 0.4,
@@ -84,9 +84,9 @@ const STAGES = [
         emoji: "📈",
         title: "Progress Tracking",
         desc: "Performance, attendance, and learning outcomes are continuously monitored through real-time dashboards.",
-        from: "#2563EB",
-        to: "#7C3AED",
-        glow: "rgba(37,99,235,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(123,47,247,0.40)",
         tag: "Data Insights",
         side: "left",
         delay: 0.5,
@@ -98,9 +98,9 @@ const STAGES = [
         emoji: "🚀",
         title: "Academic Improvement",
         desc: "Students build confidence, master concepts, achieve better results, and unlock their full academic potential.",
-        from: "#7C3AED",
-        to: "#16C47F",
-        glow: "rgba(124,58,237,0.40)",
+        from: "#7B2FF7",
+        to: "#7B2FF7",
+        glow: "rgba(123,47,247,0.40)",
         tag: "Goal Achieved",
         side: "right",
         delay: 0.6,
@@ -113,14 +113,14 @@ const STAGES = [
 // ─────────────────────────────────────────────
 function Particles() {
     const dots = [
-        { x: 5, y: 8, c: "#16C47F", s: 5, d: 0 },
-        { x: 93, y: 15, c: "#2563EB", s: 7, d: 0.6 },
-        { x: 10, y: 45, c: "#7C3AED", s: 4, d: 1.2 },
-        { x: 88, y: 55, c: "#16C47F", s: 6, d: 0.3 },
-        { x: 50, y: 5, c: "#2563EB", s: 5, d: 0.9 },
-        { x: 15, y: 80, c: "#7C3AED", s: 4, d: 1.5 },
-        { x: 85, y: 85, c: "#16C47F", s: 7, d: 0.7 },
-        { x: 50, y: 95, c: "#2563EB", s: 5, d: 1.1 },
+        { x: 5, y: 8, c: "#7B2FF7", s: 5, d: 0 },
+        { x: 93, y: 15, c: "#7B2FF7", s: 7, d: 0.6 },
+        { x: 10, y: 45, c: "#7B2FF7", s: 4, d: 1.2 },
+        { x: 88, y: 55, c: "#7B2FF7", s: 6, d: 0.3 },
+        { x: 50, y: 5, c: "#7B2FF7", s: 5, d: 0.9 },
+        { x: 15, y: 80, c: "#7B2FF7", s: 4, d: 1.5 },
+        { x: 85, y: 85, c: "#7B2FF7", s: 7, d: 0.7 },
+        { x: 50, y: 95, c: "#7B2FF7", s: 5, d: 1.1 },
     ];
     return (
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -148,21 +148,21 @@ function CenterNode() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 className="absolute w-36 h-36 rounded-full"
-                style={{ border: "1.5px dashed rgba(22,196,127,0.25)" }}
+                style={{ border: "1.5px dashed rgba(248,120,8,0.25)" }}
             />
             {/* Middle ring */}
             <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                 className="absolute w-24 h-24 rounded-full"
-                style={{ border: "1px dashed rgba(37,99,235,0.20)" }}
+                style={{ border: "1px dashed rgba(123,47,247,0.20)" }}
             />
             {/* Pulse rings */}
             {[1, 2, 3].map((r) => (
                 <motion.div
                     key={r}
                     className="absolute rounded-full"
-                    style={{ width: r * 60, height: r * 60, border: `1px solid rgba(22,196,127,${0.12 - r * 0.03})` }}
+                    style={{ width: r * 60, height: r * 60, border: `1px solid rgba(248,120,8,${0.12 - r * 0.03})` }}
                     animate={{ scale: [1, 1.06, 1], opacity: [0.4, 0.9, 0.4] }}
                     transition={{ duration: 3 + r * 0.8, repeat: Infinity, delay: r * 0.9, ease: "easeInOut" }}
                 />
@@ -174,9 +174,9 @@ function CenterNode() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", bounce: 0.45, delay: 0.3 }}
                 className="relative z-10 w-20 h-20 rounded-2xl flex flex-col items-center justify-center
-                   shadow-[0_0_48px_rgba(22,196,127,0.55)]"
+                   shadow-[0_0_48px_rgba(248,120,8,0.55)]"
                 style={{
-                    background: "linear-gradient(135deg, #16C47F, #2563EB, #7C3AED)",
+                    background: "linear-gradient(135deg, #7B2FF7, #7B2FF7, #7B2FF7)",
                     animation: "corePulse 3s ease-in-out infinite",
                 }}
             >
@@ -399,7 +399,7 @@ export function LearningEcosystemSection() {
             ref={sectionRef}
             className="relative overflow-hidden py-32"
             style={{
-                background: "linear-gradient(180deg, #0B1220 0%, #111827 50%, #0F172A 100%)",
+                background: "linear-gradient(180deg, #0A1028 0%, #111827 50%, #1E1B3A 100%)",
                 fontFamily: "var(--font-body, Inter, sans-serif)",
             }}
         >
@@ -408,18 +408,18 @@ export function LearningEcosystemSection() {
                 <Particles />
                 <motion.div
                     className="absolute -top-56 left-1/4 w-[700px] h-[700px] rounded-full blur-[140px] opacity-[0.14]"
-                    style={{ y: bgY, background: "radial-gradient(circle, #16C47F, transparent 70%)" }} />
+                    style={{ y: bgY, background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
                 <div className="absolute -bottom-48 right-1/4 w-[640px] h-[640px] rounded-full blur-[130px] opacity-[0.10]"
-                    style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
+                    style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[100px] opacity-[0.07]"
-                    style={{ background: "radial-gradient(circle, #7C3AED, transparent 70%)" }} />
+                    style={{ background: "radial-gradient(circle, #7B2FF7, transparent 70%)" }} />
 
                 {/* Grid lines */}
                 <svg className="absolute inset-0 w-full h-full opacity-[0.04]" preserveAspectRatio="none">
                     <defs>
                         <linearGradient id="gl1" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#16C47F" />
-                            <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+                            <stop offset="0%" stopColor="#7B2FF7" />
+                            <stop offset="100%" stopColor="#7B2FF7" stopOpacity="0" />
                         </linearGradient>
                     </defs>
                     {Array.from({ length: 10 }).map((_, i) => (
@@ -445,17 +445,17 @@ export function LearningEcosystemSection() {
                             className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full"
                             style={{
                                 background: "rgba(255,255,255,0.07)",
-                                border: "1px solid rgba(22,196,127,0.30)",
+                                border: "1px solid rgba(248,120,8,0.30)",
                                 backdropFilter: "blur(20px)",
-                                boxShadow: "0 0 28px rgba(22,196,127,0.18)",
+                                boxShadow: "0 0 28px rgba(248,120,8,0.18)",
                             }}
                         >
-                            <Globe className="w-4 h-4 text-[#16C47F]" />
-                            <span className="text-sm font-black tracking-widest uppercase text-[#16C47F]"
+                            <Globe className="w-4 h-4 text-[#7B2FF7]" />
+                            <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
                                 style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
                                 Our Learning Ecosystem
                             </span>
-                            <Sparkles className="w-4 h-4 text-[#16C47F]" />
+                            <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
                         </motion.div>
                     </motion.div>
 
@@ -470,8 +470,8 @@ export function LearningEcosystemSection() {
                         More Than a Tutor.{" "}
                         <br className="hidden lg:block" />
                         A Complete{" "}
-                        <span className="bg-gradient-to-r from-[#16C47F] via-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent
-                             drop-shadow-[0_0_40px_rgba(22,196,127,0.35)]">
+                        <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
+                             drop-shadow-[0_0_40px_rgba(248,120,8,0.35)]">
                             Learning Ecosystem.
                         </span>
                     </motion.h2>
@@ -495,7 +495,7 @@ export function LearningEcosystemSection() {
 
                     {/* Vertical spine background */}
                     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] pointer-events-none"
-                        style={{ background: "linear-gradient(180deg, transparent, rgba(22,196,127,0.15) 10%, rgba(37,99,235,0.15) 50%, rgba(124,58,237,0.15) 90%, transparent)" }} />
+                        style={{ background: "linear-gradient(180deg, transparent, rgba(248,120,8,0.15) 10%, rgba(123,47,247,0.15) 50%, rgba(123,47,247,0.15) 90%, transparent)" }} />
 
                     {/* Stages */}
                     {STAGES.map((stage, i) => (
@@ -521,14 +521,14 @@ export function LearningEcosystemSection() {
                     transition={{ delay: 0.2 }}
                     className="flex flex-col items-center gap-6 mt-16"
                 >
-                    <p className="text-sm font-black tracking-widest uppercase text-[#16C47F]">
+                    <p className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]">
                         ✦ Begin Your Journey Today ✦
                     </p>
                     <div className="flex flex-wrap justify-center gap-5">
                         <motion.button
                             whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                            className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#16C47F] to-[#2563EB]
-                         text-white font-bold shadow-[0_8px_32px_rgba(22,196,127,0.35)]
+                            className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
+                         text-white font-bold shadow-[0_8px_32px_rgba(248,120,8,0.35)]
                          flex items-center gap-2"
                         >
                             <Rocket className="w-5 h-5" />
@@ -548,8 +548,8 @@ export function LearningEcosystemSection() {
 
             <style>{`
         @keyframes corePulse {
-          0%,100% { box-shadow: 0 0 0 0 rgba(22,196,127,0.3), 0 0 48px rgba(22,196,127,0.55); }
-          50%      { box-shadow: 0 0 0 18px rgba(22,196,127,0), 0 0 48px rgba(22,196,127,0.55); }
+          0%,100% { box-shadow: 0 0 0 0 rgba(248,120,8,0.3), 0 0 48px rgba(248,120,8,0.55); }
+          50%      { box-shadow: 0 0 0 18px rgba(248,120,8,0), 0 0 48px rgba(248,120,8,0.55); }
         }
       `}</style>
         </section>
