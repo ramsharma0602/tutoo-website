@@ -12,6 +12,7 @@ import {
   Code2,
   Music,
   PersonStanding,
+  MapPin,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { track } from '../../seo/analytics';
@@ -19,18 +20,23 @@ import { track } from '../../seo/analytics';
 /* ─────────────────────────────────────────────────────────────────────────
    HERO — full-bleed banner
 
-   The photo is a transparent cutout — the studio backdrop has been removed, so
-   there is no white block and no card. The subjects sit directly on the page
-   background and the gradient shows through around them.
+   PHOTO
+   The photo is a transparent cutout. Its left edge was feathered before export
+   because the frame sliced the book stack flat and that cut read as a hard
+   vertical line. Keep the .webp files — do NOT re-export as JPEG, and do not
+   put a background colour behind the image.
 
-   Because the asset carries alpha, do NOT re-export it as JPEG and do not add
-   a background colour behind it.
+   BACKDROP
+   Depth behind the photo comes from stacked, purely decorative layers: a base
+   diagonal wash, two radial glows, a fine grid, a large brand disc, a thin
+   outline ring and a dotted patch. All are aria-hidden and carry no meaning,
+   so they can be re-ordered or removed freely.
 
-   The "We help in" card is centred on the boundary between this section and the
-   one below: it sits in flow after the banner and is shifted up by half its own
-   height. Move the whole group with the banner's bottom padding; do not swap the
-   translate for a fixed negative margin, which is what previously let the card
-   climb over the "Find a Tutor" button.
+   "WE HELP IN" CARD
+   Sits in flow after the banner and is shifted up by half its own height, so
+   its centre lands on the section boundary. Move the group with the banner's
+   bottom padding — never swap the translate for a fixed negative margin, which
+   is what previously let the card climb over the button.
 ───────────────────────────────────────────────────────────────────────── */
 
 const TRUST_BADGES = [
@@ -55,7 +61,7 @@ const CATEGORIES = [
 ];
 
 const PHOTO_ALT =
-  'A tutor explaining a page of a textbook to a young student sitting beside her at home';
+  'A tutor sitting beside a young student at her desk, helping her work through a page in her notebook';
 
 export function Hero() {
   const navigate = useNavigate();
@@ -63,39 +69,77 @@ export function Hero() {
   return (
     <section className="relative z-10 bg-white">
 
-      {/* ══════════════ BANNER BLOCK ══════════════ */}
+      {/* ══════════════ BANNER ══════════════ */}
       <div className="relative overflow-hidden">
 
-        {/* Background: tint on the left, pure white well before the photo starts */}
+        {/* Backdrop 1 — base wash, reaching white before the photo starts */}
         <div
-          className="absolute inset-0 bg-[linear-gradient(100deg,#E8F0FF_0%,#F1EEFF_22%,#FCFAFF_36%,#FFFFFF_46%,#FFFFFF_100%)]"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 opacity-[0.28] bg-[linear-gradient(to_right,#1e1b3a08_1px,transparent_1px),linear-gradient(to_bottom,#1e1b3a08_1px,transparent_1px)] bg-[size:64px_64px]"
+          className="absolute inset-0 bg-[linear-gradient(103deg,#E6EEFF_0%,#EFEBFF_20%,#F8F5FF_34%,#FFFFFF_46%,#FFFFFF_100%)]"
           aria-hidden="true"
         />
 
-        {/* Soft brand circle, sitting between the copy and the photo */}
+        {/* Backdrop 2 — soft radial glows, mesh-gradient feel */}
         <div
-          className="hidden lg:block absolute left-[42%] top-[10%] w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-[#CFE0FF]/45 to-[#E7DBFF]/45 blur-[70px]"
+          className="absolute -top-40 -left-32 w-[46rem] h-[46rem] rounded-full opacity-60"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(123,47,247,0.16) 0%, rgba(123,47,247,0.05) 45%, transparent 70%)',
+            filter: 'blur(20px)',
+          }}
+        />
+        <div
+          className="hidden md:block absolute -bottom-52 left-[16%] w-[40rem] h-[40rem] rounded-full opacity-50"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(234,88,12,0.12) 0%, rgba(234,88,12,0.04) 45%, transparent 70%)',
+            filter: 'blur(24px)',
+          }}
+        />
+
+        {/* Backdrop 3 — fine grid, faded out towards the bottom */}
+        <div
+          className="absolute inset-0 opacity-[0.30] bg-[linear-gradient(to_right,#1e1b3a0a_1px,transparent_1px),linear-gradient(to_bottom,#1e1b3a0a_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_88%)]"
           aria-hidden="true"
         />
 
-        {/* ────── Photo: transparent cutout, no background block ────── */}
-        <div className="hidden lg:block absolute bottom-0 right-0 w-[54%] xl:w-[52%] 2xl:w-[50%] pointer-events-none">
+        {/* Backdrop 4 — shapes behind the photo */}
+        <div
+          className="hidden lg:block absolute right-[7%] top-[13%] w-[33rem] h-[33rem] rounded-full bg-[radial-gradient(circle_at_30%_25%,#DCE8FF_0%,#E8DFFF_55%,#F6F1FF_100%)] opacity-80"
+          aria-hidden="true"
+        />
+        <div
+          className="hidden xl:block absolute right-[3.5%] top-[8%] w-[37rem] h-[37rem] rounded-full border border-[#7B2FF7]/[0.13]"
+          aria-hidden="true"
+        />
+        <div
+          className="hidden lg:block absolute top-24 right-8 w-40 h-28 opacity-45"
+          aria-hidden="true"
+          style={{
+            backgroundImage: 'radial-gradient(#7B2FF7 1.5px, transparent 1.5px)',
+            backgroundSize: '18px 18px',
+          }}
+        />
+        <div
+          className="hidden xl:block absolute bottom-10 right-[44%] w-24 h-24 rounded-full border-2 border-[#EA580C]/[0.16]"
+          aria-hidden="true"
+        />
+
+        {/* Photo — transparent cutout, full-bleed right */}
+        <div className="hidden lg:block absolute bottom-0 right-0 w-[55%] xl:w-[53%] 2xl:w-[51%] pointer-events-none">
           <img
-            src="/tutoo_assets/hero/tutor-student-3.png"
+            src="/tutoo_assets/hero/tutor-student.webp"
             alt={PHOTO_ALT}
             width={1400}
-            height={1077}
+            height={994}
             fetchPriority="high"
             decoding="async"
-            className="w-full h-auto object-contain object-bottom drop-shadow-[0_18px_40px_rgba(30,27,58,0.10)]"
+            className="w-full h-auto object-contain object-bottom drop-shadow-[0_22px_45px_rgba(30,27,58,0.13)]"
           />
         </div>
 
-        {/* ────── Copy ────── */}
+        {/* ── Copy ── */}
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -103,6 +147,18 @@ export function Hero() {
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[50%] xl:w-[48%] pt-32 pb-28 lg:pt-36 lg:pb-36"
           >
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 pl-3 pr-4 py-1.5 rounded-full bg-white/80 backdrop-blur border border-[#E6E3F0] shadow-[0_2px_10px_rgba(30,27,58,0.05)] mb-6"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#6D28D9]" />
+              <span className="text-[13px] font-semibold text-[#1E1B3A]">
+                Kothrud (Pune) · Kolhapur · Online
+              </span>
+            </motion.div>
+
             <h1 className="max-w-[13ch] sm:max-w-[15ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.75rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]">
               Find the Best Tutor.
               <span className="mt-1 block text-[#EA580C]">Learn Better.</span>
@@ -120,10 +176,13 @@ export function Hero() {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 + i * 0.07, duration: 0.4 }}
+                  whileHover={{ y: -3 }}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="w-14 h-14 rounded-full bg-white shadow-[0_6px_18px_rgba(30,27,58,0.10)] flex items-center justify-center mb-2.5">
-                    <badge.icon className="w-6 h-6 text-[#6D28D9]" strokeWidth={1.9} />
+                  <div className="w-14 h-14 rounded-2xl bg-white ring-1 ring-[#EFEBFA] shadow-[0_8px_20px_rgba(30,27,58,0.08)] flex items-center justify-center mb-2.5">
+                    <span className="w-9 h-9 rounded-xl bg-[#F4EFFE] flex items-center justify-center">
+                      <badge.icon className="w-[18px] h-[18px] text-[#6D28D9]" strokeWidth={2} />
+                    </span>
                   </div>
                   <span className="text-[13px] font-semibold text-[#1E1B3A] leading-tight">
                     {badge.line1}
@@ -134,86 +193,95 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              <button
+            <div className="mt-9">
+              <motion.button
                 type="button"
-                onClick={() => navigate('/find-a-tutor')}
-                className="group inline-flex items-center justify-center gap-2.5 px-8 h-14 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-lg shadow-[0_10px_28px_rgba(234,88,12,0.30)] transition-colors"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                onClick={() => {
+                  track('book_cta_click', { placement: 'hero' });
+                  navigate('/find-a-tutor');
+                }}
+                className="group inline-flex items-center justify-center gap-2.5 px-9 h-14 rounded-xl bg-gradient-to-r from-[#F2660F] to-[#EA580C] hover:from-[#EA580C] hover:to-[#C2410C] text-white font-bold text-lg shadow-[0_12px_30px_rgba(234,88,12,0.32)] transition-colors"
               >
                 Find a Tutor
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </motion.button>
 
+              <p className="mt-3.5 text-sm text-[#6E6A85]">
+                Free first assessment · No obligation
+              </p>
             </div>
           </motion.div>
 
-          {/* ────── Photo: stacked, full-width (mobile & tablet) ────── */}
+          {/* ── Photo: stacked, full-width (mobile & tablet) ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:hidden relative -mx-6 pb-4"
           >
+            <div
+              className="absolute left-1/2 -translate-x-1/2 top-2 w-[18rem] h-[18rem] sm:w-[23rem] sm:h-[23rem] rounded-full bg-[radial-gradient(circle_at_35%_30%,#DCE8FF_0%,#E8DFFF_60%,transparent_100%)] opacity-80"
+              aria-hidden="true"
+            />
             <img
-              src="/tutoo_assets/hero/tutor-student-sm-1.png"
+              src="/tutoo_assets/hero/tutor-student-sm.webp"
               alt={PHOTO_ALT}
-              width={820}
-              height={631}
+              width={860}
+              height={649}
               fetchPriority="high"
               decoding="async"
-              className="w-full h-auto object-contain"
+              className="relative w-full h-auto object-contain"
             />
           </motion.div>
 
         </div>
       </div>
 
-
-      {/* ══════════════ "WE HELP IN" ══════════════
-          Sits in flow BELOW the banner and is shifted up by exactly half its own
-          height, so its centre line lands on the section boundary — half on the
-          banner, half on the section below. The shift is relative to the card
-          itself, never a fixed offset, so it cannot ride up over the button.
-          It lives outside the banner's overflow-hidden so the lower half is not
-          clipped, and the section carries z-10 so it paints over what follows. */}
+      {/* ══════════════ "WE HELP IN" ══════════════ */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="-translate-y-1/2">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white rounded-[22px] shadow-[0_14px_44px_rgba(30,27,58,0.12)] border border-[#EFEDF6] px-5 sm:px-8 py-5"
-        >
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
-            <p className="text-sm font-bold text-[#1E1B3A] shrink-0 text-center lg:text-left lg:border-r lg:border-[#EFEDF6] lg:pr-6">
-              We help in
-            </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white/95 backdrop-blur rounded-[22px] shadow-[0_18px_50px_rgba(30,27,58,0.13)] ring-1 ring-[#EFEDF6] px-5 sm:px-8 py-5"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+              <p className="text-sm font-bold text-[#1E1B3A] shrink-0 text-center lg:text-left lg:border-r lg:border-[#EFEDF6] lg:pr-6">
+                We help in
+              </p>
 
-            <ul className="flex-1 grid grid-cols-4 gap-y-4 sm:flex sm:items-start sm:justify-between">
-              {CATEGORIES.map((c, i) => (
-                <li
-                  key={c.label}
-                  className={`flex flex-col items-center justify-start text-center gap-1.5 px-0.5 sm:px-3.5 min-h-[3.25rem] ${
-                    i > 0 ? 'sm:border-l sm:border-[#F1EFF7]' : ''
-                  }`}
-                >
-                  <c.icon className="w-[22px] h-[22px]" style={{ color: c.color }} strokeWidth={1.9} />
-                  <span className="text-[11px] sm:text-xs font-medium text-[#4B4763] leading-tight whitespace-nowrap">
-                    {c.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul className="flex-1 grid grid-cols-4 gap-y-4 sm:flex sm:items-start sm:justify-between">
+                {CATEGORIES.map((c, i) => (
+                  <li
+                    key={c.label}
+                    className={`group flex flex-col items-center justify-start text-center gap-1.5 px-0.5 sm:px-3.5 min-h-[3.25rem] ${
+                      i > 0 ? 'sm:border-l sm:border-[#F1EFF7]' : ''
+                    }`}
+                  >
+                    <c.icon
+                      className="w-[22px] h-[22px] transition-transform duration-200 group-hover:-translate-y-0.5"
+                      style={{ color: c.color }}
+                      strokeWidth={1.9}
+                    />
+                    <span className="text-[11px] sm:text-xs font-medium text-[#4B4763] leading-tight whitespace-nowrap">
+                      {c.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="mt-4 pt-3.5 border-t border-[#F1EFF7] flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[13.5px] text-[#4B4763]">
-            <span className="font-medium">One-to-One Learning</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
-            <span className="font-medium">Personal Attention</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
-            <span className="font-medium">Better Results</span>
-          </div>
-        </motion.div>
+            <div className="mt-4 pt-3.5 border-t border-[#F1EFF7] flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[13.5px] text-[#4B4763]">
+              <span className="font-medium">One-to-One Learning</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
+              <span className="font-medium">Personal Attention</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
+              <span className="font-medium">Better Results</span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
