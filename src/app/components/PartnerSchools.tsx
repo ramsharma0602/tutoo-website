@@ -3,10 +3,10 @@ import { GraduationCap, Building2, Users, Award } from 'lucide-react';
 
 export function PartnerSchools() {
   const stats = [
-    { icon: Building2, value: '500+', label: 'Partner Schools', color: 'emerald' },
-    { icon: Users, value: '12,000+', label: 'Students Served', color: 'blue' },
-    { icon: Award, value: '3,400+', label: 'Expert Tutors', color: 'purple' },
-    { icon: GraduationCap, value: '94%', label: 'Success Rate', color: 'orange' }
+    { icon: Building2, value: 'All', label: 'Major Boards', color: 'emerald' },
+    { icon: Users, value: '2 Cities', label: 'Kothrud & Kolhapur', color: 'blue' },
+    { icon: Award, value: '100%', label: 'Tutors Verified', color: 'purple' },
+    { icon: GraduationCap, value: 'Free', label: 'First Assessment', color: 'orange' }
   ];
 
   const schools = [

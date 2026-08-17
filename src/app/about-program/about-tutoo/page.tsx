@@ -1,7 +1,6 @@
 import AboutHero from "./sections/AboutHero";
 import AboutUsFinalCTA from "./sections/AboutUsFinalCTA";
 import { MeetOurCommunitySection } from "./sections/Meetourcommunitysection";
-import { LearningEcosystemSection } from "./sections/OurLearningEcosystem";
 import ProblemWeSolve from "./sections/ProblemWeSolve";
 import WhatMakesUsDifferent from "./sections/WhatMakesUsDifferent";
 import WhoWeAreSection from "./sections/WhoWeAreSection";
@@ -14,7 +13,11 @@ export default function AboutTutoo() {
             <WhoWeAreSection />
             <ProblemWeSolve />
             <WhatMakesUsDifferent />
-            <LearningEcosystemSection />
+
+            {/* Trimmed (audit P1-9): LearningEcosystemSection was the most
+                platform-flavoured block on a page parents read for reassurance.
+                Kept in the repo — re-add the import + tag to restore it. */}
+
             <WhyParentsTrustSection />
             <MeetOurCommunitySection />
             <AboutUsFinalCTA />

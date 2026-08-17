@@ -21,25 +21,25 @@ export default function BrowseResources() {
   const boards = [
     {
       name: "CBSE",
-      resources: "2,500+",
+      resources: "Notes & papers",
       icon: "📘",
       color: "#7B2FF7",
     },
     {
       name: "ICSE",
-      resources: "1,800+",
+      resources: "Notes & papers",
       icon: "🏫",
       color: "#7B2FF7",
     },
     {
       name: "SSC",
-      resources: "1,200+",
+      resources: "Notes & papers",
       icon: "📚",
       color: "#F59E0B",
     },
     {
       name: "HSC",
-      resources: "950+",
+      resources: "Notes & papers",
       icon: "🎓",
       color: "#7B2FF7",
     },
@@ -63,42 +63,42 @@ export default function BrowseResources() {
   const subjects = [
     {
       name: "Mathematics",
-      count: "850+",
+      count: "Notes & papers",
       icon: Calculator,
       color: "#7B2FF7",
       bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "Science",
-      count: "720+",
+      count: "Notes & papers",
       icon: Atom,
       color: "#7B2FF7",
       bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "English",
-      count: "640+",
+      count: "Notes & papers",
       icon: Languages,
       color: "#7B2FF7",
       bg: "rgba(248,120,8,0.08)",
     },
     {
       name: "Physics",
-      count: "510+",
+      count: "Notes & papers",
       icon: Atom,
       color: "#7B2FF7",
       bg: "rgba(123,47,247,0.08)",
     },
     {
       name: "Chemistry",
-      count: "480+",
+      count: "Notes & papers",
       icon: FlaskConical,
       color: "#EF4444",
       bg: "rgba(239,68,68,0.08)",
     },
     {
       name: "Computer Science",
-      count: "390+",
+      count: "Notes & papers",
       icon: Laptop,
       color: "#7B2FF7",
       bg: "rgba(248,120,8,0.08)",
@@ -173,14 +173,10 @@ export default function BrowseResources() {
             className="
             mt-6
             text-4xl
-            lg:text-6xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-[#0A1028]
             "
-            style={{
-              fontFamily:
-                "var(--font-heading)",
-            }}
           >
             Explore by{" "}
             <span className="text-[#6D28D9]">

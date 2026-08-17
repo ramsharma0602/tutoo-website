@@ -37,8 +37,7 @@ function RenderSection({ section, index }: { section: BlogSection; index: number
                 <p className="text-xl leading-[1.85] text-[#1E1B3A] font-medium mb-8">{section.text}</p>
             )}
             {section.type === "heading" && (
-                <h2 className="text-2xl lg:text-3xl font-black text-[#0A1028] mt-12 mb-5 tracking-tight"
-                    style={{ fontFamily: "var(--font-heading)" }}>
+                <h2 className="text-2xl lg:text-3xl font-bold text-[#0A1028] mt-12 mb-5 tracking-tight">
                     {section.text}
                 </h2>
             )}
@@ -52,7 +51,7 @@ function RenderSection({ section, index }: { section: BlogSection; index: number
                         <span className="text-base">💡</span>
                     </div>
                     <div>
-                        <p className="text-xs font-black uppercase tracking-widest text-[#059669] mb-2">Pro Tip</p>
+                        <p className="text-xs font-bold uppercase tracking-widest text-[#059669] mb-2">Pro Tip</p>
                         <p className="text-base leading-relaxed text-[#1E1B3A] font-medium">{section.text}</p>
                     </div>
                 </div>
@@ -61,8 +60,7 @@ function RenderSection({ section, index }: { section: BlogSection; index: number
                 <div className="my-10 relative pl-8">
                     <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-[#7B2FF7] to-[#7B2FF7]" />
                     <Quote className="w-8 h-8 text-[#7B2FF7] opacity-20 mb-2" />
-                    <p className="text-2xl font-bold italic text-[#0A1028] leading-relaxed mb-3"
-                        style={{ fontFamily: "var(--font-heading)" }}>
+                    <p className="text-2xl font-bold italic text-[#0A1028] leading-relaxed mb-3">
                         "{section.text}"
                     </p>
                     {section.attribution && (
@@ -73,7 +71,7 @@ function RenderSection({ section, index }: { section: BlogSection; index: number
             {section.type === "checklist" && (
                 <div className="my-8 rounded-2xl border p-6 flex flex-col gap-3"
                     style={{ background: "rgba(255,255,255,0.8)", borderColor: "rgba(30,27,58,0.08)", backdropFilter: "blur(12px)", boxShadow: "0 4px 20px rgba(30,27,58,0.05)" }}>
-                    <p className="text-sm font-black uppercase tracking-widest text-[#7B2FF7] mb-1">Quick Checklist</p>
+                    <p className="text-sm font-bold uppercase tracking-widest text-[#7B2FF7] mb-1">Quick Checklist</p>
                     {section.items.map((item, i) => (
                         <div key={i} className="flex items-start gap-3">
                             <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
@@ -88,11 +86,11 @@ function RenderSection({ section, index }: { section: BlogSection; index: number
                 <div className="my-6 flex flex-col gap-6">
                     {section.items.map((item, i) => (
                         <div key={i} className="flex gap-5">
-                            <div className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-sm font-black shadow-md">
+                            <div className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-sm font-bold shadow-md">
                                 {i + 1}
                             </div>
                             <div className="flex-1 pt-1">
-                                <h4 className="text-base font-bold text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h4>
+                                <h4 className="text-base font-bold text-[#0A1028] mb-1">{item.title}</h4>
                                 <p className="text-base leading-relaxed text-[#334155]">{item.body}</p>
                             </div>
                         </div>
@@ -299,8 +297,7 @@ export function BlogDetailPage({
 
                     {/* Title */}
                     <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl lg:text-6xl font-black leading-[1.1] tracking-tight text-[#0A1028] mb-7"
-                        style={{ fontFamily: "var(--font-heading)" }}>
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-[#0A1028] mb-7">
                         {post.title.split(post.highlight).map((part, i, arr) => (
                             <span key={i}>
                                 {part}
@@ -423,7 +420,7 @@ export function BlogDetailPage({
                         <User className="w-10 h-10 text-white" />
                     </div>
                     <div>
-                        <p className="text-lg font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{post.author}</p>
+                        <p className="text-lg font-bold text-[#0A1028] mb-1">{post.author}</p>
                         <p className="text-sm font-semibold text-[#7B2FF7] mb-3">{post.authorRole}</p>
                         <p className="text-sm leading-relaxed text-[#6E6A85]">{post.authorBio}</p>
                     </div>
@@ -436,7 +433,7 @@ export function BlogDetailPage({
             <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     className="flex items-center gap-4 mb-8">
-                    <h2 className="text-2xl font-black text-[#0A1028] tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
+                    <h2 className="text-2xl font-bold text-[#0A1028] tracking-tight">
                         Continue Reading
                     </h2>
                     <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
@@ -573,7 +570,7 @@ export function BlogDetailPage({
                         px-3
                         py-1.5
                         rounded-full
-                        text-[11px]
+                        text-[12px]
                         font-semibold
                         text-white
                         bg-black/30
@@ -594,7 +591,7 @@ export function BlogDetailPage({
                                 <h3
                                     className="
                         text-[15px]
-                        font-black
+                        font-bold
                         text-[#1E1B3A]
                         leading-[1.5]
                         mb-4
@@ -603,9 +600,6 @@ export function BlogDetailPage({
                         duration-300
                         line-clamp-2
                         "
-                                    style={{
-                                        fontFamily: "var(--font-heading)",
-                                    }}
                                 >
                                     {rel.title}
                                 </h3>
@@ -642,7 +636,7 @@ export function BlogDetailPage({
                                                 {rel.author}
                                             </p>
 
-                                            <p className="text-[10px] text-[#94A3B8] mt-0.5">
+                                            <p className="text-[12px] text-[#94A3B8] mt-0.5">
                                                 {rel.role}
                                             </p>
                                         </div>
@@ -715,8 +709,7 @@ export function BlogDetailPage({
                             <span className="text-sm font-semibold text-[#7B2FF7]">Get Started Today</span>
                         </div>
 
-                        <h2 className="text-4xl lg:text-5xl font-black leading-[1.1] tracking-tight text-white mb-5"
-                            style={{ fontFamily: "var(--font-heading)" }}>
+                        <h2 className="text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-5">
                             Need Academic Support for{" "}
                             <span className="text-[#6D28D9]">
                                 Your Child?
@@ -731,7 +724,7 @@ export function BlogDetailPage({
                             <button
                                 onClick={() => navigate('/book-free-assessment')}
                                 className="group h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold shadow-xl shadow-[#EA580C]/25 hover:scale-[1.03] hover:shadow-[#7B2FF7]/30 transition-all duration-300 flex items-center gap-2 text-base">
-                                Book Free Assessment
+                                Find My Tutor
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
                         </div>

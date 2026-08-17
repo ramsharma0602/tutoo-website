@@ -4,19 +4,37 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } 
 
 export function Footer() {
   const footerLinks = {
-    Company: ['About Us', 'Team', 'Careers', 'Blog'],
-    // Parents: ['How It Works', 'Pricing', 'Success Stories', 'Parent Dashboard', 'FAQ', 'Contact Support'],
-    // Tutors: ['Become a Tutor', 'Tutor Requirements', 'Tutor Training', 'Benefits', 'Tutor Dashboard', 'Resources'],
-    // Programs: ['Home Tuition', 'Online Learning', 'JEE/NEET', 'Olympiads', 'Coding & AI', 'All Programs'],
+    'For Parents': ['Find a Tutor', 'Find My Tutor', 'Home Tuition', 'Online Classes', 'Tuition in Kothrud', 'Tuition in Kolhapur', 'How It Works'],
+    'For Tutors': ['Become a Tutor', 'For Tutors', 'Careers'],
+    Company: ['About Us', 'Our Mission', 'Team', 'Blog', 'Contact Us'],
+    'Popular Classes': ['CBSE Class 10', 'CBSE Class 12 Science', 'ICSE Class 10', 'SSC Class 10', 'JEE Prep', 'NEET Prep'],
     Legal: ['Privacy Policy', 'Terms of Service']
   };
 
-  // Maps footer link labels to real in-app routes. Links not listed here
-  // stay as plain "#" placeholders until those pages exist.
+  // Every footer link maps to a real in-app route — no "#" placeholders (UX plan P0).
   const linkRoutes: Record<string, string> = {
-    Blog: '/blogs',
+    'Home Tuition': '/home-tuition',
+    'Online Classes': '/online-tuition',
+    'Find a Tutor': '/find-a-tutor',
+    'Find My Tutor': '/book-free-assessment',
+    'Tuition in Kothrud': '/home-tuition/kothrud',
+    'Tuition in Kolhapur': '/home-tuition/kolhapur',
+    'How It Works': '/how-it-work',
+    'Study Material': '/study-material',
+    'Become a Tutor': '/apply-tutor',
+    'For Tutors': '/for-tutors',
     Careers: '/careers',
+    'About Us': '/about-tutoo',
+    'Our Mission': '/our-mission',
     Team: '/team',
+    Blog: '/blogs',
+    'Contact Us': '/contact-us',
+    'CBSE Class 10': '/cbse-board/secondary/class-10',
+    'CBSE Class 12 Science': '/cbse-board/senior-secondary/class-12-science',
+    'ICSE Class 10': '/icse-board/secondary/class-10',
+    'SSC Class 10': '/ssc/secondary/class-10',
+    'JEE Prep': '/competitive-exams/entrance-exams/jee',
+    'NEET Prep': '/competitive-exams/entrance-exams/neet',
     'Privacy Policy': '/privacy-policy',
     'Terms of Service': '/terms-of-service',
   };
@@ -52,18 +70,19 @@ export function Footer() {
 
               {/* Brand Name */}
               <span className="flex flex-col leading-none">
-                <span className="text-xl font-black tracking-tight text-white">
+                <span className="text-xl font-bold tracking-tight text-white">
                   Tutoo Learning
                 </span>
 
-                <span className="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold mt-1">
-                  Smart Learning Platform
+                <span className="text-[12px] uppercase tracking-[0.25em] text-gray-400 font-semibold mt-1">
+                  Home & Online Tuition
                 </span>
               </span>
             </Link>
 
             <p className="text-gray-400 mb-6 leading-relaxed">
-              India's First AI-Powered Learning Operating System. Transforming education through technology, verified tutors, and measurable outcomes.
+              Verified home tutors and one-to-one online classes for Class 1–12,
+              JEE &amp; NEET — serving families in Kothrud (Pune) and Kolhapur.
             </p>
 
             <div className="space-y-3">
@@ -77,7 +96,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-                <span>Bangalore, Karnataka, India</span>
+                <span>Kothrud (Pune) &amp; Kolhapur, Maharashtra, India</span>
               </div>
             </div>
           </div>
@@ -85,7 +104,7 @@ export function Footer() {
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-bold text-lg mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+              <h3 className="font-bold text-lg mb-4">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -144,11 +163,11 @@ export function Footer() {
             <div className="flex items-center gap-4 text-xs text-gray-500">
               <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
                 <div className="w-2 h-2 bg-violet-400 rounded-full" />
-                <span>ISO Certified</span>
+                <span>Verified Tutors</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10">
                 <div className="w-2 h-2 bg-violet-400 rounded-full" />
-                <span>Data Secure</span>
+                <span>Home &amp; Online Tuition</span>
               </div>
             </div>
           </div>

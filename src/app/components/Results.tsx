@@ -5,29 +5,29 @@ export function Results() {
   const metrics = [
     {
       icon: TrendingUp,
-      value: '94%',
-      label: 'Grade Improvement',
+      value: 'Free',
+      label: 'First Assessment',
       description: 'Students see measurable progress',
       gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Star,
-      value: '98%',
-      label: 'Parent Satisfaction',
+      value: '24 hrs',
+      label: 'Callback Time',
       description: 'Trust and confidence rating',
       gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Users,
-      value: '12,000+',
-      label: 'Active Students',
+      value: '2 Cities',
+      label: 'Kothrud & Kolhapur',
       description: 'Learning across India',
       gradient: 'from-violet-500 to-violet-600'
     },
     {
       icon: Award,
-      value: '3,400+',
-      label: 'Verified Tutors',
+      value: '100%',
+      label: 'Tutors Verified',
       description: 'Expert educators network',
       gradient: 'from-orange-500 to-red-600'
     }
@@ -123,9 +123,9 @@ export function Results() {
 
               <div className="space-y-4">
                 {[
-                  { label: 'Academic Improvement', value: 94 },
-                  { label: 'Test Score Growth', value: 88 },
-                  { label: 'Student Engagement', value: 96 },
+                  { label: 'Home Tuition', value: 90 },
+                  { label: 'Online Classes', value: 85 },
+                  { label: 'Exam Prep', value: 80 },
                   { label: 'Learning Consistency', value: 92 }
                 ].map((item, i) => (
                   <div key={i}>

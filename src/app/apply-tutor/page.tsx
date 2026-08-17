@@ -65,9 +65,9 @@ export function ApplyTutorSection() {
 
     {
       icon: Wallet,
-      title: "Attractive Earnings",
+      title: "Teach Your Way",
       description:
-        "Earn based on your expertise and teaching hours.",
+        "Choose subjects, classes and timings that fit you.",
 
       gradient:
         "from-[#EA580C] to-[#C2410C]",
@@ -128,14 +128,11 @@ export function ApplyTutorSection() {
 
             {/* Heading */}
             <h2
-              className="mt-8 text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#1E1B3A]"
-              style={{
-                fontFamily: "var(--font-heading)",
-              }}
+              className="mt-8 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#1E1B3A]"
             >
               Turn Your Knowledge Into a{" "}
 
-              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22C55E] to-[#7B2FF7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#6038F8] to-[#8F21F8] bg-clip-text text-transparent">
                 Rewarding Teaching Career
               </span>
             </h2>
@@ -144,8 +141,8 @@ export function ApplyTutorSection() {
             <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
               Join Tutoo’s growing network of verified tutors and connect
               with students across India. Whether you prefer home tuition,
-              online teaching, or both — we help you grow professionally and
-              financially.
+              online teaching, or both — we help you find students who need what
+              you teach.
             </p>
 
             {/* ---------------------------------------------------------------- */}
@@ -210,7 +207,7 @@ export function ApplyTutorSection() {
                     {/* Content */}
                     <div className="mt-6 relative z-10">
 
-                      <h3 className="text-xl font-black text-[#1E1B3A]">
+                      <h3 className="text-xl font-bold text-[#1E1B3A]">
                         {item.title}
                       </h3>
 
@@ -231,23 +228,23 @@ export function ApplyTutorSection() {
 
               {[
                 {
-                  value: "1200+",
+                  value: "Verified",
                   label: "Active Tutors",
                 },
 
                 {
-                  value: "5000+",
+                  value: "1-to-1",
                   label: "Students Learning",
                 },
 
                 {
-                  value: "25+",
+                  value: "Flexible",
                   label: "Subjects Covered",
                 },
 
                 {
-                  value: "4.8★",
-                  label: "Tutor Satisfaction",
+                  value: "Free",
+                  label: "To Apply",
                 },
               ].map((item, index) => (
 
@@ -264,7 +261,7 @@ export function ApplyTutorSection() {
                   "
                 >
 
-                  <h4 className="text-3xl font-black text-[#1E1B3A]">
+                  <h4 className="text-3xl font-bold text-[#1E1B3A]">
                     {item.value}
                   </h4>
 
@@ -366,7 +363,7 @@ export function ApplyTutorSection() {
                   Start Your Application
                 </p>
 
-                <h3 className="mt-3 text-4xl font-black text-[#1E1B3A]">
+                <h3 className="mt-3 text-4xl font-bold text-[#1E1B3A]">
                   Apply as Tutor
                 </h3>
 

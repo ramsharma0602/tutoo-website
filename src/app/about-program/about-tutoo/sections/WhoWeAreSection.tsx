@@ -29,7 +29,7 @@ const features = [
     icon: TrendingUp,
     title: "Progress Tracking",
     description:
-      "Real-time academic monitoring, reporting and measurable growth.",
+      "Attendance you can check and regular updates from the tutor.",
     color: "#7B2FF7",
   },
   {
@@ -43,20 +43,20 @@ const features = [
 
 const stats = [
   {
-    value: "5000+",
-    label: "Students Supported",
+    value: "1-to-1",
+    label: "Every Class",
   },
   {
-    value: "1200+",
-    label: "Verified Tutors",
+    value: "Verified",
+    label: "Every Tutor",
   },
   {
-    value: "50+",
-    label: "Cities Served",
+    value: "Free",
+    label: "First Assessment",
   },
   {
-    value: "50,000+",
-    label: "Learning Sessions",
+    value: "2 Cities",
+    label: "Kothrud & Kolhapur",
   },
 ];
 
@@ -151,14 +151,11 @@ export default function WhoWeAreSection() {
               className="
               mt-8
               text-4xl
-              lg:text-6xl
-              font-black
+              lg:text-5xl
+              font-bold
               leading-[1.1]
               text-[#0A1028]
               "
-              style={{
-                fontFamily: "var(--font-heading)",
-              }}
             >
               Building Better{" "}
 
@@ -289,7 +286,7 @@ export default function WhoWeAreSection() {
             >
               <img
                 src="https://s3.amazonaws.com/m.definedlearning.com/marketing-site/images/blog/Screen%20Shot%202022-01-12%20at%2011.51.44%20AM.png"
-                alt="Tutoo Learning Ecosystem"
+                alt="A tutor teaching a student"
                 className="
                 w-full
                 h-[700px]
@@ -385,7 +382,7 @@ export default function WhoWeAreSection() {
                     Weekly Progress
                   </p>
                   <p className="text-[#7B2FF7] font-semibold">
-                    +24%
+                    Shared
                   </p>
                 </div>
               </div>
@@ -413,10 +410,10 @@ export default function WhoWeAreSection() {
                 <Star className="text-[#F59E0B]" />
                 <div>
                   <p className="font-bold text-[#1E1B3A]">
-                    Satisfaction
+                    Assessment
                   </p>
                   <p className="text-[#F59E0B] font-semibold">
-                    4.8 / 5
+                    Free
                   </p>
                 </div>
               </div>

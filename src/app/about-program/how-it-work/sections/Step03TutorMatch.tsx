@@ -24,7 +24,7 @@ const matchFactors = [
   { emoji: "📍", icon: MapPin, title: "Location", desc: "Nearby home tutors or online options matched to your area.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { emoji: "👨‍🏫", icon: Users, title: "Experience", desc: "Teaching experience, qualifications, and subject mastery verified.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { emoji: "👨‍👩‍👧", icon: Users, title: "Parent Preferences", desc: "Learning style, mode, timing, and parent expectations factored in.", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)", grad: "from-[#F59E0B] to-[#EF4444]" },
-  { emoji: "⭐", icon: Star, title: "Ratings & Reviews", desc: "Tutor performance analytics, parent feedback, and session history.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { emoji: "⭐", icon: Star, title: "Teaching Style", desc: "How the tutor explains things, and whether that suits your child.", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { emoji: "⏰", icon: Clock, title: "Availability", desc: "Session schedules matched to your preferred days and timings.", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 ];
 
@@ -78,8 +78,8 @@ function MatchingEngine() {
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-xs font-black uppercase tracking-widest text-[#94A3B8]">AI Matching Engine</p>
-              <h4 className="text-base font-black text-[#0A1028]" style={{ fontFamily: "var(--font-heading)" }}>Smart Tutor Selection</h4>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#94A3B8]">Tutor Matching</p>
+              <h4 className="text-base font-bold text-[#0A1028]">Finding the right fit</h4>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#7B2FF7]"
               style={{ background: "rgba(248,120,8,0.09)", border: "1px solid rgba(248,120,8,0.22)" }}>
@@ -157,9 +157,8 @@ function MatchingEngine() {
                 <circle cx={240} cy={210} r={46} fill="url(#orbGrad)" filter="url(#orbGlow)" />
                 {/* Text */}
                 <text x={240} y={206} textAnchor="middle" fill="white" fontSize="9" fontWeight="900"
-                  style={{ letterSpacing: "0.1em", fontFamily: "Inter,sans-serif" }}>AI MATCH</text>
-                <text x={240} y={220} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize="7.5"
-                  style={{ fontFamily: "Inter,sans-serif" }}>Finding best…</text>
+                  style={{ letterSpacing: "0.1em"}}>MATCH</text>
+                <text x={240} y={220} textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize="7.5">Finding best…</text>
               </motion.g>
 
               {/* ── Factor chip pills ── */}
@@ -189,7 +188,6 @@ function MatchingEngine() {
                     <text
                       x={px - pw / 2 + 34} y={py + 5}
                       fill={f.color} fontSize="10.5" fontWeight="700"
-                      style={{ fontFamily: "Inter,sans-serif" }}
                     >{f.label}</text>
                   </motion.g>
                 );
@@ -199,7 +197,7 @@ function MatchingEngine() {
 
           {/* Candidate tutors row */}
           <div className="flex items-center gap-3 mb-4">
-            <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8]">Candidates Evaluated</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8]">Candidates Evaluated</p>
             <div className="flex-1 h-px bg-gradient-to-r from-[rgba(30,27,58,0.08)] to-transparent" />
           </div>
           <div className="grid grid-cols-3 gap-3 mb-4">
@@ -210,16 +208,16 @@ function MatchingEngine() {
                 transition={{ delay: 0.7 + i * 0.09 }}
                 className="rounded-xl border p-3 text-center"
                 style={{ background: "rgba(248,250,252,0.9)", borderColor: "rgba(30,27,58,0.07)" }}>
-                <div className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-black text-white shadow-md"
+                <div className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold text-white shadow-md"
                   style={{ background: `linear-gradient(135deg, ${t.color}, #7B2FF7)` }}>{t.initials}</div>
-                <p className="text-[10px] font-bold text-[#1E1B3A]">{t.name}</p>
-                <p className="text-[9px] text-[#94A3B8]">{t.subject}</p>
+                <p className="text-[12px] font-bold text-[#1E1B3A]">{t.name}</p>
+                <p className="text-[12px] text-[#94A3B8]">{t.subject}</p>
                 <div className="mt-1.5 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(30,27,58,0.06)" }}>
                   <motion.div style={{ height: "100%", borderRadius: 999, background: `linear-gradient(90deg, ${t.color}, #7B2FF7)` }}
                     initial={{ width: 0 }} animate={vis ? { width: `${t.score}%` } : {}}
                     transition={{ duration: 0.9, delay: 0.8 + i * 0.1 }} />
                 </div>
-                <p className="text-[9px] font-black mt-0.5" style={{ color: t.color }}>{t.score}%</p>
+                <p className="text-[12px] font-bold mt-0.5" style={{ color: t.color }}>{t.score}%</p>
               </motion.div>
             ))}
           </div>
@@ -238,25 +236,25 @@ function MatchingEngine() {
         <div className="h-[2px] bg-gradient-to-r from-[#EA580C] to-[#C2410C]" />
         <div className="p-5 flex gap-4 items-start">
           <div className="relative shrink-0">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-xl font-black text-white shadow-lg">SS</div>
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-xl font-bold text-white shadow-lg">SS</div>
             <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#7B2FF7] flex items-center justify-center shadow-md">
               <CheckCircle2 className="w-3 h-3 text-white" />
             </div>
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <p className="text-sm font-black text-white">Sarah Sharma</p>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-[#7B2FF7]"
+              <p className="text-sm font-bold text-white">Sarah Sharma</p>
+              <span className="text-[12px] font-bold px-2 py-0.5 rounded-full text-[#7B2FF7]"
                 style={{ background: "rgba(248,120,8,0.15)", border: "1px solid rgba(248,120,8,0.25)" }}>🏆 Best Match</span>
             </div>
             <p className="text-xs text-[#94A3B8] mb-2">Mathematics Specialist · 8+ Years</p>
             <div className="flex flex-wrap gap-2">
               {[
-                { icon: "⭐", val: "4.9 Rating" },
+                { icon: "🎓", val: "M.Sc., B.Ed." },
                 { icon: "📅", val: "Mon–Sat" },
                 { icon: "✓", val: "Verified" },
               ].map((tag) => (
-                <span key={tag.val} className="text-[10px] font-semibold px-2.5 py-1 rounded-full text-[#7B2FF7]"
+                <span key={tag.val} className="text-[12px] font-semibold px-2.5 py-1 rounded-full text-[#7B2FF7]"
                   style={{ background: "rgba(248,120,8,0.1)", border: "1px solid rgba(248,120,8,0.22)" }}>
                   {tag.icon} {tag.val}
                 </span>
@@ -264,8 +262,8 @@ function MatchingEngine() {
             </div>
           </div>
           <div className="text-right shrink-0">
-            <p className="text-2xl font-black text-white">98%</p>
-            <p className="text-[9px] text-[#7B2FF7] font-bold uppercase tracking-wider">Match Score</p>
+            <p className="text-2xl font-bold text-white">High</p>
+            <p className="text-[12px] text-[#7B2FF7] font-bold uppercase tracking-wider">Match Score</p>
           </div>
         </div>
       </motion.div>
@@ -276,7 +274,7 @@ function MatchingEngine() {
         className="flex flex-wrap gap-2"
       >
         {[
-          { emoji: "🤖", label: "AI Match Complete", color: "#7B2FF7", border: "rgba(248,120,8,0.25)" },
+          { emoji: "🎯", label: "Tutor Matched", color: "#7B2FF7", border: "rgba(248,120,8,0.25)" },
           { emoji: "✅", label: "Tutor Verified", color: "#7B2FF7", border: "rgba(123,47,247,0.25)" },
           { emoji: "📩", label: "Profile Sent to Parent", color: "#7B2FF7", border: "rgba(123,47,247,0.25)" },
         ].map((chip, i) => (
@@ -286,7 +284,7 @@ function MatchingEngine() {
             transition={{ delay: 0.55 + i * 0.08 }}
             viewport={{ once: true }}
             animate={{ y: [0, -4, 0] }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold border bg-white shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold border bg-white shadow-sm"
             style={{ color: chip.color, borderColor: chip.border, boxShadow: `0 4px 12px ${chip.color}14` }}>
             <span>{chip.emoji}</span>{chip.label}
           </motion.span>
@@ -363,11 +361,11 @@ export function Step03TutorMatch() {
                   backdropFilter: "blur(10px)",
                 }}
               >
-                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[9px] font-black shadow-sm">
+                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[12px] font-bold shadow-sm">
                   3
                 </div>
 
-                <span className="text-xs font-black tracking-widest text-[#059669] uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#059669] uppercase">
                   Step 03
                 </span>
 
@@ -401,8 +399,7 @@ export function Step03TutorMatch() {
 
 
             {/* Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-6">
               Finding the{" "}
               <span className="relative inline-block">
                 <span className="text-[#6D28D9]">
@@ -434,7 +431,7 @@ export function Step03TutorMatch() {
 
             {/* Matching factors */}
             <div className="flex items-center gap-3 mb-5">
-              <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Matching Factors Considered</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Matching Factors Considered</p>
               <div className="flex-1 h-px bg-gradient-to-r from-[rgba(248,120,8,0.25)] to-transparent" />
             </div>
 
@@ -454,8 +451,8 @@ export function Step03TutorMatch() {
                   <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-lg mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                     {card.emoji}
                   </div>
-                  <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                  <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
+                  <p className="relative z-10 text-xs font-bold text-[#0A1028] mb-1">{card.title}</p>
+                  <p className="relative z-10 text-[12px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
                   <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ background: `linear-gradient(90deg, ${card.color}, transparent)` }} />
                 </motion.div>
@@ -484,7 +481,7 @@ export function Step03TutorMatch() {
               <div className="flex items-center gap-0 mb-3">
                 {progressSteps.map((s, i) => (
                   <div key={s.label} className="flex items-center">
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm ${s.done ? "scale-110" : ""}`}
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-sm ${s.done ? "scale-110" : ""}`}
                       style={s.done
                         ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(248,120,8,0.4)" }
                         : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>

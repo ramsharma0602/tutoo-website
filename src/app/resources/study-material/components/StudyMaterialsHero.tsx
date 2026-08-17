@@ -64,15 +64,11 @@ export default function StudyMaterialsHero() {
               className="
               mt-8
               text-5xl
-              lg:text-7xl
-              font-black
+              lg:text-5xl
+              font-bold
               text-[#0A1028]
               leading-tight
               "
-              style={{
-                fontFamily:
-                  "var(--font-heading)",
-              }}
             >
               Study Smarter with{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -191,7 +187,7 @@ export default function StudyMaterialsHero() {
                 <FileText className="w-6 h-6 text-[#7B2FF7]" />
 
                 <h4 className="font-bold mt-2">
-                  10,000+
+                  Free
                 </h4>
 
                 <p className="text-xs text-[#6E6A85]">
@@ -213,7 +209,7 @@ export default function StudyMaterialsHero() {
                 <BookOpen className="w-6 h-6 text-[#7B2FF7]" />
 
                 <h4 className="font-bold mt-2">
-                  500+
+                  CBSE · ICSE · SSC
                 </h4>
 
                 <p className="text-xs text-[#6E6A85]">

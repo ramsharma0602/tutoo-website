@@ -24,10 +24,10 @@ import {
 ───────────────────────────────────────────── */
 
 const STATS = [
-  { val: "40+", label: "Team Members", icon: Users, grad: "from-[#EA580C] to-[#C2410C]" },
-  { val: "6", label: "Open Roles", icon: Briefcase, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
-  { val: "100%", label: "Remote Friendly", icon: Globe2, grad: "from-[#7B2FF7] to-[#F59E0B]" },
-  { val: "4.7★", label: "Employee Rating", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
+  { val: "Small", label: "Focused Team", icon: Users, grad: "from-[#EA580C] to-[#C2410C]" },
+  { val: "Pune", label: "& Kolhapur", icon: Briefcase, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { val: "Remote", label: "Friendly", icon: Globe2, grad: "from-[#7B2FF7] to-[#F59E0B]" },
+  { val: "Education", label: "First", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
 ];
 
 const PERKS = [
@@ -169,8 +169,7 @@ function CareersHero() {
         >
           <Briefcase className="w-4 h-4 text-[#7B2FF7]" />
           <span
-            className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]"
           >
             We're Hiring
           </span>
@@ -183,8 +182,7 @@ function CareersHero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
-          style={{ fontFamily: "var(--font-heading)" }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
         >
           Build the Future of{" "}
           <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -202,7 +200,7 @@ function CareersHero() {
           className="text-lg leading-8 text-[#6E6A85] max-w-2xl mx-auto mb-10"
         >
           We're a small, fast-moving team on a mission to give every student access to
-          verified, AI-matched tutors. If you care about doing meaningful work with real
+          verified tutors who fit them. If you care about doing meaningful work with real
           impact, we'd love to hear from you.
         </motion.p>
 
@@ -260,8 +258,7 @@ function CareersHero() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <p
-                    className={`text-3xl font-black bg-gradient-to-r ${s.grad} bg-clip-text text-transparent`}
-                    style={{ fontFamily: "var(--font-heading)" }}
+                    className={`text-3xl font-bold bg-gradient-to-r ${s.grad} bg-clip-text text-transparent`}
                   >
                     {s.val}
                   </p>
@@ -285,12 +282,11 @@ function PerksSection() {
     <section className="relative overflow-hidden py-28 bg-white">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-black tracking-widest uppercase text-[#7B2FF7] mb-4">
+          <p className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7] mb-4">
             Why Join Tutoo
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#1E1B3A]"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#1E1B3A]"
           >
             Perks That Actually{" "}
             <span className="text-[#6D28D9]">
@@ -322,7 +318,7 @@ function PerksSection() {
                 >
                   <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-black text-[#1E1B3A] mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-xl font-bold text-[#1E1B3A] mb-3">
                   {perk.title}
                 </h3>
                 <p className="text-sm leading-7 text-[#6E6A85]">{perk.desc}</p>
@@ -349,12 +345,11 @@ function OpenRolesSection() {
     <section id="open-roles" className="relative overflow-hidden py-28 bg-[#FAFAFC] scroll-mt-24">
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-black tracking-widest uppercase text-[#7B2FF7] mb-4">
+          <p className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7] mb-4">
             Open Positions
           </p>
           <h2
-            className="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-[#1E1B3A]"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#1E1B3A]"
           >
             Find Your Role
           </h2>
@@ -382,7 +377,7 @@ function OpenRolesSection() {
                   <Briefcase className="w-5 h-5" style={{ color: role.color }} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-black text-[#1E1B3A]" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3 className="text-lg font-bold text-[#1E1B3A]">
                     {role.title}
                   </h3>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-[#6E6A85]">
@@ -469,13 +464,12 @@ function CultureAndCTASection() {
           <div className="absolute bottom-0 right-0 w-80 h-60 bg-[#7B2FF7]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 py-16 px-10 lg:px-20 text-center">
-            <p className="text-[#7B2FF7] text-xs font-black tracking-widest uppercase mb-6">
+            <p className="text-[#7B2FF7] text-xs font-bold tracking-widest uppercase mb-6">
               ✦ Don't See Your Role? ✦
             </p>
 
             <h3
-              className="text-3xl lg:text-4xl font-black text-white mb-6 leading-tight"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight"
             >
               We're always looking for{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">

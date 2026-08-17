@@ -13,15 +13,15 @@ import {
 const features = [
   {
     icon: BrainCircuit,
-    title: "AI Learning Assessment",
+    title: "Free Learning Assessment",
     color: "#7B2FF7",
     bg: "rgba(248,120,8,0.08)",
     description:
-      "Understand a student's strengths, weaknesses, learning style, and academic needs before assigning a tutor.",
+      "Understand where the student stands and what they find hard, before we suggest a tutor.",
   },
   {
     icon: UsersRound,
-    title: "Smart Tutor Matching",
+    title: "Tutor Matching",
     color: "#7B2FF7",
     bg: "rgba(123,47,247,0.08)",
     description:
@@ -49,7 +49,7 @@ const features = [
     color: "#7B2FF7",
     bg: "rgba(123,47,247,0.08)",
     description:
-      "Track academic growth through continuous evaluation, performance insights, and measurable milestones.",
+      "Follow how classes are going through attendance records and tutor updates.",
   },
   {
     icon: FileBarChart,
@@ -152,14 +152,11 @@ export default function WhatMakesUsDifferent() {
             className="
             text-4xl
             md:text-5xl
-            lg:text-6xl
-            font-black
+            lg:text-5xl
+            font-bold
             leading-tight
             text-[#1E1B3A]
             "
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
           >
             <span
               className="
@@ -356,11 +353,11 @@ export default function WhatMakesUsDifferent() {
             className="
             text-2xl
             lg:text-3xl
-            font-black
+            font-bold
             text-[#1E1B3A]
             "
           >
-            A Complete Learning Ecosystem
+            Everything In One Place
           </h3>
 
           <p

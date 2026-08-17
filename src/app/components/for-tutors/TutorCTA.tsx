@@ -120,7 +120,7 @@ export function TutorFinalCTA() {
         >
           Join thousands of tutors already teaching through Tutoo and
           build a flexible, rewarding, and future-ready teaching career with
-          AI-powered tools and continuous support.
+          practical teaching tools and continuous support.
         </motion.p>
 
         {/* ------------------------------------------------------------------ */}
@@ -151,7 +151,7 @@ export function TutorFinalCTA() {
 
             {
               icon: Wallet,
-              text: "Attractive Earnings",
+              text: "Flexible Schedule",
             },
 
             {

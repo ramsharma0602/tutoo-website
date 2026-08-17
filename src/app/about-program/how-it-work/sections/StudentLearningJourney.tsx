@@ -15,46 +15,39 @@ import {
 ───────────────────────────────────────────── */
 const steps = [
   {
-    num: "01", emoji: "📝", title: "Register",
-    desc: "Submit learning requirements and academic goals in minutes.",
+    num: "01", emoji: "📝", title: "Tell Us",
+    desc: "Tell us what you are looking for — class, subject, area and timing.",
     color: "#7B2FF7", glow: "rgba(248,120,8,0.25)", border: "rgba(248,120,8,0.3)",
     bg: "rgba(248,120,8,0.07)", grad: "from-[#EA580C] to-[#C2410C]",
     tag: "Quick Setup", tagColor: "#7B2FF7",
   },
   {
-    num: "02", emoji: "📊", title: "Assessment",
-    desc: "Identify strengths, learning gaps, and personalised goals.",
+    num: "02", emoji: "📊", title: "We Match",
+    desc: "A free assessment, then we find tutors who fit your requirement.",
     color: "#7B2FF7", glow: "rgba(123,47,247,0.25)", border: "rgba(123,47,247,0.3)",
     bg: "rgba(123,47,247,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
-    tag: "AI Powered", tagColor: "#7B2FF7",
+    tag: "Free", tagColor: "#7B2FF7",
   },
   {
-    num: "03", emoji: "🤖", title: "Tutor Match",
-    desc: "AI recommends the best-fit tutor based on your learning profile.",
+    num: "03", emoji: "🎯", title: "See the Profiles",
+    desc: "We share the suitable tutor profiles with you — qualification, experience and subjects.",
     color: "#7B2FF7", glow: "rgba(123,47,247,0.25)", border: "rgba(123,47,247,0.3)",
     bg: "rgba(123,47,247,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
-    tag: "Smart Match", tagColor: "#7B2FF7",
+    tag: "Tutor Match", tagColor: "#7B2FF7",
   },
   {
-    num: "04", emoji: "🔐", title: "Secure Session",
-    desc: "Verified tutor assignment with OTP session verification & safety protocols.",
+    num: "04", emoji: "🔐", title: "Choose",
+    desc: "Select the tutor who feels right. Classes start with OTP verification.",
     color: "#7B2FF7", glow: "rgba(248,120,8,0.25)", border: "rgba(248,120,8,0.3)",
     bg: "rgba(248,120,8,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
     tag: "Verified Safe", tagColor: "#7B2FF7",
   },
   {
-    num: "05", emoji: "📍", title: "Live Tracking",
-    desc: "Parents receive real-time attendance updates and session visibility.",
+    num: "05", emoji: "📍", title: "Learn",
+    desc: "Classes begin. Attendance is recorded, and parents can check it.",
     color: "#7B2FF7", glow: "rgba(123,47,247,0.25)", border: "rgba(123,47,247,0.3)",
     bg: "rgba(123,47,247,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
-    tag: "Real-Time", tagColor: "#7B2FF7",
-  },
-  {
-    num: "06", emoji: "🧠", title: "AI Learning Plan",
-    desc: "Personalised study roadmap created and optimised automatically.",
-    color: "#7B2FF7", glow: "rgba(123,47,247,0.25)", border: "rgba(123,47,247,0.3)",
-    bg: "rgba(123,47,247,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
-    tag: "Personalised", tagColor: "#7B2FF7",
+    tag: "That's It", tagColor: "#7B2FF7",
   },
   {
     num: "07", emoji: "👨‍👩‍👧", title: "Parent Dashboard",
@@ -65,7 +58,7 @@ const steps = [
   },
   {
     num: "08", emoji: "📈", title: "Monthly Reports",
-    desc: "Track academic performance, attendance, and measurable growth.",
+    desc: "Check attendance and read the tutor's updates after classes.",
     color: "#7B2FF7", glow: "rgba(123,47,247,0.25)", border: "rgba(123,47,247,0.3)",
     bg: "rgba(123,47,247,0.07)", grad: "from-[#7B2FF7] to-[#7B2FF7]",
     tag: "Data Driven", tagColor: "#7B2FF7",
@@ -80,7 +73,7 @@ const steps = [
 ];
 
 const floatingWidgets = [
-  { emoji: "🎯", line1: "Goal Achieved", line2: "+18% Growth", color: "#7B2FF7", border: "rgba(248,120,8,0.25)", idx: 1 },
+  { emoji: "🎯", line1: "Requirement Sent", line2: "Matching Started", color: "#7B2FF7", border: "rgba(248,120,8,0.25)", idx: 1 },
   { emoji: "⭐", line1: "Tutor Assigned", line2: "Verified & Active", color: "#7B2FF7", border: "rgba(123,47,247,0.25)", idx: 3 },
   { emoji: "📚", line1: "Weekly Homework", line2: "All Completed", color: "#7B2FF7", border: "rgba(123,47,247,0.25)", idx: 5 },
   { emoji: "🛡️", line1: "Session Verified", line2: "OTP Confirmed", color: "#7B2FF7", border: "rgba(248,120,8,0.25)", idx: 7 },
@@ -121,20 +114,19 @@ function StepCard({ step, index, side }: { step: typeof steps[0]; index: number;
           <div className={`w-13 h-13 w-12 h-12 rounded-2xl bg-gradient-to-br ${step.grad} flex items-center justify-center text-2xl shadow-lg group-hover:scale-105 transition-transform duration-300`}>
             {step.emoji}
           </div>
-          <span className="text-xs font-black px-2.5 py-1 rounded-full"
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full"
             style={{ color: step.color, background: step.bg, border: `1px solid ${step.border}` }}>
             {step.num}
           </span>
         </div>
 
-        <h3 className="text-base font-black text-[#0A1028] mb-1.5 tracking-tight"
-          style={{ fontFamily: "var(--font-heading)" }}>
+        <h3 className="text-base font-bold text-[#0A1028] mb-1.5 tracking-tight">
           {step.title}
         </h3>
         <p className="text-sm leading-relaxed text-[#6E6A85] mb-4">{step.desc}</p>
 
         {/* Tag chip */}
-        <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1.5 rounded-full"
+        <span className="inline-flex items-center gap-1 text-[12px] font-bold px-2.5 py-1.5 rounded-full"
           style={{ color: step.tagColor, background: step.bg, border: `1px solid ${step.border}` }}>
           <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: step.tagColor }} />
           {step.tag}
@@ -233,8 +225,7 @@ export function StudentLearningJourney() {
             <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
           </motion.div>
 
-          <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
-            style={{ fontFamily: "var(--font-heading)" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-6">
             Your Learning Journey,{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -250,7 +241,7 @@ export function StudentLearningJourney() {
           </h2>
 
           <p className="text-lg leading-8 text-[#6E6A85]">
-            From your first assessment to measurable academic improvement, Tutoo manages every stage of the learning journey through technology, expert tutors, and continuous progress tracking.
+            From the first free assessment to the first class, we handle finding and checking the tutor so you do not have to.
           </p>
         </motion.div>
 
@@ -327,7 +318,7 @@ export function StudentLearningJourney() {
                       <span className="text-xl">{widget.emoji}</span>
                       <div>
                         <p className="text-xs font-bold text-[#1E1B3A] leading-none mb-0.5">{widget.line1}</p>
-                        <p className="text-[10px] font-semibold" style={{ color: widget.color }}>{widget.line2}</p>
+                        <p className="text-[12px] font-semibold" style={{ color: widget.color }}>{widget.line2}</p>
                       </div>
                     </motion.div>
                   )}
@@ -382,14 +373,13 @@ export function StudentLearningJourney() {
                 <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
                 <span className="text-sm font-semibold text-[#7B2FF7]">The Destination</span>
               </div>
-              <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-3"
-                style={{ fontFamily: "var(--font-heading)" }}>
+              <h3 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-3">
                 <span className="text-[#6D28D9]">
                   Academic Success
                 </span>
               </h3>
               <p className="text-[#94A3B8] text-lg max-w-xl mx-auto">
-                Every step of Tutoo's journey leads here — measurable, confident, lifelong achievement.
+                Every step leads here — a student who understands the subject better than before.
               </p>
             </div>
 
@@ -412,7 +402,7 @@ export function StudentLearningJourney() {
                   style={{ background: "rgba(255,255,255,0.05)", borderColor: item.border, backdropFilter: "blur(12px)" }}
                 >
                   <div className="text-3xl mb-4">{item.emoji}</div>
-                  <h4 className="text-base font-black text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h4>
+                  <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
                   <p className="text-xs leading-relaxed text-[#94A3B8]">{item.desc}</p>
                   <div className="mt-4 h-0.5 w-8 mx-auto rounded-full" style={{ background: `linear-gradient(90deg, ${item.color}, #7B2FF7)` }} />
                 </motion.div>

@@ -36,7 +36,7 @@ const blogPosts = [
         catBg: "rgba(123,47,247,0.09)",
         catBorder: "rgba(123,47,247,0.2)",
         title: "Best Study Techniques for Faster Learning",
-        desc: "Unlock science-backed methods including spaced repetition, active recall, and the Feynman Technique to absorb complex topics faster.",
+        desc: "Study methods that actually work — spaced repetition, active recall, and the Feynman Technique.",
         author: "Priya Sharma", role: "Senior Educator", readTime: "5 min",
         grad: "from-[#7B2FF7] to-[#7B2FF7]",
         imgBg: "from-[rgba(123,47,247,0.12)] to-[rgba(123,47,247,0.1)]",
@@ -138,7 +138,7 @@ const featuredBlogs = [
         highlight: "Board Exams",
 
         description:
-            "Build a winning exam preparation strategy using revision systems, mock testing, and AI-powered study planning.",
+            "Build an exam preparation plan using revision schedules and mock tests.",
 
         image:
             "https://homeshiksha.com/wp-content/uploads/2026/03/Common-Mistakes-in-Board-Exams-2026-and-How-to-Avoid-Them-1024x683.png",
@@ -358,7 +358,7 @@ function BlogCard({
             px-2.5
             py-1
             rounded-full
-            text-[10px]
+            text-[12px]
             font-bold
             backdrop-blur-xl
             "
@@ -384,7 +384,7 @@ function BlogCard({
           px-3
           py-1.5
           rounded-full
-          text-[10px]
+          text-[12px]
           font-semibold
           text-white
           bg-black/30
@@ -414,9 +414,6 @@ function BlogCard({
           duration-300
           line-clamp-2
           "
-                    style={{
-                        fontFamily: "var(--font-heading)",
-                    }}
                 >
                     {post.title}
                 </h3>
@@ -471,7 +468,7 @@ function BlogCard({
                                 {post.author}
                             </p>
 
-                            <p className="text-[10px] text-[#94A3B8]">
+                            <p className="text-[12px] text-[#94A3B8]">
                                 {post.role}
                             </p>
                         </div>
@@ -661,8 +658,7 @@ export function BlogListingSections() {
                             </span>
 
                             <h2
-                                className="mt-5 text-4xl lg:text-5xl font-black text-[#0A1028]"
-                                style={{ fontFamily: "var(--font-heading)" }}
+                                className="mt-5 text-4xl lg:text-5xl font-bold text-[#0A1028]"
                             >
                                 Featured{" "}
                                 <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -837,13 +833,12 @@ export function BlogListingSections() {
                                         className="
                             text-3xl
                             lg:text-5xl
-                            font-black
+                            font-bold
                             leading-[1.12]
                             tracking-tight
                             text-[#0A1028]
                             mb-6
                             "
-                                        style={{ fontFamily: "var(--font-heading)" }}
                                     >
                                         {activeBlog.title
                                             .split(activeBlog.highlight)
@@ -990,7 +985,7 @@ export function BlogListingSections() {
                                 <BookOpen className="w-5 h-5 text-[#7B2FF7]" />
                                 <span className="text-sm font-semibold text-[#7B2FF7] uppercase tracking-wider">All Articles</span>
                             </div>
-                            <h2 className="text-3xl font-black text-[#0A1028] tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
+                            <h2 className="text-3xl font-bold text-[#0A1028] tracking-tight">
                                 Explore the{" "}
                                 <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">Knowledge Hub</span>
                             </h2>
@@ -1000,7 +995,7 @@ export function BlogListingSections() {
                         <div className="hidden lg:flex items-center gap-3">
                             {[
                                 { icon: TrendingUp, label: "Trending", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.18)" },
-                                { icon: Sparkles, label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.18)" },
+                                { icon: Sparkles, label: "Study Tips", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.18)" },
                             ].map((chip) => (
                                 <div key={chip.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold border"
                                     style={{ color: chip.color, background: chip.bg, borderColor: chip.border }}>
@@ -1054,12 +1049,12 @@ export function BlogListingSections() {
                         className="flex flex-wrap justify-center gap-3 mt-12"
                     >
                         {[
-                            { label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.18)" },
-                            { label: "✦ AI Learning Insights", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.18)" },
+                            { label: "Study Tips", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.18)" },
+                            { label: "✦ Study Tips", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.18)" },
                             { label: "↑ Top Study Resources", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.18)" },
                             { label: "⚡ New Blogs Added Weekly", color: "#F59E0B", bg: "rgba(245,158,11,0.07)", border: "rgba(245,158,11,0.18)" },
                         ].map((chip) => (
-                            <span key={chip.label} className="inline-flex items-center text-[11px] font-semibold px-3.5 py-2 rounded-full border"
+                            <span key={chip.label} className="inline-flex items-center text-[12px] font-semibold px-3.5 py-2 rounded-full border"
                                 style={{ color: chip.color, background: chip.bg, borderColor: chip.border }}>
                                 {chip.label}
                             </span>

@@ -11,7 +11,7 @@ const audiences = [
     description:
       "Need academic guidance, home tuition, online classes, or help choosing the right learning plan?",
 
-    cta: "Book Free Assessment",
+    cta: "Find My Tutor",
 
     badge: "✓ Free Assessment Available",
 
@@ -166,13 +166,10 @@ export default function WhoCanContactUsSection() {
           <h2
             className="
             text-5xl
-            lg:text-6xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-[#0A1028]
             "
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
           >
             We're Here for{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -324,14 +321,10 @@ export default function WhoCanContactUsSection() {
                 <h3
                   className="
                   text-3xl
-                  font-black
+                  font-bold
                   text-white
                   leading-tight
                   "
-                  style={{
-                    fontFamily:
-                      "var(--font-heading)",
-                  }}
                 >
                   {item.heading}
                 </h3>

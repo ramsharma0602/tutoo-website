@@ -20,9 +20,8 @@ export function ForTutorsHeroSection() {
   const navigate = useNavigate();
 
   const trustBadges = [
-    "5000+ Students",
+    "Students Near You",
     "Flexible Teaching Hours",
-    "Weekly Payouts",
     "Verified Tutor Network",
   ];
 
@@ -65,8 +64,7 @@ export function ForTutorsHeroSection() {
 
             {/* Heading */}
             <h1
-              className="text-6xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#0A1028]"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-5xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-[#0A1028]"
             >
               Teach.{" "}
 
@@ -74,17 +72,16 @@ export function ForTutorsHeroSection() {
                 Inspire.
               </span>{" "}
 
-              Earn.
+              Grow.
             </h1>
 
-            {/* Subheading */}
+            {/* Subheading — booklet voice: plain, short, no earnings claim */}
             <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl">
-              Join Tutoo and connect with students across India through a
-              modern AI-powered learning platform designed for passionate educators.
+              Teach students. Build your profile. Get learning opportunities.
             </p>
 
             <p className="mt-4 text-[15px] leading-8 text-[#6E6A85] font-medium">
-              Teach Online or Offline • Flexible Schedule • Attractive Earnings • Dedicated Support
+              Teach Online or Offline • Flexible Schedule • Dedicated Support
             </p>
 
             {/* Trust Chips */}
@@ -152,7 +149,7 @@ export function ForTutorsHeroSection() {
 
                 <PlayCircle className="w-5 h-5 text-[#7B2FF7]" />
 
-                View Earnings
+                How Teaching Works
               </button>
             </div>
           </motion.div>
@@ -199,15 +196,15 @@ export function ForTutorsHeroSection() {
               </div>
 
               <p className="text-sm text-white/80">
-                Average Monthly Earnings
+                Teaching Opportunities
               </p>
 
-              <h3 className="text-5xl font-black mt-2">
-                ₹35K+
+              <h3 className="text-5xl font-bold mt-2">
+                —
               </h3>
 
               <p className="text-sm text-white/70 mt-4 leading-7">
-                Flexible tutoring opportunities with weekly payouts.
+                Flexible tutoring opportunities near you.
               </p>
             </motion.div> */}
 
@@ -229,11 +226,11 @@ export function ForTutorsHeroSection() {
 
                 <div>
                   <p className="text-sm text-[#6E6A85]">
-                    Active Tutors
+                    Every Tutor
                   </p>
 
-                  <h3 className="text-4xl font-black text-[#1E1B3A] mt-1">
-                    1200+
+                  <h3 className="text-4xl font-bold text-[#1E1B3A] mt-1">
+                    Verified
                   </h3>
                 </div>
               </div>
@@ -298,11 +295,11 @@ export function ForTutorsHeroSection() {
 
               <div>
                 <p className="text-xs font-bold text-[#1E1B3A]">
-                  AI Match Score
+                  Tutor Matching
                 </p>
 
-                <p className="text-[11px] text-[#6E6A85]">
-                  98% Student Compatibility
+                <p className="text-[12px] text-[#6E6A85]">
+                  Strong Student Matches
                 </p>
               </div>
             </div>

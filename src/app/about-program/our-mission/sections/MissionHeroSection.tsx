@@ -20,10 +20,10 @@ import {
    DATA
 ───────────────────────────────────────────── */
 const impactStats = [
-  { icon: GraduationCap, value: "5,000+", label: "Students Empowered", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.18)", glow: "rgba(123,47,247,0.12)", delay: 0 },
-  { icon: Users,         value: "1,200+", label: "Verified Tutors",    color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.18)", glow: "rgba(248,120,8,0.12)", delay: 0.1 },
-  { icon: BookOpen,      value: "50,000+",label: "Learning Sessions",  color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.18)", glow: "rgba(123,47,247,0.12)", delay: 0.2 },
-  { icon: Star,          value: "4.8/5",  label: "Parent Satisfaction",color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.18)", glow: "rgba(245,158,11,0.12)", delay: 0.3 },
+  { icon: GraduationCap, value: "2 Cities", label: "Kothrud & Kolhapur", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.18)", glow: "rgba(123,47,247,0.12)", delay: 0 },
+  { icon: Users,         value: "100%", label: "Tutors Verified",    color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.18)", glow: "rgba(248,120,8,0.12)", delay: 0.1 },
+  { icon: BookOpen,      value: "1-to-1", label: "Every Class",        color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.18)", glow: "rgba(123,47,247,0.12)", delay: 0.2 },
+  { icon: Star,          value: "Free",   label: "First Assessment",   color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.18)", glow: "rgba(245,158,11,0.12)", delay: 0.3 },
 ];
 
 const audience = [
@@ -37,14 +37,14 @@ const audience = [
   {
     icon: "👨‍👩‍👧",
     title: "Parents",
-    desc: "Full transparency, verified safety, real-time progress tracking, and measurable academic improvement you can see.",
+    desc: "Verified tutors, attendance you can check, and a clear view of how classes are going.",
     color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.15)",
     grad: "from-[#EA580C] to-[#C2410C]",
   },
   {
     icon: "👨‍🏫",
     title: "Tutors",
-    desc: "Professional growth opportunities, cutting-edge teaching tools, fair earnings, and a platform built to support educators.",
+    desc: "Steady teaching opportunities, practical tools, and a team that supports you.",
     color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.15)",
     grad: "from-[#7B2FF7] to-[#7B2FF7]",
   },
@@ -53,8 +53,8 @@ const audience = [
 const values = [
   { icon: Heart,       label: "Student First",        color: "#EF4444" },
   { icon: ShieldCheck, label: "Trust & Safety",        color: "#7B2FF7" },
-  { icon: TrendingUp,  label: "Measurable Growth",     color: "#7B2FF7" },
-  { icon: Sparkles,    label: "AI-Powered Learning",   color: "#7B2FF7" },
+  { icon: TrendingUp,  label: "Progress Updates",      color: "#7B2FF7" },
+  { icon: Sparkles,    label: "Personalised Learning",   color: "#7B2FF7" },
   { icon: Target,      label: "Personalised Outcomes", color: "#F59E0B" },
   { icon: Users,       label: "Community Driven",      color: "#7B2FF7" },
 ];
@@ -156,8 +156,7 @@ export function OurMissionSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl lg:text-7xl font-black leading-[1.06] tracking-tight text-[#0A1028] mb-8"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.06] tracking-tight text-[#0A1028] mb-8"
           >
             Making{" "}
             <span className="relative inline-block">
@@ -189,7 +188,7 @@ export function OurMissionSection() {
               At Tutoo, we believe that every student deserves personalised learning support, expert guidance, and the opportunity to achieve their full academic potential.
             </p>
             <p className="text-lg leading-8 text-[#6E6A85]">
-              Our mission is to bridge the gap between students and quality education through technology, verified educators, and personalised learning experiences that create measurable outcomes.
+              Our mission is simple: help every family find a tutor who actually fits their child.
             </p>
           </motion.div>
 
@@ -235,7 +234,7 @@ export function OurMissionSection() {
                 >
                   <stat.icon className="w-7 h-7" style={{ color: stat.color }} />
                 </motion.div>
-                <p className="text-3xl font-black mb-1.5" style={{ color: stat.color }}>{stat.value}</p>
+                <p className="text-3xl font-bold mb-1.5" style={{ color: stat.color }}>{stat.value}</p>
                 <p className="text-sm font-semibold text-[#6E6A85]">{stat.label}</p>
                 <div className="mt-4 h-0.5 w-8 mx-auto rounded-full transition-all duration-300 group-hover:w-12"
                   style={{ background: `linear-gradient(90deg, ${stat.color}, #7B2FF7)` }} />
@@ -277,8 +276,7 @@ export function OurMissionSection() {
               <Quote className="w-7 h-7 text-white" />
             </div>
 
-            <blockquote className="text-2xl lg:text-3xl font-bold text-[#0A1028] leading-[1.5] mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <blockquote className="text-2xl lg:text-3xl font-bold text-[#0A1028] leading-[1.5] mb-6">
               "We don't just connect students with tutors.
               <br />
               <span className="text-[#6D28D9]">
@@ -307,8 +305,7 @@ export function OurMissionSection() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1028] tracking-tight mb-4"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0A1028] tracking-tight mb-4">
               The Tutoo{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 Learning Journey
@@ -325,8 +322,8 @@ export function OurMissionSection() {
 
             {[
               { emoji: "🎓", step: "01", title: "Student", subtitle: "Needs Support", desc: "A student struggling with concepts, exams, or confidence reaches out for help.", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.15)" },
-              { emoji: "✦",  step: "02", title: "Tutoo", subtitle: "AI Matching", desc: "Our platform matches the student with a verified, compatible, expert tutor within 24 hours.", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.15)" },
-              { emoji: "🏆", step: "03", title: "Success", subtitle: "Measurable Growth", desc: "The student achieves higher scores, stronger confidence, and a lifelong love for learning.", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.15)" },
+              { emoji: "✦",  step: "02", title: "Tutoo", subtitle: "Tutor Match", desc: "We find a verified tutor who fits the class, subject and requirement — usually within 24 hours.", color: "#7B2FF7", bg: "rgba(248,120,8,0.07)", border: "rgba(248,120,8,0.15)" },
+              { emoji: "🏆", step: "03", title: "Learning", subtitle: "Classes Begin", desc: "Classes start, and the student gets steady one-to-one help with the subjects they find hard.", color: "#7B2FF7", bg: "rgba(123,47,247,0.07)", border: "rgba(123,47,247,0.15)" },
             ].map((item, i) => (
               <motion.div key={item.step}
                 initial={{ opacity: 0, y: 24 }}
@@ -338,12 +335,12 @@ export function OurMissionSection() {
                 style={{ background: "rgba(255,255,255,0.88)", borderColor: item.border, backdropFilter: "blur(12px)", boxShadow: `0 4px 20px ${item.color}12` }}
               >
                 {/* Step number */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-black shadow-lg z-10"
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg z-10"
                   style={{ background: `linear-gradient(135deg, ${item.color}, #7B2FF7)` }}>
                   {item.step}
                 </div>
                 <div className="text-4xl mb-5 mt-2">{item.emoji}</div>
-                <h3 className="text-xl font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
+                <h3 className="text-xl font-bold text-[#0A1028] mb-1">{item.title}</h3>
                 <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: item.color }}>{item.subtitle}</p>
                 <p className="text-sm leading-relaxed text-[#6E6A85]">{item.desc}</p>
               </motion.div>
@@ -377,8 +374,7 @@ export function OurMissionSection() {
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
               <span className="text-sm font-semibold text-[#7B2FF7]">Built For Everyone</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
               Built for Students,{" "}
               <span className="text-[#6D28D9]">
                 Parents & Tutors
@@ -403,7 +399,7 @@ export function OurMissionSection() {
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.grad} flex items-center justify-center text-3xl mb-6 shadow-xl`}>
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-black text-white mb-3" style={{ fontFamily: "var(--font-heading)" }}>{item.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
                 <p className="text-sm leading-8 text-[#94A3B8]">{item.desc}</p>
                 <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold" style={{ color: item.color }}>
                   Learn more <ArrowRight className="w-4 h-4" />
@@ -424,8 +420,7 @@ export function OurMissionSection() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1028] tracking-tight mb-5"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0A1028] tracking-tight mb-5">
               Join the{" "}
               <span className="text-[#6D28D9]">Mission</span>
             </h2>

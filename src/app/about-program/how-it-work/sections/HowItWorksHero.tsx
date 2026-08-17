@@ -20,25 +20,25 @@ import {
 ───────────────────────────────────────────── */
 const trustChips = [
   { icon: ShieldCheck, label: "Verified Tutors",       color: "#7B2FF7", bg: "rgba(248,120,8,0.09)",  border: "rgba(248,120,8,0.22)"  },
-  { icon: Brain,       label: "AI-Powered Matching",   color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",   border: "rgba(123,47,247,0.22)"   },
+  { icon: Brain,       label: "Tutor Matching",   color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",   border: "rgba(123,47,247,0.22)"   },
   { icon: BarChart2,   label: "Progress Tracking",     color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",  border: "rgba(123,47,247,0.22)"  },
   { icon: BookOpen,    label: "Home & Online Learning", color: "#F59E0B", bg: "rgba(245,158,11,0.09)",  border: "rgba(245,158,11,0.22)"  },
-  { icon: Users,       label: "Parent Dashboard",      color: "#7B2FF7", bg: "rgba(248,120,8,0.09)",  border: "rgba(248,120,8,0.22)"  },
+  { icon: Users,       label: "Attendance & Updates",      color: "#7B2FF7", bg: "rgba(248,120,8,0.09)",  border: "rgba(248,120,8,0.22)"  },
 ];
 
 const floatingCards = [
-  { icon: TrendingUp, emoji: "📈", title: "Weekly Progress",         sub: "+24% Improvement",    color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.22)", pos: "top-6 -left-6",    delay: 0    },
+  { icon: TrendingUp, emoji: "📈", title: "Weekly Progress",         sub: "Shared with parents", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.22)", pos: "top-6 -left-6",    delay: 0    },
   { icon: ShieldCheck,emoji: "👨‍🏫", title: "Verified Tutor",          sub: "Background Checked",  color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.22)",  pos: "top-5 -right-6",   delay: 0.35 },
-  { icon: Star,       emoji: "⭐", title: "Parent Satisfaction",     sub: "4.8 / 5 Rating",      color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.22)", pos: "bottom-36 -left-8",delay: 0.7  },
+  { icon: Star,       emoji: "⭐", title: "Free Assessment",         sub: "No obligation",       color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.22)", pos: "bottom-36 -left-8",delay: 0.7  },
   { icon: Target,     emoji: "🎯", title: "Personalised Plan",       sub: "Active & Running",    color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",border: "rgba(123,47,247,0.22)", pos: "bottom-32 -right-6",delay: 1   },
   { icon: BookOpen,   emoji: "📚", title: "Homework Completed",      sub: "3 tasks this week",   color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.22)", pos: "top-1/2 -right-8", delay: 1.3  },
 ];
 
 const microStats = [
-  { value: "5,000+",  label: "Students Learning",  color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.18)"  },
-  { value: "1,200+",  label: "Verified Tutors",     color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.18)" },
-  { value: "50,000+", label: "Learning Sessions",   color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.18)" },
-  { value: "4.8★",    label: "Parent Rating",       color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.18)" },
+  { value: "1-to-1",  label: "Every Class",         color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.18)"  },
+  { value: "Verified", label: "Every Tutor",        color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.18)" },
+  { value: "2 Cities", label: "Kothrud & Kolhapur", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.18)" },
+  { value: "Free",    label: "Assessment",       color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.18)" },
 ];
 
 /* ─────────────────────────────────────────────
@@ -83,21 +83,21 @@ function HeroVisual() {
           {/* Stats row */}
           <div className="grid grid-cols-3 gap-3 mb-5">
             {[
-              { v: "89%",  l: "Avg Score",  c: "#7B2FF7", bg: "rgba(123,47,247,0.07)",  ch: "↑ +24%" },
-              { v: "96%",  l: "Attendance", c: "#7B2FF7", bg: "rgba(248,120,8,0.07)", ch: "↑ Great" },
-              { v: "4.9★", l: "Tutor",      c: "#F59E0B", bg: "rgba(245,158,11,0.07)", ch: "Top 5%" },
+              { v: "OTP",  l: "Session",    c: "#7B2FF7", bg: "rgba(123,47,247,0.07)",  ch: "Verified" },
+              { v: "Daily", l: "Attendance", c: "#7B2FF7", bg: "rgba(248,120,8,0.07)", ch: "Tracked" },
+              { v: "1-to-1", l: "Class",     c: "#F59E0B", bg: "rgba(245,158,11,0.07)", ch: "Always" },
             ].map((s) => (
               <div key={s.l} className="rounded-2xl p-3 text-center"
                 style={{ background: s.bg, border: `1px solid ${s.c}20` }}>
-                <p className="text-lg font-black leading-none mb-0.5" style={{ color: s.c }}>{s.v}</p>
-                <p className="text-[9px] font-semibold text-[#94A3B8] uppercase tracking-wider">{s.l}</p>
-                <p className="text-[9px] font-bold mt-0.5" style={{ color: s.c }}>{s.ch}</p>
+                <p className="text-lg font-bold leading-none mb-0.5" style={{ color: s.c }}>{s.v}</p>
+                <p className="text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">{s.l}</p>
+                <p className="text-[12px] font-bold mt-0.5" style={{ color: s.c }}>{s.ch}</p>
               </div>
             ))}
           </div>
 
           {/* Subject progress */}
-          <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-3">Subject Progress</p>
+          <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8] mb-3">Subject Progress</p>
           <div className="flex flex-col gap-2.5 mb-5">
             {[
               { label: "Mathematics", val: 89, grad: "linear-gradient(90deg,#7B2FF7,#7B2FF7)", color: "#7B2FF7" },
@@ -122,15 +122,15 @@ function HeroVisual() {
           {/* Tutor + AI row */}
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-2xl border p-3.5" style={{ background: "#FAFAFC", borderColor: "rgba(30,27,58,0.07)" }}>
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[10px] font-bold mb-2 shadow-sm">RK</div>
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[12px] font-bold mb-2 shadow-sm">RK</div>
               <p className="text-xs font-bold text-[#1E1B3A]">Rahul Kumar</p>
-              <p className="text-[10px] text-[#94A3B8]">Maths Tutor · Verified</p>
+              <p className="text-[12px] text-[#94A3B8]">Maths Tutor · Verified</p>
             </div>
             <div className="rounded-2xl border p-3.5"
               style={{ background: "linear-gradient(135deg,rgba(123,47,247,0.06),rgba(123,47,247,0.06))", borderColor: "rgba(123,47,247,0.18)" }}>
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-sm mb-2 shadow-sm">✦</div>
-              <p className="text-[9px] font-black uppercase tracking-widest text-[#7B2FF7]">AI Insight</p>
-              <p className="text-[11px] font-semibold text-[#1E1B3A] leading-snug">27% growth in 6 weeks</p>
+              <p className="text-[12px] font-bold uppercase tracking-widest text-[#7B2FF7]">Progress</p>
+              <p className="text-[12px] font-semibold text-[#1E1B3A] leading-snug">Tracked every class</p>
             </div>
           </div>
 
@@ -147,8 +147,8 @@ function HeroVisual() {
                 className="flex items-center gap-2.5 px-3 py-2 rounded-xl"
                 style={{ background: "rgba(30,27,58,0.03)", border: "1px solid rgba(30,27,58,0.05)" }}>
                 <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: n.dot }} />
-                <span className="text-[11px] text-[#1E1B3A] font-medium flex-1">{n.text}</span>
-                <span className="text-[10px] text-[#94A3B8]">{n.time}</span>
+                <span className="text-[12px] text-[#1E1B3A] font-medium flex-1">{n.text}</span>
+                <span className="text-[12px] text-[#94A3B8]">{n.time}</span>
               </motion.div>
             ))}
           </div>
@@ -172,7 +172,7 @@ function HeroVisual() {
           </div>
           <div>
             <p className="text-xs font-bold text-[#1E1B3A] leading-none mb-0.5">{card.title}</p>
-            <p className="text-[10px] font-semibold" style={{ color: card.color }}>{card.sub}</p>
+            <p className="text-[12px] font-semibold" style={{ color: card.color }}>{card.sub}</p>
           </div>
         </motion.div>
       ))}
@@ -242,8 +242,7 @@ export function HowItWorksHero() {
             </motion.div>
 
             {/* Heading */}
-            <h1 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-6">
               From Assessment to
               <br />
               <span className="relative inline-block">
@@ -265,13 +264,13 @@ export function HowItWorksHero() {
             </p>
 
             <p className="text-lg leading-8 text-[#6E6A85] max-w-lg mb-9">
-              Discover how our AI-powered platform helps students, parents, and tutors achieve better learning outcomes through verified tutors, personalised learning plans, progress tracking, and measurable academic growth.
+              See how Tutoo helps you find the right tutor — verified profiles, a free assessment, and classes you can follow.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <button className="group h-14 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold shadow-xl shadow-[#EA580C]/20 hover:scale-[1.02] hover:shadow-[#7B2FF7]/30 transition-all duration-300 flex items-center gap-2 text-sm">
-                Book Free Assessment
+                Find My Tutor
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
               <button className="h-14 px-8 rounded-2xl border font-semibold text-[#7B2FF7] text-sm hover:border-[#7B2FF7] hover:shadow-lg transition-all duration-300 flex items-center gap-2"
@@ -327,7 +326,7 @@ export function HowItWorksHero() {
               className="rounded-2xl border p-5 text-center cursor-default transition-all duration-300"
               style={{ background: "rgba(255,255,255,0.88)", borderColor: stat.border, backdropFilter: "blur(12px)", boxShadow: `0 2px 12px ${stat.color}10` }}
             >
-              <p className="text-2xl font-black mb-1" style={{ color: stat.color }}>{stat.value}</p>
+              <p className="text-2xl font-bold mb-1" style={{ color: stat.color }}>{stat.value}</p>
               <p className="text-xs font-semibold text-[#94A3B8] uppercase tracking-wider">{stat.label}</p>
             </motion.div>
           ))}

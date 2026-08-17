@@ -117,7 +117,7 @@ export function OnlineTutorsSection() {
                 </div>
 
                 <h3 className="mt-5 text-xl font-bold text-[#1E1B3A]">
-                  AI-Powered Learning
+                  Personalised Learning
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-[#6E6A85]">

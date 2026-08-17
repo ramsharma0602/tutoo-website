@@ -95,7 +95,7 @@ function CityAvailabilityFull() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.08 }}
-                        className="text-4xl lg:text-6xl font-black leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
+                        className="text-3xl lg:text-4xl font-black leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
                         Tutoo Is Live in{" "}

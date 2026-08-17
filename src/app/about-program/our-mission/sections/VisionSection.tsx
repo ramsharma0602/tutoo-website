@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Rocket,
   Brain,
@@ -42,7 +43,7 @@ const ROADMAP = [
     year: "2027",
     icon: Brain,
     emoji: "🧠",
-    title: "AI-Powered Learning Support",
+    title: "Personalised Learning Support",
     desc: "Personalized learning recommendations, gap analysis, and real-time academic insights tailored to every student's unique journey.",
     from: "#7B2FF7",
     to: "#7B2FF7",
@@ -69,7 +70,7 @@ const ROADMAP = [
     icon: Globe,
     emoji: "🌎",
     title: "Learning Without Boundaries",
-    desc: "Connecting students and world-class educators beyond geography — a truly borderless learning ecosystem for every learner.",
+    desc: "Connecting students with good tutors wherever they are — online classes make distance stop mattering.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     glow: "rgba(248,120,8,0.28)",
@@ -93,7 +94,7 @@ const PILLARS = [
     emoji: "🎓",
     icon: GraduationCap,
     title: "Excellence",
-    desc: "Delivering measurable, visible academic outcomes that families can see and students can feel.",
+    desc: "Keeping parents informed, so nobody has to guess how classes are going.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     delay: 0.2,
@@ -187,17 +188,16 @@ function RoadmapCard({ card, idx }: { card: typeof ROADMAP[0]; idx: number }) {
         {/* Year badge + tag */}
         <div className="flex items-center justify-between mb-5">
           <span
-            className="text-3xl font-black"
+            className="text-3xl font-bold"
             style={{
               background: `linear-gradient(135deg, ${card.from}, ${card.to})`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              fontFamily: "var(--font-heading, 'Clash Display', sans-serif)",
-            }}
+              }}
           >
             {card.year}
           </span>
-          <span className={`text-[10px] font-black px-2.5 py-1 rounded-full border ${card.tagColor}`}>
+          <span className={`text-[12px] font-bold px-2.5 py-1 rounded-full border ${card.tagColor}`}>
             {card.tag}
           </span>
         </div>
@@ -214,8 +214,7 @@ function RoadmapCard({ card, idx }: { card: typeof ROADMAP[0]; idx: number }) {
 
         {/* Title */}
         <h3
-          className="text-lg font-black text-[#1E1B3A] mb-3"
-          style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+          className="text-lg font-bold text-[#1E1B3A] mb-3"
         >
           {card.emoji} {card.title}
         </h3>
@@ -261,13 +260,12 @@ function PillarCard({ p }: { p: typeof PILLARS[0] }) {
           style={{ background: `linear-gradient(135deg, ${p.from}, ${p.to})` }}>
           <Icon className="w-7 h-7 text-white" />
         </div>
-        <h3 className="text-xl font-black text-[#1E1B3A] mb-3"
-          style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
+        <h3 className="text-xl font-bold text-[#1E1B3A] mb-3">
           {p.emoji} {p.title}
         </h3>
         <p className="text-sm leading-7 text-[#6E6A85]">{p.desc}</p>
         <div className="mt-6 flex items-center gap-2" style={{ color: p.from }}>
-          <span className="text-xs font-black">Core Pillar</span>
+          <span className="text-xs font-bold">Core Pillar</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
         </div>
       </div>
@@ -308,6 +306,7 @@ function Particles() {
 // ─────────────────────────────────────────────
 
 export function VisionSection() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const bgY  = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
@@ -317,7 +316,6 @@ export function VisionSection() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-32 bg-white"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -369,8 +367,7 @@ export function VisionSection() {
                          shadow-[0_0_28px_rgba(123,47,247,0.18)]"
             >
               <span className="text-base">🔮</span>
-              <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
+              <span className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]">
                 Our Vision
               </span>
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
@@ -383,8 +380,7 @@ export function VisionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.1 }}
-            className="text-5xl lg:text-[64px] font-black leading-[1.04] tracking-tight text-[#0A1028] mb-7"
-            style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
+            className="text-5xl lg:text-5xl font-bold leading-[1.04] tracking-tight text-[#0A1028] mb-7"
           >
             Building the{" "}
             <span className="relative inline-block">
@@ -445,8 +441,7 @@ export function VisionSection() {
               </div>
 
               <p
-                className="text-3xl lg:text-5xl font-black text-[#0A1028] leading-tight max-w-4xl mx-auto"
-                style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+                className="text-3xl lg:text-5xl font-bold text-[#0A1028] leading-tight max-w-4xl mx-auto"
               >
                 "A future where quality education is available to{" "}
                 <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -458,15 +453,15 @@ export function VisionSection() {
               {/* Proof chips */}
               <div className="flex flex-wrap justify-center gap-3 mt-10">
                 {[
-                  { text: "5,000+ Students", c: "#7B2FF7" },
-                  { text: "1,200+ Tutors", c: "#7B2FF7" },
-                  { text: "50+ Cities", c: "#7B2FF7" },
-                  { text: "4.8★ Satisfaction", c: "#F59E0B" },
+                  { text: "Verified Tutors", c: "#7B2FF7" },
+                  { text: "Home & Online", c: "#7B2FF7" },
+                  { text: "Free Assessment", c: "#7B2FF7" },
+                  { text: "Parent-First Approach", c: "#F59E0B" },
                 ].map((chip) => (
                   <motion.span
                     key={chip.text}
                     whileHover={{ scale: 1.07, y: -2 }}
-                    className="inline-flex items-center gap-1.5 text-xs font-black px-4 py-2 rounded-full border"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full border"
                     style={{ color: chip.c, background: `${chip.c}10`, borderColor: `${chip.c}28` }}
                   >
                     <motion.div
@@ -490,12 +485,11 @@ export function VisionSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-3">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#6E6A85] mb-3">
               The journey ahead
             </p>
             <h3
-              className="text-3xl lg:text-4xl font-black text-[#0A1028]"
-              style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+              className="text-3xl lg:text-4xl font-bold text-[#0A1028]"
             >
               Our{" "}
               <span className="text-[#6D28D9]">
@@ -534,7 +528,7 @@ export function VisionSection() {
             </div>
             <div className="flex justify-between mt-2 px-0">
               {["2026", "2027", "2028", "2030"].map((y) => (
-                <span key={y} className="text-xs font-black text-[#6E6A85]">{y}</span>
+                <span key={y} className="text-xs font-bold text-[#6E6A85]">{y}</span>
               ))}
             </div>
           </div>
@@ -559,12 +553,11 @@ export function VisionSection() {
           viewport={{ once: true }}
           className="text-center mb-10 mt-20"
         >
-          <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-3">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#6E6A85] mb-3">
             What we stand on
           </p>
           <h3
-            className="text-3xl lg:text-4xl font-black text-[#0A1028]"
-            style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+            className="text-3xl lg:text-4xl font-bold text-[#0A1028]"
           >
             Four{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -611,14 +604,13 @@ export function VisionSection() {
             <motion.p
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="text-[#7B2FF7] text-sm font-black tracking-widest uppercase mb-6"
+              className="text-[#7B2FF7] text-sm font-bold tracking-widest uppercase mb-6"
             >
               ✦ The Bigger Picture ✦
             </motion.p>
 
             <h3
-              className="text-4xl lg:text-5xl font-black text-white mb-7 leading-tight"
-              style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+              className="text-4xl lg:text-5xl font-bold text-white mb-7 leading-tight"
             >
               Our Vision Is{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -662,16 +654,20 @@ export function VisionSection() {
             {/* CTA buttons */}
             <div className="flex flex-wrap justify-center gap-5">
               <motion.button
+                type="button"
+                onClick={() => navigate("/book-free-assessment")}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
                            text-white font-bold shadow-[0_8px_32px_rgba(248,120,8,0.35)]
                            flex items-center gap-2 transition-all duration-300"
               >
-                Explore Our Impact
+                Find My Tutor
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
+                type="button"
+                onClick={() => navigate("/find-a-tutor")}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="h-14 px-10 rounded-2xl bg-white/10 backdrop-blur-xl

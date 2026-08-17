@@ -34,10 +34,10 @@ const subjectData = [
 ];
 
 const floatingChips = [
-  { emoji: "🤖", label: "AI Analysis Complete",        color: "#7B2FF7", border: "rgba(123,47,247,0.25)",  delay: 0   },
+  { emoji: "✅", label: "Assessment Complete",         color: "#7B2FF7", border: "rgba(123,47,247,0.25)",  delay: 0   },
   { emoji: "📈", label: "Learning Pattern Identified",  color: "#7B2FF7", border: "rgba(248,120,8,0.25)", delay: 0.5 },
   { emoji: "🎯", label: "Tutor Match Ready",            color: "#7B2FF7", border: "rgba(123,47,247,0.25)", delay: 1   },
-  { emoji: "📚", label: "Personalised Plan Generated",  color: "#F59E0B", border: "rgba(245,158,11,0.25)", delay: 1.5 },
+  { emoji: "📚", label: "Learning Plan Shared",         color: "#F59E0B", border: "rgba(245,158,11,0.25)", delay: 1.5 },
 ];
 
 const progressSteps = [
@@ -68,9 +68,9 @@ function RingChart({ sub, visible }: { sub: typeof subjectData[0]; visible: bool
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center text-xs font-black" style={{ color: sub.color }}>{sub.val}%</div>
+        <div className="absolute inset-0 flex items-center justify-center text-xs font-bold" style={{ color: sub.color }}>{sub.val}%</div>
       </div>
-      <p className="text-[10px] font-bold text-[#6E6A85] uppercase tracking-wider text-center leading-tight">{sub.label}</p>
+      <p className="text-[12px] font-bold text-[#6E6A85] uppercase tracking-wider text-center leading-tight">{sub.label}</p>
     </div>
   );
 }
@@ -104,18 +104,18 @@ function AIDashboard() {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="text-sm font-black text-[#0A1028]">Assessment Result</p>
-                <p className="text-xs text-[#94A3B8]">AI Learning Analysis · Grade 8</p>
+                <p className="text-sm font-bold text-[#0A1028]">Assessment Result</p>
+                <p className="text-xs text-[#94A3B8]">Sample summary · Grade 8</p>
               </div>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-[#7B2FF7]"
               style={{ background: "rgba(123,47,247,0.09)", border: "1px solid rgba(123,47,247,0.22)" }}>
-              <Sparkles className="w-3 h-3" /> AI Powered
+              <Sparkles className="w-3 h-3" /> Example
             </div>
           </div>
 
           {/* Level comparison bars */}
-          <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-3">Mathematics Performance Analysis</p>
+          <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8] mb-3">Mathematics Performance Analysis</p>
           <div className="flex flex-col gap-2.5 mb-5">
             {[
               { label: "Expected Level (Grade 8)", val: 100, grad: "linear-gradient(90deg,rgba(30,27,58,0.15),rgba(30,27,58,0.08))", color: "#94A3B8", delay: 0.3 },
@@ -123,8 +123,8 @@ function AIDashboard() {
             ].map((bar) => (
               <div key={bar.label}>
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[11px] font-semibold text-[#6E6A85]">{bar.label}</span>
-                  <span className="text-[11px] font-black" style={{ color: bar.color }}>{bar.val}%</span>
+                  <span className="text-[12px] font-semibold text-[#6E6A85]">{bar.label}</span>
+                  <span className="text-[12px] font-bold" style={{ color: bar.color }}>{bar.val}%</span>
                 </div>
                 <div className="h-3 rounded-full overflow-hidden" style={{ background: "rgba(30,27,58,0.06)" }}>
                   <motion.div
@@ -145,8 +145,8 @@ function AIDashboard() {
               <AlertTriangle className="w-4 h-4 text-white" />
             </div>
             <div>
-              <p className="text-xs font-black text-[#0A1028]">Learning Gap Detected</p>
-              <p className="text-[10px] text-[#6E6A85]">Student is 40% behind expected level in Mathematics</p>
+              <p className="text-xs font-bold text-[#0A1028]">Learning Gap Detected</p>
+              <p className="text-[12px] text-[#6E6A85]">Student is 40% behind expected level in Mathematics</p>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ function AIDashboard() {
           className="rounded-2xl border p-5"
           style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 4px 20px rgba(30,27,58,0.06)" }}
         >
-          <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-4">Subject Analysis</p>
+          <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8] mb-4">Subject Analysis</p>
           <div className="flex items-center justify-between gap-3">
             {subjectData.map((sub) => <RingChart key={sub.label} sub={sub} visible={vis} />)}
           </div>
@@ -180,16 +180,16 @@ function AIDashboard() {
           style={{ background: "linear-gradient(135deg,rgba(123,47,247,0.06),rgba(123,47,247,0.06))", borderColor: "rgba(123,47,247,0.2)", boxShadow: "0 4px 20px rgba(123,47,247,0.08)" }}
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-xl mb-3 shadow-md">🧠</div>
-          <p className="text-[9px] font-black uppercase tracking-widest text-[#7B2FF7] mb-1">Readiness Score</p>
+          <p className="text-[12px] font-bold uppercase tracking-widest text-[#7B2FF7] mb-1">Readiness Score</p>
           <motion.p
-            className="text-3xl font-black text-[#7B2FF7] leading-none mb-1"
+            className="text-3xl font-bold text-[#7B2FF7] leading-none mb-1"
             initial={{ opacity: 0 }}
             animate={vis ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
           >
             78%
           </motion.p>
-          <p className="text-[9px] text-[#6E6A85] font-semibold leading-tight">Ready for Personalised Plan</p>
+          <p className="text-[12px] text-[#6E6A85] font-semibold leading-tight">Ready for Personalised Plan</p>
         </motion.div>
       </div>
 
@@ -208,11 +208,11 @@ function AIDashboard() {
             <Sparkles className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1">
-            <p className="text-[9px] font-black uppercase tracking-widest text-[#7B2FF7] mb-1">AI Recommendation</p>
-            <p className="text-sm font-black text-white mb-2">Foundation Reinforcement + Advanced Support</p>
+            <p className="text-[12px] font-bold uppercase tracking-widest text-[#7B2FF7] mb-1">What we suggest</p>
+            <p className="text-sm font-bold text-white mb-2">Foundation Reinforcement + Advanced Support</p>
             <div className="flex flex-wrap gap-2">
               {["Algebra Basics", "Problem Solving", "Concept Clarity"].map((tag) => (
-                <span key={tag} className="text-[10px] font-semibold px-2.5 py-1 rounded-full text-[#7B2FF7]"
+                <span key={tag} className="text-[12px] font-semibold px-2.5 py-1 rounded-full text-[#7B2FF7]"
                   style={{ background: "rgba(248,120,8,0.1)", border: "1px solid rgba(248,120,8,0.22)" }}>{tag}</span>
               ))}
             </div>
@@ -230,7 +230,7 @@ function AIDashboard() {
         style={{ background: "#fff", borderColor: "rgba(30,27,58,0.08)", boxShadow: "0 4px 20px rgba(30,27,58,0.05)" }}
       >
         <div className="px-5 py-3 border-b flex items-center justify-between" style={{ borderColor: "rgba(30,27,58,0.06)" }}>
-          <p className="text-xs font-black text-[#0A1028]">AI Assessment Insights</p>
+          <p className="text-xs font-bold text-[#0A1028]">Assessment Insights</p>
           <span className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
         </div>
         {[
@@ -246,7 +246,7 @@ function AIDashboard() {
             style={{ borderColor: "rgba(30,27,58,0.05)" }}>
             <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0"
               style={{ background: `${n.dot}14`, color: n.dot }}>{n.icon}</div>
-            <span className="text-[11px] text-[#1E1B3A] font-medium leading-snug flex-1">{n.text}</span>
+            <span className="text-[12px] text-[#1E1B3A] font-medium leading-snug flex-1">{n.text}</span>
             <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: n.dot }} />
           </motion.div>
         ))}
@@ -267,7 +267,7 @@ function AIDashboard() {
             transition={{ delay: 0.65 + i * 0.08 }}
             viewport={{ once: true }}
             animate={{ y: [0, -4, 0] }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold border bg-white"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold border bg-white"
             style={{ color: chip.color, borderColor: chip.border, boxShadow: `0 4px 12px ${chip.color}18` }}>
             <span>{chip.emoji}</span>{chip.label}
           </motion.span>
@@ -335,19 +335,18 @@ export function Step02Assessment() {
             {/* Step badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-7"
               style={{ background: "rgba(123,47,247,0.08)", borderColor: "rgba(123,47,247,0.28)", backdropFilter: "blur(10px)" }}>
-              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-[9px] font-black shadow-sm">2</div>
-              <span className="text-xs font-black tracking-widest text-[#7B2FF7] uppercase">Step 02</span>
+              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-[12px] font-bold shadow-sm">2</div>
+              <span className="text-xs font-bold tracking-widest text-[#7B2FF7] uppercase">Step 02</span>
               <Sparkles className="w-3 h-3 text-[#7B2FF7]" />
             </div>
 
             {/* Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-3"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-3">
               Understand
               <br />Before We Teach
             </h2>
             <p className="text-lg font-semibold text-[#1E1B3A] mb-4">
-              AI-Powered{" "}
+              Structured{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                   Learning Assessment
@@ -381,7 +380,7 @@ export function Step02Assessment() {
 
             {/* Assessment identifies */}
             <div className="flex items-center gap-3 mb-5">
-              <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">The Assessment Identifies</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">The Assessment Identifies</p>
               <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
             </div>
 
@@ -404,7 +403,7 @@ export function Step02Assessment() {
                     {card.emoji}
                   </div>
                   <div className="relative z-10 flex-1">
-                    <p className="text-sm font-black text-[#0A1028] mb-0.5" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
+                    <p className="text-sm font-bold text-[#0A1028] mb-0.5">{card.title}</p>
                     <p className="text-xs leading-relaxed text-[#6E6A85]">{card.desc}</p>
                   </div>
                   <ArrowRight className="relative z-10 w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" style={{ color: card.color }} />
@@ -434,7 +433,7 @@ export function Step02Assessment() {
               <div className="flex items-center gap-0 mb-3">
                 {progressSteps.map((s, i) => (
                   <div key={s.label} className="flex items-center">
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm ${s.done ? "scale-110" : ""}`}
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-sm ${s.done ? "scale-110" : ""}`}
                       style={s.done
                         ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(123,47,247,0.4)" }
                         : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>

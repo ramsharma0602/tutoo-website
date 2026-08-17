@@ -1,61 +1,44 @@
 import { motion } from 'motion/react';
-import { Brain, UserCheck, Rocket, Eye, BarChart3, FileText, TrendingUp } from 'lucide-react';
+import { UserCheck, FileText, TrendingUp, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function HowItWorks() {
+  const navigate = useNavigate();
+  /* The booklet's four steps, worded for how Tutoo actually works today:
+     we shortlist and share tutor profiles, the parent chooses. */
   const steps = [
     {
       number: '01',
-      icon: Brain,
-      title: 'AI Assessment',
-      description: 'Comprehensive evaluation of learning gaps and strengths',
-      color: 'emerald'
+      icon: FileText,
+      title: 'Tell Us What You Need',
+      description: 'Share the class, subject and learning requirement. Takes under a minute.',
+      color: 'violet'
     },
     {
       number: '02',
-      icon: UserCheck,
-      title: 'Smart Tutor Matching',
-      description: 'Algorithm-driven pairing with verified expert tutors',
-      color: 'blue'
+      icon: Search,
+      title: 'We Find Suitable Tutors',
+      description: 'We assess your child for free, then shortlist verified tutors who match your requirement.',
+      color: 'violet'
     },
     {
       number: '03',
-      icon: Rocket,
-      title: 'Learning Plan Activation',
-      description: 'Personalized curriculum tailored to student needs',
-      color: 'purple'
+      icon: UserCheck,
+      title: 'Choose Your Tutor',
+      description: 'We share the tutor profiles with you. You pick the one who feels right for your child.',
+      color: 'violet'
     },
     {
       number: '04',
-      icon: Eye,
-      title: 'Live Session Monitoring',
-      description: 'Real-time tracking and parent visibility',
-      color: 'cyan'
-    },
-    {
-      number: '05',
-      icon: BarChart3,
-      title: 'Progress Analytics',
-      description: 'Data-driven insights on learning outcomes',
-      color: 'orange'
-    },
-    {
-      number: '06',
-      icon: FileText,
-      title: 'Monthly Reports',
-      description: 'Detailed performance and growth documentation',
-      color: 'pink'
-    },
-    {
-      number: '07',
       icon: TrendingUp,
-      title: 'Continuous Improvement',
-      description: 'AI-powered adjustments for optimal results',
-      color: 'emerald'
+      title: 'Start Learning',
+      description: 'Classes begin at your home or online, with attendance and progress you can check.',
+      color: 'violet'
     }
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,13 +47,12 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-4"
           >
-            How It Works
+            How Tutoo Works
           </h2>
           <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
-            A seamless, technology-driven process designed for measurable learning outcomes
+            Tell us what you need. We&apos;ll help you find the right one.
           </p>
         </motion.div>
 
@@ -117,9 +99,16 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
-            Start Your Journey Today
+          <button
+            type="button"
+            onClick={() => navigate('/book-free-assessment')}
+            className="px-10 py-5 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-full font-semibold transition-colors duration-300 text-lg"
+          >
+            Find My Tutor
           </button>
+          <p className="mt-3 text-sm text-[#6E6A85]">
+            Free assessment · No obligation
+          </p>
         </motion.div>
       </div>
     </section>

@@ -40,7 +40,7 @@ const verificationFlow = [
     {
         emoji: "✅", step: "04",
         title: "Session Activated",
-        desc: "Learning session is officially unlocked and begins with full transparency.",
+        desc: "The class starts, and the parent can see it has begun.",
         color: "#7B2FF7", glow: "rgba(248,120,8,0.35)", border: "rgba(248,120,8,0.35)", bg: "rgba(248,120,8,0.07)",
     },
     {
@@ -97,7 +97,7 @@ function OTPDisplay({ visible }: { visible: boolean }) {
                     initial={{ opacity: 0, y: 16, scale: 0.8 }}
                     animate={revealed ? { opacity: 1, y: 0, scale: 1 } : {}}
                     transition={{ delay: i * 0.09, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative w-12 h-14 rounded-xl flex items-center justify-center text-2xl font-black"
+                    className="relative w-12 h-14 rounded-xl flex items-center justify-center text-2xl font-bold"
                     style={{
                         background: "linear-gradient(135deg, rgba(123,47,247,0.08), rgba(248,120,8,0.08))",
                         border: "1.5px solid rgba(123,47,247,0.25)",
@@ -144,7 +144,7 @@ function SecurityFlowVisual() {
                                 <Lock className="w-5 h-5 text-white" />
                             </div>
                             <div>
-                                <p className="text-sm font-black text-[#0A1028]">Session Verification</p>
+                                <p className="text-sm font-bold text-[#0A1028]">Session Verification</p>
                                 <p className="text-xs text-[#94A3B8]">One-Time Code · Expires in 5:00</p>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ function SecurityFlowVisual() {
                                 style={{ background: item.bg, border: `1px solid ${item.color}20` }}>
                                 <span className="text-base">{item.icon}</span>
                                 <div>
-                                    <p className="text-[9px] font-semibold text-[#94A3B8] uppercase tracking-wider">{item.label}</p>
+                                    <p className="text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">{item.label}</p>
                                     <p className="text-xs font-bold text-[#1E1B3A]">{item.val}</p>
                                 </div>
                             </div>
@@ -176,7 +176,7 @@ function SecurityFlowVisual() {
 
                     {/* OTP heading */}
                     <div className="text-center mb-4">
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-1">
+                        <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8] mb-1">
                             Generated Verification Code
                         </p>
                         <p className="text-xs text-[#6E6A85]">Share this code with your parent to begin the session</p>
@@ -238,7 +238,7 @@ function SecurityFlowVisual() {
             >
                 <div className="h-[2px] bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]" />
                 <div className="p-5">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-[#94A3B8] mb-4">Verification Flow</p>
+                    <p className="text-[12px] font-bold uppercase tracking-widest text-[#94A3B8] mb-4">Verification Flow</p>
                     <div className="relative">
                         {/* Vertical connector */}
                         <div className="absolute left-[22px] top-5 bottom-5 w-[2px]"
@@ -271,13 +271,13 @@ function SecurityFlowVisual() {
                                     </div>
                                     {/* Content */}
                                     <div className="flex-1 pt-1.5">
-                                        <p className="text-xs font-black text-[#0A1028] mb-0.5" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</p>
-                                        <p className="text-[10px] leading-relaxed text-[#6E6A85]">{step.desc}</p>
+                                        <p className="text-xs font-bold text-[#0A1028] mb-0.5">{step.title}</p>
+                                        <p className="text-[12px] leading-relaxed text-[#6E6A85]">{step.desc}</p>
                                     </div>
                                     {/* Done badge */}
                                     {i < 2 && (
                                         <div className="shrink-0 pt-1.5">
-                                            <span className="text-[9px] font-bold px-2 py-1 rounded-full text-[#7B2FF7]"
+                                            <span className="text-[12px] font-bold px-2 py-1 rounded-full text-[#7B2FF7]"
                                                 style={{ background: "rgba(248,120,8,0.1)", border: "1px solid rgba(248,120,8,0.2)" }}>Done</span>
                                         </div>
                                     )}
@@ -300,7 +300,7 @@ function SecurityFlowVisual() {
                         transition={{ delay: 0.55 + i * 0.09 }}
                         viewport={{ once: true }}
                         animate={{ y: [0, -4, 0] }}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold border bg-white shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold border bg-white shadow-sm"
                         style={{ color: w.color, borderColor: w.border, boxShadow: `0 4px 12px ${w.color}14` }}>
                         <span>{w.emoji}</span>{w.label}
                     </motion.span>
@@ -371,8 +371,8 @@ export function Step04SecureSession() {
                             {/* Step badge */}
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-5"
                                 style={{ background: "rgba(123,47,247,0.08)", borderColor: "rgba(123,47,247,0.28)", backdropFilter: "blur(10px)" }}>
-                                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-[9px] font-black shadow-sm">4</div>
-                                <span className="text-xs font-black tracking-widest text-[#7B2FF7] uppercase">Step 04</span>
+                                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#7B2FF7] to-[#7B2FF7] flex items-center justify-center text-white text-[12px] font-bold shadow-sm">4</div>
+                                <span className="text-xs font-bold tracking-widest text-[#7B2FF7] uppercase">Step 04</span>
                                 <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
                             </div>
 
@@ -388,8 +388,7 @@ export function Step04SecureSession() {
                             </motion.div>
                         </div>
                         {/* Heading */}
-                        <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
-                            style={{ fontFamily: "var(--font-heading)" }}>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-6">
                             Every Session
                             <br />
                             <span className="relative inline-block">
@@ -436,7 +435,7 @@ export function Step04SecureSession() {
                                     <Sparkles className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <p className="text-lg font-black text-white" style={{ fontFamily: "var(--font-heading)" }}>
+                                    <p className="text-lg font-bold text-white">
                                         No Verification. No Session.
                                     </p>
                                     <p className="text-xs text-[#94A3B8] mt-0.5">Every session must be authenticated — no exceptions.</p>
@@ -446,7 +445,7 @@ export function Step04SecureSession() {
 
                         {/* Benefits grid */}
                         <div className="flex items-center gap-3 mb-5">
-                            <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Verification Benefits</p>
+                            <p className="text-sm font-bold uppercase tracking-widest text-[#1E1B3A] whitespace-nowrap">Verification Benefits</p>
                             <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
                         </div>
 
@@ -466,8 +465,8 @@ export function Step04SecureSession() {
                                     <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-lg mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                                         {card.emoji}
                                     </div>
-                                    <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                                    <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
+                                    <p className="relative z-10 text-xs font-bold text-[#0A1028] mb-1">{card.title}</p>
+                                    <p className="relative z-10 text-[12px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
                                     <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                         style={{ background: `linear-gradient(90deg, ${card.color}, transparent)` }} />
                                 </motion.div>
@@ -496,7 +495,7 @@ export function Step04SecureSession() {
                             <div className="flex items-center gap-0 mb-3">
                                 {progressSteps.map((s, i) => (
                                     <div key={s.label} className="flex items-center">
-                                        <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm ${s.done ? "scale-110" : ""}`}
+                                        <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-sm ${s.done ? "scale-110" : ""}`}
                                             style={s.done
                                                 ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(123,47,247,0.4)" }
                                                 : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>

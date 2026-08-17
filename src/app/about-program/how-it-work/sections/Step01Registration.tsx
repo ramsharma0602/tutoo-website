@@ -21,7 +21,7 @@ import {
 const infoCards = [
   { icon: User,      emoji: "👤", title: "Student Name",      desc: "Create a personalised student profile.",                    color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)",  grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { icon: School,    emoji: "🏫", title: "Class / Grade",     desc: "Understand the correct academic level.",                   color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#EA580C] to-[#C2410C]" },
-  { icon: Layers,    emoji: "📖", title: "Board",             desc: "CBSE · ICSE · SSC · State · IB · IGCSE",                   color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { icon: Layers,    emoji: "📖", title: "Board",             desc: "CBSE · ICSE · SSC (Maharashtra board)",                   color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { icon: BookOpen,  emoji: "📚", title: "Subjects Required", desc: "Identify every learning need across subjects.",             color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)",  grad: "from-[#7B2FF7] to-[#7B2FF7]" },
   { icon: MapPin,    emoji: "📍", title: "Location",          desc: "Find nearby home tutors or online session options.",        color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)", grad: "from-[#F59E0B] to-[#EF4444]" },
   { icon: Target,    emoji: "🎯", title: "Learning Goals",    desc: "Define academic objectives, targets, and expectations.",    color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
@@ -72,7 +72,7 @@ function IllustrationPanel() {
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-black text-[#0A1028]">Tutoo</span>
+              <span className="text-sm font-bold text-[#0A1028]">Tutoo</span>
             </div>
             <span className="text-xs font-bold px-3 py-1.5 rounded-full text-[#7B2FF7]"
               style={{ background: "rgba(248,120,8,0.09)", border: "1px solid rgba(248,120,8,0.22)" }}>
@@ -81,8 +81,8 @@ function IllustrationPanel() {
           </div>
 
           {/* Form heading */}
-          <p className="text-xs font-black uppercase tracking-widest text-[#94A3B8] mb-1">Student Registration</p>
-          <h4 className="text-lg font-black text-[#0A1028] mb-5" style={{ fontFamily: "var(--font-heading)" }}>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#94A3B8] mb-1">Student Registration</p>
+          <h4 className="text-lg font-bold text-[#0A1028] mb-5">
             Tell us about your child
           </h4>
 
@@ -110,7 +110,7 @@ function IllustrationPanel() {
               >
                 <span className="text-base shrink-0">{field.icon}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider leading-none mb-0.5">{field.label}</p>
+                  <p className="text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider leading-none mb-0.5">{field.label}</p>
                   <p className="text-xs font-bold text-[#1E1B3A] truncate">{field.val}</p>
                 </div>
                 {field.done
@@ -132,7 +132,7 @@ function IllustrationPanel() {
           </motion.button>
 
           {/* Trust note */}
-          <p className="text-center text-[10px] text-[#94A3B8] mt-3 font-medium">
+          <p className="text-center text-[12px] text-[#94A3B8] mt-3 font-medium">
             🔒 Your data is encrypted and never shared
           </p>
         </div>
@@ -156,7 +156,7 @@ function IllustrationPanel() {
           </div>
           <div>
             <p className="text-xs font-bold text-[#1E1B3A] leading-none mb-0.5">{card.title}</p>
-            <p className="text-[10px] font-semibold" style={{ color: card.color }}>{card.sub}</p>
+            <p className="text-[12px] font-semibold" style={{ color: card.color }}>{card.sub}</p>
           </div>
         </motion.div>
       ))}
@@ -216,14 +216,13 @@ export function Step01Registration() {
             {/* Step badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-7"
               style={{ background: "rgba(248,120,8,0.08)", borderColor: "rgba(248,120,8,0.28)", backdropFilter: "blur(10px)" }}>
-              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[9px] font-black shadow-sm">1</div>
-              <span className="text-xs font-black tracking-widest text-[#059669] uppercase">Step 01</span>
+              <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center text-white text-[12px] font-bold shadow-sm">1</div>
+              <span className="text-xs font-bold tracking-widest text-[#059669] uppercase">Step 01</span>
               <div className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7] animate-pulse" />
             </div>
 
             {/* Heading */}
-            <h2 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-6"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-6">
               Parent{" "}
               <span className="relative inline-block">
                 <span className="text-[#6D28D9]">
@@ -259,7 +258,7 @@ export function Step01Registration() {
 
             {/* Info collected heading */}
             <div className="flex items-center gap-3 mb-5">
-              <p className="text-sm font-black uppercase tracking-widest text-[#1E1B3A]">Information We Collect</p>
+              <p className="text-sm font-bold uppercase tracking-widest text-[#1E1B3A]">Information We Collect</p>
               <div className="flex-1 h-px bg-gradient-to-r from-[rgba(123,47,247,0.2)] to-transparent" />
             </div>
 
@@ -282,8 +281,8 @@ export function Step01Registration() {
                   <div className={`relative z-10 w-10 h-10 rounded-xl bg-gradient-to-br ${card.grad} flex items-center justify-center text-xl mb-3 shadow-md group-hover:scale-105 transition-transform duration-300`}>
                     {card.emoji}
                   </div>
-                  <p className="relative z-10 text-xs font-black text-[#0A1028] mb-1" style={{ fontFamily: "var(--font-heading)" }}>{card.title}</p>
-                  <p className="relative z-10 text-[10px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
+                  <p className="relative z-10 text-xs font-bold text-[#0A1028] mb-1">{card.title}</p>
+                  <p className="relative z-10 text-[12px] leading-relaxed text-[#6E6A85]">{card.desc}</p>
 
                   {/* Bottom accent line */}
                   <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -321,7 +320,7 @@ export function Step01Registration() {
                   <div key={s.label} className="flex items-center">
                     {/* Node */}
                     <div className="flex flex-col items-center gap-1">
-                      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black shadow-sm transition-all duration-300 ${s.active ? "scale-110" : ""}`}
+                      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shadow-sm transition-all duration-300 ${s.active ? "scale-110" : ""}`}
                         style={s.active
                           ? { background: "linear-gradient(135deg, #7B2FF7, #7B2FF7)", color: "#fff", boxShadow: "0 0 12px rgba(248,120,8,0.4)" }
                           : { background: "rgba(30,27,58,0.06)", color: "#94A3B8" }}>

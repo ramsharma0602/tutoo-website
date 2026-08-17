@@ -51,6 +51,12 @@ export interface SearchableSelectProps {
     noResultsText?: string;
     /** Message while options are loading */
     loadingText?: string;
+    /**
+     * Show the search box inside the panel. Defaults to true.
+     * Set false for short lists (4–6 options) where a search field is clutter —
+     * keyboard navigation still works, it just moves to the option list.
+     */
+    searchable?: boolean;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -72,6 +78,7 @@ export default function SearchableSelect({
     className,
     noResultsText = 'No results found',
     loadingText = 'Loading...',
+    searchable = true,
 }: SearchableSelectProps) {
 
     const [open, setOpen] = useState(false);
@@ -134,10 +141,12 @@ export default function SearchableSelect({
         };
     }, [open, close]);
 
-    // Autofocus the search input when opening
+    // Autofocus the search input when opening — or the option list if there is none
     useEffect(() => {
-        if (open) searchRef.current?.focus();
-    }, [open]);
+        if (!open) return;
+        if (searchable) searchRef.current?.focus();
+        else listRef.current?.focus();
+    }, [open, searchable]);
 
     // Reset highlight when the filter changes
     useEffect(() => {
@@ -232,7 +241,7 @@ export default function SearchableSelect({
                     backdrop-blur-xl
                     px-5
                     text-left
-                    text-sm
+                    text-base
                     font-medium
                     shadow-sm
                     outline-none
@@ -300,6 +309,7 @@ export default function SearchableSelect({
                 >
 
                     {/* Search */}
+                    {searchable && (
                     <div className="relative border-b border-[#F6F3FC] p-2">
 
                         <Search className="pointer-events-none absolute left-5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#94A3B8]" />
@@ -326,7 +336,7 @@ export default function SearchableSelect({
                             bg-[#FAFAFC]
                             pl-10
                             pr-4
-                            text-sm
+                            text-base
                             text-[#1E1B3A]
                             placeholder:text-[#94A3B8]
                             outline-none
@@ -337,6 +347,7 @@ export default function SearchableSelect({
                             "
                         />
                     </div>
+                    )}
 
                     {/* Options */}
                     <ul
@@ -344,7 +355,14 @@ export default function SearchableSelect({
                         id={listboxId}
                         role="listbox"
                         aria-label={placeholder}
-                        className="max-h-60 overflow-y-auto overscroll-contain p-2"
+                        tabIndex={searchable ? undefined : -1}
+                        onKeyDown={searchable ? undefined : onSearchKeyDown}
+                        aria-activedescendant={
+                            !searchable && filtered[highlighted]
+                                ? `${listboxId}-option-${highlighted}`
+                                : undefined
+                        }
+                        className="max-h-60 overflow-y-auto overscroll-contain p-2 outline-none"
                     >
 
                         {filtered.length === 0 && (

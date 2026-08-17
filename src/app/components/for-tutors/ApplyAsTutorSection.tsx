@@ -75,7 +75,7 @@ export function ApplyAsTutorSection() {
       icon: MonitorPlay,
       title: "Start Teaching",
       description:
-        "Begin teaching online or offline and start earning with Tutoo.",
+        "Begin teaching online or offline with Tutoo.",
 
       gradient: "from-[#7B2FF7] to-[#7B2FF7]",
     },

@@ -38,7 +38,7 @@ export function ToolsSupportSection() {
       icon: CalendarDays,
       title: "Class Scheduling",
       description:
-        "Organize classes, availability, recurring sessions, and timetable management seamlessly.",
+        "Organise your classes, availability and timetable in one place.",
 
       gradient:
         "from-[#7B2FF7] via-[#4F46E5] to-[#7B2FF7]",
@@ -62,7 +62,7 @@ export function ToolsSupportSection() {
       icon: BookOpen,
       title: "Learning Resources",
       description:
-        "Access AI-powered worksheets, assignments, notes, templates, and teaching materials.",
+        "Access worksheets, assignments, notes, templates and teaching materials.",
 
       gradient:
         "from-[#7B2FF7] via-[#0EA5E9] to-[#7B2FF7]",
@@ -74,7 +74,7 @@ export function ToolsSupportSection() {
       icon: BarChart3,
       title: "Performance Reports",
       description:
-        "Detailed learning analytics, student insights, and AI-generated teaching recommendations.",
+        "Attendance records and class notes, so you and the parent see the same picture.",
 
       gradient:
         "from-[#7B2FF7] via-[#8B5CF6] to-[#7B2FF7]",
@@ -151,10 +151,7 @@ export function ToolsSupportSection() {
 
           {/* Heading */}
           <h2
-            className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#1E1B3A]"
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#1E1B3A]"
           >
             Everything You Need to{" "}
 
@@ -165,8 +162,8 @@ export function ToolsSupportSection() {
 
           {/* Desc */}
           <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-3xl mx-auto">
-            Tutoo provides a complete educator ecosystem with smart
-            teaching tools, AI-powered analytics, scheduling systems,
+            Tutoo gives you practical teaching support —
+            teaching tools, student progress records, scheduling,
             learning resources, and dedicated support.
           </p>
         </motion.div>
@@ -220,14 +217,14 @@ export function ToolsSupportSection() {
                   AI Teaching Workspace
                 </p>
 
-                <h3 className="mt-5 text-4xl font-black leading-tight text-white">
+                <h3 className="mt-5 text-4xl font-bold leading-tight text-white">
                   Smart Productivity Tools For Modern Tutors
                 </h3>
 
                 <p className="mt-6 text-[#CBD5E1] leading-8">
-                  Automate scheduling, manage students, access AI-powered
-                  learning resources, and track student performance with a
-                  premium teaching ecosystem designed for educators.
+                  Manage your schedule, your students, and your
+                  learning resources in one place, and keep track of how
+                  your students are doing.
                 </p>
               </div>
 
@@ -335,7 +332,7 @@ export function ToolsSupportSection() {
                   {/* Content */}
                   <div className="relative z-10 mt-7">
 
-                    <h3 className="text-2xl font-black text-[#1E1B3A] leading-tight">
+                    <h3 className="text-2xl font-bold text-[#1E1B3A] leading-tight">
                       {feature.title}
                     </h3>
 
@@ -409,13 +406,13 @@ export function ToolsSupportSection() {
 
               {
                 icon: ShieldCheck,
-                title: "Tutor Rating",
-                value: "4.9 Verified",
+                title: "Tutor Profile",
+                value: "Verified",
               },
 
               {
                 icon: BrainCircuit,
-                title: "AI Insights",
+                title: "Class Reports",
                 value: "Weekly Reports",
               },
             ].map((item, index) => {
@@ -447,7 +444,7 @@ export function ToolsSupportSection() {
                         {item.title}
                       </p>
 
-                      <h4 className="mt-1 text-2xl font-black text-[#1E1B3A]">
+                      <h4 className="mt-1 text-2xl font-bold text-[#1E1B3A]">
                         {item.value}
                       </h4>
                     </div>

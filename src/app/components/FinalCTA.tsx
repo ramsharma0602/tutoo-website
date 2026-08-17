@@ -4,49 +4,14 @@ import { useNavigate } from 'react-router-dom';
 export function FinalCTA() {
   const navigate = useNavigate();
   return (
-    <section className="py-20 lg:py-32 bg-[#0A1028] text-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-[#0A1028] text-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       {/* Animated Gradient Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-        className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.25, 1],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
-      />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl" />
 
       <div className="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
         <motion.div
@@ -56,23 +21,18 @@ export function FinalCTA() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full mb-8 border border-white/20"
         >
           <Sparkles className="w-4 h-4 text-violet-400" />
-          <span className="text-sm font-medium">Limited Time Offer</span>
+          <span className="text-sm font-medium">Free Assessment · No Obligation</span>
         </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl lg:text-7xl font-bold mb-6 leading-tight"
-          style={{ fontFamily: 'var(--font-heading)' }}
+          className="text-3xl lg:text-5xl font-bold mb-6 leading-tight"
         >
-          Start Your Child's
+          Ready to find the
           <br />
-          <span className="bg-gradient-to-r from-violet-400 via-violet-400 to-violet-400 bg-clip-text text-transparent">
-            Intelligent Learning Journey
-          </span>
-          <br />
-          Today
+          <span className="text-violet-400">right tutor</span> for your child?
         </motion.h2>
 
         <motion.p
@@ -82,7 +42,7 @@ export function FinalCTA() {
           transition={{ delay: 0.2 }}
           className="text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Join 12,000+ families experiencing measurable academic growth through AI-powered learning, verified tutors, and real-time progress tracking
+          Tell us what your child needs. We assess for free, match a verified tutor, and call you back within 24 hours — at your home in Kothrud or Kolhapur, or online anywhere.
         </motion.p>
 
         <motion.div
@@ -95,9 +55,9 @@ export function FinalCTA() {
           <button
             type="button"
             onClick={() => navigate('/book-free-assessment')}
-            className="group flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 text-lg">
+            className="group flex items-center gap-3 px-10 py-5 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-full font-semibold transition-colors duration-300 text-lg">
             <Calendar className="w-5 h-5" />
-            Book Free Assessment
+            Find My Tutor
             <svg
               className="w-5 h-5 group-hover:translate-x-1 transition-transform"
               fill="none"
@@ -108,10 +68,13 @@ export function FinalCTA() {
             </svg>
           </button>
 
-          <button className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-all duration-300 text-lg">
+          <a
+            href="tel:+918446146039"
+            className="flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-all duration-300 text-lg"
+          >
             <Phone className="w-5 h-5" />
-            Talk to Learning Advisor
-          </button>
+            Call +91 84461 46039
+          </a>
         </motion.div>
 
         {/* Trust Badges */}
@@ -123,10 +86,10 @@ export function FinalCTA() {
           className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400"
         >
           {[
-            '✓ Free Initial Assessment',
-            '✓ No Credit Card Required',
-            '✓ 100% Verified Tutors',
-            '✓ Money-Back Guarantee'
+            '✓ Free Assessment',
+            '✓ Verified Tutors',
+            '✓ No Obligation',
+            '✓ Serving Kothrud & Kolhapur'
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -156,11 +119,11 @@ export function FinalCTA() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="text-xs text-gray-400">Success Rate</div>
-                <div className="text-lg font-bold">94%</div>
+                <div className="text-xs text-gray-400">Free Assessment</div>
+                <div className="text-lg font-bold">At home or online</div>
               </div>
             </div>
-            <div className="text-xs text-gray-400">Students see measurable improvement</div>
+            <div className="text-xs text-gray-400">Understand where your child stands</div>
           </div>
         </motion.div>
 
@@ -177,11 +140,11 @@ export function FinalCTA() {
                 <Phone className="w-5 h-5 text-white" />
               </div>
               <div>
-                <div className="text-xs text-gray-400">Support</div>
-                <div className="text-lg font-bold">24/7</div>
+                <div className="text-xs text-gray-400">Quick Response</div>
+                <div className="text-lg font-bold">Within 24 hours</div>
               </div>
             </div>
-            <div className="text-xs text-gray-400">Always available for parents</div>
+            <div className="text-xs text-gray-400">We call back on every enquiry</div>
           </div>
         </motion.div>
       </div>

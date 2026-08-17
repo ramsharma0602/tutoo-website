@@ -1130,7 +1130,7 @@ export const LEARNING_OUTCOMES: Record<Category, { icon: string; text: string }[
     { icon: "🏆", text: "Subject mastery through personalised teaching" },
     { icon: "⏱️", text: "Effective time management for board exams" },
     { icon: "🧮", text: "Advanced problem-solving and analytical skills" },
-    { icon: "📊", text: "Measurable improvement in academic scores" },
+    { icon: "📊", text: "Regular practice on the topics the student finds hard" },
   ],
   senior: [
     { icon: "📚", text: "Board exam mastery and full syllabus coverage" },

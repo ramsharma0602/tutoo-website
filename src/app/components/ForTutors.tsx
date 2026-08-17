@@ -1,257 +1,57 @@
 import { motion } from 'motion/react';
-import { Users, Wallet, BookOpen, GraduationCap, CheckCircle2, ArrowRight, Sparkles, Wifi } from 'lucide-react';
+import { ArrowRight, GraduationCap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-const featureCards = [
-  {
-    icon: Users,
-    title: 'Guaranteed Student Pipeline',
-    description:
-      'No searching for students. The platform intelligently matches tutors based on expertise, subjects, ratings, and location.',
-    accent: 'from-[#7B2FF7] to-violet-400',
-    glow: 'rgba(248,120,8,0.10)',
-    border: 'rgba(248,120,8,0.18)',
-    iconBg: 'rgba(248,120,8,0.12)',
-    iconColor: '#7B2FF7',
-  },
-  {
-    icon: Wallet,
-    title: 'Reliable Weekly Payments',
-    description:
-      'Automatic weekly payouts directly to your bank account — transparent, secure, and always on time.',
-    accent: 'from-[#7B2FF7] to-violet-400',
-    glow: 'rgba(123,47,247,0.10)',
-    border: 'rgba(123,47,247,0.18)',
-    iconBg: 'rgba(123,47,247,0.12)',
-    iconColor: '#7B2FF7',
-  },
-  {
-    icon: BookOpen,
-    title: 'Ready-Made Lesson Plans',
-    description:
-      'AI-generated worksheets, assessments, homework, and lesson structures prepared automatically for every session.',
-    accent: 'from-[#F59E0B] to-amber-300',
-    glow: 'rgba(245,158,11,0.10)',
-    border: 'rgba(245,158,11,0.18)',
-    iconBg: 'rgba(245,158,11,0.12)',
-    iconColor: '#F59E0B',
-  },
-];
 
-const stats = [
-  { value: '3,400+', label: 'Active Tutors' },
-  { value: '4.8★', label: 'Average Tutor Rating' },
-  { value: '98%', label: 'Tutor Satisfaction' },
-];
+/* Phase 2 (UX plan §7): tutors get a compact strip above the footer instead of
+   a full homepage section — the homepage's job is converting parents. The full
+   tutor pitch lives at /for-tutors and /apply-tutor. */
 
 export function ForTutors() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
-      {/* Ambient background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-gradient-to-bl from-[#7B2FF7]/6 to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-gradient-to-tr from-[#7B2FF7]/6 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#7B2FF7]/4 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* LEFT — Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Badge */}
-            <motion.span
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFF6FF] border border-[#7B2FF7]/20 text-[#7B2FF7] text-xs font-bold uppercase tracking-widest mb-6 shadow-sm"
-            >
-              <GraduationCap className="w-3.5 h-3.5" />
-              For Tutors
-            </motion.span>
-
-            {/* Heading */}
-            <h2
-              className="text-4xl lg:text-6xl font-bold text-[#1E1B3A] mb-5 leading-tight"
-              style={{ fontFamily: 'var(--font-heading)' }}
-            >
-              Teach More.{' '}
-              <span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7]"
-                style={{ filter: 'drop-shadow(0 0 20px rgba(123,47,247,0.2))' }}
+    <section className="py-10 bg-[#F6F3FC] border-y border-[#E6E3F0]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-11 h-11 rounded-xl bg-[#F4EFFE] border border-[#E6E3F0] flex items-center justify-center flex-shrink-0">
+              <GraduationCap className="w-5 h-5 text-[#6D28D9]" />
+            </div>
+            <div>
+              <h2
+                className="text-xl font-bold text-[#1E1B3A]"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Manage Less.
-              </span>
-            </h2>
-
-            {/* Subheading */}
-            <p className="text-lg text-[#6E6A85] mb-10 leading-relaxed max-w-lg">
-              We handle student sourcing, scheduling, lesson planning, homework management, and payments — so tutors can focus completely on teaching.
-            </p>
-
-            {/* Feature cards */}
-            <div className="space-y-4 mb-10">
-              {featureCards.map((card, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.12, duration: 0.5 }}
-                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                  className="group flex gap-4 p-4 rounded-2xl border bg-white/80 backdrop-blur-sm transition-all duration-300 cursor-default"
-                  style={{
-                    borderColor: card.border,
-                    boxShadow: `0 2px 16px ${card.glow}`,
-                  }}
-                >
-                  <div
-                    className={`flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br ${card.accent} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <card.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#1E1B3A] text-sm mb-1">{card.title}</h3>
-                    <p className="text-xs text-[#6E6A85] leading-relaxed">{card.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                Are you a tutor?
+              </h2>
+              <p className="text-[15px] text-[#4B4763]">
+                Teach students near you — at home or online, on a schedule that fits you.
+              </p>
             </div>
+          </div>
 
-            {/* CTA */}
-            <div className="flex items-center gap-4 flex-wrap">
-
-              <motion.button
-                type="button"
-                onClick={() => navigate('/apply-tutor')}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold text-sm shadow-lg shadow-[#EA580C]/25 hover:shadow-[#EA580C]/45 transition-all duration-300"
-              >
-                Apply as a Tutor
-                <ArrowRight className="w-4 h-4" />
-
-              </motion.button>
-
-              <button className="text-sm font-semibold text-[#7B2FF7] hover:text-[#1d4ed8] flex items-center gap-1.5 transition-colors group">
-                Learn About Tutor Benefits
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </motion.div>
-
-          {/* RIGHT — Image + floating badges */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative"
-          >
-            {/* Glow behind image */}
-            <div className="absolute inset-4 bg-gradient-to-br from-[#7B2FF7]/20 via-[#7B2FF7]/15 to-[#7B2FF7]/10 rounded-3xl blur-2xl" />
-
-            {/* Image container */}
-            <div className="relative rounded-3xl overflow-hidden border border-white/60 shadow-2xl shadow-[#7B2FF7]/12">
-              <img
-                src="https://homeshiksha.com/wp-content/uploads/2026/01/Home-Tutor.webp"
-                alt="Professional tutor teaching student in a modern home environment"
-                className="w-full h-[520px] object-cover"
-              />
-              {/* Subtle overlay gradient at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1028]/20 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating badge — Verified Tutor (top-left) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="absolute -top-4 -left-4 flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/90 backdrop-blur-md border border-[#7B2FF7]/25 shadow-xl shadow-[#EA580C]/10"
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <button
+              type="button"
+              onClick={() => navigate('/for-tutors')}
+              className="text-[15px] font-semibold text-[#6D28D9] hover:underline"
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7B2FF7] to-violet-400 flex items-center justify-center">
-                <CheckCircle2 className="w-4 h-4 text-white" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-[#1E1B3A]">Verified Tutor</p>
-                <p className="text-[10px] text-[#7B2FF7] font-semibold">Background Checked</p>
-              </div>
-            </motion.div>
-
-            {/* Floating badge — Live Session (top-right) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.55 }}
-              className="absolute -top-4 -right-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 backdrop-blur-md border border-[#7B2FF7]/20 shadow-xl shadow-[#7B2FF7]/10"
+              See how it works
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/apply-tutor')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#7B2FF7] hover:bg-[#6D28D9] text-white rounded-xl text-[15px] font-semibold transition-colors"
             >
-              <span className="w-2 h-2 rounded-full bg-[#7B2FF7] animate-pulse" />
-              <div>
-                <p className="text-xs font-bold text-[#1E1B3A]">Live Session</p>
-                <p className="text-[10px] text-[#6E6A85]">4:00 PM — Maths</p>
-              </div>
-              <Wifi className="w-3.5 h-3.5 text-[#7B2FF7]" />
-            </motion.div>
-
-            {/* Floating chip — AI Recommendation (bottom-left) */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.65 }}
-              className="absolute -bottom-4 -left-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white/90 backdrop-blur-md border border-[#7B2FF7]/20 shadow-xl shadow-[#7B2FF7]/10"
-            >
-              <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-[#7B2FF7]/20 to-[#7B2FF7]/20 flex items-center justify-center">
-                <Sparkles className="w-3.5 h-3.5 text-[#7B2FF7]" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-[#1E1B3A]">AI Matched</p>
-                <p className="text-[10px] text-[#6E6A85]">98% compatibility</p>
-              </div>
-            </motion.div>
-
-            {/* Floating stats strip — bottom-right */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.75 }}
-              className="
-                hidden
-                lg:flex
-                absolute
-                -bottom-4
-                -right-4
-                gap-4
-                px-5
-                py-3
-                rounded-2xl
-                bg-[#0A1028]/90
-                backdrop-blur-md
-                border
-                border-white/10
-                shadow-xl
-                "
-            >
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="text-white font-bold text-sm">{s.value}</p>
-                  <p className="text-white/40 text-[10px]">{s.label}</p>
-                </div>
-              ))}
-            </motion.div>
-
-          </motion.div>
-
-        </div>
+              Become a Tutor <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

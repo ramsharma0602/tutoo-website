@@ -173,15 +173,12 @@ export default function AboutUsFinalCTA() {
           viewport={{ once: true }}
           className="
             text-5xl
-            md:text-6xl
-            lg:text-7xl
-            font-black
+            md:text-5xl
+            lg:text-5xl
+            font-bold
             text-white
             leading-tight
           "
-          style={{
-            fontFamily: "var(--font-heading)",
-          }}
         >
           Ready to Start Your
           <br />
@@ -285,7 +282,7 @@ export default function AboutUsFinalCTA() {
             "
           >
             <span className="relative z-10 flex items-center gap-3">
-              Book Free Assessment
+              Find My Tutor
 
               <ArrowRight
                 size={20}
@@ -334,10 +331,10 @@ export default function AboutUsFinalCTA() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-20">
 
           {[
-            ["5000+", "Students Learning"],
-            ["1200+", "Verified Tutors"],
-            ["50+", "Cities Covered"],
-            ["4.8★", "Parent Rating"],
+            ["1-to-1", "Every Class"],
+            ["Verified", "Every Tutor"],
+            ["Home & Online", "Your Choice"],
+            ["Free", "Assessment"],
           ].map(([number, label]) => (
             <div
               key={label}
@@ -352,7 +349,7 @@ export default function AboutUsFinalCTA() {
                 borderColor: "rgba(255,255,255,0.10)",
               }}
             >
-              <div className="text-3xl font-black text-white">
+              <div className="text-3xl font-bold text-white">
                 {number}
               </div>
 

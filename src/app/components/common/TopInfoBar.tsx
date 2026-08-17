@@ -35,7 +35,6 @@ export default function TopInfoBar() {
       }}
 
       className="
-      fixed
       relative
       z-[999]
       h-[46px]
@@ -243,7 +242,7 @@ export default function TopInfoBar() {
             </div>
 
             <span className="text-[12px] font-medium text-white/90">
-              Live Support
+              Free Assessment
             </span>
           </div>
         </div>

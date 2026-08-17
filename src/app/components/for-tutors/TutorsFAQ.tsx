@@ -7,51 +7,51 @@ import {
 
 const faqs = [
   {
-    question: 'How does Tutoo match the right tutor for my child?',
+    question: 'Who can apply to teach with Tutoo?',
     answer:
-      'Tutoo uses AI-powered learning assessments, subject analysis, board preferences, location intelligence, and learning goals to match students with the most suitable verified tutors.',
+      'Anyone who knows their subject well and can teach it clearly — school and college teachers, postgraduates, research scholars, and experienced private tutors. You will need to show your qualification documents and ID.',
   },
   {
-    question: 'Are all tutors verified before onboarding?',
+    question: 'How do I apply?',
     answer:
-      'Yes. Every tutor goes through identity verification, academic validation, address checks, and background screening before being approved on the platform.',
+      'Fill in the tutor application form with your subjects, classes, city and experience. It takes a few minutes. You can also WhatsApp us if you would rather share your details that way.',
   },
   {
-    question: 'Can parents track live tutoring sessions?',
+    question: 'What happens after I apply?',
     answer:
-      'Yes. Parents can monitor tutor arrival, session activity, attendance, duration, and progress updates directly through the parent dashboard.',
+      'We review your application and get in touch about the next step — usually a short interview and a check of your ID and qualification documents. Once you are verified, we start matching you with students.',
   },
   {
-    question: 'What is OTP session verification?',
+    question: 'Can I choose my subjects and classes?',
     answer:
-      'Before every session starts, parents receive a secure OTP code. The class only begins after OTP confirmation, ensuring complete safety and attendance accuracy.',
+      'Yes. You tell us the subjects, boards and classes you are comfortable teaching, and we only send you student requirements that match.',
   },
   {
-    question: 'Do students receive progress reports?',
+    question: 'Can I teach online, at home, or both?',
     answer:
-      'Yes. Tutoo provides weekly progress analytics, homework tracking, assessment reports, weak-topic analysis, and AI-powered learning insights.',
+      'Whichever suits you. You can teach at students’ homes in your city, take one-to-one online classes, or do both.',
   },
   {
-    question: 'What happens if a tutor becomes unavailable?',
+    question: 'How are students assigned to me?',
     answer:
-      'Since learning plans and student progress are managed through the Tutoo Learning OS, replacement tutors can continue the learning journey seamlessly without disruption.',
+      'When a parent’s requirement matches your subjects, classes and area, we share it with you. You decide whether to take it — nothing is forced on you.',
   },
   {
-    question: 'Does Tutoo provide online and home tutoring?',
+    question: 'Do I need previous teaching experience?',
     answer:
-      'Yes. Students can choose between home tuition, online classes, hybrid learning, and specialized AI-assisted learning programs.',
+      'It helps, but strong subject knowledge and the ability to explain clearly matter most. Tell us honestly what you have taught so far.',
   },
   {
-    question: 'How quickly can we start after booking an assessment?',
+    question: 'How much time do I need to commit?',
     answer:
-      'Most students are matched with verified tutors and receive their first learning session within 24 to 48 hours after assessment completion.',
+      'That is up to you. Tell us the days and hours you are free, and we will only share requirements that fit your availability.',
   },
 ];
 
 const trustChips = [
-  { icon: Users, label: '12,000+ Active Students', color: '#7B2FF7' },
-  { icon: ShieldCheck, label: '3,400+ Verified Tutors', color: '#7B2FF7' },
-  { icon: TrendingUp, label: '94% Improvement Rate', color: '#7B2FF7' },
+  { icon: Users, label: 'Home & Online Classes', color: '#7B2FF7' },
+  { icon: ShieldCheck, label: 'Verified Tutors', color: '#7B2FF7' },
+  { icon: TrendingUp, label: 'Free Assessment, No Obligation', color: '#7B2FF7' },
 ];
 
 export function TutorsFAQ() {
@@ -124,7 +124,7 @@ export function TutorsFAQ() {
             {/* Decorative floating sparkle */}
             <div className="mt-10 hidden lg:flex items-center gap-2 text-xs text-[#6E6A85]">
               <Sparkles className="w-3.5 h-3.5 text-[#7B2FF7]" />
-              <span>AI-powered answers coming soon</span>
+              <span>More answers coming soon</span>
             </div>
           </motion.div>
 

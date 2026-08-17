@@ -220,14 +220,10 @@ export default function ResourceLibrary() {
             className="
             mt-6
             text-4xl
-            lg:text-6xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-[#0A1028]
             "
-            style={{
-              fontFamily:
-                "var(--font-heading)",
-            }}
           >
             Available Study{" "}
             <span className="text-[#6D28D9]">
@@ -390,7 +386,7 @@ export default function ResourceLibrary() {
 
                   <div>
                     Downloads:{" "}
-                    {resource.downloads.toLocaleString()}
+                    {"Free"}
                   </div>
 
                 </div>

@@ -11,20 +11,20 @@ const problems = [
   'No measurable progress tracking',
   'Tutor leaves? Start from zero again',
   'No accountability system',
-  'No guaranteed academic outcomes',
+  'No accountability for outcomes',
 ];
 
 const solutions = [
-  'AI-powered tutor matching in minutes',
+  'Tutor matched to your requirement',
   'Verified tutors with background & safety checks',
   'OTP-based session verification every class',
   'Real-time parent dashboard & live monitoring',
   'AI-generated personalized learning plans',
   'Weekly progress analytics & reports',
   'Homework & attendance tracking',
-  'Live tutor monitoring & replacement guarantee',
+  'Easy tutor replacement if it is not the right fit',
   'Full accountability through AI systems',
-  'Measurable academic improvement guaranteed',
+  'Clear progress updates after every class',
 ];
 
 export function ProblemVsSolution() {
@@ -151,7 +151,7 @@ export function ProblemVsSolution() {
                   </div>
                   <div>
                     <p className="text-xs text-[#7B2FF7] font-semibold uppercase tracking-widest">New Way</p>
-                    <h3 className="text-xl font-bold text-white">Tutoo Learning OS</h3>
+                    <h3 className="text-xl font-bold text-white">The Tutoo Way</h3>
                   </div>
                 </div>
 
@@ -167,7 +167,7 @@ export function ProblemVsSolution() {
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { label: 'Sessions', value: '24' },
-                      { label: 'Progress', value: '94%' },
+                      { label: 'Progress', value: 'On track' },
                       { label: 'Score', value: 'A+' },
                     ].map((stat) => (
                       <div key={stat.label} className="rounded-xl bg-white/5 border border-white/10 p-2 text-center">
@@ -214,7 +214,7 @@ export function ProblemVsSolution() {
           className="mt-12 text-center"
         >
           <p className="text-[#6E6A85] mb-4 text-sm">
-            Join <span className="font-semibold text-[#0A1028]">12,000+ families</span> already experiencing the Tutoo difference
+            Verified tutors, transparent progress — built for families in Kothrud &amp; Kolhapur
           </p>
           <button
             type="button"

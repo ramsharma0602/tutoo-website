@@ -83,7 +83,7 @@ const CONTACT_CARDS = [
     action: "https://maps.google.com/?q=Pune+Maharashtra",
     cta: "Get Directions",
     delay: 0.24,
-    extraLine: "50+ Cities Covered",
+    extraLine: "Kothrud (Pune) & Kolhapur",
   },
   {
     id: "whatsapp",
@@ -180,14 +180,13 @@ function ContactCard({ card }: { card: typeof CONTACT_CARDS[0] }) {
         </div>
 
         {/* Title */}
-        <p className="text-xs font-black tracking-widest uppercase mb-2" style={{ color: card.from }}>
+        <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: card.from }}>
           {card.title}
         </p>
 
         {/* Main info */}
         <p
-          className="text-xl font-black text-[#1E1B3A] mb-2 leading-tight break-all"
-          style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+          className="text-xl font-bold text-[#1E1B3A] mb-2 leading-tight break-all"
         >
           {card.main}
         </p>
@@ -203,7 +202,7 @@ function ContactCard({ card }: { card: typeof CONTACT_CARDS[0] }) {
         {/* Status chip */}
         <div className="mt-auto pt-5">
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-black mb-5"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-bold mb-5"
             style={{ color: card.chipColor, background: `${card.from}0E`, borderColor: `${card.from}25` }}
           >
             <motion.div
@@ -246,7 +245,6 @@ export function ContactInfoSection() {
   return (
     <section
       className="relative overflow-hidden py-28 bg-[#FAFAFC]"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -305,8 +303,7 @@ export function ContactInfoSection() {
             >
               <Phone className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]"
               >
                 Contact Information
               </span>
@@ -320,8 +317,7 @@ export function ContactInfoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[58px] font-black leading-[1.06] tracking-tight text-[#0A1028] mb-6"
-            style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
+            className="text-5xl lg:text-5xl font-bold leading-[1.06] tracking-tight text-[#0A1028] mb-6"
           >
             Multiple Ways to{" "}
             <span
@@ -377,8 +373,7 @@ export function ContactInfoSection() {
               </div>
               <div>
                 <p
-                  className="text-xl font-black text-[#1E1B3A] mb-1"
-                  style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                  className="text-xl font-bold text-[#1E1B3A] mb-1"
                 >
                   We Respond Within{" "}
                   <span className="text-[#6D28D9]">
@@ -402,7 +397,7 @@ export function ContactInfoSection() {
                 <motion.span
                   key={chip.text}
                   whileHover={{ scale: 1.07, y: -2 }}
-                  className="inline-flex items-center gap-1.5 text-xs font-black px-4 py-2 rounded-full border transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full border transition-all duration-300"
                   style={{ color: chip.c, background: `${chip.c}0E`, borderColor: `${chip.c}28` }}
                 >
                   <motion.div

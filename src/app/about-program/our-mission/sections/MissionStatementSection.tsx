@@ -40,8 +40,8 @@ const highlights = [
   {
     icon: TrendingUp,
     emoji: "📈",
-    title: "Measurable Growth",
-    desc: "Track academic progress through real-time reports, homework logs, and AI-powered learning analytics.",
+    title: "Progress You Can See",
+    desc: "Track academic progress through real-time reports, homework logs, and clear learning analytics.",
     color: "#7B2FF7",
     bg: "rgba(123,47,247,0.08)",
     border: "rgba(123,47,247,0.18)",
@@ -52,7 +52,7 @@ const highlights = [
 const floatingWidgets = [
   { icon: "📚", label: "Learning Plan Active", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", delay: 0 },
   { icon: "👨‍🏫", label: "Verified Tutor Assigned", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", delay: 0.9 },
-  { icon: "📈", label: "Progress +24%", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", delay: 1.8 },
+  { icon: "📈", label: "Progress Shared", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", delay: 1.8 },
   { icon: "⭐", label: "Assessment Completed", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)", delay: 0.5 },
   { icon: "🎯", label: "Learning Goals Achieved", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", delay: 1.3 },
 ];
@@ -63,7 +63,7 @@ const ecosystemNodes = [
   { label: "Parent", icon: "👨‍👩‍👧", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "10%", y: "32%", size: "md" },
   { label: "Dashboard", icon: "📊", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "82%", y: "28%", size: "md" },
   { label: "Academic Growth", icon: "📈", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)", x: "18%", y: "72%", size: "sm" },
-  { label: "AI Insights", icon: "✦", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "80%", y: "68%", size: "sm" },
+  { label: "Attendance", icon: "✦", color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", x: "80%", y: "68%", size: "sm" },
   { label: "Progress Report", icon: "📋", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)", x: "50%", y: "84%", size: "sm" },
 ];
 
@@ -123,8 +123,7 @@ export function MissionStatementSection() {
 
             {/* Heading */}
             <h2
-              className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-8"
-              style={{ fontFamily: "var(--font-heading)" }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-8"
             >
               Our{" "}
               <span className="relative inline-block">
@@ -147,7 +146,7 @@ export function MissionStatementSection() {
               {[
                 "Our mission is to bridge the gap between students and quality education by connecting learners with experienced tutors through personalised home and online tuition programs.",
                 "We strive to make learning engaging, accessible, and effective for students of all ages, boards, and academic levels.",
-                "By combining technology, verified educators, structured learning methodologies, and progress tracking, we help students unlock their full academic potential.",
+                "Right student + right tutor = better learning. That is the whole idea.",
               ].map((para, i) => (
                 <motion.p
                   key={i}
@@ -179,7 +178,7 @@ export function MissionStatementSection() {
                     {h.emoji}
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-[#0A1028] mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>
+                    <h4 className="text-base font-bold text-[#0A1028] mb-1.5">
                       {h.title}
                     </h4>
                     <p className="text-sm leading-relaxed text-[#6E6A85]">{h.desc}</p>
@@ -214,7 +213,7 @@ export function MissionStatementSection() {
             {/* Premium Mission Image */}
             <img
               src="https://www.1edtech.org/sites/default/files/styles/ims_background/public/content/media/images/bg/adobestock_608711063.jpeg?itok=mWox9WDK"
-              alt="Student Learning Ecosystem"
+              alt="A student studying with a tutor"
               className="
             absolute
             inset-0
@@ -258,7 +257,7 @@ export function MissionStatementSection() {
                 "
                         >
                 <Sparkles className="w-4 h-4" />
-                Learning Ecosystem
+                How We Help
               </div>
 
             </div>

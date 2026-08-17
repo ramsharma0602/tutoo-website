@@ -68,6 +68,22 @@ export default function TutorApplicationForm({
         'Both',
     ];
 
+    /* Booklet page 16 asks tutors for their availability. Days and slots are
+       kept coarse on purpose — the exact timetable is agreed with the family. */
+    const availabilityDays = [
+        'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun',
+    ];
+
+    const availabilitySlots = [
+        'Morning (6am – 12pm)',
+        'Afternoon (12pm – 4pm)',
+        'Evening (4pm – 8pm)',
+        'Night (8pm – 10pm)',
+    ];
+
+    const toggleInArray = (list: string[], value: string) =>
+        list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
+
     const [boards, setBoards] = useState<Board[]>([]);
     const [classes, setClasses] = useState<Class[]>([]);
     const [subjects, setSubjects] = useState<Subject[]>([]);
@@ -143,6 +159,8 @@ export default function TutorApplicationForm({
                     classId: "",
                     subjectId: "",
                     teachingMode: '',
+                    availableDays: [] as string[],
+                    availableSlots: [] as string[],
                     about: '',
                     resume: null,
                 }}
@@ -168,6 +186,10 @@ export default function TutorApplicationForm({
                         formData.append('qualification', values.qualification);
                         formData.append('experience', values.experience);
                         formData.append('teaching_mode', values.teachingMode);
+                        // Phase 3: availability (booklet page 16). Sent as comma
+                        // separated strings — confirm the backend stores them.
+                        formData.append('available_days', values.availableDays.join(', '));
+                        formData.append('available_slots', values.availableSlots.join(', '));
                         formData.append('about', values.about);
                         formData.append('subject_id', values.subjectId);
                         formData.append('board_id', values.boardId);
@@ -199,11 +221,11 @@ export default function TutorApplicationForm({
                         setModalType('success');
 
                         setModalTitle(
-                            'Application Submitted Successfully'
+                            'Application received'
                         );
 
                         setModalMessage(
-                            'Thank you for applying as a tutor with Tutoo. Our recruitment team will review your application and contact you shortly regarding the next steps in your onboarding process.'
+                            'Thanks for applying to teach with Tutoo. We review every application and will call or WhatsApp you about the next step — usually a short interview and document check.'
                         );
 
                         setModalOpen(true);
@@ -217,12 +239,12 @@ export default function TutorApplicationForm({
                         setModalType('error');
 
                         setModalTitle(
-                            'Unable to Submit Application'
+                            'We could not send your application'
                         );
 
                         setModalMessage(
                             error?.response?.data?.message ||
-                            'Due to some technical issue, we could not submit your application right now. Please try again after some time.'
+                            'Something went wrong at our end. Please try again in a few minutes, or WhatsApp us and we will take your details directly.'
                         );
 
                         setModalOpen(true);
@@ -260,30 +282,41 @@ export default function TutorApplicationForm({
                             {[
                                 {
                                     name: 'fullName',
-                                    placeholder: 'Full Name *',
+                                    label: 'Your full name *',
+                                    placeholder: 'e.g. Priya Sharma',
                                     type: 'text',
                                 },
 
                                 {
                                     name: 'mobile',
-                                    placeholder: 'Mobile Number *',
+                                    label: 'Mobile number *',
+                                    placeholder: '10-digit mobile number',
                                     type: 'tel',
                                 },
 
                                 {
                                     name: 'email',
-                                    placeholder: 'Email Address *',
+                                    label: 'Email *',
+                                    placeholder: 'you@example.com',
                                     type: 'email',
                                 },
 
                                 {
                                     name: 'city',
-                                    placeholder: 'City *',
+                                    label: 'Which city do you teach in? *',
+                                    placeholder: 'e.g. Kothrud, Pune',
                                     type: 'text',
                                 },
                             ].map((field) => (
 
                                 <div key={field.name}>
+
+                                    <label
+                                        htmlFor={field.name}
+                                        className="block text-[13px] font-semibold text-[#1E1B3A] mb-1.5 px-1"
+                                    >
+                                        {field.label}
+                                    </label>
 
                                     <div
                                         className={`
@@ -307,6 +340,7 @@ export default function TutorApplicationForm({
                                     >
 
                                         <input
+                                            id={field.name}
                                             type={field.type}
                                             name={field.name}
                                             placeholder={field.placeholder}
@@ -362,7 +396,7 @@ export default function TutorApplicationForm({
                                             onBlur={() =>
                                                 setFieldTouched('qualification', true)
                                             }
-                                            placeholder="Select Qualification"
+                                            placeholder="Your highest qualification"
                                             searchPlaceholder="Search qualifications..."
                                             error={Boolean(
                                                 errors.qualification &&
@@ -402,7 +436,7 @@ export default function TutorApplicationForm({
                                             onBlur={() =>
                                                 setFieldTouched('experience', true)
                                             }
-                                            placeholder="Select Experience"
+                                            placeholder="Years of teaching experience"
                                             searchPlaceholder="Search experience..."
                                             error={Boolean(
                                                 errors.experience &&
@@ -626,6 +660,79 @@ export default function TutorApplicationForm({
                                             {errors.teachingMode}
                                         </p>
                                     )}
+                            </div>
+
+                            {/* Availability — booklet page 16 ("Your availability").
+                                Coarse on purpose; the exact timetable is agreed
+                                with the family once matched. */}
+                            <div>
+                                <p className="text-sm font-semibold text-[#1E1B3A] mb-1">
+                                    Your availability
+                                </p>
+                                <p className="text-xs text-[#6E6A85] mb-4">
+                                    Pick the days and times you can usually teach. You can change this later.
+                                </p>
+
+                                <fieldset className="mb-5">
+                                    <legend className="text-[13px] font-semibold text-[#1E1B3A] mb-2.5">
+                                        Days
+                                    </legend>
+                                    <div className="flex flex-wrap gap-2.5">
+                                        {availabilityDays.map((day) => {
+                                            const active = values.availableDays.includes(day);
+                                            return (
+                                                <button
+                                                    key={day}
+                                                    type="button"
+                                                    aria-pressed={active}
+                                                    onClick={() =>
+                                                        setFieldValue(
+                                                            'availableDays',
+                                                            toggleInArray(values.availableDays, day)
+                                                        )
+                                                    }
+                                                    className={`min-w-[62px] h-11 px-4 rounded-xl border text-sm font-semibold transition-all duration-200 ${active
+                                                        ? 'bg-[#F4EFFE] border-[#7B2FF7] text-[#5B21B6]'
+                                                        : 'bg-white border-[#E6E3F0] text-[#4B4763] hover:border-[#7B2FF7]/40'
+                                                        }`}
+                                                >
+                                                    {day}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend className="text-[13px] font-semibold text-[#1E1B3A] mb-2.5">
+                                        Times
+                                    </legend>
+                                    <div className="grid sm:grid-cols-2 gap-2.5">
+                                        {availabilitySlots.map((slot) => {
+                                            const active = values.availableSlots.includes(slot);
+                                            return (
+                                                <button
+                                                    key={slot}
+                                                    type="button"
+                                                    aria-pressed={active}
+                                                    onClick={() =>
+                                                        setFieldValue(
+                                                            'availableSlots',
+                                                            toggleInArray(values.availableSlots, slot)
+                                                        )
+                                                    }
+                                                    className={`h-12 px-4 rounded-xl border text-sm font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200 ${active
+                                                        ? 'bg-[#F4EFFE] border-[#7B2FF7] text-[#5B21B6]'
+                                                        : 'bg-white border-[#E6E3F0] text-[#4B4763] hover:border-[#7B2FF7]/40'
+                                                        }`}
+                                                >
+                                                    {active && <Check className="w-4 h-4" />}
+                                                    {slot}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </fieldset>
                             </div>
 
                             {/* Upload */}

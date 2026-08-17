@@ -7,60 +7,74 @@ import {
 import PageSchema from '../../seo/PageSchema';
 import { getFAQSchema } from '../../seo/schema';
 
+/* The booklet's seven questions first, in the booklet's order and voice —
+   short sentences, plain words, and its habit of saying "depending on tutor
+   availability" instead of over-promising. Three questions parents actually
+   ask us (fees, vetting, proof a class happened) are kept after those. */
 const faqs = [
   {
-    question: 'How does Tutoo match the right tutor for my child?',
+    question: 'How do I find a tutor?',
     answer:
-      'Tutoo uses AI-powered learning assessments, subject analysis, board preferences, location intelligence, and learning goals to match students with the most suitable verified tutors.',
+      'Tell us your class, subject, location and whether you want home or online classes. We shortlist suitable tutors and share them with you.',
   },
   {
-    question: 'Are all tutors verified before onboarding?',
+    question: 'Can I find an online tutor?',
     answer:
-      'Yes. Every tutor goes through identity verification, academic validation, address checks, and background screening before being approved on the platform.',
+      'Yes. We arrange one-to-one online classes, and they are available anywhere in India.',
   },
   {
-    question: 'Can parents track live tutoring sessions?',
+    question: 'Can I find a home tutor?',
     answer:
-      'Yes. Parents can monitor tutor arrival, session activity, attendance, duration, and progress updates directly through the parent dashboard.',
+      'Yes, in Kothrud (Pune) and Kolhapur, depending on tutor availability in your area.',
   },
   {
-    question: 'What is OTP session verification?',
+    question: 'Which classes do you cover?',
     answer:
-      'Before every session starts, parents receive a secure OTP code. The class only begins after OTP confirmation, ensuring complete safety and attendance accuracy.',
+      'Class 1 to Class 12, plus JEE, NEET and MHT-CET preparation.',
   },
   {
-    question: 'Do students receive progress reports?',
+    question: 'Which boards do you cover?',
     answer:
-      'Yes. Tutoo provides weekly progress analytics, homework tracking, assessment reports, weak-topic analysis, and AI-powered learning insights.',
+      'CBSE, ICSE and SSC (Maharashtra board), depending on tutor availability for your class and subject.',
   },
   {
-    question: 'What happens if a tutor becomes unavailable?',
+    question: 'Can I choose my tutor?',
     answer:
-      'Since learning plans and student progress are managed through the Tutoo Learning OS, replacement tutors can continue the learning journey seamlessly without disruption.',
+      'Yes. We share the profiles of the tutors who fit your requirement, and you choose the one you want.',
   },
   {
-    question: 'Does Tutoo provide online and home tutoring?',
+    question: 'Can I request a specific tutor?',
     answer:
-      'Yes. Students can choose between home tuition, online classes, hybrid learning, and specialized AI-assisted learning programs.',
+      'Yes, if that tutor is available for your class, subject and timing. Tell us who you have in mind and we will check.',
   },
   {
-    question: 'How quickly can we start after booking an assessment?',
+    question: 'How much does tuition cost?',
     answer:
-      'Most students are matched with verified tutors and receive their first learning session within 24 to 48 hours after assessment completion.',
+      'It depends on the class, subjects and how often you want classes. We tell you the exact fee before you commit to anything — there are no hidden charges, and the first assessment is free.',
+  },
+  {
+    question: 'How do you check your tutors?',
+    answer:
+      'Every tutor gives us their ID and qualification documents, and we interview them before they take their first class. We only send tutors we have checked ourselves.',
+  },
+  {
+    question: 'How do I know the class actually happened?',
+    answer:
+      'Each class starts with an OTP, so you know exactly when it begins. Attendance is recorded for every session, and for home tuition the tutor’s location is tracked during the class.',
   },
 ];
 
 const trustChips = [
-  { icon: Users, label: '12,000+ Active Students', color: '#7B2FF7' },
-  { icon: ShieldCheck, label: '3,400+ Verified Tutors', color: '#7B2FF7' },
-  { icon: TrendingUp, label: '94% Improvement Rate', color: '#7B2FF7' },
+  { icon: Users, label: 'Home & Online Classes', color: '#7B2FF7' },
+  { icon: ShieldCheck, label: 'Verified Tutors', color: '#7B2FF7' },
+  { icon: TrendingUp, label: 'Free Assessment, No Obligation', color: '#7B2FF7' },
 ];
 
 export function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 lg:py-32 bg-[#FAFAFC] relative overflow-hidden">
+    <section id="faq" className="py-16 lg:py-24 bg-[#FAFAFC] relative overflow-hidden">
       <PageSchema jsonLd={getFAQSchema(faqs)} />
       {/* Ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -89,7 +103,6 @@ export function FAQ() {
             {/* Heading */}
             <h2
               className="text-4xl lg:text-5xl font-bold text-[#1E1B3A] mb-5 leading-tight"
-              style={{ fontFamily: 'var(--font-heading)' }}
             >
               Everything parents and tutors{' '}
               <span
@@ -102,7 +115,7 @@ export function FAQ() {
 
             {/* Subheading */}
             <p className="text-[#6E6A85] text-base leading-relaxed mb-8 max-w-sm">
-              From tutor verification and AI assessments to live session tracking and progress reports — here are answers to the most common questions about Tutoo.
+              Finding a tutor, classes, boards and fees — the questions parents ask us most.
             </p>
 
             {/* Trust chips */}
@@ -127,7 +140,7 @@ export function FAQ() {
             {/* Decorative floating sparkle */}
             <div className="mt-10 hidden lg:flex items-center gap-2 text-xs text-[#6E6A85]">
               <Sparkles className="w-3.5 h-3.5 text-[#7B2FF7]" />
-              <span>AI-powered answers coming soon</span>
+              <span>More answers coming soon</span>
             </div>
           </motion.div>
 

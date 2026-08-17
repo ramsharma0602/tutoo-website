@@ -18,10 +18,10 @@ export interface RouteMeta extends Omit<SEOHeadProps, "path"> {}
 /** Static routes — every fixed path defined in App.tsx's <Routes>. */
 export const STATIC_PAGE_META: Record<string, RouteMeta> = {
   "/": {
-    title: "Tutoo – AI-Powered Learning Platform | Verified Home Tutors",
+    title: "Tutoo – Home Tutors & Online Classes in Kothrud, Pune & Kolhapur",
     rawTitle: true,
     description:
-      "Tutoo pairs students with AI-matched, verified home & online tutors in Kothrud (Pune) and Kolhapur. Real-time progress tracking for parents. Book a free assessment today.",
+      "Verified home tutors and one-to-one online classes for Class 1–12, JEE & NEET. Serving Kothrud (Pune) and Kolhapur. Book a free assessment — no obligation.",
     keywords: [
       "home tutor",
       "online tutor",
@@ -32,6 +32,57 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
       "CBSE tutor",
       "ICSE tutor",
     ],
+    type: "website",
+  },
+  "/home-tuition": {
+    title: "Home Tuition in Kothrud, Pune & Kolhapur – Verified Home Tutors",
+    rawTitle: true,
+    description:
+      "One-to-one home tuition with verified tutors for Class 1–12 (CBSE, ICSE, SSC) and JEE/NEET prep in Kothrud (Pune) and Kolhapur. Free assessment, no obligation.",
+    keywords: [
+      "home tuition Kothrud",
+      "home tuition Kolhapur",
+      "home tutor Pune",
+      "private tutor at home",
+      "CBSE home tutor",
+      "SSC home tutor",
+    ],
+    type: "website",
+  },
+  "/home-tuition/kothrud": {
+    title: "Home Tuition in Kothrud, Pune – Verified Tutors Near You",
+    rawTitle: true,
+    description:
+      "Verified home tutors in Kothrud and Pune West for Class 1–12 (CBSE, ICSE, SSC) and JEE/NEET. Tutors near your home, free assessment, no obligation.",
+    keywords: ["home tuition Kothrud", "home tutor Kothrud", "tuition classes Kothrud", "private tutor Pune West"],
+    type: "website",
+  },
+  "/home-tuition/kolhapur": {
+    title: "Home Tuition in Kolhapur – Verified Home Tutors",
+    rawTitle: true,
+    description:
+      "Verified home tutors across Kolhapur for Class 1–12 (SSC, CBSE, ICSE) and JEE/NEET. Marathi & English medium. Free assessment, no obligation.",
+    keywords: ["home tuition Kolhapur", "home tutor Kolhapur", "tuition classes Kolhapur", "SSC tutor Kolhapur"],
+    type: "website",
+  },
+  "/online-tuition": {
+    title: "Online Tuition – Live One-to-One Classes with Verified Tutors",
+    description:
+      "Live one-to-one online classes with verified tutors for Class 1–12 (CBSE, ICSE, SSC) and JEE/NEET preparation — from anywhere in India. Free assessment.",
+    keywords: [
+      "online tuition",
+      "online tutor",
+      "one to one online classes",
+      "live online tuition",
+      "online CBSE tutor",
+    ],
+    type: "website",
+  },
+  "/find-a-tutor": {
+    title: "Find a Tutor",
+    description:
+      "Browse verified home and online tutors by class, board, subject and area across Kothrud (Pune) and Kolhapur — or tell us what you need and we will match one for your child.",
+    keywords: ["find a tutor", "verified tutors", "home tutors Kothrud", "tutors Kolhapur", "online tutor"],
     type: "website",
   },
   "/book-free-assessment": {
@@ -83,7 +134,7 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
   },
   "/about-tutoo": {
     title: "About Tutoo",
-    description: "Tutoo is an AI-powered learning platform connecting students with verified home and online tutors across Kothrud (Pune) and Kolhapur.",
+    description: "Tutoo connects families with verified home and online tutors across Kothrud (Pune) and Kolhapur — learn who we are and how we work.",
     keywords: ["about Tutoo", "Tutoo learning platform"],
     type: "website",
   },

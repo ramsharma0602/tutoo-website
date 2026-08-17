@@ -8,8 +8,10 @@ import {
   Star,
   BookOpen,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutHero() {
+  const navigate = useNavigate();
   const trustItems = [
     "Verified Tutors",
     "Personalized Learning",
@@ -18,22 +20,24 @@ export default function AboutHero() {
     "Free Assessment",
   ];
 
+  /* No student/tutor/session counts until we can publish real numbers.
+     These are statements about how we work, not invented metrics. */
   const stats = [
     {
-      value: "5000+",
-      label: "Students Learning",
+      value: "1-to-1",
+      label: "Every Class",
     },
     {
-      value: "1200+",
-      label: "Verified Tutors",
+      value: "Verified",
+      label: "Every Tutor",
     },
     {
-      value: "50+",
-      label: "Cities Covered",
+      value: "Free",
+      label: "First Assessment",
     },
     {
-      value: "50,000+",
-      label: "Learning Sessions",
+      value: "2 Cities",
+      label: "Kothrud & Kolhapur",
     },
   ];
 
@@ -134,33 +138,23 @@ export default function AboutHero() {
               className="
               mt-8
               text-5xl
-              lg:text-7xl
-              font-black
+              lg:text-5xl
+              font-bold
               leading-[1.05]
               tracking-tight
               text-[#0A1028]
               "
-              style={{
-                fontFamily:
-                  "var(--font-heading)",
-              }}
             >
-              Helping Every Student{" "}
+              Right Student +{" "}
 
               <span className="text-[#6D28D9]">
-                Learn Better
+                Right Tutor
               </span>
 
-              ,{" "}
+              {" = "}
 
-              <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
-                Grow Faster
-              </span>
-
-              , and{" "}
-
-              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
-                Succeed Confidently
+              <span className="bg-gradient-to-r from-[#7B2FF7] via-[#8F21F8] to-[#7B2FF7] bg-clip-text text-transparent">
+                Better Learning
               </span>
             </motion.h1>
 
@@ -177,25 +171,23 @@ export default function AboutHero() {
               text-[#6E6A85]
               "
             >
-              Tutoo connects students with
-              expert tutors through personalized
-              home and online tuition programs
-              supported by technology,
-              assessments, verified educators,
-              and continuous progress tracking.
+              Tutoo helps students and parents find the right tutor —
+              home tuition or online classes, school subjects or exam
+              preparation, in Kothrud (Pune) and Kolhapur.
 
               <br />
               <br />
 
-              Our mission is to make quality
-              education accessible, measurable,
-              and effective for every learner.
+              We make the search simple. Tell us what you need, and we
+              help you find someone who fits.
             </motion.p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mt-10">
 
               <button
+                type="button"
+                onClick={() => navigate("/book-free-assessment")}
                 className="
                 group
                 h-16
@@ -216,7 +208,7 @@ export default function AboutHero() {
                 gap-3
                 "
               >
-                Find a Tutor
+                Find My Tutor
 
                 <ArrowRight
                   className="
@@ -229,6 +221,8 @@ export default function AboutHero() {
               </button>
 
               <button
+                type="button"
+                onClick={() => navigate("/how-it-work")}
                 className="
                 h-16
                 px-8
@@ -243,7 +237,7 @@ export default function AboutHero() {
                 transition-all
                 "
               >
-                Book Free Assessment
+                How Tutoo Works
               </button>
 
             </div>
@@ -329,11 +323,11 @@ export default function AboutHero() {
 
                 <div>
                   <p className="font-bold text-[#1E1B3A]">
-                    Student Progress
+                    Progress Tracking
                   </p>
 
                   <p className="text-[#7B2FF7] font-semibold">
-                    +28% Improvement
+                    Shared with parents
                   </p>
                 </div>
 
@@ -431,11 +425,11 @@ export default function AboutHero() {
 
                 <div>
                   <p className="font-bold text-[#1E1B3A]">
-                    Parent Satisfaction
+                    Free Assessment
                   </p>
 
                   <p className="text-[#F59E0B]">
-                    4.8 / 5 Rating
+                    No obligation
                   </p>
                 </div>
 

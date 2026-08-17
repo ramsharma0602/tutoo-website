@@ -7,51 +7,51 @@ import {
 
 const faqs = [
   {
-    question: 'How does Tutoo match the right tutor for my child?',
+    question: 'How much does tuition cost?',
     answer:
-      'Tutoo uses AI-powered learning assessments, subject analysis, board preferences, location intelligence, and learning goals to match students with the most suitable verified tutors.',
+      'It depends on the class, subjects and how often you want classes. We tell you the exact fee before you commit to anything — there are no hidden charges, and the first assessment is free.',
   },
   {
-    question: 'Are all tutors verified before onboarding?',
+    question: 'What happens in the free assessment?',
     answer:
-      'Yes. Every tutor goes through identity verification, academic validation, address checks, and background screening before being approved on the platform.',
+      'We talk to you about what your child needs and check where they currently stand in the subjects you are worried about. It helps us match the right tutor. It is free, and you are not obliged to continue.',
   },
   {
-    question: 'Can parents track live tutoring sessions?',
+    question: 'How soon can classes start?',
     answer:
-      'Yes. Parents can monitor tutor arrival, session activity, attendance, duration, and progress updates directly through the parent dashboard.',
+      'We call you back within 24 hours of your enquiry. Once we understand your requirement and you approve the tutor we suggest, classes usually begin within a few days.',
   },
   {
-    question: 'What is OTP session verification?',
+    question: 'What if the tutor is not the right fit?',
     answer:
-      'Before every session starts, parents receive a secure OTP code. The class only begins after OTP confirmation, ensuring complete safety and attendance accuracy.',
+      'Tell us and we will arrange a different tutor. You are never stuck with a tutor who does not suit your child.',
   },
   {
-    question: 'Do students receive progress reports?',
+    question: 'How do you check your tutors?',
     answer:
-      'Yes. Tutoo provides weekly progress analytics, homework tracking, assessment reports, weak-topic analysis, and AI-powered learning insights.',
+      'Every tutor gives us their ID and qualification documents, and we interview them before they take their first class. We only send tutors we have checked ourselves.',
   },
   {
-    question: 'What happens if a tutor becomes unavailable?',
+    question: 'How do I know the class actually happened?',
     answer:
-      'Since learning plans and student progress are managed through the Tutoo Learning OS, replacement tutors can continue the learning journey seamlessly without disruption.',
+      'Each class starts with an OTP, so you know exactly when it begins. Attendance is recorded for every session, and for home tuition the tutor’s location is tracked during the class.',
   },
   {
-    question: 'Does Tutoo provide online and home tutoring?',
+    question: 'Do you teach at home and online?',
     answer:
-      'Yes. Students can choose between home tuition, online classes, hybrid learning, and specialized AI-assisted learning programs.',
+      'Yes. We provide home tutors in Kothrud (Pune) and Kolhapur, and one-to-one online classes anywhere in India. You can switch between the two later if you want.',
   },
   {
-    question: 'How quickly can we start after booking an assessment?',
+    question: 'Which classes and boards do you cover?',
     answer:
-      'Most students are matched with verified tutors and receive their first learning session within 24 to 48 hours after assessment completion.',
+      'Class 1 to 12 for CBSE, ICSE and SSC (Maharashtra board), plus JEE, NEET and CET preparation. Tell us your requirement and we will confirm tutor availability.',
   },
 ];
 
 const trustChips = [
-  { icon: Users, label: '12,000+ Active Students', color: '#7B2FF7' },
-  { icon: ShieldCheck, label: '3,400+ Verified Tutors', color: '#7B2FF7' },
-  { icon: TrendingUp, label: '94% Improvement Rate', color: '#7B2FF7' },
+  { icon: Users, label: 'Home & Online Classes', color: '#7B2FF7' },
+  { icon: ShieldCheck, label: 'Verified Tutors', color: '#7B2FF7' },
+  { icon: TrendingUp, label: 'Free Assessment, No Obligation', color: '#7B2FF7' },
 ];
 
 export function ParentsFAQ() {
@@ -124,7 +124,7 @@ export function ParentsFAQ() {
             {/* Decorative floating sparkle */}
             <div className="mt-10 hidden lg:flex items-center gap-2 text-xs text-[#6E6A85]">
               <Sparkles className="w-3.5 h-3.5 text-[#7B2FF7]" />
-              <span>AI-powered answers coming soon</span>
+              <span>More answers coming soon</span>
             </div>
           </motion.div>
 

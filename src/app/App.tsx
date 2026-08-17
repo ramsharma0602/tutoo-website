@@ -1,29 +1,29 @@
 
 // src/app/App.tsx
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { LearningSolutions } from "./components/LearningSolutions";
-import { ProblemVsSolution } from "./components/ProblemVsSolution";
 import { HowItWorks } from "./components/HowItWorks";
+import { WhyTutoo } from "./components/WhyTutoo";
 import { SafetyTrust } from "./components/SafetyTrust";
-import { SecurityTrust } from "./components/SecurityTrust";
 import { ForTutors } from "./components/ForTutors";
-import { Results } from "./components/Results";
 import { SubjectsPrograms } from "./components/SubjectsPrograms";
-import { MobileApp } from "./components/MobileApp";
+import { TutorShowcase } from "./components/TutorShowcase";
 import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
-import { PageLoadModal } from "./components/PageLoadModal";
 import PageProgress from "./components/common/PageProgress";
 import TopInfoBar from "./components/common/TopInfoBar";
+import StickyMobileCTA from "./components/common/StickyMobileCTA";
+import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
 import { CityAvailabilitySection } from "./components/CityAvailabilitySection";
 import RouteSEO from "../seo/RouteSEO";
+import { initAnalytics } from "../seo/analytics";
 import PageSchema from "../seo/PageSchema";
 import { getLocalBusinessSchema } from "../seo/schema";
 
@@ -35,7 +35,11 @@ import { getLocalBusinessSchema } from "../seo/schema";
    Performance / Core Web Vitals (LCP, TBT) on an SPA like this one.
 ───────────────────────────────────────────────────────────────────────── */
 const BookAssessmentPage = lazy(() => import("./book-free-assessment/page"));
-const ForParentsPage = lazy(() => import("./components/ForParentsPage"));
+const HomeTuitionPage = lazy(() => import("./services-pages/HomeTuitionPage"));
+const FindATutorPage = lazy(() => import("./find-a-tutor/page"));
+const KothrudPage = lazy(() => import("./services-pages/KothrudPage"));
+const KolhapurPage = lazy(() => import("./services-pages/KolhapurPage"));
+const OnlineTuitionPage = lazy(() => import("./services-pages/OnlineTuitionPage"));
 const ForTutorsPage = lazy(() => import("./components/ForTutorsPage"));
 const ApplyTutorSection = lazy(() =>
   import("./apply-tutor/page").then((m) => ({ default: m.ApplyTutorSection }))
@@ -77,7 +81,6 @@ function HomePage() {
     <div className="min-h-screen bg-[#FAFAFC] overflow-x-hidden">
 
       <PageSchema jsonLd={getLocalBusinessSchema()} />
-      <PageLoadModal />
 
       <TopInfoBar />
       <Navbar />
@@ -86,29 +89,30 @@ function HomePage() {
 
       <CityAvailabilitySection variant="full" />
 
+      {/* Phase 2 (UX plan §7): 9-section homepage.
+          ProblemVsSolution removed; SafetyTrust + SecurityTrust merged (one
+          trust section); ForTutors demoted to a strip above the footer. */}
       <LearningSolutions />
-
-      <ProblemVsSolution />
 
       <HowItWorks />
 
+      {/* Booklet page 9 — the six reasons, in the booklet's own words */}
+      <WhyTutoo />
+
       <SafetyTrust />
 
-      <SecurityTrust />
-
-      <ForTutors />
-
-      <Results />
+      {/* Renders only when real verified tutors exist in data/tutors.ts */}
+      <TutorShowcase />
 
       <SubjectsPrograms />
-
-      {/* <MobileApp /> */}
 
       <Testimonials />
 
       <FAQ />
 
       <FinalCTA />
+
+      <ForTutors />
 
       <Footer />
 
@@ -118,15 +122,38 @@ function HomePage() {
 
 /* ───────────────────────────────────────────── SCROLL TO TOP ON ROUTE CHANGE ───────────────────────────────────────────── */
 function ScrollToTop() {
-  const { pathname } = useLocation(); useEffect(() => { /* DISABLE BROWSER SCROLL RESTORE */
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
     window.history.scrollRestoration = "manual";
-    /* ALWAYS START FROM TOP */
+
+    /* Anchor links such as /#faq must scroll to the section, not the top.
+       The target may be lazily rendered, so retry briefly before giving up. */
+    if (hash) {
+      const id = hash.slice(1);
+      let tries = 0;
+      const findAndScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        if (tries++ < 20) window.setTimeout(findAndScroll, 100);
+      };
+      findAndScroll();
+      return;
+    }
+
     window.scrollTo(0, 0);
-  },
-    [pathname]); return null;
+  }, [pathname, hash]);
+
+  return null;
 }
 
 export default function App() {
+  // Loads GA4/Clarity only when IDs exist in seo.config.ts (no-op until then)
+  useEffect(() => { initAnalytics(); }, []);
+
   return (
     <>
       {/* GLOBAL PAGE PROGRESS */}
@@ -142,6 +169,54 @@ export default function App() {
 
           {/* Home */}
           <Route path="/" element={<HomePage />} />
+
+          {/* Local SEO city pages (UX plan §17) */}
+          <Route path="/home-tuition/kothrud" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <KothrudPage />
+              <Footer />
+            </>}
+          />
+          <Route path="/home-tuition/kolhapur" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <KolhapurPage />
+              <Footer />
+            </>}
+          />
+
+          {/* Service landing pages (Phase 3 — UX plan §15) */}
+          <Route path="/home-tuition" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <HomeTuitionPage />
+              <Footer />
+            </>}
+          />
+          <Route path="/online-tuition" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <OnlineTuitionPage />
+              <Footer />
+            </>}
+          />
+
+          {/* Find a Tutor — browse + filter verified tutors */}
+          <Route path="/find-a-tutor" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <FindATutorPage />
+              <Footer />
+            </>}
+          />
+          {/* Old URL kept working — one page, one canonical URL */}
+          <Route path="/tutors" element={<Navigate to="/find-a-tutor" replace />} />
 
           {/* Book Assessment */}
           <Route path="/book-free-assessment" element={
@@ -163,15 +238,11 @@ export default function App() {
             </>
           } />
 
-          {/* For Parents */}
-          <Route path="/for-parents" element={
-            <>
-              <TopInfoBar />
-              <Navbar />
-              <ForParentsPage />
-              <Footer />
-            </>
-          } />
+          {/* /for-parents duplicated /home-tuition for the same audience and
+              cannibalised its keywords (audit P1-9). Redirect keeps old links
+              and any indexed URL working. To restore the page, swap this back
+              for the ForParentsPage element — the component is untouched. */}
+          <Route path="/for-parents" element={<Navigate to="/home-tuition" replace />} />
 
           {/* For Tutors */}
           <Route path="/for-tutors" element={
@@ -302,6 +373,9 @@ export default function App() {
         </Routes>
       </Suspense>
 
+      {/* GLOBAL CONVERSION LAYER — Phase 1: always-reachable enquiry channels */}
+      <FloatingWhatsApp />
+      <StickyMobileCTA />
 
     </>
   );

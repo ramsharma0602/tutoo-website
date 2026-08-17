@@ -1,22 +1,24 @@
 import { motion } from 'motion/react';
 import { Calculator, Atom, BookOpen, Code, Cpu, Trophy, FlaskConical, Microscope, MessageSquare, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function SubjectsPrograms() {
+  const navigate = useNavigate();
   const subjects = [
     { icon: Calculator, name: 'Mathematics', gradient: 'from-violet-500 to-violet-600' },
     { icon: Atom, name: 'Science', gradient: 'from-violet-500 to-violet-600' },
     { icon: BookOpen, name: 'English', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Code, name: 'Coding', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Cpu, name: 'AI & Robotics', gradient: 'from-violet-500 to-violet-600' },
+    { icon: Code, name: 'Physics', gradient: 'from-violet-500 to-violet-600' },
+    { icon: Cpu, name: 'Chemistry', gradient: 'from-violet-500 to-violet-600' },
     { icon: Trophy, name: 'Olympiads', gradient: 'from-orange-500 to-red-600' },
     { icon: FlaskConical, name: 'JEE', gradient: 'from-violet-600 to-violet-700' },
     { icon: Microscope, name: 'NEET', gradient: 'from-violet-500 to-rose-600' },
-    { icon: MessageSquare, name: 'Spoken English', gradient: 'from-violet-500 to-violet-600' },
-    { icon: User, name: 'Personality Dev', gradient: 'from-amber-500 to-orange-600' }
+    { icon: MessageSquare, name: 'Hindi & Marathi', gradient: 'from-violet-500 to-violet-600' },
+    { icon: User, name: 'Biology', gradient: 'from-amber-500 to-orange-600' }
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,13 +27,12 @@ export function SubjectsPrograms() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl lg:text-6xl font-bold text-[#0A1028] mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-4"
           >
-            Subjects & Programs
+            All boards, all major subjects
           </h2>
           <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
-            Comprehensive coverage across academic subjects and skill development programs
+            CBSE, ICSE and SSC from Class 1–12 — plus JEE, NEET and CET preparation
           </p>
         </motion.div>
 
@@ -72,17 +73,18 @@ export function SubjectsPrograms() {
         >
           <h3
             className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-8 text-center"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             All Boards & Classes Covered
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
+              /* Only boards we actually have tutors and pages for. IB and
+                 IGCSE were listed here with no tutors and no backing pages. */
               { title: 'CBSE', description: 'Class 1 - 12', color: 'emerald' },
-              { title: 'ICSE', description: 'Class 1 - 10', color: 'blue' },
-              { title: 'State Boards', description: 'All Classes', color: 'purple' },
-              { title: 'International', description: 'IB, IGCSE', color: 'orange' }
+              { title: 'ICSE', description: 'Class 1 - 12', color: 'blue' },
+              { title: 'SSC', description: 'Maharashtra Board', color: 'purple' },
+              { title: 'JEE & NEET', description: 'Entrance Prep', color: 'orange' }
             ].map((board, i) => (
               <motion.div
                 key={i}
@@ -107,8 +109,12 @@ export function SubjectsPrograms() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <button className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg">
-            Find Your Perfect Program
+          <button
+            type="button"
+            onClick={() => navigate('/book-free-assessment')}
+            className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg"
+          >
+            Find My Tutor
           </button>
         </motion.div>
       </div>

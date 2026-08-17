@@ -6,37 +6,37 @@ export function SafetyTrust() {
     {
       icon: ShieldCheck,
       title: 'OTP Session Verification',
-      description: 'Secure authentication for every learning session'
+      description: 'Every class starts with an OTP, so you always know it has begun'
     },
     {
       icon: UserCheck,
       title: 'Tutor Background Verification',
-      description: 'Comprehensive screening and credential validation'
+      description: 'ID and qualification checks, plus an interview before the first class'
     },
     {
       icon: MapPin,
       title: 'Location Tracking',
-      description: 'Real-time GPS monitoring for home tuition safety'
+      description: 'Tutor location is tracked during home tuition sessions'
     },
     {
       icon: Eye,
       title: 'Attendance Verification',
-      description: 'Automated check-in and session confirmation'
+      description: 'Session check-ins confirm every class actually happened'
     },
     {
       icon: Bell,
-      title: 'Parent Monitoring',
-      description: 'Instant notifications and live session visibility'
+      title: 'Easy Tutor Replacement',
+      description: 'Not the right fit? Tell us and we arrange a replacement'
     },
     {
       icon: Lock,
-      title: 'AI Safety Alerts',
-      description: 'Intelligent alerts for unusual patterns or concerns'
+      title: 'Quick Support',
+      description: 'Reach us on phone or WhatsApp whenever you need help'
     }
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-[#0A1028] text-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-[#0A1028] text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
 
@@ -58,21 +58,19 @@ export function SafetyTrust() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full mb-6 border border-white/20"
           >
             <ShieldCheck className="w-4 h-4 text-violet-400" />
-            <span className="text-sm font-medium">Enterprise-Grade Security</span>
+            <span className="text-sm font-medium">Safety First</span>
           </motion.div>
 
           <h2
-            className="text-4xl lg:text-6xl font-bold mb-4"
+            className="text-3xl lg:text-4xl font-bold mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Safety & Trust
+            How we keep
             <br />
-            <span className="bg-gradient-to-r from-violet-400 to-violet-400 bg-clip-text text-transparent">
-              Built Into Every Feature
-            </span>
+            <span className="text-violet-400">your child safe</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Multiple layers of verification and monitoring to ensure the highest standards of safety
+            Simple, real safeguards on every class — from tutor verification to session check-ins
           </p>
         </motion.div>
 
@@ -125,9 +123,9 @@ export function SafetyTrust() {
               <div className="space-y-4">
                 {[
                   'Police verification for all tutors',
-                  'Live GPS tracking during home sessions',
-                  'Instant session alerts to parents',
-                  'AI-powered safety monitoring'
+                  'Location tracking during home sessions',
+                  'OTP confirmation when class starts',
+                  'Attendance you can check anytime'
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -180,7 +178,7 @@ export function SafetyTrust() {
                   {[
                     { label: 'Tutor Verified', status: 'Active', color: 'emerald' },
                     { label: 'Location Confirmed', status: 'Active', color: 'blue' },
-                    { label: 'Session Recording', status: 'Active', color: 'purple' },
+                    { label: 'Attendance Marked', status: 'Active', color: 'purple' },
                     { label: 'Parent Notified', status: 'Active', color: 'emerald' }
                   ].map((item, i) => (
                     <motion.div

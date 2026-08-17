@@ -60,7 +60,6 @@ export const PRIVACY_POLICY: LegalPolicy = {
                         "Account information: name, email address, phone number, city, and password.",
                         "Profile details: grade/class, subjects of interest, board, and learning preferences for students; qualifications, experience, and subjects for tutors.",
                         "Application materials: resumes, certificates, and identity documents submitted by tutors during onboarding.",
-                        "Payment information: billing details processed securely through our third-party payment partners — we do not store full card numbers on our servers.",
                         "Usage data: pages visited, session duration, device type, browser, and IP address, collected automatically via cookies and analytics tools.",
                         "Communications: messages, support tickets, and feedback you send us.",
                     ],
@@ -80,8 +79,7 @@ export const PRIVACY_POLICY: LegalPolicy = {
                     items: [
                         "Match students with suitable, verified tutors based on subject, board, class, and availability.",
                         "Process tutor applications, verify credentials, and manage onboarding.",
-                        "Process payments, send booking confirmations, and manage refunds.",
-                        "Send service updates, class reminders, and progress reports to parents.",
+                        "Send booking confirmations, service updates, class reminders, and progress reports to parents.",
                         "Respond to support requests and resolve disputes.",
                         "Detect, investigate, and prevent fraud, abuse, or safety concerns.",
                         "Analyse usage trends to improve platform performance and user experience.",
@@ -101,7 +99,7 @@ export const PRIVACY_POLICY: LegalPolicy = {
                     type: "list",
                     items: [
                         "With matched tutors or students/parents, limited to what is necessary to coordinate and deliver tutoring sessions.",
-                        "With service providers who help us operate the platform, such as payment processors, cloud hosting, and analytics providers, under confidentiality obligations.",
+                        "With service providers who help us operate the platform, such as cloud hosting and analytics providers, under confidentiality obligations.",
                         "When required by law, regulation, legal process, or governmental request.",
                         "To protect the rights, property, or safety of Tutoo, our users, or the public.",
                         "In connection with a merger, acquisition, or sale of assets, with notice to affected users where required.",
@@ -195,7 +193,7 @@ export const PRIVACY_POLICY: LegalPolicy = {
             body: [
                 {
                     type: "paragraph",
-                    text: "Our platform may contain links to third-party websites or integrate third-party services such as payment gateways. We are not responsible for the privacy practices of these third parties, and we encourage you to review their privacy policies separately.",
+                    text: "Our platform may contain links to third-party websites or integrate third-party services such as analytics and messaging tools. We are not responsible for the privacy practices of these third parties, and we encourage you to review their privacy policies separately.",
                 },
             ],
         },
@@ -251,7 +249,7 @@ export const TERMS_OF_SERVICE: LegalPolicy = {
             body: [
                 {
                     type: "paragraph",
-                    text: "Tutoo is an AI-powered platform that connects students and parents with verified, independent tutors for home and online tuition. Tutoo facilitates the discovery, matching, scheduling, and payment of tutoring sessions but is not itself an educational institution or employer of tutors.",
+                    text: "Tutoo connects students and parents with verified, independent tutors for home and online tuition. Tutoo helps you find, choose, and schedule sessions with a suitable tutor, but is not itself an educational institution or an employer of tutors.",
                 },
             ],
         },
@@ -283,25 +281,25 @@ export const TERMS_OF_SERVICE: LegalPolicy = {
                     items: [
                         "Parents & Students: provide accurate learning requirements, attend scheduled sessions, and communicate respectfully with tutors.",
                         "Tutors: provide accurate qualifications and experience, deliver sessions professionally, and maintain appropriate conduct with minors at all times.",
-                        "All Users: not misuse the platform to solicit off-platform payments to bypass Tutoo, harass other users, or misrepresent identity or credentials.",
+                        "All Users: not misuse the platform to harass other users, or to misrepresent identity or credentials.",
                     ],
                 },
             ],
         },
         {
-            id: "payments-refunds",
-            title: "5. Payments, Fees & Refunds",
+            id: "fees",
+            title: "5. Fees",
             body: [
                 {
                     type: "paragraph",
-                    text: "Session fees, subscription charges, and applicable taxes are displayed before checkout and are processed through our secure third-party payment partners.",
+                    text: "This website does not process payments. No fees are collected, and no card or banking details are taken through the site.",
                 },
                 {
                     type: "list",
                     items: [
-                        "Refunds are evaluated on a case-by-case basis in line with our Refund Policy, where applicable, or as communicated during booking.",
-                        "Tutoo may modify pricing for future bookings at any time; existing confirmed bookings will honour the price at the time of booking.",
-                        "Chargebacks or payment disputes filed without first contacting Tutoo support may result in account suspension pending investigation.",
+                        "Tuition fees are discussed and agreed directly with the Tutoo team before classes begin.",
+                        "Any fee agreed for a set of classes stays unchanged for those classes.",
+                        "If you have a question about fees, contact our team before starting classes.",
                     ],
                 },
             ],
@@ -344,7 +342,6 @@ export const TERMS_OF_SERVICE: LegalPolicy = {
                         "Use the platform for any unlawful purpose or in violation of any applicable law.",
                         "Attempt to gain unauthorised access to Tutoo's systems, accounts, or data.",
                         "Upload false, misleading, or fraudulent information, documents, or credentials.",
-                        "Circumvent Tutoo's payment system by arranging off-platform payments to avoid platform fees.",
                         "Harass, threaten, or discriminate against any student, parent, or tutor.",
                     ],
                 },

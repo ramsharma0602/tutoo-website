@@ -83,7 +83,7 @@ const FLOAT_METRICS = [
     emoji: "🌍",
     icon: MapPin,
     value: "100+",
-    label: "Cities Connected",
+    label: "Cities — Our Vision",
     grad: "from-[#7B2FF7] to-[#F59E0B]",
     pos: "bottom-28 -left-4",
     delay: 0.6,
@@ -104,7 +104,7 @@ const FLOAT_METRICS = [
 const BODY_PARAGRAPHS = [
   "Our vision is to become India's most trusted learning platform, helping millions of students unlock their full potential through innovative, technology-driven, and personalized education solutions.",
   "We aim to create a future where quality education is accessible, affordable, and tailored to every learner — regardless of location, background, or academic goals.",
-  "By combining expert educators, intelligent learning systems, and measurable outcomes, we aspire to redefine how students learn and grow in the digital age.",
+  "By combining expert educators, structured learning systems, and measurable outcomes, we aspire to redefine how students learn and grow in the digital age.",
 ];
 
 // ─────────────────────────────────────────────
@@ -430,7 +430,7 @@ export function VisionFutureSection() {
           {[
             { icon: GraduationCap, val: "10M+",  label: "Students Vision",   grad: "from-[#EA580C] to-[#C2410C]", delay: 0.1 },
             { icon: Users,         val: "50K+",  label: "Expert Tutors",     grad: "from-[#7B2FF7] to-[#7B2FF7]", delay: 0.18 },
-            { icon: MapPin,        val: "100+",  label: "Cities Connected",  grad: "from-[#7B2FF7] to-[#F59E0B]", delay: 0.26 },
+            { icon: MapPin,        val: "100+",  label: "Cities — Our Vision",  grad: "from-[#7B2FF7] to-[#F59E0B]", delay: 0.26 },
             { icon: TrendingUp,    val: "+250%", label: "Learning Growth",   grad: "from-[#F59E0B] to-[#7B2FF7]", delay: 0.34 },
           ].map((s) => {
             const Icon = s.icon;
@@ -581,9 +581,9 @@ export function VisionFutureSection() {
             {/* 3 feature chips */}
             <div className="flex flex-wrap justify-center gap-4 mb-10">
               {[
-                { icon: Zap,          label: "AI-Powered",       c: "#7B2FF7" },
+                { icon: Zap,          label: "Personalised",       c: "#7B2FF7" },
                 { icon: CheckCircle2, label: "Verified Tutors",  c: "#7B2FF7" },
-                { icon: Star,         label: "4.8★ Satisfaction", c: "#F59E0B" },
+                { icon: Star,         label: "Parent-First Approach", c: "#F59E0B" },
               ].map((item) => {
                 const Icon = item.icon;
                 return (

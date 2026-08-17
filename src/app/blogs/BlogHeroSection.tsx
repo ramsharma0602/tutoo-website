@@ -29,9 +29,9 @@ const categories = [
 ];
 
 const floatingStats = [
-    { icon: BookOpen, label: "500+ Articles", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)" },
+    { icon: BookOpen, label: "Study Tips", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)" },
     { icon: TrendingUp, label: "Trending This Week", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
-    { icon: Sparkles, label: "AI Learning Insights", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
+    { icon: Sparkles, label: "Study Tips", color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
     { icon: Zap, label: "New Articles Added", color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)" },
 ];
 
@@ -41,7 +41,7 @@ const featuredArticles = [
         categoryColor: "#7B2FF7",
         categoryBg: "rgba(123,47,247,0.1)",
         title: "10 Proven Study Strategies to Ace Your Board Exams in 2025",
-        desc: "Master time management, smart revision techniques, and AI-powered learning tools to maximise your exam performance.",
+        desc: "Practical time management and revision techniques you can use before your next exam.",
         readTime: "6 min read",
         author: "Priya Sharma",
         authorRole: "Senior Educator",
@@ -135,8 +135,7 @@ export function BlogHeroSection() {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.1 }}
-                    className="text-5xl lg:text-7xl font-black leading-[1.06] tracking-tight text-[#0A1028] mb-7"
-                    style={{ fontFamily: "var(--font-heading)" }}
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.06] tracking-tight text-[#0A1028] mb-7"
                 >
                     Learning Resources for{" "}
                     <span className="relative inline-block">
@@ -165,7 +164,7 @@ export function BlogHeroSection() {
                     className="text-xl leading-9 text-[#6E6A85] max-w-3xl mx-auto mb-10"
                 >
                     Study tips, exam strategies, parenting guides, career advice, teaching resources,
-                    and AI-powered learning insights designed to help every learner grow smarter.
+                    and practical learning tips designed to help every learner grow.
                 </motion.p>
 
                 {/* ── Floating stats chips ── */}
@@ -221,12 +220,11 @@ export function BlogHeroSection() {
                             onBlur={() => setFocused(false)}
                             placeholder="Search articles, topics, study tips, exams, parenting guides..."
                             className="flex-1 h-16 bg-transparent outline-none text-[#1E1B3A] placeholder-[#94A3B8] text-base font-medium pr-4"
-                            style={{ fontFamily: "var(--font-body, Inter, system-ui)" }}
                         />
 
                         {/* AI badge inside field */}
                         <div className="hidden sm:flex items-center gap-1.5 pr-3">
-                            <div className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold text-[#7B2FF7]"
+                            <div className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[12px] font-semibold text-[#7B2FF7]"
                                 style={{ background: "rgba(123,47,247,0.08)", border: "1px solid rgba(123,47,247,0.18)" }}>
                                 <Sparkles className="w-3 h-3" />
                                 AI Search
@@ -244,7 +242,7 @@ export function BlogHeroSection() {
 
                     {/* AI discovery label */}
                     {/* <p className="mt-2.5 text-xs text-[#94A3B8] text-center font-medium">
-                        ✦ AI-powered article discovery — find exactly what you need
+                        ✦ Browse by topic — find exactly what you need
                     </p> */}
                 </motion.div>
 

@@ -471,7 +471,7 @@ export function AIAssessmentSection() {
               <Brain className="w-4 h-4 text-[#7B2FF7]" />
               <span className="text-xs font-black tracking-widest uppercase text-[#7B2FF7]"
                 style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
-                AI-Powered Assessment
+                Structured Assessment
               </span>
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
             </motion.div>
@@ -490,7 +490,7 @@ export function AIAssessmentSection() {
             </h2>
 
             <p className="text-sm font-black tracking-wide text-[#7B2FF7] mb-6 uppercase">
-              AI-Powered{" "}
+              Structured{" "}
               <span className="text-[#7B2FF7]">Learning Assessment</span>
             </p>
 

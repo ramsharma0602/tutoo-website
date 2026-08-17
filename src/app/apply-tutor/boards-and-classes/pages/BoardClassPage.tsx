@@ -68,8 +68,8 @@ interface Props {
 function NotFound() {
   return (
     <div className="min-h-screen bg-[#FAFAFC] flex flex-col items-center justify-center text-center px-6">
-      <div className="text-6xl mb-6">📚</div>
-      <h1 className="text-4xl font-black text-[#0A1028] mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-5xl mb-6">📚</div>
+      <h1 className="text-4xl font-bold text-[#0A1028] mb-4">
         Page Not Found
       </h1>
       <p className="text-[#6E6A85] max-w-md mb-8">
@@ -191,8 +191,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
               </div>
 
               {/* Heading */}
-              <h1 className="text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-[#0A1028] mb-5"
-                style={{ fontFamily: "var(--font-heading)" }}>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.08] tracking-tight text-[#0A1028] mb-5">
                 <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">{board}</span>
                 {" "}{classLabel}
                 <br />Tuition
@@ -223,7 +222,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
               {/* CTA */}
               <div className="flex flex-wrap items-center gap-4">
                 <button className="group h-14 px-8 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold shadow-xl shadow-[#EA580C]/20 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2">
-                  Book Free Assessment
+                  Find My Tutor
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
                 <button className="h-14 px-8 rounded-2xl border font-semibold text-[#7B2FF7] hover:border-[#7B2FF7] transition-all duration-300"
@@ -264,8 +263,8 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
                       { v: "A+", l: "Grade", c: "#7B2FF7" },
                     ].map((s) => (
                       <div key={s.l} className="rounded-xl p-3 text-center" style={{ background: "#FAFAFC", border: "1px solid rgba(30,27,58,0.06)" }}>
-                        <p className="text-lg font-black mb-0.5" style={{ color: s.c }}>{s.v}</p>
-                        <p className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider">{s.l}</p>
+                        <p className="text-lg font-bold mb-0.5" style={{ color: s.c }}>{s.v}</p>
+                        <p className="text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">{s.l}</p>
                       </div>
                     ))}
                   </div>
@@ -316,7 +315,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1028] tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0A1028] tracking-tight mb-4">
               Subjects Covered in{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
                 {board} {classLabel} Tuition
@@ -372,7 +371,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
               <Star className="w-4 h-4 text-[#7B2FF7]" />
               <span className="text-sm font-semibold text-[#7B2FF7]">Why Tutoo</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
               The Smarter Way to{" "}
               <span className="text-[#6D28D9]">Learn</span>
             </h2>
@@ -395,7 +394,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
                 <div className={`w-13 h-13 w-12 h-12 rounded-2xl bg-gradient-to-br ${f.grad} flex items-center justify-center text-xl mb-5 shadow-lg`}>
                   {f.icon}
                 </div>
-                <h3 className="text-base font-bold text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>{f.title}</h3>
+                <h3 className="text-base font-bold text-white mb-2">{f.title}</h3>
                 <p className="text-sm leading-relaxed text-[#94A3B8]">{f.desc}</p>
               </motion.div>
             ))}
@@ -413,12 +412,12 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1028] tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0A1028] tracking-tight mb-4">
               What Students Will{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">Achieve</span>
             </h2>
             <p className="text-lg text-[#6E6A85] max-w-xl mx-auto">
-              Measurable outcomes for every {board} {classLabel} student on Tutoo.
+              What {board} {classLabel} tuition with Tutoo covers.
             </p>
           </motion.div>
 
@@ -450,7 +449,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
       <section className="py-20 relative overflow-hidden" style={{ background: "#FAFAFC" }}>
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#0A1028] tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#0A1028] tracking-tight mb-4">
               How Our{" "}
               <span className="text-[#6D28D9]">Tuition Works</span>
             </h2>
@@ -481,14 +480,14 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
                     <motion.div className="absolute inset-0 rounded-full"
                       animate={{ boxShadow: [`0 0 0 0px ${step.glow}`, `0 0 0 8px transparent`] }}
                       transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.3 }} />
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center text-sm font-black border transition-all duration-300 group-hover:scale-110"
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center text-sm font-bold border transition-all duration-300 group-hover:scale-110"
                       style={{ background: `${step.color}12`, borderColor: `${step.color}35`, color: step.color, boxShadow: `0 0 16px ${step.glow}` }}>
                       {step.num}
                     </div>
                   </div>
                   <div className="flex-1 rounded-2xl border p-5 transition-all duration-300 group-hover:border-[rgba(123,47,247,0.2)] group-hover:shadow-lg"
                     style={{ background: "rgba(255,255,255,0.85)", borderColor: "rgba(30,27,58,0.07)", backdropFilter: "blur(10px)", boxShadow: "0 2px 12px rgba(30,27,58,0.04)" }}>
-                    <h3 className="text-base font-bold text-[#0A1028] mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</h3>
+                    <h3 className="text-base font-bold text-[#0A1028] mb-1.5">{step.title}</h3>
                     <p className="text-sm leading-relaxed text-[#6E6A85]">{step.desc}</p>
                   </div>
                 </motion.div>
@@ -508,7 +507,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-4xl font-black text-[#0A1028] tracking-tight mb-4" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl font-bold text-[#0A1028] tracking-tight mb-4">
               Frequently Asked{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">Questions</span>
             </h2>
@@ -530,12 +529,12 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
             className="rounded-3xl border p-10"
             style={{ background: "rgba(255,255,255,0.85)", borderColor: "rgba(30,27,58,0.08)", backdropFilter: "blur(16px)", boxShadow: "0 8px 40px rgba(30,27,58,0.07)" }}>
             <div className="h-[3px] rounded-full bg-gradient-to-r from-[#EA580C] to-[#C2410C] mb-8" />
-            <h2 className="text-3xl font-black text-[#0A1028] tracking-tight mb-7" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-3xl font-bold text-[#0A1028] tracking-tight mb-7">
               About {board} {classLabel} Tuition
             </h2>
             <div className="flex flex-col gap-5 text-[#334155] text-base leading-8">
               <p>{board} {classLabel} is an important stage in a student's academic journey. Our expert tutors help students build strong conceptual understanding, improve confidence, and achieve better academic results through personalised learning designed specifically for the {board} curriculum.</p>
-              <p>Tutoo provides both home tuition and online tuition for {board} {classLabel} students. Our experienced tutors follow the latest {board} curriculum and modern teaching methodologies to make learning engaging, effective, and measurable.</p>
+              <p>Tutoo provides both home tuition and online tuition for {board} {classLabel} students. Our experienced tutors follow the latest {board} curriculum and clear explanations to make the subject easier to follow.</p>
               <p>Whether your child requires support in {subjects.slice(0, 3).map(s => s.label).join(", ")}, or overall academic development, our tutors create customised learning plans based on each student's individual needs and learning pace.</p>
             </div>
             <div className="flex flex-wrap gap-2 mt-8">
@@ -572,8 +571,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
               <span className="text-sm font-semibold text-[#7B2FF7]">Start Today — Free Assessment</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black leading-[1.1] tracking-tight text-white mb-5"
-              style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight text-white mb-5">
               Ready to Help Your Child{" "}
               <span className="text-[#6D28D9]">Excel?</span>
             </h2>
@@ -582,7 +580,7 @@ export function BoardClassPage({ slug: propSlug, onNavigate }: Props) {
             </p>
             <div className="flex justify-center mb-8">
               <button className="group h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold shadow-xl shadow-[#EA580C]/25 hover:scale-[1.03] transition-all duration-300 flex items-center gap-2 text-base">
-                Book Free Assessment
+                Find My Tutor
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>

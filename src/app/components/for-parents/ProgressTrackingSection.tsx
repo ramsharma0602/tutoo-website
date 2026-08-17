@@ -343,7 +343,7 @@ export function ProgressTrackingSection() {
             {/* Floating chips */}
             <div className="flex flex-wrap gap-2 mt-5">
               {[
-                { label: "✦ AI-Powered Analytics", c: "text-[#059669] bg-[rgba(248,120,8,0.09)] border-[rgba(248,120,8,0.28)]" },
+                { label: "✦ Learning Analytics", c: "text-[#059669] bg-[rgba(248,120,8,0.09)] border-[rgba(248,120,8,0.28)]" },
                 { label: "↑ Weekly Growth +24%", c: "text-[#7B2FF7] bg-[rgba(123,47,247,0.07)] border-[rgba(123,47,247,0.2)]" },
                 { label: "✓ Attendance Verified", c: "text-[#7B2FF7] bg-[rgba(123,47,247,0.07)] border-[rgba(123,47,247,0.2)]" },
               ].map((chip) => (
@@ -385,7 +385,7 @@ export function ProgressTrackingSection() {
             {/* Subheading */}
             <p className="mt-6 text-lg leading-8 text-[#6E6A85] max-w-xl">
               Track academic performance, attendance, homework, tutor feedback, and measurable
-              improvement through real-time AI-powered learning analytics — all in one place.
+              improvement through clear, regular learning updates — all in one place.
             </p>
 
             {/* Report card preview */}

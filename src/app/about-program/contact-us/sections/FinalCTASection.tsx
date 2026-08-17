@@ -22,23 +22,23 @@ export default function FinalCTASection() {
   const stats = [
     {
       icon: GraduationCap,
-      value: "5000+",
-      label: "Students Learning",
+      value: "1-to-1",
+      label: "Every Class",
     },
     {
       icon: Users,
-      value: "1200+",
-      label: "Verified Tutors",
+      value: "Verified",
+      label: "Every Tutor",
     },
     {
       icon: Star,
-      value: "4.8/5",
-      label: "Parent Rating",
+      value: "Free",
+      label: "First Assessment",
     },
     {
       icon: BookOpen,
-      value: "50,000+",
-      label: "Learning Sessions",
+      value: "Home & Online",
+      label: "Your Choice",
     },
   ];
 
@@ -111,12 +111,12 @@ export default function FinalCTASection() {
           >
             <div className="text-3xl mb-2">🎓</div>
 
-            <div className="text-white font-black text-2xl">
-              5000+
+            <div className="text-white font-bold text-2xl">
+              1-to-1
             </div>
 
             <div className="text-white/70 text-sm">
-              Students Learning
+              Every Class
             </div>
           </motion.div>
 
@@ -137,12 +137,12 @@ export default function FinalCTASection() {
           >
             <div className="text-3xl mb-2">👨‍🏫</div>
 
-            <div className="text-white font-black text-2xl">
-              1200+
+            <div className="text-white font-bold text-2xl">
+              Home & Online
             </div>
 
             <div className="text-white/70 text-sm">
-              Verified Tutors
+              Your Choice
             </div>
           </motion.div>
 
@@ -163,12 +163,12 @@ export default function FinalCTASection() {
           >
             <div className="text-3xl mb-2">⭐</div>
 
-            <div className="text-white font-black text-2xl">
-              4.8/5
+            <div className="text-white font-bold text-2xl">
+              Free
             </div>
 
             <div className="text-white/70 text-sm">
-              Parent Rating
+              First Assessment
             </div>
           </motion.div>
 
@@ -189,12 +189,12 @@ export default function FinalCTASection() {
           >
             <div className="text-3xl mb-2">📚</div>
 
-            <div className="text-white font-black text-2xl">
-              50,000+
+            <div className="text-white font-bold text-2xl">
+              Verified
             </div>
 
             <div className="text-white/70 text-sm">
-              Learning Sessions
+              Every Tutor
             </div>
           </motion.div>
 
@@ -233,14 +233,11 @@ export default function FinalCTASection() {
             className="
             mt-10
             text-5xl
-            lg:text-7xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-white
             leading-tight
             "
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
           >
             Ready to Find the{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -251,9 +248,9 @@ export default function FinalCTASection() {
 
           {/* Description */}
           <p className="max-w-3xl mx-auto mt-8 text-xl leading-9 text-white/80">
-            Book a free academic assessment and receive personalized
-            tutor recommendations based on your learning goals,
-            academic needs, and preferred learning style.
+            Tell us the class, subject and area. We assess for free,
+            shortlist suitable tutors, and share their profiles with
+            you — then you choose.
           </p>
 
           {/* Trust Chips */}
@@ -310,7 +307,7 @@ export default function FinalCTASection() {
               "
             >
               <span className="relative z-10 flex items-center gap-3">
-                Book Free Assessment
+                Find My Tutor
                 <ArrowRight className="w-5 h-5" />
               </span>
             </motion.button>
@@ -369,7 +366,7 @@ export default function FinalCTASection() {
               >
                 <item.icon className="w-7 h-7 text-[#7B2FF7]" />
 
-                <h4 className="mt-3 text-white text-2xl font-black">
+                <h4 className="mt-3 text-white text-2xl font-bold">
                   {item.value}
                 </h4>
 

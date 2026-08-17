@@ -74,7 +74,7 @@ function FormField({
       transition={{ delay, duration: 0.5 }}
       className="flex flex-col gap-2"
     >
-      <label className="text-xs font-black tracking-wide text-[#1E1B3A] uppercase flex items-center gap-1">
+      <label className="text-xs font-bold tracking-wide text-[#1E1B3A] uppercase flex items-center gap-1">
         {label}
         {required && <span className="text-[#EF4444] text-sm leading-none">*</span>}
       </label>
@@ -104,7 +104,6 @@ export function GetInTouchSection() {
   return (
     <section
       className="relative overflow-hidden py-28 bg-white"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -134,8 +133,7 @@ export function GetInTouchSection() {
                          shadow-[0_0_22px_rgba(248,120,8,0.16)]"
             >
               <MessageSquare className="w-4 h-4 text-[#7B2FF7]" />
-              <span className="text-xs font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
+              <span className="text-xs font-bold tracking-widest uppercase text-[#7B2FF7]">
                 Get in Touch
               </span>
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
@@ -147,8 +145,7 @@ export function GetInTouchSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl lg:text-5xl font-black leading-[1.07] tracking-tight text-[#0A1028] mb-5"
-            style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
+            className="text-4xl lg:text-5xl font-bold leading-[1.07] tracking-tight text-[#0A1028] mb-5"
           >
             Let's Find the Perfect{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
@@ -180,8 +177,7 @@ export function GetInTouchSection() {
           >
             {/* Heading */}
             <h3
-              className="text-3xl lg:text-4xl font-black text-[#0A1028] mb-3 leading-tight"
-              style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
+              className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-3 leading-tight"
             >
               How Can We{" "}
               <span className="text-[#6D28D9]">
@@ -194,7 +190,7 @@ export function GetInTouchSection() {
 
             {/* Assist list */}
             <div className="space-y-3 mb-10">
-              <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-4">
+              <p className="text-xs font-bold tracking-widest uppercase text-[#6E6A85] mb-4">
                 Our team can assist you with:
               </p>
               {ASSISTS.map((item, i) => {
@@ -228,9 +224,9 @@ export function GetInTouchSection() {
             {/* Trust mini cards */}
             <div className="space-y-3">
               {[
-                { icon: Shield, text: "Your information is 100% secure and private.",          c: "#7B2FF7" },
-                { icon: Zap,    text: "We respond to every inquiry within 4 working hours.",    c: "#7B2FF7" },
-                { icon: Star,   text: "Trusted by 5,000+ students and families across India.", c: "#7B2FF7" },
+                { icon: Shield, text: "Your details stay private — we only use them to match a tutor.", c: "#7B2FF7" },
+                { icon: Zap,    text: "We reply to every enquiry, usually the same working day.",       c: "#7B2FF7" },
+                { icon: Star,   text: "Serving families in Kothrud (Pune) and Kolhapur.",               c: "#7B2FF7" },
               ].map((t, i) => {
                 const Icon = t.icon;
                 return (
@@ -268,8 +264,7 @@ export function GetInTouchSection() {
                                 flex items-center justify-center shadow-xl mb-6">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-3xl font-black text-[#1E1B3A] mb-3"
-                  style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
+                <h3 className="text-3xl font-bold text-[#1E1B3A] mb-3">
                   Message Sent! 🎉
                 </h3>
                 <p className="text-[#6E6A85] leading-7 mb-8">
@@ -381,7 +376,7 @@ export function GetInTouchSection() {
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
                             onClick={() => setForm({ ...form, inquiry: t.value })}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border text-xs font-black transition-all duration-300"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border text-xs font-bold transition-all duration-300"
                             style={{
                               color:       active ? "#fff"      : t.color,
                               background:  active ? `linear-gradient(135deg, ${t.color}, ${t.color}cc)` : `${t.color}10`,

@@ -50,7 +50,7 @@ export function TrainingDevelopmentSection() {
             icon: Laptop,
             title: "Technology Training",
             description:
-                "Learn AI-powered teaching systems, digital tools, and virtual learning technologies.",
+                "Learn the digital tools and online teaching methods we use for live classes.",
 
             gradient: "from-[#7B2FF7] to-[#7B2FF7]",
         },
@@ -84,7 +84,7 @@ export function TrainingDevelopmentSection() {
         {
             title: "Platform Training",
             description:
-                "Learn the Tutoo ecosystem, tools, and teaching systems.",
+                "Learn how Tutoo works, the tools we use, and how classes are run.",
             color: "#7B2FF7",
         },
 

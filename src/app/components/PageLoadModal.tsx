@@ -4,9 +4,9 @@ import { X, Check, TrendingUp, Shield, BarChart2, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 const features = [
-  'AI Learning Assessment',
+  'Free Learning Assessment',
   'Verified Expert Tutors',
-  'Real-Time Parent Dashboard',
+  'Attendance You Can Check',
   'Weekly Progress Reports',
   'OTP-Secured Sessions',
 ];
@@ -83,7 +83,6 @@ export function PageLoadModal() {
 
                     <h2
                       className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight"
-                      style={{ fontFamily: 'var(--font-heading)' }}
                     >
                       Discover your child's real{' '}
                       <span className="text-[#6D28D9]">
@@ -92,7 +91,7 @@ export function PageLoadModal() {
                     </h2>
 
                     <p className="text-white/50 text-sm mb-6">
-                      Get a free AI-powered academic assessment, personalized learning analysis, and verified tutor recommendations.
+                      Get a free assessment and a verified tutor matched to your child.
                     </p>
 
                     {/* Feature bullets */}
@@ -116,7 +115,7 @@ export function PageLoadModal() {
                         onClick={() => navigate('/book-free-assessment')}
                         className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold text-sm shadow-lg shadow-[#EA580C]/25 hover:shadow-[#EA580C]/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-1"
                       >
-                        Book Free Assessment
+                        Find My Tutor
                       </Button>
 
                       <p className="text-center text-white/30 text-xs pt-1">
@@ -134,9 +133,9 @@ export function PageLoadModal() {
                     {/* Trust bar */}
                     <div className="flex items-center justify-center gap-6 mt-5 pt-5 border-t border-white/5">
                       {[
-                        { num: '12,000+', label: 'Students' },
-                        { num: '3,400+', label: 'Verified Tutors' },
-                        { num: '94%', label: 'Improvement Rate' },
+                        { num: 'Free', label: 'Assessment' },
+                        { num: 'Verified', label: 'Tutors' },
+                        { num: '24 hrs', label: 'Callback' },
                       ].map((s) => (
                         <div key={s.label} className="text-center">
                           <p className="text-white font-bold text-sm">{s.num}</p>
@@ -154,11 +153,11 @@ export function PageLoadModal() {
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7B2FF7]/30 to-[#7B2FF7]/30 border border-[#7B2FF7]/40 flex items-center justify-center mb-5">
                       <Check className="w-8 h-8 text-[#7B2FF7]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <h3 className="text-2xl font-bold text-white mb-2">
                       You're on the list!
                     </h3>
                     <p className="text-white/50 text-sm mb-6 max-w-xs">
-                      Our team will reach out within 24 hours to schedule your free AI-powered assessment.
+                      Our team will call you within 24 hours to arrange the free assessment.
                     </p>
                     <button
                       onClick={() => setOpen(false)}

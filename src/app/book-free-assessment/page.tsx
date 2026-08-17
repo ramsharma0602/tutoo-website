@@ -25,9 +25,9 @@ export default function BookAssessmentPage() {
   const trustCards = [
     {
       icon: Brain,
-      title: 'AI Learning Analysis',
+      title: 'Free Learning Assessment',
       description:
-        'Identify strengths, weak topics, learning behavior, and academic gaps through intelligent assessment systems.',
+        'Identify strengths, weak topics, learning behavior, and academic gaps through a structured, friendly assessment.',
     },
     {
       icon: ShieldCheck,
@@ -37,17 +37,17 @@ export default function BookAssessmentPage() {
     },
     {
       icon: BarChart3,
-      title: 'Real-Time Progress Tracking',
+      title: 'Progress Tracking',
       description:
-        'Track attendance, homework, reports, and measurable improvement from the parent dashboard.',
+        'See attendance for every class, plus regular updates from the tutor.',
     },
   ];
 
   const stats = [
-    '12,000+ Students',
-    '3,400+ Verified Tutors',
-    '94% Improvement Rate',
-    '98% Parent Satisfaction',
+    'Verified Tutors',
+    'Home & Online Classes',
+    'Free Assessment',
+    'No Obligation',
   ];
 
   const subjects = [
@@ -126,7 +126,7 @@ export default function BookAssessmentPage() {
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
 
               <span className="text-sm font-semibold text-[#7B2FF7]">
-                Free AI-Powered Assessment
+                Free Assessment · No Obligation
               </span>
             </motion.div>
 
@@ -135,13 +135,12 @@ export default function BookAssessmentPage() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0A1028]"
-              style={{ fontFamily: 'var(--font-heading)' }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028]"
             >
-              Discover your child’s real{' '}
+              Book a free assessment{' '}
 
               <span className="bg-gradient-to-r from-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
-                learning potential.
+                for your child.
               </span>
             </motion.h1>
 
@@ -152,9 +151,9 @@ export default function BookAssessmentPage() {
               transition={{ delay: 0.2 }}
               className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-2xl"
             >
-              Get a personalized academic assessment, AI learning analysis,
-              and expert tutor recommendations designed specifically for your
-              child’s goals and learning style.
+              Tell us what your child needs. We assess for free, understand
+              their strengths and gaps, and match a verified tutor who fits
+              your child’s goals.
             </motion.p>
 
             {/* Trust Cards */}
@@ -231,8 +230,8 @@ export default function BookAssessmentPage() {
                   Start Your Assessment
                 </p>
 
-                <h3 className="mt-3 text-4xl font-black text-[#1E1B3A]">
-                  Book Free Assessment
+                <h3 className="mt-3 text-4xl font-bold text-[#1E1B3A]">
+                  Find My Tutor
                 </h3>
 
                 <p className="mt-4 text-[#6E6A85] leading-7">

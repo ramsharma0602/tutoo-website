@@ -95,7 +95,7 @@ const floatingStats = [
   { value: "5,000+", label: "Students",     color: "#7B2FF7", bg: "rgba(123,47,247,0.09)",  border: "rgba(123,47,247,0.2)"  },
   { value: "1,200+", label: "Verified Tutors", color: "#7B2FF7", bg: "rgba(248,120,8,0.09)", border: "rgba(248,120,8,0.2)" },
   { value: "50+",    label: "Cities",       color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)" },
-  { value: "4.8★",   label: "Satisfaction", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)"  },
+  { value: "Free",   label: "Assessment", color: "#F59E0B", bg: "rgba(245,158,11,0.09)", border: "rgba(245,158,11,0.2)"  },
 ];
 
 /* ─────────────────────────────────────────────
@@ -440,7 +440,7 @@ export function WhatWeAimSection() {
               {[
                 { icon: TrendingUp, label: "Measurable Outcomes", color: "#7B2FF7", bg: "rgba(248,120,8,0.08)", border: "rgba(248,120,8,0.2)" },
                 { icon: ShieldCheck, label: "Verified & Safe",     color: "#7B2FF7", bg: "rgba(123,47,247,0.08)",  border: "rgba(123,47,247,0.2)"  },
-                { icon: Brain,      label: "AI-Powered Learning",  color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
+                { icon: Brain,      label: "Personalised Learning",  color: "#7B2FF7", bg: "rgba(123,47,247,0.08)", border: "rgba(123,47,247,0.2)" },
                 { icon: Users,      label: "Community Driven",     color: "#F59E0B", bg: "rgba(245,158,11,0.08)", border: "rgba(245,158,11,0.2)"  },
               ].map((chip) => (
                 <span key={chip.label} className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold border"

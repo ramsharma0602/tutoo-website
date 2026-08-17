@@ -46,7 +46,7 @@ const JOURNEY_STEPS = [
     icon: Lightbulb,
     emoji: "💡",
     title: "The Opportunity",
-    desc: "We saw a chance to create a smarter, safer, and more personalized learning ecosystem powered by technology, data, and human connection.",
+    desc: "We saw a chance to make finding a good tutor simpler, safer and more personal for families.",
     from: "#F59E0B",
     to: "#EAB308",
     bg: "from-amber-500/10 to-yellow-500/10",
@@ -62,7 +62,7 @@ const JOURNEY_STEPS = [
     icon: Target,
     emoji: "🎯",
     title: "The Solution",
-    desc: "Build a platform where students, parents, and tutors connect seamlessly through verified learning experiences, progress tracking, and measurable academic outcomes.",
+    desc: "Build one place where parents, students and tutors can find each other, with verified profiles and classes you can track.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     bg: "from-violet-500/10 to-violet-500/10",
@@ -78,7 +78,7 @@ const JOURNEY_STEPS = [
     icon: Rocket,
     emoji: "🚀",
     title: "Tutoo",
-    desc: "A complete learning ecosystem combining technology, verified tutors, progress tracking, assessments, and personalized learning journeys — built for every student.",
+    desc: "A simple, reliable service combining verified tutors, progress tracking, assessments, and personalized learning journeys — built for every student.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     bg: "from-violet-500/10 to-violet-500/10",
@@ -100,10 +100,10 @@ const ECOSYSTEM_NODES = [
 ];
 
 const STATS = [
-  { value: "5,000+", label: "Students Learning", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
-  { value: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
-  { value: "50,000+", label: "Sessions Delivered", icon: BookOpen, grad: "from-[#7B2FF7] to-[#F59E0B]" },
-  { value: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
+  { value: "2 Cities", label: "Kothrud & Kolhapur", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
+  { value: "100%", label: "Tutors Verified", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { value: "1-to-1", label: "Every Class", icon: BookOpen, grad: "from-[#7B2FF7] to-[#F59E0B]" },
+  { value: "Free", label: "First Assessment", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
 ];
 
 // ─────────────────────────────────────────────
@@ -193,7 +193,7 @@ function EcosystemDiagram() {
         style={{ animation: "centerPulse 3s ease-in-out infinite" }}
       >
         <Rocket className="w-7 h-7 text-white" />
-        <p className="text-[9px] font-black text-white mt-1 tracking-wider">TUTOO</p>
+        <p className="text-[12px] font-bold text-white mt-1 tracking-wider">TUTOO</p>
       </motion.div>
 
       {/* Orbit nodes */}
@@ -224,7 +224,7 @@ function EcosystemDiagram() {
                        transition-transform duration-300 cursor-default"
           >
             <span className="text-xl">{n.emoji}</span>
-            <p className="text-[8px] font-black tracking-wider" style={{ color: n.color }}>{n.label.toUpperCase()}</p>
+            <p className="text-[12px] font-bold tracking-wider" style={{ color: n.color }}>{n.label.toUpperCase()}</p>
           </motion.div>
         );
       })}
@@ -245,7 +245,6 @@ export function WhyWeStartedSection() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-32 bg-[#FAFAFC]"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -298,8 +297,7 @@ export function WhyWeStartedSection() {
                          shadow-[0_0_24px_rgba(248,120,8,0.2)]"
             >
               <Rocket className="w-4 h-4 text-[#7B2FF7]" />
-              <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
+              <span className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]">
                 Why We Started
               </span>
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
@@ -312,8 +310,7 @@ export function WhyWeStartedSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl lg:text-6xl font-black leading-[1.06] tracking-tight text-[#0A1028] mb-7"
-            style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.06] tracking-tight text-[#0A1028] mb-7"
           >
             From Educational Challenges
             <br />
@@ -365,7 +362,7 @@ export function WhyWeStartedSection() {
                                    flex items-center justify-center shadow-lg`}>
                       <Icon className="w-7 h-7 text-white" />
                     </div>
-                    <span className={`text-xs font-black px-3 py-1 rounded-full border ${step.tagColor}`}>
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full border ${step.tagColor}`}>
                       {step.tag}
                     </span>
                   </div>
@@ -373,13 +370,12 @@ export function WhyWeStartedSection() {
                   {/* Step number */}
                   <div className="relative z-10 mb-3">
                     <span
-                      className="text-[64px] font-black leading-none select-none"
+                      className="text-5xl font-bold leading-none select-none"
                       style={{
                         background: `linear-gradient(135deg, ${step.from}18, ${step.to}18)`,
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
-                        fontFamily: "var(--font-heading, 'Clash Display', sans-serif)",
-                      }}
+                        }}
                     >
                       {step.step}
                     </span>
@@ -388,8 +384,7 @@ export function WhyWeStartedSection() {
                   {/* Content */}
                   <div className="relative z-10">
                     <h3
-                      className="text-xl font-black text-[#1E1B3A] mb-3"
-                      style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                      className="text-xl font-bold text-[#1E1B3A] mb-3"
                     >
                       {step.emoji} {step.title}
                     </h3>
@@ -441,12 +436,11 @@ export function WhyWeStartedSection() {
               <div className="absolute bottom-0 left-0 w-56 h-56 bg-[#7B2FF7]/08 rounded-full blur-3xl" />
 
               <div className="relative z-10">
-                <p className="text-center text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-2">
-                  The Learning Ecosystem
+                <p className="text-center text-xs font-bold tracking-widest uppercase text-[#6E6A85] mb-2">
+                  How It Fits Together
                 </p>
                 <h3
-                  className="text-center text-2xl font-black text-[#1E1B3A] mb-6"
-                  style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                  className="text-center text-2xl font-bold text-[#1E1B3A] mb-6"
                 >
                   Everyone{" "}
                   <span className="text-[#6D28D9]">
@@ -471,7 +465,7 @@ export function WhyWeStartedSection() {
               </div>
               <div>
                 <p className="text-xs font-bold text-[#1E1B3A]">Fully Verified</p>
-                <p className="text-[11px] text-[#6E6A85]">Every tutor, every session</p>
+                <p className="text-[12px] text-[#6E6A85]">Every tutor, every session</p>
               </div>
             </motion.div>
           </motion.div>
@@ -504,12 +498,11 @@ export function WhyWeStartedSection() {
                 </div>
 
                 <p
-                  className="text-2xl lg:text-3xl font-black leading-tight text-[#1E1B3A] mb-5"
-                  style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+                  className="text-2xl lg:text-3xl font-bold leading-tight text-[#1E1B3A] mb-5"
                 >
                   "We didn't build Tutoo to help parents find tutors.
                 </p>
-                <p className="text-2xl lg:text-3xl font-black leading-tight bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent mb-8">
+                <p className="text-2xl lg:text-3xl font-bold leading-tight bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent mb-8">
                   We built Tutoo to ensure every student has access to the right learning support, at the right time, in the right way."
                 </p>
 
@@ -535,7 +528,7 @@ export function WhyWeStartedSection() {
               {[
                 { icon: "🎯", text: "Every student deserves personalized support" },
                 { icon: "🔒", text: "Safety and trust are non-negotiable" },
-                { icon: "📈", text: "Progress should be visible and measurable" },
+                { icon: "📈", text: "Parents should be able to see how classes are going" },
               ].map((item, i) => (
                 <motion.div
                   key={item.text}

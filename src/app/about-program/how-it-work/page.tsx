@@ -1,4 +1,3 @@
-import { AIAssessmentSection } from "./sections/AIAssessmentSection";
 import { HowItWorksHero } from "./sections/HowItWorksHero";
 import { Step01Registration } from "./sections/Step01Registration";
 import { Step02Assessment } from "./sections/Step02Assessment";

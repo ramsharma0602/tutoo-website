@@ -21,18 +21,18 @@ export default function StudyMaterialsCTA() {
   const stats = [
     {
       icon: GraduationCap,
-      value: "5000+",
+      value: "1-to-1",
       label: "Students Learning",
     },
     {
       icon: Users,
-      value: "1200+",
+      value: "Verified",
       label: "Verified Tutors",
     },
     {
       icon: Star,
-      value: "4.8★",
-      label: "Parent Rating",
+      value: "Free",
+      label: "First Assessment",
     },
     {
       icon: BookOpen,
@@ -123,8 +123,8 @@ export default function StudyMaterialsCTA() {
             p-5
             "
           >
-            <div className="text-3xl font-black text-white">
-              5000+
+            <div className="text-3xl font-bold text-white">
+              1-to-1
             </div>
 
             <div className="text-sm text-white/70">
@@ -152,8 +152,8 @@ export default function StudyMaterialsCTA() {
             p-5
             "
           >
-            <div className="text-3xl font-black text-white">
-              1200+
+            <div className="text-3xl font-bold text-white">
+              Verified
             </div>
 
             <div className="text-sm text-white/70">
@@ -181,12 +181,12 @@ export default function StudyMaterialsCTA() {
             p-5
             "
           >
-            <div className="text-3xl font-black text-white">
-              4.8★
+            <div className="text-3xl font-bold text-white">
+              Free
             </div>
 
             <div className="text-sm text-white/70">
-              Parent Rating
+              First Assessment
             </div>
           </motion.div>
 
@@ -210,7 +210,7 @@ export default function StudyMaterialsCTA() {
             p-5
             "
           >
-            <div className="text-3xl font-black text-white">
+            <div className="text-3xl font-bold text-white">
               50K+
             </div>
 
@@ -261,15 +261,11 @@ export default function StudyMaterialsCTA() {
             className="
             mt-8
             text-5xl
-            lg:text-7xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-white
             leading-tight
             "
-            style={{
-              fontFamily:
-                "var(--font-heading)",
-            }}
           >
             Ready to Find the{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#22D3EE] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -338,7 +334,7 @@ export default function StudyMaterialsCTA() {
               gap-3
               "
             >
-              Book Free Assessment
+              Find My Tutor
 
               <ArrowRight
                 className="
@@ -412,7 +408,7 @@ export default function StudyMaterialsCTA() {
               >
                 <Icon className="w-6 h-6 text-[#7B2FF7] mx-auto mb-3" />
 
-                <div className="text-2xl font-black text-white">
+                <div className="text-2xl font-bold text-white">
                   {item.value}
                 </div>
 

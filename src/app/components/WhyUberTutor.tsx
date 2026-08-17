@@ -69,7 +69,7 @@ export function WhyTutoo() {
             Why Choose Tutoo
           </h2>
           <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
-            A comprehensive learning ecosystem powered by cutting-edge technology
+            Verified tutors, clear progress updates, and classes that fit your family
           </p>
         </motion.div>
 

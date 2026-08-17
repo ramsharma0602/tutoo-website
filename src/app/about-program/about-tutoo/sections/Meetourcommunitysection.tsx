@@ -31,7 +31,7 @@ const COMMUNITY = [
     icon: GraduationCap,
     title: "Students",
     subtitle: "Learn with Confidence",
-    desc: "Personalized academic support, expert guidance, structured learning plans, and continuous progress tracking designed to help every student unlock their full academic potential.",
+    desc: "One-to-one attention, a clear plan for the subjects you find hard, and progress you and your parents can see.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     light: "rgba(248,120,8,0.08)",
@@ -39,8 +39,8 @@ const COMMUNITY = [
     hoverChip: "📚 Personalized Learning",
     chipColor: "#7B2FF7",
     stats: [
-      { val: "5,000+", label: "Students" },
-      { val: "95%",    label: "Satisfaction" },
+      { val: "1-to-1", label: "Every Class" },
+      { val: "Free",   label: "Assessment" },
     ],
     features: ["Adaptive Learning Plans", "Expert Guidance", "Progress Tracking"],
     image: "https://media.kidsacademy.mobi/files/Blog%20Pictures%20/6_Ideas_for_Study_Space/shutterstock_414638803.jpg",
@@ -60,8 +60,8 @@ const COMMUNITY = [
     hoverChip: "📈 Progress Visibility",
     chipColor: "#7B2FF7",
     stats: [
-      { val: "4.8★",  label: "Parent Rating" },
-      { val: "100%",  label: "Transparency" },
+      { val: "Local",  label: "Kothrud & Kolhapur" },
+      { val: "Tracked", label: "Attendance" },
     ],
     features: ["Real-Time Reports", "Attendance Tracking", "Tutor Insights"],
     image: "https://www.euroschoolindia.com/blogs/wp-content/uploads/2023/06/role-of-parents-in-students-life.jpg",
@@ -81,8 +81,8 @@ const COMMUNITY = [
     hoverChip: "🚀 Teaching Opportunities",
     chipColor: "#7B2FF7",
     stats: [
-      { val: "1,200+", label: "Tutors" },
-      { val: "50+",    label: "Cities" },
+      { val: "Verified", label: "Every Tutor" },
+      { val: "Flexible", label: "Timings" },
     ],
     features: ["Flexible Schedule", "Student Network", "Career Growth"],
     image: "https://img.magnific.com/free-photo/young-mother-working-from-home-with-daughter_329181-18974.jpg?semt=ais_hybrid&w=740&q=80",
@@ -191,7 +191,7 @@ function EcosystemHub() {
           }}
         >
           <Globe className="w-7 h-7 text-white" />
-          <p className="text-[8px] font-black text-white tracking-widest mt-0.5">TUTOO</p>
+          <p className="text-[12px] font-bold text-white tracking-widest mt-0.5">TUTOO</p>
         </motion.div>
 
         {/* Orbit nodes */}
@@ -219,7 +219,7 @@ function EcosystemHub() {
                          transition-transform duration-300"
             >
               <span className="text-2xl leading-none">{n.emoji}</span>
-              <p className="text-[8px] font-black tracking-wide" style={{ color: n.color }}>
+              <p className="text-[12px] font-bold tracking-wide" style={{ color: n.color }}>
                 {n.label.toUpperCase()}
               </p>
             </motion.div>
@@ -270,7 +270,7 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
         <motion.div
           initial={{ opacity: 0, y: 8, scale: 0.9 }}
           whileHover={{ opacity: 1, y: 0, scale: 1 }}
-          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-black text-white
+          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-white
                      bg-white/15 backdrop-blur-xl border border-white/25
                      opacity-0 group-hover:opacity-100 transition-all duration-400"
         >
@@ -281,11 +281,10 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
         <div className="absolute bottom-0 left-0 right-0 p-5">
           <div className="flex items-end justify-between">
             <div>
-              <p className="text-white/60 text-[10px] font-black tracking-widest uppercase mb-1">
+              <p className="text-white/60 text-[12px] font-bold tracking-widest uppercase mb-1">
                 {member.subtitle}
               </p>
-              <h3 className="text-white text-2xl font-black leading-tight"
-                style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
+              <h3 className="text-white text-2xl font-bold leading-tight">
                 {member.emoji} {member.title}
               </h3>
             </div>
@@ -326,16 +325,15 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
             {member.stats.map((s) => (
               <div key={s.label} className="text-center p-3 rounded-2xl"
                 style={{ background: `${member.from}08`, border: `1px solid ${member.from}18` }}>
-                <p className="text-xl font-black leading-none mb-1"
+                <p className="text-xl font-bold leading-none mb-1"
                   style={{
                     background: `linear-gradient(135deg, ${member.from}, ${member.to})`,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
-                    fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
-                  }}>
+                    }}>
                   {s.val}
                 </p>
-                <p className="text-[10px] font-bold text-[#6E6A85]">{s.label}</p>
+                <p className="text-[12px] font-bold text-[#6E6A85]">{s.label}</p>
               </div>
             ))}
           </div>
@@ -361,7 +359,7 @@ function CommunityCard({ member }: { member: typeof COMMUNITY[0] }) {
           <div className="pt-5 border-t border-[rgba(30,27,58,0.07)]">
             <motion.a
               href="#"
-              className="group/cta flex items-center gap-2 text-sm font-black transition-all duration-300"
+              className="group/cta flex items-center gap-2 text-sm font-bold transition-all duration-300"
               style={{ color: member.from }}
               whileHover={{ x: 4 }}
             >
@@ -395,18 +393,16 @@ export function MeetOurCommunitySection() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-32 bg-white"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Watermark */}
         <div className="absolute inset-0 flex items-center justify-center select-none">
-          <p className="text-[180px] lg:text-[260px] font-black text-center leading-none whitespace-nowrap"
+          <p className="text-[180px] lg:text-[260px] font-bold text-center leading-none whitespace-nowrap"
             style={{
               background: "linear-gradient(135deg, rgba(248,120,8,0.03), rgba(123,47,247,0.03))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
               filter: "blur(1.5px)",
             }}>
             COMMUNITY
@@ -462,8 +458,7 @@ export function MeetOurCommunitySection() {
                          shadow-[0_0_28px_rgba(248,120,8,0.18)]"
             >
               <Star className="w-4 h-4 text-[#7B2FF7]" />
-              <span className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}>
+              <span className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]">
                 Our Community
               </span>
               <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
@@ -475,8 +470,7 @@ export function MeetOurCommunitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
-            style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
+            className="text-5xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028] mb-6"
           >
             One Platform.{" "}
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
@@ -493,7 +487,7 @@ export function MeetOurCommunitySection() {
             className="text-lg leading-8 text-[#6E6A85]"
           >
             Tutoo brings together students, parents, and tutors through a connected learning
-            ecosystem built on trust, technology, and measurable outcomes.
+            community built on trust and steady progress.
           </motion.p>
         </div>
 

@@ -21,16 +21,16 @@ export const seoConfig = {
   siteName: "Tutoo",
   legalBusinessName: "Tutoo Learning Pvt. Ltd.",
   siteUrl: "https://tutoolearning.com", // verified live production domain
-  defaultTitle: "Tutoo – AI-Powered Learning Platform | Verified Tutors, Real Results",
+  defaultTitle: "Tutoo – Home Tutors & Online Classes in Kothrud, Pune & Kolhapur",
   titleTemplate: "%s | Tutoo",
   defaultDescription:
-    "Tutoo pairs students with AI-matched, verified tutors and gives parents real-time progress tracking. Home & online tuition in Kothrud (Pune) and Kolhapur. Book a free assessment today.",
+    "Verified home tutors and one-to-one online classes for Class 1–12, JEE & NEET. Serving Kothrud (Pune) and Kolhapur. Book a free assessment — no obligation.",
   defaultKeywords: [
     "home tutor",
     "online tutor",
     "verified tutors",
     "private tuition",
-    "AI-powered tutoring",
+    "find a tutor",
     "CBSE tutor",
     "ICSE tutor",
     "SSC tutor",
@@ -59,7 +59,9 @@ export const seoConfig = {
   business: {
     email: "info@tutoolearning.com",
     phone: "+91 8446146039",
-    whatsapp: "", // TODO: add if available
+    // Business WhatsApp. Currently assumed to be the same as the phone line —
+    // replace with the dedicated WhatsApp Business number if different.
+    whatsapp: "918446146039",
     // No fixed storefront address provided — modelled as a service-area
     // business (serviceArea in schema) rather than a fake street address.
     hasPhysicalStorefront: false,

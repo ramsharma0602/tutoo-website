@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Shield,
   Eye,
@@ -57,7 +58,7 @@ const VALUES = [
     emoji: "🏆",
     icon: Trophy,
     title: "Excellence",
-    desc: "We continuously strive to deliver the highest quality learning experiences and measurable outcomes families can see and feel.",
+    desc: "We keep the quality of teaching high, and we keep parents informed about how classes are going.",
     from: "#F59E0B",
     to: "#7B2FF7",
     light: "rgba(245,158,11,0.08)",
@@ -128,13 +129,12 @@ function WatermarkText() {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
       <p
-        className="text-[88px] lg:text-[120px] font-black text-center leading-tight whitespace-nowrap"
+        className="text-5xl lg:text-[120px] font-bold text-center leading-tight whitespace-nowrap"
         style={{
           background:
             "linear-gradient(135deg, rgba(248,120,8,0.045), rgba(123,47,247,0.045), rgba(123,47,247,0.045))",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          fontFamily: "var(--font-heading, 'Clash Display', sans-serif)",
           filter: "blur(1px)",
         }}
       >
@@ -210,13 +210,12 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
 
           {/* Ghost number */}
           <span
-            className="text-[52px] font-black select-none leading-none"
+            className="text-[52px] font-bold select-none leading-none"
             style={{
               background: `linear-gradient(135deg, ${v.from}18, ${v.to}18)`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              fontFamily: "var(--font-heading, 'Clash Display', sans-serif)",
-            }}
+              }}
           >
             {v.number}
           </span>
@@ -224,8 +223,7 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
 
         {/* Title */}
         <h3
-          className="text-[22px] font-black text-[#1E1B3A] mb-3 leading-snug"
-          style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+          className="text-[22px] font-bold text-[#1E1B3A] mb-3 leading-snug"
         >
           {v.emoji} {v.title}
         </h3>
@@ -244,7 +242,7 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
           }}
         >
           <Zap className="w-3.5 h-3.5" style={{ color: v.chipColor }} />
-          <span className="text-xs font-black tracking-wide">{v.chip}</span>
+          <span className="text-xs font-bold tracking-wide">{v.chip}</span>
         </motion.div>
       </div>
 
@@ -262,6 +260,7 @@ function ValueCard({ v }: { v: typeof VALUES[0] }) {
 // ─────────────────────────────────────────────
 
 export function CoreValuesV2Section() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -274,7 +273,6 @@ export function CoreValuesV2Section() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-32 bg-white"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -324,8 +322,7 @@ export function CoreValuesV2Section() {
             >
               <Diamond className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]"
               >
                 Our Core Values
               </span>
@@ -339,8 +336,7 @@ export function CoreValuesV2Section() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-7"
-            style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
+            className="text-5xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028] mb-7"
           >
             The Values That{" "}
             <span
@@ -407,17 +403,15 @@ export function CoreValuesV2Section() {
 
               {/* Quote line 1 */}
               <p
-                className="text-3xl lg:text-4xl font-black text-[#1E1B3A] leading-tight mb-4"
-                style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+                className="text-3xl lg:text-4xl font-bold text-[#1E1B3A] leading-tight mb-4"
               >
                 "Our values are not what we write on a wall.
               </p>
 
               {/* Quote line 2 — gradient */}
               <p
-                className="text-3xl lg:text-4xl font-black leading-tight mb-10
+                className="text-3xl lg:text-4xl font-bold leading-tight mb-10
                            bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent"
-                style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
               >
                 They are what students, parents, and tutors experience every day."
               </p>
@@ -428,7 +422,7 @@ export function CoreValuesV2Section() {
                   {["#7B2FF7", "#7B2FF7", "#7B2FF7"].map((c, i) => (
                     <div
                       key={i}
-                      className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-black shadow-md"
+                      className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold shadow-md"
                       style={{
                         background: `linear-gradient(135deg, ${c}, ${["#7B2FF7", "#7B2FF7", "#7B2FF7"][i]})`,
                       }}
@@ -548,8 +542,7 @@ export function CoreValuesV2Section() {
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   <h3
-                    className="text-xl font-black text-[#1E1B3A] mb-3"
-                    style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                    className="text-xl font-bold text-[#1E1B3A] mb-3"
                   >
                     {card.title}
                   </h3>
@@ -610,14 +603,13 @@ export function CoreValuesV2Section() {
             <motion.p
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="text-[#7B2FF7] text-xs font-black tracking-widest uppercase mb-6"
+              className="text-[#7B2FF7] text-xs font-bold tracking-widest uppercase mb-6"
             >
               ✦ Values in Action ✦
             </motion.p>
 
             <h3
-              className="text-3xl lg:text-4xl font-black text-white mb-6 leading-tight"
-              style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+              className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight"
             >
               Values you can{" "}
               <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
@@ -636,7 +628,7 @@ export function CoreValuesV2Section() {
                 <motion.span
                   key={v.title}
                   whileHover={{ scale: 1.08, y: -3 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-black transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold transition-all duration-300"
                   style={{
                     color: v.from,
                     background: `${v.from}15`,
@@ -652,6 +644,8 @@ export function CoreValuesV2Section() {
             {/* CTAs */}
             <div className="flex flex-wrap justify-center gap-5">
               <motion.button
+                type="button"
+                onClick={() => navigate("/find-a-tutor")}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="h-14 px-10 rounded-2xl bg-gradient-to-r from-[#EA580C] to-[#C2410C]
@@ -663,6 +657,8 @@ export function CoreValuesV2Section() {
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
+                type="button"
+                onClick={() => navigate("/apply-tutor")}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 className="h-14 px-10 rounded-2xl bg-white/10 backdrop-blur-xl

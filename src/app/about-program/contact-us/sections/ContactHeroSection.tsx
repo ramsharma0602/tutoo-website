@@ -76,8 +76,8 @@ const FLOAT_WIDGETS = [
   },
   {
     icon: Star,
-    title: "Parent Satisfaction",
-    sub: "4.8 / 5 Rating ⭐",
+    title: "Free Assessment",
+    sub: "No obligation",
     dot: "#7B2FF7",
     grad: "from-[#EA580C] to-[#C2410C]",
     pos: "bottom-32 -left-6",
@@ -87,10 +87,10 @@ const FLOAT_WIDGETS = [
 ];
 
 const STATS = [
-  { val: "5,000+", label: "Students Supported", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
-  { val: "1,200+", label: "Verified Tutors", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
-  { val: "50+", label: "Cities Covered", icon: MapPin, grad: "from-[#7B2FF7] to-[#F59E0B]" },
-  { val: "4.8★", label: "Parent Satisfaction", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
+  { val: "1-to-1", label: "Every Class", icon: GraduationCap, grad: "from-[#EA580C] to-[#C2410C]" },
+  { val: "Verified", label: "Every Tutor", icon: Users, grad: "from-[#7B2FF7] to-[#7B2FF7]" },
+  { val: "2 Cities", label: "Kothrud & Kolhapur", icon: MapPin, grad: "from-[#7B2FF7] to-[#F59E0B]" },
+  { val: "24 hrs", label: "Callback Time", icon: Star, grad: "from-[#F59E0B] to-[#7B2FF7]" },
 ];
 
 const AUDIENCE_CARDS = [
@@ -134,8 +134,7 @@ function ContactVisual() {
             <span className="text-white/70 text-xs font-bold tracking-wide uppercase">Support Available Now</span>
           </div>
           <p
-            className="text-white text-2xl font-black leading-tight"
-            style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+            className="text-white text-2xl font-bold leading-tight"
           >
             We're here for{" "}
             <span className="text-[#6D28D9]">
@@ -171,7 +170,7 @@ function ContactVisual() {
               <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-              <p className="text-xs font-black text-[#1E1B3A] leading-tight">{w.title}</p>
+              <p className="text-xs font-bold text-[#1E1B3A] leading-tight">{w.title}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <motion.div
                   animate={{ scale: [1, 1.5, 1] }}
@@ -179,7 +178,7 @@ function ContactVisual() {
                   className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                   style={{ background: w.dot }}
                 />
-                <p className="text-[11px] text-[#6E6A85] font-semibold">{w.sub}</p>
+                <p className="text-[12px] text-[#6E6A85] font-semibold">{w.sub}</p>
               </div>
             </div>
           </motion.div>
@@ -203,7 +202,6 @@ export function ContactHeroSection() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-28 bg-[#FAFAFC]"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── Background ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -256,8 +254,7 @@ export function ContactHeroSection() {
             >
               <Phone className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}
+                className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]"
               >
                 Contact Tutoo
               </span>
@@ -266,8 +263,7 @@ export function ContactHeroSection() {
 
             {/* Heading */}
             <h1
-              className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
-              style={{ fontFamily: "var(--font-heading, 'Clash Display', 'General Sans', sans-serif)" }}
+              className="text-5xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028] mb-6"
             >
               Let's Start the{" "}
               <span
@@ -307,7 +303,7 @@ export function ContactHeroSection() {
                            flex items-center gap-2.5 transition-all duration-300"
               >
                 <GraduationCap className="w-5 h-5" />
-                Book Free Assessment
+                Find My Tutor
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
 
@@ -353,7 +349,7 @@ export function ContactHeroSection() {
             </div>
 
             {/* Audience cards */}
-            <p className="text-xs font-black tracking-widest uppercase text-[#6E6A85] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#6E6A85] mb-4">
               Who Can Reach Out
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -382,11 +378,10 @@ export function ContactHeroSection() {
                       <Icon className="w-4.5 h-4.5" style={{ color: card.color }} />
                     </div>
                     <div>
-                      <p className="text-sm font-black text-[#1E1B3A] leading-tight mb-0.5"
-                        style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
+                      <p className="text-sm font-bold text-[#1E1B3A] leading-tight mb-0.5">
                         {card.label}
                       </p>
-                      <p className="text-[11px] leading-5 text-[#6E6A85]">{card.desc}</p>
+                      <p className="text-[12px] leading-5 text-[#6E6A85]">{card.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -469,9 +464,8 @@ export function ContactHeroSection() {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="relative z-10">
-                  <p className="text-[11px] font-black tracking-widest uppercase text-[#6E6A85] mb-1">{item.title}</p>
-                  <p className="text-base font-black text-[#1E1B3A] mb-0.5"
-                    style={{ fontFamily: "var(--font-heading, 'General Sans', sans-serif)" }}>
+                  <p className="text-[12px] font-bold tracking-widest uppercase text-[#6E6A85] mb-1">{item.title}</p>
+                  <p className="text-base font-bold text-[#1E1B3A] mb-0.5">
                     {item.line1}
                   </p>
                   <p className="text-xs text-[#6E6A85] font-semibold">{item.line2}</p>
@@ -516,8 +510,7 @@ export function ContactHeroSection() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <p
-                    className={`text-3xl font-black bg-gradient-to-r ${s.grad} bg-clip-text text-transparent`}
-                    style={{ fontFamily: "var(--font-heading, 'Clash Display', sans-serif)" }}
+                    className={`text-3xl font-bold bg-gradient-to-r ${s.grad} bg-clip-text text-transparent`}
                   >
                     {s.val}
                   </p>

@@ -56,23 +56,23 @@ const problems = [
 const stats = [
   {
     icon: "🎓",
-    value: "5000+",
-    label: "Students Supported",
+    value: "1-to-1",
+    label: "Every Class",
   },
   {
     icon: "👨‍🏫",
-    value: "1200+",
-    label: "Tutors Connected",
+    value: "Verified",
+    label: "Every Tutor",
   },
   {
-    icon: "📈",
-    value: "50,000+",
-    label: "Learning Sessions",
+    icon: "🏠",
+    value: "Home & Online",
+    label: "Your Choice",
   },
   {
-    icon: "⭐",
-    value: "4.8/5",
-    label: "Parent Satisfaction",
+    icon: "🆓",
+    value: "Free",
+    label: "First Assessment",
   },
 ];
 
@@ -143,14 +143,11 @@ export default function ProblemWeSolve() {
           <h2
             className="
             text-5xl
-            lg:text-7xl
-            font-black
+            lg:text-5xl
+            font-bold
             leading-[1.05]
             text-white
             "
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
           >
             Why{" "}
             <span
@@ -176,7 +173,7 @@ export default function ProblemWeSolve() {
             <br />
 
             Tutoo was built to bring all three together through
-            technology, trust, and measurable learning outcomes.
+            the right tutor, verified profiles, and classes parents can follow.
           </p>
         </motion.div>
 
@@ -344,13 +341,10 @@ export default function ProblemWeSolve() {
             max-w-5xl
             mx-auto
             "
-            style={{
-              fontFamily: "var(--font-heading)",
-            }}
           >
-            Education works best when students receive
-            personalized support, parents stay informed,
-            and tutors are empowered to teach effectively.
+            Learning works best when the student gets personal
+            attention, the parent knows what is happening, and the
+            tutor has what they need to teach well.
           </p>
         </motion.div>
 
@@ -381,7 +375,7 @@ export default function ProblemWeSolve() {
                 {item.icon}
               </div>
 
-              <div className="text-3xl font-black text-white">
+              <div className="text-3xl font-bold text-white">
                 {item.value}
               </div>
 

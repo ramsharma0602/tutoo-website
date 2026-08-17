@@ -22,7 +22,7 @@ const featuredResources = [
 
     board: "CBSE",
 
-    downloads: "12,500+",
+    downloads: "Free download",
 
     pages: "180 Pages",
 
@@ -49,7 +49,7 @@ const featuredResources = [
       "ICSE",
 
     downloads:
-      "9,200+",
+      "Free download",
 
     pages:
       "140 Pages",
@@ -77,7 +77,7 @@ const featuredResources = [
       "SSC",
 
     downloads:
-      "8,700+",
+      "Free download",
 
     pages:
       "220 Pages",
@@ -105,7 +105,7 @@ const featuredResources = [
       "CBSE",
 
     downloads:
-      "6,800+",
+      "Free download",
 
     pages:
       "95 Pages",
@@ -190,14 +190,10 @@ export default function FeaturedDownloads() {
             className="
             mt-6
             text-4xl
-            lg:text-6xl
-            font-black
+            lg:text-5xl
+            font-bold
             text-[#0A1028]
             "
-            style={{
-              fontFamily:
-                "var(--font-heading)",
-            }}
           >
             Recommended{" "}
             <span className="text-[#6D28D9]">
@@ -322,7 +318,7 @@ export default function FeaturedDownloads() {
                     <h3
                       className="
                       text-3xl
-                      font-black
+                      font-bold
                       text-white
                       leading-tight
                       "
@@ -382,7 +378,7 @@ export default function FeaturedDownloads() {
                       font-semibold
                       "
                     >
-                      {resource.downloads} Downloads
+                      {resource.downloads}
                     </div>
 
                   </div>

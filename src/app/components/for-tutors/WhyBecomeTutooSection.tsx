@@ -40,9 +40,9 @@ export function WhyBecomeTutooSection() {
 
         {
             icon: Wallet,
-            title: "Attractive Earnings",
+            title: "Teach Your Way",
             description:
-                "Earn competitive payouts with weekly payments and performance-based growth opportunities.",
+                "Choose your subjects, classes and timings — teach in a way that fits your life.",
 
             gradient: "from-[#7B2FF7] to-[#7B2FF7]",
         },
@@ -69,7 +69,7 @@ export function WhyBecomeTutooSection() {
             icon: TrendingUp,
             title: "Career Growth",
             description:
-                "Build your teaching profile, improve ratings, and unlock long-term growth opportunities.",
+                "Build your teaching profile, take on more subjects, and grow with us over time.",
 
             gradient: "from-[#F59E0B] to-[#7B2FF7]",
         },
@@ -113,8 +113,7 @@ export function WhyBecomeTutooSection() {
 
                     {/* Heading */}
                     <h2
-                        className="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight text-[#0A1028]"
-                        style={{ fontFamily: "var(--font-heading)" }}
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028]"
                     >
                         Build a{" "}
 
@@ -125,9 +124,8 @@ export function WhyBecomeTutooSection() {
 
                     {/* Subheading */}
                     <p className="mt-8 text-lg leading-8 text-[#6E6A85] max-w-3xl mx-auto">
-                        Teach with flexibility, grow your income, access quality students,
-                        and build your professional teaching career with Tutoo’s
-                        AI-powered learning ecosystem.
+                        Teach with flexibility, access serious students,
+                        and build your teaching career with Tutoo.
                     </p>
                 </motion.div>
 
@@ -139,7 +137,7 @@ export function WhyBecomeTutooSection() {
 
                     {[
                         // "Weekly Payouts",
-                        "AI Tutor Match",
+                        "Verified Students",
                         "Verified Tutors",
                         "Live Classes",
                         "Top Rated Tutor",
@@ -206,7 +204,7 @@ export function WhyBecomeTutooSection() {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="mt-8 text-3xl font-black leading-tight text-[#1E1B3A] group-hover:text-white transition-colors duration-500">
+                                    <h3 className="mt-8 text-3xl font-bold leading-tight text-[#1E1B3A] group-hover:text-white transition-colors duration-500">
 
                                         {item.title}
                                     </h3>
@@ -316,7 +314,7 @@ export function WhyBecomeTutooSection() {
                         </p>
 
                         <p className="text-xs text-[#6E6A85] mt-1">
-                            120+ ongoing sessions
+                            One-to-one, home or online
                         </p>
                     </div>
                 </div>

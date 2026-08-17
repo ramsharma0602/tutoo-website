@@ -287,7 +287,7 @@ export default function ForParentsPage() {
                         <p className="mt-6 text-lg leading-8 text-[#6E6A85]">
                             From verified tutors to real-time progress tracking —
                             Tutoo combines technology, safety, and personalized
-                            learning into one intelligent ecosystem.
+                            learning in one simple place.
                         </p>
                     </div>
 

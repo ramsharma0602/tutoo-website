@@ -35,7 +35,7 @@ const TRUST_CARDS = [
     glow: "rgba(248,120,8,0.28)",
     chip: "100% Verified",
     chipIcon: ShieldCheck,
-    stat: { val: "1,200+", label: "Tutors" },
+    stat: { val: "ID + Docs", label: "Checked" },
     delay: 0.06,
     colSpan: 1,
   },
@@ -48,9 +48,9 @@ const TRUST_CARDS = [
     to: "#7B2FF7",
     light: "rgba(123,47,247,0.07)",
     glow: "rgba(123,47,247,0.28)",
-    chip: "AI-Powered",
+    chip: "Structured",
     chipIcon: Zap,
-    stat: { val: "5,000+", label: "Plans Created" },
+    stat: { val: "Per Child", label: "Planned" },
     delay: 0.12,
     colSpan: 1,
   },
@@ -58,7 +58,7 @@ const TRUST_CARDS = [
     emoji: "📈",
     icon: BarChart3,
     title: "Regular Progress Reports",
-    desc: "Parents receive structured updates, academic insights, and measurable learning outcomes — no guesswork, full visibility.",
+    desc: "Parents receive regular updates from the tutor and can check attendance for every class — no guesswork.",
     from: "#7B2FF7",
     to: "#7B2FF7",
     light: "rgba(123,47,247,0.07)",
@@ -195,24 +195,22 @@ function TrustCard({ card }: { card: typeof TRUST_CARDS[0] }) {
           {/* Stat badge */}
           <div className="flex flex-col items-end gap-0.5">
             <span
-              className="text-2xl font-black leading-none"
+              className="text-2xl font-bold leading-none"
               style={{
                 background: `linear-gradient(135deg, ${card.from}, ${card.to})`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
-              }}
+                }}
             >
               {card.stat.val}
             </span>
-            <span className="text-[10px] font-bold text-[#6E6A85]">{card.stat.label}</span>
+            <span className="text-[12px] font-bold text-[#6E6A85]">{card.stat.label}</span>
           </div>
         </div>
 
         {/* Title */}
         <h3
-          className="text-[19px] font-black text-[#1E1B3A] mb-3 leading-tight"
-          style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}
+          className="text-[19px] font-bold text-[#1E1B3A] mb-3 leading-tight"
         >
           {card.emoji} {card.title}
         </h3>
@@ -231,7 +229,7 @@ function TrustCard({ card }: { card: typeof TRUST_CARDS[0] }) {
           }}
         >
           <ChipIcon className="w-3.5 h-3.5" />
-          <span className="text-xs font-black">{card.chip}</span>
+          <span className="text-xs font-bold">{card.chip}</span>
         </motion.div>
       </div>
 
@@ -252,19 +250,17 @@ export function WhyParentsTrustSection() {
   return (
     <section
       className="relative overflow-hidden py-32 bg-white"
-      style={{ fontFamily: "var(--font-body, Inter, sans-serif)" }}
     >
       {/* ── BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Watermark */}
         <div className="absolute inset-0 flex items-center justify-center select-none">
           <p
-            className="text-[140px] lg:text-[200px] font-black text-center leading-none whitespace-nowrap"
+            className="text-[140px] lg:text-[200px] font-bold text-center leading-none whitespace-nowrap"
             style={{
               background: "linear-gradient(135deg, rgba(248,120,8,0.032), rgba(123,47,247,0.032))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              fontFamily: "var(--font-heading,'Clash Display',sans-serif)",
               filter: "blur(1.5px)",
             }}
           >
@@ -304,8 +300,7 @@ export function WhyParentsTrustSection() {
             >
               <Shield className="w-4 h-4 text-[#7B2FF7]" />
               <span
-                className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                style={{ fontFamily: "var(--font-heading,'General Sans',sans-serif)" }}
+                className="text-sm font-bold tracking-widest uppercase text-[#7B2FF7]"
               >
                 Trust & Transparency
               </span>
@@ -319,8 +314,7 @@ export function WhyParentsTrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.72, delay: 0.08 }}
-            className="text-5xl lg:text-[62px] font-black leading-[1.05] tracking-tight text-[#0A1028] mb-6"
-            style={{ fontFamily: "var(--font-heading,'Clash Display','General Sans',sans-serif)" }}
+            className="text-5xl lg:text-5xl font-bold leading-[1.05] tracking-tight text-[#0A1028] mb-6"
           >
             <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent
                              drop-shadow-[0_0_36px_rgba(248,120,8,0.22)]">
@@ -343,29 +337,20 @@ export function WhyParentsTrustSection() {
             educational outcomes every single day.
           </motion.p>
 
-          {/* Star rating row */}
+          {/* Trust row — no star rating: we do not run a review system yet,
+              so there is no honest number to show here. */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.26 }}
-            className="flex items-center justify-center gap-3 mt-6"
+            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6"
           >
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.06, type: "spring", bounce: 0.5 }}
-                >
-                  <Star className="w-5 h-5 fill-[#F59E0B] text-[#F59E0B]" />
-                </motion.div>
-              ))}
-            </div>
-            <span className="text-sm font-black text-[#1E1B3A]">4.8 / 5</span>
-            <span className="text-sm text-[#6E6A85]">· 5,000+ parents satisfied</span>
+            {["Verified tutors", "Free assessment", "No obligation"].map((t) => (
+              <span key={t} className="flex items-center gap-2 text-sm font-medium text-[#1E1B3A]">
+                <ShieldCheck className="w-4 h-4 text-[#16A34A]" /> {t}
+              </span>
+            ))}
           </motion.div>
         </div>
 
@@ -402,15 +387,13 @@ export function WhyParentsTrustSection() {
             </div>
 
             <p
-              className="text-2xl lg:text-3xl font-black text-[#1E1B3A] leading-tight mb-4"
-              style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
+              className="text-2xl lg:text-3xl font-bold text-[#1E1B3A] leading-tight mb-4"
             >
               "Education works best when parents stay
             </p>
             <p
-              className="text-2xl lg:text-3xl font-black leading-tight mb-10
+              className="text-2xl lg:text-3xl font-bold leading-tight mb-10
                          bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent"
-              style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
             >
               informed, students stay motivated, and tutors stay supported."
             </p>
@@ -436,7 +419,7 @@ export function WhyParentsTrustSection() {
                       style={{ background: `${item.c}15` }}>
                       <Icon className="w-5 h-5" style={{ color: item.c }} />
                     </div>
-                    <span className="text-xs font-black text-[#1E1B3A]">{item.text}</span>
+                    <span className="text-xs font-bold text-[#1E1B3A]">{item.text}</span>
                   </motion.div>
                 );
               })}
@@ -507,13 +490,12 @@ export function WhyParentsTrustSection() {
                 <motion.p
                   animate={{ scale: [1, 1.02, 1] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="text-[#7B2FF7] text-xs font-black tracking-widest uppercase mb-4"
+                  className="text-[#7B2FF7] text-xs font-bold tracking-widest uppercase mb-4"
                 >
-                  ✦ Join 5,000+ Families ✦
+                  ✦ Start With a Free Assessment ✦
                 </motion.p>
                 <h3
-                  className="text-3xl lg:text-4xl font-black text-white mb-3 leading-tight"
-                  style={{ fontFamily: "var(--font-heading,'Clash Display',sans-serif)" }}
+                  className="text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight"
                 >
                   Ready to experience the{" "}
                   <span className="text-[#6D28D9]">
@@ -543,7 +525,7 @@ export function WhyParentsTrustSection() {
                   style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.18)" }}
                 >
                   <Star className="w-4 h-4 text-[#F59E0B]" />
-                  Book Free Assessment
+                  Find My Tutor
                 </motion.button>
               </div>
             </div>
