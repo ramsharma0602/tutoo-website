@@ -1,213 +1,221 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, MapPin, Home, Monitor, ArrowRight, GraduationCap } from 'lucide-react';
+import {
+  ShieldCheck,
+  Monitor,
+  CalendarClock,
+  Lock,
+  ArrowRight,
+  BookOpen,
+  GraduationCap,
+  Trophy,
+  MessageSquare,
+  Code2,
+  Music,
+  PersonStanding,
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { track } from '../../seo/analytics';
 
-/* Phase 1 hero (UX plan §7): tutoring-first message, one primary CTA,
-   mini requirement form that prefills /book-free-assessment.
-   Replaces the platform pitch, fake dashboard and dead "Explore Platform". */
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO — full-bleed banner
 
-const CLASS_OPTIONS = [
-  'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5',
-  'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10',
-  'Class 11', 'Class 12', 'JEE / NEET',
+   The photo is a transparent cutout — the studio backdrop has been removed, so
+   there is no white block and no card. The subjects sit directly on the page
+   background and the gradient shows through around them.
+
+   Because the asset carries alpha, do NOT re-export it as JPEG and do not add
+   a background colour behind it.
+
+   The "We help in" card is centred on the boundary between this section and the
+   one below: it sits in flow after the banner and is shifted up by half its own
+   height. Move the whole group with the banner's bottom padding; do not swap the
+   translate for a fixed negative margin, which is what previously let the card
+   climb over the "Find a Tutor" button.
+───────────────────────────────────────────────────────────────────────── */
+
+const TRUST_BADGES = [
+  { icon: ShieldCheck, line1: 'Verified', line2: 'Tutors' },
+  { icon: Monitor, line1: 'Online &', line2: 'Home' },
+  { icon: CalendarClock, line1: 'Flexible', line2: 'Timings' },
+  { icon: Lock, line1: 'Safe &', line2: 'Trusted' },
 ];
 
-const TRUST_POINTS = [
-  'Verified tutors',
-  'Free assessment',
-  'No obligation',
-  'Progress updates for parents',
+/* The seven categories from the approved banner.
+   NOTE: Tutoo currently staffs school subjects, boards and competitive exams.
+   College, Language, Coding & IT, Music and Skills are shown here by owner
+   decision — make sure the team can respond to an enquiry for each of them. */
+const CATEGORIES = [
+  { icon: BookOpen, label: 'School Subject', color: '#2563EB' },
+  { icon: GraduationCap, label: 'College Subject', color: '#16A34A' },
+  { icon: Trophy, label: 'Competitive Exam', color: '#7B2FF7' },
+  { icon: MessageSquare, label: 'Language', color: '#EA580C' },
+  { icon: Code2, label: 'Coding & IT', color: '#2563EB' },
+  { icon: Music, label: 'Music', color: '#DB2777' },
+  { icon: PersonStanding, label: 'Skills', color: '#0D9488' },
 ];
+
+const PHOTO_ALT =
+  'A tutor explaining a page of a textbook to a young student sitting beside her at home';
 
 export function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-24 overflow-hidden">
-      {/* Soft brand wash */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F4EFFE] via-[#FAFAFC] to-[#FFF1E7] opacity-70" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e1b3a08_1px,transparent_1px),linear-gradient(to_bottom,#1e1b3a08_1px,transparent_1px)] bg-[size:64px_64px]" />
+    <section className="relative z-10 bg-white">
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left content */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E6E3F0] rounded-full mb-6 shadow-sm">
-              <MapPin className="w-4 h-4 text-[#6D28D9]" />
-              <span className="text-sm font-medium text-[#1E1B3A]">
-                Kothrud (Pune) · Kolhapur · Online across India
-              </span>
-            </div>
+      {/* ══════════════ BANNER BLOCK ══════════════ */}
+      <div className="relative overflow-hidden">
 
-            <h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E1B3A] mb-6 leading-[1.12] tracking-[-0.02em]"
-            >
-              Looking for a Tutor?{' '}
-              <span className="text-[#6D28D9]">We&apos;ll Help You Find the Right One.</span>
-            </h1>
+        {/* Background: tint on the left, pure white well before the photo starts */}
+        <div
+          className="absolute inset-0 bg-[linear-gradient(100deg,#E8F0FF_0%,#F1EEFF_22%,#FCFAFF_36%,#FFFFFF_46%,#FFFFFF_100%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 opacity-[0.28] bg-[linear-gradient(to_right,#1e1b3a08_1px,transparent_1px),linear-gradient(to_bottom,#1e1b3a08_1px,transparent_1px)] bg-[size:64px_64px]"
+          aria-hidden="true"
+        />
 
-            <p className="text-lg lg:text-xl text-[#4B4763] mb-8 leading-relaxed max-w-xl">
-              Tutors for school subjects, boards and competitive exams, Class 1–12.
-              Online or at home. One-to-one.
-            </p>
+        {/* Soft brand circle, sitting between the copy and the photo */}
+        <div
+          className="hidden lg:block absolute left-[42%] top-[10%] w-[30rem] h-[30rem] rounded-full bg-gradient-to-br from-[#CFE0FF]/45 to-[#E7DBFF]/45 blur-[70px]"
+          aria-hidden="true"
+        />
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <button
-                type="button"
-                /* Label rule: "Find a Tutor" = browse page.
-                   "Find My Tutor" (the form, right) = requirement form. */
-                onClick={() => navigate('/find-a-tutor')}
-                className="px-8 py-4 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-xl font-semibold transition-colors duration-200 text-lg"
-              >
-                Find a Tutor
-              </button>
-              <button
-                type="button"
-                onClick={() => navigate('/how-it-work')}
-                className="px-8 py-4 bg-white border-[1.5px] border-[#7B2FF7] text-[#6D28D9] rounded-xl font-semibold hover:bg-[#F4EFFE] transition-colors duration-200 text-lg"
-              >
-                How Tutoo Works
-              </button>
-            </div>
-
-            {/* Honest trust points — no invented numbers */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
-              {TRUST_POINTS.map((point) => (
-                <div key={point} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#16A34A] flex-shrink-0" />
-                  <span className="text-sm font-medium text-[#1E1B3A]">{point}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right: mini requirement form */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="relative"
-          >
-            <RequirementMiniForm />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* Compact requirement capture — hands off to /book-free-assessment with
-   the answers prefilled via query params so the parent never re-enters them. */
-function RequirementMiniForm() {
-  const navigate = useNavigate();
-  const [klass, setKlass] = useState('');
-  const [mode, setMode] = useState<'home' | 'online' | ''>('');
-  const [area, setArea] = useState('');
-
-  const handleContinue = () => {
-    const params = new URLSearchParams();
-    if (klass) params.set('class', klass);
-    if (mode) params.set('mode', mode);
-    if (area.trim()) params.set('area', area.trim());
-    const qs = params.toString();
-    track('hero_form_submit', { klass, mode, has_area: Boolean(area.trim()) });
-    navigate(`/book-free-assessment${qs ? `?${qs}` : ''}`);
-  };
-
-  return (
-    <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-[0_8px_24px_rgba(30,27,58,0.10)] border border-[#E6E3F0] max-w-md lg:ml-auto">
-      <div className="flex items-center gap-3 mb-1">
-        <div className="w-10 h-10 rounded-xl bg-[#F4EFFE] flex items-center justify-center">
-          <GraduationCap className="w-5 h-5 text-[#6D28D9]" />
-        </div>
-        <h2 className="text-xl font-bold text-[#1E1B3A]">Tell us what you need</h2>
-      </div>
-      <p className="text-sm text-[#6E6A85] mb-6">
-        Takes under a minute. We call you back within 24 hours.
-      </p>
-
-      <div className="space-y-4">
-        <div>
-          <label htmlFor="hero-class" className="block text-[13px] font-semibold text-[#1E1B3A] mb-1.5">
-            Student&apos;s class
-          </label>
-          <select
-            id="hero-class"
-            value={klass}
-            onChange={(e) => setKlass(e.target.value)}
-            className="w-full h-12 rounded-xl border border-[#E6E3F0] bg-white px-4 text-base text-[#1E1B3A] outline-none focus:border-[#7B2FF7] focus:ring-4 focus:ring-[#7B2FF7]/10 transition-all"
-          >
-            <option value="">Select class</option>
-            {CLASS_OPTIONS.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <span className="block text-[13px] font-semibold text-[#1E1B3A] mb-1.5">
-            Tuition mode
-          </span>
-          <div className="grid grid-cols-2 gap-3" role="group" aria-label="Tuition mode">
-            <button
-              type="button"
-              aria-pressed={mode === 'home'}
-              onClick={() => setMode('home')}
-              className={`flex items-center justify-center gap-2 h-12 rounded-xl border text-sm font-semibold transition-colors ${
-                mode === 'home'
-                  ? 'bg-[#F4EFFE] border-[#7B2FF7] text-[#5B21B6]'
-                  : 'bg-white border-[#E6E3F0] text-[#4B4763] hover:border-[#7B2FF7]/40'
-              }`}
-            >
-              <Home className="w-4 h-4" /> Home tuition
-            </button>
-            <button
-              type="button"
-              aria-pressed={mode === 'online'}
-              onClick={() => setMode('online')}
-              className={`flex items-center justify-center gap-2 h-12 rounded-xl border text-sm font-semibold transition-colors ${
-                mode === 'online'
-                  ? 'bg-[#F4EFFE] border-[#7B2FF7] text-[#5B21B6]'
-                  : 'bg-white border-[#E6E3F0] text-[#4B4763] hover:border-[#7B2FF7]/40'
-              }`}
-            >
-              <Monitor className="w-4 h-4" /> Online
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="hero-area" className="block text-[13px] font-semibold text-[#1E1B3A] mb-1.5">
-            Area / city {mode === 'online' && <span className="font-normal text-[#6E6A85]">(optional)</span>}
-          </label>
-          <input
-            id="hero-area"
-            type="text"
-            value={area}
-            onChange={(e) => setArea(e.target.value)}
-            placeholder="e.g. Kothrud, Pune"
-            className="w-full h-12 rounded-xl border border-[#E6E3F0] bg-white px-4 text-base text-[#1E1B3A] outline-none focus:border-[#7B2FF7] focus:ring-4 focus:ring-[#7B2FF7]/10 transition-all"
+        {/* ────── Photo: transparent cutout, no background block ────── */}
+        <div className="hidden lg:block absolute bottom-0 right-0 w-[54%] xl:w-[52%] 2xl:w-[50%] pointer-events-none">
+          <img
+            src="/tutoo_assets/hero/tutor-student-3.png"
+            alt={PHOTO_ALT}
+            width={1400}
+            height={1077}
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-auto object-contain object-bottom drop-shadow-[0_18px_40px_rgba(30,27,58,0.10)]"
           />
         </div>
 
-        <button
-          type="button"
-          onClick={handleContinue}
-          className="w-full flex items-center justify-center gap-2 h-12 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-semibold transition-colors duration-200"
-        >
-          Find My Tutor <ArrowRight className="w-4 h-4" />
-        </button>
+        {/* ────── Copy ────── */}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[50%] xl:w-[48%] pt-32 pb-28 lg:pt-36 lg:pb-36"
+          >
+            <h1 className="max-w-[13ch] sm:max-w-[15ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.75rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]">
+              Find the Best Tutor.
+              <span className="mt-1 block text-[#EA580C]">Learn Better.</span>
+            </h1>
 
-        <p className="text-center text-xs text-[#6E6A85]">
-          No spam. Free assessment, no obligation.
-        </p>
+            <p className="mt-5 text-lg lg:text-xl leading-relaxed text-[#4B4763] max-w-lg">
+              Home &amp; online tutors for school subjects, boards and
+              competitive exams — Class 1 to 12.
+            </p>
+
+            <div className="mt-8 grid grid-cols-4 gap-x-3 sm:gap-x-4 gap-y-6 max-w-sm">
+              {TRUST_BADGES.map((badge, i) => (
+                <motion.div
+                  key={badge.line1}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 + i * 0.07, duration: 0.4 }}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white shadow-[0_6px_18px_rgba(30,27,58,0.10)] flex items-center justify-center mb-2.5">
+                    <badge.icon className="w-6 h-6 text-[#6D28D9]" strokeWidth={1.9} />
+                  </div>
+                  <span className="text-[13px] font-semibold text-[#1E1B3A] leading-tight">
+                    {badge.line1}
+                    <br />
+                    {badge.line2}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <button
+                type="button"
+                onClick={() => navigate('/find-a-tutor')}
+                className="group inline-flex items-center justify-center gap-2.5 px-8 h-14 rounded-xl bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-lg shadow-[0_10px_28px_rgba(234,88,12,0.30)] transition-colors"
+              >
+                Find a Tutor
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+            </div>
+          </motion.div>
+
+          {/* ────── Photo: stacked, full-width (mobile & tablet) ────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:hidden relative -mx-6 pb-4"
+          >
+            <img
+              src="/tutoo_assets/hero/tutor-student-sm-1.png"
+              alt={PHOTO_ALT}
+              width={820}
+              height={631}
+              fetchPriority="high"
+              decoding="async"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
+        </div>
       </div>
-    </div>
+
+
+      {/* ══════════════ "WE HELP IN" ══════════════
+          Sits in flow BELOW the banner and is shifted up by exactly half its own
+          height, so its centre line lands on the section boundary — half on the
+          banner, half on the section below. The shift is relative to the card
+          itself, never a fixed offset, so it cannot ride up over the button.
+          It lives outside the banner's overflow-hidden so the lower half is not
+          clipped, and the section carries z-10 so it paints over what follows. */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="-translate-y-1/2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-white rounded-[22px] shadow-[0_14px_44px_rgba(30,27,58,0.12)] border border-[#EFEDF6] px-5 sm:px-8 py-5"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+            <p className="text-sm font-bold text-[#1E1B3A] shrink-0 text-center lg:text-left lg:border-r lg:border-[#EFEDF6] lg:pr-6">
+              We help in
+            </p>
+
+            <ul className="flex-1 grid grid-cols-4 gap-y-4 sm:flex sm:items-start sm:justify-between">
+              {CATEGORIES.map((c, i) => (
+                <li
+                  key={c.label}
+                  className={`flex flex-col items-center justify-start text-center gap-1.5 px-0.5 sm:px-3.5 min-h-[3.25rem] ${
+                    i > 0 ? 'sm:border-l sm:border-[#F1EFF7]' : ''
+                  }`}
+                >
+                  <c.icon className="w-[22px] h-[22px]" style={{ color: c.color }} strokeWidth={1.9} />
+                  <span className="text-[11px] sm:text-xs font-medium text-[#4B4763] leading-tight whitespace-nowrap">
+                    {c.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-4 pt-3.5 border-t border-[#F1EFF7] flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[13.5px] text-[#4B4763]">
+            <span className="font-medium">One-to-One Learning</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
+            <span className="font-medium">Personal Attention</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
+            <span className="font-medium">Better Results</span>
+          </div>
+        </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -7,10 +7,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
    PRIMARY NAVIGATION (approved header redesign)
 
      Find a Tutor · Online Tutor · Home Tutor · Subjects ▾ ·
-     For Parent/Student ▾ · Become a Tutor · [Find My Tutor]
+     For Parent ▾ · For Student ▾ · Become a Tutor · [Book a Free Consultation]
 
      Label rule (booklet voice): "Find a Tutor" always means the browse page
-     at /find-a-tutor; "Find My Tutor" always means the requirement form at
+     at /find-a-tutor. The header CTA reads "Book a Free Consultation" and
      /book-free-assessment. Same words as the booklet, no ambiguity.
 
    Decisions baked in:
@@ -66,11 +66,20 @@ const MENU_ITEMS: MenuItem[] = [
     })),
   },
   {
-    title: 'For Parent/Student',
+    title: 'For Parent',
     subMenu: [
       { title: 'How It Works', href: '/how-it-work' },
       { title: 'Meet Our Tutors', href: '/find-a-tutor' },
       { title: 'FAQs', href: '/#faq' },
+      { title: 'Contact Us', href: '/contact-us' },
+    ],
+  },
+  {
+    title: 'For Student',
+    subMenu: [
+      { title: 'Find a Tutor', href: '/find-a-tutor' },
+      { title: 'Study Material', href: '/study-material' },
+      { title: 'How It Works', href: '/how-it-work' },
       { title: 'Contact Us', href: '/contact-us' },
     ],
   },
@@ -79,7 +88,7 @@ const MENU_ITEMS: MenuItem[] = [
 
 export function Navbar() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -117,7 +126,18 @@ export function Navbar() {
 
   const isActive = (href?: string) => {
     if (!href) return false;
-    const path = href.split(/[?#]/)[0];
+
+    const [beforeHash, hashId] = href.split('#');
+    const path = beforeHash.split('?')[0];
+
+    /* Anchor links such as "/#faq" resolve to the "/" path, which used to make
+       every menu containing one light up on the home page. An anchor counts as
+       active only when that section is the one actually open. */
+    if (hashId) {
+      const base = !path || path === '/' ? '/' : path;
+      return pathname === base && hash === `#${hashId}`;
+    }
+
     if (!path || path === '/') return pathname === '/';
     return pathname === path || pathname.startsWith(path + '/');
   };
@@ -149,9 +169,10 @@ export function Navbar() {
               alt=""
               className="h-10 xl:h-12 w-auto object-contain"
             />
-            {/* Wordmark hides on very small screens and at the tightest
-                desktop width, so the six nav items always have room. */}
-            <span className="hidden sm:flex flex-col leading-none">
+            {/* Wordmark hides on very small screens, and again between 1280 and
+                1535px where seven nav items plus the CTA need the room. It
+                returns at 2xl. The logo icon always stays. */}
+            <span className="hidden sm:flex xl:hidden 2xl:flex flex-col leading-none">
               <span className="text-lg font-bold tracking-tight text-[#1E1B3A]">
                 Tutoo Learning
               </span>
@@ -162,7 +183,7 @@ export function Navbar() {
           </Link>
 
           {/* ── Desktop nav (1280px+) ── */}
-          <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-6">
             {MENU_ITEMS.map((item) => (
               <div
                 key={item.title}
@@ -253,7 +274,7 @@ export function Navbar() {
               onClick={() => navigate('/book-free-assessment')}
               className="px-5 2xl:px-6 py-3 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-xl transition-colors duration-200 font-semibold text-[15px] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] focus-visible:ring-offset-2"
             >
-              Find My Tutor
+              Book a Free Consultation
             </button>
           </div>
 
@@ -346,7 +367,7 @@ export function Navbar() {
               }}
               className="mt-5 w-full min-h-[52px] rounded-xl text-white font-semibold text-[16px] bg-[#EA580C] active:bg-[#C2410C]"
             >
-              Find My Tutor
+              Book a Free Consultation
             </button>
           </div>
         </motion.div>
