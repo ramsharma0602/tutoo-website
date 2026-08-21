@@ -1,113 +1,110 @@
 import { motion } from 'motion/react';
-import { UserCheck, FileText, TrendingUp, Search } from 'lucide-react';
+import { FileText, Search, UserCheck, GraduationCap, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SectionHeading } from './common/SectionHeading';
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HOW TUTOO WORKS — the booklet's four steps.
+
+   Worded for how Tutoo actually works today: we shortlist and share tutor
+   profiles, and the parent chooses. Do not promise the parent can talk to a
+   tutor before choosing until that is genuinely possible.
+───────────────────────────────────────────────────────────────────────── */
+
+const STEPS = [
+  {
+    n: '01',
+    icon: FileText,
+    title: 'Tell Us What You Need',
+    text: 'Class, subject, and whether you want a tutor at home or online. Takes under a minute.',
+  },
+  {
+    n: '02',
+    icon: Search,
+    title: 'We Find Suitable Tutors',
+    text: 'We assess your child for free, then shortlist verified tutors who match what you asked for.',
+  },
+  {
+    n: '03',
+    icon: UserCheck,
+    title: 'Choose Your Tutor',
+    text: 'We share the tutor profiles with you. You pick the one who feels right for your child.',
+  },
+  {
+    n: '04',
+    icon: GraduationCap,
+    title: 'Start Learning',
+    text: 'Classes begin at your home or online, with attendance and updates you can check.',
+  },
+];
 
 export function HowItWorks() {
   const navigate = useNavigate();
-  /* The booklet's four steps, worded for how Tutoo actually works today:
-     we shortlist and share tutor profiles, the parent chooses. */
-  const steps = [
-    {
-      number: '01',
-      icon: FileText,
-      title: 'Tell Us What You Need',
-      description: 'Share the class, subject and learning requirement. Takes under a minute.',
-      color: 'violet'
-    },
-    {
-      number: '02',
-      icon: Search,
-      title: 'We Find Suitable Tutors',
-      description: 'We assess your child for free, then shortlist verified tutors who match your requirement.',
-      color: 'violet'
-    },
-    {
-      number: '03',
-      icon: UserCheck,
-      title: 'Choose Your Tutor',
-      description: 'We share the tutor profiles with you. You pick the one who feels right for your child.',
-      color: 'violet'
-    },
-    {
-      number: '04',
-      icon: TrendingUp,
-      title: 'Start Learning',
-      description: 'Classes begin at your home or online, with attendance and progress you can check.',
-      color: 'violet'
-    }
-  ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="relative py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2
-            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-4"
-          >
-            How Tutoo Works
-          </h2>
-          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
-            Tell us what you need. We&apos;ll help you find the right one.
-          </p>
-        </motion.div>
+
+        <SectionHeading
+          eyebrow="How It Works"
+          title="Finding a tutor is simple"
+          lead="Tell us what you need. We'll help you find the right one."
+        />
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] hidden lg:block" />
+          {/* Connecting line behind the cards, desktop only */}
+          <div
+            className="hidden lg:block absolute top-[4.25rem] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-[#E6E3F0] to-transparent"
+            aria-hidden="true"
+          />
 
-          <div className="space-y-12">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative flex items-start gap-8"
+          <ol className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {STEPS.map((step, i) => (
+              <motion.li
+                key={step.n}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                className="group relative bg-white rounded-[22px] ring-1 ring-[#EFEDF6] shadow-[0_8px_28px_rgba(30,27,58,0.06)] hover:shadow-[0_16px_40px_rgba(30,27,58,0.10)] hover:-translate-y-1 transition-all duration-300 p-6 lg:p-7"
               >
-                {/* Step Number Circle */}
-                <div className="relative z-10 flex-shrink-0">
-                  <div className={`w-16 h-16 bg-gradient-to-br from-[#7B2FF7] to-[#5B21B6] rounded-full flex items-center justify-center shadow-lg`}>
-                    <step.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-gray-100">
-                    <span className="text-xs font-bold text-[#0A1028]">{step.number}</span>
-                  </div>
+                {/* Icon well + step number */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="w-12 h-12 rounded-2xl bg-[#F4EFFE] flex items-center justify-center">
+                    <step.icon className="w-[22px] h-[22px] text-[#6D28D9]" strokeWidth={2} />
+                  </span>
+                  <span className="text-[2rem] font-bold leading-none text-[#1E1B3A]/[0.08] group-hover:text-[#EA580C]/25 transition-colors">
+                    {step.n}
+                  </span>
                 </div>
 
-                {/* Content Card */}
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  className="flex-1 bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-                >
-                  <h3 className="text-2xl font-bold text-[#0A1028] mb-3">{step.title}</h3>
-                  <p className="text-[#6E6A85] text-lg">{step.description}</p>
-                </motion.div>
-              </motion.div>
+                <h3 className="text-[17px] font-bold text-[#1E1B3A] mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-[15px] leading-relaxed text-[#4B4763]">
+                  {step.text}
+                </p>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
           <button
             type="button"
             onClick={() => navigate('/book-free-assessment')}
-            className="px-10 py-5 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-full font-semibold transition-colors duration-300 text-lg"
+            className="group inline-flex items-center justify-center gap-2.5 px-8 h-14 rounded-xl bg-gradient-to-r from-[#F2660F] to-[#EA580C] hover:from-[#EA580C] hover:to-[#C2410C] text-white font-bold text-lg shadow-[0_12px_30px_rgba(234,88,12,0.28)] transition-colors"
           >
             Find My Tutor
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          <p className="mt-3 text-sm text-[#6E6A85]">
-            Free assessment · No obligation
+          <p className="mt-3.5 text-sm text-[#6E6A85]">
+            Free first assessment · No obligation
           </p>
         </motion.div>
       </div>

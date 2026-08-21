@@ -1,208 +1,109 @@
 import { motion } from 'motion/react';
-import { ShieldCheck, MapPin, Eye, UserCheck, Bell, Lock } from 'lucide-react';
+import { ShieldCheck, MapPin, ClipboardCheck, UserCheck, Repeat, Headphones } from 'lucide-react';
+import { SectionHeading } from './common/SectionHeading';
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SAFETY
+
+   The only dark section on the homepage — it gives the page a break in rhythm
+   and puts weight on the one subject parents worry about most.
+
+   Every item below is a real, working safeguard: OTP session start, ID and
+   qualification checks, location tracking during home tuition, attendance
+   records, tutor replacement, and phone/WhatsApp support. Do not add anything
+   here that Tutoo does not actually do.
+───────────────────────────────────────────────────────────────────────── */
+
+const SAFEGUARDS = [
+  {
+    icon: UserCheck,
+    title: 'Tutors Are Checked',
+    text: 'ID and qualification documents, plus an interview before the first class.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Classes Start With an OTP',
+    text: 'Every session begins with a one-time code, so you know it actually started.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Attendance Is Recorded',
+    text: 'Each class is logged, so you can check what happened and when.',
+  },
+  {
+    icon: MapPin,
+    title: 'Location Tracking',
+    text: 'For home tuition, the tutor’s location is tracked during the class.',
+  },
+  {
+    icon: Repeat,
+    title: 'Change Tutor Any Time',
+    text: 'Not the right fit? Tell us and we arrange a different tutor.',
+  },
+  {
+    icon: Headphones,
+    title: 'Someone to Call',
+    text: 'Reach our team on phone or WhatsApp whenever you need help.',
+  },
+];
 
 export function SafetyTrust() {
-  const safetyFeatures = [
-    {
-      icon: ShieldCheck,
-      title: 'OTP Session Verification',
-      description: 'Every class starts with an OTP, so you always know it has begun'
-    },
-    {
-      icon: UserCheck,
-      title: 'Tutor Background Verification',
-      description: 'ID and qualification checks, plus an interview before the first class'
-    },
-    {
-      icon: MapPin,
-      title: 'Location Tracking',
-      description: 'Tutor location is tracked during home tuition sessions'
-    },
-    {
-      icon: Eye,
-      title: 'Attendance Verification',
-      description: 'Session check-ins confirm every class actually happened'
-    },
-    {
-      icon: Bell,
-      title: 'Easy Tutor Replacement',
-      description: 'Not the right fit? Tell us and we arrange a replacement'
-    },
-    {
-      icon: Lock,
-      title: 'Quick Support',
-      description: 'Reach us on phone or WhatsApp whenever you need help'
-    }
-  ];
-
   return (
-    <section className="py-16 lg:py-24 bg-[#0A1028] text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
-
-      {/* Gradient Orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl" />
+    <section className="relative py-16 lg:py-24 bg-[#0A1028] overflow-hidden">
+      {/* Grid + glows */}
+      <div
+        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute -top-40 left-1/4 w-[38rem] h-[38rem] rounded-full opacity-70"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(circle, rgba(123,47,247,0.28) 0%, transparent 68%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      <div
+        className="absolute -bottom-48 right-1/4 w-[34rem] h-[34rem] rounded-full opacity-50"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(circle, rgba(234,88,12,0.20) 0%, transparent 68%)',
+          filter: 'blur(40px)',
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full mb-6 border border-white/20"
-          >
-            <ShieldCheck className="w-4 h-4 text-violet-400" />
-            <span className="text-sm font-medium">Safety First</span>
-          </motion.div>
 
-          <h2
-            className="text-3xl lg:text-4xl font-bold mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            How we keep
-            <br />
-            <span className="text-violet-400">your child safe</span>
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Simple, real safeguards on every class — from tutor verification to session check-ins
-          </p>
-        </motion.div>
+        <SectionHeading
+          tone="dark"
+          eyebrow="Safety First"
+          title={
+            <>
+              How we keep <span className="text-[#A78BFA]">your child safe</span>
+            </>
+          }
+          lead="Real safeguards on every class — from checking the tutor to confirming the class happened."
+        />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {safetyFeatures.map((feature, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          {SAFEGUARDS.map((s, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              key={s.title}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="group relative bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: Math.min(i, 5) * 0.07 }}
+              className="group rounded-[22px] bg-white/[0.05] hover:bg-white/[0.08] ring-1 ring-white/10 hover:ring-white/20 backdrop-blur-sm transition-all duration-300 p-6"
             >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-violet-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-[#7B2FF7]/20 ring-1 ring-[#7B2FF7]/25 items-center justify-center mb-5">
+                <s.icon className="w-[22px] h-[22px] text-[#C4B5FD]" strokeWidth={2} />
+              </span>
 
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
-              </div>
+              <h3 className="text-[17px] font-bold text-white mb-2">{s.title}</h3>
+              <p className="text-[15px] leading-relaxed text-white/65">{s.text}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* Security Dashboard Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-white/10"
-        >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3
-                className="text-3xl lg:text-4xl font-bold mb-4"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                Complete Peace of Mind
-              </h3>
-              <p className="text-gray-300 mb-6 text-lg">
-                Every tutor undergoes rigorous verification. Every session is monitored. Every parent
-                stays informed in real-time.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  'Police verification for all tutors',
-                  'Location tracking during home sessions',
-                  'OTP confirmation when class starts',
-                  'Attendance you can check anytime'
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 + i * 0.1 }}
-                    className="flex items-center gap-3"
-                  >
-                    <div className="w-6 h-6 bg-gradient-to-br from-violet-500 to-violet-600 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg
-                        className="w-4 h-4 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-gray-200">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 backdrop-blur-xl border border-white/20"
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h4 className="font-bold text-lg">Live Session Status</h4>
-                    <p className="text-sm text-gray-400">All systems active</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-violet-400 rounded-full animate-pulse" />
-                    <span className="text-sm text-violet-400">Live</span>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  {[
-                    { label: 'Tutor Verified', status: 'Active', color: 'emerald' },
-                    { label: 'Location Confirmed', status: 'Active', color: 'blue' },
-                    { label: 'Attendance Marked', status: 'Active', color: 'purple' },
-                    { label: 'Parent Notified', status: 'Active', color: 'emerald' }
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.7 + i * 0.1 }}
-                      className="flex items-center justify-between p-3 bg-white/5 rounded-lg"
-                    >
-                      <span className="text-sm">{item.label}</span>
-                      <span className={`text-xs px-2 py-1 bg-${item.color}-500/20 text-${item.color}-400 rounded-full`}>
-                        {item.status}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-violet-500/20 blur-3xl -z-10" />
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

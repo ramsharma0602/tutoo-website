@@ -7,13 +7,13 @@ import {
   ShieldCheck,
   ListChecks,
 } from 'lucide-react';
+import { SectionHeading } from './common/SectionHeading';
 
 /* ─────────────────────────────────────────────────────────────────────────
-   WHY TUTOO
+   WHY TUTOO — the booklet's six reasons, in the booklet's own words.
 
-   The booklet's six reasons, in the booklet's own words. Each one is a
-   statement about how we work — none of them is a statistic, a rating, or
-   an outcome promise, so every line here is something we can stand behind.
+   Each line is a statement about how we work. None of them is a statistic, a
+   rating, or an outcome promise, so every one is something we can stand behind.
 ───────────────────────────────────────────────────────────────────────── */
 
 const REASONS = [
@@ -29,7 +29,7 @@ const REASONS = [
   },
   {
     icon: Laptop,
-    title: 'Online & Offline',
+    title: 'Online & Home',
     description: 'Choose the learning mode that works for you.',
   },
   {
@@ -51,43 +51,44 @@ const REASONS = [
 
 export function WhyTutoo() {
   return (
-    <section className="py-16 lg:py-24 bg-white border-y border-[#EFEDF6]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden">
+      {/* Soft brand glow, top right */}
+      <div
+        className="hidden lg:block absolute -top-32 -right-24 w-[34rem] h-[34rem] rounded-full opacity-50"
+        aria-hidden="true"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(123,47,247,0.13) 0%, transparent 68%)',
+          filter: 'blur(20px)',
+        }}
+      />
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-12 lg:mb-16"
-        >
-          <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-[#6D28D9] mb-3">
-            Why Tutoo
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#1E1B3A] mb-4">
-            Why Choose Tutoo?
-          </h2>
-          <p className="text-lg text-[#4B4763] leading-relaxed">
-            Finding a tutor should be simple. Here is what you get.
-          </p>
-        </motion.div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <SectionHeading
+          eyebrow="Why Tutoo"
+          title="Why choose Tutoo?"
+          lead="Finding a tutor should be simple. Here is what you get."
+        />
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {REASONS.map((reason, i) => (
             <motion.div
               key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: Math.min(i, 5) * 0.06 }}
-              className="bg-white rounded-2xl p-6 border border-[#E6E3F0] shadow-[0_1px_2px_rgba(30,27,58,0.06)] hover:shadow-[0_8px_24px_rgba(30,27,58,0.10)] hover:border-[#7B2FF7]/25 transition-all duration-200"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: Math.min(i, 5) * 0.07 }}
+              className="group bg-white rounded-[22px] ring-1 ring-[#EFEDF6] hover:ring-[#7B2FF7]/25 shadow-[0_8px_28px_rgba(30,27,58,0.05)] hover:shadow-[0_16px_40px_rgba(30,27,58,0.09)] hover:-translate-y-1 transition-all duration-300 p-6 lg:p-7"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#F4EFFE] flex items-center justify-center mb-4">
-                <reason.icon className="w-5 h-5 text-[#6D28D9]" />
-              </div>
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-[#F4EFFE] items-center justify-center mb-5 group-hover:bg-[#EDE4FD] transition-colors">
+                <reason.icon className="w-[22px] h-[22px] text-[#6D28D9]" strokeWidth={2} />
+              </span>
+
               <h3 className="text-[17px] font-bold text-[#1E1B3A] mb-2">
                 {reason.title}
               </h3>
-              <p className="text-[15px] text-[#4B4763] leading-relaxed">
+              <p className="text-[15px] leading-relaxed text-[#4B4763]">
                 {reason.description}
               </p>
             </motion.div>

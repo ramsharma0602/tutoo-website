@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img" aria-label="A tutor teaching a student at a study table at home">
+  <defs>
+    <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF4EB"/><stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="tableA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6B27A"/><stop offset="1" stop-color="#E08C4C"/>
+    </linearGradient>
+    <radialGradient id="lampA" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#FDBA74" stop-opacity=".55"/><stop offset="1" stop-color="#FDBA74" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="roundA"><rect width="640" height="460" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#roundA)">
+    <rect width="640" height="460" fill="url(#bgA)"/>
+
+    <!-- soft blobs -->
+    <circle cx="92" cy="86" r="66" fill="#7B2FF7" opacity=".07"/>
+    <circle cx="566" cy="392" r="88" fill="#EA580C" opacity=".07"/>
+
+    <!-- lamp glow -->
+    <ellipse cx="320" cy="230" rx="196" ry="112" fill="url(#lampA)"/>
+
+    <!-- window -->
+    <rect x="72" y="58" width="150" height="128" rx="14" fill="#E4EEFF"/>
+    <rect x="72" y="58" width="150" height="128" rx="14" fill="none" stroke="#C7D9F7" stroke-width="4"/>
+    <path d="M147 58v128M72 122h150" stroke="#C7D9F7" stroke-width="4"/>
+    <circle cx="186" cy="92" r="15" fill="#FDBA74"/>
+
+    <!-- shelf + books -->
+    <rect x="418" y="96" width="150" height="9" rx="4.5" fill="#E3DFF2"/>
+    <rect x="432" y="58" width="16" height="38" rx="4" fill="#7B2FF7" opacity=".75"/>
+    <rect x="452" y="66" width="14" height="30" rx="4" fill="#EA580C" opacity=".75"/>
+    <rect x="470" y="52" width="15" height="44" rx="4" fill="#A78BFA"/>
+    <rect x="489" y="70" width="13" height="26" rx="4" fill="#FDBA74"/>
+    <rect x="516" y="74" width="42" height="22" rx="6" fill="#EDE9FB"/>
+
+    <!-- plant -->
+    <path d="M596 300c-16-26-6-52 8-64 8 20 8 44-8 64z" fill="#86C79B"/>
+    <path d="M596 302c-24-10-32-34-30-50 20 8 34 28 30 50z" fill="#6BB183"/>
+    <path d="M584 300h26l-5 44h-16z" fill="#E7C3A2"/>
+
+    <!-- ==== TUTOR (left, adult) ==== -->
+    <g>
+      <path d="M214 236c0-32 22-54 50-54s50 22 50 54v76h-100z" fill="#7B2FF7"/>
+      <path d="M214 236c0-32 22-54 50-54s50 22 50 54v14H214z" fill="#8B48F8"/>
+      <circle cx="264" cy="150" r="36" fill="#F3C6A5"/>
+      <path d="M228 148c0-24 16-40 36-40s36 16 36 40c0-12-14-18-36-18s-36 6-36 18z" fill="#3B2C4A"/>
+      <path d="M296 132c12-2 18 8 14 18-3 8-11 10-16 6z" fill="#3B2C4A"/>
+      <circle cx="252" cy="154" r="3.4" fill="#3B2C4A"/><circle cx="277" cy="154" r="3.4" fill="#3B2C4A"/>
+      <path d="M256 168c5 6 13 6 18 0" stroke="#3B2C4A" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+      <!-- pointing arm toward the book -->
+      <path d="M306 252c18 10 28 24 30 40" stroke="#F3C6A5" stroke-width="16" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- ==== STUDENT (right, child) ==== -->
+    <g>
+      <path d="M356 262c0-27 19-45 42-45s42 18 42 45v50h-84z" fill="#EA580C"/>
+      <path d="M356 262c0-27 19-45 42-45s42 18 42 45v12h-84z" fill="#F2751F"/>
+      <circle cx="398" cy="192" r="30" fill="#EBB489"/>
+      <path d="M368 190c0-20 13-34 30-34s30 14 30 34c-4-14-16-16-30-16s-26 4-30 16z" fill="#2E2438"/>
+      <circle cx="388" cy="195" r="3" fill="#2E2438"/><circle cx="409" cy="195" r="3" fill="#2E2438"/>
+      <path d="M391 207c4 5 11 5 15 0" stroke="#2E2438" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M360 276c-18 8-30 22-34 38" stroke="#EBB489" stroke-width="15" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- ==== TABLE ==== -->
+    <rect x="128" y="312" width="392" height="22" rx="11" fill="url(#tableA)"/>
+    <rect x="128" y="312" width="392" height="8" rx="4" fill="#FFD3AE" opacity=".7"/>
+    <rect x="166" y="334" width="16" height="82" rx="8" fill="#D98442"/>
+    <rect x="466" y="334" width="16" height="82" rx="8" fill="#D98442"/>
+
+    <!-- open book on the table -->
+    <path d="M282 312c-18-12-40-14-56-10v-32c16-4 38-2 56 10z" fill="#FFFFFF" stroke="#DDD6EE" stroke-width="3"/>
+    <path d="M282 312c18-12 40-14 56-10v-32c-16-4-38-2-56 10z" fill="#FFFFFF" stroke="#DDD6EE" stroke-width="3"/>
+    <path d="M282 280v32" stroke="#C9C0E4" stroke-width="3"/>
+    <path d="M240 284h28M240 294h24M296 284h28M296 294h24" stroke="#D9D2EC" stroke-width="3.6" stroke-linecap="round"/>
+
+    <!-- notebook + pencil cup -->
+    <rect x="360" y="296" width="66" height="16" rx="5" fill="#EDE9FB" stroke="#DDD6EE" stroke-width="2.5"/>
+    <rect x="164" y="278" width="34" height="34" rx="8" fill="#F4EFFE" stroke="#DDD6EE" stroke-width="2.5"/>
+    <rect x="172" y="258" width="6" height="24" rx="3" fill="#EA580C"/>
+    <rect x="182" y="252" width="6" height="30" rx="3" fill="#7B2FF7"/>
+    <rect x="192" y="262" width="6" height="20" rx="3" fill="#FDBA74"/>
+
+    <!-- floor -->
+    <path d="M0 416h640" stroke="#F0EBF8" stroke-width="6"/>
+  </g>
+</svg>

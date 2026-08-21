@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img" aria-label="A student taking a live one-to-one online class on a laptop">
+  <defs>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3EEFF"/><stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="screenB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241A4A"/><stop offset="1" stop-color="#160F33"/>
+    </linearGradient>
+    <linearGradient id="baseB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D9D2EC"/><stop offset="1" stop-color="#B8AEDB"/>
+    </linearGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7B2FF7" stop-opacity=".30"/><stop offset="1" stop-color="#7B2FF7" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="roundB"><rect width="640" height="460" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#roundB)">
+    <rect width="640" height="460" fill="url(#bgB)"/>
+    <circle cx="70" cy="392" r="80" fill="#7B2FF7" opacity=".07"/>
+    <circle cx="576" cy="80" r="70" fill="#EA580C" opacity=".07"/>
+    <ellipse cx="368" cy="238" rx="210" ry="150" fill="url(#glowB)"/>
+
+    <!-- wall clock -->
+    <circle cx="108" cy="94" r="30" fill="#FFFFFF" stroke="#E3DFF2" stroke-width="5"/>
+    <path d="M108 78v16l11 7" stroke="#7B2FF7" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+    <!-- floating chips -->
+    <g>
+      <rect x="452" y="86" width="118" height="34" rx="17" fill="#FFFFFF" stroke="#E9E4F8" stroke-width="2.5"/>
+      <circle cx="472" cy="103" r="7" fill="#22C55E"/>
+      <rect x="486" y="97" width="68" height="6" rx="3" fill="#D9D2EC"/>
+      <rect x="486" y="107" width="44" height="5" rx="2.5" fill="#E6E1F5"/>
+    </g>
+    <g>
+      <rect x="66" y="188" width="104" height="32" rx="16" fill="#FFFFFF" stroke="#E9E4F8" stroke-width="2.5"/>
+      <path d="M86 197l6 6 10-11" stroke="#EA580C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <rect x="112" y="200" width="44" height="6" rx="3" fill="#D9D2EC"/>
+    </g>
+
+    <!-- ==== STUDENT (back view, seated) ==== -->
+    <g>
+      <path d="M96 460c0-64 34-104 84-104s84 40 84 104z" fill="#EA580C"/>
+      <path d="M96 460c0-52 24-88 60-99l24 99z" fill="#F2751F" opacity=".55"/>
+      <circle cx="180" cy="318" r="38" fill="#3B2C4A"/>
+      <path d="M152 322c0-25 13-42 28-42s28 17 28 42c0-13-12-20-28-20s-28 7-28 20z" fill="#2E2438"/>
+      <!-- headphones -->
+      <path d="M138 320a42 42 0 0 1 84 0" stroke="#1E1B3A" stroke-width="10" stroke-linecap="round" fill="none"/>
+      <rect x="128" y="312" width="19" height="32" rx="9.5" fill="#7B2FF7"/>
+      <rect x="213" y="312" width="19" height="32" rx="9.5" fill="#7B2FF7"/>
+    </g>
+
+    <!-- ==== LAPTOP ==== -->
+    <g>
+      <rect x="292" y="140" width="290" height="192" rx="16" fill="#1E1B3A"/>
+      <rect x="302" y="150" width="270" height="172" rx="10" fill="url(#screenB)"/>
+
+      <!-- tutor video tile -->
+      <rect x="318" y="166" width="164" height="140" rx="12" fill="#2C2160"/>
+      <circle cx="400" cy="222" r="30" fill="#F3C6A5"/>
+      <path d="M370 220c0-20 13-34 30-34s30 14 30 34c-4-12-16-16-30-16s-26 4-30 16z" fill="#3B2C4A"/>
+      <circle cx="391" cy="224" r="3" fill="#3B2C4A"/><circle cx="410" cy="224" r="3" fill="#3B2C4A"/>
+      <path d="M394 235c4 5 11 5 15 0" stroke="#3B2C4A" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M362 306c0-24 17-40 38-40s38 16 38 40z" fill="#7B2FF7"/>
+      <rect x="330" y="284" width="10" height="10" rx="5" fill="#EF4444"/>
+      <rect x="346" y="285" width="30" height="7" rx="3.5" fill="#FFFFFF" opacity=".55"/>
+
+      <!-- shared whiteboard -->
+      <rect x="494" y="166" width="64" height="140" rx="10" fill="#FFFFFF" opacity=".95"/>
+      <path d="M506 186h40M506 200h32M506 214h40M506 228h26" stroke="#D9D2EC" stroke-width="5" stroke-linecap="round"/>
+      <path d="M508 254l9 10 17-20" stroke="#EA580C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <rect x="506" y="284" width="40" height="8" rx="4" fill="#EDE9FB"/>
+
+      <!-- laptop base -->
+      <path d="M266 332h342l24 26H242z" fill="url(#baseB)"/>
+      <rect x="382" y="340" width="110" height="8" rx="4" fill="#FFFFFF" opacity=".7"/>
+    </g>
+
+    <!-- desk -->
+    <rect x="212" y="358" width="424" height="18" rx="9" fill="#EDE9FB"/>
+    <rect x="212" y="358" width="424" height="7" rx="3.5" fill="#FFFFFF" opacity=".8"/>
+
+    <!-- notebook on the desk -->
+    <rect x="524" y="330" width="60" height="28" rx="7" fill="#FFFFFF" stroke="#E3DFF2" stroke-width="3"/>
+    <path d="M534 338h40M534 348h28" stroke="#DDD6EE" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

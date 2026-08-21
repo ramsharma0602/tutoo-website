@@ -1,121 +1,116 @@
 import { motion } from 'motion/react';
-import { Calculator, Atom, BookOpen, Code, Cpu, Trophy, FlaskConical, Microscope, MessageSquare, User } from 'lucide-react';
+import {
+  Calculator,
+  Atom,
+  BookOpen,
+  FlaskConical,
+  Microscope,
+  MessageSquare,
+  Landmark,
+  Trophy,
+  ArrowRight,
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { SectionHeading } from './common/SectionHeading';
+
+/* ─────────────────────────────────────────────────────────────────────────
+   WHAT WE TEACH
+
+   Only subjects, boards and exams Tutoo can actually staff. Each subject
+   deep-links into the enquiry form pre-filled, because no /subjects pages
+   exist — a link to a thin page would be worse than a pre-filled form.
+───────────────────────────────────────────────────────────────────────── */
+
+const SUBJECTS = [
+  { icon: Calculator, name: 'Mathematics' },
+  { icon: Atom, name: 'Science' },
+  { icon: BookOpen, name: 'English' },
+  { icon: FlaskConical, name: 'Physics' },
+  { icon: Microscope, name: 'Chemistry' },
+  { icon: Landmark, name: 'Biology' },
+  { icon: MessageSquare, name: 'Hindi & Marathi' },
+  { icon: Trophy, name: 'Olympiads' },
+];
+
+const BOARDS = [
+  { title: 'CBSE', sub: 'Class 1 – 12' },
+  { title: 'ICSE', sub: 'Class 1 – 12' },
+  { title: 'SSC', sub: 'Maharashtra Board' },
+  { title: 'JEE & NEET', sub: 'Entrance Prep' },
+];
 
 export function SubjectsPrograms() {
   const navigate = useNavigate();
-  const subjects = [
-    { icon: Calculator, name: 'Mathematics', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Atom, name: 'Science', gradient: 'from-violet-500 to-violet-600' },
-    { icon: BookOpen, name: 'English', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Code, name: 'Physics', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Cpu, name: 'Chemistry', gradient: 'from-violet-500 to-violet-600' },
-    { icon: Trophy, name: 'Olympiads', gradient: 'from-orange-500 to-red-600' },
-    { icon: FlaskConical, name: 'JEE', gradient: 'from-violet-600 to-violet-700' },
-    { icon: Microscope, name: 'NEET', gradient: 'from-violet-500 to-rose-600' },
-    { icon: MessageSquare, name: 'Hindi & Marathi', gradient: 'from-violet-500 to-violet-600' },
-    { icon: User, name: 'Biology', gradient: 'from-amber-500 to-orange-600' }
-  ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="relative py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2
-            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-4"
-          >
-            All boards, all major subjects
-          </h2>
-          <p className="text-lg text-[#6E6A85] max-w-2xl mx-auto">
-            CBSE, ICSE and SSC from Class 1–12 — plus JEE, NEET and CET preparation
-          </p>
-        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {subjects.map((subject, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -8, scale: 1.05 }}
-              className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-300 cursor-pointer"
+        <SectionHeading
+          eyebrow="What We Teach"
+          title="Subjects, boards and exams"
+          lead="Class 1 to 12 across the three boards we cover, plus entrance-exam preparation."
+        />
+
+        {/* ── Subjects ── */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-14">
+          {SUBJECTS.map((s, i) => (
+            <motion.button
+              key={s.name}
+              type="button"
+              onClick={() =>
+                navigate(`/book-free-assessment?subject=${encodeURIComponent(s.name)}`)
+              }
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.35, delay: Math.min(i, 7) * 0.05 }}
+              whileHover={{ y: -4 }}
+              className="group flex items-center gap-3 bg-white rounded-2xl ring-1 ring-[#EFEDF6] hover:ring-[#7B2FF7]/30 shadow-[0_4px_18px_rgba(30,27,58,0.05)] hover:shadow-[0_12px_30px_rgba(30,27,58,0.09)] transition-all duration-250 px-4 py-4 text-left"
             >
-              {/* Gradient Background on Hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${subject.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
-
-              <div className="relative z-10 flex flex-col items-center text-center">
-                <div className={`w-16 h-16 bg-gradient-to-br ${subject.gradient} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <subject.icon className="w-8 h-8 text-white" />
-                </div>
-
-                <h3 className="text-sm font-bold text-[#0A1028]">{subject.name}</h3>
-              </div>
-
-              {/* Glow Effect */}
-              <div className={`absolute -bottom-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br ${subject.gradient} rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
-            </motion.div>
+              <span className="w-11 h-11 rounded-xl bg-[#F4EFFE] flex items-center justify-center shrink-0">
+                <s.icon className="w-5 h-5 text-[#6D28D9]" strokeWidth={2} />
+              </span>
+              <span className="text-[14px] sm:text-[15px] font-semibold text-[#1E1B3A] leading-tight">
+                {s.name}
+              </span>
+            </motion.button>
           ))}
         </div>
 
-        {/* Boards & Classes Section */}
+        {/* ── Boards ── */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 bg-gradient-to-br from-violet-50 via-violet-50 to-violet-50 rounded-3xl p-8 lg:p-12"
+          viewport={{ once: true, margin: '-60px' }}
+          className="rounded-[24px] bg-[#FAFAFC] ring-1 ring-[#F1EFF7] p-6 sm:p-8"
         >
-          <h3
-            className="text-3xl lg:text-4xl font-bold text-[#0A1028] mb-8 text-center"
-          >
-            All Boards & Classes Covered
-          </h3>
+          <p className="text-center text-[13px] font-bold uppercase tracking-[0.09em] text-[#6D28D9] mb-6">
+            Boards We Cover
+          </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              /* Only boards we actually have tutors and pages for. IB and
-                 IGCSE were listed here with no tutors and no backing pages. */
-              { title: 'CBSE', description: 'Class 1 - 12', color: 'emerald' },
-              { title: 'ICSE', description: 'Class 1 - 12', color: 'blue' },
-              { title: 'SSC', description: 'Maharashtra Board', color: 'purple' },
-              { title: 'JEE & NEET', description: 'Entrance Prep', color: 'orange' }
-            ].map((board, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -4 }}
-                className={`bg-white rounded-2xl p-6 border-2 border-${board.color}-200 hover:border-${board.color}-300 transition-all duration-300`}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {BOARDS.map((b) => (
+              <div
+                key={b.title}
+                className="bg-white rounded-2xl ring-1 ring-[#EFEDF6] px-4 py-5 text-center"
               >
-                <div className={`text-2xl font-bold text-${board.color}-600 mb-2`}>{board.title}</div>
-                <div className="text-[#6E6A85]">{board.description}</div>
-              </motion.div>
+                <p className="text-lg font-bold text-[#1E1B3A]">{b.title}</p>
+                <p className="text-[13px] text-[#6E6A85] mt-1">{b.sub}</p>
+              </div>
             ))}
           </div>
-        </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <button
-            type="button"
-            onClick={() => navigate('/book-free-assessment')}
-            className="px-10 py-5 bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 text-lg"
-          >
-            Find My Tutor
-          </button>
+          <div className="mt-7 text-center">
+            <button
+              type="button"
+              onClick={() => navigate('/book-free-assessment')}
+              className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#6D28D9] hover:text-[#5B21B6] transition-colors"
+            >
+              Tell us what your child needs
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

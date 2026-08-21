@@ -248,17 +248,57 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white/95 backdrop-blur rounded-[22px] shadow-[0_18px_50px_rgba(30,27,58,0.13)] ring-1 ring-[#EFEDF6] px-5 sm:px-8 py-5"
           >
-            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
-              <p className="text-sm font-bold text-[#1E1B3A] shrink-0 text-center lg:text-left lg:border-r lg:border-[#EFEDF6] lg:pr-6">
+            {/* ── MOBILE & TABLET (< lg): a swipeable row of pills ──
+                   Seven divided items need roughly 1024px; below that the last
+                   one clips. A scroll-snapping strip keeps every label full size,
+                   keeps the card short, and reads as one horizontal list. */}
+            <div className="lg:hidden">
+              <p className="text-[11px] font-bold uppercase tracking-[0.09em] text-[#6E6A85] mb-3">
                 We help in
               </p>
 
-              <ul className="flex-1 grid grid-cols-4 gap-y-4 sm:flex sm:items-start sm:justify-between">
+              <div className="relative -mx-5">
+                <ul
+                  className="flex gap-2 overflow-x-auto snap-x snap-mandatory px-5 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                  aria-label="Subjects and skills we help with"
+                >
+                  {CATEGORIES.map((c) => (
+                    <li
+                      key={c.label}
+                      className="snap-start shrink-0 inline-flex items-center gap-2 rounded-full bg-[#F8F6FF] border border-[#EFEDF6] pl-3 pr-4 py-2"
+                    >
+                      <c.icon
+                        className="w-[18px] h-[18px] shrink-0"
+                        style={{ color: c.color }}
+                        strokeWidth={2}
+                      />
+                      <span className="text-[13px] font-semibold text-[#1E1B3A] whitespace-nowrap">
+                        {c.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Fade on the right edge, hinting there is more to swipe */}
+                <div
+                  className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+
+            {/* ── DESKTOP (lg+): divided row ── */}
+            <div className="hidden lg:flex lg:items-center gap-6">
+              <p className="text-sm font-bold text-[#1E1B3A] shrink-0 border-r border-[#EFEDF6] pr-6">
+                We help in
+              </p>
+
+              <ul className="flex-1 flex items-start justify-between">
                 {CATEGORIES.map((c, i) => (
                   <li
                     key={c.label}
-                    className={`group flex flex-col items-center justify-start text-center gap-1.5 px-0.5 sm:px-3.5 min-h-[3.25rem] ${
-                      i > 0 ? 'sm:border-l sm:border-[#F1EFF7]' : ''
+                    className={`group flex flex-col items-center justify-start text-center gap-1.5 px-3.5 min-h-[3.25rem] ${
+                      i > 0 ? 'border-l border-[#F1EFF7]' : ''
                     }`}
                   >
                     <c.icon
@@ -266,7 +306,7 @@ export function Hero() {
                       style={{ color: c.color }}
                       strokeWidth={1.9}
                     />
-                    <span className="text-[11px] sm:text-xs font-medium text-[#4B4763] leading-tight whitespace-nowrap">
+                    <span className="text-xs font-medium text-[#4B4763] leading-tight whitespace-nowrap">
                       {c.label}
                     </span>
                   </li>
@@ -274,12 +314,27 @@ export function Hero() {
               </ul>
             </div>
 
-            <div className="mt-4 pt-3.5 border-t border-[#F1EFF7] flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[13.5px] text-[#4B4763]">
-              <span className="font-medium">One-to-One Learning</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
-              <span className="font-medium">Personal Attention</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#7B2FF7]" aria-hidden="true" />
-              <span className="font-medium">Better Results</span>
+            {/* Three points: stacked with ticks on mobile, one dotted line from sm up */}
+            <div className="mt-4 pt-3.5 border-t border-[#F1EFF7]">
+              <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-3 sm:gap-x-4 lg:flex lg:flex-wrap lg:items-center lg:justify-center lg:gap-x-3 text-[13.5px] text-[#4B4763]">
+                {['One-to-One Learning', 'Personal Attention', 'Better Results'].map((point, i) => (
+                  <div key={point} className="contents">
+                    {i > 0 && (
+                      <span
+                        className="hidden lg:block w-1.5 h-1.5 rounded-full bg-[#7B2FF7]"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span className="flex items-center gap-2 font-medium lg:gap-0">
+                      <span
+                        className="lg:hidden w-1.5 h-1.5 rounded-full bg-[#7B2FF7] shrink-0"
+                        aria-hidden="true"
+                      />
+                      {point}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

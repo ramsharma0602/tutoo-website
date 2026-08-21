@@ -1,295 +1,125 @@
-"use client";
+import { motion } from 'motion/react';
+import { MapPin, Laptop, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { SectionHeading } from './common/SectionHeading';
 
-import { motion } from "motion/react";
-import { Link } from "react-router-dom";
-import {
-    MapPin,
-    ArrowRight,
-    Home,
-    Laptop,
-    ShieldCheck,
-    Sparkles,
-} from "lucide-react";
+/* ─────────────────────────────────────────────────────────────────────────
+   WHERE WE TEACH
 
-/* ─────────────────────────────────────────────
-   DATA
-───────────────────────────────────────────── */
+   Two real home-tuition cities, plus online everywhere. Add a city here only
+   when tutors are actually available there — this block is the page's answer
+   to "can you come to my area?", and a wrong answer wastes a parent's time.
+
+   `variant="full"` is the homepage block. `variant="compact"` is a slim strip
+   for use inside other pages.
+───────────────────────────────────────────────────────────────────────── */
 
 const CITIES = [
-    {
-        name: "Kothrud",
-        tag: "Locality · Pune West",
-        description:
-            "Dedicated home-tutor coverage across Kothrud and the surrounding Pune West neighbourhoods.",
-        from: "#7B2FF7",
-        to: "#7B2FF7",
-    },
-    // {
-    //     name: "Pune",
-    //     tag: "City-wide",
-    //     description:
-    //         "Full city-wide home and online tutoring coverage across all of Pune.",
-    //     from: "#7B2FF7",
-    //     to: "#7B2FF7",
-    // },
-    {
-        name: "Kolhapur",
-        tag: "City-wide",
-        description:
-            "Verified tutors now available for home and online sessions across Kolhapur.",
-        from: "#7B2FF7",
-        to: "#7B2FF7",
-    },
+  {
+    name: 'Kothrud, Pune',
+    text: 'Home tutors across Kothrud and nearby Pune West areas.',
+    href: '/home-tuition/kothrud',
+    accent: '#EA580C',
+    tint: '#FFF1E7',
+  },
+  {
+    name: 'Kolhapur',
+    text: 'Home tutors across Kolhapur city and surrounding areas.',
+    href: '/home-tuition/kolhapur',
+    accent: '#7B2FF7',
+    tint: '#F4EFFE',
+  },
 ];
 
-const HIGHLIGHTS = [
-    { icon: Home, label: "Home Tuition" },
-    { icon: Laptop, label: "Online Classes" },
-    { icon: ShieldCheck, label: "Verified Tutors" },
-];
+interface Props {
+  variant?: 'full' | 'compact';
+}
 
-/* ─────────────────────────────────────────────
-   FULL SECTION — homepage
-───────────────────────────────────────────── */
-
-function CityAvailabilityFull() {
+export function CityAvailabilitySection({ variant = 'full' }: Props) {
+  if (variant === 'compact') {
     return (
-        <section className="relative overflow-hidden py-28 bg-[#FAFAFC]">
-            {/* Background */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div
-                    className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full opacity-25"
-                    style={{
-                        background:
-                            "radial-gradient(ellipse, rgba(123,47,247,0.10) 0%, rgba(248,120,8,0.07) 50%, transparent 72%)",
-                        filter: "blur(60px)",
-                    }}
-                />
-            </div>
-
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: -16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full mb-8 mx-auto
-                       bg-white/80 backdrop-blur-xl border border-[#7B2FF7]/30
-                       shadow-[0_0_28px_rgba(248,120,8,0.18)]"
-                    >
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7B2FF7] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#7B2FF7]" />
-                        </span>
-                        <span
-                            className="text-sm font-black tracking-widest uppercase text-[#7B2FF7]"
-                            style={{ fontFamily: "var(--font-heading)" }}
-                        >
-                            Now Live
-                        </span>
-                        <Sparkles className="w-4 h-4 text-[#7B2FF7]" />
-                    </motion.div>
-
-                    <motion.h2
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.08 }}
-                        className="text-3xl lg:text-4xl font-black leading-[1.05] tracking-tight text-[#1E1B3A] mb-6"
-                        style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                        Tutoo Is Live in{" "}
-                        <span className="bg-gradient-to-r from-[#7B2FF7] via-[#7B2FF7] to-[#7B2FF7] bg-clip-text text-transparent">
-                            Your City
-                        </span>
-                    </motion.h2>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.16 }}
-                        className="text-lg leading-8 text-[#6E6A85]"
-                    >
-                        We're rolling out verified home and online tutoring city by
-                        city — starting right where you are.
-                    </motion.p>
-                </div>
-
-                {/* City Cards */}
-                <div className="flex flex-wrap justify-center gap-6 mb-16">
-                    {CITIES.map((city, i) => (
-                        <motion.div
-                            key={city.name}
-                            initial={{ opacity: 0, y: 32 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            whileHover={{ y: -8, scale: 1.02 }}
-                            className="group relative rounded-[28px] overflow-hidden bg-white
-                         border border-[#E6E3F0] p-8 w-full sm:w-[340px]
-                         shadow-[0_4px_24px_rgba(30,27,58,0.06)]
-                         hover:shadow-[0_20px_60px_rgba(30,27,58,0.1)]
-                         transition-all duration-500"
-                        >
-                            <div className="flex items-start justify-between mb-6">
-                                <div
-                                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
-                                    style={{ background: `linear-gradient(135deg, ${city.from}, ${city.to})` }}
-                                >
-                                    <MapPin className="w-7 h-7 text-white" />
-                                </div>
-
-                                <span
-                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold"
-                                    style={{ color: city.from, background: `${city.from}12` }}
-                                >
-                                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                                    Live Now
-                                </span>
-                            </div>
-
-                            <h3
-                                className="text-2xl font-black text-[#1E1B3A] mb-1"
-                                style={{ fontFamily: "var(--font-heading)" }}
-                            >
-                                {city.name}
-                            </h3>
-
-                            <p className="text-xs font-bold uppercase tracking-wide text-[#94A3B8] mb-4">
-                                {city.tag}
-                            </p>
-
-                            <p className="text-sm leading-7 text-[#6E6A85] mb-6">
-                                {city.description}
-                            </p>
-
-                            <Link
-                                to="/book-free-assessment"
-                                className="inline-flex items-center gap-2 text-sm font-bold group-hover:gap-3 transition-all duration-300"
-                                style={{ color: city.from }}
-                            >
-                                Book a tutor here
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
-
-                            <div
-                                className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500 rounded-b-[28px]"
-                                style={{ background: `linear-gradient(90deg, ${city.from}, ${city.to})` }}
-                            />
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Highlights + CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="rounded-[32px] bg-white/70 backdrop-blur-xl border border-white shadow-lg p-8 lg:p-10
-                     flex flex-col lg:flex-row items-center justify-between gap-8"
-                >
-                    <div className="flex flex-wrap items-center justify-center gap-6">
-                        {HIGHLIGHTS.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <div key={item.label} className="flex items-center gap-2.5">
-                                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] flex items-center justify-center shadow-md">
-                                        <Icon className="w-4.5 h-4.5 text-white" />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#1E1B3A]">
-                                        {item.label}
-                                    </span>
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    <Link
-                        to="/book-free-assessment"
-                        className="flex-shrink-0 inline-flex items-center gap-2.5 h-14 px-8 rounded-2xl
-                       bg-gradient-to-r from-[#EA580C] to-[#C2410C] text-white font-bold
-                       shadow-xl shadow-[#EA580C]/20 hover:scale-[1.03] transition-all duration-300"
-                    >
-                        Book Your Free Assessment
-                        <ArrowRight className="w-5 h-5" />
-                    </Link>
-                </motion.div>
-
-                <p className="text-center text-sm text-[#94A3B8] mt-8">
-                    Not in Kothrud, Pune, or Kolhapur yet? We're expanding to more
-                    cities soon — check back often.
-                </p>
-            </div>
-        </section>
+      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[15px] text-[#4B4763]">
+        <span className="inline-flex items-center gap-2 font-medium">
+          <MapPin className="w-4 h-4 text-[#6D28D9]" /> Kothrud (Pune)
+        </span>
+        <span className="inline-flex items-center gap-2 font-medium">
+          <MapPin className="w-4 h-4 text-[#6D28D9]" /> Kolhapur
+        </span>
+        <span className="inline-flex items-center gap-2 font-medium">
+          <Laptop className="w-4 h-4 text-[#6D28D9]" /> Online anywhere in India
+        </span>
+      </div>
     );
+  }
+
+  return (
+    <section className="relative py-16 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <SectionHeading
+          eyebrow="Where We Teach"
+          title="Home tutors in your city"
+          lead="We send tutors to homes in two cities today — and teach online everywhere else."
+        />
+
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {CITIES.map((city, i) => (
+            <motion.div
+              key={city.name}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="group bg-white rounded-[22px] ring-1 ring-[#EFEDF6] shadow-[0_8px_28px_rgba(30,27,58,0.06)] hover:shadow-[0_16px_40px_rgba(30,27,58,0.10)] hover:-translate-y-1 transition-all duration-300 p-6 lg:p-7"
+            >
+              <span
+                className="inline-flex w-12 h-12 rounded-2xl items-center justify-center mb-5"
+                style={{ background: city.tint }}
+              >
+                <MapPin className="w-[22px] h-[22px]" style={{ color: city.accent }} strokeWidth={2} />
+              </span>
+
+              <h3 className="text-[17px] font-bold text-[#1E1B3A] mb-2">{city.name}</h3>
+              <p className="text-[15px] leading-relaxed text-[#4B4763] mb-5">{city.text}</p>
+
+              <Link
+                to={city.href}
+                className="inline-flex items-center gap-2 text-[15px] font-bold transition-colors"
+                style={{ color: city.accent }}
+              >
+                See tutors here
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          ))}
+
+          {/* Online card — visually distinct so it does not read as a third city */}
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.45, delay: 0.16 }}
+            className="group rounded-[22px] bg-[#0A1028] p-6 lg:p-7 text-white shadow-[0_14px_38px_rgba(10,16,40,0.22)] hover:-translate-y-1 transition-transform duration-300"
+          >
+            <span className="inline-flex w-12 h-12 rounded-2xl bg-white/10 ring-1 ring-white/15 items-center justify-center mb-5">
+              <Laptop className="w-[22px] h-[22px] text-[#C4B5FD]" strokeWidth={2} />
+            </span>
+
+            <h3 className="text-[17px] font-bold mb-2">Online — anywhere in India</h3>
+            <p className="text-[15px] leading-relaxed text-white/65 mb-5">
+              Not in Pune or Kolhapur? Live one-to-one online classes work from any city.
+            </p>
+
+            <Link
+              to="/online-tuition"
+              className="inline-flex items-center gap-2 text-[15px] font-bold text-[#C4B5FD] hover:text-white transition-colors"
+            >
+              See online classes
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 }
-
-/* ─────────────────────────────────────────────
-   COMPACT BANNER — reused across other pages
-───────────────────────────────────────────── */
-
-function CityAvailabilityCompact() {
-    return (
-        <section className="relative py-6 bg-[#FAFAFC] mt-19">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3
-                     rounded-2xl bg-white/80 backdrop-blur-xl border border-[#E6E3F0]
-                     shadow-sm px-6 py-4"
-                >
-                    <div className="flex items-center gap-2.5">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7B2FF7] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7B2FF7]" />
-                        </span>
-                        <span className="text-sm font-black uppercase tracking-wide text-[#7B2FF7]">
-                            Now Live
-                        </span>
-                    </div>
-
-                    <div className="flex flex-wrap items-center justify-center gap-2">
-                        <MapPin className="w-4 h-4 text-[#6E6A85]" />
-                        {CITIES.map((city, i) => (
-                            <span key={city.name} className="flex items-center">
-                                <span className="text-sm font-bold text-[#1E1B3A]">
-                                    {city.name}
-                                </span>
-                                {i < CITIES.length - 1 && (
-                                    <span className="mx-2 text-[#CBD5E1]">•</span>
-                                )}
-                            </span>
-                        ))}
-                    </div>
-
-                    <Link
-                        to="/book-free-assessment"
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#7B2FF7] hover:gap-2.5 transition-all duration-300"
-                    >
-                        Book a tutor near you
-                        <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                </motion.div>
-            </div>
-        </section>
-    );
-}
-
-/* ─────────────────────────────────────────────
-   EXPORT
-───────────────────────────────────────────── */
-
-interface CityAvailabilitySectionProps {
-    variant?: "full" | "compact";
-}
-
-export function CityAvailabilitySection({
-    variant = "full",
-}: CityAvailabilitySectionProps) {
-    return variant === "full" ? <CityAvailabilityFull /> : <CityAvailabilityCompact />;
-}
-
-export default CityAvailabilitySection;

@@ -12,8 +12,8 @@ import { WhyTutoo } from "./components/WhyTutoo";
 import { SafetyTrust } from "./components/SafetyTrust";
 import { ForTutors } from "./components/ForTutors";
 import { SubjectsPrograms } from "./components/SubjectsPrograms";
-import { TutorShowcase } from "./components/TutorShowcase";
-import { Testimonials } from "./components/Testimonials";
+import { ExpertTeachers } from "./components/ExpertTeachers";
+import { Reviews } from "./components/Reviews";
 import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
@@ -85,28 +85,37 @@ function HomePage() {
       <TopInfoBar />
       <Navbar />
 
+      {/* ─────────────────────────────────────────────────────────────────
+          Homepage order follows the question a parent asks next:
+            what is this → how does it work → home or online → what subjects
+            → why you → is it safe → do you cover my area → who teaches my
+            child → what do other parents say → questions → act
+          Sections alternate white / tinted so the page has a visible rhythm.
+      ───────────────────────────────────────────────────────────────────── */}
       <Hero />
 
-      <CityAvailabilitySection variant="full" />
+      <HowItWorks />
 
-      {/* Phase 2 (UX plan §7): 9-section homepage.
-          ProblemVsSolution removed; SafetyTrust + SecurityTrust merged (one
-          trust section); ForTutors demoted to a strip above the footer. */}
       <LearningSolutions />
 
-      <HowItWorks />
+      <SubjectsPrograms />
 
       {/* Booklet page 9 — the six reasons, in the booklet's own words */}
       <WhyTutoo />
 
       <SafetyTrust />
 
-      {/* Renders only when real verified tutors exist in data/tutors.ts */}
-      <TutorShowcase />
+      <CityAvailabilitySection variant="full" />
 
-      <SubjectsPrograms />
+      {/* Prefers real tutors from data/tutors.ts; falls back to the sample set
+          while USE_DEMO_TUTORS is true. Renders nothing once that is false and
+          the real registry is still empty. */}
+      <ExpertTeachers />
 
-      <Testimonials />
+      {/* ⚠️ Falls back to placeholder reviews while USE_DEMO_REVIEWS is true.
+          Invented reviews are a legal exposure in India — turn that switch off
+          before launch. See data/reviewsDemo.ts. */}
+      <Reviews />
 
       <FAQ />
 
