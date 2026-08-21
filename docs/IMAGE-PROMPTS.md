@@ -267,6 +267,136 @@ The card prefers the real photo automatically.
 
 ---
 
+## Slot specs — /online-tuition hero
+
+The same treatment as the homepage hero: a **cut-out photograph with a
+transparent background**, bleeding off the bottom-right, with a card floating
+over it. Not a photo in a box.
+
+| | |
+|---|---|
+| **Save as** | `public/tutoo_assets/hero/online-hero.webp` (+ `online-hero-sm.webp`) |
+| **Format** | **WebP with alpha** — transparent background, not white |
+| **Generate at** | 1600 × 1150, then cut out and export |
+| **Ship at** | 1400 × 1000 and 860 × 615 (matches the homepage pair exactly) |
+| **Weight** | ~200 KB and ~100 KB |
+| **Placement** | `absolute bottom-0 right-0`, ~55% width, `hidden lg:block` |
+
+### Read this first — it changes what you generate
+
+The hero currently holds `ClassWindowPanel`, the rendered live-class window
+(LIVE dot, timer, tutor tile, the ringed algebra, *Started with OTP*). That
+panel is the page's entire argument that this is real teaching and not a
+recorded video.
+
+**Do not replace it with the photo. Layer them**, the same way the homepage
+hero layers the "We help in" card over the tutor photo:
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  Online Classes · Anywhere in India                      │
+│                                                          │
+│  Learn from the right tutor,          ┌──────────┐       │
+│  from anywhere.                    ┌──┤  LIVE  ⏱ │       │
+│                                    │  │  panel   │  ██   │
+│  Live one-to-one classes for       │  └──────────┘ ████  │
+│  Class 1–12...                     │      ██████████████ │
+│                                    │   ← student cutout, │
+│  [ Find a Tutor ] [ Book a Free ]  │     bleeding off ↓  │
+└──────────────────────────────────────────────────────────┘
+```
+
+The panel shrinks and sits over the photo's left edge. Human + proof, in one
+view. A photo alone loses the proof; the panel alone has no human in it.
+
+### Composition constraints — a cut-out is fussier than a normal photo
+
+1. **Subject on the right of frame, facing LEFT.** They should look back into
+   the headline, not off the edge of the page.
+2. **Plain, evenly lit, light background.** This is the single thing that
+   decides whether the cut-out is clean. A busy or dark background against
+   dark hair produces a ragged edge that no amount of feathering fixes — this
+   already cost several attempts on the homepage image.
+3. **Crop at desk level.** The bottom bleeds off the section edge, so nothing
+   below the desk matters. Do not generate a full body.
+4. **The laptop screen faces AWAY from camera.** Deliberate: it removes the
+   one surface where image models write convincing gibberish, and the real
+   screen content is already shown by the panel.
+5. **Engaged, not passive.** Mid-sentence, hand raised slightly, looking at
+   the screen and talking. A child *watching* a laptop is a stock photo about
+   screen time; a child *talking to* a laptop is an online class.
+6. **Leave headroom and left-side space** — the panel overlaps the upper-left
+   of the subject.
+
+### The prompt
+
+```
+Candid documentary photograph of an Indian school child, about twelve years
+old, sitting at a study desk taking a live one-to-one online tuition class.
+Three-quarter view from the front left, the child positioned on the right of
+the frame and turned to face left, looking at an open laptop whose screen is
+angled away from the camera. The child is mid-sentence, speaking to their
+tutor, one hand resting on an open ruled notebook with a pen. Simple everyday
+home clothes, over-ear headphones. Cropped at desk level, upper body and desk
+only. Lit by soft even daylight with clear separation between the child and
+the background. Plain light grey seamless background, completely uncluttered,
+no furniture, no wall decoration, no window. Real skin texture, natural hair
+detail with clean edges, no motion blur. Shot at 50mm, f/4, seated eye level,
+the whole subject in sharp focus. Photorealistic, cool neutral colour grade,
+editorial lifestyle photography.
+```
+
+### Negative prompt
+
+```
+cartoon, illustration, 3d render, anime, vector art, cgi, painting, text,
+watermark, logo, letters, gibberish text on screen, visible laptop screen
+content, busy background, cluttered room, bookshelf, window, curtains,
+posters, dark background, black backdrop, gradient backdrop, shallow depth of
+field, bokeh, motion blur, flyaway hair, plastic skin, airbrushed,
+oversaturated, harsh flash, neon lighting, distorted hands, extra fingers,
+deformed face, full body, standing, group of children, classroom, teacher in
+frame, direct eye contact with camera, stock-photo smile, thumbs up
+```
+
+Note the two unusual entries: **`bokeh` and `shallow depth of field` are in
+the negatives on purpose.** A blurred background is normally flattering, but
+it merges hair into the backdrop and makes a clean cut-out impossible. f/4 and
+a plain backdrop is what you want here, even though f/2 looks nicer uncut.
+
+### Settings
+
+- Aspect ratio **7:5** (or 4:3) — Midjourney `--ar 7:5`
+- Photographic style, realism high, stylisation low
+- Generate several. Cut-out quality varies far more between takes than
+  overall image quality does, and you are picking for edges, not for looks.
+
+### Turning it into the asset
+
+1. Cut out the background. [remove.bg](https://www.remove.bg/) or Photoshop's
+   *Select Subject* both work; the homepage image was done with `rembg` using
+   the `isnet-general-use` model, which handled hair better than alpha matting.
+2. **Check the edges at 200%** — especially hair, headphone band, and where
+   the desk meets the crop. A halo of the old background is the giveaway that
+   an image was cut out.
+3. Feather the bottom and left edges slightly so the photo dissolves into the
+   section instead of ending in a hard line. The homepage image uses a 130px
+   alpha ramp on the left and 60px on the right.
+4. Export **WebP with alpha** at 1400 × 1000, plus an 860 × 615 copy.
+5. Save both into `public/tutoo_assets/hero/`.
+6. Tell me when they are in and I will wire the layering — the panel needs to
+   shrink and reposition, which is a code change, not a drop-in.
+
+### If you would rather not do a cut-out
+
+Ask for the same scene with `warm domestic background, tidy bedroom, softly
+blurred` instead of the plain backdrop, drop the cut-out negatives, and save it
+as a normal `.jpg` into `public/tutoo_assets/photos/online-hero.jpg`. It will
+sit in a rounded panel like the two homepage section photos. Less striking than
+the bleed, but no edge work and no way to get it wrong.
+
+---
+
 ## After you generate
 
 1. **Check the hands and the notebook.** Fingers and written text are where

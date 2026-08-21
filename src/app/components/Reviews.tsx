@@ -313,10 +313,19 @@ export function Reviews() {
                     onClick={() => goTo(i)}
                     aria-label={`Go to review ${i + 1}`}
                     aria-current={active}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      active ? 'w-7 bg-[#7B2FF7]' : 'w-2 bg-[#DDD6EE] hover:bg-[#BFB3E8]'
-                    }`}
-                  />
+                    /* py-4 gives the dot a 40px tall hit area without making
+                       the dot itself bigger — an 8px tap target fails on a
+                       phone even though it looks right on a desktop. */
+                    className="group/dot py-4 px-2.5 flex items-center"
+                  >
+                    <span
+                      className={`block h-2 rounded-full transition-all duration-300 ${
+                        active
+                          ? 'w-7 bg-[#7B2FF7]'
+                          : 'w-2 bg-[#DDD6EE] group-hover/dot:bg-[#BFB3E8]'
+                      }`}
+                    />
+                  </button>
                 );
               })}
             </div>
@@ -336,7 +345,8 @@ export function Reviews() {
           <button
             type="button"
             onClick={() => navigate('/book-free-assessment')}
-            className="group inline-flex items-center gap-2.5 text-[15px] font-bold text-[#6D28D9] hover:text-[#5B21B6] transition-colors"
+            /* py-2: a bare text button measured 270x20, under the WCAG 2.5.8 24px minimum */
+            className="group inline-flex items-center gap-2.5 py-2 text-[15px] font-bold text-[#6D28D9] hover:text-[#5B21B6] transition-colors"
           >
             Start with a free assessment
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

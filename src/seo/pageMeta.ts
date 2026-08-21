@@ -66,9 +66,9 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
     type: "website",
   },
   "/online-tuition": {
-    title: "Online Tuition – Live One-to-One Classes with Verified Tutors",
+    title: "Online Tuition & Online Tutors for Class 1–12",
     description:
-      "Live one-to-one online classes with verified tutors for Class 1–12 (CBSE, ICSE, SSC) and JEE/NEET preparation — from anywhere in India. Free assessment.",
+      "Live one-to-one online tuition with verified tutors for Class 1–12 — CBSE, ICSE, SSC and JEE/NEET. Learn from anywhere in India. Free first assessment, no obligation.",
     keywords: [
       "online tuition",
       "online tutor",

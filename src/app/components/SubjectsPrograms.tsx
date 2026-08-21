@@ -1,17 +1,8 @@
 import { motion } from 'motion/react';
-import {
-  Calculator,
-  Atom,
-  BookOpen,
-  FlaskConical,
-  Microscope,
-  MessageSquare,
-  Landmark,
-  Trophy,
-  ArrowRight,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SectionHeading } from './common/SectionHeading';
+import { SUBJECTS, BOARDS } from '../data/subjects';
 
 /* ─────────────────────────────────────────────────────────────────────────
    WHAT WE TEACH
@@ -19,25 +10,10 @@ import { SectionHeading } from './common/SectionHeading';
    Only subjects, boards and exams Tutoo can actually staff. Each subject
    deep-links into the enquiry form pre-filled, because no /subjects pages
    exist — a link to a thin page would be worse than a pre-filled form.
+
+   SUBJECTS and BOARDS moved to data/subjects.ts so /online-tuition can use
+   the same list. Add a subject there, not here.
 ───────────────────────────────────────────────────────────────────────── */
-
-const SUBJECTS = [
-  { icon: Calculator, name: 'Mathematics' },
-  { icon: Atom, name: 'Science' },
-  { icon: BookOpen, name: 'English' },
-  { icon: FlaskConical, name: 'Physics' },
-  { icon: Microscope, name: 'Chemistry' },
-  { icon: Landmark, name: 'Biology' },
-  { icon: MessageSquare, name: 'Hindi & Marathi' },
-  { icon: Trophy, name: 'Olympiads' },
-];
-
-const BOARDS = [
-  { title: 'CBSE', sub: 'Class 1 – 12' },
-  { title: 'ICSE', sub: 'Class 1 – 12' },
-  { title: 'SSC', sub: 'Maharashtra Board' },
-  { title: 'JEE & NEET', sub: 'Entrance Prep' },
-];
 
 export function SubjectsPrograms() {
   const navigate = useNavigate();
