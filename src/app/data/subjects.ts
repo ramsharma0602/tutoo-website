@@ -16,6 +16,11 @@
  * ─────────────────────────────────────────────────────────────────────────
  */
 import {
+  Shapes,
+  Backpack,
+  NotebookPen,
+  GraduationCap,
+  Target,
   Calculator,
   Atom,
   BookOpen,
@@ -43,6 +48,22 @@ export const SUBJECTS: SubjectEntry[] = [
   { icon: Trophy, name: 'Olympiads' },
 ];
 
+/**
+ * Class bands, with an icon each so they can render as cards rather than as
+ * bare chips.
+ *
+ * ⚠️  `name` must match CLASS_BAND_OPTIONS below EXACTLY — those are the values
+ * /find-a-tutor filters against. A typo here produces a card that links to an
+ * empty result. The assertion under the array fails the build if they drift.
+ */
+export const CLASS_BANDS: SubjectEntry[] = [
+  { icon: Shapes, name: 'Class 1–5' },
+  { icon: Backpack, name: 'Class 6–8' },
+  { icon: NotebookPen, name: 'Class 9–10' },
+  { icon: GraduationCap, name: 'Class 11–12' },
+  { icon: Target, name: 'JEE / NEET' },
+];
+
 /** Boards, with the plain-language line a parent needs to recognise theirs. */
 export const BOARDS: { title: string; sub: string }[] = [
   { title: 'CBSE', sub: 'Class 1 – 12' },
@@ -54,3 +75,13 @@ export const BOARDS: { title: string; sub: string }[] = [
 /* The canonical filter values live with the tutor data, because that is what
    /find-a-tutor matches against. Re-exported so a page needs one import. */
 export { CLASS_BAND_OPTIONS, BOARD_OPTIONS } from './tutorsDemo';
+
+/* Build-time guard: the card labels above and the filter values must be the
+   same strings, or a card links somewhere that returns nothing. */
+import { CLASS_BAND_OPTIONS as _OPTS } from './tutorsDemo';
+const _mismatch = CLASS_BANDS.map((c) => c.name).filter((n) => !_OPTS.includes(n));
+if (_mismatch.length) {
+  throw new Error(
+    `CLASS_BANDS labels not in CLASS_BAND_OPTIONS: ${_mismatch.join(', ')}`
+  );
+}

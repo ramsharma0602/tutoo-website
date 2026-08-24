@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
 import { UserCheck, ShieldCheck, ClipboardCheck, UserX, Repeat, Headphones } from 'lucide-react';
 import { SectionHeading } from '../common/SectionHeading';
+import FeatureGrid, { type Feature } from '../common/FeatureGrid';
 
 /* ─────────────────────────────────────────────────────────────────────────
    HOW WE KEEP YOUR CHILD SAFE — online
@@ -18,7 +18,7 @@ import { SectionHeading } from '../common/SectionHeading';
    Every item is real. Do not add anything here Tutoo does not actually do.
 ───────────────────────────────────────────────────────────────────────── */
 
-const SAFEGUARDS = [
+const SAFEGUARDS: Feature[] = [
   {
     icon: UserCheck,
     title: 'Tutors are checked',
@@ -86,25 +86,7 @@ export default function OnlineSafety() {
           lead="Six things we do on every online class — not promises, controls."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SAFEGUARDS.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
-              className="rounded-[22px] bg-white/[0.055] ring-1 ring-white/10 backdrop-blur p-6 hover:bg-white/[0.085] transition-colors duration-300"
-            >
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-white/10 ring-1 ring-white/15 items-center justify-center mb-5">
-                <s.icon className="w-[22px] h-[22px] text-[#C4B5FD]" strokeWidth={2} aria-hidden="true" />
-              </span>
-
-              <h3 className="text-[17px] font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-[15px] leading-relaxed text-white/65">{s.text}</p>
-            </motion.div>
-          ))}
-        </div>
+        <FeatureGrid items={SAFEGUARDS} columns={3} tone="dark" />
       </div>
     </section>
   );

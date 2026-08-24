@@ -53,10 +53,10 @@ Downloaded at 800×1000, cropped by CSS to a 4:5 card with the focal point at
 
 | File | Photo page | Photographer |
 |---|---|---|
-| `teacher-1.jpg` | [Smiling educator at a chalkboard](https://www.pexels.com/photo/confident-teacher-in-classroom-with-chalkboard-36781271/) | Anil Sharma |
-| `teacher-2.jpg` | [Confident man with folded arms at a blackboard](https://www.pexels.com/photo/confident-man-standing-in-front-of-blackboard-36781276/) | Anil Sharma |
-| `teacher-3.jpg` | [Woman in business attire, smiling](https://www.pexels.com/photo/woman-in-blue-blazer-and-white-inner-shirt-7580822/) | RDNE Stock project |
-| `teacher-4.jpg` | [Portrait of a man in eyeglasses](https://www.pexels.com/photo/portrait-of-man-with-eyeglasses-19186834/) | Shovan Datta |
+| `teacher-1.jpg` | Priya Deshmukh — M.Sc. Mathematics | **female** | [Educator at a maths blackboard](https://www.pexels.com/photo/woman-in-brown-suit-jacket-standing-5212321/) |
+| `teacher-2.jpg` | Rahul Kulkarni — B.E. Mechanical | **male** | [Educator at a chalkboard](https://www.pexels.com/photo/a-man-in-a-classroom-36781271/) |
+| `teacher-3.jpg` | Sneha Joshi — M.A. English | **female** | [Teacher at a whiteboard](https://www.pexels.com/photo/smiling-woman-in-button-up-shirt-8423062/) |
+| `teacher-4.jpg` | Amit Patil — M.Sc. Chemistry | **male** | [Portrait of a man in eyeglasses](https://www.pexels.com/photo/man-in-eyeglasses-19186834/) |
 
 **These are photographs of models, not of your tutors.** They are attached to
 the sample tutor entries in `data/tutorsDemo.ts`, which is why

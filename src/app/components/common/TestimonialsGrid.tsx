@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { cx, card } from './ui';
 import { Star, Quote } from 'lucide-react';
 import type { Testimonial } from '../../data/testimonials';
 
@@ -46,7 +47,6 @@ export default function TestimonialsGrid({
           </p>
           <h2
             className="text-3xl lg:text-4xl font-bold text-[#1E1B3A] mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             {title}
           </h2>
@@ -63,7 +63,7 @@ export default function TestimonialsGrid({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 3) * 0.08 }}
-              className="bg-white rounded-2xl p-6 border border-[#E6E3F0] shadow-[0_1px_2px_rgba(30,27,58,0.06)]"
+              className={cx(card, 'p-6')}
             >
               <Quote className="w-6 h-6 text-[#7B2FF7] mb-4" aria-hidden="true" />
 

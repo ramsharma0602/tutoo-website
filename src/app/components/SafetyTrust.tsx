@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
 import { ShieldCheck, MapPin, ClipboardCheck, UserCheck, Repeat, Headphones } from 'lucide-react';
 import { SectionHeading } from './common/SectionHeading';
+import FeatureGrid, { type Feature } from './common/FeatureGrid';
 
 /* ─────────────────────────────────────────────────────────────────────────
    SAFETY
@@ -14,7 +14,7 @@ import { SectionHeading } from './common/SectionHeading';
    here that Tutoo does not actually do.
 ───────────────────────────────────────────────────────────────────────── */
 
-const SAFEGUARDS = [
+const SAFEGUARDS: Feature[] = [
   {
     icon: UserCheck,
     title: 'Tutors Are Checked',
@@ -85,25 +85,7 @@ export function SafetyTrust() {
           lead="Real safeguards on every class — from checking the tutor to confirming the class happened."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-          {SAFEGUARDS.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: Math.min(i, 5) * 0.07 }}
-              className="group rounded-[22px] bg-white/[0.05] hover:bg-white/[0.08] ring-1 ring-white/10 hover:ring-white/20 backdrop-blur-sm transition-all duration-300 p-6"
-            >
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-[#7B2FF7]/20 ring-1 ring-[#7B2FF7]/25 items-center justify-center mb-5">
-                <s.icon className="w-[22px] h-[22px] text-[#C4B5FD]" strokeWidth={2} />
-              </span>
-
-              <h3 className="text-[17px] font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-[15px] leading-relaxed text-white/65">{s.text}</p>
-            </motion.div>
-          ))}
-        </div>
+        <FeatureGrid items={SAFEGUARDS} columns={3} tone="dark" />
       </div>
     </section>
   );

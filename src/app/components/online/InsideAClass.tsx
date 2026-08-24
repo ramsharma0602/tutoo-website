@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
-import { Radio, User, Lock, PenLine, Smartphone } from 'lucide-react';
+import { Radio, User, Lock, PenLine, Smartphone, MonitorPlay } from 'lucide-react';
 import { SectionHeading } from '../common/SectionHeading';
-import ClassWindowPanel from './ClassWindowPanel';
+import AssetImage from '../common/AssetImage';
 
 /* ─────────────────────────────────────────────────────────────────────────
    WHAT A CLASS ACTUALLY LOOKS LIKE
@@ -13,8 +13,21 @@ import ClassWindowPanel from './ClassWindowPanel';
    unnamed strawman, and every claim in the "generic" column is one we cannot
    substantiate about anyone else.
 
-   The visual is a crop of the hero's class window showing only the shared
-   working page. A zoom into the signature, not a second copy of it.
+   ── WHY A PHOTOGRAPH, NOT THE RENDERED CLASS WINDOW ─────────────────────
+   This column used to hold ClassWindowPanel — a drawn mock-up of a video
+   call. It was the only invented interface left on the page, and a parent
+   reading "what a class actually looks like" beside a picture of software
+   we do not ship is being shown the wrong thing. The photograph shows what
+   the section claims: one child, headphones on, her own notebook open, a
+   real tutor live on the screen in front of her.
+
+   ── NOTHING IS OVERLAID ON THE PHOTO ────────────────────────────────────
+   The obvious move is a chip on the corner reading "Started with OTP ·
+   Attendance recorded". It is not here on purpose: the photo does not show
+   an OTP or an attendance record, and a label pinned to an image reads as a
+   caption *of that image*. Both facts are true and both are stated in the
+   list on the right, where they are claims about the product rather than
+   claims about the picture.
 
    Every line below is real behaviour. Do not add a feature here that the
    product does not have.
@@ -68,26 +81,51 @@ export default function InsideAClass() {
           lead="Not a recorded video and not a batch. Your child and their tutor, live."
         />
 
+        {/* min-w-0 on both columns: without it a grid track is sized by its
+            child's min-content and the photo can push the row past 320px. */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* zoom into the shared page from the hero panel */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="min-w-0"
           >
-            {/* The hero is photo-only, so this is the one place on the page the
-                class window appears — full, at every width. LIVE state, timer,
-                tutor tile, the ringed working and the OTP bar. */}
-            <ClassWindowPanel />
+            {/* aspect-[4/3] + width/height: the box is reserved before the file
+                arrives, so the facts beside it never jump. */}
+            <div className="relative rounded-[26px] overflow-hidden ring-1 ring-[#EFEDF6] shadow-[0_18px_50px_rgba(30,27,58,0.10)] bg-[#F4EFFE] aspect-[4/3]">
+              <AssetImage
+                src="/tutoo_assets/photos/inside-a-class.webp"
+                srcSet="/tutoo_assets/photos/inside-a-class-sm.webp 760w, /tutoo_assets/photos/inside-a-class.webp 1200w"
+                sizes="(min-width: 1024px) 592px, calc(100vw - 3rem)"
+                width={1200}
+                height={900}
+                alt="A student wearing headphones writes in her notebook while her tutor teaches her live on the laptop in front of her."
+                className="w-full h-full object-cover"
+              />
 
-            <p className="mt-4 text-[14px] text-[#6E6A85] leading-relaxed max-w-sm">
-              The tutor can see and mark your child&apos;s working — the same way
-              they would sitting next to them.
+              {/* A very light inner edge so a bright photo does not bleed into
+                  the tinted section background. */}
+              <div
+                className="absolute inset-0 rounded-[26px] ring-1 ring-inset ring-black/[0.06]"
+                aria-hidden="true"
+              />
+            </div>
+
+            <p className="mt-4 flex items-start gap-2.5 text-[14px] text-[#6E6A85] leading-relaxed max-w-md">
+              <MonitorPlay
+                className="w-[18px] h-[18px] text-[#6D28D9] shrink-0 mt-[2px]"
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              <span>
+                One child, one tutor, live on screen — with her own notebook open,
+                exactly the way she would work at a desk.
+              </span>
             </p>
           </motion.div>
 
-          <ul className="space-y-5">
+          <ul className="min-w-0 space-y-5">
             {FACTS.map((f, i) => (
               <motion.li
                 key={f.title}
@@ -100,7 +138,7 @@ export default function InsideAClass() {
                 <span className="w-11 h-11 rounded-2xl bg-white ring-1 ring-[#EFEDF6] shadow-[0_4px_14px_rgba(30,27,58,0.05)] flex items-center justify-center shrink-0">
                   <f.icon className="w-5 h-5 text-[#6D28D9]" strokeWidth={2.2} aria-hidden="true" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-[16px] font-bold text-[#1E1B3A] leading-tight mb-1">
                     {f.title}
                   </h3>

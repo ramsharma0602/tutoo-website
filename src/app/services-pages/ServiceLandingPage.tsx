@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import {
   CheckCircle2,
-  ChevronDown,
   MapPin,
   ArrowRight,
   Phone,
@@ -12,6 +10,7 @@ import { whatsappLink, WhatsAppIcon } from '../components/common/FloatingWhatsAp
 import { track } from '../../seo/analytics';
 import PageSchema from '../../seo/PageSchema';
 import { getFAQSchema } from '../../seo/schema';
+import FaqAccordion from '../components/common/FaqAccordion';
 
 /* Phase 3 (UX plan §15/§17): shared layout for the two service landing pages —
    /home-tuition and /online-tuition. One intent per page, requirement CTA
@@ -57,7 +56,6 @@ export default function ServiceLandingPage({ content }: { content: ServicePageCo
 
           <h1
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E1B3A] mb-5 leading-[1.15]"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             {content.h1} <span className="text-[#6D28D9]">{content.h1Keyword}</span>
           </h1>
@@ -124,7 +122,6 @@ export default function ServiceLandingPage({ content }: { content: ServicePageCo
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <h2
             className="text-2xl lg:text-3xl font-bold text-[#1E1B3A] text-center mb-10"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             How it works
           </h2>
@@ -176,29 +173,24 @@ export default function ServiceLandingPage({ content }: { content: ServicePageCo
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className="bg-white py-14 lg:py-20 border-t border-[#EFEDF6]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2
-            className="text-2xl lg:text-3xl font-bold text-[#1E1B3A] text-center mb-10"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Common questions
-          </h2>
-          <div className="space-y-3">
-            {content.faqs.map((f) => (
-              <FaqItem key={f.q} q={f.q} a={f.a} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── FAQ ──
+          The shared accordion, so /home-tuition and the two city pages match
+          the homepage and /online-tuition. This block used to be a local copy
+          with a chevron and no motion. `schema={false}` because the FAQPage
+          JSON-LD is already emitted above for this page's questions. */}
+      <FaqAccordion
+        items={content.faqs}
+        eyebrow="FAQs"
+        title="Common questions"
+        schema={false}
+        tone="white"
+      />
 
       {/* ── Final CTA ── */}
       <section className="bg-[#0A1028] py-14 lg:py-16 text-center">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <h2
             className="text-2xl lg:text-3xl font-bold text-white mb-3"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Ready to get started?
           </h2>
@@ -223,27 +215,5 @@ export default function ServiceLandingPage({ content }: { content: ServicePageCo
         </div>
       </section>
     </main>
-  );
-}
-
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border border-[#E6E3F0] rounded-xl bg-white">
-      <button
-        type="button"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
-      >
-        <span className="font-semibold text-[#1E1B3A] text-[15px]">{q}</span>
-        <ChevronDown
-          className={`w-4 h-4 text-[#6D28D9] flex-shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
-        />
-      </button>
-      {open && (
-        <p className="px-5 pb-4 text-[15px] text-[#4B4763] leading-relaxed">{a}</p>
-      )}
-    </div>
   );
 }

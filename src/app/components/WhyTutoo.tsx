@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import {
   UserCheck,
   User,
@@ -8,6 +7,7 @@ import {
   ListChecks,
 } from 'lucide-react';
 import { SectionHeading } from './common/SectionHeading';
+import FeatureGrid, { type Feature } from './common/FeatureGrid';
 
 /* ─────────────────────────────────────────────────────────────────────────
    WHY TUTOO — the booklet's six reasons, in the booklet's own words.
@@ -16,7 +16,7 @@ import { SectionHeading } from './common/SectionHeading';
    rating, or an outcome promise, so every one is something we can stand behind.
 ───────────────────────────────────────────────────────────────────────── */
 
-const REASONS = [
+const REASONS: Feature[] = [
   {
     icon: UserCheck,
     title: 'Right Tutor',
@@ -71,29 +71,7 @@ export function WhyTutoo() {
           lead="Finding a tutor should be simple. Here is what you get."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {REASONS.map((reason, i) => (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: Math.min(i, 5) * 0.07 }}
-              className="group bg-white rounded-[22px] ring-1 ring-[#EFEDF6] hover:ring-[#7B2FF7]/25 shadow-[0_8px_28px_rgba(30,27,58,0.05)] hover:shadow-[0_16px_40px_rgba(30,27,58,0.09)] hover:-translate-y-1 transition-all duration-300 p-6 lg:p-7"
-            >
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-[#F4EFFE] items-center justify-center mb-5 group-hover:bg-[#EDE4FD] transition-colors">
-                <reason.icon className="w-[22px] h-[22px] text-[#6D28D9]" strokeWidth={2} />
-              </span>
-
-              <h3 className="text-[17px] font-bold text-[#1E1B3A] mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-[15px] leading-relaxed text-[#4B4763]">
-                {reason.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <FeatureGrid items={REASONS} columns={3} />
       </div>
     </section>
   );

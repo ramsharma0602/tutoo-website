@@ -42,12 +42,14 @@ export function SubjectsPrograms() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.35, delay: Math.min(i, 7) * 0.05 }}
               whileHover={{ y: -4 }}
-              className="group flex items-center gap-3 bg-white rounded-2xl ring-1 ring-[#EFEDF6] hover:ring-[#7B2FF7]/30 shadow-[0_4px_18px_rgba(30,27,58,0.05)] hover:shadow-[0_12px_30px_rgba(30,27,58,0.09)] transition-all duration-250 px-4 py-4 text-left"
+              className="group flex items-center gap-3 min-w-0 bg-white rounded-2xl ring-1 ring-[#EFEDF6] hover:ring-[#7B2FF7]/30 shadow-[0_4px_18px_rgba(30,27,58,0.05)] hover:shadow-[0_12px_30px_rgba(30,27,58,0.09)] transition-all duration-250 px-4 py-4 text-left"
             >
               <span className="w-11 h-11 rounded-xl bg-[#F4EFFE] flex items-center justify-center shrink-0">
                 <s.icon className="w-5 h-5 text-[#6D28D9]" strokeWidth={2} />
               </span>
-              <span className="text-[14px] sm:text-[15px] font-semibold text-[#1E1B3A] leading-tight">
+              <span /* min-w-0 + break-words: without them "Olympiads" cannot shrink in the
+           130px column this grid gives at 320px, and pushes past the viewport */
+        className="min-w-0 break-words text-[14px] sm:text-[15px] font-semibold text-[#1E1B3A] leading-tight">
                 {s.name}
               </span>
             </motion.button>

@@ -253,7 +253,7 @@ export function Hero() {
                    one clips. A scroll-snapping strip keeps every label full size,
                    keeps the card short, and reads as one horizontal list. */}
             <div className="lg:hidden">
-              <p className="text-[11px] font-bold uppercase tracking-[0.09em] text-[#6E6A85] mb-3">
+              <p className="text-[12px] font-bold uppercase tracking-[0.09em] text-[#6E6A85] mb-3">
                 We help in
               </p>
 

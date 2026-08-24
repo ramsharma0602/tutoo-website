@@ -30,6 +30,12 @@ interface AssetImageProps {
   loading?: 'lazy' | 'eager';
   /** e.g. "center top" to keep faces in frame on a tall crop. */
   objectPosition?: string;
+  /** Candidate files, e.g. "/…-sm.webp 760w, /….webp 1200w". Pair with `sizes`. */
+  srcSet?: string;
+  /** Rendered width per breakpoint, so the browser can pick from `srcSet`
+   *  before layout. Without it a srcSet is guesswork and the browser
+   *  over-fetches. */
+  sizes?: string;
 }
 
 export default function AssetImage({
@@ -41,6 +47,8 @@ export default function AssetImage({
   height,
   loading = 'lazy',
   objectPosition,
+  srcSet,
+  sizes,
 }: AssetImageProps) {
   const [failed, setFailed] = useState(false);
 
@@ -49,6 +57,8 @@ export default function AssetImage({
   return (
     <img
       src={src}
+      srcSet={srcSet}
+      sizes={sizes}
       alt={alt}
       width={width}
       height={height}

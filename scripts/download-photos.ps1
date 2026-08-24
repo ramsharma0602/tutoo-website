@@ -26,10 +26,10 @@ $wide = [ordered]@{
 
 # Teacher card portraits — portrait crop, cropped by CSS to 4:5
 $portraits = [ordered]@{
-  'teacher-1.jpg' = 36781271     # Anil Sharma   — smiling educator at a chalkboard
-  'teacher-2.jpg' = 36781276     # Anil Sharma   — man with folded arms at a blackboard
-  'teacher-3.jpg' = 7580822      # RDNE Stock    — woman in business attire, smiling
-  'teacher-4.jpg' = 19186834     # Shovan Datta  — portrait of a man in eyeglasses
+  'teacher-1.jpg' = 5212321     # woman at a maths blackboard (Priya)
+  'teacher-2.jpg' = 36781271     # man at a chalkboard (Rahul)
+  'teacher-3.jpg' = 8423062      # woman at a whiteboard (Sneha)
+  'teacher-4.jpg' = 19186834     # man in eyeglasses (Amit)
 }
 
 $failed = @()

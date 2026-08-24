@@ -36,10 +36,10 @@ get_photo home-tuition.jpg 7079148 'w=1400'   # Kampus Production — tutoring a
 get_photo online-class.jpg 8055487 'w=1400'   # Annushka Ahuja    — online class
 
 echo "Teacher portraits (800x1000):"
-get_photo teacher-1.jpg 36781271 'w=800&h=1000&fit=crop'  # Anil Sharma  — educator at chalkboard
-get_photo teacher-2.jpg 36781276 'w=800&h=1000&fit=crop'  # Anil Sharma  — man at blackboard
-get_photo teacher-3.jpg 7580822  'w=800&h=1000&fit=crop'  # RDNE Stock   — woman, business attire
-get_photo teacher-4.jpg 19186834 'w=800&h=1000&fit=crop'  # Shovan Datta — man in eyeglasses
+get_photo teacher-1.jpg 5212321 'w=800&h=1000&fit=crop'  # woman at a maths blackboard 
+get_photo teacher-2.jpg 36781271 'w=800&h=1000&fit=crop'  # man at a chalkboard          
+get_photo teacher-3.jpg 8423062  'w=800&h=1000&fit=crop'  # woman at a whiteboard        
+get_photo teacher-4.jpg 19186834 'w=800&h=1000&fit=crop'  # man in eyeglasses (Amit)
 
 echo
 if [ "$failed" -gt 0 ]; then

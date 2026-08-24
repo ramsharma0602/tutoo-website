@@ -6,8 +6,12 @@
  *  are placeholders so the Find a Tutor page can be built, demoed and
  *  reviewed before real tutors have opted in.
  *
- *  Photos come from randomuser.me, a free service intended for placeholder
- *  use. They are NOT photos of your tutors.
+ *  Photos: the first four carry the local portraits in
+ *  public/tutoo_assets/photos/ (see docs/PHOTO-SOURCES.md). The rest carry
+ *  none and render an initials tile, which is honest and looks deliberate.
+ *  randomuser.me was removed — a live page should not depend on a
+ *  third-party placeholder host, and a stock face under an invented name is
+ *  a claim about a person who does not exist.
  *
  *  ── BEFORE GOING LIVE TO PARENTS ────────────────────────────────────────
  *  Set USE_DEMO_TUTORS to false (below). The page then reads only the real,
@@ -38,7 +42,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi', 'Hindi'],
-    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+    photo: '/tutoo_assets/photos/teacher-1.jpg',
     about:
       'Teaches Maths and Science with a focus on clearing basics before moving to exam questions. Works with students who have fallen behind and need to rebuild confidence.',
     addedOn: '2026-07-02',
@@ -56,7 +60,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi'],
-    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
+    photo: '/tutoo_assets/photos/teacher-2.jpg',
     about:
       'Prepares Class 11 and 12 Science students for board exams alongside JEE basics. Sets weekly problem sets and reviews them in class.',
     addedOn: '2026-06-18',
@@ -74,7 +78,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Online',
     area: 'Online',
     languages: ['English', 'Hindi'],
-    photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+    photo: '/tutoo_assets/photos/teacher-3.jpg',
     about:
       'Helps younger students with reading, grammar and writing. Patient with children who find English difficult at school.',
     addedOn: '2026-05-30',
@@ -92,7 +96,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi'],
-    photo: 'https://randomuser.me/api/portraits/men/75.jpg',
+    photo: '/tutoo_assets/photos/teacher-4.jpg',
     about:
       'Covers Chemistry and Biology for senior classes, with plenty of diagram practice and past-paper work before exams.',
     addedOn: '2026-07-11',
@@ -110,7 +114,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Kolhapur',
     area: 'Rajarampuri, Kolhapur',
     languages: ['Marathi', 'English'],
-    photo: 'https://randomuser.me/api/portraits/women/12.jpg',
     about:
       'Teaches Accounts and Economics to Commerce students, starting from journal entries and building up to full problem sets.',
     addedOn: '2026-04-22',
@@ -128,7 +131,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Kolhapur',
     area: 'Shahupuri, Kolhapur',
     languages: ['English', 'Marathi', 'Hindi'],
-    photo: 'https://randomuser.me/api/portraits/men/46.jpg',
     about:
       'Over a decade teaching Physics to senior students, including JEE preparation. Focuses on concept clarity before speed.',
     addedOn: '2026-03-14',
@@ -146,7 +148,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Karve Nagar, Pune',
     languages: ['English', 'Marathi'],
-    photo: 'https://randomuser.me/api/portraits/women/90.jpg',
     about:
       'Works with middle-school students on Maths and Science, using everyday examples to explain ideas that feel abstract in textbooks.',
     addedOn: '2026-07-28',
@@ -164,7 +165,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Online',
     area: 'Online',
     languages: ['English', 'Hindi'],
-    photo: 'https://randomuser.me/api/portraits/men/22.jpg',
     about:
       'Teaches Maths online with a shared whiteboard, working through problems step by step so students can follow the reasoning.',
     addedOn: '2026-06-05',
@@ -182,7 +182,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Kolhapur',
     area: 'Tarabai Park, Kolhapur',
     languages: ['Marathi', 'Hindi', 'English'],
-    photo: 'https://randomuser.me/api/portraits/women/55.jpg',
     about:
       'Language teacher with twelve years of experience, helping students with grammar, comprehension and writing in Marathi and Hindi.',
     addedOn: '2026-02-19',
@@ -200,7 +199,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Erandwane, Pune',
     languages: ['English', 'Marathi'],
-    photo: 'https://randomuser.me/api/portraits/men/60.jpg',
     about:
       'Teaches Biology for board exams and NEET preparation, with regular diagram practice and topic-wise tests.',
     addedOn: '2026-05-08',
@@ -218,7 +216,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Online',
     area: 'Online',
     languages: ['English', 'Hindi', 'Marathi'],
-    photo: 'https://randomuser.me/api/portraits/women/33.jpg',
     about:
       'Recent engineering graduate teaching Maths and Science online. Good with students who prefer a younger tutor they can ask questions freely.',
     addedOn: '2026-08-01',
@@ -236,7 +233,6 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Kolhapur',
     area: 'Kasaba Bawada, Kolhapur',
     languages: ['Marathi', 'English'],
-    photo: 'https://randomuser.me/api/portraits/men/85.jpg',
     about:
       'Fourteen years teaching senior Maths, including JEE. Known for breaking long problems into small steps students can repeat on their own.',
     addedOn: '2026-01-30',

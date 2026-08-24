@@ -397,6 +397,212 @@ the bleed, but no edge work and no way to get it wrong.
 
 ---
 
+## Slot specs — "Inside a Class" section image
+
+| | |
+|---|---|
+| **Save as** | `public/tutoo_assets/photos/inside-a-class.jpg` |
+| **Aspect ratio** | **4:3 landscape** — same as the two homepage section photos |
+| **Generate at** | 1600 × 1200 |
+| **Ship at** | ~1400 × 1050, JPEG quality 80–85, under 250 KB |
+| **Sits** | right-hand column of the section; the five facts move to the left |
+| **Crop behaviour** | `object-cover` in a rounded panel — a normal photo, not a cut-out |
+
+### The one rule that decides this shot
+
+**It must not repeat the hero.** The hero already shows a girl at a laptop,
+seen three-quarter from the front. Another photo of a child facing a laptop
+is the same picture twice, twenty seconds apart, and the page starts to feel
+padded.
+
+So this one is shot **over her shoulder, from behind** — the class as *she*
+sees it. Same subject, opposite camera. The hero says *"a real child is being
+taught"*; this says *"and here is what the class actually is."* That is the
+section's heading, literally.
+
+### Composition constraints
+
+1. **Over-the-shoulder, from behind and slightly above.** Her head and
+   shoulder occupy the near foreground, **softly out of focus**. The laptop
+   screen is the sharp subject.
+2. **The screen shows a person, not a document.** A friendly adult tutor
+   mid-explanation in a video-call tile. Faces are what image models render
+   convincingly; UI labels, slide decks and worksheets come out as gibberish
+   and this screen is exactly where the eye lands.
+3. **No readable text anywhere.** No toolbar labels, no participant names, no
+   writing on the notebook page. Slight blur on the notebook is fine and
+   realistic — a page of invented squiggles is not.
+4. **An open notebook and a pen in frame**, beside the laptop. This is the
+   "work on the same page" fact made visible, and it is what separates a class
+   from a video call.
+5. **Warm, ordinary room.** Slightly blurred home background. This is the one
+   photo on the page allowed to feel domestic rather than cool — it sits in a
+   tinted band between two white sections and can afford the warmth.
+6. **Leave the left third quieter.** The section's soft orange glow sits
+   bottom-left behind this panel; a busy left edge fights it.
+
+### The prompt
+
+```
+Candid documentary photograph taken over the shoulder of an Indian school
+child, about eleven years old, sitting at a desk during a live one-to-one
+online tuition class. The camera is behind her and slightly above, so the
+back of her head and one shoulder fill the lower left of the frame, softly
+out of focus. The open laptop in front of her is the sharp subject: its
+screen shows a friendly adult tutor mid-explanation in a video call, clearly
+a live person speaking, filling most of the screen. An open ruled notebook
+and a pen lie on the desk beside the laptop. Warm domestic room gently
+blurred behind — a plain wall, soft daylight from a window. Natural colours,
+real skin texture, unposed, no studio lighting. Shot at 35mm, f/2.8, seated
+height, shallow depth of field on the foreground with the screen in focus.
+Photorealistic, warm neutral colour grade, editorial lifestyle photography.
+```
+
+### Negative prompt
+
+```
+cartoon, illustration, 3d render, anime, vector art, cgi, painting, text,
+watermark, logo, letters, words on screen, gibberish text, readable writing,
+handwriting, slide presentation, spreadsheet, document on screen, toolbar,
+participant names, video call buttons, play button, progress bar, multiple
+faces on screen, grid of participants, classroom, blackboard, group of
+children, second child, adult in the room, front view, face to camera, direct
+eye contact, stock-photo smile, thumbs up, plastic skin, oversaturated, harsh
+flash, neon lighting, dark room, screen glare, distorted hands, extra fingers,
+cluttered desk, gaming setup, multiple monitors
+```
+
+Two entries earn their place there: **`grid of participants`** and
+**`multiple faces on screen`**. A model's default idea of a video call is a
+Zoom grid, and a grid of tiles is precisely what this page spends three
+sections promising your classes are *not*.
+
+### Settings
+
+- Aspect ratio **4:3** — Midjourney `--ar 4:3`
+- Photographic style, realism high, stylisation low
+- **Generate at least six.** The screen is the whole shot and it is the part
+  most likely to come out wrong — you are selecting for "does the tutor on
+  that screen look like a real person on a real call", not for the prettiest
+  overall frame.
+
+### Before you ship it
+
+- **Zoom to 200% on the screen.** Any invented lettering, any second face, any
+  toolbar — regenerate. This is the failure mode for this specific image.
+- Check the hands on the keyboard and around the pen.
+- Crop to exactly 4:3, compress under 250 KB, save to
+  `public/tutoo_assets/photos/inside-a-class.jpg`, and send it to me — I will
+  wire the layout swap so the facts move left and the photo takes the right.
+
+### What happens to the class-window panel
+
+Today that column holds `ClassWindowPanel` — the rendered LIVE dot, timer,
+OTP bar and ringed algebra. It is the last place on the page that shows the
+OTP and the attendance record, and it is the only element here that could not
+be lifted onto a competitor's site unchanged.
+
+The photo replaces it in that column. **Two ways to keep the proof:**
+
+- **Overlay** — float a small white chip on the photo's lower-left reading
+  *"Started with OTP · Attendance recorded"*, the way the homepage floats
+  "Tutor comes to you" over its section artwork. Costs nothing, keeps the
+  claim visible, matches an established pattern on the site.
+- **Drop it** — the same facts are still in the list beside the photo as
+  words. Cleaner, but the page loses its one non-generic visual.
+
+I would take the overlay. Tell me which when you send the image.
+
+---
+
+## Slot specs — "Parents & Students" section image
+
+| | |
+|---|---|
+| **Save as** | `public/tutoo_assets/photos/parents-students.png` (I convert to `.webp`) |
+| **Aspect ratio** | **4:5 portrait** — the only portrait photo on the page |
+| **Generate at** | 1200 × 1500 |
+| **Sits** | right-hand column, full height beside the two stacked audience cards |
+| **Crop behaviour** | `object-cover`, `object-position: center 35%`, dark scrim over the bottom third |
+
+### The one rule that decides this shot
+
+**Both people must be in the frame, and the parent must not be teaching.**
+
+Every other photo on this site shows one child, or a child and a tutor. This
+is the only one that shows a parent and a child together — which is the whole
+reason the section exists. "The same class, from two sides" needs two people
+in the picture or the heading is doing all the work alone.
+
+But the parent is *not* running the class. If she is leaning in, pointing at
+the screen or holding the pen, the photo says "you will have to sit with them
+every evening" — the exact objection online tuition has to answer. She is
+**nearby and relaxed**, glancing over while he works. Present, not needed.
+
+### Composition constraints
+
+1. **Portrait orientation, 4:5.** Taller than it is wide. Both people fit
+   comfortably in the upper two-thirds — the bottom third gets a dark scrim
+   with a caption over it, so keep faces well clear of the lower edge.
+2. **A mother and her son, around 11–13**, side by side at a dining table or
+   study table in an ordinary Indian home. He is at the open laptop with a
+   notebook in front of him; she sits beside him, **turned slightly toward
+   him**, a cup of tea or a phone resting in her hands.
+3. **He is engaged with the screen, not with her.** His attention goes to the
+   laptop. Hers goes to him. That gap between the two gazes is the shot.
+4. **Warm, unforced expressions.** A small natural smile from her at most. No
+   posed grinning at the camera, no thumbs up, no high-five. Nobody is looking
+   at the lens.
+5. **The laptop screen is angled away** or shows only a soft, indistinct
+   video-call tile. Do not attempt a readable interface — the eye goes there
+   and gibberish UI is what makes a page feel fake.
+6. **No readable text anywhere.** No writing on the notebook, no lettering on
+   book spines, no wall calendar with invented dates.
+7. **Ordinary home, softly lit.** Evening or late-afternoon window light.
+   Lived-in: a bookshelf, a plant, a wall a real family painted. Not a studio,
+   not a showroom kitchen, not a stock-photo white sofa.
+8. **Natural Indian features and clothing.** Everyday home clothes — a kurta,
+   a plain top. Not festive wear, not styled for a shoot.
+
+### The prompt
+
+> A candid documentary-style photograph of an Indian mother sitting beside her
+> 12-year-old son at a wooden dining table in an ordinary middle-class home in
+> India. The boy is working at an open laptop with a school notebook and pen in
+> front of him, absorbed in what is on the screen. His mother sits close beside
+> him, turned slightly toward him, holding a cup of tea, watching him work with
+> a calm, warm expression — she is not helping him and not pointing at the
+> screen. Neither of them is looking at the camera. Soft warm late-afternoon
+> light from a window on the left. Lived-in home background, softly out of
+> focus: a bookshelf, a potted plant, a painted wall. Natural Indian features,
+> everyday home clothing. Vertical portrait composition, 4:5 aspect ratio, both
+> figures in the upper two-thirds of the frame with clear space at the bottom.
+> Shot on a 50mm lens at f/2.0, shallow depth of field, natural colour, realistic
+> photograph. No text, no lettering, no readable screen interface, no logos.
+
+**Negative prompt:** *cartoon, illustration, 3d render, cgi, anime, stock photo
+smiles, looking at camera, thumbs up, pointing at screen, mother typing,
+classroom, whiteboard, text, watermark, logo, readable screen, studio lighting,
+white background, luxury interior*
+
+### What to check before sending it
+
+- **Her hands and the cup.** Hands holding objects are the single most common
+  failure. If the cup or her fingers look wrong, regenerate.
+- **His hands on the keyboard**, and the pen if one is visible.
+- **The gap between the gazes.** If she is looking at the screen rather than at
+  him, the photo has quietly become "parent supervises class" — regenerate.
+- **The bottom third.** If either face sits low in the frame, the caption scrim
+  will cut across it. Faces high, table and hands low.
+- Send it as-is at full size — **do not compress it yourself.** I convert to
+  `parents-students.webp` (1100 × 1375) plus a 720 px small version, the same
+  pipeline as the Inside a Class photo.
+
+**Until the file lands**, that column renders as a plain navy panel with the
+caption on it. It looks deliberate rather than broken, so there is no rush.
+
+---
+
 ## After you generate
 
 1. **Check the hands and the notebook.** Fingers and written text are where

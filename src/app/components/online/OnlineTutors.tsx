@@ -3,17 +3,20 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SectionHeading } from '../common/SectionHeading';
 import TutorCard from '../common/TutorCard';
+import { cx, section, sectionTinted, container, buttonDark, buttonMd } from '../common/ui';
 import { TUTORS, type Tutor } from '../../data/tutors';
 import { DEMO_TUTORS, USE_DEMO_TUTORS } from '../../data/tutorsDemo';
 
 /* ─────────────────────────────────────────────────────────────────────────
    TUTORS WHO TEACH ONLINE
 
-   Reuses the SAME TutorCard as /find-a-tutor, per brief §16 — a second card
-   design for one page is how a product starts looking like two products.
+   Identical construction to the homepage's ExpertTeachers — same
+   SectionHeading, same shared TutorCard, same grid, same closing CTA. The
+   only differences are the words and the online-only filter, which is how it
+   should be: this is the same product, seen from a different page.
 
    Only tutors who actually teach online are shown: mode 'online' or 'both'.
-   A home-only tutor on this page would be a wasted click.
+   A home-only tutor here would be a wasted click.
 
    Real tutors in data/tutors.ts always win; DEMO_TUTORS is the fallback while
    USE_DEMO_TUTORS is true. Set that to false and this section disappears
@@ -37,9 +40,8 @@ export default function OnlineTutors() {
   if (!featured.length) return null;
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
+    <section className={cx(section, sectionTinted)}>
+      <div className={container}>
         <SectionHeading
           eyebrow="Our Tutors"
           title="Tutors who teach online"
@@ -50,15 +52,15 @@ export default function OnlineTutors() {
           {featured.map((t, i) => (
             <motion.div
               key={t.id}
-              initial={{ opacity: 0, y: 22 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              /* min-w-0: without it the grid track is sized by TutorCard's
-                 min-content and pushes ~2px past the viewport at 320px. */
+              /* min-w-0: without it the grid track is sized by the card's
+                 min-content and pushes past the viewport at 320px. */
               className="min-w-0"
             >
-              <TutorCard tutor={t} />
+              <TutorCard tutor={t} index={i} />
             </motion.div>
           ))}
         </div>
@@ -67,17 +69,21 @@ export default function OnlineTutors() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.42 }}
-          className="mt-10 lg:mt-12 text-center"
+          transition={{ duration: 0.45 }}
+          className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button
             type="button"
             onClick={() => navigate('/find-a-tutor?mode=online')}
-            className="group inline-flex items-center gap-2.5 px-7 h-13 py-3.5 rounded-xl bg-[#1E1B3A] hover:bg-[#2A2550] text-white font-bold text-[15px] transition-colors"
+            className={cx(buttonDark, buttonMd)}
           >
             View all online tutors
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
+
+          <p className="text-[14px] text-[#6E6A85] text-center sm:text-left max-w-xs">
+            Or tell us what you need and we will shortlist the ones who fit.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -1,9 +1,4 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Plus, Minus } from 'lucide-react';
-import { SectionHeading } from './common/SectionHeading';
-import PageSchema from '../../seo/PageSchema';
-import { getFAQSchema } from '../../seo/schema';
+import FaqAccordion from './common/FaqAccordion';
 
 /* The booklet's seven questions first, in the booklet's order and voice —
    short sentences, plain words, and its habit of saying "depending on tutor
@@ -64,87 +59,16 @@ const faqs = [
 
 
 export function FAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
+  /* Markup, state, motion and FAQPage schema all live in the shared
+     accordion. /online-tuition renders the same component with its own
+     questions — the two used to be separate copies that had already drifted
+     apart (chevron vs +/−, motion vs none). */
   return (
-    <section id="faq" className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden">
-      <PageSchema jsonLd={getFAQSchema(faqs)} />
-
-      <div
-        className="hidden lg:block absolute -top-32 left-1/4 w-[34rem] h-[34rem] rounded-full opacity-50"
-        aria-hidden="true"
-        style={{
-          background: 'radial-gradient(circle, rgba(123,47,247,0.12) 0%, transparent 68%)',
-          filter: 'blur(24px)',
-        }}
-      />
-
-      <div className="relative max-w-3xl mx-auto px-6 lg:px-8">
-
-        <SectionHeading
-          eyebrow="FAQs"
-          title="Questions parents ask us"
-          lead="Finding a tutor, classes, boards and fees — answered plainly."
-        />
-
-        <div className="space-y-3">
-          {faqs.map((faq, i) => {
-            const isOpen = activeIndex === i;
-
-            return (
-              <div
-                key={faq.question}
-                className={`rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
-                  isOpen
-                    ? 'ring-2 ring-[#7B2FF7]/35 shadow-[0_14px_36px_rgba(30,27,58,0.10)]'
-                    : 'ring-1 ring-[#EFEDF6] shadow-[0_4px_16px_rgba(30,27,58,0.04)] hover:ring-[#7B2FF7]/25'
-                }`}
-              >
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  onClick={() => setActiveIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-5 text-left"
-                >
-                  <span className="text-[15px] sm:text-base font-semibold text-[#1E1B3A] leading-snug">
-                    {faq.question}
-                  </span>
-
-                  <span
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors duration-300 shrink-0 ${
-                      isOpen ? 'bg-[#EA580C]' : 'bg-[#F4EFFE]'
-                    }`}
-                  >
-                    {isOpen ? (
-                      <Minus className="w-4 h-4 text-white" />
-                    ) : (
-                      <Plus className="w-4 h-4 text-[#6D28D9]" />
-                    )}
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.28, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 sm:px-6 pb-5 pt-1">
-                        <p className="text-[15px] leading-relaxed text-[#4B4763]">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    <FaqAccordion
+      items={faqs}
+      eyebrow="FAQs"
+      title="Questions parents ask us"
+      lead="Finding a tutor, classes, boards and fees — answered plainly."
+    />
   );
 }

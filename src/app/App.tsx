@@ -78,7 +78,10 @@ function RouteFallback() {
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-[#FAFAFC] overflow-x-hidden">
+    /* <main>, not <div>: the homepage had no main landmark, so screen-reader
+       users had no "skip to content" target and every other page on the site
+       did. */
+    <main className="min-h-screen bg-[#FAFAFC] overflow-x-hidden">
 
       <PageSchema jsonLd={getLocalBusinessSchema()} />
 
@@ -125,7 +128,7 @@ function HomePage() {
 
       <Footer />
 
-    </div>
+    </main>
   );
 }
 
