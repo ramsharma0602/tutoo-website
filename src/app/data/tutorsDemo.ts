@@ -42,7 +42,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi', 'Hindi'],
-    photo: '/tutoo_assets/photos/teacher-1.jpg',
+    photo: '/tutoo_assets/photos/teacher-1.png',
     about:
       'Teaches Maths and Science with a focus on clearing basics before moving to exam questions. Works with students who have fallen behind and need to rebuild confidence.',
     addedOn: '2026-07-02',
@@ -60,7 +60,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi'],
-    photo: '/tutoo_assets/photos/teacher-2.jpg',
+    photo: '/tutoo_assets/photos/teacher-2.png',
     about:
       'Prepares Class 11 and 12 Science students for board exams alongside JEE basics. Sets weekly problem sets and reviews them in class.',
     addedOn: '2026-06-18',
@@ -78,7 +78,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Online',
     area: 'Online',
     languages: ['English', 'Hindi'],
-    photo: '/tutoo_assets/photos/teacher-3.jpg',
+    photo: '/tutoo_assets/photos/teacher-3.png',
     about:
       'Helps younger students with reading, grammar and writing. Patient with children who find English difficult at school.',
     addedOn: '2026-05-30',
@@ -96,7 +96,7 @@ export const DEMO_TUTORS: Tutor[] = [
     city: 'Pune',
     area: 'Kothrud, Pune',
     languages: ['English', 'Marathi'],
-    photo: '/tutoo_assets/photos/teacher-4.jpg',
+    photo: '/tutoo_assets/photos/teacher-4.png',
     about:
       'Covers Chemistry and Biology for senior classes, with plenty of diagram practice and past-paper work before exams.',
     addedOn: '2026-07-11',

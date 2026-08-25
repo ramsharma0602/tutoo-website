@@ -163,11 +163,11 @@ export default function AudienceSplit() {
                 on top of this box, so the empty state has to be dark enough to
                 read against on its own — while the file is still missing, and
                 in the moment before it decodes. */}
-            <div className="relative h-full rounded-[26px] overflow-hidden ring-1 ring-[#EFEDF6] shadow-[0_18px_50px_rgba(30,27,58,0.10)] bg-[#2A2550] aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[520px]">
+            <div className="relative h-full rounded-[26px] overflow-hidden ring-1 ring-[#EFEDF6] shadow-[0_18px_50px_rgba(30,27,58,0.10)] bg-[#2A2550] aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
               <AssetImage
-                src="/tutoo_assets/photos/parents-students.png"
-                srcSet="/tutoo_assets/photos/parents-students-sm.png 720w, /tutoo_assets/photos/parents-students.png 1100w"
-                sizes="(min-width: 1024px) 540px, calc(100vw - 3rem)"
+                src="/tutoo_assets/photos/parents-students.webp"
+                srcSet="/tutoo_assets/photos/parents-students-sm.webp 720w, /tutoo_assets/photos/parents-students.webp 1100w"
+                sizes="(min-width: 1024px) 560px, calc(100vw - 3rem)"
                 width={1100}
                 height={1375}
                 alt="A mother sits beside her son at the dining table, looking on while he works through a problem with his tutor on the laptop."

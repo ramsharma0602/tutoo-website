@@ -170,7 +170,7 @@ export default function ClassWindowPanel({ variant = 'full', className = '' }: P
             className="relative rounded-xl overflow-hidden bg-[#241A4A] ring-1 ring-white/10 aspect-[3/4]"
           >
             <AssetImage
-              src="/tutoo_assets/photos/teacher-1.jpg"
+              src="/tutoo_assets/photos/teacher-1.png"
               alt=""
               loading="lazy"
               objectPosition="center 20%"
