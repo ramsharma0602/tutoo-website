@@ -33,6 +33,32 @@ function resolveMeta(pathname: string) {
   return DEFAULT_PAGE_META;
 }
 
+/** Short, human breadcrumb labels for the routes where the slug alone is not
+ *  a good label. Anything absent falls back to a prettified segment. */
+const CRUMB_LABELS: Record<string, string> = {
+  "/home-tuition": "Home Tuition",
+  "/home-tuition/kothrud": "Kothrud (Pune)",
+  "/home-tuition/kolhapur": "Kolhapur",
+  "/online-tuition": "Online Tuition",
+  "/find-a-tutor": "Find a Tutor",
+  "/book-free-assessment": "Book a Free Assessment",
+  "/apply-tutor": "Become a Tutor",
+  "/study-material": "Study Material",
+  "/about-tutoo": "About Tutoo",
+  "/our-mission": "Our Mission",
+  "/how-it-work": "How It Works",
+  "/contact-us": "Contact Us",
+  "/privacy-policy": "Privacy Policy",
+  "/terms-of-service": "Terms of Service",
+};
+
+/** "cbse-class-9" → "Cbse Class 9". Last-resort label. */
+function prettify(segment: string) {
+  return segment
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
 export default function RouteSEO() {
   const location = useLocation();
   const pathname = location.pathname;
@@ -43,19 +69,25 @@ export default function RouteSEO() {
   const schemas: object[] = [getOrganizationSchema(), getWebsiteSchema()];
 
   if (pathname !== "/") {
-    const label =
-      meta.title ||
-      pathname
-        .split("/")
-        .filter(Boolean)
-        .join(" ")
-        .replace(/-/g, " ");
-    schemas.push(
-      getBreadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: label, path: pathname },
-      ])
-    );
+    /* A real trail, not a two-item stub.
+       /home-tuition/kothrud  →  Home › Home Tuition › Kothrud (Pune)
+       Previously this emitted Home › <the entire <title> tag>, which is not a
+       breadcrumb label — it is a page title, and Google renders it verbatim.
+       It also collapsed every nested route to two levels, so the city pages
+       and the board/class pages never showed their parent.
+
+       Pages must NOT emit their own BreadcrumbList on top of this one: two
+       BreadcrumbList blocks on a page is a structured-data error. This is the
+       single source. */
+    const segments = pathname.split("/").filter(Boolean);
+    const crumbs = [{ name: "Home", path: "/" }];
+
+    segments.forEach((seg, i) => {
+      const path = "/" + segments.slice(0, i + 1).join("/");
+      crumbs.push({ name: CRUMB_LABELS[path] ?? prettify(seg), path });
+    });
+
+    schemas.push(getBreadcrumbSchema(crumbs));
   }
 
   return <SEOHead {...meta} path={pathname} jsonLd={schemas} />;

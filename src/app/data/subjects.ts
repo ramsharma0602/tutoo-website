@@ -64,24 +64,50 @@ export const CLASS_BANDS: SubjectEntry[] = [
   { icon: Target, name: 'JEE / NEET' },
 ];
 
-/** Boards, with the plain-language line a parent needs to recognise theirs. */
-export const BOARDS: { title: string; sub: string }[] = [
-  { title: 'CBSE', sub: 'Class 1 – 12' },
-  { title: 'ICSE', sub: 'Class 1 – 12' },
-  { title: 'SSC', sub: 'Maharashtra Board' },
-  { title: 'JEE & NEET', sub: 'Entrance Prep' },
+/**
+ * Boards, with the plain-language line a parent needs to recognise theirs.
+ *
+ * ⚠️  `filter` is which /find-a-tutor parameter the card should set. It exists
+ * because of a real bug: "JEE & NEET" was linking to `?board=JEE %26 NEET`, and
+ * BOARD_OPTIONS is ['CBSE','ICSE','SSC','HSC'] — no tutor has ever carried
+ * "JEE & NEET" in `boards`, so that card could NEVER return a result, on this
+ * page or on /online-tuition. JEE/NEET is a class band in this data model, not
+ * a board, so the card now sets `class=JEE / NEET` instead. The guard below
+ * fails the build if any card points at a value the filters cannot match.
+ */
+export interface BoardEntry {
+  title: string;
+  sub: string;
+  filter: { key: 'board' | 'class'; value: string };
+}
+
+export const BOARDS: BoardEntry[] = [
+  { title: 'CBSE', sub: 'Class 1 – 12', filter: { key: 'board', value: 'CBSE' } },
+  { title: 'ICSE', sub: 'Class 1 – 12', filter: { key: 'board', value: 'ICSE' } },
+  { title: 'SSC', sub: 'Maharashtra Board', filter: { key: 'board', value: 'SSC' } },
+  { title: 'JEE & NEET', sub: 'Entrance Prep', filter: { key: 'class', value: 'JEE / NEET' } },
 ];
 
 /* The canonical filter values live with the tutor data, because that is what
    /find-a-tutor matches against. Re-exported so a page needs one import. */
 export { CLASS_BAND_OPTIONS, BOARD_OPTIONS } from './tutorsDemo';
 
-/* Build-time guard: the card labels above and the filter values must be the
-   same strings, or a card links somewhere that returns nothing. */
-import { CLASS_BAND_OPTIONS as _OPTS } from './tutorsDemo';
+/* Build-time guards: every card label above must be a value the /find-a-tutor
+   filters actually match, or the card links somewhere that returns nothing. */
+import { CLASS_BAND_OPTIONS as _OPTS, BOARD_OPTIONS as _BOARDS } from './tutorsDemo';
+
 const _mismatch = CLASS_BANDS.map((c) => c.name).filter((n) => !_OPTS.includes(n));
 if (_mismatch.length) {
   throw new Error(
     `CLASS_BANDS labels not in CLASS_BAND_OPTIONS: ${_mismatch.join(', ')}`
+  );
+}
+
+const _badBoards = BOARDS.filter((b) =>
+  b.filter.key === 'board' ? !_BOARDS.includes(b.filter.value) : !_OPTS.includes(b.filter.value)
+).map((b) => `${b.title} → ${b.filter.key}=${b.filter.value}`);
+if (_badBoards.length) {
+  throw new Error(
+    `BOARDS cards point at values no filter can match: ${_badBoards.join(', ')}`
   );
 }

@@ -29,11 +29,11 @@ import {
 } from '../components/common/ui';
 
 import OnlineHero from '../components/online/OnlineHero';
-import CoverageSelector from '../components/online/CoverageSelector';
+import CoverageSelector from '../components/common/CoverageSelector';
 import InsideAClass from '../components/online/InsideAClass';
 import OnlineTutors from '../components/online/OnlineTutors';
 import OnlineSafety from '../components/online/OnlineSafety';
-import AudienceSplit from '../components/online/AudienceSplit';
+import AudienceSplit from '../components/common/AudienceSplit';
 import { Reviews } from '../components/Reviews';
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -47,12 +47,14 @@ import { Reviews } from '../components/Reviews';
    drifting into looking like a different site, which is exactly what
    happened when it carried its own copies of the FAQ and the closing CTA.
 
-   ── WHY IT NO LONGER USES ServiceLandingPage ────────────────────────────
-   ServiceLandingPage is shared by /home-tuition and the two city pages.
+   ── WHY THERE IS NO SHARED SERVICE TEMPLATE ─────────────────────────────
+   Both service pages used to run through one ServiceLandingPage template.
    Online and home tuition need genuinely different sections — device setup
-   and "nobody else joins" here, city coverage and travel there — and forcing
-   both through one template is what produced the previous thin, image-less
-   page. That component is untouched and those three pages still use it.
+   and "nobody else joins" here, city coverage and door-step safety there —
+   and forcing both through one template is what produced the previous thin,
+   image-less pages. That template is now deleted: /home-tuition and its two
+   city pages compose HomeTuitionLayout, and this page composes its own
+   order. What they share is the component kit, not a skeleton.
 
    ── SECTION ORDER = THE ORDER A PARENT ASKS ─────────────────────────────
      what is this → is it worth it → can you teach my child → how does it
@@ -161,9 +163,10 @@ const serviceSchema = {
 /* ── Benefits ─────────────────────────────────────────────────────────── */
 function WhyOnline() {
   return (
-    <section className={cx(section, 'bg-white')}>
+    <section className={cx(section, 'bg-white')} aria-labelledby="why-online-heading">
       <div className={container}>
         <SectionHeading
+          id="why-online-heading"
           eyebrow="Why Online"
           title="Why parents choose online classes"
           lead="The same tutors and the same free first assessment as home tuition — without the travel."
@@ -179,9 +182,10 @@ function HowOnlineWorks() {
   const navigate = useNavigate();
 
   return (
-    <section className={cx('relative', section, 'bg-white')}>
+    <section className={cx('relative', section, 'bg-white')} aria-labelledby="how-online-heading">
       <div className={container}>
         <SectionHeading
+          id="how-online-heading"
           eyebrow="How It Works"
           title="How online tuition works"
           lead="Four steps, and the first one takes under a minute."
@@ -226,12 +230,25 @@ export default function OnlineTuitionPage() {
 
       <OnlineHero />
       <WhyOnline />
-      <CoverageSelector />
+      <CoverageSelector mode="online" />
       <HowOnlineWorks />
       <InsideAClass />
       <OnlineTutors />
       <OnlineSafety />
-      <AudienceSplit />
+      <AudienceSplit
+        photo={{
+          src: '/tutoo_assets/photos/parents-students.webp',
+          srcSet:
+            '/tutoo_assets/photos/parents-students-sm.webp 720w, /tutoo_assets/photos/parents-students.webp 1100w',
+          sizes: '(min-width: 1024px) 560px, calc(100vw - 3rem)',
+          width: 1100,
+          height: 1375,
+          alt: 'A mother sits beside her son at the dining table, looking on while he works through a problem with his tutor on the laptop.',
+          objectPosition: 'center 35%',
+          captionTitle: 'One class. Two people it has to work for.',
+          captionSub: 'You can see how it is going. Your child can ask anything.',
+        }}
+      />
       <Reviews />
 
       {/* FAQPage structured data is emitted by the accordion itself, from the

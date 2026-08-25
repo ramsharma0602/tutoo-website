@@ -29,11 +29,24 @@ import { submitAssessment, getBoards, getClasses } from './services/assessmentAp
 import { Button } from '../components/ui/button';
 import SearchableSelect from '../components/ui/searchable-select';
 import SubjectFetcher from './SubjectFetcher';
+import { SERVICE_CITIES } from '../data/locations';
 import type { AssessmentSubject } from './SubjectFetcher';
 
 /* Budget ranges are a private matching hint only. They are deliberately broad
    and are never rendered anywhere a visitor or tutor can see them — the site
    advertises no fees. */
+/* One vocabulary for two systems. `id` is what /find-a-tutor filters on;
+   `short` is what this form stores and shows the parent. */
+const CITY_SELECT_OPTIONS = [
+    ...SERVICE_CITIES.map((c) => ({ label: c.short, value: c.short })),
+    { label: 'Other', value: 'Other' },
+];
+
+const CITY_LABELS: Record<string, string> = SERVICE_CITIES.reduce(
+    (acc, c) => ({ ...acc, [c.id]: c.short, [c.short]: c.short, [c.label]: c.short }),
+    { Other: 'Other' } as Record<string, string>
+);
+
 const BUDGET_OPTIONS = [
     { value: '', label: 'Prefer not to say' },
     { value: 'under-2000', label: 'Under ₹2,000 / month' },
@@ -91,6 +104,16 @@ export default function BookAssessmentForm({
     const preMode =
         preModeParam === 'online' ? 'online' : preModeParam === 'home' ? 'home' : '';
     const preArea = searchParams.get('area') ?? '';
+    /* ?city= arrives as the FILTER value ('Pune' | 'Kolhapur') because that is
+       what /find-a-tutor matches on, while this select stores its own display
+       label ('Kothrud (Pune)'). Mapping through data/locations.ts is what makes
+       a visitor from /home-tuition/kothrud arrive with the city already chosen.
+       Before this, `area` was prefilled and `city` was left empty AND required —
+       the worst of both. CITY_LABELS is keyed by id, short label and long label
+       so an already-correct value passes through untouched. */
+    const preCityParam = searchParams.get('city') ?? '';
+    const preCity =
+        CITY_LABELS[preCityParam] ?? (preCityParam ? 'Other' : '');
     const preClass = searchParams.get('class') ?? '';
     /* From the header's Subjects menu (?subject=Mathematics). Subjects are
        only fetched once a board + class are chosen, so we hold the requested
@@ -189,7 +212,7 @@ export default function BookAssessmentForm({
                 classId: '',
                 school_name: '',
                 mode: preMode,
-                city: '',
+                city: preCity,
                 area: preArea,
                 preferred_timing: [] as string[],
                 subjects: [] as string[],
@@ -724,11 +747,10 @@ export default function BookAssessmentForm({
                         <div className="grid md:grid-cols-2 gap-5">
                             <div>
                                 <SearchableSelect
-                                    options={[
-                                        { label: 'Kothrud (Pune)', value: 'Kothrud (Pune)' },
-                                        { label: 'Kolhapur', value: 'Kolhapur' },
-                                        { label: 'Other', value: 'Other' },
-                                    ]}
+                                    /* Built from SERVICE_CITIES so this form can
+                                       never drift out of step with the pages
+                                       that link into it. */
+                                    options={CITY_SELECT_OPTIONS}
                                     value={values.city}
                                     onChange={(selected) => setFieldValue('city', selected)}
                                     onBlur={() => setFieldTouched('city', true)}

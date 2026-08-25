@@ -35,7 +35,7 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
     type: "website",
   },
   "/home-tuition": {
-    title: "Home Tuition in Kothrud, Pune & Kolhapur – Verified Home Tutors",
+    title: "Home Tuition & Home Tutors in Kothrud, Pune & Kolhapur",
     rawTitle: true,
     description:
       "One-to-one home tuition with verified tutors for Class 1–12 (CBSE, ICSE, SSC) and JEE/NEET prep in Kothrud (Pune) and Kolhapur. Free assessment, no obligation.",
@@ -44,8 +44,11 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
       "home tuition Kolhapur",
       "home tutor Pune",
       "private tutor at home",
+      "home tutors near me",
+      "home tuition near me",
       "CBSE home tutor",
       "SSC home tutor",
+      "Marathi medium tutor",
     ],
     type: "website",
   },

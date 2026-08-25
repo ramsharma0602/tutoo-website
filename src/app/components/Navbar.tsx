@@ -7,10 +7,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
    PRIMARY NAVIGATION (approved header redesign)
 
      Find a Tutor · Online Tutor · Home Tutor · Subjects ▾ ·
-     For Parent ▾ · For Student ▾ · Become a Tutor · [Book a Free Consultation]
+     For Parent ▾ · For Student ▾ · Become a Tutor · [Book a Free Assessment]
 
      Label rule (booklet voice): "Find a Tutor" always means the browse page
-     at /find-a-tutor. The header CTA reads "Book a Free Consultation" and
+     at /find-a-tutor. The header CTA reads "Book a Free Assessment" and
      /book-free-assessment. Same words as the booklet, no ambiguity.
 
    Decisions baked in:
@@ -274,7 +274,7 @@ export function Navbar() {
               onClick={() => navigate('/book-free-assessment')}
               className="px-5 2xl:px-6 py-3 bg-[#EA580C] hover:bg-[#C2410C] text-white rounded-xl transition-colors duration-200 font-semibold text-[15px] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] focus-visible:ring-offset-2"
             >
-              Book a Free Consultation
+              Book a Free Assessment
             </button>
           </div>
 
@@ -367,7 +367,7 @@ export function Navbar() {
               }}
               className="mt-5 w-full min-h-[52px] rounded-xl text-white font-semibold text-[16px] bg-[#EA580C] active:bg-[#C2410C]"
             >
-              Book a Free Consultation
+              Book a Free Assessment
             </button>
           </div>
         </motion.div>

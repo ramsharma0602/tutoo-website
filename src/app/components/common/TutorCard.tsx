@@ -88,6 +88,21 @@ export default function TutorCard({ tutor, index = 0 }: Props) {
         {tutor.photo ? (
           <AssetImage
             src={tutor.photo}
+            /* The -sm variant exists for every local portrait. Cards render at
+               ~300px wide, so the 400w file is the right pick on a 1x screen
+               and the 640w on a 2x one. Without `sizes` the browser assumes
+               100vw and always fetches the larger file. */
+            srcSet={
+              tutor.photo.endsWith('.webp')
+                ? `${tutor.photo.replace('.webp', '-sm.webp')} 400w, ${tutor.photo} 640w`
+                : undefined
+            }
+            sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
+            /* width/height reserve the box before decode — the aspect-[4/5]
+               wrapper already prevents shift, these keep it true if the
+               wrapper ever changes. */
+            width={640}
+            height={800}
             alt={`${tutor.name}, ${tutor.qualification}`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             objectPosition="center 22%"

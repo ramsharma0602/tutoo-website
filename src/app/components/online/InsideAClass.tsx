@@ -63,7 +63,10 @@ const FACTS = [
 
 export default function InsideAClass() {
   return (
-    <section className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden">
+    <section
+      className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden"
+      aria-labelledby="inside-class-heading"
+    >
       <div
         className="hidden lg:block absolute -bottom-32 -left-20 w-[32rem] h-[32rem] rounded-full opacity-60"
         aria-hidden="true"
@@ -76,6 +79,7 @@ export default function InsideAClass() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
 
         <SectionHeading
+          id="inside-class-heading"
           eyebrow="Inside a Class"
           title="What a class actually looks like"
           lead="Not a recorded video and not a batch. Your child and their tutor, live."

@@ -183,7 +183,10 @@ export function Reviews() {
     'w-11 h-11 rounded-full bg-white ring-1 ring-[#E6E3F0] shadow-[0_6px_18px_rgba(30,27,58,0.10)] flex items-center justify-center text-[#1E1B3A] hover:ring-[#7B2FF7]/40 hover:text-[#6D28D9] transition-colors';
 
   return (
-    <section className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden">
+    <section
+      className="relative py-16 lg:py-24 bg-[#FAFAFC] border-y border-[#F1EFF7] overflow-hidden"
+      aria-labelledby="reviews-heading"
+    >
       <Quote
         className="hidden lg:block absolute top-16 left-[6%] w-56 h-56 text-[#7B2FF7] opacity-[0.05] rotate-180"
         strokeWidth={1}
@@ -201,6 +204,7 @@ export function Reviews() {
       <div className="relative max-w-7xl mx-auto">
         <div className="px-6 lg:px-8">
           <SectionHeading
+            id="reviews-heading"
             eyebrow="Reviews"
             title="What families say about Tutoo"
             lead="Parents in Kothrud, Kolhapur and online — in their own words."

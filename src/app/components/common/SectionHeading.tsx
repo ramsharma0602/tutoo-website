@@ -18,6 +18,9 @@ interface SectionHeadingProps {
   align?: 'center' | 'left';
   tone?: 'light' | 'dark';
   className?: string;
+  /** Lands on the <h2>. Point the section's `aria-labelledby` at it so the
+   *  landmark is announced by its own heading rather than as "region". */
+  id?: string;
 }
 
 export function SectionHeading({
@@ -27,6 +30,7 @@ export function SectionHeading({
   align = 'center',
   tone = 'light',
   className = '',
+  id,
 }: SectionHeadingProps) {
   const dark = tone === 'dark';
 
@@ -53,6 +57,7 @@ export function SectionHeading({
       )}
 
       <h2
+        id={id}
         className={`text-[1.75rem] sm:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-[-0.02em] ${
           dark ? 'text-white' : 'text-[#1E1B3A]'
         }`}

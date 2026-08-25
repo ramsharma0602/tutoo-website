@@ -58,6 +58,7 @@ export default function ConversionCTA({
 
   return (
     <section
+      aria-labelledby={`cta-${placement}`}
       className={cx(
         'relative overflow-hidden bg-[#FAFAFC] border-t border-[#F1EFF7]',
         section
@@ -80,7 +81,10 @@ export default function ConversionCTA({
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-[1.75rem] sm:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-[-0.02em] text-[#1E1B3A]">
+          <h2
+            id={`cta-${placement}`}
+            className="text-[1.75rem] sm:text-3xl lg:text-4xl font-bold leading-[1.15] tracking-[-0.02em] text-[#1E1B3A]"
+          >
             {title}
           </h2>
 

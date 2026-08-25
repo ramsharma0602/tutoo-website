@@ -52,6 +52,7 @@ export default function FaqAccordion({
   return (
     <section
       id={id}
+      aria-labelledby={`${id}-heading`}
       className={cx(
         'relative overflow-hidden',
         section,
@@ -76,7 +77,7 @@ export default function FaqAccordion({
       )}
 
       <div className="relative max-w-3xl mx-auto px-6 lg:px-8">
-        <SectionHeading eyebrow={eyebrow} title={title} lead={lead} />
+        <SectionHeading id={`${id}-heading`} eyebrow={eyebrow} title={title} lead={lead} />
 
         <div className="space-y-3">
           {items.map((f, i) => {

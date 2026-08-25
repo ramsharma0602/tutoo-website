@@ -74,7 +74,7 @@ export default function OnlineHero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative z-10 bg-white">
+    <section className="relative z-10 bg-white" aria-labelledby="online-hero-heading">
 
       {/* ══════════════ BANNER ══════════════ */}
       <div className="relative overflow-hidden">
@@ -166,7 +166,9 @@ export default function OnlineHero() {
               </span>
             </motion.div>
 
-            <h1 className="max-w-[14ch] sm:max-w-[16ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.75rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]">
+            <h1
+              id="online-hero-heading"
+              className="max-w-[14ch] sm:max-w-[16ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.75rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]">
               Learn From the Right Tutor.
               <span className="mt-1 block text-[#EA580C]">From Anywhere.</span>
             </h1>

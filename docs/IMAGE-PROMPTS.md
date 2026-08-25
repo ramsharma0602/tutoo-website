@@ -603,6 +603,96 @@ caption on it. It looks deliberate rather than broken, so there is no rush.
 
 ---
 
+## Slot specs — /home-tuition hero
+
+| | |
+|---|---|
+| **Save as** | `public/tutoo_assets/photos/home-hero.png` (I convert to `.webp`) |
+| **Aspect ratio** | **4:3 landscape** |
+| **Generate at** | 1600 × 1200 |
+| **Sits** | right-hand column of the hero, in a rounded framed panel |
+| **Crop behaviour** | `object-cover` inside `aspect-[4/3]` — a framed photo, **not** a cut-out |
+
+### Why this one is urgent
+
+The page is live and complete, but the hero currently falls back to
+`home-tuition.png` — **the same photograph the First Class section uses
+further down.** So a visitor sees one picture twice on one page. It looks
+deliberate rather than broken, and nothing is misleading, but it is the
+weakest thing about the page and one file drop fixes it.
+
+### The one rule that decides this shot
+
+**It must not repeat the First Class photo.** That one is a close, warm,
+two-person shot at a dining table, shot from the front. This one is the
+*establishing* shot: wider, more of the room, taken slightly from the side.
+Same family, same house, different moment — the way a photographer would
+cover a scene rather than take the same frame twice.
+
+The hero is also the only image on the page that has to work behind a
+floating white chip in its lower-left corner ("The tutor travels, not your
+child"), so keep that area simple.
+
+### Composition constraints
+
+1. **Wider than the First Class shot.** You can see the room: a window, a
+   wall, part of a bookshelf or a cupboard. The room is the product on this
+   page — that is why the photo is framed rather than cut out.
+2. **A tutor and one school student at a table.** The tutor is an adult in
+   their late twenties or thirties, seated beside — not opposite — the child.
+   Beside means *helping*; opposite means *examining*.
+3. **The child is doing the work.** Pen in the child's hand, open notebook and
+   a textbook on the table. The tutor is watching and explaining, not writing.
+   This is the whole "one-to-one at your own table" promise in one frame.
+4. **No laptop, no tablet, no screen of any kind.** This is the page that is
+   explicitly *not* online. A device in this photo contradicts the headline.
+5. **Shot from the side, three-quarter.** Neither face is square to the camera
+   and nobody is looking at the lens.
+6. **Lower-left third kept simple** — floor, table edge or plain wall. A white
+   chip with text sits there.
+7. **No readable text anywhere.** No writing on the notebook, no lettering on
+   book spines, no wall calendar.
+8. **Warm daytime or early-evening light** through a window. An ordinary
+   Indian middle-class home, lived in, not styled.
+9. **Natural Indian features and everyday clothing.** The tutor is dressed as
+   someone who travelled to work — a plain shirt or kurta, a bag or folder
+   visible on a chair is a nice touch. Not formal, not festive.
+
+### The prompt
+
+> A candid documentary-style photograph inside an ordinary middle-class Indian
+> home. A young Indian tutor in their early thirties sits beside a school
+> student of about eleven at a wooden dining table, teaching one to one. The
+> child holds a pen and is writing in an open school notebook; a textbook lies
+> open beside it. The tutor leans in slightly, watching the child's work and
+> explaining something with one hand, not writing. There is no laptop, tablet
+> or screen anywhere in the frame. Shot from the side at a three-quarter
+> angle; neither person looks at the camera. Warm late-afternoon light from a
+> window on the left. The room is visible around them — a painted wall, a
+> bookshelf, a plant, a cloth bag on a chair. Wide, horizontal 4:3 composition
+> with the two figures grouped to the right of centre and simple, uncluttered
+> space in the lower-left third. Shot on a 35mm lens at f/2.5, natural colour,
+> realistic photograph. No text, no lettering, no logos, no screens.
+
+**Negative prompt:** *laptop, tablet, computer, phone, screen, monitor,
+classroom, whiteboard, blackboard, cartoon, illustration, 3d render, cgi,
+looking at camera, thumbs up, posed smile, stock photo, text, watermark,
+logo, studio lighting, white background, luxury interior*
+
+### What to check before sending it
+
+- **Both pairs of hands**, and the pen. Hands holding objects are where image
+  models fail most often.
+- **No screen anywhere**, including reflections and background shelves.
+- **Is it clearly a different moment from the First Class photo?** If it reads
+  as the same frame recropped, regenerate wider.
+- **Is the lower-left third quiet?** A busy corner there fights the chip.
+- Send it at full size — **do not compress it yourself.** I convert to
+  `home-hero.webp` (1200 × 900) plus a 700px small version, the same pipeline
+  as the last two.
+
+---
+
 ## After you generate
 
 1. **Check the hands and the notebook.** Fingers and written text are where

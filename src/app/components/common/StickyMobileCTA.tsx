@@ -45,9 +45,11 @@ export default function StickyMobileCTA() {
             track('book_cta_click', { placement: 'sticky_bar' });
             navigate('/book-free-assessment');
           }}
-          className="flex-1 h-12 rounded-xl bg-[#EA580C] active:bg-[#C2410C] text-white font-semibold text-[15px]"
+          /* No whitespace-nowrap: "Book a Free Assessment" is a long label and
+             must be allowed to shrink inside the remaining flex width. */
+          className="flex-1 min-w-0 h-12 px-3 rounded-xl bg-[#EA580C] active:bg-[#C2410C] text-white font-semibold text-[15px]"
         >
-          Find My Tutor
+          Book a Free Assessment
         </button>
       </div>
     </div>

@@ -53,7 +53,10 @@ const SAFEGUARDS: Feature[] = [
 
 export default function OnlineSafety() {
   return (
-    <section className="relative py-16 lg:py-24 bg-[#0A1028] overflow-hidden">
+    <section
+      className="relative py-16 lg:py-24 bg-[#0A1028] overflow-hidden"
+      aria-labelledby="online-safety-heading"
+    >
       {/* masked grid + two glows — same treatment as the homepage safety band */}
       <div
         className="absolute inset-0 opacity-[0.16]"
@@ -80,6 +83,7 @@ export default function OnlineSafety() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
 
         <SectionHeading
+          id="online-safety-heading"
           tone="dark"
           eyebrow="Safety"
           title="How we keep your child safe"
