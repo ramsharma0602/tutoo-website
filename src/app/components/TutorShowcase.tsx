@@ -37,8 +37,8 @@ export function TutorShowcase() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((t) => (
-            <TutorCard key={t.id} tutor={t} />
+          {featured.map((t, i) => (
+            <TutorCard key={t.id} tutor={t} index={i} />
           ))}
         </div>
 

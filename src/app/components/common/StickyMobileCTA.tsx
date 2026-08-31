@@ -7,7 +7,13 @@ import { WhatsAppIcon, whatsappLink } from './FloatingWhatsApp';
 /* Phase 1 (UX plan §11/§12): mobile users must always have Call / WhatsApp /
    Book within thumb reach. Hidden on desktop and on the form pages themselves. */
 
-const HIDDEN_ON = ['/book-free-assessment', '/apply-tutor'];
+/* '/tutor/' is here because a tutor profile carries its own sticky bar with
+   a tutor-specific action ("Enquire about Priya"). Both rendered at once and
+   the global one — z-[60] against the profile's z-30 — sat directly on top,
+   so the tutor-specific CTA was invisible and its 73px only pushed the page
+   down. On a profile page the generic "Book a Free Assessment" is also the
+   weaker action: the parent is looking at one specific person. */
+const HIDDEN_ON = ['/book-free-assessment', '/apply-tutor', '/tutor/'];
 
 export default function StickyMobileCTA() {
   const navigate = useNavigate();

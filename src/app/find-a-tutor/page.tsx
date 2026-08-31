@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
+import { DemoNotice } from '../tutor-profile/sections';
 import {
   Search,
   SlidersHorizontal,
@@ -177,13 +178,33 @@ export default function FindATutorPage() {
   return (
     <main className="bg-[#FAFAFC] pt-36 lg:pt-40">
 
+      {/* ── SAMPLE-PROFILE NOTICE ─────────────────────────────────────
+          tutorsDemo.ts has promised since it was written that "while
+          USE_DEMO_TUTORS is true the page displays a visible notice telling
+          visitors these are sample profiles". It never did. `isDemo` was
+          computed and used only to pick the array, while the page rendered
+          a "Verified Tutors" badge directly above twelve invented people.
+
+          It goes ABOVE the hero, not below the grid, because a notice a
+          parent reaches after browsing has already failed. */}
+      {isDemo && (
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 mb-8">
+          <DemoNotice compact />
+        </div>
+      )}
+
       {/* ───────────────────────── HERO ───────────────────────── */}
       <section className="max-w-4xl mx-auto px-6 lg:px-8 text-center pb-10 lg:pb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E6E3F0] rounded-full mb-6 shadow-sm">
-            <UserCheck className="w-4 h-4 text-[#6D28D9]" />
-            <span className="text-sm font-medium text-[#1E1B3A]">Verified Tutors</span>
-          </div>
+          {/* The "Verified Tutors" badge is withheld while the listing is
+              sample data — it is the single most misleading element that can
+              sit above an invented person. */}
+          {!isDemo && (
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E6E3F0] rounded-full mb-6 shadow-sm">
+              <UserCheck className="w-4 h-4 text-[#6D28D9]" />
+              <span className="text-sm font-medium text-[#1E1B3A]">Verified Tutors</span>
+            </div>
+          )}
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E1B3A] mb-5 leading-[1.15]">
             Find the right tutor for{' '}
@@ -196,7 +217,10 @@ export default function FindATutorPage() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-7">
-            {['Free assessment', 'Verified tutors', 'No obligation'].map((p) => (
+            {(isDemo
+              ? ['Free assessment', 'No obligation']
+              : ['Free assessment', 'Verified tutors', 'No obligation']
+            ).map((p) => (
               <span key={p} className="flex items-center gap-2 text-sm font-medium text-[#1E1B3A]">
                 <CheckCircle2 className="w-4 h-4 text-[#16A34A]" /> {p}
               </span>
@@ -354,8 +378,18 @@ export default function FindATutorPage() {
       </section>
 
       {/* ───────────────────────── RESULTS ───────────────────────── */}
-      <section className="py-10 lg:py-14">
+      <section className="py-10 lg:py-14" aria-labelledby="results-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          {/* The page went h1 → h3 at every width: the <h1> is the page
+              title and the next heading is a tutor's name inside TutorCard,
+              which is an h3. A screen-reader user moving by heading dropped
+              two levels with nothing explaining what the list is. Visually
+              hidden because the count line right below already says it on
+              screen — this is for the heading outline, not the design. */}
+          <h2 id="results-heading" className="sr-only">
+            Tutors matching your search
+          </h2>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <p className="text-[15px] font-medium text-[#4B4763]" aria-live="polite">
@@ -392,7 +426,7 @@ export default function FindATutorPage() {
                     transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.04 }}
                     className="h-full"
                   >
-                    <TutorCard tutor={t} />
+                    <TutorCard tutor={t} index={i} />
                   </motion.div>
                 ))}
               </div>

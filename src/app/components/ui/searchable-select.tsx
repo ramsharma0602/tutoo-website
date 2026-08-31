@@ -264,9 +264,14 @@ export default function SearchableSelect({
                     </span>
                 )}
 
+                {/* min-w-0 is what makes `truncate` actually work here. A flex
+                    item defaults to min-width:auto, so `flex-1 truncate` alone
+                    still refuses to shrink below its text and the label pushes
+                    the trigger — and whatever grid it sits in — wider than the
+                    viewport instead of ellipsing. */}
                 <span
                     className={cn(
-                        'flex-1 truncate',
+                        'flex-1 min-w-0 truncate text-left',
                         selected ? 'text-[#1E1B3A]' : 'text-[#94A3B8]'
                     )}
                 >

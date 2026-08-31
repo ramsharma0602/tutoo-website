@@ -129,8 +129,8 @@ export default function TutorsPage() {
             {/* ── Grid ── */}
             {filtered.length ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filtered.map((t) => (
-                  <TutorCard key={t.id} tutor={t} />
+                {filtered.map((t, i) => (
+                  <TutorCard key={t.id} tutor={t} index={i} />
                 ))}
               </div>
             ) : (

@@ -20,7 +20,16 @@
  *
  *  While USE_DEMO_TUTORS is true the page displays a visible notice telling
  *  visitors these are sample profiles — so no parent can be misled into
- *  enquiring about a tutor who does not exist.
+ *  enquiring about a tutor who does not exist. /tutor/:slug additionally
+ *  emits noindex and withholds Person structured data for these entries.
+ *
+ *  ── PROFILE FIELDS ARE DELIBERATELY UNEVEN ──────────────────────────────
+ *  Only the first three tutors carry education, experience, expertise,
+ *  approach, availability, certifications and areasCovered. The other nine
+ *  carry none of it ON PURPOSE: a real roster will look exactly like this,
+ *  and it is the only way to see that /tutor/:slug hides an empty section
+ *  rather than printing a heading with nothing under it. Do not "complete"
+ *  the remaining nine — the gaps are the test.
  * ─────────────────────────────────────────────────────────────────────────
  */
 import type { Tutor } from './tutors';
@@ -44,7 +53,35 @@ export const DEMO_TUTORS: Tutor[] = [
     languages: ['English', 'Marathi', 'Hindi'],
     photo: '/tutoo_assets/photos/teacher-1.webp',
     about:
-      'Teaches Maths and Science with a focus on clearing basics before moving to exam questions. Works with students who have fallen behind and need to rebuild confidence.',
+      'Teaches Maths and Science with a focus on clearing basics before moving to exam questions. Works with students who have fallen behind and need to rebuild confidence. Most of her students come to her a term or two behind, so the first few classes are usually spent finding out exactly where the gap starts rather than following the school syllabus. She sets short weekly practice and marks it before the next class.',
+    areasCovered: ['Kothrud', 'Karve Nagar', 'Warje', 'Erandwane'],
+    expertise: ['Algebra', 'Geometry', 'Trigonometry', 'Fractions', 'Board exam preparation', 'Building basics'],
+    approach: ['One-to-one teaching', 'Concept-based learning', 'Doubt solving', 'Regular practice sessions', 'Weekly progress updates'],
+    education: [
+      { degree: 'M.Sc. Mathematics', institution: 'Savitribai Phule Pune University', year: '2018' },
+      { degree: 'B.Sc. Mathematics', institution: 'Fergusson College, Pune', year: '2016' },
+    ],
+    experience: [
+      {
+        role: 'Private tutor',
+        from: '2020',
+        detail: 'Home and online classes for Class 6 to 10 students across Kothrud and nearby areas.',
+        subjects: ['Mathematics', 'Science'],
+      },
+      {
+        role: 'Mathematics teacher',
+        organisation: 'Vidya Bhavan School, Pune',
+        from: '2018',
+        to: '2020',
+        detail: 'Taught Class 7 and 8 Mathematics and ran the after-school remedial group.',
+      },
+    ],
+    availability: [
+      { day: 'Monday', hours: '4:00 PM – 8:00 PM' },
+      { day: 'Tuesday', hours: '4:00 PM – 8:00 PM' },
+      { day: 'Thursday', hours: '4:00 PM – 8:00 PM' },
+      { day: 'Saturday', hours: '10:00 AM – 5:00 PM' },
+    ],
     addedOn: '2026-07-02',
   },
   {
@@ -63,6 +100,26 @@ export const DEMO_TUTORS: Tutor[] = [
     photo: '/tutoo_assets/photos/teacher-2.webp',
     about:
       'Prepares Class 11 and 12 Science students for board exams alongside JEE basics. Sets weekly problem sets and reviews them in class.',
+    areasCovered: ['Kothrud', 'Bavdhan', 'Warje'],
+    expertise: ['Mechanics', 'Thermodynamics', 'Calculus', 'JEE foundation', 'Numerical problem solving'],
+    approach: ['One-to-one teaching', 'Regular practice sessions', 'Exam preparation', 'Doubt solving'],
+    education: [
+      { degree: 'B.E. Mechanical Engineering', institution: 'College of Engineering, Pune', year: '2020' },
+    ],
+    experience: [
+      {
+        role: 'Physics and Maths tutor',
+        from: '2022',
+        detail: 'Home tuition for Class 11 and 12 Science students preparing for HSC and CBSE boards.',
+        subjects: ['Physics', 'Mathematics'],
+      },
+      {
+        role: 'Teaching assistant',
+        organisation: 'Pathfinder Coaching Classes, Pune',
+        from: '2020',
+        to: '2022',
+      },
+    ],
     addedOn: '2026-06-18',
   },
   {
@@ -81,6 +138,20 @@ export const DEMO_TUTORS: Tutor[] = [
     photo: '/tutoo_assets/photos/teacher-3.webp',
     about:
       'Helps younger students with reading, grammar and writing. Patient with children who find English difficult at school.',
+    expertise: ['Reading comprehension', 'Grammar', 'Creative writing', 'Spoken English', 'Phonics'],
+    approach: ['One-to-one teaching', 'Concept-based learning', 'Homework support', 'Personalised lesson plans'],
+    education: [
+      { degree: 'M.A. English Literature', institution: 'University of Mumbai', year: '2016' },
+      { degree: 'B.A. English', institution: 'St. Xavier\'s College, Mumbai', year: '2014' },
+    ],
+    certifications: [
+      { name: 'CELTA', issuer: 'Cambridge Assessment English', year: '2017' },
+    ],
+    availability: [
+      { day: 'Monday', hours: '5:00 PM – 8:00 PM' },
+      { day: 'Wednesday', hours: '5:00 PM – 8:00 PM' },
+      { day: 'Friday', hours: '5:00 PM – 8:00 PM' },
+    ],
     addedOn: '2026-05-30',
   },
   {

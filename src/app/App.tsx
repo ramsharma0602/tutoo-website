@@ -53,6 +53,8 @@ const BoardClassPage = lazy(() =>
     default: m.BoardClassPage,
   }))
 );
+const TutorProfilePage = lazy(() => import("./tutor-profile/TutorProfilePage"));
+const NotFoundPage = lazy(() => import("./components/common/NotFoundPage"));
 const OurMission = lazy(() => import("./about-program/our-mission/page"));
 const HowITWork = lazy(() => import("./about-program/how-it-work/page"));
 const ContactUs = lazy(() => import("./about-program/contact-us/page"));
@@ -412,6 +414,41 @@ export default function App() {
               <TopInfoBar />
               <Navbar />
               <TermsOfServicePage />
+              <Footer />
+            </>
+          } />
+
+          {/* ── TUTOR PROFILE ─────────────────────────────────────────────
+              One component for every tutor. Two segments, so it never
+              collides with the greedy /:board/:category/:className route
+              below, which swallows any unmatched three-segment path.
+
+              Singular "/tutor/" on purpose: "/tutors" already exists above
+              as a redirect to /find-a-tutor. */}
+          <Route path="/tutor/:slug" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <TutorProfilePage />
+              <Footer />
+            </>
+          } />
+
+          {/* ── CATCH-ALL ─────────────────────────────────────────────────
+              This did not exist. Any unmatched one- or two-segment URL
+              rendered NOTHING — a blank white page with no navbar, no
+              footer and no way back — while RouteSEO still emitted an
+              indexable canonical carrying the homepage's title and
+              description. Every typo'd link and every stale inbound URL
+              landed there.
+
+              Must stay last: <Routes> picks the best match, but keeping it
+              here also makes the intent obvious to the next reader. */}
+          <Route path="*" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <NotFoundPage />
               <Footer />
             </>
           } />

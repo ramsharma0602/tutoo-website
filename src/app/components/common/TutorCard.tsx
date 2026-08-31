@@ -1,5 +1,5 @@
 import { GraduationCap, MapPin, Home, Monitor, Laptop, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AssetImage from './AssetImage';
 import { cx, card, cardHover, buttonPrimary } from './ui';
 import type { Tutor } from '../../data/tutors';
@@ -59,7 +59,6 @@ interface Props {
 }
 
 export default function TutorCard({ tutor, index = 0 }: Props) {
-  const navigate = useNavigate();
   const mode = MODE_LABEL[tutor.mode];
   const tint = TINTS[Math.abs(index) % TINTS.length];
 
@@ -155,18 +154,25 @@ export default function TutorCard({ tutor, index = 0 }: Props) {
           {place}
         </div>
 
-        <button
-          type="button"
-          onClick={() =>
-            navigate(
-              `/book-free-assessment?mode=${tutor.mode === 'online' ? 'online' : 'home'}`
-            )
-          }
+        {/* ── THE CARD'S ONE ACTION ────────────────────────────────────
+            This was a <button> firing navigate('/book-free-assessment?mode=…'),
+            which threw the tutor away: clicking Priya and clicking Sagar
+            produced the identical URL, so nothing downstream could tell
+            which tutor a parent actually wanted. That is the exact problem
+            the profile page exists to solve, and it started here.
+
+            Now a real <Link> carrying the slug — crawlable, middle-clickable,
+            announced as a link rather than a button. The enquiry moves to
+            the profile, where a parent has read something before committing;
+            one action per card also keeps a grid of twelve scannable. */}
+        <Link
+          to={`/tutor/${tutor.id}`}
+          aria-label={`View ${tutor.name}'s profile`}
           className={cx(buttonPrimary, 'mt-4 w-full h-11 text-[14px] shadow-none')}
         >
-          Request this tutor
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-        </button>
+          View profile
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+        </Link>
       </div>
     </article>
   );

@@ -7,16 +7,36 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+      <!-- Single variable family (400-700) for the whole site. Loaded here as a
+           <link> rather than a CSS @import so the preconnects above actually
+           apply and the font is discovered in the initial HTML scan. -->
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      />
       <title>Tutoo – Home Tutors & Online Classes in Kothrud, Pune & Kolhapur</title>
-      <meta name="description" content="Verified home tutors and one-to-one online classes for Class 1–12, JEE & NEET. Serving Kothrud (Pune) and Kolhapur. Book a free assessment — no obligation." />
-      <meta name="robots" content="index, follow" />
-      <meta property="og:title" content="Tutoo – Home Tutors & Online Classes" />
-      <meta property="og:description" content="Verified home tutors and one-to-one online classes for Class 1–12, JEE & NEET in Kothrud (Pune) and Kolhapur. Free assessment, no obligation." />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content="/tutoo_assets/png/logo_light_1.png" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="/tutoo_assets/png/logo_light_1.png" />
+
+      <!-- ── META TAGS LIVE IN seo/SEOHead.tsx, NOT HERE ──────────────────
+           This block used to also hardcode description, robots, og:title,
+           og:description, og:type, og:image and twitter:*.
+
+           react-helmet-async only manages the tags IT creates (they carry
+           data-rh="true"). Static tags with the same name are not replaced,
+           they are APPENDED TO — so every page on the site was shipping two
+           description tags, two og:title tags, and two robots tags with
+           different values.
+
+           That was harmless-looking until /tutor/:slug needed to emit
+           noindex for a sample profile: the page correctly emitted
+           "noindex, nofollow" and it landed SECOND, behind a hardcoded
+           "index, follow". Two contradictory robots directives is not a
+           state you want to be in when the thing you are trying not to index
+           is a person who does not exist.
+
+           <title> stays because Helmet does replace the title element, and
+           having one before JS runs is better than a blank tab.
+
+           Do not add meta tags here. Add them to STATIC_PAGE_META. -->
       <link rel="icon" type="image/png" href="/tutoo_assets/png/app_icon_dark.png" />
       <link rel="apple-touch-icon" href="/tutoo_assets/png/app_icon_dark.png" />
       <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>

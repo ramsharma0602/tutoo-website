@@ -99,8 +99,14 @@ export default function TopInfoBar() {
               <MapPin className="w-3.5 h-3.5 text-white" />
             </div>
 
-            <span>
-              Home & Online Tuition Across India
+            {/* Was "Home & Online Tuition Across India", which is not true of
+                the home half: home tutors go to Kothrud (Pune) and Kolhapur,
+                and only online is national. The site's own city section says
+                exactly that, so the header was contradicting it on every page.
+                Split into the two facts rather than dropped — the cities are
+                the more useful thing for a local parent to see anyway. */}
+            <span className="whitespace-nowrap">
+              Home Tuition in Kothrud &amp; Kolhapur · Online across India
             </span>
           </motion.div>
 
@@ -163,10 +169,16 @@ export default function TopInfoBar() {
             </span>
           </a>
 
+          {/* Hidden on the narrowest phones. At 320px the two pills together
+              measured 326px wide — clipped by the bar's overflow-hidden, so
+              the email address was cut off mid-word rather than wrapping. A
+              phone number a parent can tap is worth more here than half an
+              email address. */}
           <a
             href="mailto:info@tutoolearning.com"
             className="
-        flex
+        hidden
+        min-[380px]:flex
         items-center
         gap-1.5
         px-2.5
