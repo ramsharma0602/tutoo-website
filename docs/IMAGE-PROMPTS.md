@@ -693,6 +693,116 @@ logo, studio lighting, white background, luxury interior*
 
 ---
 
+## Slot specs — /for-parents hero
+
+| | |
+|---|---|
+| **Save as** | `public/tutoo_assets/photos/for-parents-hero.png` (I convert to `.webp`) |
+| **Aspect ratio** | **4:3 landscape** |
+| **Generate at** | 1600 × 1200 |
+| **Background** | **Keep it. This one is NOT a cut-out** — see below |
+| **Sits** | right-hand column of the hero, in a rounded framed panel (~560px wide) |
+| **Crop behaviour** | `object-cover`, so a little is trimmed left and right at some widths |
+
+### Read this first: do not send a transparent PNG
+
+The last two hero shots came back as cut-outs — transparent background, subject
+floating. That is right for `/home-tuition` and `/online-tuition`, where the
+photo bleeds off the edge of a big banner.
+
+This one is different. `PageHero` is a compact opener: eyebrow, headline, one
+line, three chips. A floating cut-out beside four lines of text has nothing to
+sit against and reads as a sticker. **Generate this one full-frame, with the
+room visible, and no transparency.** If it arrives as a cut-out I will have to
+rebuild the section again, as I did for the home hero.
+
+### The one rule that decides this shot
+
+**It must show the parent deciding — not a class happening.**
+
+Every photograph on the site already shows teaching: a tutor and a child at a
+table, a girl at a laptop, a mother beside her son while he works. There are
+five of them. A sixth would say nothing new, and this page is not about
+teaching at all. Its headline is *"You choose the tutor. We do the finding."*
+
+So the subject of this photograph is a **mother looking at tutor profiles on
+her phone**, at her own kitchen or dining table, unhurried — the moment before
+she picks someone. Her child is present but not the subject: at the same table,
+doing homework, in the near background and softly out of focus. That is the
+page in one frame, and it is a picture the site does not have.
+
+### Composition constraints
+
+1. **The mother is the subject and she is calm.** Early-to-mid thirties, seated
+   at a table with a phone in one hand and a cup of tea within reach. She is
+   reading, considering — not worried, not delighted, not on a call.
+2. **She is looking at the phone, not at the camera and not at her child.**
+   The whole point is that this is her decision and she is taking her time.
+3. **The child is secondary.** At the same table, side or slightly behind, head
+   down over a notebook, clearly out of focus. A child looking at the camera
+   pulls the eye and turns this back into a photo about the child.
+4. **The phone screen must NOT be readable.** Angle it away, or let it be a
+   soft indistinct glow. We do not have a parent app, and a legible interface
+   in this photo would show a product that does not exist. This is the single
+   most important technical constraint in the shot.
+5. **No tutor in the frame.** No third adult, no laptop video call, no
+   whiteboard. Nobody is teaching in this picture.
+6. **A real room, and you can see it.** Kitchen or dining area of an ordinary
+   Indian home — a window, a wall, part of a shelf or a fridge. Full frame,
+   background included, no transparency.
+7. **No readable text anywhere.** Nothing on the phone, no notebook writing, no
+   lettering on packaging, no wall calendar.
+8. **Warm daylight**, late morning or afternoon. Everyday home clothing — a
+   kurta or a plain top. Not styled, not festive.
+9. **Horizontal 4:3, subject slightly right of centre**, so the crop can trim
+   the left edge at narrow widths without losing her.
+
+### The prompt
+
+> A candid documentary-style photograph of an Indian mother in her mid-thirties
+> sitting at the dining table of an ordinary middle-class home, looking
+> thoughtfully at her phone which she holds in one hand. A cup of tea sits on
+> the table beside her. Her expression is calm and considering — she is reading
+> something and taking her time. She is not looking at the camera. In the
+> near background, softly out of focus, her young child sits at the same table
+> with head down over a school notebook, absorbed in homework. The phone screen
+> is angled away from the camera and is not readable. Warm late-morning
+> daylight from a window. The room is visible around them — a painted wall, a
+> shelf, a plant. Full frame with the background intact. Horizontal 4:3
+> composition with the mother slightly right of centre. Shot on a 35mm lens at
+> f/2.2, natural colour, realistic photograph. No text, no lettering, no
+> readable phone screen, no logos.
+
+**Negative prompt:** *transparent background, cut-out, isolated subject, white
+background, tutor, teacher, third person, laptop, video call, whiteboard,
+classroom, child looking at camera, posed smile, looking at camera, thumbs up,
+stock photo, readable screen, app interface, text, watermark, logo, studio
+lighting, luxury interior, cartoon, illustration, 3d render*
+
+### What to check before sending it
+
+- **The phone screen.** If any interface, list or face is legible on it,
+  regenerate. This is the one that would put a fake product on the page.
+- **Her hands, and the cup.** Hands holding objects are where these models
+  fail.
+- **Is the child clearly secondary?** If the child is sharp, or looking up, the
+  photo has become about the child again and the section loses its point.
+- **Is there a background?** If the subject is floating on white or
+  transparency, it is the wrong file for this slot.
+- Send it at full size — **do not compress it yourself.** I convert to
+  `for-parents-hero.webp` (1200 × 900) plus a 700px small version, the same
+  pipeline as the last three.
+
+### The code change that goes with it
+
+`PageHero` is currently text-only and shared by three pages. When this image
+lands I will give it an optional `image` prop and switch **only /for-parents**
+to a two-column layout. `/safety` and `/fees` stay text-only on purpose: a
+parent opens those with a question already formed, and half a screen of
+photography before the answer is a tax on someone who is already anxious.
+
+---
+
 ## After you generate
 
 1. **Check the hands and the notebook.** Fingers and written text are where

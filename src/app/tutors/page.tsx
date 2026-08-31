@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Search, UserCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import TutorCard from '../components/common/TutorCard';
-import { TUTORS, allSubjects, Tutor } from '../data/tutors';
+import { TUTORS, allSubjects, type Tutor } from '../data/tutors';
 import { whatsappLink, WhatsAppIcon } from '../components/common/FloatingWhatsApp';
 
 /* Phase 4 (UX plan §15): /tutors — browse verified tutors with simple

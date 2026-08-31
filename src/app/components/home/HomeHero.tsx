@@ -178,14 +178,27 @@ export default function HomeHero({ city }: Props) {
 
         {/* ── Copy + photo ── */}
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_0.92fr] gap-10 lg:gap-14 items-center pt-32 pb-28 lg:pt-36 lg:pb-36">
+          {/* The photo column is now the larger of the two. The cut-out is 3:2,
+              so its height is dictated entirely by its width — the only way to
+              make it stand as tall as the copy beside it is to give it more of
+              the row. minmax(0,…) on both tracks keeps the default
+              `min-width:auto` from sizing a column by its content. */}
+          {/* Two ratios, not one. Between lg and xl the copy column needs a
+              full half of the row or "A Tutor Who Comes" breaks onto a third
+              line; from xl there is room to hand the extra width to the photo,
+              which is where it does the most good. minmax(0,…) on both tracks
+              stops the default `min-width:auto` sizing a column by its
+              content. */}
+          <div className="grid lg:grid-cols-2 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 lg:gap-8 xl:gap-10 items-center pt-32 pb-28 lg:pt-36 lg:pb-36">
 
             {/* ── Copy ── */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="min-w-0"
+              /* z-[1]: the photo column overlaps this one at xl, and the copy
+                 must win — both visually and for hit-testing. */
+              className="relative z-[1] min-w-0"
             >
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
@@ -199,7 +212,7 @@ export default function HomeHero({ city }: Props) {
 
               <h1
                 id="home-hero-heading"
-                className="max-w-[13ch] lg:max-w-[18ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.75rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]"
+                className="max-w-[13ch] lg:max-w-none xl:max-w-[18ch] text-[2.15rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.5rem] xl:text-[2.95rem] font-bold tracking-[-0.022em] text-[#1E1B3A]"
               >
                 {headlineLine1}
                 <span className="mt-1 block text-[#EA580C]">{headlineLine2}</span>
@@ -278,7 +291,12 @@ export default function HomeHero({ city }: Props) {
               initial={{ opacity: 0, scale: 0.97, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="relative min-w-0"
+              /* pointer-events-none: nothing in this column is interactive, and
+                 the cut-out's transparent left margin was otherwise swallowing
+                 clicks on the right edge of "Book a Free Assessment" from
+                 1280px up — a button you can see but cannot press. Same guard
+                 OnlineHero puts on its photo. */
+              className="relative min-w-0 pointer-events-none"
             >
               {/* Soft ground under the cut-out. A figure with no background
                   otherwise appears to hover with nothing beneath it; this
@@ -297,12 +315,18 @@ export default function HomeHero({ city }: Props) {
               <AssetImage
                 src="/tutoo_assets/photos/home-hero.webp"
                 srcSet="/tutoo_assets/photos/home-hero-sm.webp 700w, /tutoo_assets/photos/home-hero.webp 1200w"
-                sizes="(min-width: 1280px) 720px, (min-width: 1024px) 560px, calc(100vw - 3rem)"
+                sizes="(min-width: 1280px) 900px, (min-width: 1024px) 660px, calc(100vw - 3rem)"
                 width={1200}
                 height={800}
                 loading="eager"
                 alt={PHOTO_ALT}
-                className="relative w-full lg:w-[118%] lg:max-w-none h-auto object-contain drop-shadow-[0_22px_45px_rgba(30,27,58,0.14)]"
+                /* No negative x-shift. Pulling the image left made it taller
+                   but laid the desk and the books over the secondary CTA — an
+                   image on top of a button is a usability bug, not a layout
+                   choice. It grows to the right instead and lets the viewport
+                   crop the far edge of the notebook, the way the online hero
+                   already bleeds. */
+                className="relative w-full lg:w-[124%] xl:w-[122%] lg:max-w-none h-auto object-contain drop-shadow-[0_26px_55px_rgba(30,27,58,0.16)]"
               />
 
               {/* Floating chip — the same treatment the homepage floats over its

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "typecheck": "tsc --noEmit",
     "build:seo": "vite build && node scripts/prerender.mjs",
     "dev": "vite"
   },

@@ -57,6 +57,13 @@ const OurMission = lazy(() => import("./about-program/our-mission/page"));
 const HowITWork = lazy(() => import("./about-program/how-it-work/page"));
 const ContactUs = lazy(() => import("./about-program/contact-us/page"));
 const StudyMaterialsPage = lazy(() => import("./resources/study-material/StudyMaterialsPage"));
+
+/* The parents' guide and the two pages it hubs into. /for-parents is a
+   rebuild — the old component and its seven sections were deleted, not
+   revived; see parents/ForParentsPage.tsx for what was in them. */
+const ForParentsPage = lazy(() => import("./parents/ForParentsPage"));
+const SafetyPage = lazy(() => import("./parents/SafetyPage"));
+const FeesPage = lazy(() => import("./parents/FeesPage"));
 const AboutTutoo = lazy(() => import("./about-program/about-tutoo/page"));
 const CareersPage = lazy(() => import("./careers/page"));
 const TeamPage = lazy(() => import("./team/page"));
@@ -250,11 +257,38 @@ export default function App() {
             </>
           } />
 
-          {/* /for-parents duplicated /home-tuition for the same audience and
-              cannibalised its keywords (audit P1-9). Redirect keeps old links
-              and any indexed URL working. To restore the page, swap this back
-              for the ForParentsPage element — the component is untouched. */}
-          <Route path="/for-parents" element={<Navigate to="/home-tuition" replace />} />
+          {/* ── For Parents ──
+              The old page at this URL duplicated /home-tuition and, worse,
+              carried invented ratings, tutor and student counts, a fake parent
+              dashboard and fabricated outcome claims. It was deleted. This is
+              a new page: a hub that answers parent questions and links out,
+              rather than a third page selling the same two services. */}
+          <Route path="/for-parents" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <ForParentsPage />
+              <Footer />
+            </>
+          } />
+
+          <Route path="/safety" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <SafetyPage />
+              <Footer />
+            </>
+          } />
+
+          <Route path="/fees" element={
+            <>
+              <TopInfoBar />
+              <Navbar />
+              <FeesPage />
+              <Footer />
+            </>
+          } />
 
           {/* For Tutors */}
           <Route path="/for-tutors" element={

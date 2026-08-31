@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Phone } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { whatsappLink, WhatsAppIcon } from './FloatingWhatsApp';
 import { cx, section, buttonPrimary, buttonSecondary, buttonLg } from './ui';
 import { track } from '../../../seo/analytics';
@@ -54,8 +54,6 @@ export default function ConversionCTA({
   points,
   footnote,
 }: Props) {
-  const navigate = useNavigate();
-
   return (
     <section
       aria-labelledby={`cta-${placement}`}
@@ -91,29 +89,43 @@ export default function ConversionCTA({
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#4B4763]">{lead}</p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <button
-              type="button"
-              onClick={() => {
-                track('find_tutor_click', { placement });
-                navigate(primaryHref);
-              }}
+            {/* ── LINKS, NOT BUTTONS ────────────────────────────────────
+                These were <button onClick={navigate}>. They worked when
+                clicked and failed at everything else a link does: no href
+                for a crawler to follow, so the site's most important
+                internal link — every page's closing CTA — was invisible to
+                search engines; no middle-click or ctrl-click to open in a
+                new tab; nothing to copy from the context menu; and the wrong
+                element role announced to a screen reader, which is told
+                "button" and then finds the page has changed under it.
+
+                <Link> gives a real anchor and still routes client-side, so
+                nothing about the navigation behaviour changes.
+
+                The track() calls were also swapped: the PRIMARY button —
+                "Book a Free Assessment" on most pages — was firing
+                find_tutor_click, and the secondary was firing
+                book_cta_click. Every page using this component was
+                reporting its assessment bookings as tutor searches. Fixed
+                here rather than in the analytics, because the component is
+                what is wrong. */}
+            <Link
+              to={primaryHref}
+              onClick={() => track('book_cta_click', { placement })}
               className={cx(buttonPrimary, buttonLg, 'w-full sm:w-auto')}
             >
               {primaryLabel}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
 
             {secondaryLabel && secondaryHref && (
-              <button
-                type="button"
-                onClick={() => {
-                  track('book_cta_click', { placement });
-                  navigate(secondaryHref);
-                }}
+              <Link
+                to={secondaryHref}
+                onClick={() => track('find_tutor_click', { placement })}
                 className={cx(buttonSecondary, buttonLg, 'w-full sm:w-auto')}
               >
                 {secondaryLabel}
-              </button>
+              </Link>
             )}
           </div>
 

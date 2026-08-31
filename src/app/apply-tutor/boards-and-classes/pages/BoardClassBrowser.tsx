@@ -34,10 +34,13 @@ const BOARD_COLORS: Record<string, { color: string; bg: string; border: string; 
   IGCSE: { color: "#7B2FF7", bg: "rgba(123,47,247,0.09)", border: "rgba(123,47,247,0.2)", grad: "from-[#7B2FF7] to-[#7B2FF7]" },
 };
 
+/* All four Category values must be present — "competitive" was missing, so any
+   JEE/NEET entry rendered its label as `undefined`. */
 const CAT_LABEL: Record<Category, string> = {
   primary: "Primary (1–5)",
   secondary: "Secondary (6–10)",
   senior: "Senior (11–12)",
+  competitive: "Entrance Prep",
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

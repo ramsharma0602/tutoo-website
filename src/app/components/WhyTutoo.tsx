@@ -16,36 +16,40 @@ import FeatureGrid, { type Feature } from './common/FeatureGrid';
    rating, or an outcome promise, so every one is something we can stand behind.
 ───────────────────────────────────────────────────────────────────────── */
 
+/* ⚠️  These used `description` while Feature reads `text`, so all six cards on
+   the homepage rendered with a title and no body. Same failure as the FAQ
+   section: valid React, invisible to the reader, and silent because the repo
+   had no working typecheck. Keep the Feature[] annotation. */
 const REASONS: Feature[] = [
   {
     icon: UserCheck,
     title: 'Right Tutor',
-    description: 'We help you find a tutor who matches your requirement.',
+    text: 'We help you find a tutor who matches your requirement.',
   },
   {
     icon: User,
     title: 'Personal Learning',
-    description: "One-to-one attention based on the student's needs.",
+    text: "One-to-one attention based on the student's needs.",
   },
   {
     icon: Laptop,
     title: 'Online & Home',
-    description: 'Choose the learning mode that works for you.',
+    text: 'Choose the learning mode that works for you.',
   },
   {
     icon: Clock,
     title: 'Flexible',
-    description: 'Choose timings that suit your schedule.',
+    text: 'Choose timings that suit your schedule.',
   },
   {
     icon: ShieldCheck,
     title: 'Verified Profiles',
-    description: 'Tutor information is reviewed before connecting.',
+    text: 'Tutor information is reviewed before connecting.',
   },
   {
     icon: ListChecks,
     title: 'Simple Process',
-    description: 'Tell us what you need. We help you find the tutor.',
+    text: 'Tell us what you need. We help you find the tutor.',
   },
 ];
 

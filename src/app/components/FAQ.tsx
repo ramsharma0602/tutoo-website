@@ -1,58 +1,65 @@
-import FaqAccordion from './common/FaqAccordion';
+import FaqAccordion, { type FaqItem } from './common/FaqAccordion';
 
-/* The booklet's seven questions first, in the booklet's order and voice —
+/* ⚠️  These are typed as FaqItem on purpose. This array used to use
+   `question`/`answer` keys while FaqAccordion reads `q`/`a`, so every row on
+   the homepage rendered blank — and the FAQPage JSON-LD emitted ten Question
+   objects with no name and no answer. Nothing failed loudly: `vite build`
+   does not typecheck, and the repo's tsconfig cannot run `tsc` as-is. The
+   annotation is what makes the next such mistake a compile error.
+
+   The booklet's seven questions first, in the booklet's order and voice —
    short sentences, plain words, and its habit of saying "depending on tutor
    availability" instead of over-promising. Three questions parents actually
    ask us (fees, vetting, proof a class happened) are kept after those. */
-const faqs = [
+const faqs: FaqItem[] = [
   {
-    question: 'How do I find a tutor?',
-    answer:
+    q: 'How do I find a tutor?',
+    a:
       'Tell us your class, subject, location and whether you want home or online classes. We shortlist suitable tutors and share them with you.',
   },
   {
-    question: 'Can I find an online tutor?',
-    answer:
+    q: 'Can I find an online tutor?',
+    a:
       'Yes. We arrange one-to-one online classes, and they are available anywhere in India.',
   },
   {
-    question: 'Can I find a home tutor?',
-    answer:
+    q: 'Can I find a home tutor?',
+    a:
       'Yes, in Kothrud (Pune) and Kolhapur, depending on tutor availability in your area.',
   },
   {
-    question: 'Which classes do you cover?',
-    answer:
+    q: 'Which classes do you cover?',
+    a:
       'Class 1 to Class 12, plus JEE, NEET and MHT-CET preparation.',
   },
   {
-    question: 'Which boards do you cover?',
-    answer:
+    q: 'Which boards do you cover?',
+    a:
       'CBSE, ICSE and SSC (Maharashtra board), depending on tutor availability for your class and subject.',
   },
   {
-    question: 'Can I choose my tutor?',
-    answer:
+    q: 'Can I choose my tutor?',
+    a:
       'Yes. We share the profiles of the tutors who fit your requirement, and you choose the one you want.',
   },
   {
-    question: 'Can I request a specific tutor?',
-    answer:
+    q: 'Can I request a specific tutor?',
+    a:
       'Yes, if that tutor is available for your class, subject and timing. Tell us who you have in mind and we will check.',
   },
   {
-    question: 'How much does tuition cost?',
-    answer:
+    q: 'How much does tuition cost?',
+    a:
       'It depends on the class, subjects and how often you want classes. We tell you the exact fee before you commit to anything — there are no hidden charges, and the first assessment is free.',
   },
   {
-    question: 'How do you check your tutors?',
-    answer:
+    q: 'How do you check your tutors?',
+    a:
       'Every tutor gives us their ID and qualification documents, and we interview them before they take their first class. We only send tutors we have checked ourselves.',
   },
   {
-    question: 'How do I know the class actually happened?',
-    answer:
+    q: 'How do I know the class actually happened?',
+    a:
       'Each class starts with an OTP, so you know exactly when it begins. Attendance is recorded for every session, and for home tuition the tutor’s location is tracked during the class.',
   },
 ];

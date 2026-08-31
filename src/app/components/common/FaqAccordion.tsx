@@ -47,7 +47,23 @@ export default function FaqAccordion({
 }: Props) {
   const [open, setOpen] = useState<number | null>(0);
 
-  if (!items.length) return null;
+  /* Drop anything without both a question and an answer.
+     This is not defensive padding — the homepage shipped ten blank rows and a
+     FAQPage schema full of nameless Questions because its data used
+     `question`/`answer` keys while this component reads `q`/`a`. A row with no
+     text is invisible to a reader but perfectly valid to React, so nothing
+     failed; only structured data and a whole section quietly stopped meaning
+     anything. Now a malformed item is skipped, and says so in dev. */
+  const valid = items.filter((f) => f?.q?.trim() && f?.a?.trim());
+
+  if (import.meta.env.DEV && valid.length !== items.length) {
+    console.warn(
+      `[FaqAccordion] ${items.length - valid.length} FAQ item(s) dropped: each needs a non-empty \`q\` and \`a\`.`,
+      items.filter((f) => !(f?.q?.trim() && f?.a?.trim()))
+    );
+  }
+
+  if (!valid.length) return null;
 
   return (
     <section
@@ -61,7 +77,7 @@ export default function FaqAccordion({
     >
       {schema && (
         <PageSchema
-          jsonLd={getFAQSchema(items.map((f) => ({ question: f.q, answer: f.a })))}
+          jsonLd={getFAQSchema(valid.map((f) => ({ question: f.q, answer: f.a })))}
         />
       )}
 
@@ -80,7 +96,7 @@ export default function FaqAccordion({
         <SectionHeading id={`${id}-heading`} eyebrow={eyebrow} title={title} lead={lead} />
 
         <div className="space-y-3">
-          {items.map((f, i) => {
+          {valid.map((f, i) => {
             const isOpen = open === i;
 
             return (

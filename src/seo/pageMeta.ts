@@ -102,11 +102,48 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
     keywords: ["become a tutor", "tutor jobs", "apply as tutor", "teaching jobs Kothrud", "teaching jobs Kolhapur"],
     type: "website",
   },
+  /* The previous description here claimed "background-checked" tutors and
+     "real-time progress tracking". Neither is true: we check government ID and
+     qualifications and we interview every tutor, and there is no tracking
+     product. A meta description is the first thing a parent reads about us in
+     Google — it is the worst place on the site to overstate. */
   "/for-parents": {
-    title: "For Parents – Verified Home Tutors",
+    title: "For Parents – How Tutoo Works, Safety and Fees",
     description:
-      "See how Tutoo helps parents in Kothrud (Pune) and Kolhapur find verified, background-checked home tutors with real-time progress tracking and transparent pricing.",
-    keywords: ["home tutor for kids", "verified tutors for parents", "parent progress tracking", "tuition Kothrud", "tuition Kolhapur"],
+      "A guide for parents: how tutor matching works, what you decide, what we check before a tutor reaches your home, and how fees are agreed. Free first assessment.",
+    keywords: [
+      "tuition for parents",
+      "how to find a home tutor",
+      "choosing a tutor for my child",
+      "tuition Kothrud",
+      "tuition Kolhapur",
+    ],
+    type: "website",
+  },
+  "/safety": {
+    title: "Tutor Safety & Verification – What We Check",
+    description:
+      "Government ID and qualification documents checked, every tutor interviewed, and you see the profile before anyone arrives. What we check before a tutor reaches your home — and what we do not.",
+    keywords: [
+      "tutor verification",
+      "are home tutors safe",
+      "verified home tutor",
+      "tutor background check India",
+      "safe home tuition",
+    ],
+    type: "website",
+  },
+  "/fees": {
+    title: "Tuition Fees – How the Fee Is Agreed",
+    description:
+      "What tuition costs depends on class, subjects, frequency and whether a tutor travels. We tell you the exact fee before you commit, and the first assessment is free.",
+    keywords: [
+      "home tuition fees",
+      "tuition fees Pune",
+      "home tutor charges",
+      "tuition cost per month",
+      "free assessment tuition",
+    ],
     type: "website",
   },
   "/for-tutors": {
@@ -143,8 +180,8 @@ export const STATIC_PAGE_META: Record<string, RouteMeta> = {
   },
   "/how-it-work": {
     title: "How It Works",
-    description: "See how Tutoo matches students with the right verified tutor in three simple steps — assess, match, and start learning.",
-    keywords: ["how Tutoo works", "tutor matching process"],
+    description: "The five stages from your first message to the first class — a free assessment, a shortlist checked by a person, and you choosing the tutor. Kothrud and Kolhapur.",
+    keywords: ["how Tutoo works", "tutor matching process", "free assessment", "home tuition process"],
     type: "website",
   },
   "/contact-us": {

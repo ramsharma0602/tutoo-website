@@ -1,13 +1,25 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Route,
+  ShieldCheck,
+  Receipt,
+  HelpCircle,
+  GraduationCap,
+  Briefcase,
+  type LucideIcon,
+} from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { SUBJECTS, BOARDS } from '../data/subjects';
 
 /* ─────────────────────────────────────────────────────────────────────────
    PRIMARY NAVIGATION (approved header redesign)
 
      Find a Tutor · Online Tutor · Home Tutor · Subjects ▾ ·
-     For Parent ▾ · For Student ▾ · Become a Tutor · [Book a Free Assessment]
+     For Parents ▾ · For Tutors ▾ · [Book a Free Assessment]
 
      Label rule (booklet voice): "Find a Tutor" always means the browse page
      at /find-a-tutor. The header CTA reads "Book a Free Assessment" and
@@ -17,8 +29,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
    • Subjects (option S1) — no /subjects pages exist and the API only returns
      subjects for a given class+board, so each subject deep-links into the
      enquiry form prefilled (?subject=…) instead of a page that would be thin.
-   • For Parent/Student (option P1) — points only at pages that already exist.
-     /for-parents stays retired (it redirects to /home-tuition).
+   • For Parents — one audience menu, not two. It is a rich menu: a featured
+     card for /for-parents, then six links that each carry an icon and a line
+     of description, because a bare list of four words gives a parent no reason
+     to prefer one over another. /for-parents, /safety and /fees are real pages
+     built for this menu; /for-parents is a rebuild, not the retired page.
    • The phone number was removed from this bar: it is already shown in the
      TopInfoBar directly above, in the sticky mobile bar, and in the footer.
      Removing the duplicate is what makes six items fit at 1280–1440px.
@@ -32,59 +47,159 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 interface SubMenuItem {
   title: string;
   href: string;
+  /** Shown under the title in a rich or grouped dropdown. */
+  desc?: string;
+  icon?: LucideIcon;
+}
+
+/** One labelled column inside a mega-menu. */
+interface MenuGroup {
+  label: string;
+  items: SubMenuItem[];
 }
 
 interface MenuItem {
   title: string;
   href?: string;
+  /** A flat list — rendered as a single column. */
   subMenu?: SubMenuItem[];
+  /** Labelled columns, side by side. Used by Subjects, where a flat list of
+   *  ten items mixed school subjects with entrance exams and gave the reader
+   *  no way to tell which was which. */
+  groups?: MenuGroup[];
+  /** The card at the head of a rich dropdown — the menu's own landing page.
+   *  Without it, "For Parents ▾" is a label that leads nowhere. */
+  featured?: { title: string; desc: string; href: string };
 }
 
-/** Real subjects taught (mirrors the homepage Subjects section). */
-const SUBJECTS = [
-  'Mathematics',
-  'Science',
-  'English',
-  'Physics',
-  'Chemistry',
-  'Biology',
-  'Hindi & Marathi',
-  'Olympiads',
-  'JEE',
-  'NEET',
-];
+/* Subjects and boards come from data/subjects.ts — the same lists the
+   /find-a-tutor filters match against, and the same ones the homepage and both
+   service pages render. The header used to keep its own copy, which had
+   already drifted: it listed "JEE" and "NEET" as subjects, but no tutor
+   carries either as a subject (JEE/NEET is a class band), so both links were
+   dead ends waiting to happen. */
 
 const MENU_ITEMS: MenuItem[] = [
   { title: 'Find a Tutor', href: '/find-a-tutor' },
   { title: 'Online Tutor', href: '/online-tuition' },
   { title: 'Home Tutor', href: '/home-tuition' },
   {
+    /* ── SUBJECTS ─────────────────────────────────────────────────────────
+       Two labelled columns, side by side: what you teach, and which board or
+       exam you teach it for. Previously one 420px box held ten identical text
+       links in two unlabelled columns — the reader could not tell that the
+       last two were exams rather than subjects.
+
+       Every link now goes to /find-a-tutor, not the enquiry form. When this
+       menu was built the subject filter was unused, so a subject could only
+       prefill a form; CoverageSelector proved the filter works, and "Subjects"
+       in a header means "show me tutors for this", not "fill in a form". */
     title: 'Subjects',
-    subMenu: SUBJECTS.map((s) => ({
-      title: s,
-      href: `/book-free-assessment?subject=${encodeURIComponent(s)}`,
-    })),
-  },
-  {
-    title: 'For Parent',
-    subMenu: [
-      { title: 'How It Works', href: '/how-it-work' },
-      { title: 'Meet Our Tutors', href: '/find-a-tutor' },
-      { title: 'FAQs', href: '/#faq' },
-      { title: 'Contact Us', href: '/contact-us' },
+    groups: [
+      {
+        label: 'Subjects',
+        items: SUBJECTS.map((sub) => ({
+          title: sub.name,
+          href: `/find-a-tutor?subject=${encodeURIComponent(sub.name)}`,
+          icon: sub.icon,
+        })),
+      },
+      {
+        label: 'Boards & exams',
+        items: BOARDS.map((b) => ({
+          title: b.title,
+          href: `/find-a-tutor?${b.filter.key}=${encodeURIComponent(b.filter.value)}`,
+          desc: b.sub,
+        })),
+      },
     ],
   },
   {
-    title: 'For Student',
+    /* ── FOR PARENTS ──────────────────────────────────────────────────────
+       This replaces two menus. "For Parent" and "For Student" previously
+       shared three of their four entries — How It Works, Contact Us and
+       Find a Tutor — and all three were already reachable from the top level,
+       so between them the two dropdowns added exactly one new destination
+       (Study Material). Two audience menus that are 75% the same list are not
+       navigation; they are the sitemap, printed twice.
+
+       Tutoo's buyer is the parent: the student neither chooses the tutor nor
+       agrees the fee. So there is one audience menu, and every entry in it is
+       somewhere the top-level nav does not already go. Study Material lives
+       in the footer, where a resource link belongs. */
+    title: 'For Parents',
+    featured: {
+      title: 'Parents’ guide',
+      desc: 'What you decide, what we handle, and everything in one place.',
+      href: '/for-parents',
+    },
     subMenu: [
-      { title: 'Find a Tutor', href: '/find-a-tutor' },
-      { title: 'Study Material', href: '/study-material' },
-      { title: 'How It Works', href: '/how-it-work' },
-      { title: 'Contact Us', href: '/contact-us' },
+      {
+        title: 'How It Works',
+        href: '/how-it-work',
+        desc: 'First message to first class',
+        icon: Route,
+      },
+      {
+        title: 'Safety & Verification',
+        href: '/safety',
+        desc: 'What we check before a tutor arrives',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'FAQs',
+        href: '/#faq',
+        desc: 'The questions we are asked most',
+        icon: HelpCircle,
+      },
     ],
   },
-  { title: 'Become a Tutor', href: '/apply-tutor' },
+  {
+    /* ── FOR TUTORS ───────────────────────────────────────────────────────
+       This was a single top-level "Become a Tutor" link straight to the
+       application form, which meant /for-tutors — a whole page explaining why
+       a tutor would work with Tutoo, what the training is and what support
+       exists — was reachable only from the footer. A tutor deciding whether
+       to apply needs to read before they fill in a form.
+
+       So the menu leads with the page and keeps the application one click
+       away. Item count stays the same in the header. */
+    title: 'For Tutors',
+    featured: {
+      title: 'Teach with Tutoo',
+      desc: 'How teaching with us works, and the support behind it.',
+      href: '/for-tutors',
+    },
+    subMenu: [
+      {
+        title: 'Become a Tutor',
+        href: '/apply-tutor',
+        desc: 'Apply in a few minutes',
+        icon: GraduationCap,
+      },
+      {
+        title: 'Careers at Tutoo',
+        href: '/careers',
+        desc: 'Roles on our own team',
+        icon: Briefcase,
+      },
+    ],
+  },
 ];
+
+/** A menu item opens a dropdown if it carries either shape. */
+function hasMenu(item: MenuItem) {
+  return Boolean(item.subMenu?.length || item.groups?.length);
+}
+
+/** Every destination inside a menu, for the trigger's active state. */
+function menuHrefs(item: MenuItem): string[] {
+  return [
+    ...(item.featured ? [item.featured.href] : []),
+    ...(item.subMenu ?? []).map((s) => s.href),
+    ...(item.groups ?? []).flatMap((g) => g.items.map((i) => i.href)),
+  ];
+}
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -188,10 +303,10 @@ export function Navbar() {
               <div
                 key={item.title}
                 className="relative group"
-                onMouseEnter={() => item.subMenu && setOpenDesktopMenu(item.title)}
-                onMouseLeave={() => item.subMenu && setOpenDesktopMenu(null)}
+                onMouseEnter={() => hasMenu(item) && setOpenDesktopMenu(item.title)}
+                onMouseLeave={() => hasMenu(item) && setOpenDesktopMenu(null)}
               >
-                {item.subMenu ? (
+                {hasMenu(item) ? (
                   <>
                     <button
                       type="button"
@@ -203,7 +318,7 @@ export function Navbar() {
                         )
                       }
                       className={`flex items-center gap-1 text-[15px] font-medium py-[27px] whitespace-nowrap transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] focus-visible:ring-offset-2 ${
-                        item.subMenu.some((s) => isActive(s.href))
+                        menuHrefs(item).some((h) => isActive(h))
                           ? 'text-[#6D28D9]'
                           : 'text-[#1E1B3A] hover:text-[#6D28D9]'
                       }`}
@@ -226,25 +341,122 @@ export function Navbar() {
                       }`}
                     >
                       <div
-                        className={`bg-white rounded-2xl shadow-[0_8px_24px_rgba(30,27,58,0.10)] border border-[#E6E3F0] p-2 ${
-                          item.title === 'Subjects'
-                            ? 'w-[420px] grid grid-cols-2 gap-0.5'
-                            : 'w-60'
+                        className={`bg-white rounded-2xl shadow-[0_18px_50px_rgba(30,27,58,0.14)] border border-[#E6E3F0] p-3 ${
+                          item.groups ? 'w-[660px]' : item.featured ? 'w-[360px]' : 'w-60'
                         }`}
                       >
-                        {item.subMenu.map((subItem) => (
+                        {/* ── Grouped columns (Subjects) ── */}
+                        {item.groups && (
+                          <div className="grid grid-cols-[1.4fr_1fr] gap-3">
+                            {item.groups.map((group, gi) => (
+                              <div
+                                key={group.label}
+                                className={gi > 0 ? 'pl-3 border-l border-[#F1EFF7]' : ''}
+                              >
+                                <p className="px-2 pb-2 text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#6D28D9]">
+                                  {group.label}
+                                </p>
+
+                                <div className={gi === 0 ? 'grid grid-cols-2 gap-0.5' : 'space-y-0.5'}>
+                                  {group.items.map((sub) => (
+                                    <Link
+                                      key={sub.title}
+                                      to={sub.href}
+                                      className="flex items-center gap-2.5 min-w-0 rounded-xl px-2.5 py-2 transition-colors hover:bg-[#F6F3FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7]"
+                                    >
+                                      {sub.icon && (
+                                        <span className="w-7 h-7 rounded-lg bg-[#F4EFFE] flex items-center justify-center shrink-0">
+                                          <sub.icon
+                                            className="w-[15px] h-[15px] text-[#6D28D9]"
+                                            strokeWidth={2}
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                      )}
+                                      <span className="min-w-0">
+                                        <span className="block text-[13.5px] font-semibold text-[#1E1B3A] leading-tight">
+                                          {sub.title}
+                                        </span>
+                                        {sub.desc && (
+                                          <span className="block text-[12px] text-[#6E6A85] leading-snug">
+                                            {sub.desc}
+                                          </span>
+                                        )}
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* ── Featured card: the menu's own page ──
+                            A dropdown whose trigger is not itself a link needs
+                            somewhere to send the person who clicked the label
+                            rather than an item. */}
+                        {item.featured && (
                           <Link
-                            key={subItem.title}
-                            to={subItem.href}
-                            className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] ${
-                              isActive(subItem.href) && item.title !== 'Subjects'
-                                ? 'text-[#6D28D9] bg-[#F4EFFE]'
-                                : 'text-[#4B4763] hover:bg-[#F6F3FC] hover:text-[#6D28D9]'
+                            to={item.featured.href}
+                            className={`block rounded-xl p-4 mb-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] ${
+                              isActive(item.featured.href)
+                                ? 'bg-[#F4EFFE]'
+                                : 'bg-[#FAFAFC] hover:bg-[#F4EFFE]'
                             }`}
                           >
-                            {subItem.title}
+                            <span className="flex items-center gap-1.5 text-[15px] font-bold text-[#1E1B3A]">
+                              {item.featured.title}
+                              <ChevronDown
+                                className="w-4 h-4 -rotate-90 text-[#6D28D9]"
+                                aria-hidden="true"
+                              />
+                            </span>
+                            <span className="mt-0.5 block text-[13px] leading-relaxed text-[#6E6A85]">
+                              {item.featured.desc}
+                            </span>
                           </Link>
-                        ))}
+                        )}
+
+                        {/* ── Flat list ── */}
+                        {item.subMenu && (
+                          <div className="space-y-0.5">
+                            {item.subMenu.map((subItem) => (
+                              <Link
+                                key={subItem.title}
+                                to={subItem.href}
+                                className={`block rounded-xl px-3 py-2.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7] ${
+                                  isActive(subItem.href)
+                                    ? 'text-[#6D28D9] bg-[#F4EFFE]'
+                                    : 'text-[#4B4763] hover:bg-[#F6F3FC] hover:text-[#6D28D9]'
+                                }`}
+                              >
+                                {subItem.icon ? (
+                                  <span className="flex items-start gap-2.5 min-w-0">
+                                    <span className="mt-0.5 w-8 h-8 rounded-lg bg-[#F4EFFE] flex items-center justify-center shrink-0">
+                                      <subItem.icon
+                                        className="w-[17px] h-[17px] text-[#6D28D9]"
+                                        strokeWidth={2}
+                                        aria-hidden="true"
+                                      />
+                                    </span>
+                                    <span className="min-w-0">
+                                      <span className="block text-sm font-semibold text-[#1E1B3A] leading-tight">
+                                        {subItem.title}
+                                      </span>
+                                      {subItem.desc && (
+                                        <span className="mt-0.5 block text-[12.5px] leading-snug text-[#6E6A85]">
+                                          {subItem.desc}
+                                        </span>
+                                      )}
+                                    </span>
+                                  </span>
+                                ) : (
+                                  <span className="text-sm font-medium">{subItem.title}</span>
+                                )}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </>
@@ -309,7 +521,7 @@ export function Navbar() {
           <div className="p-5">
             {MENU_ITEMS.map((item) => (
               <div key={item.title} className="border-b border-[#EFEDF6]">
-                {item.subMenu ? (
+                {hasMenu(item) ? (
                   <>
                     <button
                       type="button"
@@ -331,18 +543,69 @@ export function Navbar() {
                     </button>
 
                     {openMobileDropdown === item.title && (
-                      <div
-                        className={`pb-3 ${
-                          item.title === 'Subjects' ? 'grid grid-cols-2 gap-x-3' : 'pl-3'
-                        }`}
-                      >
-                        {item.subMenu.map((subItem) => (
+                      <div className="pb-3 pl-3">
+                        {/* The featured page first, styled as the primary
+                            choice — same job as the card on desktop. */}
+                        {item.featured && (
+                          <Link
+                            to={item.featured.href}
+                            className="flex items-center justify-between gap-2 min-h-[48px] py-2.5 px-3 mb-2 rounded-xl bg-[#F4EFFE] text-[15px] font-bold text-[#1E1B3A]"
+                          >
+                            {item.featured.title}
+                            <ChevronDown
+                              className="w-4 h-4 -rotate-90 text-[#6D28D9] shrink-0"
+                              aria-hidden="true"
+                            />
+                          </Link>
+                        )}
+
+                        {/* Grouped columns stack into labelled blocks on a
+                            phone — two columns of eight subjects each at 375px
+                            gives a 90px column, which is not a menu. */}
+                        {item.groups?.map((group) => (
+                          <div key={group.label} className="mb-2 last:mb-0">
+                            <p className="pt-2 pb-1 text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#6D28D9]">
+                              {group.label}
+                            </p>
+                            <div className="grid grid-cols-2 gap-x-3">
+                              {group.items.map((sub) => (
+                                <Link
+                                  key={sub.title}
+                                  to={sub.href}
+                                  className="flex items-center gap-2 min-h-[44px] py-2 min-w-0 text-[14.5px] text-[#4B4763]"
+                                >
+                                  {sub.icon && (
+                                    <span className="w-7 h-7 rounded-lg bg-[#F4EFFE] flex items-center justify-center shrink-0">
+                                      <sub.icon
+                                        className="w-4 h-4 text-[#6D28D9]"
+                                        strokeWidth={2}
+                                        aria-hidden="true"
+                                      />
+                                    </span>
+                                  )}
+                                  <span className="min-w-0 break-words">{sub.title}</span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+
+                        {item.subMenu?.map((subItem) => (
                           <Link
                             key={subItem.title}
                             to={subItem.href}
-                            className="flex items-center min-h-[44px] py-2 text-[15px] text-[#4B4763]"
+                            className="flex items-center gap-2.5 min-h-[44px] py-2 text-[15px] text-[#4B4763]"
                           >
-                            {subItem.title}
+                            {subItem.icon && (
+                              <span className="w-7 h-7 rounded-lg bg-[#F4EFFE] flex items-center justify-center shrink-0">
+                                <subItem.icon
+                                  className="w-4 h-4 text-[#6D28D9]"
+                                  strokeWidth={2}
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            )}
+                            <span className="min-w-0">{subItem.title}</span>
                           </Link>
                         ))}
                       </div>

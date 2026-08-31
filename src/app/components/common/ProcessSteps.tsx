@@ -39,17 +39,37 @@ interface Props {
 }
 
 export default function ProcessSteps({ steps, className = '' }: Props) {
+  /* ── FOUR OR FIVE ACROSS, DERIVED — NOT A PROP ─────────────────────────
+     /how-it-work has five stages; every other caller has four. Rather than
+     make every call site declare its column count, take it from the data.
+
+     The spine's inset must follow: it has to start and stop at the centre of
+     the first and last node, which is half a column in from each edge —
+     12.5% of the row for four columns, 10% for five. Hardcoding 12.5% and
+     then rendering five cards leaves the line dangling past both end nodes.
+     Both values are written out in full because Tailwind scans source text
+     for class names and cannot see an interpolated string. */
+  const five = steps.length >= 5;
+
   return (
     <div className={cx('relative', className)}>
       {/* The spine. Sits at the vertical centre of the nodes (top-6 = 24px,
           node is 48px tall), and fades out at both ends so it never appears
           to run off the section. */}
       <div
-        className="hidden lg:block absolute top-6 left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-transparent via-[#DDD6EE] to-transparent"
+        className={cx(
+          'hidden lg:block absolute top-6 h-[2px] bg-gradient-to-r from-transparent via-[#DDD6EE] to-transparent',
+          five ? 'left-[10%] right-[10%]' : 'left-[12.5%] right-[12.5%]'
+        )}
         aria-hidden="true"
       />
 
-      <ol className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+      <ol
+        className={cx(
+          'relative grid sm:grid-cols-2 gap-5 lg:gap-6',
+          five ? 'lg:grid-cols-5' : 'lg:grid-cols-4'
+        )}
+      >
         {steps.map((s, i) => {
           const isLast = i === steps.length - 1;
 

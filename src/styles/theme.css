@@ -111,6 +111,14 @@
 }
 
 @theme inline {
+  /* 1440 is the single most common desktop width and sits in a dead zone:
+     the container has capped at 80rem so real side margin appears, but
+     Tailwind's next stop is 2xl at 1536. Without a named stop here you have
+     to reach for an arbitrary `min-[1440px]:` variant, which Tailwind emits
+     BEFORE the named breakpoints — so `lg:` silently wins over it at 1440.
+     Registering it as a real breakpoint puts it in the right cascade order. */
+  --breakpoint-wide: 90rem;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

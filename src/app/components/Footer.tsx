@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } 
 
 export function Footer() {
   const footerLinks = {
-    'For Parents': ['Find a Tutor', 'Book a Free Assessment', 'Home Tuition', 'Online Classes', 'Tuition in Kothrud', 'Tuition in Kolhapur', 'How It Works'],
+    'For Parents': ['Find a Tutor', 'Book a Free Assessment', 'Home Tuition', 'Online Classes', 'Safety & Verification', 'Fees', 'Tuition in Kothrud', 'Tuition in Kolhapur', 'How It Works'],
     'For Tutors': ['Become a Tutor', 'For Tutors', 'Careers'],
     Company: ['About Us', 'Our Mission', 'Team', 'Blog', 'Contact Us'],
     'Popular Classes': ['CBSE Class 10', 'CBSE Class 12 Science', 'ICSE Class 10', 'SSC Class 10', 'JEE Prep', 'NEET Prep'],
@@ -19,6 +19,9 @@ export function Footer() {
     'Book a Free Assessment': '/book-free-assessment',
     'Tuition in Kothrud': '/home-tuition/kothrud',
     'Tuition in Kolhapur': '/home-tuition/kolhapur',
+    'Safety & Verification': '/safety',
+    'Fees': '/fees',
+    'For Parents': '/for-parents',
     'How It Works': '/how-it-work',
     'Study Material': '/study-material',
     'Become a Tutor': '/apply-tutor',

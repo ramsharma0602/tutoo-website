@@ -1,38 +1,40 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
+  // ───────────────────────────────────────────────────────────────────────
+  //  This was the stock `tsc --init` template, which is written for a Node
+  //  library, not a Vite React app. `module: nodenext` made TypeScript demand
+  //  an explicit ".js" on every relative import, so `npx tsc --noEmit`
+  //  produced ~200 errors on the first file and was never usable — which is
+  //  why two real type errors shipped unnoticed:
+  //
+  //    · the homepage FAQ passed { question, answer } to a component reading
+  //      { q, a } — ten blank rows and a FAQPage schema full of nameless
+  //      Questions;
+  //    · HomeTuitionLayout read seoConfig.business.citiesServed, which does
+  //      not exist — every /home-tuition route threw on load.
+  //
+  //  `vite build` does NOT typecheck (esbuild only strips types), so the
+  //  build stayed green through both. Run `npm run typecheck` before shipping.
+  //
+  //  noUncheckedIndexedAccess and exactOptionalPropertyTypes were in the
+  //  template and are deliberately off for now: switching them on in an
+  //  existing codebase buries the real errors under hundreds of index-access
+  //  complaints. Turn them on once the current list is clean.
+  // ───────────────────────────────────────────────────────────────────────
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    // Environment — a bundler resolves these modules, not Node.
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
+    // Vite owns emit; tsc is only ever a checker here.
+    "noEmit": true,
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
+    // Typechecking
     "strict": true,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
@@ -40,5 +42,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
 }
