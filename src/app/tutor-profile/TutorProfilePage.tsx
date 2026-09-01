@@ -21,7 +21,7 @@ import {
   buttonMd,
 } from '../components/common/ui';
 import { getTutorBySlug, getSimilarTutors, isDemoTutor } from '../data/tutorLookup';
-import type { Tutor } from '../data/tutors';
+import { ratingSummary, type Tutor } from '../data/tutors';
 import TutorProfileHero from './TutorProfileHero';
 import {
   About,
@@ -34,6 +34,7 @@ import {
   QuickInfo,
   TeachingLocation,
   TeachingOptions,
+  TutorReviews,
 } from './sections';
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -62,12 +63,31 @@ import {
    All three switch off by themselves the moment a real tutor is added to
    TUTORS. No flag to remember.
 
-   ── WHAT THIS PAGE DELIBERATELY DOES NOT HAVE ───────────────────────────
-   Ratings, review counts, a review list, a rating histogram, a write-a-
-   review form, achievements, or AggregateRating schema. The Testimonial
-   type has no tutor reference of any kind, there is no auth in the app, and
-   the site has never emitted a rating. Those sections were specified and
-   are documented as out of scope in the plan rather than faked here.
+   ── VERIFICATION AND REVIEWS ARE NOW REAL CONCEPTS ──────────────────────
+   These were originally out of scope because nothing backed them. Reading
+   the CRM database (tut_db) changed that:
+
+     · tutor_profiles carries status, verified_at, verify_note, plus
+       aadhaar_card, pan_card, address_proof and degree_certificates. So
+       "verified" is a dated fact an admin records after checking documents
+       — exactly what /safety already describes — not a trust sticker.
+
+     · reviews is keyed on BOTH student_id and tutor_id, with rating and
+       comment. So a review genuinely belongs to one tutor, unlike the
+       site-wide Testimonial type, which has no tutor reference at all and
+       must never be borrowed to fill a named person's page.
+
+   Both are therefore built, and both are gated on data: no verifiedAt means
+   no badge, no reviews means no review section. Every table in tut_db is
+   currently EMPTY (0 tutors, 0 reviews), so today these render only from
+   the demo entries, inside the sample-profile notice and behind noindex.
+
+   ── STILL DELIBERATELY ABSENT ───────────────────────────────────────────
+   A write-a-review form, and achievements. Reviews must come from a student
+   who actually studied with the tutor, and the CRM enforces that through
+   student_id — there is no authentication anywhere in this frontend, so it
+   cannot establish who is writing. Achievements ("100+ students taught")
+   remain the invented-statistic pattern removed from three other pages.
 ───────────────────────────────────────────────────────────────────────── */
 
 /* ── Enquiry card — the page's primary action ─────────────────────────── */
@@ -218,7 +238,21 @@ export default function TutorProfilePage() {
   const demo = isDemoTutor(tutor);
   const similar = getSimilarTutors(tutor, 3);
 
-  /* Person schema ONLY for a real tutor. See the header note. */
+  /* ── STRUCTURED DATA ────────────────────────────────────────────────
+     Person ONLY for a real tutor. See the header note.
+
+     AggregateRating is attached ONLY when BOTH are true: the tutor is real
+     (not one of the invented twelve) AND they have actual review rows. This
+     is the first AggregateRating the site has ever emitted, and the bar for
+     it is deliberately high — a star average in a search result is the most
+     consequential number a tutoring site can publish, and inventing one is
+     the specific exposure flagged under the Consumer Protection Act and BIS
+     IS 19000:2022 in data/reviewsDemo.ts.
+
+     ratingSummary() recomputes from the rows every render, so the number
+     Google is told can never drift from the reviews on the page. */
+  const summary = demo ? null : ratingSummary(tutor.reviews);
+
   const schema = demo
     ? null
     : {
@@ -234,6 +268,17 @@ export default function TutorProfilePage() {
         worksFor: { '@type': 'Organization', name: 'Tutoo', url: seoConfig.siteUrl },
         ...(tutor.city && !/^online$/i.test(tutor.city)
           ? { areaServed: { '@type': 'City', name: tutor.city } }
+          : {}),
+        ...(summary
+          ? {
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: summary.average,
+                reviewCount: summary.count,
+                bestRating: 5,
+                worstRating: 1,
+              },
+            }
           : {}),
       };
 
@@ -315,6 +360,19 @@ export default function TutorProfilePage() {
       <Availability items={tutor.availability} />
       <Certifications items={tutor.certifications} />
       <LanguagesSpoken items={tutor.languages} />
+
+      {/* ── Reviews ───────────────────────────────────────────────────
+          Last of the tutor's own sections, immediately before the page
+          starts offering alternatives. The reading order that produces is
+          the one a parent actually follows: here is the person, here is
+          what they teach and how, here is what other families said about
+          them — and only then, here are others you could consider.
+
+          Placing it above Similar Tutors also means the last thing read
+          about THIS tutor is somebody else's words rather than ours.
+
+          Renders nothing when the tutor has no reviews. */}
+      <TutorReviews tutor={tutor} />
 
       {/* ── Similar tutors — the same card, not a variant ── */}
       {similar.length > 0 && (

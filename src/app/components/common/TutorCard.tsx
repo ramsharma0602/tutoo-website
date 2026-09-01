@@ -1,6 +1,7 @@
 import { GraduationCap, MapPin, Home, Monitor, Laptop, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AssetImage from './AssetImage';
+import { VerifiedBadge } from '../../tutor-profile/sections';
 import { cx, card, cardHover, buttonPrimary } from './ui';
 import type { Tutor } from '../../data/tutors';
 
@@ -125,7 +126,15 @@ export default function TutorCard({ tutor, index = 0 }: Props) {
 
       {/* ── DETAILS ── */}
       <div className="flex flex-col flex-1 p-5">
-        <h3 className="text-[17px] font-bold text-[#1E1B3A] leading-tight">{tutor.name}</h3>
+        <div className="flex items-start justify-between gap-2 min-w-0">
+          <h3 className="text-[17px] font-bold text-[#1E1B3A] leading-tight min-w-0">
+            {tutor.name}
+          </h3>
+          {/* Small variant only — the card has no room to explain what
+              verification means, and the full definition sits one click away
+              on the profile. Renders nothing without verifiedAt. */}
+          <VerifiedBadge verifiedAt={tutor.verifiedAt} size="sm" />
+        </div>
 
         <p className="mt-1.5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#6D28D9]">
           <GraduationCap className="w-3.5 h-3.5 shrink-0" strokeWidth={2.2} aria-hidden="true" />

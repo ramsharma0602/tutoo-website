@@ -86,6 +86,65 @@ export interface Tutor {
   /** Localities inside `city` this tutor will travel to. Home tutors only.
    *  NEVER a house number or street — this is a service area, not an address. */
   areasCovered?: string[];
+
+  /* ── VERIFICATION ────────────────────────────────────────────────────
+     Mirrors tut_db.tutor_profiles.verified_at. Set ONLY when an admin has
+     actually completed the check — the CRM records that as a status plus a
+     verified_at timestamp, backed by aadhaar_card, pan_card, address_proof
+     and degree_certificates on the same row.
+
+     A date, not a boolean, on purpose. "verified: true" is a sticker that
+     nobody can date or dispute; a timestamp says when it happened and can
+     be re-checked. It is also exactly what the database stores, so the API
+     swap is a rename and nothing else.
+
+     ISO date, e.g. '2026-03-14'. Absent = not verified = no badge. */
+  verifiedAt?: string;
+
+  /* ── REVIEWS ─────────────────────────────────────────────────────────
+     Mirrors tut_db.reviews, which is properly modelled per tutor:
+     student_id, tutor_id, rating, comment, created_at.
+
+     Only reviews left by a student who actually studied with THIS tutor
+     belong here. The site-wide testimonials in data/testimonials.ts are a
+     different thing and must never be reused as a tutor's own reviews —
+     they carry no tutor reference at all. */
+  reviews?: TutorReview[];
+}
+
+export interface TutorReview {
+  /** Display name of the student or parent who left it. First name plus an
+   *  initial is enough; never a full contact identity. */
+  author: string;
+  /** e.g. 'Parent of a Class 9 student'. */
+  role?: string;
+  /** 1-5, as stored in reviews.rating. */
+  rating: number;
+  /** reviews.comment. */
+  quote: string;
+  /** reviews.created_at, ISO date. */
+  date?: string;
+}
+
+/** Average and count, computed — never stored, so it cannot drift from the
+ *  rows it claims to summarise. Returns null when there is nothing to
+ *  average, which is what keeps the summary and the schema off the page. */
+export function ratingSummary(reviews?: TutorReview[]) {
+  if (!reviews?.length) return null;
+  const valid = reviews.filter((r) => r.rating >= 1 && r.rating <= 5);
+  if (!valid.length) return null;
+
+  const total = valid.reduce((sum, r) => sum + r.rating, 0);
+  const counts = [5, 4, 3, 2, 1].map((star) => ({
+    star,
+    count: valid.filter((r) => r.rating === star).length,
+  }));
+
+  return {
+    average: Math.round((total / valid.length) * 10) / 10,
+    count: valid.length,
+    counts,
+  };
 }
 
 export interface EducationItem {

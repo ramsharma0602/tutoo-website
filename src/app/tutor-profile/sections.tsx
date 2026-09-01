@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import {
@@ -14,9 +14,15 @@ import {
   Sparkles,
   ChevronDown,
   AlertTriangle,
+  Star,
+  Check,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   type LucideIcon,
 } from 'lucide-react';
 
+import { ratingSummary } from '../data/tutors';
 import type {
   Tutor,
   EducationItem,
@@ -56,7 +62,10 @@ export function Band({
 }) {
   return (
     <section
-      className={cx('py-10 lg:py-14', tinted ? sectionTinted : 'bg-white')}
+      /* scroll-mt-28 so a #reviews-style anchor lands the heading below the
+         fixed navbar rather than behind it. Every band carries an id, so
+         any of them can be linked to. */
+      className={cx('py-10 lg:py-14 scroll-mt-28', tinted ? sectionTinted : 'bg-white')}
       aria-labelledby={`${id}-heading`}
     >
       <div className={container}>
@@ -497,6 +506,386 @@ export function LanguagesSpoken({ items }: { items?: string[] }) {
           </li>
         ))}
       </ul>
+    </Band>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   VERIFIED BADGE
+   ═══════════════════════════════════════════════════════════════════════
+   Shown only when tutor.verifiedAt is set, which mirrors
+   tut_db.tutor_profiles.verified_at — a timestamp an admin writes after
+   checking Aadhaar, PAN, address proof and degree certificates on that same
+   row. A real, dated, disputable fact, not a trust sticker.
+
+   ── WHY IT SAYS WHAT IT CHECKS ──────────────────────────────────────────
+   "Verified" alone invites a parent to assume the strongest thing it could
+   mean — a police check. /safety states plainly that we do not run those,
+   and /how-it-work had a "Background Checked" claim removed for
+   contradicting it. So the badge carries its own definition. A badge that
+   explains itself cannot be read as promising more than it does.
+
+   ── WHY IT IS A LINK ────────────────────────────────────────────────────
+   The whole plaque is the target, not just the words at the end. A parent
+   who doubts a trust badge will press the badge itself; making only a
+   four-word link tappable inside it fails that instinct, and on mobile it
+   is a 40px target inside a 260px element.
+
+   Absent verifiedAt → nothing renders. There is no "unverified" state.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/** The seal. A filled disc with a white tick reads as a stamp; an outline
+ *  icon reads as one more feature bullet. */
+function VerifiedSeal({ className = '' }: { className?: string }) {
+  return (
+    <span
+      className={cx(
+        'relative inline-flex items-center justify-center rounded-full shrink-0',
+        'bg-gradient-to-br from-[#22C55E] to-[#15803D]',
+        'shadow-[0_2px_8px_rgba(21,128,61,0.35)]',
+        className
+      )}
+      aria-hidden="true"
+    >
+      <Check className="w-1/2 h-1/2 text-white" strokeWidth={3.5} />
+    </span>
+  );
+}
+
+export function VerifiedBadge({
+  verifiedAt,
+  size = 'md',
+}: {
+  verifiedAt?: string;
+  size?: 'sm' | 'md';
+}) {
+  if (!verifiedAt) return null;
+
+  const when = (() => {
+    const d = new Date(verifiedAt);
+    return Number.isNaN(d.getTime())
+      ? null
+      : d.toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
+  })();
+
+  /* Card variant. No date, no definition — there is no room, and the full
+     answer is one tap away on the profile the card links to. */
+  if (size === 'sm') {
+    return (
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E9F8EF] ring-1 ring-[#A7E0BD] pl-1 pr-2.5 py-[3px] shrink-0">
+        <VerifiedSeal className="w-4 h-4" />
+        <span className="text-[11.5px] font-bold text-[#15803D] tracking-[0.01em]">Verified</span>
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      to="/safety"
+      className={cx(
+        'group inline-flex items-start gap-3 rounded-2xl max-w-md',
+        'bg-gradient-to-br from-[#F0FBF4] to-[#E4F6EB] ring-1 ring-[#A7E0BD]',
+        'px-4 py-3 transition-all duration-200',
+        'hover:ring-[#15803D]/45 hover:shadow-[0_6px_20px_rgba(21,128,61,0.14)]',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#15803D]'
+      )}
+    >
+      <VerifiedSeal className="w-7 h-7 mt-0.5" />
+
+      <span className="min-w-0">
+        <span className="flex flex-wrap items-baseline gap-x-2">
+          <span className="text-[15px] font-bold text-[#14532D] leading-tight">
+            Verified tutor
+          </span>
+          {when && (
+            <span className="text-[12px] font-semibold text-[#2F6B45] tabular-nums">
+              since {when}
+            </span>
+          )}
+        </span>
+
+        <span className="mt-1 block text-[12.5px] leading-snug text-[#2F6B45]">
+          Identity and qualification documents checked, and interviewed.
+        </span>
+
+        <span className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-bold text-[#15803D]">
+          See exactly what we check
+          <ArrowRight
+            className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   REVIEWS
+   ═══════════════════════════════════════════════════════════════════════
+   Reads tutor.reviews, mirroring tut_db.reviews — keyed on tutor_id, so
+   unlike the site-wide testimonials these genuinely belong to this person.
+
+   Two things this deliberately does NOT do:
+
+   · It never falls back to data/testimonials.ts or DEMO_REVIEWS. Those
+     carry no tutor reference, so borrowing one would attribute a stranger's
+     words to a named individual. No reviews → no section.
+
+   · The distribution bars need enough rows to mean anything. Two reviews
+     drawn as a bar chart read as a statistic; they are two opinions. Below
+     DISTRIBUTION_MIN only the average and count show.
+
+   ── WHY IT SCROLLS ──────────────────────────────────────────────────────
+   A tutor with thirty reviews would otherwise push every section below it
+   ten screens down. A horizontal track keeps the section a fixed height
+   however many reviews arrive, and the partially visible next card is what
+   tells a reader there are more — which a grid that simply ends does not.
+
+   Three things a scroller has to get right and usually does not:
+     · The track is focusable and labelled (tabIndex + role="region"), so a
+       keyboard user can scroll it with arrow keys. A scrollable region that
+       cannot be reached by keyboard is a WCAG failure, not a nicety.
+     · The arrows disable at each end rather than sitting live and doing
+       nothing, and they are hidden entirely when everything already fits.
+     · Scrolling honours prefers-reduced-motion.
+
+   The average is computed from the rows every render (ratingSummary), never
+   stored, so the number and the reviews under it cannot drift apart.
+   ══════════════════════════════════════════════════════════════════════ */
+const DISTRIBUTION_MIN = 4;
+
+function Stars({ value, className = '' }: { value: number; className?: string }) {
+  return (
+    <span className={cx('inline-flex items-center gap-0.5', className)} aria-hidden="true">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={cx('w-4 h-4', i <= Math.round(value) ? 'text-[#F59E0B]' : 'text-[#DDD6EE]')}
+          fill={i <= Math.round(value) ? '#F59E0B' : 'none'}
+          strokeWidth={1.8}
+        />
+      ))}
+    </span>
+  );
+}
+
+export function TutorReviews({ tutor }: { tutor: Tutor }) {
+  const trackRef = useRef<HTMLUListElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(true);
+  const [scrollable, setScrollable] = useState(false);
+
+  const summary = ratingSummary(tutor.reviews);
+  const reviews = tutor.reviews ?? [];
+
+  /* Measured from the DOM, not hardcoded — the card width changes at every
+     breakpoint, so a fixed step would overshoot on mobile and undershoot on
+     desktop. */
+  const step = useCallback(() => {
+    const el = trackRef.current;
+    const first = el?.firstElementChild as HTMLElement | null;
+    if (!el || !first) return 0;
+    const gap = parseFloat(getComputedStyle(el).columnGap || '0') || 0;
+    return first.offsetWidth + gap;
+  }, []);
+
+  const sync = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setScrollable(max > 4);
+    setAtStart(el.scrollLeft <= 4);
+    setAtEnd(el.scrollLeft >= max - 4);
+  }, []);
+
+  useEffect(() => {
+    sync();
+    const el = trackRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    return () => {
+      el.removeEventListener('scroll', sync);
+      window.removeEventListener('resize', sync);
+    };
+  }, [sync, reviews.length]);
+
+  const nudge = (dir: -1 | 1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollBy({ left: dir * step(), behavior: reduce ? 'auto' : 'smooth' });
+  };
+
+  if (!summary || !reviews.length) return null;
+
+  const first = tutor.name.split(/\s+/)[0];
+
+  return (
+    <Band
+      id="reviews"
+      eyebrow="From students and parents"
+      title={`What people say about ${first}`}
+      tinted
+    >
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
+        {/* ── Summary ── */}
+        <div className={cx(card, 'p-5 lg:p-6 w-full lg:max-w-xl')}>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 lg:gap-7">
+            <div className="shrink-0">
+              <p className="text-[2.6rem] font-bold leading-none text-[#1E1B3A] tabular-nums">
+                {summary.average.toFixed(1)}
+              </p>
+              <Stars value={summary.average} className="mt-2" />
+              <p className="mt-1.5 text-[13.5px] text-[#6E6A85]">
+                {summary.count} {summary.count === 1 ? 'review' : 'reviews'}
+              </p>
+              <p className="sr-only">
+                Average rating {summary.average} out of 5, from {summary.count}{' '}
+                {summary.count === 1 ? 'review' : 'reviews'}.
+              </p>
+            </div>
+
+            {summary.count >= DISTRIBUTION_MIN && (
+              <ul className="flex-1 min-w-0 space-y-1.5" aria-hidden="true">
+                {summary.counts.map(({ star, count }) => (
+                  <li key={star} className="flex items-center gap-2.5 text-[13px]">
+                    <span className="w-8 shrink-0 text-[#6E6A85] tabular-nums">{star} ★</span>
+                    <span className="flex-1 h-2 rounded-full bg-[#EFEDF6] overflow-hidden">
+                      <span
+                        className="block h-full rounded-full bg-[#F59E0B]"
+                        style={{ width: `${(count / summary.count) * 100}%` }}
+                      />
+                    </span>
+                    <span className="w-6 shrink-0 text-right text-[#6E6A85] tabular-nums">
+                      {count}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+
+        {/* ── Arrows. Hidden entirely when everything already fits, because
+              two permanently dead buttons are worse than none. ── */}
+        {scrollable && (
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => nudge(-1)}
+              disabled={atStart}
+              aria-label="Previous reviews"
+              className={cx(
+                'w-11 h-11 rounded-full bg-white ring-1 ring-[#E6E3F0] inline-flex items-center justify-center',
+                'transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7]',
+                atStart
+                  ? 'opacity-40 cursor-not-allowed'
+                  : 'hover:ring-[#7B2FF7] hover:shadow-[0_6px_18px_rgba(30,27,58,0.10)]'
+              )}
+            >
+              <ChevronLeft className="w-5 h-5 text-[#1E1B3A]" strokeWidth={2.2} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => nudge(1)}
+              disabled={atEnd}
+              aria-label="More reviews"
+              className={cx(
+                'w-11 h-11 rounded-full bg-white ring-1 ring-[#E6E3F0] inline-flex items-center justify-center',
+                'transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FF7]',
+                atEnd
+                  ? 'opacity-40 cursor-not-allowed'
+                  : 'hover:ring-[#7B2FF7] hover:shadow-[0_6px_18px_rgba(30,27,58,0.10)]'
+              )}
+            >
+              <ChevronRight className="w-5 h-5 text-[#1E1B3A]" strokeWidth={2.2} aria-hidden="true" />
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── The track ────────────────────────────────────────────────
+          overflow-hidden on THIS wrapper is load-bearing, not tidiness.
+          The <ul> below is a proper scroll container — 350px wide with
+          1559px of content, clipping correctly — and yet without this the
+          document itself grew to 1300px at a 390px viewport and the whole
+          page could be dragged sideways on a phone. An ancestor's
+          scrollWidth still accounts for the scroller's laid-out content, so
+          something above it has to clip. components/Reviews.tsx solves the
+          same problem by putting overflow-hidden on its <section>; doing it
+          here keeps it scoped to the one section that needs it, rather than
+          clipping every Band on the page. */}
+      <div className="relative overflow-hidden">
+        <ul
+          ref={trackRef}
+          /* tabIndex + role + label: a scrollable region must be reachable
+             and operable by keyboard. Without these a keyboard user simply
+             cannot see past the third review. */
+          tabIndex={0}
+          role="region"
+          aria-label={`Reviews for ${tutor.name}. Use the arrow keys to scroll.`}
+          className={cx(
+            'flex gap-5 overflow-x-auto snap-x snap-mandatory pb-3',
+            'scroll-smooth motion-reduce:scroll-auto',
+            '[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden',
+            /* ring-inset, not ring-offset: the wrapper clips, so an offset
+               ring would be cut off exactly where it matters. */
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7B2FF7] rounded-2xl'
+          )}
+        >
+          {reviews.map((r, i) => (
+            <li
+              key={`${r.author}-${i}`}
+              /* basis under 100% on every breakpoint so the next card always
+                 peeks — that sliver is the only thing telling a reader the
+                 row continues. */
+              className={cx(
+                card,
+                'snap-start shrink-0 basis-[86%] sm:basis-[47%] lg:basis-[31.5%]',
+                'min-w-0 p-5 flex flex-col'
+              )}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <Stars value={r.rating} />
+                <span className="sr-only">{r.rating} out of 5</span>
+                {r.date && (
+                  <span className="text-[12.5px] text-[#6E6A85] tabular-nums shrink-0">
+                    {new Date(r.date).toLocaleDateString('en-IN', {
+                      month: 'short',
+                      year: 'numeric',
+                    })}
+                  </span>
+                )}
+              </div>
+
+              <blockquote className="mt-3 mb-auto text-[15px] leading-relaxed text-[#4B4763]">
+                {r.quote}
+              </blockquote>
+
+              <figcaption className="mt-4 pt-3.5 border-t border-[#F4F2FA]">
+                <p className="text-[14.5px] font-bold text-[#1E1B3A]">{r.author}</p>
+                {r.role && <p className="text-[13px] text-[#6E6A85]">{r.role}</p>}
+              </figcaption>
+            </li>
+          ))}
+        </ul>
+
+        {/* Fade at the right edge, purely to reinforce that the row runs on.
+            pointer-events-none so it never eats a click on the card under it,
+            and it lifts at the end rather than lying about more content. */}
+        {scrollable && !atEnd && (
+          <div
+            className="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#FAFAFC] to-transparent"
+            aria-hidden="true"
+          />
+        )}
+      </div>
+
+      {scrollable && (
+        <p className="mt-3 text-[13px] text-[#6E6A85] sm:hidden">Swipe to see more reviews →</p>
+      )}
     </Band>
   );
 }

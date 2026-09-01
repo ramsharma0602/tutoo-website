@@ -30,6 +30,12 @@
  *  and it is the only way to see that /tutor/:slug hides an empty section
  *  rather than printing a heading with nothing under it. Do not "complete"
  *  the remaining nine — the gaps are the test.
+ *
+ *  Verification and reviews follow the same rule and cover four states on
+ *  purpose: Priya is verified with five reviews (distribution bars show),
+ *  Rahul is verified with two (average only, no bars), Sneha is verified
+ *  with none (section hidden entirely), and the other nine are unverified
+ *  with none (no badge, no section). All four have to look right.
  * ─────────────────────────────────────────────────────────────────────────
  */
 import type { Tutor } from './tutors';
@@ -82,6 +88,19 @@ export const DEMO_TUTORS: Tutor[] = [
       { day: 'Thursday', hours: '4:00 PM – 8:00 PM' },
       { day: 'Saturday', hours: '10:00 AM – 5:00 PM' },
     ],
+    verifiedAt: '2026-03-14',
+    reviews: [
+      { author: 'Meera K.', role: 'Parent of a Class 9 student', rating: 5, date: '2026-06-20',
+        quote: 'She started by finding out what my son had actually missed in Class 7 rather than jumping to the current chapter. His marks moved, but the bigger change is that he stopped saying he is bad at maths.' },
+      { author: 'Sandeep R.', role: 'Parent of a Class 10 student', rating: 5, date: '2026-05-11',
+        quote: 'Punctual, and she sends a short note after each class saying what was covered. We always know where things stand.' },
+      { author: 'Anjali T.', role: 'Parent of a Class 6 student', rating: 4, date: '2026-04-28',
+        quote: 'Good with my daughter, who is shy about asking questions. Only issue was rescheduling during exams, which took a few messages to sort out.' },
+      { author: 'Ramesh P.', role: 'Parent of a Class 8 student', rating: 5, date: '2026-04-02',
+        quote: 'We had tried two tutors before. This is the first one who set weekly practice and actually marked it.' },
+      { author: 'Farhan S.', role: 'Class 10 student', rating: 4, date: '2026-03-30',
+        quote: 'Explains geometry properly instead of just giving the steps. I can do the sums on my own now.' },
+    ],
     addedOn: '2026-07-02',
   },
   {
@@ -120,6 +139,16 @@ export const DEMO_TUTORS: Tutor[] = [
         to: '2022',
       },
     ],
+    verifiedAt: '2026-05-02',
+    /* Only two — deliberately below DISTRIBUTION_MIN, so this profile shows
+       the average and count without the bar chart. One or two opinions
+       rendered as a distribution reads as a statistic. */
+    reviews: [
+      { author: 'Nikhil D.', role: 'Parent of a Class 12 student', rating: 5, date: '2026-06-05',
+        quote: 'Sets a problem sheet every week and goes through the wrong answers in the next class. That is what my son needed for physics.' },
+      { author: 'Sujata M.', role: 'Parent of a Class 11 student', rating: 4, date: '2026-05-19',
+        quote: 'Strong on the subject. Travels to Bavdhan without fuss even on short notice.' },
+    ],
     addedOn: '2026-06-18',
   },
   {
@@ -152,6 +181,10 @@ export const DEMO_TUTORS: Tutor[] = [
       { day: 'Wednesday', hours: '5:00 PM – 8:00 PM' },
       { day: 'Friday', hours: '5:00 PM – 8:00 PM' },
     ],
+    /* Verified but NO reviews — a new tutor who has passed the document
+       check and not yet taught anyone. The review section must vanish
+       entirely rather than print an empty heading or a zero. */
+    verifiedAt: '2026-06-11',
     addedOn: '2026-05-30',
   },
   {

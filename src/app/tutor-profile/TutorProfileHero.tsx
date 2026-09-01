@@ -5,7 +5,7 @@ import { GraduationCap, MapPin, Briefcase, Home, Monitor, Laptop, ChevronRight }
 import AssetImage from '../components/common/AssetImage';
 import type { Tutor } from '../data/tutors';
 import { cx, container } from '../components/common/ui';
-import { DemoNotice } from './sections';
+import { DemoNotice, VerifiedBadge } from './sections';
 
 /* ─────────────────────────────────────────────────────────────────────────
    TUTOR PROFILE HERO
@@ -16,11 +16,17 @@ import { DemoNotice } from './sections';
    matter to a parent — qualification, years, what and who they teach —
    above the fold without scrolling.
 
-   ── WHAT IS NOT HERE ────────────────────────────────────────────────────
-   No star rating, no review count, no "verified" badge, no students-taught
-   number. None of it exists in the data and none of it can be substantiated.
-   The brief asked for a rating block and also said not to invent one; this
-   is what honouring the second half looks like.
+   ── THE VERIFIED BADGE ──────────────────────────────────────────────────
+   Renders only when tutor.verifiedAt is set — mirroring
+   tut_db.tutor_profiles.verified_at, which an admin writes after checking
+   the Aadhaar, PAN, address proof and degree certificates stored on that
+   same row. It states what it checked and links to /safety, because the
+   bare word "Verified" invites a parent to assume a police check that
+   /safety says plainly we do not run.
+
+   ── WHAT IS STILL NOT HERE ──────────────────────────────────────────────
+   No students-taught number and no achievements. Those have nothing behind
+   them in the database or anywhere else.
 ───────────────────────────────────────────────────────────────────────── */
 
 const MODE = {
@@ -165,6 +171,14 @@ export default function TutorProfileHero({
               <p className="mt-1.5 text-[1.05rem] lg:text-[1.15rem] font-semibold text-[#EA580C]">
                 {headline}
               </p>
+
+              {/* Directly under the name, because that is the pairing a
+                  parent is checking: is THIS person verified. */}
+              {tutor.verifiedAt && (
+                <div className="mt-4">
+                  <VerifiedBadge verifiedAt={tutor.verifiedAt} />
+                </div>
+              )}
 
               <ul className="mt-5 flex flex-wrap gap-2.5">
                 <li className="inline-flex items-center gap-2 rounded-full bg-white ring-1 ring-[#EFEDF6] shadow-[0_4px_14px_rgba(30,27,58,0.05)] pl-3 pr-4 py-2">
