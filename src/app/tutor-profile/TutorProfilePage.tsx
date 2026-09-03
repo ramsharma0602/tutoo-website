@@ -20,7 +20,7 @@ import {
   buttonLg,
   buttonMd,
 } from '../components/common/ui';
-import { getTutorBySlug, getSimilarTutors, isDemoTutor } from '../data/tutorLookup';
+import { getTutorBySlug, getSimilarTutors, isDemoTutor, isVerified } from '../data/tutorLookup';
 import { ratingSummary, type Tutor } from '../data/tutors';
 import TutorProfileHero from './TutorProfileHero';
 import {
@@ -236,6 +236,19 @@ export default function TutorProfilePage() {
   if (!tutor) return <TutorNotFound />;
 
   const demo = isDemoTutor(tutor);
+
+  /* ── AN UNVERIFIED REAL TUTOR HAS NO PUBLIC PAGE ────────────────────
+     Hiding applicants from the listing is only half the job: without this
+     their profile is still reachable by anyone with the URL, and
+     crawlable the moment a link exists. Someone who has applied and not
+     yet passed the document check is an applicant, and their name,
+     photo, area and qualifications are not ours to publish.
+
+     Demo tutors are exempt so the UI stays reviewable — they are already
+     noindexed and carry the sample-profile notice, so nothing about an
+     invented person reaches search or misleads a parent. Delete the
+     `!demo &&` to close that too. */
+  if (!demo && !isVerified(tutor)) return <TutorNotFound />;
   const similar = getSimilarTutors(tutor, 3);
 
   /* ── STRUCTURED DATA ────────────────────────────────────────────────

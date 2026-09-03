@@ -16,6 +16,7 @@ import { tutorApplicationValidation } from './validation/tutorApplicationValidat
 
 import { submitTutorApplication, getBoards, getClasses } from './services/tutorApplicationService';
 import SubjectLoader from './SubjectLoader';
+import CheckboxGroup from './CheckboxGroup';
 
 interface TutorApplicationFormProps {
     /* One callback instead of four setters. The page owned four pieces of
@@ -141,9 +142,12 @@ export default function TutorApplicationForm({
                     city: '',
                     qualification: '',
                     experience: '',
-                    boardId: "",
-                    classId: "",
-                    subjectId: "",
+                    /* Arrays, not single ids — boards, classes and subjects
+                       are checkbox groups now. Numbers, not strings, so the
+                       payload needs no casting on the way out. */
+                    boardIds: [] as number[],
+                    classIds: [] as number[],
+                    subjectIds: [] as number[],
                     teachingMode: '',
                     availableDays: [] as string[],
                     availableSlots: [] as string[],
@@ -177,9 +181,13 @@ export default function TutorApplicationForm({
                         formData.append('available_days', values.availableDays.join(', '));
                         formData.append('available_slots', values.availableSlots.join(', '));
                         formData.append('about', values.about);
-                        formData.append('subject_id', values.subjectId);
-                        formData.append('board_id', values.boardId);
-                        formData.append('class_id', values.classId);
+                        /* Repeated keys with [] — the shape Laravel's
+                           'board_ids' => 'required|array' rule expects from
+                           multipart/form-data. A comma-joined string would
+                           arrive as one value and fail the array rule. */
+                        values.boardIds.forEach((id) => formData.append('board_ids[]', String(id)));
+                        values.classIds.forEach((id) => formData.append('class_ids[]', String(id)));
+                        values.subjectIds.forEach((id) => formData.append('subject_ids[]', String(id)));
 
 
                         /* -------------------------------------------------------------------------- */
@@ -528,155 +536,77 @@ export default function TutorApplicationForm({
                             </div>
 
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* ── WHAT THEY TEACH ──────────────────────────────
+                                Three single-choice dropdowns became three
+                                checkbox groups. A tutor who teaches Maths and
+                                Science, to Class 8 and Class 10, across CBSE
+                                and SSC could previously tell us about exactly
+                                one of each — the other answers had nowhere to
+                                go, in the form or in the database.
 
-                                {/* Board */}
-                                <div className="space-y-2 min-w-0">
-                                    <label
-                                        htmlFor="boardId"
-                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
-                                    >
-                                        Board
-                                    </label>
+                                Stacked, not side by side: subjects depend on
+                                the boards and classes above them, so reading
+                                order is the dependency order. Three
+                                scrollable checkbox lists in a 3-column row
+                                would also give each about 200px on a laptop. */}
+                            <div className="space-y-5">
+                                <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#6D28D9]">
+                                    What you teach
+                                </p>
 
-                                    <div className="relative group">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <CheckboxGroup
+                                        legend="Boards"
+                                        name="boardIds"
+                                        options={boards}
+                                        value={values.boardIds}
+                                        onChange={(next) => setFieldValue('boardIds', next)}
+                                        onBlur={() => setFieldTouched('boardIds', true)}
+                                        loading={loadingBoards}
+                                        emptyHint="Boards could not be loaded. Refresh, or WhatsApp us and we will take your details directly."
+                                        error={errors.boardIds as string | undefined}
+                                        touched={Boolean(touched.boardIds)}
+                                    />
 
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
-
-                                        <SearchableSelect
-                                            id="boardId"
-                                            options={boards.map((b) => ({
-                                                label: b.name,
-                                                value: String(b.id),
-                                            }))}
-                                            value={values.boardId}
-                                            onChange={(v) => {
-                                                setFieldValue('boardId', v);
-                                                setFieldValue('classId', '');
-                                                setFieldValue('subjectId', '');
-                                            }}
-                                            onBlur={() =>
-                                                setFieldTouched('boardId', true)
-                                            }
-                                            placeholder="Select Board"
-                                            searchPlaceholder="Search boards..."
-                                            loading={loadingBoards}
-                                            loadingText="Loading boards..."
-                                            error={Boolean(
-                                                touched.boardId && errors.boardId
-                                            )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
-                                        />
-                                    </div>
-
-                                    {touched.boardId && errors.boardId && (
-                                        <p role="alert" className="text-sm text-red-600 font-medium px-1">
-                                            {errors.boardId}
-                                        </p>
-                                    )}
+                                    <CheckboxGroup
+                                        legend="Classes"
+                                        name="classIds"
+                                        options={classes}
+                                        value={values.classIds}
+                                        onChange={(next) => setFieldValue('classIds', next)}
+                                        onBlur={() => setFieldTouched('classIds', true)}
+                                        loading={loadingClasses}
+                                        emptyHint="Classes could not be loaded. Refresh, or WhatsApp us and we will take your details directly."
+                                        error={errors.classIds as string | undefined}
+                                        touched={Boolean(touched.classIds)}
+                                    />
                                 </div>
 
-                                {/* Class */}
-                                <div className="space-y-2 min-w-0">
-                                    <label
-                                        htmlFor="classId"
-                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
-                                    >
-                                        Class
-                                    </label>
+                                <CheckboxGroup
+                                    legend="Subjects"
+                                    name="subjectIds"
+                                    options={subjects}
+                                    value={values.subjectIds}
+                                    onChange={(next) => setFieldValue('subjectIds', next)}
+                                    onBlur={() => setFieldTouched('subjectIds', true)}
+                                    loading={loadingSubjects}
+                                    columns={3}
+                                    emptyHint={
+                                        !values.boardIds.length
+                                            ? 'Pick at least one board above first.'
+                                            : !values.classIds.length
+                                                ? 'Pick at least one class above first.'
+                                                : 'No subjects are listed for that combination. Try another board or class, or WhatsApp us.'
+                                    }
+                                    error={errors.subjectIds as string | undefined}
+                                    touched={Boolean(touched.subjectIds)}
+                                />
 
-                                    <div className="relative group">
-
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
-
-                                        <SearchableSelect
-                                            id="classId"
-                                            options={classes.map((c) => ({
-                                                label: c.name,
-                                                value: String(c.id),
-                                            }))}
-                                            value={values.classId}
-                                            onChange={(v) => {
-                                                setFieldValue('classId', v);
-                                                setFieldValue('subjectId', '');
-                                            }}
-                                            onBlur={() =>
-                                                setFieldTouched('classId', true)
-                                            }
-                                            placeholder="Select Class"
-                                            searchPlaceholder="Search classes..."
-                                            loading={loadingClasses}
-                                            loadingText="Loading classes..."
-                                            error={Boolean(
-                                                touched.classId && errors.classId
-                                            )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
-                                        />
-                                    </div>
-
-                                    {touched.classId && errors.classId && (
-                                        <p role="alert" className="text-sm text-red-600 font-medium px-1">
-                                            {errors.classId}
-                                        </p>
-                                    )}
-                                </div>
-
-
-                                {/* Subject */}
-                                <div className="space-y-2 min-w-0">
-                                    <label
-                                        htmlFor="subjectId"
-                                        className="text-sm font-semibold text-[#1E1B3A] px-1"
-                                    >
-                                        Subject
-                                    </label>
-
-                                    <div className="relative group">
-
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#7B2FF7]/10 to-[#7B2FF7]/10 opacity-0 group-focus-within:opacity-100 blur-xl transition-all duration-500" />
-
-                                        <SearchableSelect
-                                            id="subjectId"
-                                            options={subjects.map((s) => ({
-                                                label: s.name,
-                                                value: String(s.id),
-                                            }))}
-                                            value={values.subjectId}
-                                            onChange={(v) =>
-                                                setFieldValue('subjectId', v)
-                                            }
-                                            onBlur={() =>
-                                                setFieldTouched('subjectId', true)
-                                            }
-                                            placeholder={
-                                                !values.boardId
-                                                    ? 'Select Board First'
-                                                    : !values.classId
-                                                        ? 'Select Class First'
-                                                        : 'Select Subject'
-                                            }
-                                            searchPlaceholder="Search subjects..."
-                                            disabled={
-                                                !values.boardId ||
-                                                !values.classId ||
-                                                loadingSubjects
-                                            }
-                                            loading={loadingSubjects}
-                                            loadingText="Loading subjects..."
-                                            error={Boolean(
-                                                touched.subjectId && errors.subjectId
-                                            )}
-                                            className="h-16 shadow-[0_8px_30px_rgba(30,27,58,0.05)]"
-                                        />
-                                    </div>
-
-                                    {touched.subjectId && errors.subjectId && (
-                                        <p role="alert" className="text-sm text-red-600 font-medium px-1">
-                                            {errors.subjectId}
-                                        </p>
-                                    )}
-                                </div>
-
+                                <p className="text-[13px] leading-relaxed text-[#6E6A85]">
+                                    Tick everything you can teach. Subjects are
+                                    drawn from the boards and classes you chose
+                                    above, so pick those first.
+                                </p>
                             </div>
 
                             {/* Teaching Mode ─────────────────────────────────────

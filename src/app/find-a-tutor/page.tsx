@@ -12,11 +12,9 @@ import {
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import TutorCard from '../components/common/TutorCard';
 import SearchableSelect from '../components/ui/searchable-select';
-import { TUTORS } from '../data/tutors';
 import type { Tutor } from '../data/tutors';
+import { getVerifiedTutors, isShowingDemoTutors } from '../data/tutorLookup';
 import {
-  DEMO_TUTORS,
-  USE_DEMO_TUTORS,
   BOARD_OPTIONS,
   CLASS_BAND_OPTIONS,
   CITY_OPTIONS,
@@ -42,8 +40,17 @@ import { track } from '../../seo/analytics';
 ───────────────────────────────────────────────────────────────────────── */
 
 const PER_PAGE = 9;
-const isDemo = USE_DEMO_TUTORS && TUTORS.length === 0;
-const SOURCE: Tutor[] = TUTORS.length ? TUTORS : isDemo ? DEMO_TUTORS : [];
+/* ── VERIFIED ONLY ────────────────────────────────────────────────────
+   Was `TUTORS.length ? TUTORS : DEMO_TUTORS` — the whole roster, checked or
+   not. A tutor with no verifiedAt is an APPLICANT: someone in the CRM's
+   tutor_enquiries table, or a tutor_profiles row still at status 'draft'.
+   Listing them tells a parent they have been checked, which is exactly the
+   false implication removed from /how-it-work.
+
+   getVerifiedTutors() also replaces this file's private copy of the demo
+   fallback ladder — the same ladder that was duplicated in four components. */
+const isDemo = isShowingDemoTutors();
+const SOURCE: Tutor[] = getVerifiedTutors();
 
 type Mode = '' | 'home' | 'online';
 type SortKey = 'recommended' | 'exp_desc' | 'exp_asc' | 'newest';

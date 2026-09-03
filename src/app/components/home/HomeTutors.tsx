@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { SectionHeading } from '../common/SectionHeading';
 import TutorCard from '../common/TutorCard';
 import { cx, section, container, buttonDark, buttonMd } from '../common/ui';
-import { TUTORS, type Tutor } from '../../data/tutors';
-import { DEMO_TUTORS, USE_DEMO_TUTORS } from '../../data/tutorsDemo';
+import type { Tutor } from '../../data/tutors';
+import { getVerifiedTutors } from '../../data/tutorLookup';
 
 /* ─────────────────────────────────────────────────────────────────────────
    TUTORS WHO TEACH AT HOME
@@ -50,11 +50,10 @@ export default function HomeTutors({
 }: Props) {
   const navigate = useNavigate();
 
-  const source: Tutor[] = TUTORS.length
-    ? TUTORS
-    : USE_DEMO_TUTORS
-      ? DEMO_TUTORS
-      : [];
+  /* Verified only. This used to be a private copy of the demo fallback
+     ladder, duplicated in four components; it is one call now, and the
+     verified rule lives with it so no surface can forget it. */
+  const source: Tutor[] = getVerifiedTutors();
 
   const featured = source
     .filter((t) => t.mode !== 'online')

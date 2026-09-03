@@ -31,6 +31,12 @@
  *  rather than printing a heading with nothing under it. Do not "complete"
  *  the remaining nine — the gaps are the test.
  *
+ *  EIGHT of the twelve carry verifiedAt; four deliberately do not. Only the
+ *  verified eight appear on /find-a-tutor and in every tutor rail — an
+ *  unverified entry stands in for an applicant sitting in the CRM's
+ *  tutor_enquiries table, and applicants are not listed. Keep some
+ *  unverified: they are the only proof the filter is doing anything.
+ *
  *  Verification and reviews follow the same rule and cover four states on
  *  purpose: Priya is verified with five reviews (distribution bars show),
  *  Rahul is verified with two (average only, no bars), Sneha is verified
@@ -203,6 +209,7 @@ export const DEMO_TUTORS: Tutor[] = [
     photo: '/tutoo_assets/photos/teacher-4.webp',
     about:
       'Covers Chemistry and Biology for senior classes, with plenty of diagram practice and past-paper work before exams.',
+    verifiedAt: '2026-04-08',
     addedOn: '2026-07-11',
   },
   {
@@ -254,6 +261,7 @@ export const DEMO_TUTORS: Tutor[] = [
     languages: ['English', 'Marathi'],
     about:
       'Works with middle-school students on Maths and Science, using everyday examples to explain ideas that feel abstract in textbooks.',
+    verifiedAt: '2026-01-22',
     addedOn: '2026-07-28',
   },
   {
@@ -288,6 +296,7 @@ export const DEMO_TUTORS: Tutor[] = [
     languages: ['Marathi', 'Hindi', 'English'],
     about:
       'Language teacher with twelve years of experience, helping students with grammar, comprehension and writing in Marathi and Hindi.',
+    verifiedAt: '2026-02-17',
     addedOn: '2026-02-19',
   },
   {
@@ -305,6 +314,7 @@ export const DEMO_TUTORS: Tutor[] = [
     languages: ['English', 'Marathi'],
     about:
       'Teaches Biology for board exams and NEET preparation, with regular diagram practice and topic-wise tests.',
+    verifiedAt: '2026-03-03',
     addedOn: '2026-05-08',
   },
   {
@@ -322,6 +332,7 @@ export const DEMO_TUTORS: Tutor[] = [
     languages: ['English', 'Hindi', 'Marathi'],
     about:
       'Recent engineering graduate teaching Maths and Science online. Good with students who prefer a younger tutor they can ask questions freely.',
+    verifiedAt: '2026-05-26',
     addedOn: '2026-08-01',
   },
   {

@@ -418,6 +418,15 @@ export default function App() {
             </>
           } />
 
+          {/* /tutor/list is not a page — the listing is /find-a-tutor. It is
+              redirected rather than left to fall through, because
+              /tutor/:slug below would otherwise match it and render "Tutor
+              not found" for a URL people reasonably guess. Must sit BEFORE
+              the :slug route: <Routes> prefers the more specific path, but
+              keeping the order explicit stops a future edit breaking it. */}
+          <Route path="/tutor/list" element={<Navigate to="/find-a-tutor" replace />} />
+          <Route path="/tutor" element={<Navigate to="/find-a-tutor" replace />} />
+
           {/* ── TUTOR PROFILE ─────────────────────────────────────────────
               One component for every tutor. Two segments, so it never
               collides with the greedy /:board/:category/:className route

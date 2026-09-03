@@ -22,10 +22,33 @@ import { DEMO_TUTORS, USE_DEMO_TUTORS } from './tutorsDemo';
    component forgot to check.
 ───────────────────────────────────────────────────────────────────────── */
 
-/** Real registry first, demo only as a fallback, otherwise nothing. */
+/** Every tutor in the active source, verified or not. Use this only when
+ *  you genuinely need the unfiltered set — resolving a slug, counting the
+ *  roster. For anything a parent sees, use getVerifiedTutors(). */
 export function getTutors(): Tutor[] {
   if (TUTORS.length) return TUTORS;
   return USE_DEMO_TUTORS ? DEMO_TUTORS : [];
+}
+
+/* ── VERIFICATION IS THE PUBLIC/PRIVATE LINE ─────────────────────────────
+   A tutor with no verifiedAt has not been through the document check. In
+   the CRM that is someone sitting in tutor_enquiries, or a tutor_profiles
+   row still at status 'draft' — an APPLICANT, not a tutor. Applicants must
+   never appear in a public listing: a parent seeing them would reasonably
+   assume they had been checked, which is the same false implication the
+   "Background Checked" claim was removed from /how-it-work for making.
+
+   So every browsing surface reads getVerifiedTutors(), not getTutors():
+   /find-a-tutor, the homepage showcase, the home and online tutor strips,
+   and the Similar Tutors rail. One rule, one function, no surface that can
+   forget it. */
+export function isVerified(tutor: Tutor): boolean {
+  return Boolean(tutor.verifiedAt);
+}
+
+/** What a parent is allowed to browse. */
+export function getVerifiedTutors(): Tutor[] {
+  return getTutors().filter(isVerified);
 }
 
 /** True while the list being served is the invented one. Drives the notice,
@@ -62,7 +85,9 @@ export function tutorProfilePath(tutor: Tutor): string {
 export function getSimilarTutors(tutor: Tutor, limit = 3): Tutor[] {
   const subjects = new Set(tutor.subjects);
 
-  return getTutors()
+  /* Verified only — a rail headed "Similar tutors" is a recommendation, and
+     recommending an unchecked applicant is worse than recommending nobody. */
+  return getVerifiedTutors()
     .filter((t) => t.id !== tutor.id)
     .map((t) => {
       let score = 0;
@@ -79,7 +104,8 @@ export function getSimilarTutors(tutor: Tutor, limit = 3): Tutor[] {
     .map((x) => x.t);
 }
 
-/** Every profile URL, for the sitemap and for route verification. */
+/** Every publicly listable profile URL, for the sitemap. Verified only —
+ *  an unverified tutor has no public page to submit. */
 export function allTutorSlugs(): string[] {
-  return getTutors().map((t) => t.id);
+  return getVerifiedTutors().map((t) => t.id);
 }

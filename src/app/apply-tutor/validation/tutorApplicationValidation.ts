@@ -50,13 +50,22 @@ export const tutorApplicationValidation = Yup.object({
 
   experience: Yup.string().required('Experience is required'),
 
-  /* What they teach. The form has always shown error slots for these — now
-     they can actually fire. */
-  boardId: Yup.string().required('Select the board you teach'),
+  /* What they teach. Arrays now — the form is a checkbox group per axis, so
+     a tutor can say Maths AND Science, for Class 8 AND Class 10, across CBSE
+     AND SSC. Previously these were single ids with error slots the schema
+     had no rules for, so an application could be submitted with no subject
+     at all. */
+  boardIds: Yup.array()
+    .of(Yup.number())
+    .min(1, 'Select at least one board you teach'),
 
-  classId: Yup.string().required('Select the class you teach'),
+  classIds: Yup.array()
+    .of(Yup.number())
+    .min(1, 'Select at least one class you teach'),
 
-  subjectId: Yup.string().required('Select the subject you teach'),
+  subjectIds: Yup.array()
+    .of(Yup.number())
+    .min(1, 'Select at least one subject you teach'),
 
   teachingMode: Yup.string().required('Please select teaching mode'),
 
